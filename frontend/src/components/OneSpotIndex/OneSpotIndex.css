@@ -1,0 +1,451 @@
+@font-face {
+    font-family: "Light";
+    src: local("earthrnrCerealLight"),
+        url("../../assets/earthrnrCerealLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Thin";
+    src: local("Poppins-Thin"),
+        url("../../assets/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Li";
+    src: local("Poppins-Light"),
+        url("../../assets/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: local("popbold"),
+        url("../../assets/popbold.ttf") format("truetype");
+}
+.locationinfo{
+font-family: 'bold';
+padding-top: 2em;
+    
+}
+#rat  {
+    display: inline-block; 
+    justify-content: center;
+    /* /* font-size: 1em; */
+    height: 1em;
+    font-size: 2em;
+    vertical-align: text-bottom;    /* padding-bottom: 2em; */
+    align-items:center
+    /* vertical-align: middle; */
+    /* align-items: center; */
+}
+
+#rat {
+    font-size: 90%;
+    align-items: baseline;
+}
+
+.reviewscontainer {
+    display: inline-flex;
+    flex-direction: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+}
+
+.spotImagesmall {
+    margin-right: 0;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    flex-direction: column;
+    /* overflow: hidden; */
+    /* width: 100%; */
+}
+
+/* .imgformat1 {} */
+
+.spotImage {
+    /* object-fit: contain; */
+    /* height: .1em; */
+    width: 90%;
+    /* height: 100%; */
+
+    /* background-size: contain; */
+    display: flex;
+    /* align-items: center; */
+    /* flex-shrink: 10%; */
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+
+
+}
+
+.starcont span {
+    margin-top: 2em;
+    width: 40%;
+    height: 40%;
+    font-size: 1.8em;
+    align-content: center;
+    align-items: baseline;
+
+
+}
+
+.locationinfo {
+    width: 100%;
+}
+
+.locationinfo:first-child {
+
+    width: 100%
+}
+
+.locationinfo div {
+    justify-content: end;
+}
+
+.starcont {
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+    /* align-items: middle; */
+    /* justify-content: center; */
+    /* vertical-align: middle; */
+    padding-top: .4em;
+    justify-content: space-between;
+
+    /* display: inline-block;
+    /* margin-top: 2em; */
+
+    /* vertical-align: middle; */
+}
+
+.sampleimg img {
+    /* display: inline-flex; */
+    box-sizing: border-box;
+    /* flex-direction: row-reverse; */
+    max-height: 20vmax;
+
+    /* height: 2px; */
+
+
+}
+
+.spotImagebig {
+    /* max-height: 25%; */
+    /* max-width: 25%; */
+    display: inline-flex;
+    justify-content: space-around;
+    /* flex: 2 5 */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+}
+
+#starrr {
+    max-width: 17%;
+    height: auto;
+    float: initial
+}
+
+.ratin {
+    display: inline-block;
+    /* justify-content: center; */
+    font-size: 1.2em;
+    height: 1em;
+    width: 50%;
+    /* padding-bottom: 2em; */
+    /* vertical-align: middle; */
+    /* align-items: center; */
+}
+
+.rating {
+    display: inline-flex;
+    /* padding: .2em; */
+
+}
+
+.reviewscontainer {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-self: center;
+}
+
+.spotImagesmall div img {
+    height: 40%;
+    width: 40%;
+    padding-top: 2.75em;
+}
+
+.spotImage {
+    display: flex;
+    height: 50%;
+    width: 50%;
+    /* object-fit: fill; */
+    /* border: solid white; */
+    flex-shrink: 50%;
+}
+
+.sampleimg img {
+    flex-shrink: 10%;
+    /* margin: ; */
+}
+
+
+.sampleimg {
+    display: inline-flex;
+    /* display: inline-flex; */
+    /* flex-shrink: 10%; */
+    justify-content: space-evenly;
+    /* flex-direction: row; */
+    /* overflow-x: visible; */
+    flex-wrap: wrap;
+    /* object-fit: contain; */
+    /* width: inherit */
+    /* background-size: */
+    /* max-width: 100%;
+    max-height: 100%; */
+    /* margin-left: 1em; */
+    /* padding-left:; */
+    /* padding: 3px; */
+}
+
+/* .spotImagebig {
+    max-width: 100%;
+    max-height: 100%;
+    
+} */
+
+.picbox {
+
+    display: inline-flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* padding-bottom:  */
+    /* max-width: 1134px; */
+    /* width: 100%; */
+
+}
+
+.namez:first-of-type span {
+    /* text-decoration: underline; */
+    font-family: 'Bold';
+
+}
+
+
+.namez div {
+    font-family: 'Thin';
+    /* font-style: normal; */
+    text-decoration: solid wheat;
+    padding-left: 2em;
+
+}
+
+.starspot {
+    height: 3em
+        /* margin-left: 4em; */
+
+}
+
+.descript {
+    padding-top: .5em;
+    padding-bottom: 2em;
+    width: 100%;
+}
+
+
+.belowimg {
+    width: 100%;
+    display: inline-flex;
+    justify-content: start;
+    /* padding-right: 3em; */
+    padding-left: 2em;
+    padding-top: 1em;
+    font-size: 1.7em;
+    /* padding-bottom: ; */
+    /* align-items: flex-end; */
+    /* justify-content: right; */
+
+}
+
+.nameandbutt22 {
+    width: 100%;
+    padding-right: 4em;
+}
+
+.notreviewsright {
+    padding-top: 0px;
+
+    /* padding-left: 1em; */
+}
+
+.nameandbutt {
+    display: flex;
+    flex-direction: row;
+    font-size: 2em;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-top: .2em;
+    justify-content: space-between;
+    /* text-decoration: underline; */
+}
+
+.nameandbutt2 img {
+    padding-top: .26em;
+    margin-right: .4em;
+}
+
+/* 
+.nameandbutt2 span {
+    width: 100%;
+} */
+
+.locationinfo span {
+    display: inline-flex;
+    padding: none;
+    line-height: 10%;
+    width: 100%;
+    justify-content: space-between;
+    /* flex-direction: row; */
+}
+
+.locationinfo {
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.nameandbutt2 div {
+    display: inline-flex;
+    flex-direction: row;
+    /* justify-content: middle; */
+    flex-wrap: wrap;
+    width: 100%;
+    /* align-items: center;
+     */
+    /* flex-flow: row; */
+    padding-right: em;
+    font-size: 1em;
+    /* font-family: 'thin'; */
+    padding-left: 7em;
+    /* padding-right: 12%; */
+    /* padding-top: .2em; */
+    font-family: bold;
+    justify-content: space-between
+}
+
+.descript {
+    font-size: 1em;
+    font-family: 'Thin';
+    padding-left: 7em;
+    padding-right: 0;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: middle;
+    align-content: middle;
+    align-self: middle;
+}
+
+.bigstyle {
+    /* height: %; */
+    /* width: 50%; */
+    /* display: inline-flex; */
+    align-items: center;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-betw */
+
+}
+
+
+
+
+
+
+.swap-down {
+
+    display: flex;
+    font-size: 1.2em;
+    background-color: #ffffff74;
+    /* padding-bottom: 1em; */
+    /* width: 120%; */
+    padding-right: 3em;
+    padding-left: 3em;
+}
+
+
+
+
+
+.bigstyle {
+    display: inline-flex;
+    flex-direction: column;
+    font-family: 'Light';
+    font-family: 'Light';
+    /* justify-content: center; */
+}
+
+.titlearea {
+    height: "100%";
+    width: 100%;
+    object-fit: contain;
+    justify-content: space-between;
+
+}
+
+
+.lefttext {
+    padding-right: 3em;
+}
+
+.righttext {
+    /* padding-right: 3em;
+    padding-bottom: 1em; */
+    background-color: rgba(134, 134, 134, 0.215);
+    border-radius: 3em;
+    justify-content: center;
+    display: inline-flex;
+    flex-direction: column;
+
+
+}
+
+.notreviewsright {
+    padding-top: 0px;
+
+    /* padding-left: 1em; */
+}
+
+.text {
+    padding: 2em;
+    padding-top: .3em;
+    border-radius: 3em;
+
+}
+
+.reviewbutt {
+    width: 70%;
+    height: 3em;
+    /* margin: 1em; */
+    margin-top: 0;
+    border-radius: 2em;
+    font-size: large;
+    justify-self: center
+        /* align-self: flex-end; */
+
+}
+
+.texthead {
+    align-self: center;
+    margin-top: .4em;
+    font-size: 2em;
+    margin-bottom: .4em;
+}
+
+.reviewbuttcont {
+    align-self: center;
+    margin-bottom: 1em;
+}

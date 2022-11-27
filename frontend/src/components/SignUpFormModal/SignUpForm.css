@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "Light";
+    src: local("earthrnrCerealLight"),
+        url("../../assets/earthrnrCerealLight.ttf") format("truetype");
+}
+
+.signupform {
+    /* font-size: 50%; */
+    font-family: "Light";
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    /* padding-top: 1em; */
+    /* vertical-align: text-top; */
+    /* vertical-align: middle; */
+    box-sizing: border-box;
+    border-color: black;
+    /* line-height: 100px; */
+    /* padding: 20px; */
+    width: 30em;
+    /* white-space: nowrap; */
+}
+
+.signupform label {
+    /* align-self: flex-start; */
+    /* width: 10em; */
+    box-sizing: border-box;
+
+    align-items: center;
+    padding-top: 1em;
+}
+
+.signupform input {
+    /* align-self: center; */
+    box-sizing: border-box;
+    align-items: center;
+    line-height: 2em;
+    border-radius: 1em;
+    width: 27em;
+    text-indent: 1em;
+
+}
+
+.signupform button {
+    /* padding-bottom: 1em; */
+    margin-bottom: 1em;
+    border-radius: 15em;
+    line-height: 2em;
+    width: 25%;
+    font-family: "Light";
+    background-color: #fe5a62;
+    border-color: gray;
+    color: wheat;
+}
+
+.signupform button:hover {
+    /* padding-bottom: 1em; */
+    filter: invert(100%);
+    /* background-color: #fe5a62; */
+    ;
+}

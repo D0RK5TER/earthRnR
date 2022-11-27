@@ -1,0 +1,92 @@
+@font-face {
+    font-family: "Light";
+    src: local("earthrnrCerealLight"),
+        url("../../assets/earthrnrCerealLight.ttf") format("truetype");
+}
+
+
+.editspotphoto button:hover {
+    /* filter: invert(100%); */
+    background-color: rgb(162, 162, 162);
+
+}
+
+.editspotphoto button {
+    background-color: rgba(10, 10, 10, 0.8);
+    margin-top: .5em;
+    color: #fdfcfd;
+    position: relative;
+    border-radius: 1em;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.editspotform {
+    font-family: "Light";
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-color: black;
+    width: 30em;
+
+}
+
+.editspotform label {
+    /* align-self: flex-start; */
+    /* width: 10em; */
+    box-sizing: border-box;
+
+    align-items: center;
+    padding-top: 1em;
+}
+
+/* .editspotphoto button {
+    background-color: rgba(10, 10, 10, 0.8);
+    margin-top: .5em;
+    color: #fdfcfd;
+    border-radius: 1em;
+    position: relative;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} */
+
+.editspotform input {
+    /* align-self: center; */
+    box-sizing: border-box;
+    align-items: center;
+    line-height: 2em;
+    border-radius: 1em;
+    width: 27em;
+    text-indent: 1em;
+
+}
+
+.theD button {
+
+    background-color: #fe5a62;
+}
+
+.deletebutt button {
+    /* padding-bottom: 1em; */
+    margin-bottom: 1em;
+    border-radius: 1em;
+    line-height: 2em;
+    display: inline-flex;
+    font-family: "Light";
+    background-color: #fe5a62;
+    border-color: gray;
+    color: wheat;
+    justify-content: space-between;
+    margin-right: 6em;
+    margin-left: 6em;
+}
+
+.deletebutt:first-child {
+    line-height: 1em;
+    background-color: #141414;
+}
+
+/* 
+.deletebutt {
+    width: 0%;
+} */
