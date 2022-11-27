@@ -3,7 +3,7 @@
 
 let options = {};
 if (process.env.NODE_ENV === 'production') {
-  options.schema = process.env.SCHEMA
+  options.schema = process.env.SCHEMA;  // define your schema in options object
 }
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -46,9 +46,10 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       }
-    });
+    }, options);
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Users', options);
+    options.tableName = "Users"
+    await queryInterface.dropTable(options);
   }
 };

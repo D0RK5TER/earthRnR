@@ -8,10 +8,12 @@ let options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
 }
+
+
 module.exports = {
   async up(queryInterface, Sequelize) {
-
-    await queryInterface.bulkInsert('Users', [
+    options.tableName = 'Users'
+    await queryInterface.bulkInsert(options, [
       {
         firstName: 'Dex',
         lastName: 'Asssfg',
@@ -111,7 +113,8 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('password')
       }
     ], {})
-    await queryInterface.bulkInsert('Spots', [
+    options.tableName = 'Spots'
+    await queryInterface.bulkInsert(options, [
       {
         ownerId: 1,
         address: '100 California St',
@@ -439,8 +442,9 @@ module.exports = {
         price: 123.12
       }
     ], {})
+    options.tableName = 'Reviews'
 
-    await queryInterface.bulkInsert('Reviews', [
+    await queryInterface.bulkInsert(options, [
       {
         spotId: 1,
         userId: 2,
@@ -993,8 +997,9 @@ module.exports = {
         stars: 3
       }
     ], {})
+    options.tableName = 'ReviewImages'
 
-    await queryInterface.bulkInsert('ReviewImages', [
+    await queryInterface.bulkInsert(options, [
       {
         reviewId: 1,
         url: 'https://media.istockphoto.com/id/140217119/photo/my-flatmate-hasnt-done-the-chores-again.jpg?s=1024x1024&w=is&k=20&c=bE5PP4SakTtt1d6BqG6mI8F6CV9I8-wBfQfZN7oLsAM='
@@ -1013,7 +1018,9 @@ module.exports = {
         url: 'https://www.thesouthafrican.com/wp-content/uploads/2022/05/Two-children-killed-in-shack-fire-800x529.jpg'
       }
     ], {})
-    await queryInterface.bulkInsert('SpotImages', [
+
+    options.tableName = 'SpotImages'
+    await queryInterface.bulkInsert(options, [
       {
         spotId: 1,
         url: 'https://a0.muscache.com/im/pictures/dd9cf0f0-57e0-42a5-aef6-b15e95ab0d40.jpg?im_w=720',
@@ -1713,8 +1720,9 @@ module.exports = {
       }
 
     ])
+    options.tableName = 'Bookings'
 
-    await queryInterface.bulkInsert('Bookings', [
+    await queryInterface.bulkInsert(options, [
       {
         spotId: 3,
         userId: 1,
@@ -1756,22 +1764,24 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    options.tableName = 'Users';
-    const Op = Sequelize.Op;
-    //   return queryInterface.bulkDelete(options, {
-    //     username: { [Op.in]: ['Demo-lition', 'FakeUser1', 'FakeUser2'] }
-    //   }, {});
-    // } /*
-    //  * Add commands to revert seed here.
-
-    //  * Example:
-    //  await queryInterface.bulkDelete(options.tableName = 'Users', 'People', null, {});
-
-    await queryInterface.bulkDelete(options.tableName = 'SpotImages', 'SpotImages', {})
-    await queryInterface.bulkDelete(options.tableName = 'ReviewImages', 'ReviewImages', {})
-    await queryInterface.bulkDelete(options.tableName = 'Bookings', 'Bookings', {})
-    await queryInterface.bulkDelete(options.tableName = 'Reviews', 'Reviews', {})
-    await queryInterface.bulkDelete(options.tableName = 'Spots', 'Spots', {})
-    await queryInterface.bulkDelete(options.tableName = 'Users', 'Users', {});
+    /**
+     * Add commands to revert seed here.
+     *
+     * Example:
+     */
+    options.tableName = 'Bookings'
+    await queryInterface.bulkDelete(options, {})
+    options.tableName = 'SpotImages'
+    await queryInterface.bulkDelete(options, {})
+    options.tableName = 'ReviewImages'
+    await queryInterface.bulkDelete(options, {})
+    options.tableName = 'Bookings'
+    await queryInterface.bulkDelete(options, {})
+    options.tableName = 'Reviews'
+    await queryInterface.bulkDelete(options, {})
+    options.tableName = 'Spots'
+    await queryInterface.bulkDelete(options, {})
+    options.tableName = 'Users'
+    await queryInterface.bulkDelete(options, {});
   },
 };
