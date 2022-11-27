@@ -1,6 +1,6 @@
 // backend/config/database.js
 const config = require('./index');
-const { DEV_DATABASE_HOST, DEV_DATABASE_USERNAME, DEV_DATABASE_PASSWORD } = process.env;
+// const { DEV_DATABASE_HOST, DEV_DATABASE_USERNAME, DEV_DATABASE_PASSWORD } = process.env;
 
 module.exports = {
   development: {
