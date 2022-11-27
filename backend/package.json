@@ -28,6 +28,7 @@
     "helmet": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
     "per-env": "^1.0.2",
     "sequelize": "^6.25.3",
     "sequelize-cli": "^6.5.1"
