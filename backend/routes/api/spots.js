@@ -311,8 +311,8 @@ router.post('/:spotId/bookings',
 router.post('/',
     requireAuth,
     async (req, res) => {
-        const {user, address, city, state, country, lat, lng, name, description, price } = req.body
-        // const user = req.user.id
+        const { address, city, state, country, lat, lng, name, description, price } = req.body
+        const user = req.user.id
         // const check = req.body
         if (address == undefined || city == undefined || state == undefined
             || country == undefined || lat == undefined || lng == undefined
