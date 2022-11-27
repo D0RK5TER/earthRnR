@@ -223,7 +223,7 @@ router.post('/:spotId/reviews',
             include: { model: Spot }
         })
         currReviews = JSON.parse(JSON.stringify(currReviews))
-        if (!currReviews[0]) {
+        if (!currReviews) {
             const err = new Error('Spot couldn`t be found');
             err.status = 404
             throw err
