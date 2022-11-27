@@ -161,6 +161,7 @@ router.get('/:spotId', async (req, res) => {
         spots.avgStarRating = 0
         spots.numReviews = 0
     }
+    delete spots.Reviews
     res.json(spots)
 
 })
