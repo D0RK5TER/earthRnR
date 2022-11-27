@@ -3,6 +3,11 @@
 /* @type {import('sequelize-cli').Migration} */
 const bcrypt = require('bcryptjs');
 const { Op } = require('sequelize')
+
+let options = {};
+if (process.env.NODE_ENV === 'production') {
+  options.schema = process.env.SCHEMA;  // define your schema in options object
+}
 module.exports = {
   async up(queryInterface, Sequelize) {
 
@@ -1751,17 +1756,22 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
-    await queryInterface.bulkDelete('SpotImages', {})
-    await queryInterface.bulkDelete('ReviewImages', {})
-    await queryInterface.bulkDelete('Bookings', {})
-    await queryInterface.bulkDelete('Reviews', {})
-    await queryInterface.bulkDelete('Spots', {})
-    await queryInterface.bulkDelete('Users', {});
+    options.tableName = 'Users';
+    const Op = Sequelize.Op;
+    //   return queryInterface.bulkDelete(options, {
+    //     username: { [Op.in]: ['Demo-lition', 'FakeUser1', 'FakeUser2'] }
+    //   }, {});
+    // } /*
+    //  * Add commands to revert seed here.
+
+    //  * Example:
+    //  await queryInterface.bulkDelete(options.tableName = 'Users', 'People', null, {});
+
+    await queryInterface.bulkDelete(options.tableName = 'SpotImages', 'SpotImages', {})
+    await queryInterface.bulkDelete(options.tableName = 'ReviewImages', 'ReviewImages', {})
+    await queryInterface.bulkDelete(options.tableName = 'Bookings', 'Bookings', {})
+    await queryInterface.bulkDelete(options.tableName = 'Reviews', 'Reviews', {})
+    await queryInterface.bulkDelete(options.tableName = 'Spots', 'Spots', {})
+    await queryInterface.bulkDelete(options.tableName = 'Users', 'Users', {});
   },
 };
