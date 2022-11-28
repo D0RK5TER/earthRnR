@@ -5,6 +5,7 @@ if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
 }
 module.exports = {
+  //maybe do cascade for spotId?
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Reviews', {
       id: {
@@ -15,11 +16,17 @@ module.exports = {
       },
       spotId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        references: {
+          model: "Spots"
+        },
+        onDelete: 'SET NULL'
       },
       userId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        references: {
+          model: "Users"
+        },
+        onDelete: 'SET NULL'
       },
       review: {
         type: Sequelize.STRING,
