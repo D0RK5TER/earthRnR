@@ -230,7 +230,7 @@ const sessionReducer = (state = initialState, action) => {
             const { user, ...rest } = state
             newState = {...rest}
             newState.user  = action.payload
-            console.log(newState, '!!!!!!!')
+            // console.log(newState, '!!!!!!!')
             // newState = Object.assign({}, state);
             // newState.user = action.payload;
             return newState;

@@ -1,15 +1,14 @@
 
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
-import * as sessionActions from "../../store/session";
+// import { Redirect } from "react-router-dom"; ///gone 
+import * as sessionActions from "../../store/session2";
 import './LoginForm.css'
 // import { openMenu } from "../Navigation/ProfileButton";
-
-
+// gone
 function LoginForm(setShowModal) {
     const dispatch = useDispatch();
-    // const history = useHistory() took out
+    // const history = useHistory() gone 
     const [credential, setCredential] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -25,7 +24,7 @@ function LoginForm(setShowModal) {
             )
             /// check if this is needed
             .then(() => setShowModal(false))
-    };
+    }
     return (
         <form onSubmit={handleSubmit} className='loginform' >
             <ul style={{ margin: '0' }}>

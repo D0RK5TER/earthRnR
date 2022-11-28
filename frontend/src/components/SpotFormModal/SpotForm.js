@@ -26,8 +26,8 @@ function SpotForm({ setShowModal }) {
         setErrors([]);
         //console.log(setShowModal)
         return await dispatch(createSpot({
-            user, address, city, state, country,
-            name, description, price, latt
+            address, city, state, country,
+            name, description, price
         })).catch(async (res) => {
             //console.log(res)
             const data = await res.json()

@@ -9,7 +9,7 @@ import DemoButton from './DemoButton';
 import SpotFormModal from '../SpotFormModal';
 // import SpotFormModal from '../SpotFormModal';
 
-export default function ProfileButton({ user }) {
+export default function ProfileButton({ user, isLoaded }) {
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
     const history = useHistory()
@@ -107,7 +107,7 @@ export default function ProfileButton({ user }) {
         )
 
     }
-    return (
+    return isLoaded && (
 
         <div className='dropbar' >
 

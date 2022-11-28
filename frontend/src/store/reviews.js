@@ -4,7 +4,7 @@ import { csrfFetch } from './csrf';
 // const ADD_IMG = 'reviews/addSpotImg'
 // const CREATE_A_SPOT = 'reviews/createSpot'
 const SET_REVIEW = 'reviews/createReview'
-const GET_ALL_REVIEWS = 'reviews/getAllReviews'
+// const GET_ALL_REVIEWS = 'reviews/getAllReviews'
 const DEL_REVIEW = 'reviews/deleteReview'
 
 
@@ -29,14 +29,14 @@ export const oneReview = (review) => {
 
 
 
-export const loadAllReviews = (reviews) => {
-    // let reviews = reviewss.Reviews
-    // (reviews)
-    return {
-        type: GET_ALL_REVIEWS,
-        reviews
-    };
-};
+// export const loadAllReviews = (reviews) => {
+//     // let reviews = reviewss.Reviews
+//     // (reviews)
+//     return {
+//         type: GET_ALL_REVIEWS,
+//         reviews
+//     };
+// };
 
 export const getAllReviews = (id) => async (dispatch) => {
     const response = await csrfFetch(`/api/spots/${id}/reviews`, {
@@ -46,7 +46,7 @@ export const getAllReviews = (id) => async (dispatch) => {
     if (response.ok) {
         const data = await response.json();
         // console.log(data, 'BEFORE LOAD REVIEWS!!!')
-        dispatch(loadAllReviews(data.Reviews));
+        dispatch(loadAllReviews(data.reviews));
         return response;
     }
 };

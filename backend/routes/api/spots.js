@@ -273,7 +273,7 @@ router.post('/:spotId/bookings',
             throw err
         }
         let spat = await Spot.findByPk(+spotId)
-        console.log(spat)
+        // console.log(spat)
         if (!spat) {
             let er = new Error('Spot couldn`t be found')
             er.status = 404

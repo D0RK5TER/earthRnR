@@ -96,7 +96,7 @@ export const delSpot = (spot) => {
 //     }
 // };
 export const deleteSpot = (id) => async (dispatch) => {
-    console.log(id)
+    // console.log(id)
 
     const response = await csrfFetch(`/api/spots/${id}`, {
         method: 'DELETE',
@@ -216,7 +216,7 @@ export const createSpot = (spot) => async (dispatch) => {
     if (response.ok) {
         // console.log(data)
         let data = await response.json()
-        console.log(data, '!!!jhbjhbjhb', response)
+        // console.log(data, '!!!jhbjhbjhb', response)
         dispatch(makeSpot(data))
 
         return response
