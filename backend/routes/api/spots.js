@@ -222,8 +222,10 @@ router.post('/:spotId/reviews',
             where: { spotId: spotId },
             include: { model: Spot }
         })
+        let spot = await Spot.findByPk(+spotId)
         currReviews = JSON.parse(JSON.stringify(currReviews))
-        if (!currReviews) {
+        // console.log(currReviews, spot)
+        if (!spot) {
             const err = new Error('Spot couldn`t be found');
             err.status = 404
             throw err
@@ -270,17 +272,27 @@ router.post('/:spotId/bookings',
                 }
             throw err
         }
-        let theBooks = await Booking.findAll({
-            where: { spotId: spotId },
-            include: { model: Spot }
-        })
-        theBooks = JSON.parse(JSON.stringify(theBooks))
-        if (!theBooks[0]) {
+        let spat = await Spot.findByPk(+spotId)
+        console.log(spat)
+        if (!spat) {
             let er = new Error('Spot couldn`t be found')
             er.status = 404
             throw er
         }
-        if (theBooks[0].Spot.ownerId === userId) {
+
+        let theBooks = await Booking.findAll({
+            where: { spotId: spotId },
+            include: { model: Spot }
+        })
+        // console.log(theBooks)
+        theBooks = JSON.parse(JSON.stringify(theBooks))
+        // if (!theBooks[0]) {
+        //     let er = new Error('Spot couldn`t be found')
+        //     er.status = 404
+        //     throw er
+        // }
+
+        if (spat.ownerId === userId) {
             let er = new Error('You can not book your own spot!')
             er.status = 404
             throw er
@@ -300,7 +312,7 @@ router.post('/:spotId/bookings',
             }
         }
         const newBook = await Booking.create({
-            spotId: spotId,
+            spotId: +spotId,
             userId: userId,
             startDate: startDate,
             endDate: endDate
