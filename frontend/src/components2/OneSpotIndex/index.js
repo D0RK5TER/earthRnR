@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getOneSpot } from '../../store/spots2';
-import { getAllReviews, deleteReview } from '../../store/reviews2';
+import { getAllReviews, createReview } from '../../store/reviews2';
 // import CreateReviewForm from '../CreateReviewModal';
 import './OneSpotIndex.css'
 import star from '../../assets/star.png';
@@ -33,8 +33,9 @@ const OneSpotIndex = () => {
   let theSpot = useSelector(state => state.spots.onespot)
   let thereviews = useSelector(state => state.reviews.onespot)
   useEffect(() => {
-    dispatch(getOneSpot(id))
-      dispatch(getAllReviews(id))
+    // dispatch(getOneSpot(id))
+    dispatch(getAllReviews(id)).then(dispatch(getOneSpot(id)))
+    // console.log(JSON.parse(JSON.stringify(hey)), '!!!!!!!')
   }, [id])
 
 
@@ -117,7 +118,7 @@ const OneSpotIndex = () => {
     let alreadyreviewed = []
 
 
-    console.log(thereviews)
+    // console.log(thereviews)
     if (user?.id > -1) {
       for (let x in thereviews) {
         alreadyreviewed.push(x.userId)
@@ -139,7 +140,7 @@ const OneSpotIndex = () => {
         )
       }
       // console.log(thereviews)
-      else console.log(thereviews); reviewsCont = (
+      else reviewsCont = (
         <div className='reviewscontainer'>
           {(Object.values(thereviews)?.map(({ id, stars, review, userId, createdAt, User, spotId }) => (
             <div style={{

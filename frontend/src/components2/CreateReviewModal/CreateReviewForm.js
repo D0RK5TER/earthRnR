@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { getAllReviews, createReview } from '../../store/reviews2';
+import { getOneSpot } from '../../store/spots2'
 import './CreateReviewForm.css'
 
 
@@ -16,11 +17,10 @@ function CreateReviewForm({ id, setShowModal }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setErrors([]);
-        //console.log({ idxx, review, stars })
-        //  console.log(id)
         let reviewz = { id, review, stars }
         // console.log(reviewz)
         return dispatch(createReview(reviewz))
+            // .then(dispatch(getOneSpot(id))) trying to get rating to update
             .then(setShowModal(false))
             .catch(async (res) => {
 

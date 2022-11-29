@@ -1,5 +1,5 @@
 import { csrfFetch } from './csrf';
-
+import { getOneSpot } from './spots2';
 const LOAD_ALL_REVIEWS = 'reviews2/loadAllReviews'
 const LOAD_ONE_REVIEW = 'reviews2/loadOneReview'
 const LOAD_MY_REVIEWS = 'reviews2/loadMyReviews'
@@ -99,7 +99,7 @@ export const createReview = (reviewz) => async (dispatch) => {
     const { review, stars, id } = reviewz;
     let lat = 1
     let lng = 1
-    console.log(review)
+    // console.log(review)
     const response = await csrfFetch(`/api/spots/${id}/reviews`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
@@ -110,7 +110,8 @@ export const createReview = (reviewz) => async (dispatch) => {
     if (response.ok) {
         let data = await response.json()
         // switched action and reducer for ezload
-        await dispatch(getAllReviews(id))
+        // return
+        dispatch(getAllReviews(id)).then(dispatch(getOneSpot(id)))
         return data
     }
 }
@@ -142,8 +143,9 @@ export const makeDeleteReview = ({ id, spotId }) => async (dispatch) => {
     });
     if (response.ok) {
         const data = await response.json();
-        console.log(data, '!!!!!!!!!!', spotId)
-        await dispatch(getAllReviews(spotId))
+        // console.log(data, '!!!!!!!!!!', spotId)
+        dispatch(getAllReviews(spotId)).then(dispatch(getOneSpot(spotId)))
+        // await dispatch(getAllReviews(spotId))
         return data
     }
 }

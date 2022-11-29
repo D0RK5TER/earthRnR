@@ -7,7 +7,7 @@ import './DeleteReviewForm.css'
 function DeleteReviewFormModal({id, spotId}) {
     const [showModal, setShowModal] = useState(false);
     // const user = useSelector(state => state.session.user.id)
-    console.log(id)
+    // console.log(id)
 
     return (
         <>

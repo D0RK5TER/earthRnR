@@ -138,7 +138,6 @@ router.get('/', async (req, res) => {
                 minPrice
     } else minPrice = 0
 
-
     let spots = await Spot.findAll({
         where: {
             price: { [Op.and]: { [Op.lt]: maxPrice, [Op.gt]: minPrice } },
