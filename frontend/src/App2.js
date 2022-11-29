@@ -22,31 +22,32 @@ function App() {
     // }, []);
     useEffect(() => {
         dispatch(sessionActions.restoreUser()).then(() => dispatch(setIsLoaded(true)))
-    //    .then( dispatch(getAllSpots()))
+        //    .then( dispatch(getAllSpots()))
     }, [dispatch]);
 
     return (
-        <div>
+        <>
             <Navigation isLoaded={isLoaded} />
-            <h1>HEY</h1>
-            {isLoaded && (
-                <Switch>
-                    <Route exact path='/'>
-                        <SpotsIndex />
-                    </Route>
-                    <Route exact path='/:id'>
-                        <OneSpotIndex />
-                    </Route>
-                  {/*  <Route exact path='/spots/current'>
+            <div id='newbody'>
+                <h1>HEY</h1>
+                {/* {isLoaded && (  */}
+                    <Switch>
+                        <Route exact path='/'>
+                            <SpotsIndex />
+                        </Route>
+                        <Route exact path='/:id'>
+                            <OneSpotIndex />
+                        </Route>
+                        {/*  <Route exact path='/spots/current'>
                         <CurrentUserIndex />
                     </Route>
                     <Route>
                         <h1 style={{ padding: '2em' }}>Sorry! Out Of Luck!</h1>
                     </Route> */}
-                </Switch>
-            )}
-        </div>
+                    </Switch>
+                {/* )} */}
+            </div>
+        </>
     );
 }
-
 export default App;

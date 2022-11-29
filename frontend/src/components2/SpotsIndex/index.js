@@ -50,8 +50,8 @@ function SpotsIndex({ isLoaded }) {
             if (spa.previewImage === 'No preview') spa.previewImage = quest
         }
     }
-    console.log(spots)
-    console.log(Object.values(spots))
+    // console.log(spots)
+    // console.log(Object.values(spots))
     // {spots && for (let spot in spots)(
     //     let{ previewImage, name, id, ownerId, avgRating, createdAt, city, state, price } = spot
     return (<div className="mainContent" >

@@ -1,6 +1,7 @@
 const express = require('express')
 const { requireAuth } = require('../../utils/auth');
 const { User, Spot, Review, ReviewImage, SpotImage, Booking } = require('../../db/models');
+const { Op } = require("sequelize");
 
 
 const router = express.Router();
@@ -99,38 +100,71 @@ router.get('/current',
         }
         res.status(201).json(spots)
     })
+
+
+
+
+
+
+
 router.get('/', async (req, res) => {
-    // let { page, size } = req.query;
+    let { page, size, minLat, maxLat, minLng, maxLng, minPrice, maxPrice } = req.query;
+
+    if (size) {
+        size = +size
+        size > 20 ? size = 20 :
+            isNaN(+size) ? size = 1 :
+                size
+    } else size = 20
+
+    if (page) {
+        page = +page
+        page > 10 ? page = 9 :
+            page > 0 ? page = (page - 1) :
+                page
+    } else page = 0
+
+    if (maxPrice) {
+        maxPrice = +maxPrice
+        !maxPrice ? maxPrice = 1000000000 :
+            isNaN(+maxPrice) ? maxPrice = 100000000 :
+                maxPrice
+    } else maxPrice = 10000000
+    console.log(maxPrice, page, size)
+    if (minPrice) {
+        minPrice = +minPrice
+        !minPrice ? minPrice = 0 :
+            isNaN(+minPrice) ? minPrice = 0 :
+                minPrice
+    } else minPrice = 0
+
+
     let spots = await Spot.findAll({
+        where: {
+            price: { [Op.and]: { [Op.lt]: maxPrice, [Op.gt]: minPrice } },
+        },
         include: [
             { model: Review, required: false, raw: true, },
             { model: SpotImage, required: false, raw: true }
         ],
         // raw: true,
         // group: [ 'id', 'SpotImages', 'Review.stars']
+        limit: size,
+        offset: size * page
     })
     spots = JSON.parse(JSON.stringify(spots))
     for (let spa of spots) {
-
         spa.Reviews.length ? spa.avgRating = Review.getRating(spa.Reviews) : spa.avgRating = 0
         spa.SpotImages.length ? spa.previewImage = spa.SpotImages[0].url : spa.previewImage = 'No preview'
-
         delete spa.Reviews
         delete spa.SpotImages
     }
-    res.status(201).json(spots)
-}
-    //  else {
-    //     if (page > 10) page = 10
-    //     if (size > 20) size = 20
-    //     const spots = await Spot.findAll({ limit: size, offset: size * (page - 1) })
-    //     for (let s of spots) {
-    //         s.dataValues.avgRating = await Review.getRating(s.dataValues.id)
-    //         s.dataValues.previewImage = await SpotImage.getPreview(s.dataValues.id)
-    //     }
-    //     res.status(201).json({ Spots: spots, page, size })
 
-)
+    res.status(201).json(spots)
+})
+
+
+
 
 
 router.get('/:spotId', async (req, res) => {

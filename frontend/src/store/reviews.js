@@ -1,125 +1,125 @@
 
-import { csrfFetch } from './csrf';
+// import { csrfFetch } from './csrf';
 
-// const ADD_IMG = 'reviews/addSpotImg'
-// const CREATE_A_SPOT = 'reviews/createSpot'
-const SET_REVIEW = 'reviews/createReview'
-// const GET_ALL_REVIEWS = 'reviews/getAllReviews'
-const DEL_REVIEW = 'reviews/deleteReview'
-
-
-
-
-
-export const delReview = (id) => {
-    return {
-        type: DEL_REVIEW,
-        id
-    }
-}
-
-export const oneReview = (review) => {
-    // console.log(review)
-    return {
-        type: SET_REVIEW,
-        review
-    }
-}
+// // const ADD_IMG = 'reviews/addSpotImg'
+// // const CREATE_A_SPOT = 'reviews/createSpot'
+// const SET_REVIEW = 'reviews/createReview'
+// // const GET_ALL_REVIEWS = 'reviews/getAllReviews'
+// const DEL_REVIEW = 'reviews/deleteReview'
 
 
 
 
-// export const loadAllReviews = (reviews) => {
-//     // let reviews = reviewss.Reviews
-//     // (reviews)
+
+// export const delReview = (id) => {
 //     return {
-//         type: GET_ALL_REVIEWS,
-//         reviews
-//     };
+//         type: DEL_REVIEW,
+//         id
+//     }
+// }
+
+// export const oneReview = (review) => {
+//     // console.log(review)
+//     return {
+//         type: SET_REVIEW,
+//         review
+//     }
+// }
+
+
+
+
+// // export const loadAllReviews = (reviews) => {
+// //     // let reviews = reviewss.Reviews
+// //     // (reviews)
+// //     return {
+// //         type: GET_ALL_REVIEWS,
+// //         reviews
+// //     };
+// // };
+
+// export const getAllReviews = (id) => async (dispatch) => {
+//     const response = await csrfFetch(`/api/spots/${id}/reviews`, {
+//         method: 'GET',
+//     });
+//     // console.log(response)
+//     if (response.ok) {
+//         const data = await response.json();
+//         // console.log(data, 'BEFORE LOAD REVIEWS!!!')
+//         dispatch(loadAllReviews(data.reviews));
+//         return response;
+//     }
 // };
 
-export const getAllReviews = (id) => async (dispatch) => {
-    const response = await csrfFetch(`/api/spots/${id}/reviews`, {
-        method: 'GET',
-    });
-    // console.log(response)
-    if (response.ok) {
-        const data = await response.json();
-        // console.log(data, 'BEFORE LOAD REVIEWS!!!')
-        dispatch(loadAllReviews(data.reviews));
-        return response;
-    }
-};
 
 
 
+// export const deleteReview = (id) => async (dispatch) => {
 
-export const deleteReview = (id) => async (dispatch) => {
-
-    const response = await csrfFetch(`/api/reviews/${id}/`, {
-        method: 'DELETE',
-    });
-    //console.log(response)
-    if (response.ok) {
-        const data = await response.json();
-        dispatch(delReview(id));
-        return response;
-    }
-}
-export const createReview = (newreview) => async (dispatch) => {
-    const { id, review, stars } = newreview;
-    // console.log(idxx, '!!!!!!!', review, '!!!!', stars)
-    // console.log(id, review, stars, '***************8')///////missing headers Content-Type: application/json
-    const response = await csrfFetch(`/api/spots/${id}/reviews`, {
-        method: "POST",
-        body: JSON.stringify({
-            review, stars
-        }),
-    });
-    // console.log(response, 'RESPONSE FROM CREATE')
-    if (response.ok) {
-        const data = await response.json();
-        // console.log(data)
-        dispatch(oneReview(data));
-        return response;
-    }
-    // }
-};
+//     const response = await csrfFetch(`/api/reviews/${id}/`, {
+//         method: 'DELETE',
+//     });
+//     //console.log(response)
+//     if (response.ok) {
+//         const data = await response.json();
+//         dispatch(delReview(id));
+//         return response;
+//     }
+// }
+// export const createReview = (newreview) => async (dispatch) => {
+//     const { id, review, stars } = newreview;
+//     // console.log(idxx, '!!!!!!!', review, '!!!!', stars)
+//     // console.log(id, review, stars, '***************8')///////missing headers Content-Type: application/json
+//     const response = await csrfFetch(`/api/spots/${id}/reviews`, {
+//         method: "POST",
+//         body: JSON.stringify({
+//             review, stars
+//         }),
+//     });
+//     // console.log(response, 'RESPONSE FROM CREATE')
+//     if (response.ok) {
+//         const data = await response.json();
+//         // console.log(data)
+//         dispatch(oneReview(data));
+//         return response;
+//     }
+//     // }
+// };
 
 
-const initialState = {};
+// const initialState = {};
 
-const reviewReducer = (state = initialState, action) => {
-    let newState = {}
-    switch (action.type) {
-        case SET_REVIEW:
-            newState.reviews = [...state]
-            // console.log(newState)
-            newState.reviews.push(action.review)
-            // newState.reviews.push(action.Reviews)
-            // const { reviews, ...rest } = state
-            // console.log(newState, '!!!jacobs sodl!!')
+// const reviewReducer = (state = initialState, action) => {
+//     let newState = {}
+//     switch (action.type) {
+//         case SET_REVIEW:
+//             newState.reviews = [...state]
+//             // console.log(newState)
+//             newState.reviews.push(action.review)
+//             // newState.reviews.push(action.Reviews)
+//             // const { reviews, ...rest } = state
+//             // console.log(newState, '!!!jacobs sodl!!')
 
-            // newState.reviews = [action.reviews, ...reviews]
-            // newState = { rest, ...newState }
-            return newState
-        case GET_ALL_REVIEWS:
-            const { reviews, ...rest } = state
-            // console.log(action)
-            // state
-            newState = { ...rest }
-            let newrevs = action.reviews
-            // console.log(newState, newrevs)
-            newState = newrevs
-            // if (state?.reviews) newState.reviews.push(state.reviews)
-            // console.log(newState, '!!!!!!sjahgdajsdajhdbajsdb')
+//             // newState.reviews = [action.reviews, ...reviews]
+//             // newState = { rest, ...newState }
+//             return newState
+//         case GET_ALL_REVIEWS:
+//             const { reviews, ...rest } = state
+//             // console.log(action)
+//             // state
+//             newState = { ...rest }
+//             let newrevs = action.reviews
+//             // console.log(newState, newrevs)
+//             newState = newrevs
+//             // if (state?.reviews) newState.reviews.push(state.reviews)
+//             // console.log(newState, '!!!!!!sjahgdajsdajhdbajsdb')
 
-            return newState
-        case DEL_REVIEW:
-            newState = Object.assign({}, state)
-            newState.reviews = newState.reviews.filter(x => x !== action.id)
-            return newState
-        // case SET_REVIW:
+//             return newState
+//         case DEL_REVIEW:
+//             newState = Object.assign({}, state)
+//             newState.reviews = newState.reviews.filter(x => x !== action.id)
+//             return newState
+//         // case SET_REVIW:
         // console.log(newS2tate, '12312312312321')
         // newState = Object.assign({}, state);
         // newState.reviews.push(action.Reviews)
@@ -135,12 +135,12 @@ const reviewReducer = (state = initialState, action) => {
         //     newState = Object.assign({}, state);
         //     return newState;
 
-        default:
-            return state;
-    }
-};
+//         default:
+//             return state;
+//     }
+// };
 
-export default reviewReducer;
+// export default reviewReducer;
 
 
 

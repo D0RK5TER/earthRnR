@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Light";
+    src: local("earthrnrCerealLight"),
+        url("../../assets/earthrnrCerealLight.ttf") format("truetype");
+}
+
+.spotform {
+    font-family: "Light";
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-color: black;
+    width: 30em;
+  
+}
+
+.spotform label {
+    /* align-self: flex-start; */
+    /* width: 10em; */
+    box-sizing: border-box;
+
+    align-items: center;
+    padding-top: 1em;
+}
+
+.spotform input {
+    /* align-self: center; */
+    box-sizing: border-box;
+    align-items: center;
+    line-height: 2em;
+    border-radius: 1em;
+    width: 27em;
+    text-indent: 1em;
+
+}
+
+.spotform button {
+    /* padding-bottom: 1em; */
+    margin-bottom: 1em;
+    border-radius: 15em;
+    line-height: 2em;
+    width: 25%;
+    font-family: "Light";
+    background-color: #fe5a62;
+    border-color: gray;
+    color: wheat;
+}
+
+.spotform button:hover {
+    /* padding-bottom: 1em; */
+    filter: invert(100%);
+    /* background-color: #fe5a62; */
+    ;
+}

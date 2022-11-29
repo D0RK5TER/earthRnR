@@ -47,10 +47,10 @@ export const changeReview = (review) => {
     };
 };
 
-export const deleteReview = (review) => {
+export const deleteReview = () => {
+    // console.log(review)
     return {
         type: DELETE_REVIEW,
-        review
     }
 };
 
@@ -95,29 +95,26 @@ export const getMyReviews = () => async (dispatch) => {
 }
 
 
-export const createReview = (review) => async (dispatch) => {
-    const { address, city, state, country,
-        name, description, price } = review;
+export const createReview = (reviewz) => async (dispatch) => {
+    const { review, stars, id } = reviewz;
     let lat = 1
     let lng = 1
-    const response = await csrfFetch("/api/reviews", {
+    console.log(review)
+    const response = await csrfFetch(`/api/spots/${id}/reviews`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            address, city, state, country,
-            lat: 1,
-            lng: 1,
-            name, description, price
+            review, stars
         }),
     })
     if (response.ok) {
         let data = await response.json()
-        // getAllREVIEWs() INSTEAD OF THE MAKE REVIEW FOR UPDATE
-        // getOneREVIEW(data.id) INSTEAD OF THE ALL REVIEWS FOR RIGHT PAGE
-        dispatch(makeReview(data))
+        // switched action and reducer for ezload
+        await dispatch(getAllReviews(id))
         return data
     }
 }
+
 export const makeChangeReview = (review) => async (dispatch) => {
     const { id, address, city, state, country, name, description, price } = review;
     const response = await csrfFetch(`/api/reviews/${id}`, {
@@ -138,16 +135,16 @@ export const makeChangeReview = (review) => async (dispatch) => {
 };
 
 
-export const makeDeleteReview = (id) => async (dispatch) => {
-    // console.log(id)
+export const makeDeleteReview = ({ id, spotId }) => async (dispatch) => {
     const response = await csrfFetch(`/api/reviews/${id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
         const data = await response.json();
-        dispatch(deleteReview(data));
-        return data;
+        console.log(data, '!!!!!!!!!!', spotId)
+        await dispatch(getAllReviews(spotId))
+        return data
     }
 }
 
@@ -185,8 +182,8 @@ const reviewsReducer = (state = initialState, action) => {
             return newState;
 
         case DELETE_REVIEW:
-            let del = action.review.id
-            delete newState.reviews[del]
+            // let del = action.review.id
+            // delete newState.reviews[del]
             return newState
         default:
             return state;

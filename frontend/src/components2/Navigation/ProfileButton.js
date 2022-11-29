@@ -10,17 +10,17 @@ import LoginFormModal from '../LoginFormModal';
 import DemoButton from './DemoButton';
 import outline from '../../assets/outline.png';
 
-// import SpotFormModal from '../SpotFormModal';
+import SpotFormModal from '../SpotFormModal';
 
 //take away user so i can use store selector for easier rerender?
 
 function ProfileButton(/*{user}*/{ isLoaded }) {
-  const sessionUser = useSelector(state => state.session.user);
   // const sessionUser = getSessionUser(state);
-
+  
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const history = useHistory();
+  const sessionUser = useSelector(state => state.session.user);
 
   const openMenu = () => {
     if (showMenu) return;
@@ -34,9 +34,12 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
       setShowMenu(false);
     };
     //// had to take this out before to make sure that drop didnt close
-    // document.addEventListener('click', closeMenu);
+    let outside = document.getElementById('newbody')
+    outside.addEventListener('click', closeMenu);
+    // document.getElementsByClassName('profile-dropbar')[0]
+    // console.log(document.getElementById('newbody'))
     ///below too
-    // return () => document.removeEventListener("click", closeMenu);
+    return () => outside.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
   const handleLogout = (e) => {
@@ -73,7 +76,7 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
                 </div>
                 <span classname='lamecss' style={{ paddingTop: '0px', backgroundColor: 'white' }}>
                   <div style={{ paddingTop: '0px', width: '100%', 'font-size': '1.5em', borderRadius: '0', textAlign: 'left' }}>
-                    {/* <SpotFormModal style={{ width: '100%', textAlign: 'left' }} /> */}
+                    <SpotFormModal style={{ width: '100%', textAlign: 'left' }} />
                   </div>
                   <div style={{ margin: '0px' }}>
                     <button classname='logoutbutt' onClick={handleLogout} style={{ width: '100%', textAlign: 'left' }}

@@ -4,13 +4,13 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getOneSpot } from '../../store/spots2';
-import { getAllReviews } from '../../store/reviews2';
+import { getAllReviews, deleteReview } from '../../store/reviews2';
 // import CreateReviewForm from '../CreateReviewModal';
 import './OneSpotIndex.css'
 import star from '../../assets/star.png';
 import quest from '../../assets/quest.jpg';
-// import CreateReviewFormModal from '../CreateReviewModal';
-// import DeleteReviewFormModal from '../DeleteReviewModal';
+import CreateReviewFormModal from '../CreateReviewModal';
+import DeleteReviewFormModal from '../DeleteReviewModal';
 // import background from '../../assets/background.png'
 // import background2 from '../../assets/background2.png'
 // import reaviewshead from '../../assets/reaviewshead.png'
@@ -33,7 +33,8 @@ const OneSpotIndex = () => {
   let theSpot = useSelector(state => state.spots.onespot)
   let thereviews = useSelector(state => state.reviews.onespot)
   useEffect(() => {
-    dispatch(getOneSpot(id)).then(dispatch(getAllReviews(id)))
+    dispatch(getOneSpot(id))
+      dispatch(getAllReviews(id))
   }, [id])
 
 
@@ -73,13 +74,11 @@ const OneSpotIndex = () => {
                 marginTop: '2em', flexDirection: 'row', display: 'flex',
                 justifyContent: 'space-around'
 
-
               }}>
                 <img src={a?.url || quest} className='spotImage'
                   style={{
                     'object-fit': 'contain',
                     // border: '3px',
-
                     maxHeight: '40%', maxWidth: '70%'
                   }} />
 
@@ -140,169 +139,169 @@ const OneSpotIndex = () => {
         )
       }
       // console.log(thereviews)
-      else console.log(thereviews);reviewsCont = (
-      <div className='reviewscontainer'>
-        {(Object.values(thereviews)?.map(({ id, stars, review, userId, createdAt, User }) => (
-          <div style={{
-            fontFamily: 'Li',
-            border: '2px solid black',
-            borderRadius: '2em',
-            'width': '30%', marginLeft: '1em',
-            marginTop: '1em', marginBottom: '2em',
-            paddingLeft: '2em'
-          }}>
-            {stars} / 5 stars
+      else console.log(thereviews); reviewsCont = (
+        <div className='reviewscontainer'>
+          {(Object.values(thereviews)?.map(({ id, stars, review, userId, createdAt, User, spotId }) => (
             <div style={{
-              fontFamily: 'Light',
-              fontSize: '1em',
-              paddingLeft: '1em',
-              justifyContent: 'space-between'
-            }}
-            >
-              {User?.firstName}
-              {/* <div>
-                  {userId === user?.id && <DeleteReviewFormModal id={id} style={{
+              fontFamily: 'Li',
+              border: '2px solid black',
+              borderRadius: '2em',
+              'width': '30%', marginLeft: '1em',
+              marginTop: '1em', marginBottom: '2em',
+              paddingLeft: '2em'
+            }}>
+              {stars} / 5 stars
+              <div style={{
+                fontFamily: 'Light',
+                fontSize: '1em',
+                paddingLeft: '1em',
+                justifyContent: 'space-between'
+              }}
+              >
+                {User?.firstName}
+                <div>
+                  {userId === user?.id && <DeleteReviewFormModal id={id} spotId={spotId} style={{
                     paddingLeft: '3em'
                   }}
                   />}
-                </div> */}
-            </div>
-            <div style={{
-              fontSize: '.5em',
-              paddingLeft: '4em',
-            }}>
-              posted {getAge(createdAt)} days ago
-            </div>
-            <div style={{
-              marginLeft: '1em', marginTop: '1em',
-              fontSize: '.8em', width: '80%', paddingBottom: '.6em',
-              fontFamily: 'Li'
-            }}>
-              {review}
+                </div>
+              </div>
+              <div style={{
+                fontSize: '.5em',
+                paddingLeft: '4em',
+              }}>
+                posted {getAge(createdAt)} days ago
+              </div>
+              <div style={{
+                marginLeft: '1em', marginTop: '1em',
+                fontSize: '.8em', width: '80%', paddingBottom: '.6em',
+                fontFamily: 'Li'
+              }}>
+                {review}
+              </div>
+
             </div>
 
+          )))}
+        </div>
+      )
+    }
+    // console.log(buttonVis)
+  }
+  // took out thereviews.length &&
+  return theSpot && (
+
+    <div className="swap-down2 bigstyle" style={{ 'margin-top': '6em' }}>
+      <div>
+        <div>
+        </div>
+      </div>
+      <div className='titlearea' >
+
+        <div className='nameandbutt namez' style={{ 'display': 'inline-flex' }}>
+          <span>
+            {theSpot.name}
+          </span>
+
+          <div>
+            {theSpot.description}
           </div>
 
-        )))}
-      </div>
-    )
-  }
-  // console.log(buttonVis)
-}
-// took out thereviews.length &&
-return theSpot && (
-
-  <div className="swap-down2 bigstyle" style={{ 'margin-top': '6em' }}>
-    <div>
-      <div>
-      </div>
-    </div>
-    <div className='titlearea' >
-
-      <div className='nameandbutt namez' style={{ 'display': 'inline-flex' }}>
-        <span>
-          {theSpot.name}
-        </span>
-
-        <div>
-          {theSpot.description}
         </div>
+        <div className='descript'>
+          <div className='nameandbutt22'>
+            <div className='starcont' style={{
+              'display': 'inline-flex',
+              alignItems: 'baseline',
+              justifyContent: 'space-evenly'
 
-      </div>
-      <div className='descript'>
-        <div className='nameandbutt22'>
-          <div className='starcont' style={{
-            'display': 'inline-flex',
-            alignItems: 'baseline',
-            justifyContent: 'space-evenly'
+            }}>
+              <span className='ratin' style={{
 
-          }}>
-            <span className='ratin' style={{
+                fontFamily: 'Bold',
+                fontSize: '2em'
+              }} >
+                <img src={star} className='starspot' id='starrr' />
+                {theSpot.avgStarRating}
+              </span>
+              <span className='ratin' id='rat' style={{
+                // "text-decoration": "none",
+                fontFamily: 'Bold',
+                fontSize: '2em',
+                paddingLeft: '4em',
+                // textDecoration: null
+              }}><div style={{ paddingLeft: '.5em', fontFamily: 'Bold' }}>
 
-              fontFamily: 'Bold',
-              fontSize: '2em'
-            }} >
-              <img src={star} className='starspot' id='starrr' />
-              {theSpot.avgStarRating}
-            </span>
-            <span className='ratin' id='rat' style={{
-              // "text-decoration": "none",
-              fontFamily: 'Bold',
-              fontSize: '2em',
-              paddingLeft: '4em',
-              // textDecoration: null
-            }}><div style={{ paddingLeft: '.5em', fontFamily: 'Bold' }}>
+                  {theSpot.numReviews}
 
-                {theSpot.numReviews}
-
-                reviews
-              </div>
-            </span >
-            <span style={{ paddingLeft: '8em' }}>
-            </span>
-            <div className='locationinfo' style={{ fontSize: '2em', fontFamily: 'Light' }}>
-              <div style={{}}>
-                {theSpot.city}
-                <div style={{}} >
-                  {theSpot.state}, {theSpot.country}
+                  reviews
+                </div>
+              </span >
+              <span style={{ paddingLeft: '8em' }}>
+              </span>
+              <div className='locationinfo' style={{ fontSize: '2em', fontFamily: 'Light' }}>
+                <div style={{}}>
+                  {theSpot.city}
+                  <div style={{}} >
+                    {theSpot.state}, {theSpot.country}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-      </div>
-    </div>
-
-    <div>
-      <div style={{}}>
-        {sessionLinks}
-
-      </div>
-    </div>
-    <div className='belowimg'>
-      <div className='imgformat1'>
-        Hosted by {theSpot.User.firstName}
-        <div style={{ 'margin-top': '1em' }}>
-          {/* <img src={background} className='background' /> */}
         </div>
       </div>
-    </div>
-    <div>
+
+      <div>
+        <div style={{}}>
+          {sessionLinks}
+
+        </div>
+      </div>
       <div className='belowimg'>
         <div className='imgformat1'>
-          {theSpot.description}
-          {/* <div style={{ 'margin-top': '2em' }}>
+          Hosted by {theSpot.User.firstName}
+          <div style={{ 'margin-top': '1em' }}>
+            {/* <img src={background} className='background' /> */}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className='belowimg'>
+          <div className='imgformat1'>
+            {theSpot.description}
+            {/* <div style={{ 'margin-top': '2em' }}>
               <img src={background2} className='background' />
             </div> */}
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      <div className='belowimg'>
-        <div className='imgformat1'>
-          <div className='starcont'>
-            <div className='rating' >
-              <img src={star} className='starspot' style={{ 'height': "80%", 'width': '10%' }} />
-              {theSpot.avgStarRating}
-              <div style={{ paddingLeft: '2em' }}>
-                {theSpot.numReviews} reviews
+      <div>
+        <div className='belowimg'>
+          <div className='imgformat1'>
+            <div className='starcont'>
+              <div className='rating' >
+                <img src={star} className='starspot' style={{ 'height': "80%", 'width': '10%' }} />
+                {theSpot.avgStarRating}
+                <div style={{ paddingLeft: '2em' }}>
+                  {theSpot.numReviews} reviews
+                </div>
               </div>
             </div>
+            <div>
+              {/* <img src={reaviewshead} className='background' /> */}
+            </div>
+            {buttonVis && !alreadyreviewed.includes(user.id) && < CreateReviewFormModal id={id} />}
           </div>
-          <div>
-            {/* <img src={reaviewshead} className='background' /> */}
-          </div>
-          {/* {buttonVis && !alreadyreviewed.includes(user.id) && < CreateReviewFormModal id={id} />} */}
+        </div>
+        <div className='reviewscontainer'>
+          {reviewsCont}
         </div>
       </div>
-      <div className='reviewscontainer'>
-        {reviewsCont}
-      </div>
     </div>
-  </div>
 
-)
+  )
 }
 
 export default OneSpotIndex

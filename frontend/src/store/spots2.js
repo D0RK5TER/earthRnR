@@ -96,7 +96,7 @@ export const getMySpots = () => async (dispatch) => {
 
 export const createSpot = (spot) => async (dispatch) => {
     const { address, city, state, country,
-        name, description, price } = spot;
+        name, description, price, latt } = spot;
     let lat = 1
     let lng = 1
     const response = await csrfFetch("/api/spots", {
@@ -111,6 +111,18 @@ export const createSpot = (spot) => async (dispatch) => {
     })
     if (response.ok) {
         let data = await response.json()
+        // await csrfFetch()
+        console.log(data.id)
+        let nextresponse = await csrfFetch(`/api/spots/${latt}`, {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                address, city, state, country,
+                lat: 1,
+                lng: 1,
+                name, description, price
+            }),
+        })
         // getAllSpots() INSTEAD OF THE MAKE SPOT FOR UPDATE
         // getOneSpot(data.id) INSTEAD OF THE ALL SPOTS FOR RIGHT PAGE
         dispatch(makeSpot(data))
