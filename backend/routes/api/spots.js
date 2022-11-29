@@ -130,7 +130,7 @@ router.get('/', async (req, res) => {
             isNaN(+maxPrice) ? maxPrice = 100000000 :
                 maxPrice
     } else maxPrice = 10000000
-    console.log(maxPrice, page, size)
+    // console.log(maxPrice, page, size)
     if (minPrice) {
         minPrice = +minPrice
         !minPrice ? minPrice = 0 :
