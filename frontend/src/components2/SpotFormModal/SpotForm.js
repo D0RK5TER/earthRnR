@@ -33,7 +33,6 @@ function SpotForm({ setShowModal }) {
                 if (data.message) setErrors([data.message]);
             }
             else {
-                // const data = await res.json()
                 history.push(`/${res[0]}`)
             }
         }

@@ -5,8 +5,8 @@ const LOAD_ONE_SPOT = 'spots/loadOneSpot'
 const LOAD_MY_SPOTS = 'spots/loadMySpots'
 
 const MAKE_SPOT = 'spots/makeSpot'
-const CHANGE_SPOT = 'spots/changeSpot'
-const DELETE_SPOT = 'spots/deleteSpot'
+// const CHANGE_SPOT = 'spots/changeSpot'
+// const DELETE_SPOT = 'spots/deleteSpot'
 
 //////// ACTIONS /////////// ACTIONS ////////////
 export const loadAllSpots = (spots) => {
@@ -38,21 +38,6 @@ export const makeSpot = (spot) => {
     };
 };
 
-export const changeSpot = (spot) => {
-    //rather do LOAD MY SPOTS here // by id
-    return {
-        type: CHANGE_SPOT,
-        spot
-    };
-};
-
-export const deleteSpot = (spot) => {
-    return {
-        type: DELETE_SPOT,
-        spot
-    }
-};
-
 //////////////////////////////////////////////////////////////////////
 
 export const getAllSpots = () => async (dispatch) => {
@@ -66,7 +51,6 @@ export const getAllSpots = () => async (dispatch) => {
         console.log(data)
         dispatch(loadAllSpots(data));
         return data;
-        // return response; changed to data for check
     }
 };
 export const getOneSpot = (id) => async (dispatch) => {
@@ -78,7 +62,6 @@ export const getOneSpot = (id) => async (dispatch) => {
         const data = await response.json();
         dispatch(loadOneSpot(data));
         return data;
-        // return response; changed to data for check
     }
 };
 
@@ -92,7 +75,6 @@ export const getMySpots = () => async (dispatch) => {
         const data = await response.json();
         dispatch(loadMySpots(data));
         return data
-        // return response; changed to data for check
     }
 }
 
@@ -100,9 +82,6 @@ export const getMySpots = () => async (dispatch) => {
 export const createSpot = (spot) => async (dispatch) => {
     const { address, city, state, country,
         name, description, price, latt } = spot;
-    // let lat = 1
-    // let lng = 1
-    console.log('about to create')
     const response = await csrfFetch("/api/spots", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
@@ -113,12 +92,8 @@ export const createSpot = (spot) => async (dispatch) => {
             name, description, price
         }),
     })
-    // console.log(response)
-    //////need to convert thunk to spotimage/////
     if (response.ok) {
         let data = await response.json()
-        // await csrfFetch()
-        // console.log(data.id)
         let nextresponse = await csrfFetch(`/api/spots/${data.id}/images`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
@@ -145,9 +120,7 @@ export const makeChangeSpot = (spot) => async (dispatch) => {
         }),
     });
     if (response.ok) {
-        const data = await response.json();
-        dispatch(changeSpot(data))
-        return data
+        return dispatch(getAllSpots())
     }
 };
 
@@ -159,9 +132,7 @@ export const makeDeleteSpot = (id) => async (dispatch) => {
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-        const data = await response.json();
-        dispatch(deleteSpot(data));
-        return data;
+        return dispatch(getAllSpots())
     }
 }
 
@@ -196,13 +167,13 @@ const loggedReducer = (state = initialState, action) => {
         case MAKE_SPOT:
             newState.newspot = action.spot
             return newState;
-        case CHANGE_SPOT:
-            newState.onespot = action.spot
-            return newState;
-        case DELETE_SPOT:
-            let del = action.spot.id
-            delete newState.spots[del]
-            return newState
+        // case CHANGE_SPOT:
+        //     newState.onespot = action.spot
+        //     return newState;
+        // case DELETE_SPOT:
+        //     let del = action.spot.id
+        //     delete newState.spots[del]
+        //     return newState
         default:
             return state;
     }

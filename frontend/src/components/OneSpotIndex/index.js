@@ -194,7 +194,7 @@ const OneSpotIndex = () => {
   }
   return theSpot && thereviews.length && (
 
-    <div className="swap-down2 bigstyle" style={{ 'margin-top': '6em' }}>
+    <div className="swap-down2 bigstyle" style={{ marginTop: '6em' }}>
       <div>
         <div>
         </div>
@@ -265,7 +265,7 @@ const OneSpotIndex = () => {
       <div className='belowimg'>
         <div className='imgformat1'>
           Hosted by {theSpot.User.firstName}
-          <div style={{ 'margin-top': '1em' }}>
+          <div style={{ marginTop: '1em' }}>
             <img src={background} className='background' />
           </div>
         </div>
@@ -274,7 +274,7 @@ const OneSpotIndex = () => {
         <div className='belowimg'>
           <div className='imgformat1'>
             {theSpot.description}
-            <div style={{ 'margin-top': '2em' }}>
+            <div style={{ marginTop: '2em' }}>
               <img src={background2} className='background' />
             </div>
           </div>

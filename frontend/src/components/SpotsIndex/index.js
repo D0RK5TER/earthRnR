@@ -57,7 +57,7 @@ function SpotsIndex({ isLoaded }) {
                 <div style={{ display: 'flex', flexWrap: 'wrap', padding: '1em', 'margin-left': '3em' }}>
                     {spots && (spots.map(({ previewImage, name, id, ownerId, avgRating, createdAt, city, state, price }) => (
                         <>
-                            <div className="photocontaineredit" style={{ 'margin-top': '3em', marginBottom: '0', padding: '1em', paddingBottom: '0' }}>
+                            <div className="photocontaineredit" style={{ marginTop: '3em', marginBottom: '0', padding: '1em', paddingBottom: '0' }}>
                                 <NavLink to={`/spots/${id}`} style={{ 'text-decoration': 'none' }} >
 
                                     <img className="photo" alt="profile-button" src={previewImage} style={{ 'border-radius': '1em' }} />
@@ -73,15 +73,15 @@ function SpotsIndex({ isLoaded }) {
                                         <img src={star} className='starspot' style={{ height: '1em' }} />  {avgRating}
                                     </div>
                                 </div>
-                                <div style={{ 'margin-top': '0', padding: '.2em' }}>
+                                <div style={{ marginTop: '0', padding: '.2em' }}>
 
-                                    <div style={{ 'margin-top': '0', paddingTop: '.1em', paddingBottom: '.4em', paddingLeft: '.4em', fontFamily: 'none' }}>
+                                    <div style={{ marginTop: '0', paddingTop: '.1em', paddingBottom: '.4em', paddingLeft: '.4em', fontFamily: 'none' }}>
                                         Added {getAge(createdAt.toString())} Days ago
                                     </div>
-                                    <div style={{ 'margin-top': '0', paddingLeft: '.4em', lineHeight: '0', fontFamily: 'none' }}>
+                                    <div style={{ marginTop: '0', paddingLeft: '.4em', lineHeight: '0', fontFamily: 'none' }}>
                                         {name}
                                     </div>
-                                    <div style={{ 'margin-top': '0', paddingTop: '.8em', fontSize: '1.3em', paddingLeft: '1em' }}>
+                                    <div style={{ marginTop: '0', paddingTop: '.8em', fontSize: '1.3em', paddingLeft: '1em' }}>
                                         ${price}   night
                                     </div>
                                 </div>

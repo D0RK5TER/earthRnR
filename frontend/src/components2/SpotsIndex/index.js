@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 // import { getAllSpots, loadSpots } from '../../store/session';
-// import EditSpotFormModal from '../EditSpotFormModal';
+import EditSpotFormModal from '../EditSpotFormModal';
 import { getAllSpots } from '../../store/spots2';
 
 // import OneSpotIndex from '../OneSpotIndex'
@@ -37,16 +37,11 @@ function SpotsIndex({ isLoaded }) {
     useEffect(() => {
 
         dispatch(getAllSpots());
-        
+
     }, [dispatch]);
 
     if (!spots) return null;
 
-    const handleClick = () => {
-        // return (<Redirect className='spot-link' to={`/spots/${id}`}>)
-    }
-
-    // let previewImage
     if (spots) {
         for (let spa in spots) {
             if (spa.previewImage === 'No preview') spa.previewImage = quest
@@ -58,34 +53,34 @@ function SpotsIndex({ isLoaded }) {
     //     let{ previewImage, name, id, ownerId, avgRating, createdAt, city, state, price } = spot
     return (<div className="mainContent" >
         <div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', padding: '1em', 'margin-left': '3em' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', padding: '1em', marginLeft: '3em' }}>
                 {spots && (Object.values(spots).map(({ previewImage, name, id, ownerId, avgRating, createdAt, city, state, price }) => (
                     <>
-                        <div className="photocontaineredit" style={{ 'margin-top': '3em', marginBottom: '0', padding: '1em', paddingBottom: '0' }}>
-                            <NavLink to={`/${id}`} style={{ 'text-decoration': 'none' }} >
+                        <div className="photocontaineredit" style={{ marginTop: '3em', marginBottom: '0', padding: '1em', paddingBottom: '0' }}>
+                            <NavLink to={`/${id}`} style={{ textDecoration: 'none' }} >
 
-                                <img className="photo" alt="profile-button" src={previewImage} style={{ 'border-radius': '1em' }} />
+                                <img className="photo" alt="profile-button" src={previewImage} style={{ borderRadius: '1em' }} />
 
                             </NavLink>
-                            <div className="namearea" style={{ display: 'flex', 'justify-content': 'space-between' }}>
+                            <div className="namearea" style={{ display: 'flex', justifyContent: 'space-between' }}>
                                 <div>
                                     {city}     ,   {state}
 
                                 </div>
-                                {/* {user && user.id === ownerId && <EditSpotFormModal idx={id} />} */}
+                                {user && user.id === ownerId && <EditSpotFormModal idx={id} />}
                                 <div>
                                     <img src={star} className='starspot' style={{ height: '1em' }} />  {avgRating}
                                 </div>
                             </div>
-                            <div style={{ 'margin-top': '0', padding: '.2em' }}>
+                            <div style={{ marginTop: '0', padding: '.2em' }}>
 
-                                <div style={{ 'margin-top': '0', paddingTop: '.1em', paddingBottom: '.4em', paddingLeft: '.4em', fontFamily: 'none' }}>
+                                <div style={{ marginTop: '0', paddingTop: '.1em', paddingBottom: '.4em', paddingLeft: '.4em', fontFamily: 'none' }}>
                                     Added {getAge(createdAt.toString())} Days ago
                                 </div>
-                                <div style={{ 'margin-top': '0', paddingLeft: '.4em', lineHeight: '0', fontFamily: 'none' }}>
+                                <div style={{ marginTop: '0', paddingLeft: '.4em', lineHeight: '0', fontFamily: 'none' }}>
                                     {name}
                                 </div>
-                                <div style={{ 'margin-top': '0', paddingTop: '.8em', fontSize: '1.3em', paddingLeft: '1em' }}>
+                                <div style={{ marginTop: '0', paddingTop: '.8em', fontSize: '1.3em', paddingLeft: '1em' }}>
                                     ${price}   night
                                 </div>
                             </div>
