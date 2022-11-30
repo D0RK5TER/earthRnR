@@ -5,7 +5,7 @@ import { createSpot } from '../../store/spots2';
 // import { createImage } from "../../store/review";
 import './SpotForm.css'
 function SpotForm({ setShowModal }) {
-    const user = useSelector(state => state.session.user.id)
+    // const user = useSelector(state => state.session.user.id)
     const dispatch = useDispatch();
     const history = useHistory()
     const [address, setAddress] = useState("")
@@ -20,78 +20,25 @@ function SpotForm({ setShowModal }) {
 
 
     const handleSubmit = async (e) => {
-
-        // let url = latt
         e.preventDefault();
         setErrors([]);
-        //console.log(setShowModal)
+
         return dispatch(createSpot({
             address, city, state, country,
             name, description, price, latt
-        }))
-        // .then(dispatch())
-        .then(setShowModal(false))
-        .catch(async (res) => {
-            //console.log(res)
-            const data = await res.json()
-            if (data.message) setErrors([data.message]);
+        })).then(async (res) => {
+            console.log(res)
+            if (!res[1].ok) {
+                const data = await res[1].json()
+                if (data.message) setErrors([data.message]);
+            }
+            else {
+                // const data = await res.json()
+                history.push(`/${res[0]}`)
+            }
         }
-        )
+        ).then(setShowModal(false))
     }
-        // .then(async (res) => {
-        //     const newres = await res.json()
-        //         (newres)
-        //     // console.log(res)
-        //     let newurl = res.url
-        //     newurl = newurl.split('/api/spots/').pop()
-        //     // console.log(newurl.slice(0, 2))
-        //     // let newURL = res.url.slice(0, -7)
-        //     history.push(`/spots/${newurl.slice(0, 2)}`)
-
-        // })
-        // .then(setShowModal(false))
-
-
-        // .then(history.push('./spots/'))
-        // console.log(ans)
-
-    // }
-    // return  await dispatch(createSpot({
-    //     user, address, city, state, country,
-    //     name, description, price
-    // })).then(async (res) => {
-    //     // const data = await res.json()
-    //     console.log(res)
-    //     if (!res.ok) {
-    //         // const data = res.json()
-    //         if (data.message) setErrors([data.message]);
-    //     }
-    //     // else {
-    //     // console.log(data)
-    // let id = await res.json().id
-    // else dispatch(createImage(url, id))
-    //     .catch(async (rest) => {
-
-    //         console.log(rest)
-
-    //     })
-    // }
-
-    //  dispatch(createImage({}))
-    // else dispatch(createImage({ url: latt, id: res.id }))
-    // })
-    // return
-
-    // .then(async (res) => {
-    //     // const data = await res.json()
-    //     console.log(res)
-
-
-    // })
-    // .then((res) => dispatch(createImage({ url: latt, id: res.id })))
-
-    // }
-
     return (
         <form onSubmit={handleSubmit} className='spotform' >
             <ul>

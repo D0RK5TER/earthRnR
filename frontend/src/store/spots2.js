@@ -1,5 +1,5 @@
 import { csrfFetch } from './csrf';
-
+// import { useHistory } from 'react-router-dom';
 const LOAD_ALL_SPOTS = 'spots/loadAllSpots'
 const LOAD_ONE_SPOT = 'spots/loadOneSpot'
 const LOAD_MY_SPOTS = 'spots/loadMySpots'
@@ -88,7 +88,7 @@ export const getMySpots = () => async (dispatch) => {
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-        
+
         const data = await response.json();
         dispatch(loadMySpots(data));
         return data
@@ -102,6 +102,7 @@ export const createSpot = (spot) => async (dispatch) => {
         name, description, price, latt } = spot;
     // let lat = 1
     // let lng = 1
+    console.log('about to create')
     const response = await csrfFetch("/api/spots", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
@@ -112,30 +113,23 @@ export const createSpot = (spot) => async (dispatch) => {
             name, description, price
         }),
     })
+    // console.log(response)
     //////need to convert thunk to spotimage/////
     if (response.ok) {
         let data = await response.json()
         // await csrfFetch()
-        console.log(data.id)
+        // console.log(data.id)
         let nextresponse = await csrfFetch(`/api/spots/${data.id}/images`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 url: latt,
                 preview: true,
-
-                // address, city, state, country,
-                // lat: 1,
-                // lng: 1,
-                // name, description, price
             }),
         });
-        if(nextresponse.ok){
-            dispatch(makeSpot(data))
-            return data
+        if (nextresponse.ok) {
+            return [data.id, response]
         }
-        // getAllSpots() INSTEAD OF THE MAKE SPOT FOR UPDATE
-        // getOneSpot(data.id) INSTEAD OF THE ALL SPOTS FOR RIGHT PAGE
     }
 }
 export const makeChangeSpot = (spot) => async (dispatch) => {
