@@ -28,7 +28,8 @@ function SpotForm({ setShowModal }) {
         return dispatch(createSpot({
             address, city, state, country,
             name, description, price, latt
-        })).then(dispatch())
+        }))
+        // .then(dispatch())
         .then(setShowModal(false))
         .catch(async (res) => {
             //console.log(res)

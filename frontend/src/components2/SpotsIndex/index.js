@@ -35,7 +35,9 @@ function SpotsIndex({ isLoaded }) {
     let spots = useSelector(state => state.spots.allspots);
 
     useEffect(() => {
+
         dispatch(getAllSpots());
+        
     }, [dispatch]);
 
     if (!spots) return null;

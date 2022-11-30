@@ -29,7 +29,7 @@ function App() {
         <>
             <Navigation isLoaded={isLoaded} />
             <div id='newbody'>
-                <h1>HEY</h1>
+                {/* <h1>HEY</h1> */}
                 {/* {isLoaded && (  */}
                     <Switch>
                         <Route exact path='/'>
