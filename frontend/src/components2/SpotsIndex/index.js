@@ -1,6 +1,6 @@
 
-import { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 // import { getAllSpots, loadSpots } from '../../store/session';
 import EditSpotFormModal from '../EditSpotFormModal';
@@ -29,16 +29,19 @@ function getAge(dateString) {
     return m;
 }
 function SpotsIndex({ isLoaded }) {
+    const history = useHistory();
 
     const dispatch = useDispatch();
     let user = useSelector(state => state.session.user)
     let spots = useSelector(state => state.spots.allspots);
+    let [min, setMin] = useState('30')
+    let [max, setMax] = useState('500')
+    let pagination
 
     useEffect(() => {
 
-        dispatch(getAllSpots());
-
-    }, [dispatch]);
+        dispatch(getAllSpots(''));
+    }, []);
 
     if (!spots) return null;
 
@@ -47,14 +50,16 @@ function SpotsIndex({ isLoaded }) {
             if (spa.previewImage === 'No preview') spa.previewImage = quest
         }
     }
+
     // console.log(spots)
     // console.log(Object.values(spots))
     // {spots && for (let spot in spots)(
     //     let{ previewImage, name, id, ownerId, avgRating, createdAt, city, state, price } = spot
-    return (<div className="mainContent" >
+    return min && spots && (<div className="mainContent" >
         <div>
+
             <div style={{ display: 'flex', flexWrap: 'wrap', padding: '1em', marginLeft: '3em' }}>
-                {spots && (Object.values(spots).map(({ previewImage, name, id, ownerId, avgRating, createdAt, city, state, price }) => (
+                {spots && Object.values(spots).length ? (Object.values(spots).map(({ previewImage, name, id, ownerId, avgRating, createdAt, city, state, price }) => (
                     <>
                         <div className="photocontaineredit" style={{ marginTop: '3em', marginBottom: '0', padding: '1em', paddingBottom: '0' }}>
                             <NavLink to={`/${id}`} style={{ textDecoration: 'none' }} >
@@ -86,7 +91,25 @@ function SpotsIndex({ isLoaded }) {
                             </div>
                         </div>
                     </>
-                )))
+                ))) :
+                    (<>
+                        <div>
+
+                            <span>
+
+                                <h1>Sorry!</h1>
+                            </span>
+                            <span>
+
+                                <h2>No homes meet your specifications</h2>
+                            </span>
+                            <span>
+
+                                <h6>Maybe don't care as much?</h6>
+                            </span>
+                        </div>
+                    </>
+                    )
                 }
             </div >
         </div >

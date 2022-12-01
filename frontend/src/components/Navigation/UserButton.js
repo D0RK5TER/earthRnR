@@ -62,6 +62,7 @@ function UserButton({ isLoaded }) {
     return user && (
         <div className='dropbar' style={{ display: 'flex' }}>
             <div className='dropbarformat' style={{ backgroundColor: 'white' }}>
+                
                 <button onClick={openMenu} className='profilebutt'>
                     making it bigger
                 </button>

@@ -32,10 +32,11 @@ const OneSpotIndex = () => {
   let user = useSelector(state => state.session.user)
   let theSpot = useSelector(state => state.spots.onespot)
   let thereviews = useSelector(state => state.reviews.onespot)
+  
+
   useEffect(() => {
-    // dispatch(getOneSpot(id))
-    dispatch(getAllReviews(id)).then(dispatch(getOneSpot(id)))
-    // console.log(JSON.parse(JSON.stringify(hey)), '!!!!!!!')
+    dispatch(getAllReviews(id))
+    dispatch(getOneSpot(id)) // .then(dispatch(getOneSpot(id)))
   }, [id])
 
 
@@ -47,9 +48,11 @@ const OneSpotIndex = () => {
   let previewImage
   let sessionLinks
 
-  if (theSpot === undefined || thereviews === undefined) {
+  if (theSpot === undefined || thereviews === undefined || id === undefined) {
     sessionLinks = (<div> hey</div>)
-  } else if (theSpot.id !== +id) {
+  } else if (!theSpot || !id > 0) {
+    theSpot = null
+  } else if (theSpot && theSpot?.id !== +id) {
     theSpot = null
   }
   else {
@@ -189,7 +192,7 @@ const OneSpotIndex = () => {
     // console.log(buttonVis)
   }
   // took out thereviews.length &&
-  return theSpot && (
+  return id > 0 && theSpot && (
 
     <div className="swap-down2 bigstyle" style={{ marginTop: '6em' }}>
       <div>
@@ -292,7 +295,7 @@ const OneSpotIndex = () => {
             <div>
               {/* <img src={reaviewshead} className='background' /> */}
             </div>
-            { !alreadyreviewed.includes(user.id) && user.id!==theSpot.ownerId && < CreateReviewFormModal id={id} />}
+            {!alreadyreviewed.includes(user?.id) && user?.id !== theSpot?.ownerId && < CreateReviewFormModal id={id} />}
           </div>
         </div>
         <div className='reviewscontainer'>

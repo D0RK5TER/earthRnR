@@ -16,7 +16,7 @@ import SpotFormModal from '../SpotFormModal';
 
 function ProfileButton(/*{user}*/{ isLoaded }) {
   // const sessionUser = getSessionUser(state);
-  
+
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const history = useHistory();
@@ -34,12 +34,27 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
       setShowMenu(false);
     };
     //// had to take this out before to make sure that drop didnt close
+    // let outside = document.querySelector('root')
+    // const myElement = document.getElementById('profile-dropdown');
+    // let inside = document.querySelectorAll('.profile-dropdown')
+    // console.log(inside[0].children)
     let outside = document.getElementById('newbody')
-    outside.addEventListener('click', closeMenu);
+    outside.addEventListener('click', closeMenu)
+    let bar = document.getElementById('topleft')
+    let foo = document.getElementById('topmid')
+    bar.addEventListener('click', closeMenu)
+    foo.addEventListener('click', closeMenu)
+    // for (let c of bar.children) console.log(c)
+    console.log(foo, bar)
+    // inside.removeEventListener("click", closeMenu);
+    // for (const child of myElement.children) {
+    //   child.removeEventListener("click", closeMenu);
+    // }
+    // })
     // document.getElementsByClassName('profile-dropbar')[0]
     // console.log(document.getElementById('newbody'))
     ///below too
-    return () => outside.removeEventListener("click", closeMenu);
+    return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
   const handleLogout = (e) => {
@@ -59,8 +74,8 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
             {showMenu && (
               <div className="profile-dropdown" style={{
                 width: '13em',
-                'border-style': 'solid',
-                'border-width': '1px',
+                borderStyle: 'solid',
+                borderWidth: '1px',
                 overflow: 'hidden',
                 borderRadius: '2em'
               }}>
@@ -74,12 +89,12 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
                     fontSize: '60%', marginTop: '1',
                   }}>{sessionUser.email}</span>
                 </div>
-                <span classname='lamecss' style={{ paddingTop: '0px', backgroundColor: 'white' }}>
-                  <div style={{ paddingTop: '0px', width: '100%', 'font-size': '1.5em', borderRadius: '0', textAlign: 'left' }}>
+                <span className='lamecss' style={{ paddingTop: '0px', backgroundColor: 'white' }}>
+                  <div style={{ paddingTop: '0px', width: '100%', fontSize: '1.5em', borderRadius: '0', textAlign: 'left' }}>
                     <SpotFormModal style={{ width: '100%', textAlign: 'left' }} />
                   </div>
                   <div style={{ margin: '0px' }}>
-                    <button classname='logoutbutt' onClick={handleLogout} style={{ width: '100%', textAlign: 'left' }}
+                    <button className='logoutbutt' onClick={handleLogout} style={{ width: '100%', textAlign: 'left' }}
                     >
                       Log Out
                     </button>

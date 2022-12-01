@@ -161,7 +161,7 @@ module.exports = {
         lng: -122.901507,
         name: 'Arkos Arena',
         description: 'Beautiful views of a well manicured face.',
-        price: 104.12
+        price: 74.12
       },
       {
         ownerId: 5,
@@ -173,7 +173,7 @@ module.exports = {
         lng: -122.901507,
         name: 'Jade Palace',
         description: 'Beautiful greenery in every corner',
-        price: 105.12
+        price: 175.12
       }, {
         ownerId: 6,
         address: '600 Pacific St',
@@ -184,7 +184,7 @@ module.exports = {
         lng: -122.901507,
         name: 'Mat Flat',
         description: 'A great place for learning!',
-        price: 106.12
+        price: 206.12
       }, {
         ownerId: 7,
         address: '700 Broadway St',
@@ -195,7 +195,7 @@ module.exports = {
         lng: -122.901507,
         name: 'Trevors Trailer',
         description: 'For a live lived on the road! Good tunes and company',
-        price: 107.12
+        price: 307.12
       },
       {
         ownerId: 8,
@@ -207,7 +207,7 @@ module.exports = {
         lng: -122.901507,
         name: 'The Tyler Trap',
         description: 'We might end up talking, who knows',
-        price: 108.12
+        price: 408.12
       },
       {
         ownerId: 9,
@@ -219,7 +219,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Casa De La Tohm',
         description: 'big rooms and crying baby, good wifi. Room cleaned everynight by my mom!',
-        price: 109.12
+        price: 309.12
       },
       {
         ownerId: 1,
@@ -231,7 +231,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Landlords Lake',
         description: 'Nothing beats home ownership!',
-        price: 123.12
+        price: 233.12
       },
       {
         ownerId: 1,
@@ -243,7 +243,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Renters Ranch',
         description: 'Another place, another passive income.',
-        price: 123.12
+        price: 23.12
       },
       {
         ownerId: 1,
@@ -255,7 +255,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Ol Faithful',
         description: 'Nothing better than getting paid to see mother earth',
-        price: 123.12
+        price: 83.12
       },
       {
         ownerId: 1,
@@ -267,7 +267,7 @@ module.exports = {
         lng: -122.411507,
         name: 'The Gulag',
         description: 'In gulag, place rents you',
-        price: 123.12
+        price: 322.12
       },
       {
         ownerId: 1,
@@ -279,7 +279,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandass Playground',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 475.12
       },
 
       {
@@ -292,7 +292,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandasss Play2round',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 400.12
       },
 
       {
@@ -305,7 +305,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Panfdas Playgrdound',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 298.12
       }
       ,
       {
@@ -318,7 +318,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandfas Pldayground',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 312.12
       },
       {
         ownerId: 1,
@@ -330,7 +330,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandas Plasdayground',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 153.12
       },
       {
         ownerId: 1,
@@ -342,7 +342,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandas ffPlayground',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 103.12
       },
       {
         ownerId: 1,
@@ -354,7 +354,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandases Playground',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 43.12
       },
       {
         ownerId: 1,
@@ -366,7 +366,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandasm Playground',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 420.12
       },
       {
         ownerId: 1,
@@ -378,7 +378,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandask Playground',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 169.12
       },
       {
         ownerId: 1,
@@ -390,7 +390,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandas Playreground',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 31.12
       },
       {
         ownerId: 1,
@@ -402,7 +402,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandas Playgerround',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 390.12
       },
       {
         ownerId: 1,
@@ -414,7 +414,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandas Playerground',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 320.12
       },
       {
         ownerId: 1,
@@ -426,7 +426,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandas Play1wground',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 254.12
       }
       ,
       {
@@ -439,7 +439,7 @@ module.exports = {
         lng: -122.411507,
         name: 'Pandas Plageeyground',
         description: 'If this were real, we would have to rent the pandas.',
-        price: 123.12
+        price: 480.12
       }
     ], {})
     options.tableName = 'Reviews'

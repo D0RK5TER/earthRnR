@@ -40,17 +40,19 @@ export const makeSpot = (spot) => {
 
 //////////////////////////////////////////////////////////////////////
 
-export const getAllSpots = () => async (dispatch) => {
-    const response = await csrfFetch('/api/spots', {
+export const getAllSpots = ( e ) => async (dispatch) => {
+    let pagi 
+    e ? pagi = e : pagi = ''
+    const response = await csrfFetch(`/api/spots${pagi}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-        console.log(response)
+        // console.log(response)
         const data = await response.json();
-        console.log(data)
-        dispatch(loadAllSpots(data));
-        return data;
+        // console.log(data)
+        return dispatch(loadAllSpots(data));
+        // return data;
     }
 };
 export const getOneSpot = (id) => async (dispatch) => {
