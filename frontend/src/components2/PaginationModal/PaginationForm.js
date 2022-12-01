@@ -22,9 +22,9 @@ function PaginationForm({ setShowModal }) {
                     pagination = ''
         setErrors([]);
         return dispatch(getAllSpots(pagination))
-            // .then(() => {
-            //     setShowModal(false)
-            // })
+            .then(() => {
+                setShowModal(false)
+            })
             .catch(async (res) => {
                 setShowModal(false)
                 const data = await res.json()
