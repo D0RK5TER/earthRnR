@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 // import { useParams } from 'react-router-dom';
@@ -8,8 +8,12 @@ import './PaginationForm.css'
 
 function PaginationForm({ setShowModal }) {
     const dispatch = useDispatch();
-    let [min, setMin] = useState('30')
-    let [max, setMax] = useState('500')
+    const [min, setMin] = useState('30')
+    const [max, setMax] = useState('500')
+    const [tog, setTog] = useState(false)
+    const [tog2, setTog2] = useState(true)
+    const [tog3, setTog3] = useState(true)
+
     const [errors, setErrors] = useState([]);
     let pagination
 
@@ -32,6 +36,9 @@ function PaginationForm({ setShowModal }) {
             }
             )
     }
+    // useEffect(() => {
+    //     setMax(min)
+    // }, [setTog])
     return (
         <form onSubmit={handleSubmit} className='editspotform' >
             <ul>
@@ -40,13 +47,16 @@ function PaginationForm({ setShowModal }) {
             </ul>
             <p>Select your Filters</p>
             <span>
-                <input type="range" name="price" min='0' max="500" onChange={(e) => setMin(e.target.value)} />Min Price: ${min}
+                <input type="range" name="price" min='0' max="500" onChange={(e) => setMin(e.target.value)} disabled={tog} style={{ 'accent-color': 'white' }} />
+                <button type="button" className="deletebutt" disabled={tog} onClick={() => { setTog(true); setTog2(false); setMax((+min + 10).toString()) }} style={{ 'accent-color': 'white' }}>Set Min to ${min}</button>
             </span>
             <span>
-                <input type="range" name="price" min='0' max='500' onChange={(e) => setMax(e.target.value)} />Max Price: ${max}
+                <input type="range" name="price" value={max} min='0' max='500' onChange={(e) => setMax(e.target.value)} disabled={tog2} style={{ 'accent-color': 'black' }} />
+                <button type="button" className="deletebutt" disabled={tog2} onClick={() => { setTog2(true); setTog3(false) }}>Set Max to ${max}</button>
             </span>
             <span>
-                <button type="submit" className="deletebutt">Search</button>
+                <button type="submit" className="deletebutt" disabled={tog3}>Search</button>
+
             </span>
         </form>
     );
