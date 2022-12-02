@@ -58,10 +58,8 @@ function SpotsIndex({ isLoaded }) {
         <div id='maindisplay' style={{
             display: 'flex',
             flexWrap: 'wrap',
-            height: '100%',
-            flexGrow: '1',
+            height: '200vh',
             justifyContent: 'space-evenly'
-
         }}>
             {spots && Object.values(spots).map(spot =>
 

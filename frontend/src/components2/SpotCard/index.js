@@ -41,14 +41,11 @@ function SpotCard({ spot }) {
             display: 'flex',
             flexDirection: 'column',
             margin: '.7em',
-            // justifyContent: 'center',
             marginBottom: '2em',
         }}>
             <div id={`SpotCardImgWrapper${id}`} className='piccontwrap allimg previmgwrap'
                 style={{
                     display: 'flex',
-                    // flexDirection: 'column',
-                    // alignContent: 'flex-start',
                     alignItems: 'center',
                     objectFit: 'contain',
                     height: '100%',
@@ -58,35 +55,20 @@ function SpotCard({ spot }) {
             >
                 <div id={`SpotCardImg${id}`} className='piccont allimg previmg' style={{
                     display: 'flex',
-                    // flexDirection: 'column',
-                    // position: 'static',
-                    // width: '15em',
                     height: '100%',
                     width: '100%',
                     borderRadius: '7%',
                     cursor: 'pointer',
                     background: `url(${previewImage}) no-repeat `,
-                    // position: 'static',
                     justifySelf: 'flex-start',
-                    // backgroundImage: `url(${previewImage}) `,
                     backgroundSize: 'cover',
-
-
                 }} onClick={() => history.push(`/${id}`)} />
             </div>
 
-            {/* <img id={`prevSpot${id}`} className='photo'
-                    alt="profile-button" src={previewImage}
-                    onClick={() => history.push(`/${id}`)} /> */}
-
-            {/* </div> */}
-            {/* </NavLink> */}
-
             <div className='spotinfocont' id={`SpotCardInfo${id}`} style={{
-                display: 'flex', flexDirection: 'row',
-                // , flexWrap: 'wrap',
+                display: 'flex',
+                flexDirection: 'row',
                 maxHeight: '30%',
-
                 width: '100%',
                 justifyContent: 'space-between',
                 marginTop: '.3em'
