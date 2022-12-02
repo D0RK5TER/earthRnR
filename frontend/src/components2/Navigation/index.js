@@ -23,7 +23,7 @@ function Navigation({ isLoaded }) {
   // useEffect(() => dispatch(getAllSpots('')), [dispatch])
   // console.log(user, '!!!!')
   return (
-    <div className='topbar' style={{position: 'sticky'}}>
+    <div className='topbar' style={{ position: 'sticky' }}>
       <div className='nav-left' id='topleft' style={{ 'cursor': 'pointer' }} >
         <div exact to="/" className={'homebutt'} onClick={() => {
           dispatch(getAllSpots('')).then(history.push('/'))
@@ -33,7 +33,12 @@ function Navigation({ isLoaded }) {
         </div>
       </div>
       <div className='nav-center' id='topmid'>
-        {user && <PaginationFormModel />}
+        {user && (
+          <>
+            
+            <PaginationFormModel />
+          </>
+        )}
       </div>
       <div className='nav-right'>
 

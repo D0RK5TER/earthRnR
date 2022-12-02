@@ -48,7 +48,7 @@
     line-height: 2em;
     width: 25%;
     font-family: "Light";
-    background-color: #fe5a62;
+    background-color: #ff385c;
     border-color: gray;
     color: wheat;
 }
@@ -57,6 +57,6 @@
     /* padding-bottom: 1em; */
     filter: invert(200%);
 
-    /* background-color: #fe5a62; */
+    /* background-color: #ff385c; */
     ;
 }

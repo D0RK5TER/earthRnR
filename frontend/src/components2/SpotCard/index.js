@@ -42,9 +42,9 @@ function SpotCard({ spot }) {
             flexWrap: 'wrap',
             flexDirection: 'column',
             maxWidth: '20%',
-            minWidth: '200px',
-            minHeight: '200px',
-            maxHeight: '300px',
+            // minWidth: '200px',
+            // minHeight: '200px',
+            // maxHeight: '300px',
             justifySelf: 'center',
             margin: '1em',
             overflow: 'hidden',
@@ -56,18 +56,20 @@ function SpotCard({ spot }) {
 
             <div id={`SpotCardImg${id}`} className='piccont' style={{
                 // display: 'flex',
+                width: '100%',
+                height: '70%',
                 minHeight: '200px',
                 minWidth: '200px',
                 borderRadius: '7%',
-                // flexWrap: 'wrap',
-                // justifyContent: 'center',
-                // boxSizing: 'border-box',
-                // objectFit: 'fill',
-                // margin: '1em',
-                // alignItems: 'center', justifySelf: 'center',
                 cursor: 'pointer',
                 background: `url(${previewImage}) no-repeat `,
                 backgroundSize: 'cover',
+                // flexWrap: 'wrap',
+                // justifyContent: 'center',
+                boxSizing: 'border-box',
+                // objectFit: 'fill',
+                // margin: '1em',
+                // alignItems: 'center', justifySelf: 'center',
                 overflow: 'hidden'
 
 
@@ -90,7 +92,7 @@ function SpotCard({ spot }) {
                     height: '30%', display: 'flex', flexDirection: 'column', lineHeight: '1em',
                     maxWidth: '90%'
                 }}>
-                    <span style={{ height: '25%', fontFamily: 'Bold' }}> {city}     ,   {state}</span>
+                    <span style={{ height: '25%', fontFamily: 'Bold' }}> {city.length < 15 ? city : city.slice(0, 15) + '...'}     ,   {state}</span>
                     <text style={{ height: '25%', fontFamily: 'Li', textSizeAdjust: '10%' }}>{getAge(createdAt.toString())}</text>
                     <span style={{ height: '25%', fontFamily: 'Li' }}>{description.slice(0, 20)}...</span>
                     <span style={{ height: '25%', fontFamily: 'Li' }}>$<text style={{ fontFamily: 'Bold' }}>{price}</text> night</span>

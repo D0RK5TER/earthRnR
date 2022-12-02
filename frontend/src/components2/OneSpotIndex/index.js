@@ -32,7 +32,7 @@ const OneSpotIndex = () => {
   let user = useSelector(state => state.session.user)
   let theSpot = useSelector(state => state.spots.onespot)
   let thereviews = useSelector(state => state.reviews.onespot)
-  
+
 
   useEffect(() => {
     dispatch(getAllReviews(id))
@@ -61,16 +61,28 @@ const OneSpotIndex = () => {
     let [a, b, c, d] = spotimgs
     sessionLinks = (
       <>
-        <div className='picbox' style={{ display: 'inline-flex', flexWrap: 'wrap', marginLeft: '3em', marginRight: '3em' }}>
+        <div className='picbox' style={{
+          display: 'inline-flex', flexWrap: 'wrap',
+          marginLeft: '3em', marginRight: '3em'
+        }}>
+
           <div className='picbox spotImageBig' style={{
-            objectFit: 'fill', minWidth: '50%', flexDirection: 'row',
+            objectFit: 'fill', 
+            flexDirection: 'row',
             maxHeight: '550px', marginRight: '2em',
-            display: 'inline-flex', width: '100%', justifyContent: 'center'
+            display: 'inline-flex', width: '100%', 
+            justifyContent: 'center',
+            minWidth: '50%', 
           }} >
-            <img src={previewImage} className='spotpreview' style={{ minWidth: '50%', }} />
+
+            <img src={previewImage} className='spotpreview' style={{  
+
+            }} />
+
             <div className='sampleimg' style={{
               maxHeight: '550px',
             }}>
+
               <div style={{
                 maxHeight: '550px',
                 flexWrap: 'wrap', boxSizing: 'border-box',

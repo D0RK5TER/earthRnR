@@ -66,8 +66,8 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
   return (
     <div className='dropbar' >
       <div className='dropbarformat' style={{ backgroundColor: 'white', lineHeight: '3em', 'cursor': 'pointer' }}>
-        <button className='profilebutt' onClick={openMenu} style={{ border: 'none', lineHeight: '3em', 'cursor': 'pointer' }}>
-          <img src={outline} className='profileshape' />
+        <button className='profilebutt' onClick={openMenu ? openMenu : closeMenu} style={{ border: 'none', lineHeight: '3em', 'cursor': 'pointer' }}>
+          <img src={outline} className='profileshape' onClick={openMenu ? openMenu : closeMenu}/>
         </button>
         {sessionUser ?
           <>
@@ -90,9 +90,9 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
                   }}>{sessionUser.email}</span>
                 </div>
                 <span className='lamecss' style={{ paddingTop: '0px', backgroundColor: 'white' }}>
-                  <div style={{ paddingTop: '0px', width: '100%', fontSize: '1.5em', borderRadius: '0', textAlign: 'left' }}>
+                  {/* <div style={{ paddingTop: '0px', width: '100%', fontSize: '1.5em', borderRadius: '0', textAlign: 'left' }}>
                     <SpotFormModal style={{ width: '100%', textAlign: 'left' }} />
-                  </div>
+                  </div> */}
                   <div style={{ margin: '0px' }}>
                     <button className='logoutbutt' onClick={handleLogout} style={{ width: '100%', textAlign: 'left' }}
                     >

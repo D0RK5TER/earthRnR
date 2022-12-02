@@ -16,8 +16,8 @@ const store = configureStore();
 
 
 let roooot = document.getElementById('root')
-roooot.width= '%100'
-roooot.margin= '0'
+// roooot.width= '%100'
+// roooot.margin= '0'
 
 if (process.env.NODE_ENV !== "production") {
   restoreCSRF();

@@ -87,12 +87,18 @@
   font-family: "Light";
   display: flex;
   justify-self: center;
-  margin: 0, 20%, 0, 20%;
+  /* margin: 0, 20%, 0, 20%; */
   position: sticky;
   justify-content: space-between;
   align-items: flex-start;
   padding-left: 2em;
   padding-top: 1em;
+  background-color: white;
+  border-bottom: 1px solid #dddddd;
+  width: 98vw;
+  padding-top: 1.5em;
+ 
+
 }
 
 .profileshape {
@@ -112,7 +118,7 @@
   text-decoration: none;
   align-items: center;
   font-stretch: extra-condensed;
-  -webkit-text-fill-color: #fe5a62;
+  -webkit-text-fill-color: #ff385c;
 
   /* vertical-align: top; */
   position: static;

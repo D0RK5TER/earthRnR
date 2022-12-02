@@ -63,7 +63,7 @@
 
 .theD button {
 
-    background-color: #fe5a62;
+    background-color: #ff385c;
 }
 
 .deletebutt button {
@@ -73,7 +73,7 @@
     line-height: 2em;
     display: inline-flex;
     font-family: "Light";
-    background-color: #fe5a62;
+    background-color: #ff385c;
     border-color: gray;
     color: wheat;
     justify-content: space-between;
@@ -83,10 +83,10 @@
 
 .deletebutt:first-child {
     line-height: 1em;
-    background-color:  #fe5a62;
+    background-color: #ff385c;
     border-radius: 2em;
     margin: 2em;
-    
+
 }
 
 /* 

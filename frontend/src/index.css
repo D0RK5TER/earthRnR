@@ -6,11 +6,11 @@
 
 body {
     margin-top: 0;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .photocontainer {
-    padding: 2em;
+    /* padding: 2em; */
     justify-content: center;
     justify-items: center;
 
@@ -37,8 +37,8 @@ body {
     box-sizing: border-box;
     object-fit: cover;
 }
-
+/* 
 #dangerzone {
     margin-top: 4em;
     min-height: 500px;
-}
+} */
