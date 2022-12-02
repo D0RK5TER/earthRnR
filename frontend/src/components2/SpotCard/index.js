@@ -39,57 +39,61 @@ function SpotCard({ spot }) {
 
         <div id={`SpotCard${id}`} className='spotcard' style={{
             display: 'flex',
-            // flexWrap: 'wrap',
             flexDirection: 'column',
-            // maxWidth: '20%',
-            // minWidth: '200px',
-            // minHeight: '200px',
-            // maxHeight: '300px',
             justifySelf: 'center',
             margin: '.7em',
-            // overflow: 'hidden',
-            boxSizing: 'border-box',
-            objectFit: 'fill',
+            // boxSizing: 'border-box',
+            objectFit: 'cover',
             flexBasis: 'content',
-            flexShrink: '1',
-            flexGrow: '1',
-            minWidth: '240px',
-            maxWidth: '410px',
-            minHeight: '332px',
-            maxHeight: '490px',
+            // flexShrink: '1',
+            // flexGrow: '1',
 
+            minWidth: '260px',
+            minHeight: '370px',
+
+            maxWidth: '400px',
+            maxHeight: '550px',
         }}>
-            {/* <NavLink to={`/${id}`} style={{
-                height: '70%', width: '100%', justifyContent: 'center',
-                alignItems: 'center', justifySelf: 'center'
-            }}> */}
-
-            <div id={`SpotCardImg${id}`} className='piccont' style={{
-                // display: 'flex',
+            {/* <div id={`SpotCardImgWrapper${id}`} className='piccontwrap allimg previmgwrap'
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain'
+                }}
+            > */}
+            <div id={`SpotCardImg${id}`} className='piccont allimg previmg' style={{
+                display: 'flex',
+                // position: 'absolute',
                 width: '100%',
-                height: '70%',
-                // minHeight: '200px',
-                // minWidth: '200px',
-                // maxHeight: '300px',
-                // maxWidth: '300px',
-                flexBasis: 'content',
+                height: '100%',
+                flexShrink: '1',
                 flexGrow: '1',
+                // minHeight: '261px',
+                // minWidth: '275px',
+                // maxHeight: '392px',
+                // maxWidth: '413px',
+                // flexGrow: '1',
+                // flexShrink: '1',
                 borderRadius: '7%',
                 cursor: 'pointer',
                 background: `url(${previewImage}) no-repeat `,
+                // position: 'static',
+                // backgroundImage: `url(${previewImage}) `,
                 backgroundSize: 'cover',
-                backgroundClip: 'content-box',
+                // backgroundAttachment: 'fill',
                 // flexWrap: 'wrap',
                 // justifyContent: 'center',
-                boxSizing: 'border-box',
+                // boxSizing: 'border-box',
                 // objectFit: 'fill',
                 // margin: '1em',
                 // alignItems: 'center', justifySelf: 'center',
-                overflow: 'hidden'
+                // overflow: 'hidden',
+                // backgroundClip: 'border-box',
+                // flexBasis: 'con',
 
 
             }} onClick={() => history.push(`/${id}`)} />
-
+            {/* </div> */}
 
             {/* <img id={`prevSpot${id}`} className='photo'
                     alt="profile-button" src={previewImage}
@@ -99,15 +103,21 @@ function SpotCard({ spot }) {
             {/* </NavLink> */}
 
             <div className='spotinfocont' id={`SpotCardInfo${id}`} style={{
-                display: 'flex', flexDirection: 'row'
-                , flexWrap: 'wrap'
+                display: 'flex', flexDirection: 'row',
+                // , flexWrap: 'wrap'
+                height: '30%',
+                width: '100%'
+
             }}>
 
                 <div className='spotinforow' id={`SpotCardInfoRow1${id}`} style={{
-                    height: '30%', display: 'flex', flexDirection: 'column', lineHeight: '1em',
+                    display: 'flex', flexDirection: 'column', lineHeight: '1em',
                     maxWidth: '90%'
                 }}>
-                    <span style={{ height: '25%', fontFamily: 'Bold' }}> {city.length < 15 ? city : city.slice(0, 15) + '...'}     ,   {state}</span>
+                    <span style={{
+                        height: '25%', fontFamily: 'Bold'
+                    }}>
+                        {city.length < 15 ? city : city.slice(0, 15) + '...'}     ,   {state}</span>
                     <text style={{ height: '25%', fontFamily: 'Li', textSizeAdjust: '10%' }}>{getAge(createdAt.toString())}</text>
                     <span style={{ height: '25%', fontFamily: 'Li' }}>{description.slice(0, 20)}...</span>
                     <span style={{ height: '25%', fontFamily: 'Li' }}>$<text style={{ fontFamily: 'Bold' }}>{price}</text> night</span>
@@ -117,7 +127,9 @@ function SpotCard({ spot }) {
                     display: 'flex', maxWidth: '10%'
                 }}>
                     {/* <div className='spotstarimg' id={`SpotCardStar${id}`}> */}
-                    <img id={`starSpot${id}`} src={star} className='starspot' style={{ maxHeight: '25%' }} />
+                    <img id={`starSpot${id}`} src={star} className='starspot' style={{
+                        maxHeight: '25%'
+                    }} />
                     <div className='spotstaravg' id={`SpotCardInfoRow2${id}`}>
                         {/* </div> */}
                         {avgRating}
