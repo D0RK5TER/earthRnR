@@ -17,6 +17,9 @@ body {
 
 }
 
+.outter {
+    width: 120%;
+}
 
 .namearea {
     text-align: center;

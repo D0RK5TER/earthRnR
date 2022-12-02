@@ -41,7 +41,7 @@
 .spotcard div {
     /* object-fit: cover;
     box-sizing: border-box; */
-    /* height: 10%; */
+    max-height: 100%;
 
 }
 
@@ -66,8 +66,8 @@
 
 .spotinfocont {
     /* flex-shrink: 1; */
-    box-sizing: border-box;
-    object-fit: cover;
+    /* box-sizing: border-box;
+    object-fit: cover; */
 }
 
 /* .spotinforow { */
@@ -80,8 +80,8 @@
 /* } */
 
 .spotinforow span {
-    object-fit: cover;
-    box-sizing: border-box;
+    /* object-fit: cover;
+    box-sizing: border-box; */
 
     /* margin: 0px; */
     /* flex-shrink: 1; */
@@ -92,22 +92,22 @@
 
 
 .spotstarrow {
-    object-fit: cover;
-    box-sizing: border-box;
+    /* object-fit: cover;
+    box-sizing: border-box; */
 }
 
 .spotstarimg {
-    object-fit: cover;
-    box-sizing: border-box;
+    /* object-fit: cover;
+    box-sizing: border-box; */
     /* max-height: 20px; */
 }
 
-.starspot {
+/* .starspot {
     object-fit: cover;
-    box-sizing: border-box;
+    box-sizing: border-box; */
 }
 
 .spotstaravg {
-    object-fit: cover;
-    box-sizing: border-box;
+    /* object-fit: cover;
+    box-sizing: border-box; */
 }

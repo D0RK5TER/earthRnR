@@ -26,13 +26,12 @@ function App() {
     }, [dispatch]);
     ///trying top 
     return (
-        <div id='outtermost' style={{ width: '93vw' }}>
+        <div id='outtermost' style={{ width: '93vw', height: '200vh' }}>
             <div style={{ position: 'sticky', top: '0px' }}>
                 <Navigation isLoaded={isLoaded} style={{ position: 'sticky' }} />
             </div>
-            <div id='outter' style={{ width: '100%' }}>
-                {/* <div id='newbody'> */}
-                {/* <h1>HEY</h1> */}
+            <div id='outter' style={{ 
+                width: '98vw', height: '200vh' }}>
                 {/* {isLoaded && (  */}
                 <Switch>
                     <Route exact path='/'>
@@ -48,8 +47,6 @@ function App() {
                         <h1 style={{ padding: '2em' }}>Sorry! Out Of Luck!</h1>
                     </Route> */}
                 </Switch>
-                {/* )} */}
-                {/* </div> */}
             </div>
         </div>
     );
