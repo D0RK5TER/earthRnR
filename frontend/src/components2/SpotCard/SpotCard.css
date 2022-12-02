@@ -70,19 +70,19 @@
     object-fit: cover;
 }
 
-.spotinforow {
-    /* object-fit: cover; */
-    /* box-sizing: border-box; */
-    /* margin: 0; */
-    /* flex-shrink: 1; */
+/* .spotinforow { */
+/* object-fit: cover; */
+/* box-sizing: border-box; */
+/* margin: 0; */
+/* flex-shrink: 1; */
 
 
-}
+/* } */
 
 .spotinforow span {
     object-fit: cover;
     box-sizing: border-box;
-  
+
     /* margin: 0px; */
     /* flex-shrink: 1; */
 
