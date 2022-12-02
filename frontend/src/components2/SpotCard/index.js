@@ -48,15 +48,15 @@ function SpotCard({ spot }) {
             justifySelf: 'center',
             margin: '.7em',
             // overflow: 'hidden',
-            // boxSizing: 'border-box',
-            // objectFit: 'cover',
+            boxSizing: 'border-box',
+            objectFit: 'fill',
             flexBasis: 'content',
             flexShrink: '1',
             flexGrow: '1',
-            minHeight: '200px',
-            minWidth: '200px',
-            maxHeight: '700px',
-            maxWidth: '200px',
+            minWidth: '240px',
+            maxWidth: '410px',
+            minHeight: '332px',
+            maxHeight: '490px',
 
         }}>
             {/* <NavLink to={`/${id}`} style={{
