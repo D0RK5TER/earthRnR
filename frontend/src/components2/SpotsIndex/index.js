@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 // import { getAllSpots, loadSpots } from '../../store/session';
 import EditSpotFormModal from '../EditSpotFormModal';
 import { getAllSpots } from '../../store/spots2';
-
+import SpotCard from '../SpotCard';
 // import OneSpotIndex from '../OneSpotIndex'
 import quest from '../../assets/quest.jpg';
 import star from '../../assets/star.png';
@@ -29,14 +29,11 @@ function getAge(dateString) {
     return m;
 }
 function SpotsIndex({ isLoaded }) {
-    const history = useHistory();
 
     const dispatch = useDispatch();
     let user = useSelector(state => state.session.user)
     let spots = useSelector(state => state.spots.allspots);
-    let [min, setMin] = useState('30')
-    let [max, setMax] = useState('500')
-    let pagination
+
 
     useEffect(() => {
 
@@ -55,10 +52,21 @@ function SpotsIndex({ isLoaded }) {
     // console.log(Object.values(spots))
     // {spots && for (let spot in spots)(
     //     let{ previewImage, name, id, ownerId, avgRating, createdAt, city, state, price } = spot
-    return min && spots && (<div className="mainContent" >
-        <div>
+    return spots && (
+        // <div className="mainContent" >
+        <div id='maindisplay' style={{
+            display: 'inline-flex', flexWrap: 'wrap', width: '100%',
+            maxHeight: '100%', 
+            justifyContent: 'space-around', margin: '2em',
+            // objectFit: 'fill', boxSizing: 'border-box',
+        }}>
+            {spots && Object.values(spots).map(spot =>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', padding: '1em', marginLeft: '3em' }}>
+                <SpotCard spot={spot} />
+
+            )}
+
+            {/* <div style={{ display: 'flex', flexWrap: 'wrap', padding: '1em', marginLeft: '3em' }}>
                 {spots && Object.values(spots).length ? (Object.values(spots).map(({ previewImage, name, id, ownerId, avgRating, createdAt, city, state, price }) => (
                     <>
                         <div className="photocontaineredit" style={{ marginTop: '3em', marginBottom: '0', padding: '1em', paddingBottom: '0' }}>
@@ -110,10 +118,10 @@ function SpotsIndex({ isLoaded }) {
                         </div>
                     </>
                     )
-                }
-            </div >
+                } */}
         </div >
-    </div >
+        // </div >
+        // </div >
     )
 }
 

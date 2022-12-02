@@ -24,30 +24,34 @@ function App() {
         dispatch(sessionActions.restoreUser()).then(() => dispatch(setIsLoaded(true)))
         //    .then( dispatch(getAllSpots()))
     }, [dispatch]);
-
+    ///trying top 
     return (
-        <>
-            <Navigation isLoaded={isLoaded} />
-            <div id='newbody'>
+        <div id='outtermost' style={{ width: '100%' }}>
+            <div style={{ position: 'sticky', top: '0px' }}>
+                <Navigation isLoaded={isLoaded} style={{ position: 'sticky' }} />
+            </div>
+            <div id='outter' style={{ width: '100%' }}>
+                {/* <div id='newbody'> */}
                 {/* <h1>HEY</h1> */}
                 {/* {isLoaded && (  */}
-                    <Switch>
-                        <Route exact path='/'>
-                            <SpotsIndex />
-                        </Route>
-                        <Route exact path='/:id'>
-                            <OneSpotIndex />
-                        </Route>
-                        {/*  <Route exact path='/spots/current'>
-                        <CurrentUserIndex />
+                <Switch>
+                    <Route exact path='/'>
+                        <SpotsIndex />
                     </Route>
-                    <Route>
+                    <Route exact path='/:id'>
+                        <OneSpotIndex />
+                    </Route>
+                    {/*  <Route exact path='/spots/current'>
+                        <CurrentUserIndex />
+                        </Route>
+                        <Route>
                         <h1 style={{ padding: '2em' }}>Sorry! Out Of Luck!</h1>
                     </Route> */}
-                    </Switch>
+                </Switch>
                 {/* )} */}
+                {/* </div> */}
             </div>
-        </>
+        </div>
     );
 }
 export default App;

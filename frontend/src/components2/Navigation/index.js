@@ -21,9 +21,9 @@ function Navigation({ isLoaded }) {
   const history = useHistory()
   const user = useSelector(state => getSessionUser(state));
   // useEffect(() => dispatch(getAllSpots('')), [dispatch])
-  console.log(user, '!!!!')
+  // console.log(user, '!!!!')
   return (
-    <div className='topbar'>
+    <div className='topbar' style={{position: 'sticky'}}>
       <div className='nav-left' id='topleft' style={{ 'cursor': 'pointer' }} >
         <div exact to="/" className={'homebutt'} onClick={() => {
           dispatch(getAllSpots('')).then(history.push('/'))

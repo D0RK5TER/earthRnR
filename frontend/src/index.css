@@ -6,10 +6,15 @@
 
 body {
     margin-top: 0;
+    width: 100%;
 }
 
 .photocontainer {
     padding: 2em;
+    justify-content: center;
+    justify-items: center;
+
+
 }
 
 
@@ -20,8 +25,17 @@ body {
 }
 
 .photo {
-    height: 300px;
-    width: 300px;
+    /* flex-grow: inherit; */
+    /* min-width: 300px; */
+    /* max-width: 400px; */
+    /* min-height: 300px; */
+    /* max-height: 400px; */
+    /* max-width: 50%; */
+    max-height: 100%;
+    max-width: 100%;
+    justify-self: center;
+    box-sizing: border-box;
+    object-fit: cover;
 }
 
 #dangerzone {

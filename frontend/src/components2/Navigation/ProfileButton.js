@@ -27,18 +27,18 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
     setShowMenu(true);
   };
 
+  const closeMenu = () => {
+    setShowMenu(false);
+  };
+
   useEffect(() => {
     if (!showMenu) return;
-
-    const closeMenu = () => {
-      setShowMenu(false);
-    };
     //// had to take this out before to make sure that drop didnt close
     // let outside = document.querySelector('root')
     // const myElement = document.getElementById('profile-dropdown');
     // let inside = document.querySelectorAll('.profile-dropdown')
     // console.log(inside[0].children)
-    let outside = document.getElementById('newbody')
+    let outside = document.getElementById('outter')
     outside.addEventListener('click', closeMenu)
     let bar = document.getElementById('topleft')
     let foo = document.getElementById('topmid')

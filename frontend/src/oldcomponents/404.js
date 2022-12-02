@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import ProfileButton from '../components/Navigation/ProfileButton';
+import ProfileButton from '../Navigation/ProfileButton';
 import logo from '../assets/logo.jpg';
 import quest from '../assets/quest.jpg'
 
