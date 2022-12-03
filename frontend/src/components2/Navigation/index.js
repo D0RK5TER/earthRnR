@@ -14,6 +14,7 @@ import PaginationFormModel, { setfunc } from '../PaginationModal/index.js';
 // import LoginForm from '../LoginFormModal/LoginForm';
 // import SignupFormPage from '../SignupFormPage';
 import SpotFormModal from '../SpotFormModal';
+import SignUpFormModal from '../SignUpFormModal';
 // import ComingSoon from '../ComingSoon/ComingSoon';
 
 function Navigation({ isLoaded }) {
@@ -67,7 +68,7 @@ function Navigation({ isLoaded }) {
         width: '23%'
       }}>
         
-        <SpotFormModal />
+       {user? <SpotFormModal />: <SignUpFormModal />}
 
         <ProfileButton
           user={user}

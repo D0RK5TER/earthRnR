@@ -92,10 +92,17 @@
 
 .editspotbut {
     /* border-radius: 2em; */
+    /* padding-top: ; */
+    margin-top: 1em;
     background-color: #FF385C;
     border: none;
-    font-family: 'bold';
+    font-family: 'Li';
     color: white;
+    border-radius: 3em;
+    cursor: pointer;
+}
+.editspotbut:hover {
+    background-color: #f12b50;
 }
 
 /* 

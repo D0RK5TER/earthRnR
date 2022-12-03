@@ -5,7 +5,7 @@ import { createSpot } from '../../store/spots2';
 // import { createImage } from "../../store/review";
 import './SpotForm.css'
 function SpotForm({ setShowModal }) {
-    // const user = useSelector(state => state.session.user.id)
+    const user = useSelector(state => state.session.user)
     const dispatch = useDispatch();
     const history = useHistory()
     const [address, setAddress] = useState("")
@@ -17,7 +17,6 @@ function SpotForm({ setShowModal }) {
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [errors, setErrors] = useState([]);
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -38,92 +37,103 @@ function SpotForm({ setShowModal }) {
         }
         ).then(setShowModal(false))
     }
-    return (
-        <form onSubmit={handleSubmit} className='spotform' >
+    return user && (
+        <form onSubmit={handleSubmit} id='createspotform' >
+            <div id='createheader'>
+                <div id='createexitbutt' onClick={() => setShowModal(false)}>
+                    x
+                </div>
+                <div id='createheadertext'>
+                    <div id="createmainheader">Welcome {user.firstName}!</div>
+                    <span id='createsubheader'> Airbnb your home</span>
+                </div>
+            </div>
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
-            <p>Host Today!</p>
-            <label>
-                <input
-                    type="text"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    placeholder='Address  e.g."11 California"'
-                    pattern='^[0-9]+\s{1}.+'
-                    title="Address must be in correct format e.g.'11 California'"
-                    required
-                />
-            </label>
-            <label>
-                <input
-                    type="text"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    placeholder='City'
-                    required
-                />
-            </label>
-            <label>
-                <input
-                    type="text"
-                    value={state}
-                    onChange={(e) => setStats(e.target.value)}
-                    placeholder='State   e.g "CA"'
-                    minLength='2'
-                    maxLength='2'
-                    pattern='^[A-Z]{2}$'
-                    title="Two Capital Letters Please"
-                    required
-                />
-            </label>
-            <label>
-                <input
-                    type="text"
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)}
-                    placeholder='Country'
-                    required
-                />
-            </label>
-            <label >
-                <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder='Name'
-                    required
-                />
-            </label>
-            <label >
-                <input
-                    type="text"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    placeholder='Description'
-                    maxLength='45'
-                    required
-                />
-            </label>
-            <label>
-                <input
-                    type="url"
-                    value={latt}
-                    onChange={(e) => setLatt(e.target.value)}
-                    placeholder='Image Url'
-                    required
-                />
-            </label>
-            <label >
-                <input
-                    type="number"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                    placeholder='Price'
-                    required
-                />
-            </label>
-            <button type="submit">Create</button>
+            <div id='createformcont'>
+
+                <label className="createlabel">
+                    <input
+                        type="text"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        placeholder='Address'
+                        pattern='^[0-9]+\s{1}.+'
+                        title="Address must be in correct format e.g. '11 California St.'"
+                        required
+                    />
+                </label>
+                <label className="createlabel">
+                    <input
+                        type="text"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        placeholder='City'
+                        required
+                    />
+                </label>
+                <label className="createlabel">
+                    <input
+                        type="text"
+                        value={state}
+                        onChange={(e) => setStats(e.target.value)}
+                        placeholder='State   e.g "CA"'
+                        minLength='2'
+                        maxLength='2'
+                        pattern='^[A-Z]{2}$'
+                        title="Two Capital Letters Please"
+                        required
+                    />
+                </label>
+                <label className="createlabel">
+                    <input
+                        type="text"
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                        placeholder='Country'
+                        required
+                    />
+                </label>
+                <label className="createlabel">
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder='Name'
+                        required
+                    />
+                </label>
+                <label className="createlabel">
+                    <input
+                        type="text"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        placeholder='Description'
+                        maxLength='45'
+                        required
+                    />
+                </label>
+                <label className="createlabel">
+                    <input
+                        type="url"
+                        value={latt}
+                        onChange={(e) => setLatt(e.target.value)}
+                        placeholder='Image Url'
+                        required
+                    />
+                </label>
+                <label className="createlabel">
+                    <input
+                        type="number"
+                        value={price}
+                        onChange={(e) => setPrice(e.target.value)}
+                        placeholder='Price'
+                        required
+                    />
+                </label>
+            </div>
+            <button type="submit" id='createsubmitbutton'>Create</button>
         </form>
     );
 }

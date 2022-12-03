@@ -8,7 +8,7 @@ function SignUpFormModal() {
 
     return (
         <>
-            <button onClick={() => setShowModal(true)} style={{ width: '100%', fontFamily: 'Bold', color: 'black'  }}>Sign Up</button>
+            <button id='signupmodalbut' onClick={() => setShowModal(true)} style={{  }}>Sign Up to host!</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <SignUpForm setShowModal={setShowModal} />

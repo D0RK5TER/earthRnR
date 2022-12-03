@@ -4,6 +4,22 @@
         url("../../assets/earthrnrCerealLight.ttf") format("truetype");
 }
 
+#signupmodalbut {
+    text-align: left;
+    width: 10vw;
+    height: 3.8em;
+    font-family: Bold;
+    font-size: .7em;
+    padding-left: 2em;
+    background-color: white;
+    border: none;
+    border-radius: 3em;
+}
+
+#signupmodalbut:hover {
+    background-color: rgb(245, 245, 245);
+}
+
 .signupform {
     /* font-size: 50%; */
     font-family: "Light";
