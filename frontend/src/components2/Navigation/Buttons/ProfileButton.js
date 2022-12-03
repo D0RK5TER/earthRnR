@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
-import * as sessionActions from '../../store/session2';
-import { getSessionUser } from '../../store/session2';
+import * as sessionActions from '../../../store/session2';
+// import { getSessionUser } from '../../../store/session2';
 
-import SignUpFormModal from '../SignUpFormModal';
-import LoginFormModal from '../LoginFormModal';
+import SignUpFormModal from '../../SignUpFormModal';
+import LoginFormModal from '../../LoginFormModal';
 import DemoButton from './DemoButton';
-import outline from '../../assets/outline.png';
-
-import SpotFormModal from '../SpotFormModal';
+import outline from '../../../assets/outline.png';
 
 //take away user so i can use store selector for easier rerender?
 
@@ -19,6 +17,7 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
 
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  // const []
   const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
 
@@ -28,34 +27,24 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
   };
 
   const closeMenu = () => {
+    // if (!showMenu)
     setShowMenu(false);
   };
-
   useEffect(() => {
+    let navbar = document.getElementById('evanbar')
+    let drop = document.getElementById('dropbarcont')
+
     if (!showMenu) return;
-    //// had to take this out before to make sure that drop didnt close
-    // let outside = document.querySelector('root')
-    // const myElement = document.getElementById('profile-dropdown');
-    // let inside = document.querySelectorAll('.profile-dropdown')
-    // console.log(inside[0].children)
-    let outside = document.getElementById('outter')
-    outside.addEventListener('click', closeMenu)
-    let bar = document.getElementById('topleft')
-    let foo = document.getElementById('topmid')
-    bar.addEventListener('click', closeMenu)
-    foo.addEventListener('click', closeMenu)
-    // for (let c of bar.children) console.log(c)
-    console.log(foo, bar)
-    // inside.removeEventListener("click", closeMenu);
-    // for (const child of myElement.children) {
-    //   child.removeEventListener("click", closeMenu);
-    // }
-    // })
-    // document.getElementsByClassName('profile-dropbar')[0]
-    // console.log(document.getElementById('newbody'))
-    ///below too
-    return () => document.removeEventListener("click", closeMenu);
+    let underbar = document.getElementById('outter')
+    underbar.addEventListener('click', closeMenu)
+    // navbar.children.addEventListener('click', closeMenu)
+    navbar.lastChild.removeEventListener('click', closeMenu)
+    console.log(navbar.children, drop)
+    for (let c of navbar.children) console.log(c)
+    return () => underbar.removeEventListener("click", closeMenu);
   }, [showMenu]);
+
+  // !showMenu ? console.log(navbar) : navbar.lastChild.removeEventListener('click', closeMenu)
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -64,23 +53,42 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
   };
 
   return (
-    <div className='dropbar' >
-      <div className='dropbarformat' style={{ backgroundColor: 'white', lineHeight: '3em', 'cursor': 'pointer' }}>
-        <button className='profilebutt' onClick={openMenu ? openMenu : closeMenu} style={{ border: 'none', lineHeight: '3em', 'cursor': 'pointer' }}>
-          <img src={outline} className='profileshape' onClick={openMenu ? openMenu : closeMenu}/>
-        </button>
+    <div className='dropbar' id='pleasework' style={{
+      backgroundColor: 'white',
+      lineHeight: '2em',
+      'cursor': 'pointer',
+      marginTop: '1em',
+      marginRight: '4em',
+      // height: '3em'
+      
+    }}>
+      <button id='probutt' className='profilebutt' onClick={openMenu ? openMenu : closeMenu} style={{
+        border: 'none', lineHeight: '3em', 'cursor': 'pointer'
+      }}>
+        <img src={outline} className='profileshape' onClick={openMenu ? openMenu : closeMenu} />
+      </button>
+      <div id='dropbarcont' className='dropbarformat' style={{
+        backgroundColor: 'white',
+
+        'cursor': 'pointer'
+      }}>
+
+
+        {/* <div id="toprightmenu"> */}
         {sessionUser ?
-          <>
-            {showMenu && (
-              <div className="profile-dropdown" style={{
-                width: '13em',
+          showMenu && (
+            <>
+              <div id='loggedin' className="profile-dropdown" style={{
+                width: '5em',
+                padding: '.52em',
                 borderStyle: 'solid',
                 borderWidth: '1px',
                 overflow: 'hidden',
-                borderRadius: '2em'
+                borderRadius: '2em',
+                // fontFamily: 'Bold'
               }}>
                 <div style={{ padding: '0px' }}>
-                  <p style={{ fontSize: '80%', marginBottom: '0', }}>
+                  <p style={{ fontSize: '80%', marginBottom: '0', fontFamily: 'Bold' }}>
                     {sessionUser.username}
                   </p>
                 </div>
@@ -94,7 +102,10 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
                     <SpotFormModal style={{ width: '100%', textAlign: 'left' }} />
                   </div> */}
                   <div style={{ margin: '0px' }}>
-                    <button className='logoutbutt' onClick={handleLogout} style={{ width: '100%', textAlign: 'left' }}
+                    <button className='logoutbutt' onClick={handleLogout} style={{
+                      width: '120%', textAlign: 'left',
+                      fontFamily: 'light',
+                    }}
                     >
                       Log Out
                     </button>
@@ -103,23 +114,27 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
 
                 </span>
               </div>
-            )
-            }
-          </>
+            </>
+          )
           :
           (
             <>
               {showMenu && (
                 <>
-                  <div className="profile-dropdown" style={{
-                    width: '13em',
+                  <div id='needmoney' className="profile-dropdown" style={{
+                    width: '5em',
                     'border-style': 'solid',
                     'border-width': '1px',
                     overflow: 'hidden',
-                    borderRadius: '2em'
+                    borderRadius: '2em',
+                    // fontFamily: 'Bold' 
                   }}>
 
-                    <div style={{ paddingTop: '1em', width: '100%', 'font-size': '1.5em', borderRadius: '0', textAlign: 'left' }}>
+                    <div style={{
+                      paddingTop: '1em', width: '100%', 'font-size': '1.5em',
+
+                      borderRadius: '0', textAlign: 'left'
+                    }}>
                       <LoginFormModal style={{ width: '100%' }} />
                     </div>
                     <div style={{ margin: '0px' }}>
@@ -134,6 +149,7 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
             </>
           )
         }
+        {/* </div> */}
       </div>
       <>
       </>

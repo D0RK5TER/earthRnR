@@ -54,9 +54,9 @@ function SpotsIndex({ isLoaded }) {
             display: 'flex',
             flexWrap: 'wrap',
             height: '100vw',
-            width: '98vw',
+            width: '100vw',
             justifyContent: 'space-around',
-            margin: '2vw',
+            // margin: '2vw',
             justifySelf: 'center'
             // padding: 'vw'
         }}>

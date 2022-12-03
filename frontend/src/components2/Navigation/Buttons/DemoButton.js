@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../../store/session2";
+import { login } from "../../../store/session2";
 
 
 
@@ -34,7 +34,7 @@ const DemoButton = () => {
                         <li key={idx}>{error}</li>
                     ))}
                 </ul>
-                <button type="button" onClick={() => dispatch(login({ credential: credential, password: password }))}>Demo Site</button>
+                <button type="button" onClick={() => dispatch(login({ credential: credential, password: password }))} style={{ fontFamily: 'Bold', color: 'black' }}>Demo Site</button>
             </form>
         </>
     )

@@ -35,7 +35,7 @@ function SpotCard({ spot, user }) {
     const { previewImage, id, description,
         avgRating, createdAt, city, state,
         ownerId, price } = spot
-    console.log(user)
+    // console.log(user)
     const history = useHistory()
     return (
 
@@ -107,10 +107,11 @@ function SpotCard({ spot, user }) {
                         <div id={`editspot${id}`} style={{
                             display: 'flex',
                             flexDirection: 'row',
-                            justifyContent: 'flex-end'
+                            justifyContent: 'flex-end',
+                            fontFamily: 'Bold'
                         }}>
                             <img id={`starSpot${id}`} src={star} className='starspot' style={{
-                                maxHeight: '25%'
+                                maxHeight: '45%'
                             }} />
                             {avgRating}
                         </div>

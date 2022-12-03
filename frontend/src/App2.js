@@ -27,7 +27,7 @@ function App() {
     ///trying top 
     return (
         <div id='outtermost' style={{ width: '93vw', height: '200vh' }}>
-            <div style={{ position: 'sticky', top: '0px' }}>
+            <div id='navi' style={{ position: 'sticky', top: '0px' }}>
                 <Navigation isLoaded={isLoaded} style={{ position: 'sticky' }} />
             </div>
             <div id='outter' style={{ 

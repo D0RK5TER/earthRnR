@@ -4,12 +4,49 @@
     url("../../assets/earthrnrCerealLight.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Thin";
+  src: local("Poppins-Thin"),
+    url("../../assets/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Li";
+  src: local("Poppins-Light"),
+    url("../../assets/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: local("popbold"),
+    url("../../assets/popbold.ttf") format("truetype");
+}
+
+
+.topbar:first-of-type div {
+  /* text-decoration-skip: 1; */
+  font-family: 'Li';
+  /* font-weight: 50%; */
+  /* text-size-adjust: 90%; */
+  /* font-weight: 200%; */
+  color: black;
+  font-weight: 120%;
+  /* font-size: 120%; */
+}
+
+.topbar:last-of-type button {
+
+  font-family: 'Thin';
+  color: rgb(102, 102, 102);
+}
+
+
 .photocontainer {
   justify-content: center;
 }
 
 .profile-dropdown div button:hover {
-  filter: invert(100%);
+  /* filter: invert(100%); */
   border-color: rgb(246, 244, 244);
 
 }
@@ -22,8 +59,12 @@
 }
 
 .logoutbutt:hover {
-  background-color: rgb(17, 15, 15);
-  border-radius: '2em';
+  /* background-color: rgb(217, 217, 217); */
+  /* border-radius: '2em'; */
+}
+
+.logoutbutt button {
+  border-color: rgb(248, 13, 13);
 }
 
 .profile-dropdown div:last-child {
@@ -39,7 +80,7 @@
   /* background-color: rgba(10, 10, 10, 0.8); */
   background-color: white;
   border-color: white;
-  padding: .5em;
+  /* padding: .5em; */
   box-shadow: none;
   /* color: #fdfcfd; */
   position: relative;
@@ -55,20 +96,17 @@
   background-color: #ffffff;
   /* padding-bottom: 1em; */
   /* width: 120%; */
-  padding: .25em;
+  /* padding: .25em; */
 
 
 }
 
 .profile-dropdown {
-  /* overflow-y: visible; */
-  /* background-color: black; */
-  /* border-style: solid;
-  border-width: 5px; */
-  top: 4em;
-  right: 1em;
+  background-color: rgb(255, 255, 255);
   position: absolute;
   text-align: left;
+  margin-right: 4em;
+  /* padding-bottom: 5em; */
   /* border: 20px, solid, black; */
 }
 
@@ -80,24 +118,7 @@
   flex-flow: column;
   overflow-y: visible;
   position: static;
-
-}
-
-.topbar {
-  font-family: "Light";
-  display: flex;
-  justify-self: center;
-  /* margin: 0, 20%, 0, 20%; */
-  position: sticky;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-left: 2em;
-  padding-top: 1em;
-  background-color: white;
-  border-bottom: 1px solid #dddddd;
-  width: 98vw;
-  padding-top: 1.5em;
- 
+  /* z-index: -1; */
 
 }
 
@@ -127,8 +148,8 @@
 }
 
 .dropbar {
-  margin: .25em, 2em, 0;
-  width: 10em;
+  /* margin: .25em, 2em, 0; */
+  /* width: 10em; */
   display: flex;
 
   /* font-size: 1.2em; */
@@ -143,7 +164,7 @@
 }
 
 .profile-dropdown div {
-  padding-top: 1em;
+  /* padding-top: 1em; */
   border: 1px;
   border-color: black;
   /* display: flex; */
@@ -194,10 +215,74 @@
 
 .logoutbutt:hover {
   /* filter: invert(100%); */
-  background-color: rgb(204, 204, 204);
+  border-color: rgb(204, 204, 204);
+
 }
 
 .lamecss button:hover {
   /* filter: invert(100%); */
-  background-color: rgb(176, 176, 176);
+  /* background-color: rgb(240, 137, 137); */
+}
+
+#topmid>* {
+  background-color: white;
+  width: 10vw;
+  height: 3vw;
+  /* border: 1px black solid; */
+  vertical-align: middle;
+  border: none;
+  cursor: pointer;
+}
+
+#statesearch {
+  height: 1.5vw;
+  border-right: 1px solid #dddddd;
+  vertical-align: middle;
+  padding-top: .3em;
+}
+
+#topmid {
+  /* height: 2em; */
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  /* border: 1px rgb(104, 104, 104) solid; */
+  /* padding-bottom: 1em; */
+  cursor: pointer;
+  border: 1px solid #dddddd;
+  background-color: white;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  align-items: center;
+  box-shadow: 2px 2px 2px #dddddd;
+}
+
+#topmid img {
+  height: 2.5vw;
+  width: 2.5vw;
+
+}
+
+.topbar {
+  font-family: "Light";
+  display: flex;
+  justify-self: center;
+  /* margin: 0, 20%, 0, 20%; */
+  position: sticky;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* padding-left: 2em; */
+  /* padding-top: .5em; */
+  background-color: white;
+  border-bottom: 1px solid #dddddd;
+  width: 100vw;
+  /* padding: 1em; */
+  /* padding-top: .5em; */
+  /* vertical-align: bottom; */
+  align-items: center;
+
 }

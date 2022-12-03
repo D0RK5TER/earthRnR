@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import ProfileButton from './ProfileButton';
+import ProfileButton from './Buttons/ProfileButton';
 import './Navigation.css';
 import logo from '../../assets/logo.jpg';
-// import quest from '../../assets/quest.jpg';
+import spotglass from '../../assets/spotglass.png';
 //NEW
 import { getSessionUser } from '../../store/session2';
 import { getAllSpots } from '../../store/spots2';
-import PaginationFormModel from '../PaginationModal';
+import PaginationFormModel, { setfunc } from '../PaginationModal/index.js';
 // import { useHistory } from 'react-router-dom';
 // import { Modal } from '../../context/Modal';
 // import LoginForm from '../LoginFormModal/LoginForm';
@@ -23,24 +23,45 @@ function Navigation({ isLoaded }) {
   // useEffect(() => dispatch(getAllSpots('')), [dispatch])
   // console.log(user, '!!!!')
   return (
-    <div className='topbar' style={{ position: 'sticky' }}>
-      <div className='nav-left' id='topleft' style={{ 'cursor': 'pointer' }} >
-        <div exact to="/" className={'homebutt'} onClick={() => {
-          dispatch(getAllSpots('')).then(history.push('/'))
-        }}>
+    <div id='evanbar' className='topbar' style={{
+      position: 'sticky', width: '100vw',
+      // marginLeft: '1em',
+      //  marginRight: '1em'
+    }}>
+      <div id='topleft' className='nav-left' style={{
+        'cursor': 'pointer', fontFamily: 'Bold',
+        marginLeft: '5em',
+      }} >
+        <div exact to="/" className={'homebutt'}
+          style={{ fontFamily: 'Bold' }}
+          onClick={() => {
+            dispatch(getAllSpots('')).then(history.push('/'))
+          }}>
           <img src={logo} style={{ paddingRight: '15px' }} />
           earthRnR
         </div>
       </div>
-      <div className='nav-center' id='topmid'>
-        {user && (
-          <>
+      <span className='nav-center' id='topmid'>
+
+        <button>
+          <div id='statesearch'>
+            Location
+          </div>
+        </button>
+        {/* <PaginationFormModel>
+          <div id='statesearch'>
             
-            <PaginationFormModel />
-          </>
-        )}
-      </div>
-      <div className='nav-right'>
+          </div>
+        </PaginationFormModel> */}
+
+        <PaginationFormModel />
+
+        <img
+          onClick={() => setfunc(true)}
+          src={spotglass}
+        />
+      </span>
+      <div className='nav-right' id='topright' >
 
         <ProfileButton
           user={user}

@@ -55,8 +55,8 @@
 
 .loginform button:hover {
     /* padding-bottom: 1em; */
-    filter: invert(200%);
+    /* filter: invert(200%); */
 
-    /* background-color: #ff385c; */
+    background-color: #d2d2d2;
     ;
 }

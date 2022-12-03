@@ -9,7 +9,7 @@ function LoginFormModal(/*{ setShowMenu } */) {
 
     return (
         <>
-            <button onClick={() => setShowModal(true)} style={{ width: '100%' }}>Log In</button>
+            <button onClick={() => setShowModal(true)} style={{ width: '100%', fontFamily: 'Bold', color: 'black' }}>Log In</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <LoginForm setShowModal={setShowModal} />
