@@ -4,6 +4,24 @@
         url("../../assets/earthrnrCerealLight.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Thin";
+    src: local("Poppins-Thin"),
+        url("../../assets/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Li";
+    src: local("Poppins-Light"),
+        url("../../assets/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: local("popbold"),
+        url("../../assets/popbold.ttf") format("truetype");
+}
+
 .spotform {
     font-family: "Light";
     display: inline-flex;
@@ -16,27 +34,21 @@
 }
 
 .spotform label {
-    /* align-self: flex-start; */
-    /* width: 10em; */
     box-sizing: border-box;
-
     align-items: center;
     padding-top: 1em;
 }
 
 .spotform input {
-    /* align-self: center; */
     box-sizing: border-box;
     align-items: center;
     line-height: 2em;
     border-radius: 1em;
     width: 27em;
     text-indent: 1em;
-
 }
 
 .spotform button {
-    /* padding-bottom: 1em; */
     margin-bottom: 1em;
     border-radius: 15em;
     line-height: 2em;
@@ -51,5 +63,21 @@
     /* padding-bottom: 1em; */
     filter: invert(100%);
     /* background-color: #ff385c; */
-    ;
+
 }
+
+.spotbut {
+    border-radius: 3em;
+    border: none;
+    background-color: white;
+    font-family: 'Light';
+    color: black;
+    text-align: center;
+    margin-bottom: 2em;
+    /* line-height: .41em; */
+}
+
+.spotbut:hover {
+    background-color: rgb(245, 245, 245);
+}
+

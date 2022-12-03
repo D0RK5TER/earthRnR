@@ -9,10 +9,15 @@ function SpotFormModal() {
     return (
         <>
             {/* Create a Spot! */}
-            <button className='spotbut' onClick={() => setShowModal(true)} style={{ textAlign: 'left', width: '100%' }}>Create a Spot!</button>
+            <button className='createspotbut' onClick={() => setShowModal(true)} style={{
+                textAlign: 'left', width: '10vw',
+                height: '3.8em', fontFamily: 'Bold',
+                fontSize: '.7em', paddingLeft: '1em',
+
+            }}>Airbnb your home</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <SpotForm setShowModal={setShowModal}/>
+                    <SpotForm setShowModal={setShowModal} />
                 </Modal>
             )}
         </>

@@ -56,12 +56,13 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
     <div className='dropbar' id='pleasework' style={{
       backgroundColor: 'white',
       lineHeight: '2em',
-      'cursor': 'pointer',
+      cursor: 'pointer',
       marginTop: '1em',
       marginRight: '4em',
-      // height: '3em'
+      // height: '3em'  
       
     }}>
+
       <button id='probutt' className='profilebutt' onClick={openMenu ? openMenu : closeMenu} style={{
         border: 'none', lineHeight: '3em', 'cursor': 'pointer'
       }}>

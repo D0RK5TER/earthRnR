@@ -13,7 +13,7 @@ import PaginationFormModel, { setfunc } from '../PaginationModal/index.js';
 // import { Modal } from '../../context/Modal';
 // import LoginForm from '../LoginFormModal/LoginForm';
 // import SignupFormPage from '../SignupFormPage';
-// import CreateSpotForm from '../CreateSpotForm/CreateSpotForm';
+import SpotFormModal from '../SpotFormModal';
 // import ComingSoon from '../ComingSoon/ComingSoon';
 
 function Navigation({ isLoaded }) {
@@ -60,8 +60,14 @@ function Navigation({ isLoaded }) {
           onClick={() => setfunc(true)}
           src={spotglass}
         />
+
       </span>
-      <div className='nav-right' id='topright' >
+      <div className='nav-right' id='topright' style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        width: '23%'
+      }}>
+        
+        <SpotFormModal />
 
         <ProfileButton
           user={user}
