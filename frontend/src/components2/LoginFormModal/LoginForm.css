@@ -3,10 +3,15 @@
     src: local("earthrnrCerealLight"),
         url("../../assets/earthrnrCerealLight.ttf") format("truetype");
 }
-#fanbutts p {
-justify-content: center;
-/* margin: 100em; */
 
+#fanbutts p {
+    justify-content: center;
+    /* margin: 100em; */
+
+}
+
+#loginsubmitbutton {
+    cursor: pointer;
 }
 
 #fangcont>* {
