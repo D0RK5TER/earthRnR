@@ -42,21 +42,23 @@ function SpotCard({ spot }) {
             flexDirection: 'column',
             margin: '.7em',
             marginBottom: '2em',
+            width: '20vw',
+            height: '35vh'
         }}>
             <div id={`SpotCardImgWrapper${id}`} className='piccontwrap allimg previmgwrap'
                 style={{
                     display: 'flex',
                     alignItems: 'center',
                     objectFit: 'contain',
-                    height: '100%',
-                    width: '100%',
+                    width: '20vw',
+                    height: '20vw',
                     justifyContent: 'flex-start',
                 }}
             >
                 <div id={`SpotCardImg${id}`} className='piccont allimg previmg' style={{
                     display: 'flex',
-                    height: '100%',
-                    width: '100%',
+                    width: '20vw',
+                    height: '15vw',
                     borderRadius: '7%',
                     cursor: 'pointer',
                     background: `url(${previewImage}) no-repeat `,
@@ -68,7 +70,7 @@ function SpotCard({ spot }) {
             <div className='spotinfocont' id={`SpotCardInfo${id}`} style={{
                 display: 'flex',
                 flexDirection: 'row',
-                maxHeight: '30%',
+                // maxHeight: '30%',
                 width: '100%',
                 justifyContent: 'space-between',
                 marginTop: '.3em'
@@ -78,11 +80,9 @@ function SpotCard({ spot }) {
 
                 <div className='spotinforow' id={`SpotCardInfoRow1${id}`} style={{
                     display: 'flex', flexDirection: 'column',
-                    lineHeight: '1em',
-                    // maxWidth: '90%', height: '25%'
+                    // lineHeight: '1em',
                 }}>
                     <span style={{
-                        // height: '100%', 
                         fontFamily: 'Bold'
                     }}>
                         {city}     ,   {state}</span>
@@ -96,12 +96,10 @@ function SpotCard({ spot }) {
                     maxWidth: '10%',
 
                 }}>
-                    {/* <div className='spotstarimg' id={`SpotCardStar${id}`}> */}
                     <img id={`starSpot${id}`} src={star} className='starspot' style={{
                         maxHeight: '25%'
                     }} />
                     <div className='spotstaravg' id={`SpotCardInfoRow2${id}`}>
-                        {/* </div> */}
                         {avgRating}
                     </div>
                 </span>
