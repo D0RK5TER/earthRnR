@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 // import { getAllSpots, loadSpots } from '../../store/session';
-import EditSpotFormModal from '../EditSpotFormModal';
+// import EditSpotFormModal from '../EditSpotFormModal';
 import { getAllSpots } from '../../store/spots2';
 import SpotCard from '../SpotCard';
 // import OneSpotIndex from '../OneSpotIndex'
@@ -34,7 +34,7 @@ function SpotsIndex({ isLoaded }) {
     let user = useSelector(state => state.session.user)
     let spots = useSelector(state => state.spots.allspots);
 
-
+    user ? user = user : user = { id: 0 }
     useEffect(() => {
 
         dispatch(getAllSpots(''));
@@ -42,16 +42,11 @@ function SpotsIndex({ isLoaded }) {
 
     if (!spots) return null;
 
-    if (spots) {
+    else {
         for (let spa in spots) {
             if (spa.previewImage === 'No preview') spa.previewImage = quest
         }
     }
-
-    // console.log(spots)
-    // console.log(Object.values(spots))
-    // {spots && for (let spot in spots)(
-    //     let{ previewImage, name, id, ownerId, avgRating, createdAt, city, state, price } = spot
     return spots && (
         // <div className="mainContent" >
 
@@ -59,12 +54,15 @@ function SpotsIndex({ isLoaded }) {
             display: 'flex',
             flexWrap: 'wrap',
             height: '100vw',
-            width: '100vw',
-            justifyContent: 'space-evenly'
+            width: '98vw',
+            justifyContent: 'space-around',
+            margin: '2vw',
+            justifySelf: 'center'
+            // padding: 'vw'
         }}>
             {spots && Object.values(spots).map(spot =>
 
-                <SpotCard spot={spot} />
+                <SpotCard spot={spot} user={user} />
 
             )}
         </div >

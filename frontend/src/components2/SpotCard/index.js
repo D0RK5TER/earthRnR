@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { NavLink, Redirect, useHistory } from 'react-router-dom';
 // import { useSelector, useDispatch } from "react-redux";
 import star from '../../assets/star.png';
+import EditSpotFormModal from '../EditSpotFormModal';
 
 
 function getAge(birth) {
@@ -30,20 +31,20 @@ function getAge(birth) {
 }
 
 
-function SpotCard({ spot }) {
+function SpotCard({ spot, user }) {
     const { previewImage, id, description,
-        avgRating, createdAt, city, state, price } = spot
-
+        avgRating, createdAt, city, state,
+        ownerId, price } = spot
+    console.log(user)
     const history = useHistory()
     return (
 
         <div id={`SpotCard${id}`} className='spotcard wholething' style={{
             display: 'flex',
             flexDirection: 'column',
-            margin: '.7em',
-            marginBottom: '2em',
+            margin: '1em',
+            marginBottom: '1vw',
             width: '20vw',
-            height: '35vh'
         }}>
             <div id={`SpotCardImgWrapper${id}`} className='piccontwrap allimg previmgwrap'
                 style={{
@@ -58,7 +59,7 @@ function SpotCard({ spot }) {
                 <div id={`SpotCardImg${id}`} className='piccont allimg previmg' style={{
                     display: 'flex',
                     width: '20vw',
-                    height: '15vw',
+                    height: '20vw',
                     borderRadius: '7%',
                     cursor: 'pointer',
                     background: `url(${previewImage}) no-repeat `,
@@ -71,38 +72,51 @@ function SpotCard({ spot }) {
                 display: 'flex',
                 flexDirection: 'row',
                 // maxHeight: '30%',
+                lineHeight: '1vw',
+                height: '20%',
                 width: '100%',
                 justifyContent: 'space-between',
-                marginTop: '.3em'
-
+                marginTop: '.3em',
+                fontSize: '1vw'
 
             }}>
 
                 <div className='spotinforow' id={`SpotCardInfoRow1${id}`} style={{
                     display: 'flex', flexDirection: 'column',
-                    // lineHeight: '1em',
+                    lineHeight: '1.5vw',
+                    height: '35%'
                 }}>
                     <span style={{
                         fontFamily: 'Bold'
                     }}>
                         {city}     ,   {state}</span>
-                    <text style={{ height: '100%', fontFamily: 'Li', textSizeAdjust: '10%' }}>{getAge(createdAt.toString())}</text>
-                    <span style={{ height: '100%', fontFamily: 'Li' }}>{description.slice(0, 20)}...</span>
-                    <span style={{ height: '100%', fontFamily: 'Li' }}>$<text style={{ fontFamily: 'Bold' }}>{price}</text> night</span>
+                    <text style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw', }}>{getAge(createdAt.toString())}</text>
+                    <span style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw', }}>{description.slice(0, 20)}...</span>
+                    <span style={{ fontFamily: 'Li', marginTop: '.3em' }}>$<text style={{ fontFamily: 'Bold', lineHeight: '1.5vw', }}>{price}</text> night</span>
                 </div>
-
-                <span className='spotstarrow' id={`SpotCardInfoRow2${id}`} style={{
+                <div className='spotstarrow' id={`SpotCardInfoRow2${id}`} style={{
                     display: 'flex',
-                    maxWidth: '10%',
+                    flexDirection: 'column',
+                    lineHeight: '1.5vw',
 
                 }}>
-                    <img id={`starSpot${id}`} src={star} className='starspot' style={{
-                        maxHeight: '25%'
-                    }} />
-                    <div className='spotstaravg' id={`SpotCardInfoRow2${id}`}>
-                        {avgRating}
+                    <div className='spotstaravg' id={`SpotCardInfoRow2${id}`} style={{
+                        display: 'flex',
+                        flexDirection: 'column'
+                    }} >
+                        <div id={`editspot${id}`} style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'flex-end'
+                        }}>
+                            <img id={`starSpot${id}`} src={star} className='starspot' style={{
+                                maxHeight: '25%'
+                            }} />
+                            {avgRating}
+                        </div>
+                        {user.id === ownerId && <EditSpotFormModal />}
                     </div>
-                </span>
+                </div>
             </div>
         </div >
 
