@@ -21,12 +21,12 @@ function getAge(birth) {
     let year = curYear - birthYear;
     let month = curMonth - birthMonth;
     let day = curDay - birthDay;
+
     year > 0 ? age = `Over ${year} years old!` :
         month > 1 ? age = `Over ${month} months old!` :
-            month === 0 ? age = day > 1 ? `${day} days old` : `${day} day old` :
-                curDay < birthDay ? age = `${day} days old` :
-                    day > 2 ? age = `${curDay - 30 + day} days old` : age = `${day} day old`
-
+            month === 1 ? age = `${day+30} days old` :
+             day > 1 ? age = `${day} days old` : age = `${day} day old` 
+               
     return age;
 }
 
@@ -115,7 +115,7 @@ function SpotCard({ spot, user }) {
                             }} />
                             {avgRating}
                         </div>
-                        {user.id === ownerId && <EditSpotFormModal />}
+                        {user.id === ownerId && <EditSpotFormModal idx={id} />}
                     </div>
                 </div>
             </div>

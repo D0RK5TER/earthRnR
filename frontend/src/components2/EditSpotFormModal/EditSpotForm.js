@@ -68,9 +68,10 @@ function EditSpotForm({ idx, setShowModal }) {
                     type="text"
                     value={address}
                     pattern='^[0-9]+\s{1}.+'
-                    title="Address must be in correct format e.g.'11 California'"
+                    title="Address must be in correct format! e.g.'11 California'"
                     onChange={(e) => setAddress(e.target.value)}
                     placeholder='Address'
+                    required
                 />
             </label>
             <label>
@@ -79,6 +80,7 @@ function EditSpotForm({ idx, setShowModal }) {
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                     placeholder='City'
+                    required
                 />
             </label>
             <label >
@@ -86,12 +88,12 @@ function EditSpotForm({ idx, setShowModal }) {
                     type="text"
                     value={state}
                     pattern='^[A-Z]{2}$'
-                    title="Two Capital Letters Please"
+                    title="Please use valid state! e.g. 'CA' "
                     onChange={(e) => setStats(e.target.value)}
                     placeholder='State'
                     minLength='2'
                     maxLength='2'
-
+                    required
                 />
             </label>
             <label>
@@ -100,6 +102,7 @@ function EditSpotForm({ idx, setShowModal }) {
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}
                     placeholder='Country'
+                    required
                 />
             </label>
             <label >
@@ -108,6 +111,7 @@ function EditSpotForm({ idx, setShowModal }) {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder='Name'
+                    required
                 />
             </label>
             <label >
@@ -116,8 +120,8 @@ function EditSpotForm({ idx, setShowModal }) {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder='Description'
-                    maxLength='45'
-                // required
+                    // maxLength='45'
+                required
 
                 />
             </label>
@@ -127,7 +131,7 @@ function EditSpotForm({ idx, setShowModal }) {
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     placeholder='Price'
-                // required
+                required
 
                 />
             </label>
