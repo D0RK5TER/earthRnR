@@ -24,12 +24,12 @@ function App() {
     }, [dispatch]);
     ///trying top 
     return (
-        <div id='outtermost' style={{ width: '93vw', height: '200vh' }}>
-            <div id='navi' style={{ position: 'sticky', top: '0px' }}>
+        <div id='outtermost' style={{ width: '100vw', height: '200vh' }}>
+            <div id='navi' style={{ width: '100vw', position: 'sticky', top: '0px' }}>
                 <Navigation isLoaded={isLoaded} style={{ position: 'sticky' }} />
             </div>
             <div id='outter' style={{ 
-                width: '98vw', height: '200vh' }}>
+                width: '100vw', height: '200vh' }}>
                 {/* {isLoaded && (  */}
                 <Switch>
                     <Route exact path='/'>

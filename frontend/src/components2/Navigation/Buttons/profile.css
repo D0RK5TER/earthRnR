@@ -21,11 +21,13 @@
     src: local("popbold"),
         url("../../../assets/popbold.ttf") format("truetype");
 }
-#topmid{
+
+#topmid {
     padding-left: 9em;
     padding-right: 9em;
-    width:100%
+    width: 100%
 }
+
 .profile-dropdown>div button {
     width: 100%;
 }
@@ -40,39 +42,41 @@
 #ddcurrentpage {
     margin-top: 1em;
     width: 100%;
-    font-family: "Bold"; 
+    font-family: "Bold";
     padding: 0;
     font-size: .7em;
 
 }
 
-#ddemail{
+#ddemail {
     width: 100%;
-font-size: .6em;
-font-family: "Li";
-line-height: .5em;
-cursor: default;
+    font-size: .6em;
+    font-family: "Li";
+    line-height: .5em;
+    cursor: default;
 }
 
-#ddusername{
-width: 100%;
-font-size: .7em;
-font-family: "Li";
-cursor: default;
+#ddusername {
+    width: 100%;
+    font-size: .7em;
+    font-family: "Li";
+    cursor: default;
 
 }
+
 #ddname {
     width: 100%;
-    font-family: "Bold"; 
+    font-family: "Bold";
     padding: 0;
     cursor: default;
 
 
 }
+
 #ddlogout {
     width: 100%;
     cursor: pointer;
-    
+
 }
 
 #logindrop {
@@ -86,18 +90,21 @@ cursor: default;
 #signupdrop:hover {
     background-color: rgb(245, 245, 245);
 }
+
 #needmoney:last-of-type button:hover {
     background-color: rgb(245, 245, 245);
 
 }
-#needmoney:last-of-type button{
+
+#needmoney:last-of-type button {
     width: 100%;
     margin: 0;
 }
+
 #needmoney {
     /* margin: .4em; */
     padding: 0;
-    margin-right: 8em;
+    /* margin-right: 8em; */
     overflow: hidden;
 
 }
@@ -165,7 +172,7 @@ cursor: default;
     display: flex;
     font-size: 1.2em;
     align-items: center;
-    width: max-content;
+    /* width: max-content; */
     flex-flow: column;
     overflow-y: visible;
     position: static;

@@ -89,10 +89,11 @@
   background-color: white;
   width: 10vw;
   height: 3vw;
-  /* border: 1px black solid; */
+  border: 1px black solid;
   vertical-align: middle;
   border: none;
   cursor: pointer;
+  /* padding-right: 200em; */
 }
 
 #statesearch {
@@ -140,18 +141,26 @@
   /* padding-top: .5em; */
   background-color: white;
   border-bottom: 1px solid #dddddd;
-  width: 100vw;
+  /* width: 100vw; */
   /* padding: 1em; */
   /* padding-top: .5em; */
   /* vertical-align: bottom; */
   align-items: center;
-
 }
 
+
+#toobig {
+  /* width: 10em; */
+  /* padding-right: 9em; */
+}
+#topmid {
+  margin-right: 8em;
+  width: 1em;
+
+}
 .nav-right {
   display: 'flex';
 
   width: '23%'
 }
-
 /* alignItems: 'center', justifyContent: 'space-between', */

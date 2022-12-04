@@ -7,7 +7,13 @@
 body {
     margin-top: 0;
     width: 100vw;
+    overflow-x: hidden;
 }
+
+/* body:first-child div {
+   min-width: 100vw;
+
+} */
 
 .photocontainer {
     /* padding: 2em; */
@@ -17,9 +23,6 @@ body {
 
 }
 
-.outter {
-    /* width: 120%; */
-}
 
 .namearea {
     text-align: center;

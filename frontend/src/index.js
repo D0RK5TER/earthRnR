@@ -14,17 +14,16 @@ import * as sessionActions from './store/session2';
 
 const store = configureStore();
 
-
-let roooot = document.getElementById('root')
-// roooot.width= '%100'
-// roooot.margin= '0'
-
 if (process.env.NODE_ENV !== "production") {
   restoreCSRF();
   window.csrfFetch = csrfFetch;
   window.store = store;
   window.sessionActions = sessionActions;
 }
+
+const roo = document.getElementById('root')
+roo.width = '100vw'
+
 function Root() {
   return (
     <Provider store={store}>
@@ -40,5 +39,5 @@ ReactDOM.render(
   <React.StrictMode>
     <Root />
   </React.StrictMode>,
-  roooot
+  document.getElementById('root')
 );

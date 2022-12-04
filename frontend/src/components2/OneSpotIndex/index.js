@@ -60,22 +60,21 @@ const OneSpotIndex = () => {
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
     let [a, b, c, d] = spotimgs
     onespotImages = (
-
       <div id='onespotpics'>
         <div id='onespotpreview'
           style={{
             background: `url(${previewImage}) no-repeat `,
-            backgroundSize: '100%'
+            backgroundSize: 'cover'
           }}
         >
         </div>
-        <div id='onespotsmallpicscont'>
+        <div id='onespotsmall'>
           {/* <div className='onespotsmallpics'> */}
 
           <div className='spotImage' id='spotimg1'
             style={{
               background: `url(${a.url})  no-repeat` || `url(${quest})  no-repeat`,
-              backgroundSize: '100%'
+              backgroundSize: 'cover'
 
             }}
           >
@@ -83,7 +82,7 @@ const OneSpotIndex = () => {
           <div className='spotImage' id='spotimg2'
             style={{
               background: `url(${b.url})  no-repeat` || `url(${quest}) no-repeat`,
-              backgroundSize: '100%'
+              backgroundSize: 'cover'
 
             }}
           >
@@ -91,24 +90,17 @@ const OneSpotIndex = () => {
           <div className='spotImage' id='spotimg3'
             style={{
               background: `url(${c.url}) no-repeat` || `url(${quest})  no-repeat`,
-              backgroundSize: '100%'
+              backgroundSize: 'cover'
             }}
           >
           </div>
           <div className='spotImage' id='spotimg4'
             style={{
               background: `url(${d.url})  no-repeat` || `url(${quest})  no-repeat`,
-              backgroundSize: '100%'
+              backgroundSize: 'cover'
             }}
           >
           </div>
-          {/* <div className='onespotsmallpics'> */}
-
-          {/* <div
-            src={b?.url || quest} className='spotImage' id='spotimg2' />
-          {/* </div> */}
-
-
         </div>
 
 
@@ -143,22 +135,9 @@ const OneSpotIndex = () => {
       else reviewsCont = (
         <div className='reviewscontainer'>
           {(Object.values(thereviews)?.map(({ id, stars, review, userId, createdAt, User, spotId }) => (
-            <div style={{
-              fontFamily: 'Li',
-              border: '2px solid black',
-              borderRadius: '2em',
-              'width': '30%', marginLeft: '1em',
-              marginTop: '1em', marginBottom: '2em',
-              paddingLeft: '2em'
-            }}>
+            <div>
               {stars} / 5 stars
-              <div style={{
-                fontFamily: 'Light',
-                fontSize: '1em',
-                paddingLeft: '1em',
-                justifyContent: 'space-between'
-              }}
-              >
+              <div >
                 {User?.firstName}
                 <div>
                   {userId === user?.id && <DeleteReviewFormModal id={id} spotId={spotId} style={{
@@ -175,7 +154,7 @@ const OneSpotIndex = () => {
               </div>
               <div style={{
                 marginLeft: '1em', marginTop: '1em',
-                fontSize: '.8em', width: '80%', paddingBottom: '.6em',
+                fontSize: '.8em', width: '100%', paddingBottom: '.6em',
                 fontFamily: 'Li'
               }}>
                 {review}
@@ -229,16 +208,16 @@ const OneSpotIndex = () => {
         </div>
       </div>
 
-      <div>
-        <div style={{}}>
-          {onespotImages}
 
-        </div>
-      </div>
+
+      {onespotImages}
+
+
+
       <div className='belowimg'>
         <div className='imgformat1'>
           Hosted by {theSpot.User.firstName}
-          <div style={{ marginTop: '1em' }}>
+          <div>
             {/* <img src={background} className='background' /> */}
           </div>
         </div>
@@ -258,9 +237,9 @@ const OneSpotIndex = () => {
           <div className='imgformat1'>
             <div className='starcont'>
               <div className='rating' >
-                <img src={star} className='starspot' style={{ 'height': "80%", 'width': '10%' }} />
+                <img src={star} className='starspot' />
                 {theSpot.avgStarRating}
-                <div style={{ paddingLeft: '2em' }}>
+                <div>
                   {theSpot.numReviews} reviews
                 </div>
               </div>

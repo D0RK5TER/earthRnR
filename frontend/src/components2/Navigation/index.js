@@ -39,8 +39,6 @@ function Navigation({ isLoaded }) {
   return (
     <div id='evanbar' className='topbar' style={{
       position: 'sticky', width: '100vw',
-      // marginLeft: '1em',
-      //  marginRight: '1em'
     }}>
       <div id='topleft' className='nav-left' style={{
         'cursor': 'pointer', fontFamily: 'Bold',
@@ -57,7 +55,7 @@ function Navigation({ isLoaded }) {
         </div>
       </div>
       <div className='nav-center' id='topmid'>
-        <span className='nav-center'>
+        <span className='nav-center' id='toobig'>
           <button>
             <div id='statesearch'>
               Location
