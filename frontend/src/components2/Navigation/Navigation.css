@@ -135,7 +135,7 @@
   justify-self: center;
   /* margin: 0, 20%, 0, 20%; */
   position: sticky;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   /* padding-left: 2em; */
   /* padding-top: .5em; */
@@ -149,18 +149,21 @@
 }
 
 
-#toobig {
+#topright {
   /* width: 10em; */
   /* padding-right: 9em; */
-}
-#topmid {
-  margin-right: 8em;
-  width: 1em;
+  width: 25vw;
+  display: flex;
+  justify-content: space-between;
 
 }
-.nav-right {
-  display: 'flex';
 
-  width: '23%'
+#topright.nav-right {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  /* width: 23% */
+  /* width: 20vw; */
 }
+
 /* alignItems: 'center', justifyContent: 'space-between', */

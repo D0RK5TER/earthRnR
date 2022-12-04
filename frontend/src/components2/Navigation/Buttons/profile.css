@@ -23,9 +23,9 @@
 }
 
 #topmid {
-    padding-left: 9em;
-    padding-right: 9em;
-    width: 100%
+    /* padding-left: 9em; */
+    /* padding-right: 9em; */
+    width: 30vh
 }
 
 .profile-dropdown>div button {
@@ -147,8 +147,8 @@
 
 .dropbar {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    justify-content: space-between;
     flex-direction: column;
 }
 
@@ -176,12 +176,14 @@
     flex-flow: column;
     overflow-y: visible;
     position: static;
+    /* flex-direction: column; */
 }
 
 .profilebutt {
     background-color: white;
     border: none;
-    margin-right: 3em;
+    margin-right: 1em;
+    /* margin-bottom: ; */
     box-sizing: border-box;
     object-fit: contain;
 }
@@ -207,7 +209,7 @@
 #dropdowncont {
     background-color: white;
     line-height: 2em;
-    margin-right: 2em;
+    /* margin-right: 2em; */
     /* cursor: pointer; */
 
 }

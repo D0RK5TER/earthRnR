@@ -25,28 +25,28 @@
         url("../../assets/popbold.ttf") format("truetype");
 }
 #onespotcont {
-    /* width: 100vw; */
+    width: 100vw;
     /* margin: 0; */
 }
 
 #spotimg1 {
     /* margin-left: .5em; */
     /* margin-bottom: .5em; */
-    /* /* height: 50%; */
-    /* width: 45%;  */
+    /* height: 50%; */
+    width: 45%; 
     height: 45%;
 }
 
 #spotimg2 {
     /* margin-left: .5em; */
     /* margin-bottom: .5em; */
-    /* width: 45%;  */
+    width: 45%; 
     height: 45%;
 }
 
 #spotimg3 {
     /* margin-left: .5em; */
-    /* width: 45%;  */
+    width: 45%; 
     height: 45%;
 
 }
@@ -54,7 +54,7 @@
 #spotimg4 {
 
     /* margin-left: .5em; */
-    /* width: 45%;  */
+    width: 45%; 
     height: 45%;
 
 }
@@ -112,10 +112,11 @@
 
 #onespotsubheader {
     width: 100vw;
-    font-size: .8em;
+    font-size: 1em;
     justify-content: space-evenly;
     display: flex;
-
+    height: 1em;
+    margin-bottom: 1em;
 }
 
 #onespotowner {

@@ -55,7 +55,7 @@ function Navigation({ isLoaded }) {
         </div>
       </div>
       <div className='nav-center' id='topmid'>
-        <span className='nav-center' id='toobig'>
+        <span className='nav-center' >
           <button>
             <div id='statesearch'>
               Location
@@ -76,8 +76,7 @@ function Navigation({ isLoaded }) {
         </span>
       </div>
       <div className='nav-right' id='topright' style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        width: '23%'
+    
       }}>
 
         {user ? <SpotFormModal /> : <SignUpFormModal place={'Sign Up to Host!'} />}

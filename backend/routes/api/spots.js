@@ -154,7 +154,7 @@ router.get('/', async (req, res) => {
     spots = JSON.parse(JSON.stringify(spots))
     for (let spa of spots) {
         spa.Reviews.length ? spa.avgRating = Review.getRating(spa.Reviews) : spa.avgRating = 0
-        spa.SpotImages.length ? spa.previewImage = spa.SpotImages[0].url : spa.previewImage = 'No preview'
+        spa.SpotImages.length ? spa.previewImage = spa.SpotImages.find(x=>x.preview===true).url : spa.previewImage = 'No preview'
         delete spa.Reviews
         delete spa.SpotImages
     }
