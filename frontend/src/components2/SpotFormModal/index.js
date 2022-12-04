@@ -10,7 +10,7 @@ function SpotFormModal() {
         <>
             {/* Create a Spot! */}
             <button id='createspotbut' onClick={() => setShowModal(true)} style={{
-            }}>Airbnb your home</button>
+            }}>EarthRnR your home</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <SpotForm setShowModal={setShowModal} />

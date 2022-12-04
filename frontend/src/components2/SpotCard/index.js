@@ -37,6 +37,18 @@ function SpotCard({ spot, user }) {
         ownerId, price } = spot
     // console.log(user)
     const history = useHistory()
+
+
+
+    // if (!spots) return null;
+
+    // else {
+    //     for (let spa in spots) {
+    //         if (spa.previewImage === 'No preview') spa.previewImage = quest
+    //     }
+    // }
+
+
     return (
 
         <div id={`SpotCard${id}`} className='spotcard wholething' style={{

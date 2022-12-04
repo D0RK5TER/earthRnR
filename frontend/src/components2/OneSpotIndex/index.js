@@ -46,10 +46,10 @@ const OneSpotIndex = () => {
   let spotimgs
   let reviewsCont
   let previewImage
-  let sessionLinks
+  let onespotImages
 
   if (theSpot === undefined || thereviews === undefined || id === undefined) {
-    sessionLinks = (<div> hey</div>)
+    onespotImages = (<div> hey</div>)
   } else if (!theSpot || !id > 0) {
     theSpot = null
   } else if (theSpot && theSpot?.id !== +id) {
@@ -59,75 +59,34 @@ const OneSpotIndex = () => {
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
     let [a, b, c, d] = spotimgs
-    sessionLinks = (
-      <>
-        <div className='picbox' style={{
-          display: 'inline-flex', flexWrap: 'wrap',
-          marginLeft: '3em', marginRight: '3em'
-        }}>
-
-          <div className='picbox spotImageBig' style={{
-            objectFit: 'fill', 
-            flexDirection: 'row',
-            maxHeight: '550px', marginRight: '2em',
-            display: 'inline-flex', width: '100%', 
-            justifyContent: 'center',
-            minWidth: '50%', 
-          }} >
-
-            <img src={previewImage} className='spotpreview' style={{  
-
-            }} />
-
-            <div className='sampleimg' style={{
-              maxHeight: '550px',
-            }}>
-
-              <div style={{
-                maxHeight: '550px',
-                flexWrap: 'wrap', boxSizing: 'border-box',
-                marginTop: '2em', flexDirection: 'row', display: 'flex',
-                justifyContent: 'space-around'
-
-              }}>
-                <img src={a?.url || quest} className='spotImage'
-                  style={{
-                    'object-fit': 'contain',
-                    // border: '3px',
-                    maxHeight: '40%', maxWidth: '70%'
-                  }} />
-
-                <img src={b?.url || quest} className='spotImage'
-                  style={{
-                    'object-fit': 'contain', borderRadius: '20px',
-                    maxHeight: '40%', maxWidth: '70%',
-
-
-                  }} />
-
-                <img src={c?.url || quest} className='spotImage'
-                  style={{
-                    'object-fit': 'contain', borderRadius: '20px',
-                    maxHeight: '40%', maxWidth: '70%',
-                    marginLeft: ''
-
-
-                  }} />
-
-                <img src={d?.url || quest} className='spotImage'
-                  style={{
-                    'object-fit': 'contain', borderRadius: '20px',
-                    maxHeight: '40%', maxWidth: '70%',
-                    'border-radius': '50%',
-
-                  }} />
-
-              </div>
-
-            </div>
+    onespotImages = (
+      
+        <div id='onespotpics'>
+          <div className='onespotpreview'>
+            <img src={previewImage} className='spotpreview' id='onepreviewimg' />
           </div>
-        </div >
-      </>
+          <div id='onespotsmallpicscont'>
+            <div className='onespotsmallpics'>
+
+              <img src={a?.url || quest} className='spotImage' />
+            </div>
+            <div className='onespotsmallpics'>
+
+              <img src={b?.url || quest} className='spotImage' />
+            </div>
+            <div className='onespotsmallpics'>
+
+              <img src={c?.url || quest} className='spotImage' />
+            </div>
+            <div className='onespotsmallpics'>
+              <img src={d?.url || quest} className='spotImage' />
+            </div>
+
+          </div>
+
+
+        </div>
+      
     )
     let alreadyreviewed = []
 
@@ -206,71 +165,46 @@ const OneSpotIndex = () => {
   // took out thereviews.length &&
   return id > 0 && theSpot && (
 
-    <div className="swap-down2 bigstyle" style={{ marginTop: '6em' }}>
-      <div>
-        <div>
-        </div>
-      </div>
+    <div id='onespotcont'>
       <div className='titlearea' >
-
-        <div className='nameandbutt namez' style={{ 'display': 'inline-flex' }}>
-          <span>
-            {theSpot.name}
-          </span>
-
-          <div>
-            {theSpot.description}
+        <div id='onespotheader' className='nameandbutt namez'>
+          {theSpot.name}
+          <div id='onespotowner'>
+            Hosted by {theSpot.User.firstName}
+          </div>
+        </div>
+        <div className='descript' id='onespotsubheader'>
+          <div id='onespotstar'>
+            <img src={star} className='starspot' id='starrr' />
+            {theSpot.avgStarRating}
           </div>
 
-        </div>
-        <div className='descript'>
-          <div className='nameandbutt22'>
-            <div className='starcont' style={{
-              'display': 'inline-flex',
-              alignItems: 'baseline',
-              justifyContent: 'space-evenly'
+          <div id='onespotreviews'>
+            <div id='onespotnumber'>
+              {theSpot.numReviews}
+            </div>
+            <text>
+              reviews
+            </text>
+          </div >
 
-            }}>
-              <span className='ratin' style={{
 
-                fontFamily: 'Bold',
-                fontSize: '2em'
-              }} >
-                <img src={star} className='starspot' id='starrr' />
-                {theSpot.avgStarRating}
-              </span>
-              <span className='ratin' id='rat' style={{
-                // "text-decoration": "none",
-                fontFamily: 'Bold',
-                fontSize: '2em',
-                paddingLeft: '4em',
-                // textDecoration: null
-              }}><div style={{ paddingLeft: '.5em', fontFamily: 'Bold' }}>
-
-                  {theSpot.numReviews}
-
-                  reviews
-                </div>
-              </span >
-              <span style={{ paddingLeft: '8em' }}>
-              </span>
-              <div className='locationinfo' style={{ fontSize: '2em', fontFamily: 'Light' }}>
-                <div style={{}}>
-                  {theSpot.city}
-                  <div style={{}} >
-                    {theSpot.state}, {theSpot.country}
-                  </div>
-                </div>
-              </div>
+          <div id='onespotlocation'>
+            <div id='onespotcity'>
+              {theSpot.city}
+            </div>
+            <div id='onespotstate'>
+              {theSpot.state}, {theSpot.country}
             </div>
           </div>
+
 
         </div>
       </div>
 
       <div>
         <div style={{}}>
-          {sessionLinks}
+          {onespotImages}
 
         </div>
       </div>

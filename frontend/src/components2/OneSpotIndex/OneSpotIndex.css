@@ -26,12 +26,59 @@ font-family: 'bold';
 padding-top: 2em;
     
 }
+#onespotpics {
+    width: 100%;
+    display: flex;
+}
+#onespotpics>* {
+    width: 50%;
+}
+#onespotcont {
+/* width: 79vw; */
+display: flex;
+flex-direction: column;
+align-self: center;
+margin: 0 5em 0 5em;
+/* justify-content: middle; */
+
+}
+#onespotheader{
+    width: 60vw;
+    font-size: 1.4em;
+    justify-content: space-around;
+    margin-top: .5em;
+    margin-bottom: .2em;
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+
+}
+#onespotsubheader{
+    width: 80vw;
+    font-size: .8em;
+    justify-content: space-evenly;
+    display: flex;
+
+}
+#onespotowner{
+text-decoration: underline;
+}
+#onespotreviews> text{
+font-family: 'Li';
+padding-left: .6em;
+}
+#onespotsubheader> * {
+    width: fit-content;
+    display: flex;
+    font-family: 'Bold';
+
+}
 #rat  {
-    display: inline-block; 
-    justify-content: center;
+    display: flex; 
     /* /* font-size: 1em; */
     height: 1em;
-    font-size: 2em;
+    font-size: 3em;
+    width: 30vw;
     vertical-align: text-bottom;    /* padding-bottom: 2em; */
     align-items:center
     /* vertical-align: middle; */

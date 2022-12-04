@@ -45,7 +45,7 @@ function SpotForm({ setShowModal }) {
                 </div>
                 <div id='createheadertext'>
                     <div id="createmainheader">Welcome {user.firstName}!</div>
-                    <span id='createsubheader'> Airbnb your home</span>
+                    <span id='createsubheader'> EarthRnR your home</span>
                 </div>
             </div>
             <ul>

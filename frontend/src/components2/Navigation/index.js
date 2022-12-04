@@ -3,6 +3,7 @@ import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './Buttons/ProfileButton';
 import './Navigation.css';
+import '../SignUpFormModal/SignUpForm.css'
 import logo from '../../assets/logo.jpg';
 import spotglass from '../../assets/spotglass.png';
 //NEW
@@ -17,12 +18,24 @@ import SpotFormModal from '../SpotFormModal';
 import SignUpFormModal from '../SignUpFormModal';
 // import ComingSoon from '../ComingSoon/ComingSoon';
 
+
+
 function Navigation({ isLoaded }) {
   const dispatch = useDispatch();
   const history = useHistory()
   const user = useSelector(state => getSessionUser(state));
   // useEffect(() => dispatch(getAllSpots('')), [dispatch])
   // console.log(user, '!!!!')
+
+
+
+
+
+
+
+
+
+
   return (
     <div id='evanbar' className='topbar' style={{
       position: 'sticky', width: '100vw',
@@ -33,7 +46,8 @@ function Navigation({ isLoaded }) {
         'cursor': 'pointer', fontFamily: 'Bold',
         marginLeft: '5em',
       }} >
-        <div exact to="/" className={'homebutt'}
+        <div exact to="/"
+          className={'homebutt'}
           style={{ fontFamily: 'Bold' }}
           onClick={() => {
             dispatch(getAllSpots('')).then(history.push('/'))
@@ -67,8 +81,8 @@ function Navigation({ isLoaded }) {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         width: '23%'
       }}>
-        
-       {user? <SpotFormModal />: <SignUpFormModal />}
+
+        {user ? <SpotFormModal /> : <SignUpFormModal place={'Sign Up to Host!'}/>}
 
         <ProfileButton
           user={user}

@@ -9,7 +9,7 @@ import SignUpFormModal from '../../SignUpFormModal';
 import LoginFormModal from '../../LoginFormModal';
 import DemoButton from './DemoButton';
 import outline from '../../../assets/outline.png';
-
+import './profile.css'
 //take away user so i can use store selector for easier rerender?
 
 function ProfileButton(/*{user}*/{ isLoaded }) {
@@ -39,7 +39,6 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
     underbar.addEventListener('click', closeMenu)
     // navbar.children.addEventListener('click', closeMenu)
     navbar.lastChild.removeEventListener('click', closeMenu)
-    console.log(navbar.children, drop)
     for (let c of navbar.children) console.log(c)
     return () => underbar.removeEventListener("click", closeMenu);
   }, [showMenu]);
@@ -60,7 +59,7 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
       marginTop: '1em',
       marginRight: '4em',
       // height: '3em'  
-      
+
     }}>
 
       <button id='probutt' className='profilebutt' onClick={openMenu ? openMenu : closeMenu} style={{
@@ -105,14 +104,12 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
                   <div style={{ margin: '0px' }}>
                     <button className='logoutbutt' onClick={handleLogout} style={{
                       width: '120%', textAlign: 'left',
-                      fontFamily: 'light',
+                      fontFamily: 'light', cursor: 'pointer'
                     }}
                     >
                       Log Out
                     </button>
                   </div>
-
-
                 </span>
               </div>
             </>
@@ -122,26 +119,14 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
             <>
               {showMenu && (
                 <>
-                  <div id='needmoney' className="profile-dropdown" style={{
-                    width: '5em',
-                    'border-style': 'solid',
-                    'border-width': '1px',
-                    overflow: 'hidden',
-                    borderRadius: '2em',
-                    // fontFamily: 'Bold' 
-                  }}>
-
-                    <div style={{
-                      paddingTop: '1em', width: '100%', 'font-size': '1.5em',
-
-                      borderRadius: '0', textAlign: 'left'
-                    }}>
-                      <LoginFormModal style={{ width: '100%' }} />
+                  <div id='needmoney' className="profile-dropdown">
+                    <div>
+                      <LoginFormModal />
                     </div>
-                    <div style={{ margin: '0px' }}>
-                      <SignUpFormModal />
+                    <div>
+                      <SignUpFormModal className='dropsign' place={'Sign Up'} />
                     </div>
-                    <div style={{ margin: '0px' }}>
+                    <div >
                       <DemoButton />
                     </div>
                   </div>

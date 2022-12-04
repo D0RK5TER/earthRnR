@@ -40,7 +40,7 @@ function LoginForm({ setShowModal }) {
                     <li className='errors' key={idx}>{error}</li>
                 ))}
             </ul>
-            <h3>Welcome to Airbnb!</h3>
+            <h3>Welcome to EarthRnR!</h3>
             <label className="loginlabel">
                 <input
                     type="text"
@@ -71,40 +71,40 @@ function LoginForm({ setShowModal }) {
             <div id='fangcont'>
 
                 {/* <a onScroll={()}> */}
-                    <div className="fangbutts" onClick={() => window.location = 'https://metabookclone.herokuapp.com/#/'}>
-                        <img src={`https://metabook-seed.s3.amazonaws.com/Frame_1-removebg-preview.png`}
-                            style={{ float: 'left' }}
-                        />
-                        <p>
-                            Continue with Metabook
-                        </p>
-                    </div>
+                <div className="fangbutts" onClick={() => window.location = 'https://metabookclone.herokuapp.com/#/'}>
+                    <img src={`https://metabook-seed.s3.amazonaws.com/Frame_1-removebg-preview.png`}
+                        style={{ float: 'left' }}
+                    />
+                    <p>
+                        Continue with Metabook
+                    </p>
+                </div>
                 {/* </a> */}
                 <div className="fangbutts" onClick={() => window.location = 'https://insta-flick.herokuapp.com/home/'}>
                     {/* <button></button> */}
                     <img src={`https://insta-flick.herokuapp.com/static/instaflick-updatedLogo.png`}
-                            style={{ float: 'left' }}
-                        />
+                        style={{ float: 'left' }}
+                    />
                     <p>
-                            Continue with Instaflick
-                        </p>
+                        Continue with Instaflick
+                    </p>
                 </div>
                 <div className="fangbutts" onClick={() => window.location = 'https://niles-app-academy.herokuapp.com/#/'}>
-                <img src={`https://niles-app-academy.herokuapp.com/assets/white_logo-6a776881c565fa200ed232b46298f804059b6542c6ec355b510273f8e1d4d023.png`}
-                            style={{ float: 'left', backgroundColor: 'darkgrey' }}
-                        />
+                    <img src={`https://niles-app-academy.herokuapp.com/assets/white_logo-6a776881c565fa200ed232b46298f804059b6542c6ec355b510273f8e1d4d023.png`}
+                        style={{ float: 'left', backgroundColor: 'darkgrey' }}
+                    />
                     <p>
-                            Continue with Niles
-                        </p>
+                        Continue with Niles
+                    </p>
                 </div>
-                <div className="fangbutts"  onClick={() => window.location = 'https://slackluster.herokuapp.com/'}>
+                <div className="fangbutts" onClick={() => window.location = 'https://slackluster.herokuapp.com/'}>
                     {/*https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg*/}
                     <img src={`https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg`}
-                            style={{ float: 'left', height: '3em'}}
-                        />
+                        style={{ float: 'left', height: '3em' }}
+                    />
                     <p>
-                            Continue with Slackluster
-                        </p>
+                        Continue with Slackluster
+                    </p>
                 </div>
             </div>
 

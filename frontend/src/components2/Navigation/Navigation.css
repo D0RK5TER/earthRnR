@@ -22,6 +22,51 @@
     url("../../assets/popbold.ttf") format("truetype");
 }
 
+#signupmodalbut {
+display: inline-flex;
+flex-direction: column;
+}
+#signupmodalbut {
+  /* width: 28em; */
+  /* height: 3em; */
+  margin-top: 0;
+  align-items: center;
+  display: inline-flex;
+  cursor: pointer;
+  justify-content: center;
+  /* padding-right: 25%; */
+  font-family: 'Li';
+  /* height: 2em; */
+  /* border: 1px solid black; */
+  /* padding: 1em; */
+  background-color: #fdfbfb;
+  border-radius: .5em;
+  /* box-sizing: border-box; */
+  /* align-items: center; */
+  color: rgb(0, 0, 0);
+  /* margin: .7em; */
+
+  width: 10vw;
+  height: 3.4em;
+  font-family: Bold;
+  font-size: .7em;
+  background-color: white;
+  border: none;
+  border-radius: 3em; 
+
+}
+
+#signupmodalbut {
+  cursor: pointer;
+}
+
+#signupmodalbut:hover {
+  background-color: rgb(245, 245, 245);
+
+  /* background-color: rgb(189, 21, 21); */
+
+
+}
 
 .topbar:first-of-type div {
   /* text-decoration-skip: 1; */
@@ -45,18 +90,8 @@
   justify-content: center;
 }
 
-.profile-dropdown div button:hover {
-  /* filter: invert(100%); */
-  border-color: rgb(246, 244, 244);
 
-}
 
-.profile-dropdown div:first-child {
-  border-top-left-radius: 1.7em;
-  border-top-right-radius: 1.6em;
-  /* position: absolute; */
-  /* background-color: aliceblue; */
-}
 
 .logoutbutt:hover {
   /* background-color: rgb(217, 217, 217); */
@@ -65,50 +100,11 @@
 
 .logoutbutt button {
   border-color: rgb(248, 13, 13);
+  cursor: pointer;
 }
 
-.profile-dropdown div:last-child {
-  margin-bottom: 1em;
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
-  padding-bottom: 1em;
-  /* position: absolute; */
-  /* text-shadow: rgb(58, 159, 67) */
-}
-
-.profile-dropdown div button {
-  /* background-color: rgba(10, 10, 10, 0.8); */
-  background-color: white;
-  border-color: white;
-  /* padding: .5em; */
-  box-shadow: none;
-  /* color: #fdfcfd; */
-  position: relative;
-  text-align: left;
-
-  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-}
-
-.profile-dropdown div {
-
-  display: flex;
-  font-size: 1.2em;
-  background-color: #ffffff;
-  /* padding-bottom: 1em; */
-  /* width: 120%; */
-  /* padding: .25em; */
 
 
-}
-
-.profile-dropdown {
-  background-color: rgb(255, 255, 255);
-  position: absolute;
-  text-align: left;
-  margin-right: 4em;
-  /* padding-bottom: 5em; */
-  /* border: 20px, solid, black; */
-}
 
 .dropbarformat {
   display: flex;
@@ -219,10 +215,7 @@
 
 }
 
-.lamecss button:hover {
-  /* filter: invert(100%); */
-  /* background-color: rgb(240, 137, 137); */
-}
+
 
 #topmid>* {
   background-color: white;

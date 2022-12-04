@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from '../../store/session2';
 import './SignUpForm.css'
-function SignUpForm(setShowModal) {
+function SignUpForm({setShowModal}) {
     const dispatch = useDispatch();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("")
@@ -12,7 +12,7 @@ function SignUpForm(setShowModal) {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (password === confirmPassword) {
             setErrors([]);
@@ -25,16 +25,25 @@ function SignUpForm(setShowModal) {
                 //check for need
                 .then(() => setShowModal(false))
         }
-        return setErrors(['Confirm Password field must be the same as the Password field']);
+       else return setErrors(['Confirm Password field must be the same as the Password field']);
     };
 
     return (
-        <form onSubmit={handleSubmit} className='signupform' >
+        <form onSubmit={handleSubmit} id='signupform' >
+            <div id='signupheader'>
+                <div id='signupexitbutt' onClick={() => setShowModal(false)}>
+                    x
+                </div>
+                <div id='signupheadertext'>
+                    <div id="signupmainheader">Welcome to EarthRnR!</div>
+                    <span id='signupsubheader'> Sign Up Today!</span>
+                </div>
+            </div>
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
-            <h2>Sign Up Today!</h2>
-            <label>
+            <div id='signupformcont'>
+            <label className="signuplabel" id='signuptop'>
                 <input
                     type="text"
                     value={firstName}
@@ -45,7 +54,7 @@ function SignUpForm(setShowModal) {
                     required
                 />
             </label>
-            <label>
+            <label className="signuplabel">
                 <input
                     type="text"
                     value={lastName}
@@ -57,7 +66,7 @@ function SignUpForm(setShowModal) {
                     required
                 />
             </label>
-            <label>
+            <label className="signuplabel">
                 <input
                     type="text"
                     value={email}
@@ -69,7 +78,7 @@ function SignUpForm(setShowModal) {
                     required
                 />
             </label>
-            <label>
+            <label className="signuplabel">
                 <input
                     type="text"
                     value={username}
@@ -81,7 +90,7 @@ function SignUpForm(setShowModal) {
                     required
                 />
             </label>
-            <label>
+            <label className="signuplabel">
                 <input
                     type="password"
                     value={password}
@@ -93,7 +102,7 @@ function SignUpForm(setShowModal) {
                     required
                 />
             </label>
-            <label >
+            <label className="signuplabel">
                 <input
                     type="password"
                     value={confirmPassword}
@@ -103,7 +112,15 @@ function SignUpForm(setShowModal) {
                     required
                 />
             </label>
-            <button type="submit" style={{ marginTop: '1em' }} >Sign Up</button>
+            <label className="signuplabel checkbox">
+                <input 
+                type='checkbox'
+                defaultChecked='true'
+                />
+                Sign Up for exclusive email offers!
+            </label>
+            </div>
+            <button id='signupsubmitbutton' type="submit" style={{ marginTop: '1em' }} >Sign Up</button>
         </form>
     );
 }

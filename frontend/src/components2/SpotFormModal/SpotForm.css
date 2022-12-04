@@ -242,3 +242,7 @@ padding-left: 5em;
 #createspotbut:hover {
     background-color: rgb(245, 245, 245);
 }
+
+#createspotbut{
+    cursor: pointer;
+}
