@@ -60,33 +60,60 @@ const OneSpotIndex = () => {
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
     let [a, b, c, d] = spotimgs
     onespotImages = (
-      
-        <div id='onespotpics'>
-          <div className='onespotpreview'>
-            <img src={previewImage} className='spotpreview' id='onepreviewimg' />
+
+      <div id='onespotpics'>
+        <div id='onespotpreview'
+          style={{
+            background: `url(${previewImage}) no-repeat `,
+            backgroundSize: '100%'
+          }}
+        >
+        </div>
+        <div id='onespotsmallpicscont'>
+          {/* <div className='onespotsmallpics'> */}
+
+          <div className='spotImage' id='spotimg1'
+            style={{
+              background: `url(${a.url})  no-repeat` || `url(${quest})  no-repeat`,
+              backgroundSize: '100%'
+
+            }}
+          >
           </div>
-          <div id='onespotsmallpicscont'>
-            <div className='onespotsmallpics'>
+          <div className='spotImage' id='spotimg2'
+            style={{
+              background: `url(${b.url})  no-repeat` || `url(${quest}) no-repeat`,
+              backgroundSize: '100%'
 
-              <img src={a?.url || quest} className='spotImage' />
-            </div>
-            <div className='onespotsmallpics'>
-
-              <img src={b?.url || quest} className='spotImage' />
-            </div>
-            <div className='onespotsmallpics'>
-
-              <img src={c?.url || quest} className='spotImage' />
-            </div>
-            <div className='onespotsmallpics'>
-              <img src={d?.url || quest} className='spotImage' />
-            </div>
-
+            }}
+          >
           </div>
+          <div className='spotImage' id='spotimg3'
+            style={{
+              background: `url(${c.url}) no-repeat` || `url(${quest})  no-repeat`,
+              backgroundSize: '100%'
+            }}
+          >
+          </div>
+          <div className='spotImage' id='spotimg4'
+            style={{
+              background: `url(${d.url})  no-repeat` || `url(${quest})  no-repeat`,
+              backgroundSize: '100%'
+            }}
+          >
+          </div>
+          {/* <div className='onespotsmallpics'> */}
+
+          {/* <div
+            src={b?.url || quest} className='spotImage' id='spotimg2' />
+          {/* </div> */}
 
 
         </div>
-      
+
+
+      </div >
+
     )
     let alreadyreviewed = []
 

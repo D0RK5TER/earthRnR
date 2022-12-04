@@ -56,33 +56,33 @@ function Navigation({ isLoaded }) {
           earthRnR
         </div>
       </div>
-      <span className='nav-center' id='topmid'>
-
-        <button>
-          <div id='statesearch'>
-            Location
-          </div>
-        </button>
-        {/* <PaginationFormModel>
+      <div className='nav-center' id='topmid'>
+        <span className='nav-center'>
+          <button>
+            <div id='statesearch'>
+              Location
+            </div>
+          </button>
+          {/* <PaginationFormModel>
           <div id='statesearch'>
             
           </div>
         </PaginationFormModel> */}
 
-        <PaginationFormModel />
+          <PaginationFormModel />
 
-        <img
-          onClick={() => setfunc(true)}
-          src={spotglass}
-        />
-
-      </span>
+          <img
+            onClick={() => setfunc(true)}
+            src={spotglass}
+          />
+        </span>
+      </div>
       <div className='nav-right' id='topright' style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         width: '23%'
       }}>
 
-        {user ? <SpotFormModal /> : <SignUpFormModal place={'Sign Up to Host!'}/>}
+        {user ? <SpotFormModal /> : <SignUpFormModal place={'Sign Up to Host!'} />}
 
         <ProfileButton
           user={user}

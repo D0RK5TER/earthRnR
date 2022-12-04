@@ -21,28 +21,64 @@
     src: local("popbold"),
         url("../../assets/popbold.ttf") format("truetype");
 }
-.locationinfo{
-font-family: 'bold';
-padding-top: 2em;
-    
+
+
+
+#onespotsmallpicscont {
+    display: inline-flex;
+    flex-wrap: wrap;
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+    width: 35%;
+    height: 100%
+    /* height: 90%; */
+    /* padding: 1em; */
+    /* border-top-left-radius: 1em; */
+    /* border-bottom-left-radius: 1em;    */
 }
-#onespotpics {
-    width: 100%;
-    display: flex;
+
+#onespotpreview {
+    height: 90%;
+    width: 35%;
+    padding: 1em;
+    border-top-left-radius: 1em;
+    /* border-top-right-radius: 3em; */
+    /* border-bottom-right-radius: 3em; */
+    border-bottom-left-radius: 1em;
 }
-#onespotpics>* {
-    width: 50%;
-}
-#onespotcont {
-/* width: 79vw; */
-display: flex;
-flex-direction: column;
-align-self: center;
-margin: 0 5em 0 5em;
-/* justify-content: middle; */
+
+
+.locationinfo {
+    font-family: 'bold';
+    padding-top: 2em;
 
 }
-#onespotheader{
+
+#onespotpics {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 60vh;
+    /* max-width: 50%; */
+    /* max-height: 50%; */
+    justify-content: center;
+    justify-self: center;
+}
+
+/* this is the bigone */
+#onespotcont {
+
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* margin: 0 5em 0 5em; */
+    justify-content: center;
+    /* margin-left: 10vw; */
+
+}
+
+
+#onespotheader {
     width: 60vw;
     font-size: 1.4em;
     justify-content: space-around;
@@ -53,36 +89,42 @@ margin: 0 5em 0 5em;
     /* justify-content: center; */
 
 }
-#onespotsubheader{
+
+#onespotsubheader {
     width: 80vw;
     font-size: .8em;
     justify-content: space-evenly;
     display: flex;
 
 }
-#onespotowner{
-text-decoration: underline;
+
+#onespotowner {
+    text-decoration: underline;
 }
-#onespotreviews> text{
-font-family: 'Li';
-padding-left: .6em;
+
+#onespotreviews>text {
+    font-family: 'Li';
+    padding-left: .6em;
 }
-#onespotsubheader> * {
+
+#onespotsubheader>* {
     width: fit-content;
     display: flex;
     font-family: 'Bold';
 
 }
-#rat  {
-    display: flex; 
+
+#rat {
+    display: flex;
     /* /* font-size: 1em; */
     height: 1em;
     font-size: 3em;
     width: 30vw;
-    vertical-align: text-bottom;    /* padding-bottom: 2em; */
-    align-items:center
-    /* vertical-align: middle; */
-    /* align-items: center; */
+    vertical-align: text-bottom;
+    /* padding-bottom: 2em; */
+    align-items: center
+        /* vertical-align: middle; */
+        /* align-items: center; */
 }
 
 #rat {

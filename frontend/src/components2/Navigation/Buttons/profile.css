@@ -1,5 +1,206 @@
+@font-face {
+    font-family: "Light";
+    src: local("earthrnrCerealLight"),
+        url("../../../assets/earthrnrCerealLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Thin";
+    src: local("Poppins-Thin"),
+        url("../../../assets/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Li";
+    src: local("Poppins-Light"),
+        url("../../../assets/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: local("popbold"),
+        url("../../../assets/popbold.ttf") format("truetype");
+}
+#topmid{
+    padding-left: 9em;
+    padding-right: 9em;
+    width:100%
+}
+.profile-dropdown>div button {
+    width: 100%;
+}
+
+.profile-dropdown:first-of-type div {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+#ddcurrentpage {
+    margin-top: 1em;
+    width: 100%;
+    font-family: "Bold"; 
+    padding: 0;
+    font-size: .7em;
+
+}
+
+#ddemail{
+    width: 100%;
+font-size: .6em;
+font-family: "Li";
+line-height: .5em;
+cursor: default;
+}
+
+#ddusername{
+width: 100%;
+font-size: .7em;
+font-family: "Li";
+cursor: default;
+
+}
+#ddname {
+    width: 100%;
+    font-family: "Bold"; 
+    padding: 0;
+    cursor: default;
+
+
+}
+#ddlogout {
+    width: 100%;
+    cursor: pointer;
+    
+}
+
+#logindrop {
+    border-bottom: 1px solid #dddddd;
+}
+
+#logindrop:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#signupdrop:hover {
+    background-color: rgb(245, 245, 245);
+}
+#needmoney:last-of-type button:hover {
+    background-color: rgb(245, 245, 245);
+
+}
+#needmoney:last-of-type button{
+    width: 100%;
+    margin: 0;
+}
+#needmoney {
+    /* margin: .4em; */
+    padding: 0;
+    margin-right: 8em;
+    overflow: hidden;
+
+}
+
+#logindrop {
+    font-family: 'Li';
+    width: 100%;
+}
+
+#signupdrop {
+    font-family: 'Bold';
+}
+
+.profile-dropdown>* {
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+
+
+
 .profile-dropdown {
     background-color: rgb(255, 255, 255);
     position: absolute;
     text-align: left;
-    margin-right: 4em;}
+    margin-right: 7.5em;
+    padding: 1em;
+    box-shadow: 0px 2px 5px 2px #b9b9b9a5;
+    border: none;
+    border-radius: .7em;
+    width: 13vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.profileshape:hover {
+    box-shadow: 2px 2px 4px #dddddd;
+}
+
+.dropbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logoutbutt:hover {
+    /* background-color: rgb(217, 217, 217); */
+    /* border-radius: '2em'; */
+}
+
+.profileshape {
+    height: 2.8em;
+    /* box-shadow: 2px 2px 4px #dddddd; */
+    box-sizing: border-box;
+    object-fit: contain;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
+    border-top-left-radius: 2em;
+}
+
+.dropbarformat {
+    display: flex;
+    font-size: 1.2em;
+    align-items: center;
+    width: max-content;
+    flex-flow: column;
+    overflow-y: visible;
+    position: static;
+}
+
+.profilebutt {
+    background-color: white;
+    border: none;
+    margin-right: 3em;
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
+
+.profile-dropdown button {
+    /* border-radius: 3em; */
+    background-color: white;
+    border-color: white;
+    padding: .5em;
+    box-shadow: none;
+    text-align: left;
+    font-family: "Li";
+    border: 2px solid #fdfdfd;
+    text-align: left;
+    /* padding-left: 1em; */
+
+}
+
+
+
+
+#dropdowncont {
+    background-color: white;
+    line-height: 2em;
+    margin-right: 2em;
+    /* cursor: pointer; */
+
+}

@@ -17,31 +17,57 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
 
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const [switchbut, setSwitchbut] = useState(false)
   // const []
   const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
 
   const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
+    if (showMenu) return
+    setShowMenu(true)
+    // const drop = document.getElementById('topright')
+    // drop.removeEventListener('click', closeMenu)
+    // const keep = document.getElementById('dropdowncont')
+    // keep.removeEventListener('click', closeMenu)
+    // const keep1 = document.getElementById('dropbarcont')
+    // keep.removeEventListener('click', closeMenu)
+    // const keep2 = document.getElementById('loggedin')
+    // keep.removeEventListener('click', closeMenu)
+    // keep1.removeEventListener('click', closeMenu)
+    // keep2.removeEventListener('click', closeMenu)
+    // underbar.addEventListener('click', closeMenu)
   };
 
   const closeMenu = () => {
-    // if (!showMenu)
+    if (!showMenu) return
     setShowMenu(false);
+    // drop.forEach(x=>x.removeEventListener('click', closeMenu))
+    // setSwitchbut(false)
   };
   useEffect(() => {
-    let navbar = document.getElementById('evanbar')
-    let drop = document.getElementById('dropbarcont')
-
     if (!showMenu) return;
     let underbar = document.getElementById('outter')
     underbar.addEventListener('click', closeMenu)
-    // navbar.children.addEventListener('click', closeMenu)
-    navbar.lastChild.removeEventListener('click', closeMenu)
-    for (let c of navbar.children) console.log(c)
-    return () => underbar.removeEventListener("click", closeMenu);
-  }, [showMenu]);
+    const drop = document.getElementById('topmid')
+    drop.addEventListener('click', closeMenu)
+    // const keep = document.getElementById('dropdowncont')
+    // keep.removeEventListener('click', closeMenu)
+    // const keep1 = document.getElementById('dropbarcont')
+    // keep.removeEventListener('click', closeMenu)
+    // const keep2 = document.getElementById('loggedin')
+    // keep.removeEventListener('click', closeMenu)
+    // keep1.removeEventListener('click', closeMenu)
+    // keep2.removeEventListener('click', closeMenu)
+
+
+    // drop.lastChild.removeEventListener('click', closeMenu)
+    // drop.forEach(x => x.removeEventListener('click', closeMenu))
+    return () => {
+      drop.removeEventListener("click", closeMenu)
+      underbar.removeEventListener("click", closeMenu)
+    }
+  }, [showMenu])
+
 
   // !showMenu ? console.log(navbar) : navbar.lastChild.removeEventListener('click', closeMenu)
 
@@ -52,94 +78,65 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
   };
 
   return (
-    <div className='dropbar' id='pleasework' style={{
-      backgroundColor: 'white',
-      lineHeight: '2em',
-      cursor: 'pointer',
-      marginTop: '1em',
-      marginRight: '4em',
-      // height: '3em'  
+    <div className='dropbar' id='dropdowncont'>
 
-    }}>
-
-      <button id='probutt' className='profilebutt' onClick={openMenu ? openMenu : closeMenu} style={{
-        border: 'none', lineHeight: '3em', 'cursor': 'pointer'
-      }}>
-        <img src={outline} className='profileshape' onClick={openMenu ? openMenu : closeMenu} />
+      <button id='probutt' className='profilebutt'
+        onClick={openMenu ? openMenu : closeMenu} >
+        <img src={outline} className='profileshape'
+          onClick={openMenu ? openMenu : closeMenu}
+          style={showMenu ? { boxShadow: '2px 2px 4px #dddddd' } : null} />
       </button>
-      <div id='dropbarcont' className='dropbarformat' style={{
-        backgroundColor: 'white',
-
-        'cursor': 'pointer'
-      }}>
+      <div id='dropbarcont' className='dropbarformat' name='pleasework'>
 
 
         {/* <div id="toprightmenu"> */}
         {sessionUser ?
           showMenu && (
-            <>
-              <div id='loggedin' className="profile-dropdown" style={{
-                width: '5em',
-                padding: '.52em',
-                borderStyle: 'solid',
-                borderWidth: '1px',
-                overflow: 'hidden',
-                borderRadius: '2em',
-                // fontFamily: 'Bold'
-              }}>
-                <div style={{ padding: '0px' }}>
-                  <p style={{ fontSize: '80%', marginBottom: '0', fontFamily: 'Bold' }}>
-                    {sessionUser.username}
-                  </p>
-                </div>
-                <div style={{ padding: '0px' }}>
-                  <span style={{
-                    fontSize: '60%', marginTop: '1',
-                  }}>{sessionUser.email}</span>
-                </div>
-                <span className='lamecss' style={{ paddingTop: '0px', backgroundColor: 'white' }}>
-                  {/* <div style={{ paddingTop: '0px', width: '100%', fontSize: '1.5em', borderRadius: '0', textAlign: 'left' }}>
-                    <SpotFormModal style={{ width: '100%', textAlign: 'left' }} />
-                  </div> */}
-                  <div style={{ margin: '0px' }}>
-                    <button className='logoutbutt' onClick={handleLogout} style={{
-                      width: '120%', textAlign: 'left',
-                      fontFamily: 'light', cursor: 'pointer'
-                    }}
-                    >
-                      Log Out
-                    </button>
-                  </div>
-                </span>
+
+            <div id='loggedin' className="profile-dropdown" name='pleasework'>
+              <div id='ddname'>
+                {sessionUser.firstName} {sessionUser.lastName}
               </div>
-            </>
+              <div id='ddusername'>
+                {sessionUser.username}
+              </div>
+              <div id='ddemail'>
+                {sessionUser.email}
+              </div>
+              <div id='ddcurrentpage'>
+                *Profile Page*
+              </div>
+              <div id='ddlogout'>
+                <button id='ddlogout' onClick={handleLogout}>
+                  Log Out
+                </button>
+              </div>
+
+            </div>
+
           )
-          :
-          (
-            <>
-              {showMenu && (
-                <>
-                  <div id='needmoney' className="profile-dropdown">
-                    <div>
-                      <LoginFormModal />
-                    </div>
-                    <div>
-                      <SignUpFormModal className='dropsign' place={'Sign Up'} />
-                    </div>
-                    <div >
-                      <DemoButton />
-                    </div>
-                  </div>
-                </>
-              )}
-            </>
+          : showMenu && (
+            <div id='needmoney' className="profile-dropdown">
+              <div id='signandlog'>
+                <div className='dropsign'>
+                  <SignUpFormModal place={'Sign Up'} />
+                </div>
+                <div className='dropsign'>
+                  <LoginFormModal />
+                </div>
+              </div>
+              *Terms*
+              <DemoButton />
+              *Help*
+            </div>
           )
+
         }
         {/* </div> */}
       </div>
       <>
       </>
-    </div>
+    </div >
   );
 }
 
