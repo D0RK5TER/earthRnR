@@ -86,7 +86,7 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
           onClick={openMenu ? openMenu : closeMenu}
           style={showMenu ? { boxShadow: '2px 2px 4px #dddddd' } : null} />
       </button>
-      <div id='dropbarcont' className='dropbarformat' name='pleasework'>
+      <div id='dropbarcont' className='dropbarformat'>
 
 
         {/* <div id="toprightmenu"> */}

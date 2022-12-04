@@ -90,18 +90,21 @@
     background-color: #141414;
 }
 
-.editspotbut {
-    /* border-radius: 2em; */
-    /* padding-top: ; */
-    margin-top: 1em;
+#editspotbut {
+    display: flex;
+    /* width: fit-content; */
+    /* flex-direction: row; */
+    /* justify-content:  */
+    margin-left: 2em;
     background-color: #FF385C;
     border: none;
     font-family: 'Li';
     color: white;
     border-radius: 3em;
     cursor: pointer;
+    width: fit-content;
 }
-.editspotbut:hover {
+#editspotbut:hover {
     background-color: #f12b50;
 }
 

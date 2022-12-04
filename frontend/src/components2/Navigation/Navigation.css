@@ -21,16 +21,21 @@
   src: local("popbold"),
     url("../../assets/popbold.ttf") format("truetype");
 }
+.starspot{
 
+  margin-bottom: 0;
+}
 #signupmodalbut {
+  /* width: 15vw; */
+
   display: inline-flex;
   flex-direction: column;
 }
 
 #signupmodalbut {
   margin-top: 0;
-  align-items: center;
-  display: inline-flex;
+  /* align-items: center; */
+  /* display: inline-flex; */
   cursor: pointer;
   justify-content: center;
   font-family: 'Li';
@@ -135,7 +140,7 @@
   justify-self: center;
   /* margin: 0, 20%, 0, 20%; */
   position: sticky;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   /* padding-left: 2em; */
   /* padding-top: .5em; */
@@ -150,20 +155,13 @@
 
 
 #topright {
-  /* width: 10em; */
+  width: 25em;
   /* padding-right: 9em; */
-  width: 25vw;
+  width: 30vw;
   display: flex;
   justify-content: space-between;
 
 }
 
-#topright.nav-right {
-  display: flex;
-  /* align-items: center; */
-  justify-content: space-between;
-  /* width: 23% */
-  /* width: 20vw; */
-}
 
 /* alignItems: 'center', justifyContent: 'space-between', */

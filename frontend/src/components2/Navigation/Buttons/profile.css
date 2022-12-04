@@ -21,6 +21,16 @@
     src: local("popbold"),
         url("../../../assets/popbold.ttf") format("truetype");
 }
+.dropbar {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    flex-direction: column;
+}
+#topright {
+display: flex;
+justify-content: space-between;
+}
 
 #topmid {
     /* padding-left: 9em; */
@@ -120,7 +130,7 @@
 
 .profile-dropdown>* {
     margin-left: 4em;
-    margin-right: 4em;
+    /* margin-right: 4em; */
 }
 
 
@@ -144,12 +154,8 @@
 .profileshape:hover {
     box-shadow: 2px 2px 4px #dddddd;
 }
-
-.dropbar {
-    display: flex;
-    /* align-items: center; */
-    justify-content: space-between;
-    flex-direction: column;
+#needmoney {
+    margin-right: 0;
 }
 
 .logoutbutt:hover {
@@ -182,7 +188,7 @@
 .profilebutt {
     background-color: white;
     border: none;
-    margin-right: 1em;
+    /* margin-right: 1em; */
     /* margin-bottom: ; */
     box-sizing: border-box;
     object-fit: contain;

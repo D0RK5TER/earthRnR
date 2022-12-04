@@ -24,11 +24,11 @@
 
 #createspotbut {
     text-align: left;
-    width: 23vw;
+    width: 15vw;
     height: 3.8em;
     font-family: Bold;
     font-size: .7em;
-    padding-left: 1.5em;
+    /* padding-left: 1.5em; */
     background-color: white;
     border: none;
     border-radius: 3em

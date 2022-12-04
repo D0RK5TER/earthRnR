@@ -84,6 +84,7 @@ function SpotCard({ spot, user }) {
                 display: 'flex',
                 flexDirection: 'row',
                 // maxHeight: '30%',
+                // marginRight: '3em',
                 lineHeight: '1vw',
                 height: '20%',
                 width: '100%',
@@ -114,16 +115,18 @@ function SpotCard({ spot, user }) {
                 }}>
                     <div className='spotstaravg' id={`SpotCardInfoRow2${id}`} style={{
                         display: 'flex',
-                        flexDirection: 'column'
+                        flexDirection: 'column',
+                        width: '100%'
                     }} >
                         <div id={`editspot${id}`} style={{
                             display: 'flex',
                             flexDirection: 'row',
                             justifyContent: 'flex-end',
-                            fontFamily: 'Bold'
+                            fontFamily: 'Bold',
+                            width: '10em'
                         }}>
                             <img id={`starSpot${id}`} src={star} className='starspot' style={{
-                                maxHeight: '45%'
+                                maxHeight: '35%', height: '5.5vh'
                             }} />
                             {avgRating}
                         </div>

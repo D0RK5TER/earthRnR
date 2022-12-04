@@ -76,10 +76,11 @@ function Navigation({ isLoaded }) {
         </span>
       </div>
       <div className='nav-right' id='topright' style={{
-    
-      }}>
 
-        {user ? <SpotFormModal /> : <SignUpFormModal place={'Sign Up to Host!'} />}
+      }}>
+        <div>
+          {user ? <SpotFormModal /> : <SignUpFormModal place={'Sign Up to Host!'} />}
+        </div>
 
         <ProfileButton
           user={user}
