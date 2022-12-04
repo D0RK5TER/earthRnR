@@ -24,7 +24,7 @@
 
 #createspotbut {
     text-align: left;
-    width: 15vw;
+    /* max-width: 153px; */
     height: 3.8em;
     font-family: Bold;
     font-size: .7em;

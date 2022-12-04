@@ -215,6 +215,7 @@ justify-content: space-between;
 #dropdowncont {
     background-color: white;
     line-height: 2em;
+    /* width: 60vw; */
     /* margin-right: 2em; */
     /* cursor: pointer; */
 

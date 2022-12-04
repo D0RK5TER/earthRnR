@@ -9,8 +9,9 @@ function SpotFormModal() {
     return (
         <>
             {/* Create a Spot! */}
-            <button id='createspotbut' onClick={() => setShowModal(true)} style={{
-            }}>EarthRnR your home</button>
+            <button id='createspotbut'
+                // style={{ maxWidth: '40vw' }}
+                onClick={() => setShowModal(true)} >EarthRnR your home</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <SpotForm setShowModal={setShowModal} />

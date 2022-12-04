@@ -78,9 +78,10 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
   };
 
   return (
-    <div className='dropbar' id='dropdowncont' style={{width: '100vw'}}>
+    <div className='dropbar' id='dropdowncont' >
 
       <button id='probutt' className='profilebutt'
+      
         onClick={openMenu ? openMenu : closeMenu} >
         <img src={outline} className='profileshape'
           onClick={openMenu ? openMenu : closeMenu}

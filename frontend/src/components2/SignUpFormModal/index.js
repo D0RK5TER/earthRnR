@@ -11,7 +11,9 @@ function SignUpFormModal({ place }) {
 
     return (
         <>
-            <button id={newD} onClick={() => setShowModal(true)}>{place}</button>
+            <button id={newD} 
+            style={{minWidth: '153px'}}
+            onClick={() => setShowModal(true)}>{place}</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <SignUpForm setShowModal={setShowModal} />
