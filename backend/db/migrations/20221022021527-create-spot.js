@@ -19,7 +19,7 @@ module.exports = {
         references: {
           model: "Users"
         },
-        allowNull: false,
+        // allowNull: false,
         onDelete: 'CASCADE'
       },
       address: {
