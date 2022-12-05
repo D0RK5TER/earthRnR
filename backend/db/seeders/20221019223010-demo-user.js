@@ -211,7 +211,7 @@ module.exports = {
     options.tableName = 'Spots'
     let ownerSample = await User.findAll();
     ownerSample = JSON.parse(JSON.stringify(ownerSample))
-    while (randomSpots.length < 70) {
+    while (randomSpots.length < 40) {
       let newRandom = { ...spotSkeleton }
       let owner = ownerSample[getRandom(ownerSample.length - 1)]
       let stateCity = cityStateSample[getRandom(cityStateSample.length - 1)]
