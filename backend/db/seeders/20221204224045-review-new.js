@@ -69,7 +69,7 @@ module.exports = {
         // console.log(review, '11')
         newRandom.review = review.slice(0, -1)
         newRandom.stars = star
-        console.log(newRandom)
+        // console.log(newRandom)
         randomReviews.push(newRandom)
       })
     }
