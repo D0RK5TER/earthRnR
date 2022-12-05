@@ -74,7 +74,7 @@ module.exports = {
       })
     }
     // console.log(randomReviews)
-    console.log(randomReviews)
+    // console.log(randomReviews)
     await queryInterface.bulkInsert(options, randomReviews, {})
     // console.log(randomReviews.slice(-1))
   },
