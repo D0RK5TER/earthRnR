@@ -13,11 +13,11 @@ const spotimageSkeleton = {
   url: '',
   preview: null
 }
-const getRandom = (max) => Math.floor(Math.random() * max);
-const randomSpotImages = []
+// const getRandom = (max) => Math.floor(Math.random() * max);
+// const randomSpotImages = []
 
-let spotSample = await Spot.findAll();
-spotSample = JSON.parse(JSON.stringify(spotSample))
+// let spotSample = await Spot.findAll();
+// spotSample = JSON.parse(JSON.stringify(spotSample))
 
 module.exports = {
   async up(queryInterface, Sequelize) {

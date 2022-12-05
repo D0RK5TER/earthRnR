@@ -7,47 +7,50 @@ let options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
 }
+options.tableName = 'Bookings'
 const bookingSkeleton = {
   spotId: 0,
   userId: 0,
   startDate: '2023-',
   endDate: '2023-'
 }
+let dates = [
+  ['01-01', '01-06'], ['02-01', '02-06'], ['03-01', '03-06'], ['04-01', '04-06'],
+  ['01-22', '01-24'],
+  ['05-01', '05-06'], ['07-01', '07-06'], ['08-01', '08-06'],
+  ['05-22', '05-24'], ['06-11', '06-15'], ['07-13', '07-17'],
+  ['09-01', '09-06'], ['10-01', '10-06'],
+  ['09-22', '09-24'], ['11-13', '11-17']
+]
 const getRandom = (max) => Math.floor(Math.random() * max);
-const randomBookings = []
 
-let spotSample = await Spot.findAll();
-spotSample = JSON.parse(JSON.stringify(spotSample))
-let userSample = await User.findAll();
-userSample = JSON.parse(JSON.stringify(userSample))
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    while (randomSpots.length < 70) {
-      let newRandom = { ...spotSkeleton }
-      let owner = ownerSample[getRandom(ownerSample.length - 1)]
-      let stateCity = cityStateSample[getRandom(cityStateSample.length - 1)]
-      let address = addressSample[getRandom(addressSample.length - 1)]
-      let price = priceSample[getRandom(priceSample.length - 1)]
-      let descriptIntro = descriptSample[getRandom(descriptSample.length - 1)]
-      let description1 = descriptVsample[getRandom(descriptVsample.length - 1)]
-      let description2 = descriptVsample[getRandom(descriptVsample.length - 1)]
-      while (description1 === description2) description2 = descriptVsample[getRandom(descriptVsample.length - 1)]
-      let description3 = descriptVsample[getRandom(descriptVsample.length - 1)]
-      while (description3 === description1 || description3 === description2) description3 = descriptVsample[getRandom(descriptVsample.length - 1)]
-      description3 = description3.slice(0, -1)
-      description3 = 'and ' + description3 + '.'
-      newRandom.ownerId = owner.id
-      newRandom.name = `${owner.firstName}'s ` + `${nameSample[getRandom(nameSample.length - 1)]}`
-      newRandom.city = stateCity.city
-      newRandom.state = stateCity.state
-      newRandom.address = address
-      newRandom.price = price
-      newRandom.description = `${newRandom.name} ${descriptIntro} ${description1} ${description2} ${description3}`
-      console.log(newRandom)
-      randomSpots.push(newRandom)
-    }
-    
+
+    let spotSample = await Spot.findAll();
+    spotSample = JSON.parse(JSON.stringify(spotSample))
+    let userSample = await User.findAll();
+    userSample = JSON.parse(JSON.stringify(userSample))
+
+    const randomBookings = []
+    spotSample.forEach(x => {
+      let notowner = userSample.filter(ux => x.ownerId !== ux.id)
+      notowner = notowner.map(lux => lux = lux.id)
+      let numBoo = getRandom(dates.length - 1)
+      while (numBoo > -1) {
+        let newRandom = { ...bookingSkeleton }
+        newRandom.startDate += dates[numBoo][0]
+        newRandom.endDate += dates[numBoo][1]
+        newRandom.spotId = x.id
+        newRandom.userId = notowner[numBoo]
+        randomBookings.push(newRandom)
+        --numBoo
+      }
+    })
+    await queryInterface.bulkInsert(options, randomBookings, {})
+
+
   },
 
   async down(queryInterface, Sequelize) {

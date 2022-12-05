@@ -9,11 +9,16 @@ if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
 }
 const addressSample = ['1070 Second St', '200 3rd Ave', '401 Main Blvd', '50 Civic Ct', '808 Fith Rd', '3 Parkland Blvd', '1307 Garland St',
-  '6095 Goldfish St', '777 Seventh Ct', '1910 Downtown Rd']
+  '6095 Goldfish St', '777 Seventh Ct', '1910 Downtown Rd', '432 Gerber St', '111 Pavement Way']
 const nameSample = ["Lover's Lounge", 'Ancient Area', "Devil's Den", "Great Grotto", "Makers Mark",
   "Garish Garden", "Yellow Yard", "Wishful Wonderland", "Dangerous Desert", "Lonely Lake", "Rich River",
   "Mourning Mountain", "Scary Stairs", "Debaucherous Den", "Oval Office", "Murder Mansion",
-  "Deaths Door", "At the End", "Final Fracas", "Lepers Lake", "Nasty Nook"]
+  "Deaths Door", "At the End", "Final Fracas", "Lepers Lake", "Nasty Nook",
+  "Crazy Canyon", "Delightful Desert", "Enormous End", "Freaky Find", "Healing Harbor", "Ignoble Igloo",
+  "Jumbo Joint", "Heaven's Heart", "Kinda Karachi", "Lovely Lound", "Neat Nook", "Overly Overt", "Pleasant Palace",
+  "Quivering Quarry", "Rundown Ranch", "Steller Stockhouse", "Tidy Tidalpools", "Unseen University", "Voracious Virtue",
+  "Wavey Windows", "The X", "Yellow Yard", "Zillion Zebras"
+]
 const priceSample = [40.02, 77.66, 110.37, 329.52, 280.13, 300.55, 499.08, 202.02,
   50.11, 80.75, 164.99, 177.55, 204.99, 265.51, 309.10, 406.20, 209.56, 100.00, 90.01,
   69.09, 108.06, 66.60, 37.54, 95.34, 76.08, 499.03, 500.00, 303.65, 310.34, 162.44, 139.99,
@@ -206,7 +211,6 @@ module.exports = {
     options.tableName = 'Spots'
     let ownerSample = await User.findAll();
     ownerSample = JSON.parse(JSON.stringify(ownerSample))
-    // console.log(ownerSample)
     while (randomSpots.length < 70) {
       let newRandom = { ...spotSkeleton }
       let owner = ownerSample[getRandom(ownerSample.length - 1)]
@@ -228,7 +232,6 @@ module.exports = {
       newRandom.address = address
       newRandom.price = price
       newRandom.description = `${newRandom.name} ${descriptIntro} ${description1} ${description2} ${description3}`
-      console.log(newRandom)
       randomSpots.push(newRandom)
     }
 
@@ -563,7 +566,7 @@ module.exports = {
     //     price: 480.12
     //   }
     // ], {})
-    
+
     // options.tableName = 'ReviewImages'
 
     // await queryInterface.bulkInsert(options, [
