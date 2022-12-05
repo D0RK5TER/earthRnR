@@ -1,6 +1,6 @@
 
-import { useEffect, useState } from 'react';
-import { NavLink, Redirect, useHistory } from 'react-router-dom';
+// import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 // import { useSelector, useDispatch } from "react-redux";
 import star from '../../assets/star.png';
 import EditSpotFormModal from '../EditSpotFormModal';

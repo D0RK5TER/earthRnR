@@ -1,9 +1,6 @@
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
-
-
-const { Op } = require('sequelize')
 const { User, Spot } = require('../models')
 let options = {};
 if (process.env.NODE_ENV === 'production') {

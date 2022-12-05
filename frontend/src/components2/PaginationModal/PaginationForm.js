@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 // import { useParams } from 'react-router-dom';
 import { getAllSpots } from '../../store/spots2';
 import './PaginationForm.css'

@@ -1,6 +1,3 @@
-
-
-
 @font-face {
     font-family: "Light";
     src: local("earthrnrCerealLight"),
@@ -24,6 +21,17 @@
     src: local("popbold"),
         url("../../assets/popbold.ttf") format("truetype");
 }
+
+#onespotstate {
+   font-family: 'Li';
+}
+
+#onespotcity {
+    margin-right: .2em;
+    word-spacing: .2em;
+
+}
+
 #onespotcont {
     width: 100vw;
     /* margin: 0; */
@@ -33,20 +41,20 @@
     /* margin-left: .5em; */
     /* margin-bottom: .5em; */
     /* height: 50%; */
-    width: 45%; 
+    width: 45%;
     height: 45%;
 }
 
 #spotimg2 {
     /* margin-left: .5em; */
     /* margin-bottom: .5em; */
-    width: 45%; 
+    width: 45%;
     height: 45%;
 }
 
 #spotimg3 {
     /* margin-left: .5em; */
-    width: 45%; 
+    width: 45%;
     height: 45%;
 
 }
@@ -54,7 +62,7 @@
 #spotimg4 {
 
     /* margin-left: .5em; */
-    width: 45%; 
+    width: 45%;
     height: 45%;
 
 }
@@ -72,6 +80,7 @@
 #onespotpreview {
     height: 50vw;
     width: 40vw;
+    
     /* padding: 1em; */
     border-top-left-radius: 1em;
     /* border-top-right-radius: 3em; */
@@ -125,6 +134,7 @@
 
 #onespotreviews>text {
     font-family: 'Li';
+    margin-left: .5em;
     /* padding-left: .6em; */
 }
 

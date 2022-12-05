@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getOneSpot } from '../../store/spots2';
-import { getAllReviews, createReview } from '../../store/reviews2';
+import { getAllReviews } from '../../store/reviews2';
 // import CreateReviewForm from '../CreateReviewModal';
 import './OneSpotIndex.css'
 import star from '../../assets/star.png';
@@ -197,10 +197,10 @@ const OneSpotIndex = () => {
 
           <div id='onespotlocation'>
             <div id='onespotcity'>
-              {theSpot.city}
+              {`${theSpot.city}, ${theSpot.state}`}
             </div>
             <div id='onespotstate'>
-              {theSpot.state}, {theSpot.country}
+              {theSpot.country}
             </div>
           </div>
 

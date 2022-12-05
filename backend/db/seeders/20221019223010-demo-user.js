@@ -2,7 +2,6 @@
 
 /**  @type {import('sequelize-cli').Migration} */
 const bcrypt = require('bcryptjs');
-const { Op } = require('sequelize')
 const { User } = require('../models')
 let options = {};
 if (process.env.NODE_ENV === 'production') {
