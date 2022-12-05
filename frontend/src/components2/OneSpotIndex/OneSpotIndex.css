@@ -22,127 +22,208 @@
         url("../../assets/popbold.ttf") format("truetype");
 }
 
+#ratingnum {
+    font-family: 'Li';
+}
+
+#starrr {
+    margin-top: .25em;
+    height: 100%;
+    margin-right: .25em;
+}
+
+#onespotstar {
+    font-family: 'Thin';
+
+    display: inline-flex;
+    justify-content: center;
+    height: 100%;
+}
+
 #onespotstate {
-   font-family: 'Li';
+    font-family: 'Li';
 }
 
 #onespotcity {
     margin-right: .2em;
     word-spacing: .2em;
+    display: flex;
+    justify-content: space-between;
 
 }
 
 #onespotcont {
+    height: 70vw;
     width: 100vw;
-    /* margin: 0; */
+    /* padding-left: 1em;
+    padding-right: 1em; */
+    padding-left: 7vw;
+    justify-content: center;
 }
 
 #spotimg1 {
-    /* margin-left: .5em; */
-    /* margin-bottom: .5em; */
-    /* height: 50%; */
-    width: 45%;
-    height: 45%;
+
+    width: 50%;
+    height: 100%;
+    padding-bottom: .5em;
+
 }
 
 #spotimg2 {
-    /* margin-left: .5em; */
-    /* margin-bottom: .5em; */
-    width: 45%;
-    height: 45%;
+    /* padding-left: .5em; */
+    padding-bottom: .5em;
+    width: 50%;
+    height: 100%;
 }
 
-#spotimg3 {
-    /* margin-left: .5em; */
-    width: 45%;
-    height: 45%;
-
-}
-
-#spotimg4 {
-
-    /* margin-left: .5em; */
+/* #spotimg3 {
+    margin-left: .5em;
     width: 45%;
     height: 45%;
 
-}
+} */
 
-#onespotsmall {
+/* #spotimg4 {
+
+    margin-left: .5em;
+    width: 45%;
+    height: 45%;
+
+} */
+
+/* #onespotsmall {
     display: flex;
     flex-wrap: wrap;
     border-top-right-radius: 3em;
     border-bottom-right-radius: 3em;
     width: 40vw;
     height: 30vw;
-    /* padding: 1em; */
+    padding: 1em;
+} */
+.gridpics {
+    height: 100%;
+    width: 100%;
+    padding-left: .7em;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.spotImage {
+    object-fit: cover;
+    box-sizing: border-box;
+
+}
+
+
+#smallcont1 {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+    border-top-right-radius: 1em;
+
+}
+
+#smallcont2 {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    /* padding-top: .7em; */
+    /* overflow: hidden; */
+    border-bottom-right-radius: 1em;
+    overflow: hidden;
+}
+
+#smallcont {
+    /* overflow: hidden; */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#previewcont {
+    width: 50%;
+    height: 100%;
 }
 
 #onespotpreview {
-    height: 50vw;
-    width: 40vw;
-    
-    /* padding: 1em; */
-    border-top-left-radius: 1em;
-    /* border-top-right-radius: 3em; */
-    /* border-bottom-right-radius: 3em; */
+    object-fit: cover;
+    box-sizing: border-box;
+    height: 100%;
+
+    width: 100%;
     border-bottom-left-radius: 1em;
+    border-top-left-radius: 1em;
 }
 
 
-.locationinfo {
-    font-family: 'bold';
-    padding-top: 2em;
 
-}
 
 #onespotpics {
-    /* width: 100vw; */
+    display: flex;
+    width: 75%;
     flex-direction: row;
-    height: 50vw;
-    margin: 0;
-    margin-bottom: 3em;
+    height: 45%;
+    padding-left: 5vw;
 }
 
 
 
-
+#onespotowner {
+    margin-left: 1em;
+    font-family: 'Li';
+}
 
 #onespotheader {
-    /* width: 60vw; */
-    font-size: 1.4em;
-    justify-content: space-around;
-    margin-top: .5em;
-    margin-bottom: .2em;
+    font-family: 'Bold';
+    font-size: 2em;
+    justify-content: start;
+    align-items: baseline;
     display: flex;
+    width: 70%;
+    word-spacing: .1em;
+    padding-left: 5vw;
     /* flex-direction: column; */
     /* justify-content: center; */
 
 }
 
 #onespotsubheader {
-    width: 100vw;
-    font-size: 1em;
-    justify-content: space-evenly;
+    width: 25%;
+    padding-left: 5vw;
+    /* justify-content: space-evenly; */
     display: flex;
     height: 1em;
+
+    padding-left: 5vw;
     margin-bottom: 1em;
+    display: flex;
+    justify-content: space-around;
+
+
 }
 
 #onespotowner {
-    text-decoration: underline;
+    /* line-height: 50%; */
+    font-size: 50%;
+
 }
 
-#onespotreviews>text {
+#onespotnumber {
+    font-family: 'Bold';
+    margin-right: .25em;
+}
+#reviewstext{
     font-family: 'Li';
-    margin-left: .5em;
-    /* padding-left: .6em; */
 }
 
 #onespotsubheader>* {
     /* width: fit-content; */
     display: flex;
     font-family: 'Bold';
-
 }
 
 #rat {

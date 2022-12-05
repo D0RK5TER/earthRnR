@@ -59,50 +59,35 @@ const OneSpotIndex = () => {
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
     let [a, b, c, d] = spotimgs
+    console.log(previewImage, spotimgs)
     onespotImages = (
       <div id='onespotpics'>
-        <div id='onespotpreview'
-          style={{
-            background: `url(${previewImage}) no-repeat `,
-            backgroundSize: 'cover'
-          }}
-        >
-        </div>
-        <div id='onespotsmall'>
-          {/* <div className='onespotsmallpics'> */}
 
-          <div className='spotImage' id='spotimg1'
-            style={{
-              background: `url(${a.url})  no-repeat` || `url(${quest})  no-repeat`,
-              backgroundSize: 'cover'
-
-            }}
-          >
-          </div>
-          <div className='spotImage' id='spotimg2'
-            style={{
-              background: `url(${b.url})  no-repeat` || `url(${quest}) no-repeat`,
-              backgroundSize: 'cover'
-
-            }}
-          >
-          </div>
-          <div className='spotImage' id='spotimg3'
-            style={{
-              background: `url(${c.url}) no-repeat` || `url(${quest})  no-repeat`,
-              backgroundSize: 'cover'
-            }}
-          >
-          </div>
-          <div className='spotImage' id='spotimg4'
-            style={{
-              background: `url(${d.url})  no-repeat` || `url(${quest})  no-repeat`,
-              backgroundSize: 'cover'
-            }}
-          >
-          </div>
+        <div id='previewcont'>
+          <img id='onespotpreview' src={`${previewImage}`} />
         </div>
 
+        <div id='smallcont'>
+
+          <div id='smallcont1'>
+            <div className='spotImage' id='spotimg1'>
+              <img src={`${a.url}`} className='gridpics'/>
+            </div>
+            <div className='spotImage' id='spotimg2'>
+              <img src={`${b.url}`} className='gridpics'/>
+            </div>
+          </div>
+
+          <div id='smallcont2'>
+            <div className='spotImage' id='spotimg3'>
+              <img src={`${c.url}`} className='gridpics'/>
+            </div>
+            <div className='spotImage' id='spotimg4'>
+              <img src={`${d.url}`} className='gridpics'/>
+            </div>
+          </div>
+
+        </div>
 
       </div >
 
@@ -182,16 +167,17 @@ const OneSpotIndex = () => {
         <div className='descript' id='onespotsubheader'>
           <div id='onespotstar'>
             <img src={star} className='starspot' id='starrr' />
+            <div id='ratingnum'>
             {theSpot.avgStarRating}
+            </div>
           </div>
-
           <div id='onespotreviews'>
             <div id='onespotnumber'>
               {theSpot.numReviews}
             </div>
-            <text>
+            <div id='reviewstext'>
               reviews
-            </text>
+            </div>
           </div >
 
 
