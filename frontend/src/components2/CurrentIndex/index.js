@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getMySpots } from '../../store/spots2';
 import { getMyReviews } from '../../store/reviews2';
 import SpotCard from '../SpotCard'
+import ReviewCard from './ReviewCard';
 import './currentindex.css'
 
 const CurrentIndex = () => {
@@ -39,10 +40,8 @@ const CurrentIndex = () => {
                 </div>
                 <div id='myreviewscont'>
                 <h3>{user.firstName}'s Reviews</h3>        
-                    {myReviews && Object.values(myReviews).map(review =>
-                        <div>
-                            {review.review}
-                        </div>
+                    {myReviews && Object.values(myReviews).map(rev =>
+                        <ReviewCard rev={rev}/>
                     )}
                 </div>
             </div>
