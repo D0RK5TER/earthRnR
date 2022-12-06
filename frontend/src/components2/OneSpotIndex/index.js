@@ -71,19 +71,19 @@ const OneSpotIndex = () => {
 
           <div id='smallcont1'>
             <div className='spotImage' id='spotimg1'>
-              <img src={`${a.url}`} className='gridpics'/>
+              <img src={`${a.url || quest}`} className='gridpics' />
             </div>
             <div className='spotImage' id='spotimg2'>
-              <img src={`${b.url}`} className='gridpics'/>
+              <img src={`${b.url || quest}`} className='gridpics' />
             </div>
           </div>
 
           <div id='smallcont2'>
             <div className='spotImage' id='spotimg3'>
-              <img src={`${c.url}`} className='gridpics'/>
+              <img src={`${c.url || quest}`} className='gridpics' />
             </div>
             <div className='spotImage' id='spotimg4'>
-              <img src={`${d.url}`} className='gridpics'/>
+              <img src={`${d.url || quest}`} className='gridpics' />
             </div>
           </div>
 
@@ -120,7 +120,7 @@ const OneSpotIndex = () => {
       else reviewsCont = (
         <div className='reviewscontainer'>
           {(Object.values(thereviews)?.map(({ id, stars, review, userId, createdAt, User, spotId }) => (
-            <div>
+            <>
               {stars} / 5 stars
               <div >
                 {User?.firstName}
@@ -131,22 +131,14 @@ const OneSpotIndex = () => {
                   />}
                 </div>
               </div>
-              <div style={{
-                fontSize: '.5em',
-                paddingLeft: '4em',
-              }}>
+              <div>
                 posted {getAge(createdAt)} days ago
               </div>
-              <div style={{
-                marginLeft: '1em', marginTop: '1em',
-                fontSize: '.8em', width: '100%', paddingBottom: '.6em',
-                fontFamily: 'Li'
-              }}>
+              <div>
                 {review}
               </div>
 
-            </div>
-
+            </>
           )))}
         </div>
       )
@@ -157,18 +149,20 @@ const OneSpotIndex = () => {
   return id > 0 && theSpot && (
 
     <div id='onespotcont'>
+
       <div className='titlearea' >
+
         <div id='onespotheader' className='nameandbutt namez'>
-          {theSpot.name}
-          <div id='onespotowner'>
-            Hosted by {theSpot.User.firstName}
+          {theSpot?.name}
+          <div id='onespotdetails'>
+            hosted by {theSpot.User.firstName}
           </div>
         </div>
         <div className='descript' id='onespotsubheader'>
           <div id='onespotstar'>
             <img src={star} className='starspot' id='starrr' />
             <div id='ratingnum'>
-            {theSpot.avgStarRating}
+              {theSpot.avgStarRating}
             </div>
           </div>
           <div id='onespotreviews'>
@@ -198,48 +192,61 @@ const OneSpotIndex = () => {
 
       {onespotImages}
 
-
-
       <div className='belowimg'>
-        <div className='imgformat1'>
-          Hosted by {theSpot.User.firstName}
-          <div>
-            {/* <img src={background} className='background' /> */}
+
+        <div id='belowheader'>
+          <div id='hostinfocont'>
+            <div id='hostnamecont'>
+              {theSpot.description.split(':')[1]}
+            </div>
+            <div id='spotdescription'>
+              Number of Beds: 2
+            </div>
+          </div>
+          <div id='bookingcont'>
+            {console.log()}
+            Bookings
           </div>
         </div>
-      </div>
-      <div>
-        <div className='belowimg'>
-          <div className='imgformat1'>
-            {theSpot.description}
-            {/* <div style={{ marginTop: '2em' }}>
-              <img src={background2} className='background' />
-            </div> */}
-          </div>
-        </div>
-      </div>
-      <div>
-        <div className='belowimg'>
-          <div className='imgformat1'>
-            <div className='starcont'>
-              <div className='rating' >
-                <img src={star} className='starspot' />
-                {theSpot.avgStarRating}
-                <div>
-                  {theSpot.numReviews} reviews
+
+
+        <div id='reviewscont'>
+
+          <div id='reviewsheader'>
+
+            <div id='reviewsleft' >
+              <div id='reviewsleftleft'>
+                <img src={star} id='reviewsstar' />
+                <div id='reviewsrating'>
+                  {theSpot.avgStarRating}
                 </div>
               </div>
+
+              <div id='reviewsleftright'>
+                <div id='reviewdot' className='dot'>
+                  •
+                </div>
+                <div id='onespotnumber'>
+                  {theSpot.numReviews}
+                </div>
+                <div id='reviewsright'>
+                  reviews
+                </div>
+              </div >
             </div>
-            <div>
-              {/* <img src={reaviewshead} className='background' /> */}
+
+            <div id='reviewsright'>
+              {!alreadyreviewed.includes(user?.id) && user?.id !== theSpot?.ownerId && < CreateReviewFormModal id={id} />}
             </div>
-            {!alreadyreviewed.includes(user?.id) && user?.id !== theSpot?.ownerId && < CreateReviewFormModal id={id} />}
+          </div>
+
+          <div className='reviewscontbot'>
+            {reviewsCont}
           </div>
         </div>
-        <div className='reviewscontainer'>
-          {reviewsCont}
-        </div>
+
       </div>
+
     </div>
 
   )

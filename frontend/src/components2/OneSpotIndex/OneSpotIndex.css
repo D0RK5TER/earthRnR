@@ -22,6 +22,103 @@
         url("../../assets/popbold.ttf") format("truetype");
 }
 
+#bookingcont {
+    margin-bottom: 3em;
+}
+
+
+
+#reviewscontbot{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+/* #reviewsleftright{
+display: flex;
+flex-direction: row;
+} */
+#reviewsright button {
+    align-items: flex-end;
+}
+
+#reviewsrating {
+    font-size: 1.25em;
+}
+
+#reviewdot.dot {
+    font-size: .75em;
+    padding-top: .5em;
+}
+
+#reviewsstar {
+    height: 60%;
+    margin-right: .25em;
+    margin-top: .24em;
+}
+
+#reviewsleftright .dot {
+    /* margin-bottom: 3em; */
+    height: 100%;
+    text-align: center;
+}
+
+#reviewsleftright div {
+    font-family: 'Bold';
+    font-size: 1.22em;
+    display: flex;
+    flex-direction: row;
+    align-items: middle;
+
+    margin-left: .5em;
+}
+
+#reviewsleftleft>img {
+    padding-top: .1em;
+}
+
+#reviewsleft div {
+    height: 80%;
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+    width: min-content;
+    /* vertical-align: middle; */
+}
+
+#reviewsleft {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: flex-start; */
+    width: 30%;
+    height: 100%;
+    /* padding-right: 2em; */
+    margin-left: 5em;
+    vertical-align: middle;
+
+}
+
+#reviewscont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+#reviewsheader {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    justify-content: flex-start;
+    height: 3vw;
+    font-family: 'Bold';
+    border-top: 2px solid #e6e6e6;
+    ;
+    padding-top: 1em;
+}
+
+
 #ratingnum {
     font-family: 'Li';
 }
@@ -70,26 +167,21 @@
 }
 
 #spotimg2 {
-    /* padding-left: .5em; */
     padding-bottom: .5em;
     width: 50%;
     height: 100%;
 }
 
-/* #spotimg3 {
-    margin-left: .5em;
-    width: 45%;
-    height: 45%;
+#spotimg3 {
+    width: 50%;
+    height: 100%;
 
-} */
+}
 
-/* #spotimg4 {
-
-    margin-left: .5em;
-    width: 45%;
-    height: 45%;
-
-} */
+#spotimg4 {
+    width: 50%;
+    height: 100%;
+}
 
 /* #onespotsmall {
     display: flex;
@@ -172,9 +264,10 @@
 
 
 
-#onespotowner {
-    margin-left: 1em;
+#onespotdetails {
+    margin-left: 2em;
     font-family: 'Li';
+    font-size: .5em;
 }
 
 #onespotheader {
@@ -216,7 +309,8 @@
     font-family: 'Bold';
     margin-right: .25em;
 }
-#reviewstext{
+
+#reviewstext {
     font-family: 'Li';
 }
 

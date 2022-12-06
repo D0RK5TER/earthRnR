@@ -30,8 +30,8 @@ function SpotsIndex({ isLoaded }) {
         dispatch(getAllSpots(''));
     }, []);
 
+    console.log(spots)
     if (!spots) return null;
-
     else {
         for (let spa in spots) {
             if (spa.previewImage === 'No preview') spa.previewImage = quest
@@ -52,9 +52,7 @@ function SpotsIndex({ isLoaded }) {
             // padding: 'vw'
         }}>
             {spots && Object.values(spots).map(spot =>
-
                 <SpotCard spot={spot} user={user} />
-
             )}
         </div >
 

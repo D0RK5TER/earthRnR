@@ -26,7 +26,7 @@ function SpotForm({ setShowModal }) {
             address, city, state, country,
             name, description, price, latt
         })).then(async (res) => {
-            console.log(res)
+            // console.log(res)
             if (!res[1].ok) {
                 const data = await res[1].json()
                 if (data.message) setErrors([data.message]);
