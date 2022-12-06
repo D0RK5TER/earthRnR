@@ -8,11 +8,10 @@ function SignUpFormModal({ place }) {
     const [showModal, setShowModal] = useState(false);
     let newD
     place === 'Sign Up to Host!' ? newD = 'signupmodalbut' : newD = 'signupdrop'
-
+    console.log(newD)
     return (
         <>
-            <button id={newD} 
-            style={{minWidth: '153px'}}
+            <button id={newD}
             onClick={() => setShowModal(true)}>{place}</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

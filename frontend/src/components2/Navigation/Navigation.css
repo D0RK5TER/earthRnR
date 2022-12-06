@@ -21,15 +21,10 @@
   src: local("popbold"),
     url("../../assets/popbold.ttf") format("truetype");
 }
-.starspot{
+
+.starspot {
 
   margin-bottom: 0;
-}
-#signupmodalbut {
-  /* width: 15vw; */
-
-  display: inline-flex;
-  flex-direction: column;
 }
 
 #signupmodalbut {
@@ -42,24 +37,19 @@
   background-color: #fdfbfb;
   border-radius: .5em;
   color: rgb(0, 0, 0);
-  width: 10vw;
+  width: fit-content;
   height: 3.4em;
   font-family: Bold;
   font-size: .7em;
   background-color: white;
   border: none;
-  /* border-radius: 3em; */
+  border-radius: 3em;
 
-}
-
-#signupmodalbut {
-  cursor: pointer;
 }
 
 #signupmodalbut:hover {
   background-color: rgb(245, 245, 245);
 
-  /* background-color: rgb(189, 21, 21); */
 
 
 }
@@ -155,9 +145,8 @@
 
 
 #topright {
-  width: 25em;
-  /* padding-right: 9em; */
-  width: 30vw;
+  padding-right: 5em;
+  min-width: 17vw;
   display: flex;
   justify-content: space-between;
 

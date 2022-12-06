@@ -21,33 +21,56 @@
     src: local("popbold"),
         url("../../../assets/popbold.ttf") format("truetype");
 }
+
+#ddloggedin button {
+    text-align: center;
+    font-family: "Bold";
+}
+
+#ddloggedin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-dropdown.ddprofile>* {
+    padding: .51em;
+}
+
+.profile-dropdown.ddprofile {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    margin-right: 7.5em;
+    box-shadow: 0px 2px 5px 2px #b9b9b9a5;
+    border: none;
+    border-radius: .7em;
+    width: 16vw;
+    height: 13vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+
+}
+
 .dropbar {
     display: flex;
     /* align-items: center; */
     justify-content: space-between;
     flex-direction: column;
 }
-#topright {
+
+/* #topright {
 display: flex;
 justify-content: space-between;
-}
+} */
 
 #topmid {
     /* padding-left: 9em; */
     /* padding-right: 9em; */
     width: 30vh
 }
-
-.profile-dropdown>div button {
-    width: 100%;
-}
-
-.profile-dropdown:first-of-type div {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-}
-
 
 #ddcurrentpage {
     margin-top: 1em;
@@ -83,14 +106,35 @@ justify-content: space-between;
 
 }
 
+#ddlogout button {
+    width: 100%;
+}
+
 #ddlogout {
     width: 100%;
     cursor: pointer;
+}
 
+#ddlogout:hover {
+    background-color: #f3f3f3;
+    ;
+}
+
+#dddemo:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#dddemo {
+    width: 100%;
 }
 
 #logindrop {
+    width: 100%;
     border-bottom: 1px solid #dddddd;
+}
+
+#signupdrop {
+    width: 100%;
 }
 
 #logindrop:hover {
@@ -119,49 +163,22 @@ justify-content: space-between;
 
 }
 
-#logindrop {
-    font-family: 'Li';
-    width: 100%;
-}
 
 #signupdrop {
     font-family: 'Bold';
 }
 
-.profile-dropdown>* {
-    margin-left: 4em;
-    /* margin-right: 4em; */
-}
 
 
-
-
-.profile-dropdown {
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    text-align: left;
-    margin-right: 7.5em;
-    padding: 1em;
-    box-shadow: 0px 2px 5px 2px #b9b9b9a5;
-    border: none;
-    border-radius: .7em;
-    width: 13vw;
-    display: flex;
-    flex-direction: column;
-
-}
 
 .profileshape:hover {
     box-shadow: 2px 2px 4px #dddddd;
 }
+
 #needmoney {
     margin-right: 0;
 }
 
-.logoutbutt:hover {
-    /* background-color: rgb(217, 217, 217); */
-    /* border-radius: '2em'; */
-}
 
 .profileshape {
     height: 2.8em;
@@ -194,19 +211,19 @@ justify-content: space-between;
     object-fit: contain;
 }
 
+.profile-dropdown button:hover {
+    border-color: #f3f3f3;
+
+}
 
 .profile-dropdown button {
-    /* border-radius: 3em; */
     background-color: white;
     border-color: white;
-    padding: .5em;
     box-shadow: none;
     text-align: left;
     font-family: "Li";
     border: 2px solid #fdfdfd;
-    text-align: left;
-    /* padding-left: 1em; */
-
+    /* margin-top: 1em; */
 }
 
 

@@ -4,6 +4,24 @@
         url("../../assets/earthrnrCerealLight.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Thin";
+    src: local("Poppins-Thin"),
+        url("../../assets/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Li";
+    src: local("Poppins-Light"),
+        url("../../assets/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: local("popbold"),
+        url("../../assets/popbold.ttf") format("truetype");
+}
+
 .signuplabel:first-of-type input {
     margin-top: 0;
 }
@@ -29,33 +47,6 @@
     justify-content: space-evenly;
 }
 
-/* #signupmodalbut:hover {
-    background-color: rgb(245, 245, 245);
-} */
-
-@font-face {
-    font-family: "Light";
-    src: local("earthrnrCerealLight"),
-        url("../../assets/earthrnrCerealLight.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Thin";
-    src: local("Poppins-Thin"),
-        url("../../assets/Poppins-Thin.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Li";
-    src: local("Poppins-Light"),
-        url("../../assets/Poppins-Light.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Bold";
-    src: local("popbold"),
-        url("../../assets/popbold.ttf") format("truetype");
-}
 
 #signupspotbut {
     text-align: left;

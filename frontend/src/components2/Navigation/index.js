@@ -75,9 +75,7 @@ function Navigation({ isLoaded }) {
           />
         </span>
       </div>
-      <div className='nav-right' id='topright' style={{
-        paddingRight: '3em', justifyContent: 'space-around'
-      }}>
+      <div className='nav-right' id='topright'>
         {/* <div> */}
           {user ? <SpotFormModal /> : <SignUpFormModal place={'Sign Up to Host!'} />}
         {/* </div> */}

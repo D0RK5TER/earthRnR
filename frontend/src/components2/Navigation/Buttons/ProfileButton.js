@@ -25,24 +25,11 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
   const openMenu = () => {
     if (showMenu) return
     setShowMenu(true)
-    // const drop = document.getElementById('topright')
-    // drop.removeEventListener('click', closeMenu)
-    // const keep = document.getElementById('dropdowncont')
-    // keep.removeEventListener('click', closeMenu)
-    // const keep1 = document.getElementById('dropbarcont')
-    // keep.removeEventListener('click', closeMenu)
-    // const keep2 = document.getElementById('loggedin')
-    // keep.removeEventListener('click', closeMenu)
-    // keep1.removeEventListener('click', closeMenu)
-    // keep2.removeEventListener('click', closeMenu)
-    // underbar.addEventListener('click', closeMenu)
   };
 
   const closeMenu = () => {
     if (!showMenu) return
     setShowMenu(false);
-    // drop.forEach(x=>x.removeEventListener('click', closeMenu))
-    // setSwitchbut(false)
   };
   useEffect(() => {
     if (!showMenu) return;
@@ -81,7 +68,7 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
     <div className='dropbar' id='dropdowncont' >
 
       <button id='probutt' className='profilebutt'
-      
+
         onClick={openMenu ? openMenu : closeMenu} >
         <img src={outline} className='profileshape'
           onClick={openMenu ? openMenu : closeMenu}
@@ -94,7 +81,7 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
         {sessionUser ?
           showMenu && (
 
-            <div id='loggedin' className="profile-dropdown" name='pleasework'>
+            <div className="profile-dropdown ddprofile" id='ddloggedin'>
               <div id='ddname'>
                 {sessionUser.firstName} {sessionUser.lastName}
               </div>
@@ -107,28 +94,26 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
               <div id='ddcurrentpage'>
                 *Profile Page*
               </div>
-              <div id='ddlogout'>
+              
                 <button id='ddlogout' onClick={handleLogout}>
                   Log Out
                 </button>
-              </div>
+            
 
             </div>
 
           )
           : showMenu && (
-            <div id='needmoney' className="profile-dropdown">
-              <div id='signandlog'>
-                <div className='dropsign'>
-                  <SignUpFormModal place={'Sign Up'} />
-                </div>
-                <div className='dropsign'>
-                  <LoginFormModal />
-                </div>
-              </div>
-              *Terms*
+            <div className="profile-dropdown ddprofile">
+
+              <SignUpFormModal place={'Sign Up'} />
+              <LoginFormModal />
               <DemoButton />
+
+
+              *Terms*
               *Help*
+
             </div>
           )
 
