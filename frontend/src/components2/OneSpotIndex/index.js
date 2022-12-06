@@ -40,18 +40,15 @@ const OneSpotIndex = () => {
   }, [id])
 
 
-  let alreadyreviewed = []
 
-  let buttonVis
+  let buttonVis = true
   let spotimgs
   let reviewsCont
   let previewImage
   let onespotImages
-
+  let ratingsneak = true
   if (theSpot === undefined || thereviews === undefined || id === undefined) {
     onespotImages = (<div> hey</div>)
-  } else if (!theSpot || !id > 0) {
-    theSpot = null
   } else if (theSpot && theSpot?.id !== +id) {
     theSpot = null
   }
@@ -59,7 +56,6 @@ const OneSpotIndex = () => {
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
     let [a, b, c, d] = spotimgs
-    console.log(previewImage, spotimgs)
     onespotImages = (
       <div id='onespotpics'>
 
@@ -92,61 +88,68 @@ const OneSpotIndex = () => {
       </div >
 
     )
-    let alreadyreviewed = []
-
-
-    // console.log(thereviews)
-    if (user?.id > -1) {
-      for (let x in thereviews) {
-        alreadyreviewed.push(x.userId)
-      }
-      buttonVis = alreadyreviewed.length
-      // console.log(buttonVis)
-    }
-    else buttonVis = false
-
-    if (user && theSpot) {
-      if (user.id === theSpot.ownerId) buttonVis = true
-    }
-    if (thereviews) {
-      if (!thereviews) {
-        reviewsCont = (
-          <>
-            <div> Be the first to review!</div>
-          </>
-        )
-      }
-      // console.log(thereviews)
-      else reviewsCont = (
-        <div className='reviewscontainer'>
-          {(Object.values(thereviews)?.map(({ id, stars, review, userId, createdAt, User, spotId }) => (
-            <>
-              {stars} / 5 stars
-              <div >
-                {User?.firstName}
-                <div>
-                  {userId === user?.id && <DeleteReviewFormModal id={id} spotId={spotId} style={{
-                    paddingLeft: '3em'
-                  }}
-                  />}
-                </div>
-              </div>
-              <div>
-                posted {getAge(createdAt)} days ago
-              </div>
-              <div>
-                {review}
-              </div>
-
-            </>
-          )))}
+    thereviews = Object.values(thereviews)
+    if (!thereviews.length) {
+      ratingsneak = false
+      reviewsCont = (
+        <div>
+          <h2> Be the first to review!</h2>
         </div>
       )
     }
-    // console.log(buttonVis)
+    else {
+      if (thereviews.length) {
+        for (let x of thereviews) {
+          console.log(x)
+          if (x.userId === user?.id) buttonVis = false
+        }
+      }
+      reviewsCont =
+        Object.values(thereviews)?.map(
+          ({ id, stars, review, userId, createdAt, User, spotId }) => (
+            <div className='onereview single one' >
+
+              <div className='profilepicture reviewheader'>
+                <div className='profilepic reviewpic'>
+                  pic
+                </div>
+                <div className='profilename profileage'>
+                  <div className='reviewname'>
+                    {User?.firstName}
+                  </div>
+                  <div className='reviewage'>
+                    posted {new Date(createdAt).toDateString()}
+                  </div>
+                </div>
+                {userId === user?.id && <DeleteReviewFormModal id={id} spotId={spotId} />}
+              </div>
+              <div className='bottomhalf reviewbottom'>
+                <div className='reviewscore starscore'>
+                  {stars}/5
+                </div>
+                <div className='reviewreview onereview'>
+                  {review}
+                </div>
+              </div>
+
+            </div>
+          )
+        )
+    }
   }
+
+
+  // { stars } / 5 stars
+  // { User?.firstName }
+
+  // { userId === user?.id && <DeleteReviewFormModal id={id} spotId={spotId} /> }
+
+  //     posted { getAge(createdAt) } days ago
+  // { review }
+
+
   // took out thereviews.length &&
-  return id > 0 && theSpot && (
+  return id > 0 && theSpot && thereviews && (
 
     <div id='onespotcont'>
 
@@ -158,7 +161,7 @@ const OneSpotIndex = () => {
             hosted by {theSpot.User.firstName}
           </div>
         </div>
-        <div className='descript' id='onespotsubheader'>
+        <div id='onespotsubheader'>
           <div id='onespotstar'>
             <img src={star} className='starspot' id='starrr' />
             <div id='ratingnum'>
@@ -204,7 +207,7 @@ const OneSpotIndex = () => {
             </div>
           </div>
           <div id='bookingcont'>
-            {console.log()}
+
             Bookings
           </div>
         </div>
@@ -214,7 +217,7 @@ const OneSpotIndex = () => {
 
           <div id='reviewsheader'>
 
-            <div id='reviewsleft' >
+            {ratingsneak && <div id='reviewsleft' >
               <div id='reviewsleftleft'>
                 <img src={star} id='reviewsstar' />
                 <div id='reviewsrating'>
@@ -233,15 +236,25 @@ const OneSpotIndex = () => {
                   reviews
                 </div>
               </div >
-            </div>
+            </div>}
 
             <div id='reviewsright'>
-              {!alreadyreviewed.includes(user?.id) && user?.id !== theSpot?.ownerId && < CreateReviewFormModal id={id} />}
+              {ratingsneak && buttonVis && < CreateReviewFormModal id={id} />}
             </div>
           </div>
 
-          <div className='reviewscontbot'>
-            {reviewsCont}
+          <div id='reviewscontbot'>
+            {ratingsneak ? reviewsCont : (
+              <div id='noreviews'>
+                <div id='norevhead'>
+                  {reviewsCont}
+                </div>
+                <div id='hugebutton'>
+                  <CreateReviewFormModal id={id} />
+                </div>
+              </div>
+            )}
+
           </div>
         </div>
 

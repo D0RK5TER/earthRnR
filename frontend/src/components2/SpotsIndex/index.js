@@ -30,7 +30,6 @@ function SpotsIndex({ isLoaded }) {
         dispatch(getAllSpots(''));
     }, []);
 
-    console.log(spots)
     if (!spots) return null;
     else {
         for (let spa in spots) {

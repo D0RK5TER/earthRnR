@@ -9,6 +9,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 const addressSample = ['1070 Second St', '200 3rd Ave', '401 Main Blvd', '50 Civic Ct', '808 Fith Rd', '3 Parkland Blvd', '1307 Garland St',
   '6095 Goldfish St', '777 Seventh Ct', '1910 Downtown Rd', '432 Gerber St', '111 Pavement Way']
+
+
 const nameSample = ["Lover's Lounge", 'Ancient Area', "Devil's Den", "Great Grotto", "Makers Mark",
   "Garish Garden", "Yellow Yard", "Wishful Wonderland", "Dangerous Desert", "Lonely Lake", "Rich River",
   "Mourning Mountain", "Scary Stairs", "Debaucherous Den", "Oval Office", "Murder Mansion",
@@ -18,10 +20,14 @@ const nameSample = ["Lover's Lounge", 'Ancient Area', "Devil's Den", "Great Grot
   "Quivering Quarry", "Rundown Ranch", "Steller Stockhouse", "Tidy Tidalpools", "Unseen University", "Voracious Virtue",
   "Wavey Windows", "The X", "Yellow Yard", "Zillion Zebras"
 ]
+
+
 const priceSample = [40.02, 77.66, 110.37, 329.52, 280.13, 300.55, 499.08, 202.02,
   50.11, 80.75, 164.99, 177.55, 204.99, 265.51, 309.10, 406.20, 209.56, 100.00, 90.01,
   69.09, 108.06, 66.60, 37.54, 95.34, 76.08, 499.03, 500.00, 303.65, 310.34, 162.44, 139.99,
   420.99, 35.55, 340.89, 250.04, 393.93, 440.40, 320.10, 288.88, 204.86]
+
+
 const cityStateSample = [{ city: 'San Francisco', state: 'CA' }, { city: 'Los Angeles', state: 'CA' }, { city: 'Portland', state: 'OR' },
 { city: 'New York City', state: 'NY' }, { city: 'Miami', state: 'FL' }, { city: 'Austin', state: 'TX' }, { city: 'Chicago', state: 'IL' },
 { city: 'Little Rock', state: 'AR' }, { city: 'Topeka', state: 'KS' }, { city: 'Jackson', state: 'MS' }, { city: 'Salt Lake City', state: 'UT' },
@@ -204,12 +210,22 @@ module.exports = {
         username: 'CatFish',
         hashedPassword: bcrypt.hashSync('password')
       },
+      {
+        firstName: 'Alex',
+        lastName: 'Kim',
+        email: 'user21@user.co',
+        username: 'Kilex',
+        hashedPassword: bcrypt.hashSync('password')
+      },
+
     ]
       ,
       {})
     options.tableName = 'Spots'
+    
     let ownerSample = await User.findAll();
     ownerSample = JSON.parse(JSON.stringify(ownerSample))
+
     while (randomSpots.length < 40) {
       let newRandom = { ...spotSkeleton }
       let owner = ownerSample[getRandom(ownerSample.length - 1)]
@@ -225,7 +241,7 @@ module.exports = {
       description3 = description3.slice(0, -1)
       description3 = 'and ' + description3 + '.'
       newRandom.ownerId = owner.id
-      newRandom.name = `${owner.firstName}'s ` + `${nameSample[getRandom(nameSample.length - 1)]}`
+      newRandom.name = `${nameSample[getRandom(nameSample.length - 1)]}`
       newRandom.city = stateCity.city
       newRandom.state = stateCity.state
       newRandom.address = address

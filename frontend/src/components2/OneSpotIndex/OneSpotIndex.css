@@ -21,22 +21,95 @@
     src: local("popbold"),
         url("../../assets/popbold.ttf") format("truetype");
 }
+#norevhead{
+    width: 30vw;
+}
+#hugebutton{
+width: 30vw;
+justify-content: center;
+}
+#noreviews{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+   align-items: flex-end;
+}
+
+.reviewscore {
+    margin-right: 1em;
+    /* padding-top: .5em; */
+
+}
+.reviewreview{
+    font-family: 'Li';
+    font-size: .8em;
+}
+.bottomhalf {
+    display: flex;
+    flex-direction: row;
+    padding-left: .5em;
+    align-items: center;
+}
+
+.reviewage {
+    font-family: 'Thin';
+    font-size: .7em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+}
+
+.reviewname {
+    font-family: 'Bold';
+    padding-left: 1em;
+}
+
+.profilepic.reviewpic {
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 3vw;
+    width: 3vw;
+    /* margin-right: 1em; */
+}
+.profilepicture.reviewheader button:hover{
+    background-color: rgb(204, 204, 204);
+
+}
+.profilepicture.reviewheader button {
+margin-left: 2em;
+height: min-content;
+margin-top: 1em;
+border-radius: 1em;
+border: .5px solid rgb(182, 182, 182);
+background-color: rgb(239, 239, 239);
+font-family: 'Li';
+cursor: pointer;
+}
+.profilepicture.reviewheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;    
+}
+
+.onereview.single.one {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 10vw;
+    margin-left: 5em;
+    padding: 1em;
+}
 
 #bookingcont {
     margin-bottom: 3em;
 }
 
-
-
-#reviewscontbot{
+#reviewscontbot {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    width: 100%
 }
-/* #reviewsleftright{
-display: flex;
-flex-direction: row;
-} */
+
 #reviewsright button {
     align-items: flex-end;
 }
@@ -124,7 +197,6 @@ flex-direction: row;
 }
 
 #starrr {
-    margin-top: .25em;
     height: 100%;
     margin-right: .25em;
 }
@@ -142,6 +214,7 @@ flex-direction: row;
 }
 
 #onespotcity {
+    font-family: 'Li';
     margin-right: .2em;
     word-spacing: .2em;
     display: flex;
@@ -288,9 +361,10 @@ flex-direction: row;
     width: 25%;
     padding-left: 5vw;
     /* justify-content: space-evenly; */
+    font-size: .8em;
     display: flex;
-    height: 1em;
-
+    height: .7em;
+    line-height: .7em;
     padding-left: 5vw;
     margin-bottom: 1em;
     display: flex;
@@ -306,7 +380,7 @@ flex-direction: row;
 }
 
 #onespotnumber {
-    font-family: 'Bold';
+    font-family: 'Li';
     margin-right: .25em;
 }
 
