@@ -150,18 +150,6 @@ const OneSpotIndex = () => {
         )
     }
   }
-
-
-  // { stars } / 5 stars
-  // { User?.firstName }
-
-  // { userId === user?.id && <DeleteReviewFormModal id={id} spotId={spotId} /> }
-
-  //     posted { getAge(createdAt) } days ago
-  // { review }
-
-
-  // took out thereviews.length &&
   return id > 0 && theSpot && thereviews && (
 
     <div id='onespotcont'>
@@ -217,24 +205,29 @@ const OneSpotIndex = () => {
             <div id='hostspotinfo'>
               <div id='hostnameheader'>
                 <div id='hostnameage'>
-                  {`${theSpot.name} `}
+                  <div id='hostnamefirst'>
+                    {`${theSpot.name} `}
+                  </div>
                   has been hosted by
-                  {`${theSpot.User.firstName} `}
+                  <div id='hostnamemid'>
+                    {`${theSpot.User.firstName} `}
+                  </div>
                   for
-                  {` ${getAge(theSpot.createdAt)}`} days
+                  <div id='hostnamelast'>
+                    {` ${getAge(theSpot.createdAt)}`}
+                  </div>
+                  days
                 </div>
                 <div id='hostpicture'>
+                  pic
                 </div>
               </div>
-              <div>
 
-                {theSpot.description}
-              </div>
               <div id='spotdescription'>
+                <div>
+                  {theSpot.description}
+                </div>
                 Number of Beds: 2
-
-
-
               </div>
             </div>
 
