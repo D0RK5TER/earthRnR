@@ -14,7 +14,7 @@ const CurrentIndex = () => {
     let myReviews = useSelector(state => state.reviews.myreviews)
 
 
-
+    console.log(user)
 
 
     useEffect(() => {
@@ -24,17 +24,27 @@ const CurrentIndex = () => {
 
     return user && myReviews && (
         <div id='currentcont'>
-            <div id='myspotscont'>
-                {mySpots && Object.values(mySpots).map(spot =>
-                    <SpotCard spot={spot} user={user} />
-                )}
-            </div>
-            <div id='myreviescont'>
-                {myReviews && Object.values(myReviews).map(review =>
-                    <div>
-                        {review.review}
+            <h1>Welcome {user.firstName} </h1>
+            <div id='currentinnercont'>
+
+                <div id='myspotsbigcont'>
+                    <div id='currentuserspots'>
+                    <h3>{user.firstName}'s Spots</h3>
                     </div>
-                )}
+                    <div id='myspotscont'>
+                        {mySpots && Object.values(mySpots).map(spot =>
+                            <SpotCard spot={spot} user={user} />
+                        )}
+                    </div>
+                </div>
+                <div id='myreviewscont'>
+                <h3>{user.firstName}'s Reviews</h3>        
+                    {myReviews && Object.values(myReviews).map(review =>
+                        <div>
+                            {review.review}
+                        </div>
+                    )}
+                </div>
             </div>
 
         </div>

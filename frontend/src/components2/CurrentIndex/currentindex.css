@@ -22,8 +22,41 @@
         url("../../assets/popbold.ttf") format("truetype");
 }
 
+
+
 #currentcont {
-display: flex;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+    width: 100vw;
+    text-align: center;
+}
+h1 {
+    margin-bottom: 0;
+}
+#currentinnercont {
+    height: fit-content;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-align: center;
+    /* align-items: center; */
+}
+#myspotsbigcont {
+text-align: center;
+width: 60% ;
 
+}
+#myspotscont {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: column;
 
+}
+#currentuserspots h3 {
+    margin-bottom: 0;
+}
+#myreviewscont {
+    width: 40%;
 }
