@@ -104,6 +104,7 @@ const OneSpotIndex = () => {
           if (x.userId === user?.id) buttonVis = false
         }
       }
+      if (!user?.id) buttonVis = false
       reviewsCont =
         Object.values(thereviews)?.map(
           ({ id, stars, review, userId, createdAt, User, spotId }) => (
@@ -250,7 +251,7 @@ const OneSpotIndex = () => {
                   {reviewsCont}
                 </div>
                 <div id='hugebutton'>
-                  <CreateReviewFormModal id={id} />
+                  {user?.id > 0 && <CreateReviewFormModal id={id} />}
                 </div>
               </div>
             )}
