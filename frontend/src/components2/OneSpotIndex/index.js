@@ -15,13 +15,26 @@ import DeleteReviewFormModal from '../DeleteReviewModal';
 // import background2 from '../../assets/background2.png'
 // import reaviewshead from '../../assets/reaviewshead.png'
 
-function getAge(dateString) {
-  var today = new Date();
-  var birthDate = new Date(dateString);
-  var m = today.getDay() - birthDate.getDay();
-  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-  }
-  return m;
+function getAge(birth) {
+  let age = ''
+  const curDate = new Date();
+  const curYear = curDate.getFullYear();
+  const curMonth = curDate.getMonth();
+  const curDay = curDate.getDay();
+  const birthDate = new Date(birth.toString());
+  const birthYear = birthDate.getFullYear();
+  const birthMonth = birthDate.getMonth();
+  const birthDay = birthDate.getDay();
+  let year = curYear - birthYear;
+  let month = curMonth - birthMonth;
+  let day = curDay - birthDay;
+  age = (year * 364) + (month * 30) + day
+  // year > 0 ? age = `Over ${year} years old!` :
+  //     month > 1 ? age = `Over ${month} months old!` :
+  //         month === 1 ? age = `${day+30} days old` :
+  //          day > 1 ? age = `${day} days old` : age = `${day} day old` 
+
+  return age;
 }
 
 
@@ -73,7 +86,6 @@ const OneSpotIndex = () => {
               <img src={`${b.url || quest}`} className='gridpics' />
             </div>
           </div>
-
           <div id='smallcont2'>
             <div className='spotImage' id='spotimg3'>
               <img src={`${c.url || quest}`} className='gridpics' />
@@ -153,114 +165,135 @@ const OneSpotIndex = () => {
   return id > 0 && theSpot && thereviews && (
 
     <div id='onespotcont'>
+      <div id='onespotinnercont'>
 
-      <div className='titlearea' >
 
-        <div id='onespotheader' className='nameandbutt namez'>
-          {theSpot?.name}
-          <div id='onespotdetails'>
-            hosted by {theSpot.User.firstName}
+        <div className='titlearea' >
+
+          <div id='onespotheader' className='nameandbutt namez'>
+            {theSpot?.name}
+            <div id='onespotdetails'>
+              hosted by {theSpot.User.firstName}
+            </div>
+          </div>
+          <div id='onespotsubheader'>
+            <div id='onespotstar'>
+              <img src={star} className='starspot' id='starrr' />
+              <div id='ratingnum'>
+                {theSpot.avgStarRating}
+              </div>
+            </div>
+            <div id='onespotreviews'>
+              <div id='onespotnumber'>
+                {theSpot.numReviews}
+              </div>
+              <div id='reviewstext'>
+                reviews
+              </div>
+            </div >
+
+
+            <div id='onespotlocation'>
+              <div id='onespotcity'>
+                {`${theSpot.city}, ${theSpot.state}`}
+              </div>
+              <div id='onespotstate'>
+                {theSpot.country}
+              </div>
+            </div>
+
+
           </div>
         </div>
-        <div id='onespotsubheader'>
-          <div id='onespotstar'>
-            <img src={star} className='starspot' id='starrr' />
-            <div id='ratingnum'>
-              {theSpot.avgStarRating}
+
+
+
+        {onespotImages}
+
+        <div id='belowimg'>
+
+          <div id='belowheader'>
+
+            <div id='hostspotinfo'>
+              <div id='hostnameheader'>
+                <div id='hostnameage'>
+                  {`${theSpot.name} `}
+                  has been hosted by
+                  {`${theSpot.User.firstName} `}
+                  for
+                  {` ${getAge(theSpot.createdAt)}`} days
+                </div>
+                <div id='hostpicture'>
+                </div>
+              </div>
+              <div>
+
+                {theSpot.description}
+              </div>
+              <div id='spotdescription'>
+                Number of Beds: 2
+
+
+
+              </div>
+            </div>
+
+
+
+            <div id='bookingcont'>
+
+              Bookings
             </div>
           </div>
-          <div id='onespotreviews'>
-            <div id='onespotnumber'>
-              {theSpot.numReviews}
-            </div>
-            <div id='reviewstext'>
-              reviews
-            </div>
-          </div >
 
 
-          <div id='onespotlocation'>
-            <div id='onespotcity'>
-              {`${theSpot.city}, ${theSpot.state}`}
+          <div id='reviewscont'>
+
+            <div id='reviewsheader'>
+
+              {ratingsneak && <div id='reviewsleft' >
+                <div id='reviewsleftleft'>
+                  <img src={star} id='reviewsstar' />
+                  <div id='reviewsrating'>
+                    {theSpot.avgStarRating}
+                  </div>
+                </div>
+
+                <div id='reviewsleftright'>
+                  <div id='reviewdot' className='dot'>
+                    •
+                  </div>
+                  <div id='onespotnumber'>
+                    {theSpot.numReviews}
+                  </div>
+                  <div id='reviewsright'>
+                    reviews
+                  </div>
+                </div >
+              </div>}
+
+              <div id='reviewsright'>
+                {ratingsneak && buttonVis && < CreateReviewFormModal id={id} />}
+              </div>
             </div>
-            <div id='onespotstate'>
-              {theSpot.country}
+
+            <div id='reviewscontbot'>
+              {ratingsneak ? reviewsCont : (
+                <div id='noreviews'>
+                  <div id='norevhead'>
+                    {reviewsCont}
+                  </div>
+                  <div id='hugebutton'>
+                    {user?.id > 0 && <CreateReviewFormModal id={id} />}
+                  </div>
+                </div>
+              )}
+
             </div>
           </div>
-
 
         </div>
       </div>
-
-
-
-      {onespotImages}
-
-      <div className='belowimg'>
-
-        <div id='belowheader'>
-          <div id='hostinfocont'>
-            <div id='hostnamecont'>
-              {theSpot.description.split(':')[1]}
-            </div>
-            <div id='spotdescription'>
-              Number of Beds: 2
-            </div>
-          </div>
-          <div id='bookingcont'>
-
-            Bookings
-          </div>
-        </div>
-
-
-        <div id='reviewscont'>
-
-          <div id='reviewsheader'>
-
-            {ratingsneak && <div id='reviewsleft' >
-              <div id='reviewsleftleft'>
-                <img src={star} id='reviewsstar' />
-                <div id='reviewsrating'>
-                  {theSpot.avgStarRating}
-                </div>
-              </div>
-
-              <div id='reviewsleftright'>
-                <div id='reviewdot' className='dot'>
-                  •
-                </div>
-                <div id='onespotnumber'>
-                  {theSpot.numReviews}
-                </div>
-                <div id='reviewsright'>
-                  reviews
-                </div>
-              </div >
-            </div>}
-
-            <div id='reviewsright'>
-              {ratingsneak && buttonVis && < CreateReviewFormModal id={id} />}
-            </div>
-          </div>
-
-          <div id='reviewscontbot'>
-            {ratingsneak ? reviewsCont : (
-              <div id='noreviews'>
-                <div id='norevhead'>
-                  {reviewsCont}
-                </div>
-                <div id='hugebutton'>
-                  {user?.id > 0 && <CreateReviewFormModal id={id} />}
-                </div>
-              </div>
-            )}
-
-          </div>
-        </div>
-
-      </div>
-
     </div>
 
   )
