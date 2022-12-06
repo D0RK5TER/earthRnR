@@ -394,9 +394,7 @@ font-family: 'Li';
     object-fit: cover;
     box-sizing: border-box;
     height: 30vw;
-    max-width: 40vw;
-    /* min-height: 30vw; */
-    /* width: 45vw; */
+    width: 40vw;
     border-bottom-left-radius: 1em;
     border-top-left-radius: 1em;
 }
@@ -406,14 +404,7 @@ font-family: 'Li';
 
 #onespotpics {
     display: flex;
-    /* width: 100%; */
     flex-direction: row;
-    /* max-height: 60vw; */
-    /* height: 32vw; */
-    /* min-height: 50vw */
-
-    /* width: 80vw; */
-    /* padding-left: 5vw; */
 }
 
 
@@ -433,9 +424,6 @@ font-family: 'Li';
     width: 70%;
     word-spacing: .1em;
     padding-left: 5vw;
-    /* flex-direction: column; */
-    /* justify-content: center; */
-
 }
 
 #onespotsubheader {
@@ -455,9 +443,7 @@ font-family: 'Li';
 }
 
 #onespotowner {
-    /* line-height: 50%; */
     font-size: 50%;
-
 }
 
 #onespotnumber {
@@ -470,7 +456,6 @@ font-family: 'Li';
 }
 
 #onespotsubheader>* {
-    /* width: fit-content; */
     display: flex;
     font-family: 'Bold';
 }

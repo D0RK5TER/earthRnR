@@ -205,14 +205,10 @@ const OneSpotIndex = () => {
             <div id='hostspotinfo'>
               <div id='hostnameheader'>
                 <div id='hostnameage'>
-                  <div id='hostnamefirst'>
-                    {`${theSpot.name} `}
-                  </div>
-                  has been hosted by
                   <div id='hostnamemid'>
                     {`${theSpot.User.firstName} `}
-                  </div>
-                  for
+                  </div>           
+                  has been a host for
                   <div id='hostnamelast'>
                     {` ${getAge(theSpot.createdAt)}`}
                   </div>
