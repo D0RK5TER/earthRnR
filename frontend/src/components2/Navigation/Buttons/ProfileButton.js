@@ -94,11 +94,11 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
               <div id='ddcurrentpage'>
                 *Profile Page*
               </div>
-              
-                <button id='ddlogout' onClick={handleLogout}>
+              <div className='ddlogout' id='hovercome'>
+                <button className='ddlogout' id='borderbegone' onClick={handleLogout}>
                   Log Out
                 </button>
-            
+              </div>
 
             </div>
 

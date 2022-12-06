@@ -77,6 +77,7 @@
     width: 100%;
     font-size: .8em;
 }
+
 #signupheader {
 
     display: flex;
@@ -214,17 +215,12 @@
     display: inline-flex;
     align-items: center;
     flex-direction: column;
-    height: 83vh;
-
-    /* vertical-align: text-top; */
-    /* vertical-align: middle; */
     box-sizing: border-box;
     border-color: black;
-    /* line-height: 100px; */
-    /* padding: 20px; */
     width: 30em;
     overflow: hidden;
-    /* white-space: nowrap; */
+    height: fit-content;
+    margin-bottom: 1em;
 }
 
 /* 
