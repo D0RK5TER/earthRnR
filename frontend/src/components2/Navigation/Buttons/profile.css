@@ -109,20 +109,35 @@ justify-content: space-between;
 
 }
 
+#ddcurrentbutt.ddprofile:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#ddcurrentbutt.ddprofile {
+    width: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+    border: none;
+    cursor: pointer;
+}
+
+#ddcurrentcont.ddprofile {
+    width: 100%;
+    height: 1.5em;
+    padding: 0;
+    padding-bottom: .5em;
+}
+
 #borderbegone.ddlogout:hover {
     background-color: rgb(245, 245, 245);
 }
-#hovercome.ddlogout:hover {
-    background-color: rgb(245, 245, 245);
-}
-#borderbegone.ddlogout {
-   width: 100%;
-   height: 100%;
-   box-sizing: border-box;
-   object-fit: cover; 
-   border: none;
-   
 
+#borderbegone.ddlogout {
+    width: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+    border: none;
+    cursor: pointer;
 }
 
 #hovercome.ddlogout {
@@ -130,7 +145,8 @@ justify-content: space-between;
     height: 1.5em;
     cursor: pointer;
     padding: 0;
-    margin-bottom: .5em;
+    padding-bottom: .5em;
+
 }
 
 #dddemo:hover {
@@ -169,11 +185,8 @@ justify-content: space-between;
 }
 
 #needmoney {
-    /* margin: .4em; */
     padding: 0;
-    /* margin-right: 8em; */
     overflow: hidden;
-
 }
 
 

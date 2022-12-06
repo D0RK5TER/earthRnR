@@ -46,9 +46,7 @@ function SpotsIndex({ isLoaded }) {
             height: '100vw',
             width: '100vw',
             justifyContent: 'space-around',
-            // margin: '2vw',
             justifySelf: 'center'
-            // padding: 'vw'
         }}>
             {spots && Object.values(spots).map(spot =>
                 <SpotCard spot={spot} user={user} />

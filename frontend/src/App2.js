@@ -5,7 +5,7 @@ import * as sessionActions from "./store/session2";
 import Navigation from "./components2/Navigation";
 import SpotsIndex from './components2/SpotsIndex'
 import OneSpotIndex from './components2/OneSpotIndex'
-// import CurrentUserIndex from "./components/CurrentUserIndex";
+import CurrentIndex from "./components2/CurrentIndex";
 import './index.css';
 
 
@@ -28,19 +28,21 @@ function App() {
             <div id='navi' style={{ width: '100vw', position: 'sticky', top: '0px' }}>
                 <Navigation isLoaded={isLoaded} style={{ position: 'sticky' }} />
             </div>
-            <div id='outter' style={{ 
-                width: '100vw', height: '200vh' }}>
+            <div id='outter' style={{
+                width: '100vw', height: '200vh'
+            }}>
                 {/* {isLoaded && (  */}
                 <Switch>
                     <Route exact path='/'>
                         <SpotsIndex />
                     </Route>
+                    <Route exact path='/current'>
+                        <CurrentIndex />
+                    </Route>
                     <Route exact path='/:id'>
                         <OneSpotIndex />
                     </Route>
-                    {/*  <Route exact path='/spots/current'>
-                        <CurrentUserIndex />
-                        </Route>
+                    {/*  
                         <Route>
                         <h1 style={{ padding: '2em' }}>Sorry! Out Of Luck!</h1>
                     </Route> */}

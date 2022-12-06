@@ -23,10 +23,10 @@ export const loadOneSpot = (spot) => {
     };
 
 };
-export const loadMySpots = (spots) => {
+export const loadMySpots = (myspots) => {
     return {
         type: LOAD_MY_SPOTS,
-        spots
+        myspots
     };
 };
 
@@ -73,10 +73,8 @@ export const getMySpots = () => async (dispatch) => {
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-
         const data = await response.json();
-        dispatch(loadMySpots(data));
-        return data
+        return  dispatch(loadMySpots(data));
     }
 }
 
@@ -164,7 +162,7 @@ const loggedReducer = (state = initialState, action) => {
             newState.onespot = action.spot
             return newState;
         case LOAD_MY_SPOTS:
-            newState.myspots = arrConvert(action.spots);
+            newState.myspots = arrConvert(action.myspots);
             return newState;
         case MAKE_SPOT:
             newState.newspot = action.spot

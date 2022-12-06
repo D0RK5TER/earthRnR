@@ -198,11 +198,10 @@
     display: inline-flex;
     align-items: center;
     flex-direction: column;
-    height: 83vh;
     box-sizing: border-box;
     border-color: black;
     width: 30em;
     overflow: hidden;
     height: fit-content;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }

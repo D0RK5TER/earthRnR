@@ -88,7 +88,7 @@ export const getMyReviews = () => async (dispatch) => {
     });
     if (response.ok) {
         const data = await response.json();
-        dispatch(loadMyReviews(data));
+        dispatch(loadMyReviews(data.Reviews));
         return data
         // return response; changed to data for check
     }
@@ -174,11 +174,6 @@ const reviewsReducer = (state = initialState, action) => {
         case LOAD_MY_REVIEWS:
             newState.myreviews = arrConvert(action.reviews);
             return newState;
-
-        case MAKE_REVIEW:
-            newState.newreview = action.review
-            return newState;
-
         case CHANGE_REVIEW:
             newState.onereview = action.review
             return newState;

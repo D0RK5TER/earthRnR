@@ -29,10 +29,6 @@ function getAge(birth) {
   let month = curMonth - birthMonth;
   let day = curDay - birthDay;
   age = (year * 364) + (month * 30) + day
-  // year > 0 ? age = `Over ${year} years old!` :
-  //     month > 1 ? age = `Over ${month} months old!` :
-  //         month === 1 ? age = `${day+30} days old` :
-  //          day > 1 ? age = `${day} days old` : age = `${day} day old` 
 
   return age;
 }
