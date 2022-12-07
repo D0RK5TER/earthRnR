@@ -92,8 +92,8 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
                 {sessionUser.email}
               </div>
               <div className='ddprofile' id='ddcurrentcont'>
-                <button className='ddprofile' id='ddcurrentbutt' onClick={() => history.push('/current')}>
-                Profile Page
+                <button className='ddprofile' id='ddcurrentbutt' onClick={() => history.push('/current') && closeMenu()}>
+                  Profile Page
                 </button>
               </div>
               <div className='ddlogout' id='hovercome'>

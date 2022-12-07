@@ -49,7 +49,7 @@ function SpotForm({ setShowModal }) {
                 </div>
             </div>
             <ul>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                {errors.map((error, idx) => <li className='errors' key={error + idx}>{error}</li>)}
             </ul>
             <div id='createformcont'>
 

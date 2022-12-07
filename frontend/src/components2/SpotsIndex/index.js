@@ -29,11 +29,6 @@ function SpotsIndex({ isLoaded }) {
     }, []);
 
     if (!spots) return null;
-    else {
-        for (let spa in spots) {
-            if (spa.previewImage === 'No preview') spa.previewImage = quest
-        }
-    }
     
     return spots && (
         // <div className="mainContent" >
@@ -47,7 +42,7 @@ function SpotsIndex({ isLoaded }) {
             justifySelf: 'center'
         }}>
             {spots && Object.values(spots).map(spot =>
-                <SpotCard spot={spot} user={user} />
+                <SpotCard spot={spot} user={user} key={`${spot.id}`} />
             )}
         </div >
 

@@ -12,11 +12,11 @@ function DeleteReviewForm({ id, setShowModal, spotId }) {
     const history = useHistory()
 
     const handleSubmit = (e) => {
-        let obj 
+        let obj
         e.preventDefault()
         setErrors([]);
-        history.location.pathname !== '/current'?
-        obj = { id, spotId }: obj = { id, spotId, place: true }
+        history.location.pathname !== '/current' ?
+            obj = { id, spotId } : obj = { id, spotId, place: true }
         return dispatch(makeDeleteReview(obj))
             .then(setShowModal(false))
             .catch(async (res) => {
@@ -28,7 +28,7 @@ function DeleteReviewForm({ id, setShowModal, spotId }) {
         <form onSubmit={handleSubmit} className='editspotform' >
             <ul>
                 {errors.map((error, idx) => (
-                    <li className='errors' key={idx}>{error}</li>))}
+                    <li className='errors' key={error + idx}>{error}</li>))}
             </ul>
             <p>Are You Sure?</p>
             <span>

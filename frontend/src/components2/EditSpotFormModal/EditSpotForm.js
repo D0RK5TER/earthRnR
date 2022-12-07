@@ -14,15 +14,15 @@ function EditSpotForm({ idx, setShowModal }) {
     let id = idx.idx
     let spot
     let spots = useSelector(state => state.spots.allspots)
-    let myspots = useSelector(state=> state.spots.myspots)
-    history.location.pathname !== '/current'?
-     spot = spots[id] : spot = myspots[id]
-    
+    let myspots = useSelector(state => state.spots.myspots)
+    history.location.pathname !== '/current' ?
+        spot = spots[id] : spot = myspots[id]
+
     const [address, setAddress] = useState(spot.address)
-    const [city, setCity] = useState(spot.city );
-    const [state, setStats] = useState(spot?.state );
+    const [city, setCity] = useState(spot.city);
+    const [state, setStats] = useState(spot?.state);
     const [country, setCountry] = useState(spot?.country);
-    const [name, setName] = useState(spot?.name );
+    const [name, setName] = useState(spot?.name);
     const [description, setDescription] = useState(spot?.description);
     const [price, setPrice] = useState(spot?.price);
     const [errors, setErrors] = useState([]);
@@ -31,7 +31,7 @@ function EditSpotForm({ idx, setShowModal }) {
     const handleSubmit = (e) => {
         e.preventDefault()
         setErrors([]);
-       history.location.pathname !== '/current'?
+        history.location.pathname !== '/current' ?
             obj = { id, address, city, state, country, name, description, price, place: false }
             : obj = { id, address, city, state, country, name, description, price, place: true }
         if (act) {
@@ -56,7 +56,7 @@ function EditSpotForm({ idx, setShowModal }) {
     return (
         <form onSubmit={handleSubmit} className='editspotform' >
             <ul>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                {errors.map((error, idx) => <li key={error + idx}>{error}</li>)}
             </ul>
             <p>Make Changes to Your Spots</p>
             <label>

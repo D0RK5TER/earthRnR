@@ -24,8 +24,7 @@ if (process.env.NODE_ENV !== "production") {
   window.reviewsActions = reviewsActions
 }
 
-const roo = document.getElementById('root')
-roo.width = '100vw'
+
 
 function Root() {
   return (

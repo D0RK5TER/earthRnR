@@ -43,7 +43,7 @@ function PaginationForm({ setShowModal }) {
         <form onSubmit={handleSubmit} className='editspotform' >
             <ul>
                 {errors.map((error, idx) => (
-                    <li className='errors' key={idx}>{error}</li>))}
+                    <li className='errors' key={idx+error.statusCode}>{error}</li>))}
             </ul>
             <p>Select your Filters</p>
             <span>

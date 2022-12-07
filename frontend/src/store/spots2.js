@@ -64,6 +64,8 @@ export const getAllSpots = (e) => async (dispatch) => {
     }
 };
 export const getOneSpot = (id) => async (dispatch) => {
+    console.log(id)
+
     const response = await csrfFetch(`/api/spots/${+id}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -131,15 +133,7 @@ export const makeChangeSpot = (obj) => async (dispatch) => {
         }),
     });
     if (response.ok) {
-
         place ? dispatch(getMySpots()) : dispatch(getAllSpots())
-
-        // dispatch(getAllSpots())
-        // return 
-
-
-        // return data
-        // return dispatch(getAllSpots())
     }
 };
 
@@ -188,16 +182,6 @@ const loggedReducer = (state = initialState, action) => {
         case MAKE_SPOT:
             newState.newspot = action.spot
             return newState;
-        // case CHANGE_SPOT:
-        //     let id = action.spotId
-        //     console.log(newState, '!!! ', id)
-        //     id.length === 1 ? delete newState.onespot[id[0]] :
-        //         newState.allspots[id[0]] = id[1]
-        //     return newState;
-        // case DELETE_SPOT:
-        //     let del = action.spot.id
-        //     delete newState.spots[del]
-        //     return newState
         default:
             return state;
     }

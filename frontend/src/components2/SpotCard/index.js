@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 // import { useSelector, useDispatch } from "react-redux";
 import star from '../../assets/star.png';
 import EditSpotFormModal from '../EditSpotFormModal';
-
+import quest from '../../assets/quest.jpg';
 
 function getAge(birth) {
     let age = ''
@@ -40,8 +40,10 @@ function SpotCard({ spot, user }) {
 
         // console.log()
 
-    if (!spot) return ;
+    if (!spot) return null;
+    if (spot.previewImage === 'No preview') spot.previewImage = quest  
 
+    // if (spa.previewImage === 'No preview') spa.previewImage = quest    
     // else {
     //     for (let spa in spots) {
     //         if (spa.previewImage === 'No preview') spa.previewImage = quest
@@ -99,13 +101,13 @@ function SpotCard({ spot, user }) {
                     lineHeight: '1.5vw',
                     height: '35%'
                 }}>
-                    <span style={{
+                    <span id={`SpotCardspan1${id}`} style={{
                         fontFamily: 'Bold'
                     }}>
                         {city}     ,   {state}</span>
-                    <text style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw', }}>{getAge(createdAt.toString())}</text>
-                    <span style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw', }}>{description.slice(0, 20)}...</span>
-                    <span style={{ fontFamily: 'Li', marginTop: '.3em' }}>$<text style={{ fontFamily: 'Bold', lineHeight: '1.5vw', }}>{price}</text> night</span>
+                    <p id={`SpotCardtext1${id}`} style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw', }}>{getAge(createdAt.toString())}</p>
+                    <span id={`SpotCardspan2${id}`} style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw', }}>{description.slice(0, 20)}...</span>
+                    <span id={`SpotCardspan3${id}`} style={{ fontFamily: 'Li', marginTop: '.3em' }}>$<p style={{ fontFamily: 'Bold', lineHeight: '1.5vw', }}>{price}</p> night</span>
                 </div>
                 <div className='spotstarrow' id={`SpotCardInfoRow2${id}`} style={{
                     display: 'flex',

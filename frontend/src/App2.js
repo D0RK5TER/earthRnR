@@ -14,18 +14,17 @@ import './index.css';
 
 function App() {
     const dispatch = useDispatch();
-    const [isLoaded, setIsLoaded] = useState(false);
+    // const [isLoaded, setIsLoaded] = useState(false);
     let user = useSelector(state => state.session.user)
     useEffect(() => {
-        
-           if(!user) dispatch(sessionActions.restoreUser())
+        if (!user?.id) dispatch(sessionActions.restoreUser())
         // .then(() => dispatch(setIsLoaded(true)))  ///took out again
     }, [dispatch]);
     ///trying top 
     return (
         <div id='outtermost' style={{ width: '100vw', height: '200vh' }}>
             <div id='navi' style={{ width: '100vw', position: 'sticky', top: '0px' }}>
-                <Navigation  style={{ position: 'sticky' }} />
+                <Navigation style={{ position: 'sticky' }} />
             </div>
             <div id='outter' style={{
                 width: '100vw', height: '200vh'
@@ -35,10 +34,10 @@ function App() {
                     <Route exact path='/'>
                         <SpotsIndex />
                     </Route>
-                    <Route exact path='/current'>
+                    <Route path='/current'>
                         <CurrentIndex />
                     </Route>
-                    <Route exact path='/:id'>
+                    <Route path='/:id'>
                         <OneSpotIndex />
                     </Route>
                     {/*  

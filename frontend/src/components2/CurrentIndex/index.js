@@ -12,7 +12,7 @@ import './currentindex.css'
 
 const CurrentIndex = () => {
     const dispatch = useDispatch();
-    const { current } = useParams();
+    // const { current } = useParams();
     let user = useSelector(state => state.session.user)
     let mySpots = useSelector(state => state.spots.myspots)
     let myReviews = useSelector(state => state.reviews.myreviews)
@@ -32,7 +32,7 @@ const CurrentIndex = () => {
     useEffect(() => {
         dispatch(getMySpots())
         dispatch(getMyReviews())
-    }, [current])
+    }, [])
 
     // useEffect(() => {
     // // dispatch(getMySpots())
@@ -50,14 +50,14 @@ const CurrentIndex = () => {
                     </div>
                     <div id='myspotscont'>
                         {mySpots && Object?.values(mySpots).map(spot =>
-                            <SpotCard spot={spot} user={user} />
+                            <SpotCard spot={spot} user={user} key={`${spot.id}`} />
                         )}
                     </div>
                 </div>
                 <div id='myreviewscont'>
                     <h3>{user.firstName}'s Reviews</h3>
                     {myReviews && Object?.values(myReviews).map(rev =>
-                        <ReviewCard rev={rev} />
+                        <ReviewCard rev={rev} key={`${rev.id}`} />
                     )}
                 </div>
             </div>

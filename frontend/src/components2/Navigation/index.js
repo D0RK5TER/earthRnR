@@ -22,7 +22,7 @@ import SignUpFormModal from '../SignUpFormModal';
 
 
 
-function Navigation({ isLoaded }) {
+function Navigation() {
   // const dispatch = useDispatch();
   const history = useHistory()
   const user = useSelector(state => getSessionUser(state));
@@ -95,7 +95,7 @@ function Navigation({ isLoaded }) {
 
         <ProfileButton
           user={user}
-          isLoaded={isLoaded}
+          // isLoaded={isLoaded}
         />
 
       </div>

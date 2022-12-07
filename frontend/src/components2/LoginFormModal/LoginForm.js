@@ -15,14 +15,14 @@ function LoginForm({ setShowModal }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        return dispatch(sessionActions.login({ credential, password }))
+        return dispatch(sessionActions.login({ credential, password })).then(() => setShowModal(false))
             .catch(async (res) => {
                 const data = await res.json()
                 if (data.message) setErrors([data.message]);
             }
             )
-            /// check if this is needed
-            .then(() => setShowModal(false))
+        /// check if this is needed
+        // .then(() => setShowModal(false))
     }
     return (
         <form onSubmit={handleSubmit} id='loginform' >
@@ -36,7 +36,8 @@ function LoginForm({ setShowModal }) {
             </div>
             <ul style={{ margin: '0' }}>
                 {errors.map((error, idx) => (
-                    <li className='errors' key={idx}>{error}</li>
+                    <li className='errors' key={error+idx}>
+                        {error}</li>
                 ))}
             </ul>
             <h3>Welcome to EarthRnR!</h3>

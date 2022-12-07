@@ -23,13 +23,12 @@ function CreateReviewForm({ id, setShowModal }) {
             // .then(dispatch(getOneSpot(id))) trying to get rating to update
             .then(setShowModal(false))
             .catch(async (res) => {
-
                 if (res.ok) {
                     const data = await res.json()
                     if (data.message) setErrors([data.message])
                     // dispatch(getAllReviews(id))
                 }
-                else setErrors(['something went wrong please try again! or maybe try the correct info!'])
+                else setErrors(['something went wrong please try again!'])
                 // console.log(data, '!!!!!')
                 // else setErrors([res]);
 
@@ -41,7 +40,7 @@ function CreateReviewForm({ id, setShowModal }) {
         <form onSubmit={handleSubmit} className='editspotform' >
             <ul>
                 {errors.map((error, idx) => (
-                    <li className='errors' key={idx}>{error}</li>
+                    <li className='errors' key={error + idx}>{error}</li>
                 ))}
             </ul>
             <p> Create a Review!</p>

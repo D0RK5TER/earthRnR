@@ -111,8 +111,9 @@ export const createReview = (reviewz) => async (dispatch) => {
         let data = await response.json()
         // switched action and reducer for ezload
         // return
-        return dispatch(getAllReviews(id)).then(dispatch(getOneSpot(id)))
-        // return data
+        dispatch(getOneSpot(id)).then(getAllReviews(id))
+        // dispatch(getAllReviews(id)).then(dispatch(getOneSpot(id)))
+        return data
     }
 }
 
@@ -142,11 +143,14 @@ export const makeDeleteReview = ({ id, spotId, place }) => async (dispatch) => {
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-        // const data = await response.json();
-        place ? dispatch(getMyReviews()) :
-            dispatch(getAllReviews(spotId)).then(dispatch(getOneSpot(spotId)))
+        const data = await response.json();
+        if (place) dispatch(getMyReviews())
+        else {
+          dispatch(getAllReviews(spotId)).then(dispatch(getOneSpot(spotId)))
+            //  dispatch(getOneSpot(spotId))
+        }
         // .then(dispatch(getOneSpot(spotId)))
-        // return data
+        return data
     }
 }
 

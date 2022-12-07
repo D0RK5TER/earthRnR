@@ -8,10 +8,7 @@ import { useEffect } from 'react';
 
 function ReviewCard({ rev }) {
     let { id, stars, review, createdAt, User, spotId } = rev
-
     const thespot = useSelector(state => state.spots.allspots)
-
-
 
     return rev && (
         <div className='onereview single one' >
