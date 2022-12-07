@@ -25,7 +25,7 @@ function PaginationForm({ setShowModal }) {
                 max < 500 ? pagination = `?maxPrice=${max}` :
                     pagination = ''
         setErrors([]);
-        return dispatch(getAllSpots(pagination))
+         return dispatch(getAllSpots(pagination))
             .then(() => {
                 setShowModal(false)
             })

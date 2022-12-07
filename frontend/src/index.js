@@ -9,8 +9,9 @@ import { restoreCSRF, csrfFetch } from './store/csrf';
 
 // import App from './App';
 import App from './App2';
-// import * as sessionActions from './store/session';
+import * as spotsActions from './store/spots2';
 import * as sessionActions from './store/session2';
+import * as reviewsActions from './store/reviews2'
 
 const store = configureStore();
 
@@ -18,7 +19,9 @@ if (process.env.NODE_ENV !== "production") {
   restoreCSRF();
   window.csrfFetch = csrfFetch;
   window.store = store;
-  window.sessionActions = sessionActions;
+  // window.sessionActions = sessionActions;
+  // window.spotsActions = spotsActions
+  // window.reviewsActions = reviewsActions
 }
 
 const roo = document.getElementById('root')

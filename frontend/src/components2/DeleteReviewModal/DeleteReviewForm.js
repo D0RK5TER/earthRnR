@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 // import { useParams } from 'react-router-dom';
-import { getAllReviews, makeDeleteReview } from '../../store/reviews2';
+import { getMyReviews, makeDeleteReview } from '../../store/reviews2';
 import './DeleteReviewForm.css'
 
 
@@ -10,15 +10,20 @@ function DeleteReviewForm({ id, setShowModal, spotId }) {
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
     const history = useHistory()
-    const handleSubmit = () => {
+
+    console.log(history.location.pathname)
+    const handleSubmit = (e) => {
+        let obj 
+        e.preventDefault()
         setErrors([]);
-        return dispatch(makeDeleteReview({ id, spotId }))
+        history.location.pathname !== '/current'?
+        obj = { id, spotId }: obj = { id, spotId, place: true }
+        return dispatch(makeDeleteReview(obj))
             .then(setShowModal(false))
             .catch(async (res) => {
                 const data = await res.json()
                 if (data.message) setErrors([data.message]);
-            }
-            )
+            })
     }
     return (
         <form onSubmit={handleSubmit} className='editspotform' >

@@ -38,17 +38,24 @@ export const makeSpot = (spot) => {
     };
 };
 
+// export const delputSpot = (spotId) => {
+
+//     return {
+//         type: CHANGE_SPOT,
+//         spotId
+//     }
+// }
+
 //////////////////////////////////////////////////////////////////////
 
-export const getAllSpots = ( e ) => async (dispatch) => {
-    let pagi 
+export const getAllSpots = (e) => async (dispatch) => {
+    let pagi
     e ? pagi = e : pagi = ''
     const response = await csrfFetch(`/api/spots${pagi}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-        // console.log(response)
         const data = await response.json();
         // console.log(data)
         return dispatch(loadAllSpots(data));
@@ -60,10 +67,13 @@ export const getOneSpot = (id) => async (dispatch) => {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
+    // console.log(response, id)
     if (response.ok) {
         const data = await response.json();
+        console.log(data)
         dispatch(loadOneSpot(data));
-        return data;
+        return data
+
     }
 };
 
@@ -74,7 +84,7 @@ export const getMySpots = () => async (dispatch) => {
     });
     if (response.ok) {
         const data = await response.json();
-        return  dispatch(loadMySpots(data));
+        return dispatch(loadMySpots(data));
     }
 }
 
@@ -121,6 +131,10 @@ export const makeChangeSpot = (spot) => async (dispatch) => {
     });
     if (response.ok) {
         return dispatch(getAllSpots())
+        
+        
+        // return data
+        // return dispatch(getAllSpots())
     }
 };
 
@@ -132,7 +146,8 @@ export const makeDeleteSpot = (id) => async (dispatch) => {
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-        return dispatch(getAllSpots())
+        dispatch(getAllSpots())
+        return
     }
 }
 
@@ -159,7 +174,9 @@ const loggedReducer = (state = initialState, action) => {
             newState.allspots = arrConvert(action.spots);
             return newState;
         case LOAD_ONE_SPOT:
-            newState.onespot = action.spot
+            let spot = action.spot
+            newState.onespot ? newState.onespot[spot.id] = spot :
+                newState.onespot = { [spot.id]: spot }
             return newState;
         case LOAD_MY_SPOTS:
             newState.myspots = arrConvert(action.myspots);
@@ -168,7 +185,10 @@ const loggedReducer = (state = initialState, action) => {
             newState.newspot = action.spot
             return newState;
         // case CHANGE_SPOT:
-        //     newState.onespot = action.spot
+        //     let id = action.spotId
+        //     console.log(newState, '!!! ', id)
+        //     id.length === 1 ? delete newState.onespot[id[0]] :
+        //         newState.allspots[id[0]] = id[1]
         //     return newState;
         // case DELETE_SPOT:
         //     let del = action.spot.id

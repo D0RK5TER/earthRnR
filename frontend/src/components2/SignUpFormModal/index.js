@@ -8,7 +8,6 @@ function SignUpFormModal({ place }) {
     const [showModal, setShowModal] = useState(false);
     let newD
     place === 'Sign Up to Host!' ? newD = 'signupmodalbut' : newD = 'signupdrop'
-    console.log(newD)
     return (
         <>
             <button id={newD}

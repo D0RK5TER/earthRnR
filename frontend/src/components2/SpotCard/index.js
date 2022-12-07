@@ -38,9 +38,9 @@ function SpotCard({ spot, user }) {
     // console.log(user)
     const history = useHistory()
 
+        // console.log()
 
-
-    // if (!spots) return null;
+    if (!spot) return ;
 
     // else {
     //     for (let spa in spots) {

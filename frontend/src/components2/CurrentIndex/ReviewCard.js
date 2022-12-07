@@ -1,14 +1,18 @@
+import { useSelector } from 'react-redux';
 import DeleteReviewFormModal from '../DeleteReviewModal';
+import { useEffect } from 'react';
 
 
 
 
 
+function ReviewCard({ rev }) {
+    let { id, stars, review, createdAt, User, spotId } = rev
 
- function ReviewCard({rev}) {
+    const thespot = useSelector(state => state.spots.allspots)
 
-let { id, stars, review, createdAt, User, spotId } = rev
-    console.log(id)
+
+
     return rev && (
         <div className='onereview single one' >
 
@@ -18,7 +22,9 @@ let { id, stars, review, createdAt, User, spotId } = rev
                 </div>
                 <div className='profilename profileage'>
                     <div className='reviewname'>
-                        {User?.firstName}
+                        <button onClick={()=>{}}>
+                            See the Spot!
+                            </button>
                     </div>
                     <div className='reviewage'>
                         posted {new Date(createdAt).toDateString()}

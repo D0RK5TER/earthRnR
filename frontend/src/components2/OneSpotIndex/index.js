@@ -40,13 +40,15 @@ const OneSpotIndex = () => {
   const { id } = useParams();
   let user = useSelector(state => state.session.user)
   let theSpot = useSelector(state => state.spots.onespot)
-  let thereviews = useSelector(state => state.reviews.onespot)
-
+  let thereviews = useSelector(state => state.reviews.allreviews)
 
   useEffect(() => {
-    dispatch(getAllReviews(id))
-    dispatch(getOneSpot(id)) // .then(dispatch(getOneSpot(id)))
+    if (!theSpot) {
+      dispatch(getOneSpot(id))
+      dispatch(getAllReviews(id))
+    }
   }, [id])
+
 
 
 
@@ -56,12 +58,14 @@ const OneSpotIndex = () => {
   let previewImage
   let onespotImages
   let ratingsneak = true
-  if (theSpot === undefined || thereviews === undefined || id === undefined) {
-    onespotImages = (<div> hey</div>)
-  } else if (theSpot && theSpot?.id !== +id) {
-    theSpot = null
-  }
-  else {
+  // if (theSpot?.id === undefined || thereviews === undefined || id === undefined) {
+  //   onespotImages = (<div> hey</div>)
+  // } else if (theSpot && theSpot?.id !== +id) {
+  //   theSpot = null
+  // }
+  if(theSpot) theSpot = theSpot[id]
+  if (theSpot && thereviews && id > 0) {
+    
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
     let [a, b, c, d] = spotimgs
@@ -108,7 +112,7 @@ const OneSpotIndex = () => {
     else {
       if (thereviews.length) {
         for (let x of thereviews) {
-          console.log(x)
+          // console.log(x)
           if (x.userId === user?.id) buttonVis = false
         }
       }
@@ -145,8 +149,10 @@ const OneSpotIndex = () => {
           )
         )
     }
-  }
-  return id > 0 && theSpot && thereviews && (
+
+  } else theSpot = null
+
+  return theSpot && +id === theSpot?.id && thereviews && (
 
     <div id='onespotcont'>
       <div id='onespotinnercont'>
@@ -203,7 +209,7 @@ const OneSpotIndex = () => {
                 <div id='hostnameage'>
                   <div id='hostnamemid'>
                     {`${theSpot.User.firstName} `}
-                  </div>           
+                  </div>
                   has been a host for
                   <div id='hostnamelast'>
                     {` ${getAge(theSpot.createdAt)}`}

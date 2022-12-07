@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import * as sessionActions from "./store/session2";
 import Navigation from "./components2/Navigation";
@@ -15,18 +15,17 @@ import './index.css';
 function App() {
     const dispatch = useDispatch();
     const [isLoaded, setIsLoaded] = useState(false);
-    // useEffect(() => {
-    //   dispatch(sessionActions.getAllSpots())
-    // }, []);
+    let user = useSelector(state => state.session.user)
     useEffect(() => {
-        dispatch(sessionActions.restoreUser()).then(() => dispatch(setIsLoaded(true)))
-        //    .then( dispatch(getAllSpots()))
+        user ? dispatch() :
+            dispatch(sessionActions.restoreUser())
+        // .then(() => dispatch(setIsLoaded(true)))  ///took out again
     }, [dispatch]);
     ///trying top 
     return (
         <div id='outtermost' style={{ width: '100vw', height: '200vh' }}>
             <div id='navi' style={{ width: '100vw', position: 'sticky', top: '0px' }}>
-                <Navigation isLoaded={isLoaded} style={{ position: 'sticky' }} />
+                <Navigation  style={{ position: 'sticky' }} />
             </div>
             <div id='outter' style={{
                 width: '100vw', height: '200vh'

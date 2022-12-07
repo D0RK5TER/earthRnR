@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 // import { getAllSpots, loadSpots } from '../../store/session';
 // import EditSpotFormModal from '../EditSpotFormModal';
-import { getAllSpots } from '../../store/spots2';
+import { getAllSpots,createSpot, makeChangeSpot, makeDeleteSpot } from '../../store/spots2';
 import SpotCard from '../SpotCard';
 // import OneSpotIndex from '../OneSpotIndex'
 import quest from '../../assets/quest.jpg';
@@ -19,15 +19,13 @@ import './SpotsIndex.css'
 // import HomeSplash from '../HomeSplash';
 
 function SpotsIndex({ isLoaded }) {
-
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
     let user = useSelector(state => state.session.user)
     let spots = useSelector(state => state.spots.allspots);
 
     user ? user = user : user = { id: 0 }
     useEffect(() => {
-
-        dispatch(getAllSpots(''));
+        dispatch(getAllSpots());
     }, []);
 
     if (!spots) return null;

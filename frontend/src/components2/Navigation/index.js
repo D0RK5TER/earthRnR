@@ -8,12 +8,14 @@ import logo from '../../assets/logo.jpg';
 import spotglass from '../../assets/spotglass.png';
 //NEW
 import { getSessionUser } from '../../store/session2';
-import { getAllSpots } from '../../store/spots2';
+// import { getAllSpots } from '../../store/spots2';
 import PaginationFormModel, { setfunc } from '../PaginationModal/index.js';
 // import { useHistory } from 'react-router-dom';
 // import { Modal } from '../../context/Modal';
 // import LoginForm from '../LoginFormModal/LoginForm';
 // import SignupFormPage from '../SignupFormPage';
+import { getAllSpots,createSpot, makeChangeSpot, makeDeleteSpot, delputSpot } from '../../store/spots2';
+
 import SpotFormModal from '../SpotFormModal';
 import SignUpFormModal from '../SignUpFormModal';
 // import ComingSoon from '../ComingSoon/ComingSoon';
@@ -24,11 +26,14 @@ function Navigation({ isLoaded }) {
   const dispatch = useDispatch();
   const history = useHistory()
   const user = useSelector(state => getSessionUser(state));
+  // const spots = useSelector(state=> state.spots.allspots)
   // useEffect(() => dispatch(getAllSpots('')), [dispatch])
   // console.log(user, '!!!!')
 
 
-
+//   useEffect(() => {
+//     dispatch(getAllSpots());
+// }, []);
 
 
 
@@ -40,20 +45,26 @@ function Navigation({ isLoaded }) {
     <div id='evanbar' className='topbar' style={{
       position: 'sticky', width: '100vw',
     }}>
-      <div id='topleft' className='nav-left' style={{
-        'cursor': 'pointer', fontFamily: 'Bold',
-        marginLeft: '5em',
-      }} >
+      {/* <NavLink to='/'> */}
+        <div id='topleft' className='nav-left' style={{
+          'cursor': 'pointer', fontFamily: 'Bold',
+          marginLeft: '5em',
+        }} >
         <div exact to="/"
           className={'homebutt'}
-          style={{ fontFamily: 'Bold' }}
+            style={{ fontFamily: 'Bold' }}
           onClick={() => {
             dispatch(getAllSpots('')).then(history.push('/'))
           }}>
-          <img src={logo} style={{ paddingRight: '15px' }} />
-          earthRnR
+            <img src={logo} style={{ paddingRight: '15px' }} />
+            earthRnR
+          </div>
         </div>
-      </div>
+      {/* </NavLink> */}
+
+
+
+
       <div className='nav-center' id='topmid'>
         <span className='nav-center' >
           <button>
@@ -77,7 +88,7 @@ function Navigation({ isLoaded }) {
       </div>
       <div className='nav-right' id='topright'>
         {/* <div> */}
-          {user ? <SpotFormModal /> : <SignUpFormModal place={'Sign Up to Host!'} />}
+        {user ? <SpotFormModal /> : <SignUpFormModal place={'Sign Up to Host!'} />}
         {/* </div> */}
 
         <ProfileButton

@@ -14,7 +14,7 @@ function EditSpotForm({ idx, setShowModal }) {
     let id = idx.idx
     let spots = useSelector(state => state.spots.allspots)
     let spot = spots[id]
-    console.log(spot)
+    // console.log(spot)
     const [address, setAddress] = useState(spot.address)
     const [city, setCity] = useState(spot.city);
     const [state, setStats] = useState(spot.state);
