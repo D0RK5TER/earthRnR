@@ -12,34 +12,30 @@ function EditSpotForm({ idx, setShowModal }) {
     // const spot = useSelector(state => state.logged.spots).filter(x => x.id === props.idx)
     // console.log(spot, '!kjdsfkjsndfdsfs')
     let id = idx.idx
+    let spot
     let spots = useSelector(state => state.spots.allspots)
-    let spot = spots[id]
-    // console.log(spot)
+    let myspots = useSelector(state=> state.spots.myspots)
+    history.location.pathname !== '/current'?
+     spot = spots[id] : spot = myspots[id]
+    
     const [address, setAddress] = useState(spot.address)
-    const [city, setCity] = useState(spot.city);
-    const [state, setStats] = useState(spot.state);
-    const [country, setCountry] = useState(spot.country);
-    const [name, setName] = useState(spot.name);
-    const [description, setDescription] = useState(spot.description);
-    const [price, setPrice] = useState(spot.price);
+    const [city, setCity] = useState(spot.city );
+    const [state, setStats] = useState(spot?.state );
+    const [country, setCountry] = useState(spot?.country);
+    const [name, setName] = useState(spot?.name );
+    const [description, setDescription] = useState(spot?.description);
+    const [price, setPrice] = useState(spot?.price);
     const [errors, setErrors] = useState([]);
-    const handleDelete = (e) => {
-        setErrors([]);
-        // console.log(typeof e)
-        //  dispatch(deleteSpot(id))
-        // .then(() => { history.push('/spots') })
-        // .catch(async (res) => {
-        //     const data = await res.json()
-        //     if (data.message) setErrors([data.message]);
-        // }
-        // )
-    }
+    let obj
     let act
     const handleSubmit = (e) => {
         e.preventDefault()
         setErrors([]);
+       history.location.pathname !== '/current'?
+            obj = { id, address, city, state, country, name, description, price, place: false }
+            : obj = { id, address, city, state, country, name, description, price, place: true }
         if (act) {
-            return dispatch(makeDeleteSpot(id))
+            return dispatch(makeDeleteSpot(obj))
                 .then(setShowModal(false))
                 // .then(() => { history.push(`/spots`) })    
                 .catch(async (res) => {
@@ -49,7 +45,7 @@ function EditSpotForm({ idx, setShowModal }) {
                 )
         }
         else {
-            return dispatch(makeChangeSpot({ id, address, city, state, country, name, description, price }))
+            return dispatch(makeChangeSpot(obj))
                 .then(setShowModal(false))
                 .catch(async (res) => {
                     const data = await res.json()
@@ -121,7 +117,7 @@ function EditSpotForm({ idx, setShowModal }) {
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder='Description'
                     // maxLength='45'
-                required
+                    required
 
                 />
             </label>
@@ -131,7 +127,7 @@ function EditSpotForm({ idx, setShowModal }) {
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     placeholder='Price'
-                required
+                    required
 
                 />
             </label>

@@ -42,13 +42,6 @@ const OneSpotIndex = () => {
   let theSpot = useSelector(state => state.spots.onespot)
   let thereviews = useSelector(state => state.reviews.allreviews)
 
-  useEffect(() => {
-    if (!theSpot) {
-      dispatch(getOneSpot(id))
-      dispatch(getAllReviews(id))
-    }
-  }, [id])
-
 
 
 
@@ -151,6 +144,19 @@ const OneSpotIndex = () => {
     }
 
   } else theSpot = null
+
+
+
+
+  useEffect(() => {
+    // if (!theSpot) {
+      dispatch(getOneSpot(id))
+      dispatch(getAllReviews(id))
+    // }
+  }, [id])
+
+
+
 
   return theSpot && +id === theSpot?.id && thereviews && (
 

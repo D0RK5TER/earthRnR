@@ -11,7 +11,6 @@ function DeleteReviewForm({ id, setShowModal, spotId }) {
     const [errors, setErrors] = useState([]);
     const history = useHistory()
 
-    console.log(history.location.pathname)
     const handleSubmit = (e) => {
         let obj 
         e.preventDefault()

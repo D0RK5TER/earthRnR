@@ -58,7 +58,8 @@ export const getAllSpots = (e) => async (dispatch) => {
     if (response.ok) {
         const data = await response.json();
         // console.log(data)
-        return dispatch(loadAllSpots(data));
+        dispatch(loadAllSpots(data));
+        return data
         // return data;
     }
 };
@@ -70,7 +71,7 @@ export const getOneSpot = (id) => async (dispatch) => {
     // console.log(response, id)
     if (response.ok) {
         const data = await response.json();
-        console.log(data)
+        // console.log(data)
         dispatch(loadOneSpot(data));
         return data
 
@@ -117,8 +118,8 @@ export const createSpot = (spot) => async (dispatch) => {
         }
     }
 }
-export const makeChangeSpot = (spot) => async (dispatch) => {
-    const { id, address, city, state, country, name, description, price } = spot;
+export const makeChangeSpot = (obj) => async (dispatch) => {
+    const { id, address, city, state, country, name, description, price, place } = obj;
     const response = await csrfFetch(`/api/spots/${id}`, {
         method: "PUT",
         headers: { 'Content-Type': 'application/json' },
@@ -130,24 +131,27 @@ export const makeChangeSpot = (spot) => async (dispatch) => {
         }),
     });
     if (response.ok) {
-        return dispatch(getAllSpots())
-        
-        
+
+        place ? dispatch(getMySpots()) : dispatch(getAllSpots())
+
+        // dispatch(getAllSpots())
+        // return 
+
+
         // return data
         // return dispatch(getAllSpots())
     }
 };
 
 
-export const makeDeleteSpot = (id) => async (dispatch) => {
-    // console.log(id)
+export const makeDeleteSpot = (obj2) => async (dispatch) => {
+    const { id, place } = obj2
     const response = await csrfFetch(`/api/spots/${id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-        dispatch(getAllSpots())
-        return
+        place ? dispatch(getMySpots()) : dispatch(getAllSpots())
     }
 }
 

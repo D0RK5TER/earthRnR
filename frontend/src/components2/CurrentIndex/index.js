@@ -18,13 +18,13 @@ const CurrentIndex = () => {
     let myReviews = useSelector(state => state.reviews.myreviews)
     let reviewspots = useSelector(state => state.spots)
 
-    const reviewSpotfunc = async (arr, obj) => {
-        if (arr && obj) {
+    function reviewSpotfunc(arr, obj) {
+        if (arr?.length && obj) {
             obj = obj
             arr = Object.values(arr)
             for (let rev of arr) {
                 if (obj?.onespot[rev.spotId]) continue
-                 dispatch(getOneSpot(rev.spotId))
+                dispatch(getOneSpot(rev.spotId))
             }
         }
         return true
@@ -32,11 +32,11 @@ const CurrentIndex = () => {
     useEffect(() => {
         dispatch(getMySpots())
         dispatch(getMyReviews())
-    }, [])
+    }, [current])
 
     // useEffect(() => {
-        // // dispatch(getMySpots())
-        // dispatch(getMyReviews())
+    // // dispatch(getMySpots())
+    // dispatch(getMyReviews())
     // }, [myReviews])
 
     return reviewspots && user && myReviews && reviewSpotfunc(myReviews, reviewspots) && (

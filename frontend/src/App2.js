@@ -17,8 +17,8 @@ function App() {
     const [isLoaded, setIsLoaded] = useState(false);
     let user = useSelector(state => state.session.user)
     useEffect(() => {
-        user ? dispatch() :
-            dispatch(sessionActions.restoreUser())
+        
+           if(!user) dispatch(sessionActions.restoreUser())
         // .then(() => dispatch(setIsLoaded(true)))  ///took out again
     }, [dispatch]);
     ///trying top 

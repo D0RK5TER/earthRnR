@@ -19,9 +19,9 @@ if (process.env.NODE_ENV !== "production") {
   restoreCSRF();
   window.csrfFetch = csrfFetch;
   window.store = store;
-  // window.sessionActions = sessionActions;
-  // window.spotsActions = spotsActions
-  // window.reviewsActions = reviewsActions
+  window.sessionActions = sessionActions;
+  window.spotsActions = spotsActions
+  window.reviewsActions = reviewsActions
 }
 
 const roo = document.getElementById('root')

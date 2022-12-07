@@ -89,20 +89,7 @@ export const getMyReviews = () => async (dispatch) => {
     });
     if (response.ok) {
         const data = await response.json();
-        // for (let rev of data.Reviews) { 
-
-        //     // console.log(this.state.spots)           
-        //     const res = await csrfFetch(`/api/spots/${rev.spotId}`, {
-        //         method: 'GET',
-        //         headers: { 'Content-Type': 'application/json' },
-        //     });
-        //     if (res.ok) {
-        //         let data2 = await res.json()
-        //         rev.Spot = data2
-        //     }
-        // }
         dispatch(loadMyReviews(data.Reviews))
-
         return data.Reviews
     }
 }
@@ -124,8 +111,8 @@ export const createReview = (reviewz) => async (dispatch) => {
         let data = await response.json()
         // switched action and reducer for ezload
         // return
-        dispatch(getAllReviews(id)).then(dispatch(getOneSpot(id)))
-        return data
+        return dispatch(getAllReviews(id)).then(dispatch(getOneSpot(id)))
+        // return data
     }
 }
 
@@ -155,11 +142,11 @@ export const makeDeleteReview = ({ id, spotId, place }) => async (dispatch) => {
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-        const data = await response.json();
+        // const data = await response.json();
         place ? dispatch(getMyReviews()) :
-            dispatch(getAllReviews(spotId))
-                .then(dispatch(getOneSpot(spotId)))
-        return data
+            dispatch(getAllReviews(spotId)).then(dispatch(getOneSpot(spotId)))
+        // .then(dispatch(getOneSpot(spotId)))
+        // return data
     }
 }
 
