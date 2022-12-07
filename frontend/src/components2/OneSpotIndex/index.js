@@ -61,7 +61,10 @@ const OneSpotIndex = () => {
 
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
+    // console.log(spotimgs)
+    while (spotimgs.length < 4) spotimgs.push({ url: quest })
     let [a, b, c, d] = spotimgs
+    // console.log(previewImage)
     if (!a?.url) a = { url: quest }
     if (!b?.url) b = { url: quest }
     if (!c?.url) c = { url: quest }
@@ -77,18 +80,18 @@ const OneSpotIndex = () => {
 
           <div id='smallcont1'>
             <div className='spotImage' id='spotimg1'>
-              <img src={`${a}`} className='gridpics' key={a} />
+              <img src={`${a.url}`} className='gridpics' key={a} />
             </div>
             <div className='spotImage' id='spotimg2'>
-              <img src={`${b}`} className='gridpics' key={a} />
+              <img src={`${b.url}`} className='gridpics' key={a} />
             </div>
           </div>
           <div id='smallcont2'>
             <div className='spotImage' id='spotimg3'>
-              <img src={`${c}`} className='gridpics' key={a} />
+              <img src={`${c.url}`} className='gridpics' key={a} />
             </div>
             <div className='spotImage' id='spotimg4'>
-              <img src={`${d}`} className='gridpics' key={a} />
+              <img src={`${d.url}`} className='gridpics' key={a} />
             </div>
           </div>
 
@@ -117,7 +120,7 @@ const OneSpotIndex = () => {
       reviewsCont =
         Object.values(thereviews)?.map(
           ({ id, stars, review, userId, createdAt, User, spotId }) => (
-            <div className='onereview single one' key={id+spotId+review}>
+            <div className='onereview single one' key={id + spotId + review}>
 
               <div className='profilepicture reviewheader'>
                 <div className='profilepic reviewpic'>
@@ -131,7 +134,7 @@ const OneSpotIndex = () => {
                     posted {new Date(createdAt).toDateString()}
                   </div>
                 </div>
-                {userId === user?.id && <DeleteReviewFormModal id={id} spotId={spotId} key={id+review} />}
+                {userId === user?.id && <DeleteReviewFormModal id={id} spotId={spotId} key={id + review} />}
               </div>
               <div className='bottomhalf reviewbottom'>
                 <div className='reviewscore starscore'>
@@ -220,7 +223,7 @@ const OneSpotIndex = () => {
                   <div id='hostnamemid'>
                     {`${theSpot.User.firstName} `}
                   </div>
-                  has been a host for
+                  has been a host here for
                   <div id='hostnamelast'>
                     {` ${getAge(theSpot.createdAt)}`}
                   </div>
@@ -274,7 +277,7 @@ const OneSpotIndex = () => {
               </div>}
 
               <div id='reviewsright'>
-                {ratingsneak && user?.id !== theSpot?.ownerId && buttonVis && < CreateReviewFormModal id={id} key={theSpot.id+theSpot.name} />}
+                {ratingsneak && user?.id !== theSpot?.ownerId && buttonVis && < CreateReviewFormModal id={id} key={theSpot.id + theSpot.name} />}
               </div>
             </div>
 
@@ -285,7 +288,7 @@ const OneSpotIndex = () => {
                     {reviewsCont}
                   </div>
                   <div id='hugebutton'>
-                    {user?.id !== theSpot?.ownerId && <CreateReviewFormModal id={id} key={theSpot.id+theSpot.description} />}
+                    {user?.id !== theSpot?.ownerId && <CreateReviewFormModal id={id} key={theSpot.id + theSpot.description} />}
                   </div>
                 </div>
               )}

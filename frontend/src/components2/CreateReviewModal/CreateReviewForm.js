@@ -20,8 +20,7 @@ function CreateReviewForm({ id, setShowModal }) {
         let reviewz = { id, review, stars }
         // console.log(reviewz)
         return dispatch(createReview(reviewz))
-            // .then(dispatch(getOneSpot(id))) trying to get rating to update
-            .then(setShowModal(false))
+            // .then(dispatch(getOneSpot(id))) trying to get rating to update           
             .catch(async (res) => {
                 if (res.ok) {
                     const data = await res.json()
@@ -33,7 +32,7 @@ function CreateReviewForm({ id, setShowModal }) {
                 // else setErrors([res]);
 
             }
-            );
+            ).then(setShowModal(false))
     }
     // console.log({ idxx, review, stars })
     return (

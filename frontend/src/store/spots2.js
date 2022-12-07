@@ -64,7 +64,7 @@ export const getAllSpots = (e) => async (dispatch) => {
     }
 };
 export const getOneSpot = (id) => async (dispatch) => {
-    console.log(id)
+    // console.log(id)
 
     const response = await csrfFetch(`/api/spots/${+id}`, {
         method: 'GET',

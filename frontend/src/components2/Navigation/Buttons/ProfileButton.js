@@ -92,7 +92,7 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
                 {sessionUser.email}
               </div>
               <div className='ddprofile' id='ddcurrentcont'>
-                <button className='ddprofile' id='ddcurrentbutt' onClick={() => history.push('/current') && closeMenu()}>
+                <button className='ddprofile' id='ddcurrentbutt' onClick={() => history.push('/current') || closeMenu()}>
                   Profile Page
                 </button>
               </div>
