@@ -89,7 +89,6 @@ const big = [
   "https://a0.muscache.com/im/pictures/2bfa9fd4-08cc-4014-b7ec-898f80a24525.jpg?im_w=720",
   "https://a0.muscache.com/im/pictures/miso/Hosting-48225744/original/310a27fd-a714-4e89-bcb3-a55b20f68c85.jpeg?im_w=720",
   "https://a0.muscache.com/im/pictures/prohost-api/Hosting-49194945/original/c49456c8-8608-446c-9f01-3843adc81945.jpeg?im_w=720",
-  "https://a0.muscache.com/im/pictures/1776527e-598d-48b1-a3a2-c6c5671b40a3.jpg?im_w=720",
   "https://a0.muscache.com/im/pictures/a565783e-0503-417b-bb99-0de56a1230b9.jpg?im_w=720",
   "https://a0.muscache.com/im/pictures/miso/Hosting-46955724/original/2d019ea6-a78e-4c21-bc2d-70669ef1b516.jpeg?im_w=720",
   "https://a0.muscache.com/im/pictures/ebb5df30-ad26-4f8c-b67d-391b89e49fe1.jpg?im_w=720",

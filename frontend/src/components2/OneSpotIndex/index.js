@@ -56,10 +56,10 @@ const OneSpotIndex = () => {
   // } else if (theSpot && theSpot?.id !== +id) {
   //   theSpot = null
   // }
-// console.log(theSpot)
+  // console.log(theSpot)
   // theSpot = theSpot.id
   // if (Object?.values(theSpot).length )
-  if (theSpot!==undefined && theSpot[id]?.id === (+id) && thereviews && +id > 0) {
+  if (theSpot !== undefined && theSpot[id]?.id === (+id) && thereviews && +id > 0) {
     theSpot = theSpot[+id]
     // console.log(theSpot)
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
@@ -153,22 +153,23 @@ const OneSpotIndex = () => {
         )
     }
 
-  } else theSpot = undefined
+  }
+  // else theSpot = undefined
 
 
 
 
   useEffect(() => {
     // if (!theSpot) {
-      dispatch(getOneSpot(id))
-      dispatch(getAllReviews(id))
+    dispatch(getOneSpot(id))
+    dispatch(getAllReviews(id))
     // }
-  }, [id])
+  }, []) //took out id
 
 
 
 
-  return  theSpot!==undefined && +id === theSpot?.id && thereviews && (
+  return theSpot !== undefined && +id === theSpot?.id && thereviews && (
 
     <div id='onespotcont'>
       <div id='onespotinnercont'>
