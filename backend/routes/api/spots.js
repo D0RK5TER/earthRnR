@@ -173,7 +173,7 @@ router.get('/:spotId', async (req, res) => {
         where: { id: spotId },
         include: [
             { model: Review, required: false, raw: true, },
-            { model: SpotImage, required: false, raw: true, attributes: ['id', 'url', 'preview'] },
+            { model: SpotImage, required: true, raw: true, attributes: ['id', 'url', 'preview'] },
             { model: User, raw: true, attributes: ['id', 'firstName', 'lastName'] }
         ],
         // raw: true,
