@@ -10,6 +10,8 @@ const MAKE_SPOT = 'spots/makeSpot'
 
 //////// ACTIONS /////////// ACTIONS ////////////
 export const loadAllSpots = (spots) => {
+
+
     return {
         type: LOAD_ALL_SPOTS,
         spots
@@ -162,6 +164,8 @@ const loggedReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_ALL_SPOTS:
             newState.allspots = arrConvert(action.spots);
+
+            
             return newState;
         case LOAD_ONE_SPOT:
             let spot = action.spot

@@ -29,6 +29,8 @@ const CurrentIndex = () => {
         }
         return true
     }
+
+    
     useEffect(() => {
         dispatch(getMySpots())
         dispatch(getMyReviews())
