@@ -44,7 +44,38 @@ function PaginationForm({ setShowModal }) {
         <div id='paginationcont'>
             <h3>Select your Filters</h3>
             <h4>{min}----{max}</h4>
-            <form onSubmit={handleSubmit} id='paginationform'>
+            <div style={{
+                width: `50vw`, height: `1vw`,
+                paddingLeft: `${min / 1000 * 95}vw`
+                // , paddingRight: min >= max ? 0 : `${max / 1000 * 95}vw`
+                , display: 'flex', justifyContent: 'flex-start',
+                border: '.1px solid black'
+            }}>
+                <h5
+                    style={{ paddingLeft: `.21vw`, }}
+                >{min}</h5>
+                <h5
+                    style={{
+                        paddingLeft: min > max ? 0 : `${max / 1000 *95}vw`
+                        // paddingLeft: `.21vw`,
+                        // paddingLeft: max < 0 ? 0 : console.log((max - min) / 1000) || `${((max / 1000) * 100) * 50}vw`
+                        // || console.log(((max * 100)*50))
+
+                    }}
+                >{max}</h5>
+            </div>
+            {/* <div style={{
+                width: `50vw`,
+                paddingLeft: `${max / 1000 * 95}vw`
+                , display: 'flex', justifyContent: 'flex-start',
+                border: '.1px solid black'
+            }}>
+                <h5
+                    style={{ paddingLeft: `.21vw` }}
+                >{max}</h5>
+            </div> */}
+            <form onSubmit={handleSubmit} id='paginationform' style={{ height: '80%' }}>
+                <button type="submit" disabled={max}>Search</button>
                 <div id='slidercont' style={{ width: `100vw`, justifyContent: 'center', display: 'inline-flex' }}>
 
                     <input type="range" min={0} max={50} defaultValue={0}
@@ -67,11 +98,11 @@ function PaginationForm({ setShowModal }) {
                                 setTog2('none') || setTog('none') || setMone('none') || setMtwo('block')
                             // setCustomWidth(50)
                         }}
-                        onChange={(e) => console.log(((e.target.value * 2) / 100) * 1000 + min)
+                        onChange={(e) => setMax(((e.target.value * 2) / 100) * 1000 + min)
                             // || console.log(min / 1000 + max)
                         } />
 
-
+                    {/* <button type="submit" >Search</button> */}
                 </div>
                 {/* <div id='slidercont' style={{
                     width: `100%`, justifyContent: 'center',
@@ -81,19 +112,12 @@ function PaginationForm({ setShowModal }) {
                 <button />
                 <button />
             </div> */}
-                <button type='reset'>Reset</button>
-                <button type="submit" disabled={max}>Search</button>
+                <div style={{ width: `100vw`, justifyContent: 'center', display: 'inline-flex' }}>
+                    <button type="submit">Search</button>
+                    <button type='reset'>Reset</button>
+                </div>
             </form>
-            <div style={{
-                width: `50vw`,
-                paddingLeft: `${min / 1000 * 95}vw`
-                , display: 'flex', justifyContent: 'flex-start',
-                border: '.1px solid black'
-            }}>
-                <h5
-                style={{paddingLeft:`.21vw`}}
-                >{min}</h5>
-            </div>
+
             <ul>
                 {errors.map((error, idx) => (
                     <li className='errors' key={idx + error.statusCode}>{error}</li>))}
