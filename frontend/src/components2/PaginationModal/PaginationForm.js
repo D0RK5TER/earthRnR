@@ -8,13 +8,14 @@ import './PaginationForm.css'
 
 function PaginationForm({ setShowModal }) {
     const dispatch = useDispatch();
-    const [min, setMin] = useState('30')
-    const [max, setMax] = useState('500')
-    const [tog, setTog] = useState(false)
-    const [tog2, setTog2] = useState(true)
-    const [tog3, setTog3] = useState(true)
-
+    const [min, setMin] = useState(0)
+    const [max, setMax] = useState(0)
+    const [tog, setTog] = useState('none')
+    const [tog2, setTog2] = useState('block')
+    const [customWidth, setCustomWidth] = useState(50)
     const [errors, setErrors] = useState([]);
+    const [mone, setMone] = useState('none');
+    const [mtwo, setMtwo] = useState('none');
     let pagination
 
 
@@ -25,7 +26,7 @@ function PaginationForm({ setShowModal }) {
                 max < 500 ? pagination = `?maxPrice=${max}` :
                     pagination = ''
         setErrors([]);
-         return dispatch(getAllSpots(pagination))
+        return dispatch(getAllSpots(pagination))
             .then(() => {
                 setShowModal(false)
             })
@@ -40,25 +41,64 @@ function PaginationForm({ setShowModal }) {
     //     setMax(min)
     // }, [setTog])
     return (
-        <form onSubmit={handleSubmit} className='editspotform' >
+        <div id='paginationcont'>
+            <h3>Select your Filters</h3>
+            <h4>{min}----{max}</h4>
+            <form onSubmit={handleSubmit} id='paginationform'>
+                <div id='slidercont' style={{ width: `100vw`, justifyContent: 'center', display: 'inline-flex' }}>
+
+                    <input type="range" min={0} max={50} defaultValue={0}
+                        onMouseUp={(e) => setCustomWidth(50 - e.target.value) || setMin(((e.target.value * 2) / 100) * 1000)
+                            || setTog('block') || setTog2('none') || setMone('block')}
+                        onChange={(e) => setMin(((e.target.value * 2) / 100) * 1000)
+                            // || console.log(min / 1000 + max)
+                        }
+                        style={{ display: tog2, width: `${customWidth}vw` }} />
+                    <div style={{ display: mone, width: `${48 - customWidth}vw`, border: '1px solid white', height: '10px' }}>
+
+                        <div type='button' id='minmark' style={{ display: mone, border: '.1px solid black' }}>
+
+                        </div>
+                    </div>
+                    <input type="range" min={0} max={50} defaultValue={0}
+                        style={{ display: tog, width: `${customWidth}vw`, }}
+                        onMouseUp={(e) => {
+                            setMax(((e.target.value * 2) / 100) * 1000 + min) ||
+                                setTog2('none') || setTog('none') || setMone('none') || setMtwo('block')
+                            // setCustomWidth(50)
+                        }}
+                        onChange={(e) => console.log(((e.target.value * 2) / 100) * 1000 + min)
+                            // || console.log(min / 1000 + max)
+                        } />
+
+
+                </div>
+                {/* <div id='slidercont' style={{
+                    width: `100%`, justifyContent: 'center',
+                    
+                    display: tog === 'none' && tog2 === 'none' ? 'flex' : 'none',
+                }}>
+                <button />
+                <button />
+            </div> */}
+                <button type='reset'>Reset</button>
+                <button type="submit" disabled={max}>Search</button>
+            </form>
+            <div style={{
+                width: `50vw`,
+                paddingLeft: `${min / 1000 * 95}vw`
+                , display: 'flex', justifyContent: 'flex-start',
+                border: '.1px solid black'
+            }}>
+                <h5
+                style={{paddingLeft:`.21vw`}}
+                >{min}</h5>
+            </div>
             <ul>
                 {errors.map((error, idx) => (
-                    <li className='errors' key={idx+error.statusCode}>{error}</li>))}
+                    <li className='errors' key={idx + error.statusCode}>{error}</li>))}
             </ul>
-            <p>Select your Filters</p>
-            <span>
-                <input type="range" name="price" min='0' max="500" onChange={(e) => setMin(e.target.value)} disabled={tog} style={{ 'accent-color': 'white' }} />
-                <button type="button" className="deletebutt" disabled={tog} onClick={() => { setTog(true); setTog2(false); setMax((+min + 10).toString()) }} style={{ 'accent-color': 'white' }}>Set Min to ${min}</button>
-            </span>
-            <span>
-                <input type="range" name="price" value={max} min='0' max='500' onChange={(e) => setMax(e.target.value)} disabled={tog2} style={{ 'accent-color': 'black' }} />
-                <button type="button" className="deletebutt" disabled={tog2} onClick={() => { setTog2(true); setTog3(false) }}>Set Max to ${max}</button>
-            </span>
-            <span>
-                <button type="submit" className="deletebutt" disabled={tog3}>Search</button>
-
-            </span>
-        </form>
+        </div>
     );
 }
 

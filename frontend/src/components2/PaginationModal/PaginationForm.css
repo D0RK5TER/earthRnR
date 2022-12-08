@@ -22,9 +22,21 @@
     src: local("popbold"),
         url("../../assets/popbold.ttf") format("truetype");
   }
-
-
-.topbarbutt {
-
-    font-family: 'Light';
+  #paginationform {
+    /* width: 90%; */
+  }
+  #minmark {
+    border-radius: 50%;
+  }
+#paginationcont {
+  height: 30vw;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* justify-content: center; */
+  align-items: center;
+}
+#slidercont {
+  display: inline-flex;
 }

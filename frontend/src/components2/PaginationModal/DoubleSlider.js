@@ -10,8 +10,8 @@ function PriceSlider() {
     const scaleRef = useRef()
     // const input1 = useRef(0)
     // const input2 = useRef(500)
-    const [input1, setInput1] = useState(0)
-    const [input2, setInput2] = useState(500)
+    const [min, setMin] = useState(0)
+    const [max, setMax] = useState(500)
 
     // const [price, setPrice] = useState(0)
 
@@ -73,7 +73,7 @@ function PriceSlider() {
     return (
         <form class="range-slider">
             {/* <span class="rangeValues"></span> */}
-            <input value="10" min="10" max="500"  type="range" />
+            <input value="10" min="10" max="1000"  type="range" />
             <input value="500" min="10" max="500"  type="range" />
         </form>
     )
