@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         sum += arr[i].stars
         i++
       }
-      return Math.round(sum / i)
+      return (sum / i).toFixed(2)
     }
 
     static async getNumRevs(thisId) {

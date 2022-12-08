@@ -272,6 +272,7 @@ font-family: 'Li';
     margin-right: .25em;
 }
 #onespotreviews {
+    padding-bottom: .71em;
     border-bottom: .5px black solid;
     cursor: pointer;
 }
@@ -430,7 +431,7 @@ font-family: 'Li';
 }
 
 #onespotsubheader {
-    width: 25%;
+    width: 40%;
     padding-left: 5vw;
     /* justify-content: space-evenly; */
     font-size: .8em;

@@ -56,9 +56,9 @@ const OneSpotIndex = () => {
   // } else if (theSpot && theSpot?.id !== +id) {
   //   theSpot = null
   // }
-  if (theSpot) theSpot = theSpot[id]
+  // theSpot = theSpot.id
+  if (Object?.values(theSpot).length ) theSpot = theSpot[id]
   if (theSpot && thereviews && id > 0) {
-
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
     // console.log(spotimgs)
@@ -186,7 +186,7 @@ const OneSpotIndex = () => {
                 {theSpot.avgStarRating}
               </div>
             </div>
-            <div id='onespotreviews' onClick={(e) => { e.preventDefault(); window.location.replace(`/${theSpot.id}#jumpmark`)}}>
+            <div id='onespotreviews' onClick={(e) => { e.preventDefault(); window.location.replace(`/${theSpot.id}#jumpmark`) }}>
               <div id='onespotnumber'>
                 {theSpot.numReviews}
               </div>
@@ -212,49 +212,50 @@ const OneSpotIndex = () => {
 
 
         {onespotImages}
+        <div>
+          <div id='belowimg'>
 
-        <div id='belowimg'>
+            <div id='belowheader'>
 
-          <div id='belowheader'>
-
-            <div id='hostspotinfo'>
-              <div id='hostnameheader'>
-                <div id='hostnameage'>
-                  <div id='hostnamemid'>
-                    {`${theSpot.User.firstName} `}
+              <div id='hostspotinfo'>
+                <div id='hostnameheader'>
+                  <div id='hostnameage'>
+                    <div id='hostnamemid'>
+                      {`${theSpot.User.firstName} `}
+                    </div>
+                    has been a host here for
+                    <div id='hostnamelast'>
+                      {` ${getAge(theSpot.createdAt)}`}
+                    </div>
+                    days
                   </div>
-                  has been a host here for
-                  <div id='hostnamelast'>
-                    {` ${getAge(theSpot.createdAt)}`}
+                  <div id='hostpicture'>
+                    pic
                   </div>
-                  days
                 </div>
-                <div id='hostpicture'>
-                  pic
+
+                <div id='spotdescription'>
+                  <div>
+                    {theSpot.description}
+                  </div>
+                  Number of Beds: 2
                 </div>
               </div>
 
-              <div id='spotdescription'>
-                <div>
-                  {theSpot.description}
-                </div>
-                Number of Beds: 2
+
+
+              <div id='bookingcont'>
+
+                Bookings
               </div>
             </div>
 
-
-
-            <div id='bookingcont'>
-
-              Bookings
-            </div>
+            <div id='jumpmark' style={{ marginBottom: '4em' }}></div>
           </div>
+
           <div id='reviewscont'>
 
             <div id='reviewsheader'>
-            <>
-              <div id='jumpmark'/>
-            </>
 
               {ratingsneak && <div id='reviewsleft' >
                 <div id='reviewsleftleft'>
