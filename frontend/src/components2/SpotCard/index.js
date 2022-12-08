@@ -80,7 +80,7 @@ function SpotCard({ spot, user }) {
                     background: `url(${previewImage}) no-repeat `,
                     justifySelf: 'flex-start',
                     backgroundSize: 'cover',
-                }} onClick={() => history.push(`/${id}`)} />
+                }} onClick={() => window.scrollTo(0, 0) || history.push(`/${id}`)} />
             </div>
 
             <div className='spotinfocont' id={`SpotCardInfo${id}`} style={{

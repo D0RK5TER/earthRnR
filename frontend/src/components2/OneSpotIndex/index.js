@@ -186,7 +186,7 @@ const OneSpotIndex = () => {
                 {theSpot.avgStarRating}
               </div>
             </div>
-            <div id='onespotreviews'>
+            <div id='onespotreviews' onClick={(e) => { e.preventDefault(); window.location.replace(`/${theSpot.id}#jumpmark`)}}>
               <div id='onespotnumber'>
                 {theSpot.numReviews}
               </div>
@@ -249,11 +249,12 @@ const OneSpotIndex = () => {
               Bookings
             </div>
           </div>
-
-
           <div id='reviewscont'>
 
             <div id='reviewsheader'>
+            <>
+              <div id='jumpmark'/>
+            </>
 
               {ratingsneak && <div id='reviewsleft' >
                 <div id='reviewsleftleft'>

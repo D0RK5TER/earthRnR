@@ -56,7 +56,7 @@ function Navigation() {
           className={'homebutt'}
           style={{ fontFamily: 'Bold' }}
           onClick={() => {
-            history.push('/')
+            window.scrollTo(0, 0) || history.push('/')
           }}>
           <img src={logo} style={{ paddingRight: '15px' }} />
           earthRnR

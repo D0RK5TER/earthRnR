@@ -271,7 +271,10 @@ font-family: 'Li';
     height: 100%;
     margin-right: .25em;
 }
-
+#onespotreviews {
+    border-bottom: .5px black solid;
+    cursor: pointer;
+}
 #onespotstar {
     font-family: 'Thin';
 
