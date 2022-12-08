@@ -14,17 +14,18 @@ import './index.css';
 
 function App() {
     const dispatch = useDispatch();
-    // const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
     let user = useSelector(state => state.session.user)
     useEffect(() => {
         if (!user?.id) dispatch(sessionActions.restoreUser())
+        setIsLoaded(true)
         // .then(() => dispatch(setIsLoaded(true)))  ///took out again
     }, [dispatch]);
     ///trying top 
-    return (
+    return isLoaded && (
         <div id='outtermost' style={{ width: '100vw', height: '200vh' }}>
             <div id='navi' style={{ width: '100vw', position: 'sticky', top: '0px' }}>
-                <Navigation style={{ position: 'sticky' }} />
+                <Navigation style={{ position: 'sticky' }} isLoaded={isLoaded} />
             </div>
             <div id='outter' style={{
                 width: '100vw', height: '200vh'

@@ -172,7 +172,7 @@ router.get('/:spotId', async (req, res) => {
     let spots = await Spot.findAll({
         where: { id: spotId },
         include: [
-            { model: Review, required: false, raw: true, },
+            { model: Review, required: true, raw: true, },
             { model: SpotImage, required: true, raw: true, attributes: ['id', 'url', 'preview'] },
             { model: User, raw: true, attributes: ['id', 'firstName', 'lastName'] }
         ],

@@ -142,6 +142,8 @@ function EditSpotForm({ idx, setShowModal }) {
                         onChange={(e) => setPrice(e.target.value)}
                         placeholder='Price'
                         max={10000}
+                        min={20}
+                        title='Must be between 20 and 10,000'
                         required
                     />
                 </label>

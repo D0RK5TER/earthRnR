@@ -10,6 +10,8 @@ function PaginationForm({ setShowModal }) {
     const dispatch = useDispatch();
     const [min, setMin] = useState(0)
     const [max, setMax] = useState(0)
+    const [dismin, setDismin] = useState(0);
+    const [disma, setDisma] = useState(0);
     const [tog, setTog] = useState('none')
     const [tog2, setTog2] = useState('block')
     const [customWidth, setCustomWidth] = useState(50)
@@ -47,22 +49,29 @@ function PaginationForm({ setShowModal }) {
             <div style={{
                 width: `50vw`, height: `1vw`,
                 paddingLeft: `${min / 1000 * 95}vw`
-                // , paddingRight: min >= max ? 0 : `${max / 1000 * 95}vw`
                 , display: 'flex', justifyContent: 'flex-start',
-                border: '.1px solid black'
+                border: '.1px solid black',
             }}>
                 <h5
                     style={{ paddingLeft: `.21vw`, }}
                 >{min}</h5>
-                <h5
-                    style={{
-                        paddingLeft: min > max ? 0 : `${max / 1000 *95}vw`
-                        // paddingLeft: `.21vw`,
-                        // paddingLeft: max < 0 ? 0 : console.log((max - min) / 1000) || `${((max / 1000) * 100) * 50}vw`
-                        // || console.log(((max * 100)*50))
 
-                    }}
-                >{max}</h5>
+                <div style={{
+                    width: `50vw`, height: `1vw`,
+                    paddingLeft: `${(max) / (max-min + 1000) * 95}vw`
+                    , display: 'flex', justifyContent: 'flex-start',
+                    border: '.1px solid black'
+                }}>
+                    <h5
+                        style={{
+                            // paddingLeft: min > max ? 0 : `${max / 1000 *95}vw`
+                            // paddingLeft: `.21vw`,
+                            // paddingLeft: max < 0 ? 0 : console.log((max - min) / 1000) || `${((max / 1000) * 100) * 50}vw`
+                            // || console.log(((max * 100)*50))
+
+                        }}
+                    >{max}</h5>
+                </div>
             </div>
             {/* <div style={{
                 width: `50vw`,
@@ -114,7 +123,7 @@ function PaginationForm({ setShowModal }) {
             </div> */}
                 <div style={{ width: `100vw`, justifyContent: 'center', display: 'inline-flex' }}>
                     <button type="submit">Search</button>
-                    <button type='reset'>Reset</button>
+                    {/* <button type='reset'>Reset</button> */}
                 </div>
             </form>
 

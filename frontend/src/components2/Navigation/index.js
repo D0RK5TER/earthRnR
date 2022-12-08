@@ -22,7 +22,7 @@ import SignUpFormModal from '../SignUpFormModal';
 
 
 
-function Navigation() {
+function Navigation(isLoaded) {
   // const dispatch = useDispatch();
   const history = useHistory()
   const user = useSelector(state => getSessionUser(state));
@@ -43,7 +43,7 @@ function Navigation() {
 
 
 
-  return (
+  return isLoaded && (
     <div id='evanbar' className='topbar' style={{
       position: 'sticky', width: '100vw',
     }}>
@@ -63,8 +63,6 @@ function Navigation() {
         </div>
       </div>
       {/* </NavLink> */}
-
-
 
 
       <div className='nav-center' id='topmid'>

@@ -148,7 +148,7 @@ border-radius: 2em;
     text-decoration: none;
     font-family: 'Bold';
     height: 2em;
-    width: 15vw;
+    width: fit-content;
 }
 
 
@@ -160,6 +160,7 @@ border-radius: 2em;
     height: 2em;
     border-radius: 1em;
     text-decoration: underline;
+    width: fit-content;
 }
 
 

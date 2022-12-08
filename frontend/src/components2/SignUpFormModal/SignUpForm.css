@@ -110,12 +110,12 @@
     box-sizing: border-box;
     align-items: center;
     /* padding: 1em; */
-    /* border-radius: .7em; */
-    /* margin-bottom: 3em; */
-    /* border-top-right-radius: .7em; */
-    /* margin-top: 1.2em; */
-    /* width: 32em; */
-    /* border: 1.5px solid #ababab; */
+/* border-radius: .7em; */
+/* margin-bottom: 3em; */
+/* border-top-right-radius: .7em; */
+/* margin-top: 1.2em; */
+/* width: 32em; */
+/* border: 1.5px solid #ababab; */
 
 /* }  */
 
@@ -141,9 +141,10 @@
     align-items: center;
     height: 6em;
     /* padding: 1em; */
-    resize:none;
+    resize: none;
     /* margin-top: 1.7em; */
 }
+
 .signuplabel>input {
     width: 30em;
     border: 1.5px solid #ababab;
@@ -206,14 +207,14 @@
     cursor: pointer;
     display: flex;
     /* margin-right: ; */
-    
+
     width: 30%
-    /* margin-top: 1em; */
-    /* margin-right: 1em; */
-    /* justify-self: flex-start */
-    /* padding: 1em; */
-    /* padding-top: 1em; */
-    /* color: red; */
+        /* margin-top: 1em; */
+        /* margin-right: 1em; */
+        /* justify-self: flex-start */
+        /* padding: 1em; */
+        /* padding-top: 1em; */
+        /* color: red; */
 }
 
 /* #login>* {
@@ -278,6 +279,7 @@
     /* padding-bottom: 2em; */
     /* justify-self: center; */
 }
+
 #signupform {
     font-family: "Light";
     display: inline-flex;
@@ -290,6 +292,7 @@
     height: fit-content;
     margin-bottom: 1em;
 }
+
 #editspotform {
     font-family: "Light";
     display: inline-flex;
@@ -302,6 +305,7 @@
     height: fit-content;
     margin-bottom: 1em;
 }
+
 #signupheadertext1 {
     /* margin-left: 3em; */
     display: flex;
@@ -311,15 +315,17 @@
     /* text-align: start; */
     /* justify-content: center; */
 
-    
+
 }
+
 #signupheadertext1 div {
     /* margin-left: 3em; */
     /* width: fit-content;
     text-align: center;
     justify-content: center; */
-    
+
 }
+
 #signupsubheader1 {
     width: 100%;
     font-size: .8em;
@@ -361,19 +367,21 @@
 }
 
 #editspotform:last-of-type label input {
-   margin-bottom: 0;
+    margin-bottom: 0;
 }
+
 #editspotbut {
     display: flex;
     /* width: fit-content; */
     flex-direction: row;
     /* justify-content:  */
     /* margin-left: 2em; */
-     background-color: #FF385C; 
+    background-color: #FF385C;
     border: none;
     font-family: 'Li';
     color: white;
     border-radius: 3em;
     cursor: pointer;
-   width: 6.4vw 
+    width: 100%;
+    
 }

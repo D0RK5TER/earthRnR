@@ -24,9 +24,9 @@ function getAge(birth) {
 
     year > 0 ? age = `Over ${year} years old!` :
         month > 1 ? age = `Over ${month} months old!` :
-            month === 1 ? age = `${day+30} days old` :
-             day > 1 ? age = `${day} days old` : age = `${day} day old` 
-               
+            month === 1 ? age = `${day + 30} days old` :
+                day > 1 ? age = `${day} days old` : age = `${day} day old`
+
     return age;
 }
 
@@ -38,10 +38,10 @@ function SpotCard({ spot, user }) {
     // console.log(user)
     const history = useHistory()
 
-        // console.log()
+    // console.log()
 
     if (!spot) return null;
-    if (spot.previewImage === 'No preview') spot.previewImage = quest  
+    if (spot.previewImage === 'No preview') spot.previewImage = quest
 
     // if (spa.previewImage === 'No preview') spa.previewImage = quest    
     // else {
@@ -80,7 +80,7 @@ function SpotCard({ spot, user }) {
                     background: `url(${previewImage}) no-repeat `,
                     justifySelf: 'flex-start',
                     backgroundSize: 'cover',
-                }} onClick={() =>  history.push(`/${id}`) || window.scrollTo(0, 0) } />
+                }} onClick={() => history.push(`/${id}`) || window.scrollTo(0, 0)} />
             </div>
 
             <div className='spotinfocont' id={`SpotCardInfo${id}`} style={{
@@ -108,7 +108,7 @@ function SpotCard({ spot, user }) {
                         {city}     ,   {state}</span>
                     <p id={`SpotCardtext1${id}`} style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw' }}>{getAge(createdAt.toString())}</p>
                     <span id={`SpotCardspan2${id}`} style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw', }}>{description.slice(0, 20)}...</span>
-                    <div id={`SpotCarddiv3${id}`} style={{ display: 'inline-flex',fontFamily: 'Li', marginTop: '.3em' }}>$<p style={{ fontFamily: 'Bold', lineHeight: '1.5vw', width: 'fit-content', margin:'0 .5em 0 .15em' }}>{price}</p> night</div>
+                    <div id={`SpotCarddiv3${id}`} style={{ display: 'inline-flex', fontFamily: 'Li', marginTop: '.3em' }}>$<p style={{ fontFamily: 'Bold', lineHeight: '1.5vw', width: 'fit-content', margin: '0 .5em 0 .15em' }}>{price}</p> night</div>
                 </div>
                 <div className='spotstarrow' id={`SpotCardInfoRow2${id}`} style={{
                     display: 'flex',
@@ -119,21 +119,23 @@ function SpotCard({ spot, user }) {
                     <div className='spotstaravg' id={`SpotCardInfoRow2${id}`} style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        width: '50%',
-                        height: 'fit-content',
-                        
+                        width: user.id === ownerId ? 'fit-content' : '80%',
+                        height: 'max-content',
+                        // verticalAlign: 'flex-end'
+
                     }} >
                         <div id={`editspot${id}`} style={{
                             display: 'flex',
                             flexDirection: 'row',
                             justifyContent: 'flex-end',
                             fontFamily: 'Bold',
-                            // width: '100%'
+                            height: '40%',
+                            width: '100%'
                         }}>
                             <img id={`starSpot${id}`} src={star} className='starspot' style={{
                                 maxHeight: '35%'
                             }} />
-                            {avgRating}
+                            {avgRating !== 0 ? avgRating : '0.00'}
                         </div>
                         {user.id === ownerId && <EditSpotFormModal idx={id} />}
                     </div>

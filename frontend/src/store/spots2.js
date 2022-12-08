@@ -38,14 +38,6 @@ export const makeSpot = (spot) => {
     };
 };
 
-// export const delputSpot = (spotId) => {
-
-//     return {
-//         type: CHANGE_SPOT,
-//         spotId
-//     }
-// }
-
 //////////////////////////////////////////////////////////////////////
 
 export const getAllSpots = (e) => async (dispatch) => {

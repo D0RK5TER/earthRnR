@@ -56,12 +56,12 @@ const OneSpotIndex = () => {
   // } else if (theSpot && theSpot?.id !== +id) {
   //   theSpot = null
   // }
-console.log(theSpot)
+// console.log(theSpot)
   // theSpot = theSpot.id
   // if (Object?.values(theSpot).length )
   if (theSpot!==undefined && theSpot[id]?.id === (+id) && thereviews && +id > 0) {
     theSpot = theSpot[+id]
-    console.log(theSpot)
+    // console.log(theSpot)
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
     // console.log(spotimgs)

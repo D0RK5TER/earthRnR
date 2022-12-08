@@ -92,7 +92,8 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
                 {sessionUser.email}
               </div>
               <div className='ddprofile' id='ddcurrentcont'>
-                <button className='ddprofile' id='ddcurrentbutt' onClick={() => history.push('/current') || closeMenu()}>
+                <button className='ddprofile' id='ddcurrentbutt'
+                  onClick={() => window.scrollTo(0, 0) || history.push('/current') || closeMenu()}>
                   Profile Page
                 </button>
               </div>
@@ -101,9 +102,8 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
                   Log Out
                 </button>
               </div>
-
+            
             </div>
-
           )
           : showMenu && (
             <div className="profile-dropdown ddprofile">
