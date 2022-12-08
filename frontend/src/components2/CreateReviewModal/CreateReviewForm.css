@@ -5,88 +5,164 @@
 }
 
 
-.editspotphoto button:hover {
-    /* filter: invert(100%); */
-    background-color: rgb(162, 162, 162);
-
-}
-
-.editspotphoto button {
-    background-color: #ff385c;
-    margin-top: .5em;
-    color: #fdfcfd;
-    position: relative;
-    border-radius: 1em;
-    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-
-.editspotform {
-    font-family: "Light";
-    display: inline-flex;
-    align-items: center;
-    flex-direction: column;
-    box-sizing: border-box;
-    border-color: black;
-    /* width: 30em; */
-
-}
-
-.editspotform label {
-    /* align-self: flex-start; */
-    /* width: 10em; */
-    box-sizing: border-box;
-
-    align-items: center;
-    padding-top: 1em;
-}
-
-/* .editspotphoto button {
-    background-color: rgba(10, 10, 10, 0.8);
-    margin-top: .5em;
-    color: #fdfcfd;
-    border-radius: 1em;
-    position: relative;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-} */
-
-.editspotform input {
-    /* align-self: center; */
-    box-sizing: border-box;
-    align-items: center;
-    line-height: 2em;
-    border-radius: 1em;
-    width: 27em;
-    text-indent: 1em;
-
-}
-
-.theD button {
-
-    background-color: #ff385c;
-}
-
-.deletebutt button {
-    /* padding-bottom: 1em; */
-    margin-bottom: 1em;
-    border-radius: 1em;
-    line-height: 2em;
-    display: inline-flex;
-    font-family: "Light";
-    background-color: #ff385c;
-    border-color: gray;
-    color: wheat;
-    justify-content: space-between;
-    margin-right: 6em;
-    margin-left: 6em;
-}
-
-.deletebutt:first-child {
-    line-height: 1em;
-    background-color: #ff385c;
-}
 
 /* 
-.deletebutt {
-    width: 0%;
+
+#createreviewform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 30vw;
+    
 } */
+
+
+
+
+/* #ratestay input{
+    display: flex;
+    justify-content: center;
+} */
+/* #ratestay div label div{
+
+} */
+#reviewtextlabel {
+    font-family: 'Li';
+    font-weight: 1em;
+/* text-decoration: ; */
+
+}
+#errorscreaterev {
+    height: .5em;
+    margin: 0;
+}
+#ratingdesc {
+    font-family: 'Li';
+}
+#createrevbutton:hover {
+background-color: #dddddd;
+border-radius: 2em;
+}
+
+#createrevbutton {
+    margin-bottom: 1em;
+    border: none;
+    width: 30%;
+    line-height: 2em;
+    font-family: 'Bold';
+    background-color: white;
+    cursor: pointer;
+    font-size: 1em;
+}
+#reviewtextinput {
+    height: 5vw;
+    width: 80%;
+    resize: none;
+    margin-top: .5em;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+}
+#reviewtextlabel {
+    width: 100%;
+    height: 100vw;
+}
+#reviewtext {
+    width: 100%;
+
+}
+#spreadreview p {
+    font-family: 'Bold';
+    margin: 0;
+    margin-left: 1em;
+}
+#spreadreview input::-webkit-slider-thumb {
+    width: 2vw;
+    -webkit-appearance: none;
+    height: 2vw;
+    cursor: ew-resize;
+    /* background: #ff385c; */
+    border: .52px solid black;
+    background-image: url('https://image.shutterstock.com/image-vector/black-star-vector-icon-260nw-221796499.jpg');
+    background-size: cover;
+    border-radius: 50%;
+}
+#spreadreview input::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+}
+#spreadreview input  {
+    display: flex;
+    background-color: #ff385c; 
+    -webkit-appearance: none;
+    border:1px solid #ff385c;
+    height: .1px;
+    justify-self: center;
+}
+
+#spreadreview {
+    width: 20vw;
+    display: flex;
+    height: 3vw;
+    justify-content: center;
+    padding-top: 1em;
+    align-items: safe center;
+}
+
+#ratestay {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5em;
+    width: 100%;
+
+}
+
+#ratestay label div {
+    width: 100%;
+    margin-bottom: .5em;
+
+}
+
+#ratestay label {
+    width: 100%;
+    margin-bottom: .5em;
+}
+
+#createreviewform>h1 {
+    margin-top: .5em;
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: .5em;
+
+}
+
+#createreviewform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 35vw;
+}
+
+#createreviewbutt:hover {
+    background-color: #e8e8e8;
+    text-decoration: none;
+    font-family: 'Bold';
+    height: 2em;
+    width: 15vw;
+}
+
+
+#createreviewbutt {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    width: 15vw;
+    height: 2em;
+    border-radius: 1em;
+    text-decoration: underline;
+}
+
+
+
+
+

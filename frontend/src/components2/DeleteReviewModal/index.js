@@ -11,7 +11,7 @@ function DeleteReviewFormModal({ id, spotId }) {
 
     return (
         <>
-            <button className='deletereview' onClick={() => setShowModal(true)}>Delete</button>
+            <button id='deletereview' onClick={() => setShowModal(true)}>Delete</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <DeleteReviewForm id={id} setShowModal={setShowModal} spotId={spotId} />

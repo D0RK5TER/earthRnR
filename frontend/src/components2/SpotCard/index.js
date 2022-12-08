@@ -59,6 +59,7 @@ function SpotCard({ spot, user }) {
             margin: '1em',
             marginBottom: '1vw',
             width: '20vw',
+            height: 'fit-content',
         }}>
             <div id={`SpotCardImgWrapper${id}`} className='piccontwrap allimg previmgwrap'
                 style={{
@@ -66,7 +67,7 @@ function SpotCard({ spot, user }) {
                     alignItems: 'center',
                     objectFit: 'contain',
                     width: '20vw',
-                    height: '20vw',
+                    height: 'fit-content',
                     justifyContent: 'flex-start',
                 }}
             >
@@ -105,9 +106,9 @@ function SpotCard({ spot, user }) {
                         fontFamily: 'Bold'
                     }}>
                         {city}     ,   {state}</span>
-                    <p id={`SpotCardtext1${id}`} style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw', }}>{getAge(createdAt.toString())}</p>
+                    <p id={`SpotCardtext1${id}`} style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw' }}>{getAge(createdAt.toString())}</p>
                     <span id={`SpotCardspan2${id}`} style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw', }}>{description.slice(0, 20)}...</span>
-                    <span id={`SpotCardspan3${id}`} style={{ fontFamily: 'Li', marginTop: '.3em' }}>$<p style={{ fontFamily: 'Bold', lineHeight: '1.5vw', }}>{price}</p> night</span>
+                    <div id={`SpotCarddiv3${id}`} style={{ display: 'inline-flex',fontFamily: 'Li', marginTop: '.3em' }}>$<p style={{ fontFamily: 'Bold', lineHeight: '1.5vw', width: 'fit-content', margin:'0 .5em 0 .15em' }}>{price}</p> night</div>
                 </div>
                 <div className='spotstarrow' id={`SpotCardInfoRow2${id}`} style={{
                     display: 'flex',
@@ -118,17 +119,19 @@ function SpotCard({ spot, user }) {
                     <div className='spotstaravg' id={`SpotCardInfoRow2${id}`} style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        width: '100%'
+                        width: '50%',
+                        height: 'fit-content',
+                        
                     }} >
                         <div id={`editspot${id}`} style={{
                             display: 'flex',
                             flexDirection: 'row',
                             justifyContent: 'flex-end',
                             fontFamily: 'Bold',
-                            width: '10em'
+                            // width: '100%'
                         }}>
                             <img id={`starSpot${id}`} src={star} className='starspot' style={{
-                                maxHeight: '35%', height: '5.5vh'
+                                maxHeight: '35%'
                             }} />
                             {avgRating}
                         </div>

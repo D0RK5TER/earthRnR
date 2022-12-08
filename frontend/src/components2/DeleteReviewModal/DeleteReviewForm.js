@@ -25,16 +25,18 @@ function DeleteReviewForm({ id, setShowModal, spotId }) {
             })
     }
     return (
-        <form onSubmit={handleSubmit} className='editspotform' >
-            <ul>
-                {errors.map((error, idx) => (
-                    <li className='errors' key={error + idx}>{error}</li>))}
-            </ul>
-            <p>Are You Sure?</p>
-            <span>
-                <button type="submit" className="deletebutt">Delete</button>
-            </span>
-        </form>
+        <div id='deletespot' >
+            <form onSubmit={handleSubmit} id='deletespotform' >
+                <p>Are You Sure?</p>
+                <ul id='deleteerror'>
+                    {errors.map((error, idx) => (
+                        <li className='errors' key={error + idx}>{error}</li>))}
+                </ul>
+                <span>
+                    <button type="submit" id="deletebuttsubmit">Confirm</button>
+                </span>
+            </form>
+        </div>
     );
 }
 

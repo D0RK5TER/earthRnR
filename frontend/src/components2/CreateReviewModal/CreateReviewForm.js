@@ -36,36 +36,53 @@ function CreateReviewForm({ id, setShowModal }) {
     }
     // console.log({ idxx, review, stars })
     return (
-        <form onSubmit={handleSubmit} className='editspotform' >
-            <ul>
+        <form onSubmit={handleSubmit} id='createreviewform' >
+            <h1> Rate Your Stay!</h1>
+            <div id='ratestay'>
+                <label>
+                    <div id='ratingdesc'>
+                        Out of five, how would you rate your stay?
+                    </div>
+                    <div id='spreadreview'>
+                    <input
+                        type="range"
+                        value={stars}
+                        onChange={(e) => setStars(+e.target.value)}
+                        placeholder='Stars'
+                        min={0}
+                        max={5}
+                        required
+                    />
+                    <p>
+
+                    {stars}/5
+                    </p>
+                    </div>
+                </label>
+
+            </div>
+            <div id='reviewtext'>
+
+                <label id='reviewtextlabel'>
+                    Please describe your stay
+                    <textarea id='reviewtextinput'
+                        type="text"
+                        value={review}
+                        onChange={(e) => setReview(e.target.value)}
+                        placeholder='100 Character Max'
+                        maxLength={100}
+                        required
+                    />
+                </label>
+            </div>
+            <ul id='errorscreaterev'>
                 {errors.map((error, idx) => (
                     <li className='errors' key={error + idx}>{error}</li>
                 ))}
             </ul>
-            <p> Create a Review!</p>
-            <label>
-                <input
-                    type="text"
-                    value={review}
-                    onChange={(e) => setReview(e.target.value)}
-                    placeholder='Review'
-                    required
-                />
-            </label>
-            <label>
-                <input
-                    type="number"
-                    value={stars}
-                    onChange={(e) => setStars(+e.target.value)}
-                    placeholder='Stars'
-                    min={0}
-                    max={5}
-                    required
-                />
-            </label>
-            <span>
-                <button type="submit" className="deletebutt">Update</button>
-            </span>
+            <div>
+                <button type="submit" id='createrevbutton'>Submit</button>
+            </div>
         </form>
     );
 }

@@ -288,7 +288,7 @@ const OneSpotIndex = () => {
                     {reviewsCont}
                   </div>
                   <div id='hugebutton'>
-                    {user?.id !== theSpot?.ownerId && <CreateReviewFormModal id={id} key={theSpot.id + theSpot.description} />}
+                    {user?.id !== theSpot?.ownerId && user?.id && <CreateReviewFormModal id={id} key={theSpot.id + theSpot.description} />}
                   </div>
                 </div>
               )}

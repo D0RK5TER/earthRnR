@@ -5,45 +5,107 @@
 }
 
 
-.editspotphoto button:hover {
-    /* filter: invert(100%); */
-    background-color: rgb(162, 162, 162);
 
+
+/* 
+
+
+#descwrap {
+    margin-top: .02em;
 }
 
-.editspotphoto button {
-    background-color: rgba(10, 10, 10, 0.8);
-    margin-top: .5em;
-    color: #fdfcfd;
-    position: relative;
-    border-radius: 1em;
-    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+#descriptionarea.desc.tion {
+    width: 90%;
+    resize: none;
+    height: 6.2vw;
+    margin-top: .02em;
+}
+
+.editinputarea.slop.strg:focus {
+    font-family: 'Bold';
+    font-weight: 2em;
+    color: #000000;
 }
 
 
-.editspotform {
+.editlabel>input {
+    width: 70%;
+    line-height: 1.2em;
+    align-self: center;
+    text-decoration: none;
+    text-emphasis: none;
+    text-decoration: none;
+} */
+/* 
+#editspotform.editlabel>* {
+    text-decoration: none;
+    text-emphasis:
+        none;
+}
+
+.editlabel label {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#editspotform p {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: .7em;
+    margin-bottom: 0;
+}
+
+#editspotform {
     font-family: "Light";
-    display: inline-flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-    border-color: black;
-    width: 30em;
+    border-color: none;
+    width: 35vw;
+    height: min-content;
+
 
 }
 
-.editspotform label {
-    /* align-self: flex-start; */
-    /* width: 10em; */
-    box-sizing: border-box;
+#editspotform label {
+    width: 100%;
+    height: min-content;
+}
 
-    align-items: center;
-    padding-top: 1em;
+.editdiv {
+    text-decoration: underline;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1em;
+} */
+
+/* #editspotform>div {
+
+    box-sizing: border-box;
+    width: 100%;
+     height: min-content;
+    display: flex;
+    margin-bottom: .02em;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: center; */
+    /* padding-top: .5em; */
+    /* text-align: center;
+    font-family: 'Li';
+
+    font-stretch: expanded;
+    border-bottom: .5px solid #dddddd;
+
+    border-top: .5px solid #dddddd
 }
 
 .deletebutt {
     border-radius: 2em;
-}
+} */
 
 /* .editspotphoto button {
     background-color: rgba(10, 10, 10, 0.8);
@@ -53,61 +115,71 @@
     position: relative;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 } */
-
-.editspotform input {
-    /* align-self: center; */
+/* 
+.editinputarea {
+    align-self: center;
     box-sizing: border-box;
     align-items: center;
-    line-height: 2em;
-    border-radius: 1em;
-    width: 27em;
+    line-height:calc() ;
+    width: 30vw;
     text-indent: 1em;
 
-}
+} */
 
-.theD button {
+/* .theD button {
     /* border: none; */
-    background-color: #ff385c;
-}
-
+    /* background-color: #ff385c; */
+/* }  */
+/* 
 .deletebutt button {
-    /* padding-bottom: 1em; */
+    padding-bottom: 1em;
     margin-bottom: 1em;
     border-radius: 1em;
     line-height: 2em;
     display: inline-flex;
     font-family: "Light";
     background-color: #ff385c;
-    /* border-color: gray; */
+    border-color: gray;
     color: wheat;
     justify-content: space-between;
     margin-right: 6em;
     margin-left: 6em;
-}
+} */
 
-.deletebutt:first-child {
+/* .deletebutt:first-child {
     line-height: 1em;
     background-color: #141414;
-}
-
+} */
+/* 
 #editspotbut {
     display: flex;
     /* width: fit-content; */
     /* flex-direction: row; */
     /* justify-content:  */
-    margin-left: 2em;
+    /* margin-left: 2em;
     background-color: #FF385C;
     border: none;
     font-family: 'Li';
     color: white;
     border-radius: 3em;
     cursor: pointer;
-    width: fit-content;
-}
+    width: fit-content; */
+/* } */ 
+/* 
 #editspotbut:hover {
     background-color: #f12b50;
-}
-
+} */
+/* 
+.editinputarea.slop.strg {
+    border: none;
+    width: 80%;
+    text-decoration: none;
+    text-emphasis: none;
+    text-decoration-style: none;
+    /* font-family: 'Bold'; */
+    /* color: #575757; */
+    /* outline: none; */
+/* }  */
 /* 
 .deletebutt {
     width: 0%;

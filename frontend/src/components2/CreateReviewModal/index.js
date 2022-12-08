@@ -16,7 +16,7 @@ function CreateReviewFormModal({ id }) {
     // }, [reviewsAction])
     return (
         <>
-            <button className='editspotbut' onClick={() => setShowModal(true)}>Create a Review!</button>
+            <button id='createreviewbutt' onClick={() => setShowModal(true)}>Create a Review!</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
 
