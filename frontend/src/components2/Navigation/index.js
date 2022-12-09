@@ -6,7 +6,7 @@ import './Navigation.css';
 import '../SignUpFormModal/SignUpForm.css'
 import logo from '../../assets/logo.jpg';
 import spotglass from '../../assets/spotglass.png';
-//NEW
+import { pathURL } from "../../utilities/location";
 import { getSessionUser } from '../../store/session2';
 // import { getAllSpots } from '../../store/spots2';
 import PaginationFormModel, { setfunc } from '../PaginationModal/index.js';
@@ -14,7 +14,7 @@ import PaginationFormModel, { setfunc } from '../PaginationModal/index.js';
 // import { Modal } from '../../context/Modal';
 // import LoginForm from '../LoginFormModal/LoginForm';
 // import SignupFormPage from '../SignupFormPage';
-import { getAllSpots, createSpot, makeChangeSpot, makeDeleteSpot, delputSpot } from '../../store/spots2';
+import { getAllSpots } from '../../store/spots2';
 
 import SpotFormModal from '../SpotFormModal';
 import SignUpFormModal from '../SignUpFormModal';
@@ -23,26 +23,20 @@ import SignUpFormModal from '../SignUpFormModal';
 
 
 function Navigation() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const history = useHistory()
   const user = useSelector(state => getSessionUser(state));
-
-
-  // const spots = useSelector(state=> state.spots.allspots)
-  // useEffect(() => dispatch(getAllSpots('')), [dispatch])
-  // console.log(user, '!!!!')
-
-
-  //   useEffect(() => {
-  //     dispatch(getAllSpots());
-  // }, []);
+  let loc
+  useEffect(() => {
+    loc = pathURL(history)
+  }, []);
 
 
 
 
 
 
-
+  console.log(loc)
   return (
     <div id='evanbar' className='topbar' style={{
       position: 'sticky', width: '100vw',
@@ -56,7 +50,8 @@ function Navigation() {
           className={'homebutt'}
           style={{ fontFamily: 'Bold' }}
           onClick={() => {
-            window.scrollTo(0, 0) || history.push('/')
+            loc === '/' ? window.scrollTo(0, 0) || dispatch(getAllSpots()) :
+              window.scrollTo(0, 0) || history.push('/')
           }}>
           <img src={logo} style={{ paddingRight: '15px' }} />
           earthRnR

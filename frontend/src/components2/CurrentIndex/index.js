@@ -1,7 +1,7 @@
 
 
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getMySpots, getOneSpot } from '../../store/spots2';
 import { getMyReviews } from '../../store/reviews2';
@@ -19,21 +19,22 @@ const CurrentIndex = () => {
     let reviewspots = useSelector(state => state.spots)
 
     function reviewSpotfunc(arr, obj) {
-        if (arr?.length && obj) {
-            obj = obj
-            arr = Object.values(arr)
-            for (let rev of arr) {
-                if (obj?.onespot[rev.spotId]) continue
-                dispatch(getOneSpot(rev.spotId))
-            }
-        }
+        // if (arr?.length && obj) {
+        //     obj = obj
+        //     arr = Object.values(arr)
+        //     for (let rev of arr) {
+        //         if (obj?.onespot[rev.spotId]) continue
+        //         dispatch(getOneSpot(rev.spotId))
+        //     }
+        // }
         return true
     }
 
 
     useEffect(() => {
         dispatch(getMySpots())
-        dispatch(getMyReviews())
+      let ans=  dispatch(getMyReviews())
+      console.log(ans)
     }, [])
 
     // useEffect(() => {

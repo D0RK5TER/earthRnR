@@ -422,7 +422,7 @@ font-family: 'Li';
 #onespotheader {
     font-family: 'Bold';
     font-size: 2em;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: baseline;
     display: flex;
     width: 70%;

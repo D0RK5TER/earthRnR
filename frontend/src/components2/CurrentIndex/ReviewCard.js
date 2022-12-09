@@ -1,17 +1,17 @@
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
+// import { useSelector } from 'react-redux';
+// import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import DeleteReviewFormModal from '../DeleteReviewModal';
-
+import ReviewImagesModal from '../ReviewImagesModal';
 
 
 
 
 function ReviewCard({ rev }) {
     const history = useHistory()
-    let { id, stars, review, createdAt, User, spotId } = rev
-    const thespot = useSelector(state => state.spots.allspots)
+    let { id, stars, review, createdAt, ReviewImages, spotId } = rev
     // console.log(spotId)
+    // console.log(ReviewImages)
     return rev && spotId && (
         <div className='onereview single one'>
 
@@ -21,6 +21,7 @@ function ReviewCard({ rev }) {
                 </div>
                 <div className='profilename profileage'>
                     <div className='reviewname'>
+                        <ReviewImagesModal idx={id} ReviewImages={ReviewImages} />
                         <button onClick={() => history.push(`/${spotId}`)}>
                             See the Spot!
                         </button>
@@ -31,7 +32,7 @@ function ReviewCard({ rev }) {
                 </div>
                 {<DeleteReviewFormModal id={id} spotId={spotId} />}
             </div>
-            
+
             <div className='bottomhalf reviewbottom'>
                 <div className='reviewscore starscore'>
                     {stars}/5

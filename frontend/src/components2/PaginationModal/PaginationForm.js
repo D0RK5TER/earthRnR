@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { useDispatch } from "react-redux";
-// import { useHistory } from "react-router-dom";
-// import { useParams } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
+import { pathURL } from "../../utilities/location";
 import { getAllSpots } from '../../store/spots2';
 import './PaginationForm.css'
 
 
 function PaginationForm({ setShowModal }) {
+    const history = useHistory()
     const dispatch = useDispatch();
-    const [min, setMin] = useState(0)
+    const [min, setMin] = useState(1)
     const [max, setMax] = useState(9999)
     const [errors, setErrors] = useState([]);
-    let pagination
+    let pagination = ''
+    let loc = pathURL(history)
+   
 
 
     const handleSubmit = (e) => {
@@ -24,19 +27,20 @@ function PaginationForm({ setShowModal }) {
                     max < 1 || min < 1 ? setErrors(['prices must be 1 or larger']) :
                         pagination = `?minPrice=${min}&maxPrice=${max}`
         if (errors.length) return errors
+        if (loc !== '/' || loc !== '') history.push('/')
         return dispatch(getAllSpots(pagination))
-            .then(setShowModal(false))
+            .then(() => setShowModal(false))
             .catch(async (res) => {
                 const data = await res.json()
                 if (data.message) setErrors([data.message]);
-            })
+            }).then(() => history.push('/') || dispatch(getAllSpots(pagination)))
 
     }
 
 
     // useEffect(() => {
-    //     setMax(min)
-    // }, [setTog])
+    //     console.log(history)
+    // }, [])
     return (
         <form onSubmit={handleSubmit} id='paginationform'>
             <h2>
