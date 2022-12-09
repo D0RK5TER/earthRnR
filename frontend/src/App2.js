@@ -24,12 +24,12 @@ function App() {
     }, [dispatch]);
     ///trying top 
     return (
-        <div id='outtermost' style={{ width: '100vw', height: '200vh' }}>
+        <div id='outtermost' style={{ width: '100vw'}}>
             <div id='navi' style={{ width: '100vw', position: 'sticky', top: '0px' }}>
                 <Navigation style={{ position: 'sticky' }}  />
             </div>
             <div id='outter' style={{
-                width: '100vw', height: '200vh'
+                width: '100vw'
             }}>
                 {/* {isLoaded && ( */}
                 <Switch>
