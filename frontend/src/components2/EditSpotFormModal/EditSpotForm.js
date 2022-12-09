@@ -37,8 +37,7 @@ function EditSpotForm({ idx, setShowModal }) {
             : obj = { id, address, city, state, country, name, description, price, place: true }
         if (act) {
             return dispatch(makeDeleteSpot(obj))
-                .then(setShowModal(false))
-                // .then(() => { history.push(`/spots`) })    
+                .then(setShowModal(false))    
                 .catch(async (res) => {
                     const data = await res?.json()
                     if (data.message) setErrors([data.message]);
@@ -137,7 +136,7 @@ function EditSpotForm({ idx, setShowModal }) {
                 Price
                 <label className="signuplabel">
                     <input
-                        type="number"
+                        type="integer"
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
                         placeholder='Price'

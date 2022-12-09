@@ -8,7 +8,7 @@ import { getMyReviews } from '../../store/reviews2';
 import SpotCard from '../SpotCard'
 import ReviewCard from './ReviewCard';
 import './currentindex.css'
-
+import SpotImageFormModal from '../CreateSpotImageModal';
 
 const CurrentIndex = () => {
     const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const CurrentIndex = () => {
         return true
     }
 
-    
+
     useEffect(() => {
         dispatch(getMySpots())
         dispatch(getMyReviews())
@@ -52,7 +52,10 @@ const CurrentIndex = () => {
                     </div>
                     <div id='myspotscont'>
                         {mySpots && Object?.values(mySpots).map(spot =>
-                            <SpotCard spot={spot} user={user} key={`${spot.id}`} />
+                            <div className='currentspotimage'>
+                                <SpotImageFormModal idx={spot.id} spotname={spot.name} />
+                                <SpotCard spot={spot} user={user} key={`${spot.id}`} />
+                            </div>
                         )}
                     </div>
                 </div>

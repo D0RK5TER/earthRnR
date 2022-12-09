@@ -85,7 +85,22 @@ export const getMySpots = () => async (dispatch) => {
         return dispatch(loadMySpots(data));
     }
 }
+export const createSpotImage = (spotimg) => async (dispatch) => {
+    const { url, preview, id } = spotimg
+    const response = await csrfFetch(`/api/spots/${id}/images`, {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            url,
+            preview: false,
+        }),
+    });
 
+    if (response.ok) {
+        let data = await response.json()
+        return dispatch(getMySpots())
+    }
+}
 
 export const createSpot = (spot) => async (dispatch) => {
     const { address, city, state, country,
@@ -166,7 +181,7 @@ const loggedReducer = (state = initialState, action) => {
         case LOAD_ALL_SPOTS:
             newState.allspots = arrConvert(action.spots);
 
-            
+
             return newState;
         case LOAD_ONE_SPOT:
             let spot = action.spot

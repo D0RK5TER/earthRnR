@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "Light";
+    src: local("earthrnrCerealLight"),
+        url("../../assets/earthrnrCerealLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Thin";
+    src: local("Poppins-Thin"),
+        url("../../assets/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Li";
+    src: local("Poppins-Light"),
+        url("../../assets/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: local("popbold"),
+        url("../../assets/popbold.ttf") format("truetype");
+}
+
+#spotimagebut2:hover {
+    background-color: #f42248;
+}
+
+#spotimagebut2 {
+    background-color: #FF385C;
+    border: none;
+    font-family: 'Li';
+    color: white;
+    border-radius: 3em;
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+
+.currentspotimage {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: fit-content;
+    margin-bottom: 1vw;
+    margin: 1em;
+    align-items: center;
+
+}
+
+#spotimagebut:hover {
+    background-color: #f42248;
+}
+
+#spotimagebut {
+    background-color: #FF385C;
+    border: none;
+    font-family: 'Li';
+    color: white;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: .7em;
+    display: flex;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: max-content;
+}
+
+#spotimageform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    cursor: default;
+}
+
+#spotimageformcont1>label input {
+    width: 100%;
+}
+
+#spotimageformcont1 {
+    width: 35vw;
+}
+
+#spotimageheader1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 1em;
+    padding-right: 5em;
+    font-family: 'Bold';
+}
+
+#spotimageexitbutt1 {
+
+    cursor: pointer;
+}
+
+#imagesubmitbutton {
+    margin-bottom: 1em;
+
+}
+
+#urltextheader {
+    width: 100%;
+    border-top: 2px solid #e6e6e6;
+    margin-top: 1em;
+    text-align: center;
+    font-family: 'Li';
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+}

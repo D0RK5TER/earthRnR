@@ -1,42 +1,99 @@
+@font-face {
+  font-family: "Light";
+  src: local("earthrnrCerealLight"),
+    url("../../assets/earthrnrCerealLight.ttf") format("truetype");
+}
 
 @font-face {
-    font-family: "Light";
-    src: local("earthrnrCerealLight"),
-        url("../../assets/earthrnrCerealLight.ttf") format("truetype");
-  }
-  
-  @font-face {
-    font-family: "Thin";
-    src: local("Poppins-Thin"),
-        url("../../assets/Poppins-Thin.ttf") format("truetype");
-  }
-  
-  @font-face {
-    font-family: "Li";
-    src: local("Poppins-Light"),
-        url("../../assets/Poppins-Light.ttf") format("truetype");
-  }
-  
-  @font-face {
-    font-family: "Bold";
-    src: local("popbold"),
-        url("../../assets/popbold.ttf") format("truetype");
-  }
-  #paginationform {
-    /* width: 90%; */
-  }
-  #minmark {
-    border-radius: 50%;
-  }
-#paginationcont {
-  height: 30vw;
-  width: 60vw;
+  font-family: "Thin";
+  src: local("Poppins-Thin"),
+    url("../../assets/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Li";
+  src: local("Poppins-Light"),
+    url("../../assets/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: local("popbold"),
+    url("../../assets/popbold.ttf") format("truetype");
+}
+
+#minmark {
+  border-radius: 50%;
+}
+
+h2 {
+  margin-bottom: .3em;
+  width: 100%;
+  border-bottom: 2px solid #e6e6e6;
+  text-align: center;
+  padding-bottom: .5em;
+  font-family: 'Bold';
+}
+
+#paginationform button:hover {
+  border: none;
+  background-color: rgb(255, 136, 136);
+  font-size: 1em;
+  padding: 0;
+}
+
+#paginationform button {
+  margin-bottom: 1em;
+  font-family: 'Bold';
+  background-color: white;
+  border: none;
+  border-radius: 1em;
+  width: 40%;
+  line-height: 2em;
+  padding: .3em;
+}
+
+#paginationform {
+  height: fit-content;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  /* justify-content: center; */
+  cursor: default;
   align-items: center;
+  font-family: 'Li';
 }
-#slidercont {
-  display: inline-flex;
+
+ul {
+  height: 5px;
+  margin: 0;
+}
+
+.pagiinput:last-child {
+  margin-bottom: 0;
+}
+
+.pagiinput {
+  cursor: cell;
+  width: 15vw
+}
+
+.pagiinput::-webkit-outer-spin-button,
+.pagiinput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+
+}
+
+#mincont {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#maxcont {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 1em;
 }
