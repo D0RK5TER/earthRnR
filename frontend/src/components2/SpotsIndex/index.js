@@ -26,7 +26,7 @@ function SpotsIndex() {
     user ? user = user : user = { id: 0 }
     useEffect(() => {
         dispatch(getAllSpots());
-    }, []);
+    }, [dispatch]);
 
     // if (!spots) return null;
     

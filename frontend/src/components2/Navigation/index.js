@@ -29,7 +29,7 @@ function Navigation() {
   let loc
   useEffect(() => {
     loc = pathURL(history)
-  }, []);
+  }, [dispatch]);
 
 
 

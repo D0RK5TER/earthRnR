@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom"; ///gone 
+// import { useHistory } from "react-router-dom"; ///gone 
 import * as sessionActions from "../../store/session2";
 import './LoginForm.css'
 // import { openMenu } from "../Navigation/ProfileButton";
@@ -77,6 +77,7 @@ function LoginForm({ setShowModal }) {
                 <div className="fangbutts" onClick={() => window.location = 'https://metabookclone.herokuapp.com/#/'}>
                     <img src={`https://metabook-seed.s3.amazonaws.com/Frame_1-removebg-preview.png`}
                         style={{ float: 'left' }}
+                        alt='fake fang buttons'
                     />
                     <p>
                         Continue with Metabook
@@ -87,6 +88,7 @@ function LoginForm({ setShowModal }) {
                     {/* <button></button> */}
                     <img src={`https://insta-flick.herokuapp.com/static/instaflick-updatedLogo.png`}
                         style={{ float: 'left' }}
+                        alt='fake fang buttons'
                     />
                     <p>
                         Continue with Instaflick
@@ -95,6 +97,7 @@ function LoginForm({ setShowModal }) {
                 <div className="fangbutts" onClick={() => window.location = 'https://niles-app-academy.herokuapp.com/#/'}>
                     <img src={`https://niles-app-academy.herokuapp.com/assets/white_logo-6a776881c565fa200ed232b46298f804059b6542c6ec355b510273f8e1d4d023.png`}
                         style={{ float: 'left', backgroundColor: 'darkgrey' }}
+                        alt='fake fang buttons'
                     />
                     <p>
                         Continue with Niles
@@ -104,6 +107,7 @@ function LoginForm({ setShowModal }) {
                     {/*https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg*/}
                     <img src={`https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg`}
                         style={{ float: 'left', height: '3em' }}
+                        alt='fake fang buttons'
                     />
                     <p>
                         Continue with Slackluster

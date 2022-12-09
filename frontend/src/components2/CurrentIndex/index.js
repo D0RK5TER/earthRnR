@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 // import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { getMySpots, getOneSpot } from '../../store/spots2';
+import { getMySpots } from '../../store/spots2';
 import { getMyReviews } from '../../store/reviews2';
 import SpotCard from '../SpotCard'
 import ReviewCard from './ReviewCard';
@@ -19,30 +19,30 @@ const CurrentIndex = () => {
     let reviewspots = useSelector(state => state.spots)
 
     // function reviewSpotfunc(arr, obj) {
-        // if (arr?.length && obj) {
-        //     obj = obj
-        //     arr = Object.values(arr)
-        //     for (let rev of arr) {
-        //         if (obj?.onespot[rev.spotId]) continue
-        //         dispatch(getOneSpot(rev.spotId))
-        //     }
-        // }
+    // if (arr?.length && obj) {
+    //     obj = obj
+    //     arr = Object.values(arr)
+    //     for (let rev of arr) {
+    //         if (obj?.onespot[rev.spotId]) continue
+    //         dispatch(getOneSpot(rev.spotId))
+    //     }
+    // }
     //     return true
     // }
 
 
     useEffect(() => {
         dispatch(getMySpots())
-      let ans=  dispatch(getMyReviews())
-    //   console.log(ans)
-    }, [])
+        dispatch(getMyReviews())
+        //   console.log(ans)
+    }, [dispatch])
 
     // useEffect(() => {
     // // dispatch(getMySpots())
     // dispatch(getMyReviews())
     // }, [myReviews])
 
-    return reviewspots && user && myReviews  && (
+    return reviewspots && user && myReviews && (
         <div id='currentcont'>
             <h1>Welcome {user.firstName} </h1>
             <div id='currentinnercont'>

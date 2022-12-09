@@ -24,12 +24,12 @@ function ProfileButton(/*{user}*/) {
 
   const openMenu = () => {
     if (showMenu) return
-    setShowMenu(true)
+   return setShowMenu(true)
   };
 
   const closeMenu = () => {
     if (!showMenu) return
-    setShowMenu(false); 
+    return setShowMenu(false);
   };
   useEffect(() => {
     if (!showMenu) return;
@@ -53,7 +53,7 @@ function ProfileButton(/*{user}*/) {
       drop.removeEventListener("click", closeMenu)
       underbar.removeEventListener("click", closeMenu)
     }
-  }, [showMenu])
+  }, [showMenu, closeMenu])
 
 
   // !showMenu ? console.log(navbar) : navbar.lastChild.removeEventListener('click', closeMenu)
@@ -102,7 +102,7 @@ function ProfileButton(/*{user}*/) {
                   Log Out
                 </button>
               </div>
-            
+
             </div>
           )
           : showMenu && (
