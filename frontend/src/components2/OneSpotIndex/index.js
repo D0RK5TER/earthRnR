@@ -76,25 +76,25 @@ const OneSpotIndex = () => {
       <div id='onespotpics'>
 
         <div id='previewcont'>
-          <img id='onespotpreview' src={`${previewImage}`} key={a} />
+          <img id='onespotpreview' src={`${previewImage}`} key={a} alt={`${a.url}`} />
         </div>
 
         <div id='smallcont'>
 
           <div id='smallcont1'>
             <div className='spotImage' id='spotimg1'>
-              <img src={`${a.url}`} className='gridpics' key={a} />
+              <img src={`${a.url}`} className='gridpics' key={a} alt={`${a.url}`} />
             </div>
             <div className='spotImage' id='spotimg2'>
-              <img src={`${b.url}`} className='gridpics' key={a} />
+              <img src={`${b.url}`} className='gridpics' key={a} alt={`${b.url}`} />
             </div>
           </div>
           <div id='smallcont2'>
             <div className='spotImage' id='spotimg3'>
-              <img src={`${c.url}`} className='gridpics' key={a} />
+              <img src={`${c.url}`} className='gridpics' key={a} alt={`${c.url}`}  />
             </div>
             <div className='spotImage' id='spotimg4'>
-              <img src={`${d.url}`} className='gridpics' key={a} />
+              <img src={`${d.url}`} className='gridpics' key={a} alt={`${b.url}`}   />
             </div>
           </div>
 
@@ -185,7 +185,7 @@ const OneSpotIndex = () => {
           </div>
           <div id='onespotsubheader'>
             <div id='onespotstar'>
-              <img src={star} className='starspot' id='starrr' />
+              <img src={star} className='starspot' id='starrr' alt='star img' />
               <div id='ratingnum'>
                 {theSpot.avgStarRating}
               </div>
@@ -263,7 +263,7 @@ const OneSpotIndex = () => {
 
               {ratingsneak && <div id='reviewsleft' >
                 <div id='reviewsleftleft'>
-                  <img src={star} id='reviewsstar' />
+                  <img src={star} id='reviewsstar' alt='small star img' />
                   <div id='reviewsrating'>
                     {theSpot.avgStarRating}
                   </div>
