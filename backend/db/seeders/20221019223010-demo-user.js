@@ -25,7 +25,9 @@ const nameSample = ["Lover's Lounge", 'Ancient Area', "Devil's Den", "Great Grot
 const priceSample = [40.02, 77.66, 110.37, 329.52, 280.13, 300.55, 499.08, 202.02,
   50.11, 80.75, 164.99, 177.55, 204.99, 265.51, 309.10, 406.20, 209.56, 100.00, 90.01,
   69.09, 108.06, 66.60, 37.54, 95.34, 76.08, 499.03, 500.00, 303.65, 310.34, 162.44, 139.99,
-  420.99, 35.55, 340.89, 250.04, 393.93, 440.40, 320.10, 288.88, 204.86]
+  420.99, 35.55, 340.89, 250.04, 393.93, 440.40, 320.10, 288.88, 204.86, 600.70, 999.99, 194, 300.24,
+  708.42, 985.08, 745.08, 614.08, 938.08, 109.08, 702.08, 783.08, 943.08
+]
 
 
 const cityStateSample = [{ city: 'San Francisco', state: 'CA' }, { city: 'Los Angeles', state: 'CA' }, { city: 'Portland', state: 'OR' },
@@ -36,7 +38,8 @@ const cityStateSample = [{ city: 'San Francisco', state: 'CA' }, { city: 'Los An
 { city: 'San Bernadino', state: 'CA' }, { city: 'San Juan', state: 'CA' }, { city: 'San Leandro', state: 'CA' }, { city: 'Palo Alto', state: 'CA' }
 ]
 const descriptSample = ['is a great place with', 'is a cozy place with', 'is better than everything and includes',
-  ':the best in town!! Comes with', 'is a quiet restful place offering', ': amenities included are ', 'a blast from the past! Includes'
+  'the best in town!! Comes with', 'is a quiet restful place offering many things such as', ': amenities included are ', 'a blast from the past! It includes',
+  'the place they everyone forgets to talk about, includes'
 ]
 const descriptVsample = ['onsite laundry,', 'cleaning services,', 'strong wifi,', 'clean toilets,',
   'lots of plants,', 'cats to play wtih,', 'noisy neighbors,', 'open-bar,',
@@ -44,7 +47,8 @@ const descriptVsample = ['onsite laundry,', 'cleaning services,', 'strong wifi,'
   'serial-killer free,', 'foot rub,', 'hot showers,', 'cold food,', 'free parking,',
   'an old ham radio,', 'fresh stale toast,', 'twice cooked bread,', 'continetal breakfast',
   'no ghosts,', 'a totally normal childs doll,', 'a great view', 'a great view into neighbors yard,',
-  'pirate treasure,', 'free handtowels,', 'fresh used underwear,', 'booze,'
+  'pirate treasure,', 'free handtowels,', 'fresh used toliet paper,', 'booze,', 'frisbees', '24/7 electronic music,',
+  'backrub from my pet hamster,', 'giant bowl of macadameia nuts,', 'breakfast-in-thebackyard', 'a stern warning,'
 ]
 const spotSkeleton = {
   city: null,
@@ -222,7 +226,7 @@ module.exports = {
       ,
       {})
     options.tableName = 'Spots'
-    
+
     let ownerSample = await User.findAll();
     ownerSample = JSON.parse(JSON.stringify(ownerSample))
 

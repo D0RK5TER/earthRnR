@@ -164,12 +164,12 @@ const OneSpotIndex = () => {
     dispatch(getOneSpot(id))
     dispatch(getAllReviews(id))
     // }
-  }, []) //took out id
+  }, [id]) //took out id
 
 
+  // theSpot !== undefined && +id === theSpot?.id && thereviews && 
 
-
-  return theSpot !== undefined && +id === theSpot?.id && thereviews && (
+  return +id === theSpot?.id && thereviews && (
 
     <div id='onespotcont'>
       <div id='onespotinnercont'>

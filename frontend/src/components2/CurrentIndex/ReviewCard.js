@@ -13,7 +13,7 @@ function ReviewCard({ rev }) {
     const thespot = useSelector(state => state.spots.allspots)
     // console.log(spotId)
     return rev && spotId && (
-        <div className='onereview single one' >
+        <div className='onereview single one'>
 
             <div className='profilepicture reviewheader'>
                 <div className='profilepic reviewpic'>
@@ -31,6 +31,7 @@ function ReviewCard({ rev }) {
                 </div>
                 {<DeleteReviewFormModal id={id} spotId={spotId} />}
             </div>
+            
             <div className='bottomhalf reviewbottom'>
                 <div className='reviewscore starscore'>
                     {stars}/5
