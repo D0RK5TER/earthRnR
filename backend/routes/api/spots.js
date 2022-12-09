@@ -154,7 +154,7 @@ router.get('/', async (req, res) => {
     spots = JSON.parse(JSON.stringify(spots))
     for (let spa of spots) {
         spa.Reviews.length ? spa.avgRating = Review.getRating(spa.Reviews) : spa.avgRating = 0
-        spa.SpotImages.length ? spa.previewImage = spa.SpotImages.find(x=>x.preview===true).url : spa.previewImage = 'No preview'
+        spa.SpotImages.length ? spa.previewImage = spa.SpotImages.find(x => x.preview === true).url : spa.previewImage = 'No preview'
         delete spa.Reviews
         delete spa.SpotImages
     }
@@ -172,7 +172,7 @@ router.get('/:spotId', async (req, res) => {
     let spots = await Spot.findAll({
         where: { id: spotId },
         include: [
-            { model: Review, required: true, raw: true, },
+            { model: Review, raw: true, },
             { model: SpotImage, required: true, raw: true, attributes: ['id', 'url', 'preview'] },
             { model: User, raw: true, attributes: ['id', 'firstName', 'lastName'] }
         ],
@@ -186,7 +186,7 @@ router.get('/:spotId', async (req, res) => {
     }
     spots = JSON.parse(JSON.stringify(spots[0]))
 
-    if (spots.Reviews[0]) {
+    if (spots?.Reviews[0]) {
         spots.avgStarRating = Review.getRating(spots.Reviews)
         spots.numReviews = spots.Reviews.length
 
@@ -194,7 +194,7 @@ router.get('/:spotId', async (req, res) => {
         spots.avgStarRating = 0
         spots.numReviews = 0
     }
-    delete spots.Reviews
+    delete spots?.Reviews
     res.json(spots)
 
 })

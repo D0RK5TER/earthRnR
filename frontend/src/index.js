@@ -25,6 +25,9 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 
+//instructions have import modal up top
+
+//and pass in <Modal /> in bottom
 
 function Root() {
   return (

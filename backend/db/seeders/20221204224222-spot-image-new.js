@@ -103,9 +103,9 @@ const midsmall = [
 ]
 const big = [
 
-  "ttps://a0.muscache.com/im/pictures/de8e6fd5-3966-4c90-bd03-36ebb00d97c4.jpg?im_w=720",
+  "https://a0.muscache.com/im/pictures/de8e6fd5-3966-4c90-bd03-36ebb00d97c4.jpg?im_w=720",
 
-  "ttps://a0.muscache.com/im/pictures/2bfa9fd4-08cc-4014-b7ec-898f80a24525.jpg?im_w=720",
+  "https://a0.muscache.com/im/pictures/2bfa9fd4-08cc-4014-b7ec-898f80a24525.jpg?im_w=720",
 
   "https://a0.muscache.com/im/pictures/1776527e-598d-48b1-a3a2-c6c5671b40a3.jpg?im_w=720",
 

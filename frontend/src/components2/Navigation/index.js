@@ -22,11 +22,11 @@ import SignUpFormModal from '../SignUpFormModal';
 
 
 
-function Navigation(isLoaded) {
+function Navigation() {
   // const dispatch = useDispatch();
   const history = useHistory()
   const user = useSelector(state => getSessionUser(state));
-  
+
 
   // const spots = useSelector(state=> state.spots.allspots)
   // useEffect(() => dispatch(getAllSpots('')), [dispatch])
@@ -43,7 +43,7 @@ function Navigation(isLoaded) {
 
 
 
-  return isLoaded && (
+  return (
     <div id='evanbar' className='topbar' style={{
       position: 'sticky', width: '100vw',
     }}>
@@ -93,7 +93,7 @@ function Navigation(isLoaded) {
 
         <ProfileButton
           user={user}
-          // isLoaded={isLoaded}
+        // isLoaded={isLoaded}
         />
 
       </div>

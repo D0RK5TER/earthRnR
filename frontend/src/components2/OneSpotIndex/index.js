@@ -161,15 +161,15 @@ const OneSpotIndex = () => {
 
   useEffect(() => {
     // if (!theSpot) {
-    dispatch(getOneSpot(id))
-    dispatch(getAllReviews(id))
+    dispatch(getOneSpot(id)).then(()=>dispatch(getAllReviews(id))).catch((e)=>console.log(e))
+    // dispatch(getAllReviews(id))
     // }
   }, [id]) //took out id
 
 
   // theSpot !== undefined && +id === theSpot?.id && thereviews && 
 
-  return +id === theSpot?.id && thereviews && (
+  return theSpot?.id && thereviews && (
 
     <div id='onespotcont'>
       <div id='onespotinnercont'>

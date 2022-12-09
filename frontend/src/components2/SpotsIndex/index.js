@@ -28,7 +28,7 @@ function SpotsIndex({ isLoaded }) {
         dispatch(getAllSpots());
     }, []);
 
-    if (!spots) return null;
+    // if (!spots) return null;
     
     return spots && (
         // <div className="mainContent" >

@@ -17,12 +17,13 @@ function App() {
     const [isLoaded, setIsLoaded] = useState(false);
     let user = useSelector(state => state.session.user)
     useEffect(() => {
-        if (!user?.id) dispatch(sessionActions.restoreUser())
-        setIsLoaded(true)
+        dispatch(sessionActions.restoreUser())
+        // .then(() => dispatch(setIsLoaded(true)))
+        // setIsLoaded(true)
         // .then(() => dispatch(setIsLoaded(true)))  ///took out again
     }, [dispatch]);
     ///trying top 
-    return isLoaded && (
+    return (
         <div id='outtermost' style={{ width: '100vw', height: '200vh' }}>
             <div id='navi' style={{ width: '100vw', position: 'sticky', top: '0px' }}>
                 <Navigation style={{ position: 'sticky' }} isLoaded={isLoaded} />
@@ -30,22 +31,24 @@ function App() {
             <div id='outter' style={{
                 width: '100vw', height: '200vh'
             }}>
-                {/* {isLoaded && (  */}
-                <Switch>
-                    <Route exact path='/'>
-                        <SpotsIndex />
-                    </Route>
-                    <Route path='/current'>
-                        <CurrentIndex />
-                    </Route>
-                    <Route path='/:id'>
-                        <OneSpotIndex />
-                    </Route>
-                    {/*  
+                {/* {isLoaded && ( */}
+                    <Switch>
+                        <Route exact path='/'>
+                            <SpotsIndex />
+                        </Route>
+                        <Route path='/current'>
+                            <CurrentIndex />
+                        </Route>
+                        <Route path='/:id'>
+                            <OneSpotIndex />
+                        </Route>
+                        {/*  
                         <Route>
                         <h1 style={{ padding: '2em' }}>Sorry! Out Of Luck!</h1>
                     </Route> */}
-                </Switch>
+                    </Switch>
+
+                    {/* // )} */}
             </div>
         </div>
     );

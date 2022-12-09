@@ -44,6 +44,7 @@ export const makeSpot = (spot) => {
 
 export const getAllSpots = (e) => async (dispatch) => {
     let pagi
+    // console.log(e)
     e ? pagi = e : pagi = ''
     const response = await csrfFetch(`/api/spots${pagi}`, {
         method: 'GET',
@@ -60,7 +61,7 @@ export const getAllSpots = (e) => async (dispatch) => {
 export const getOneSpot = (id) => async (dispatch) => {
     // console.log(id)
 
-    const response = await csrfFetch(`/api/spots/${+id}`, {
+    const response = await csrfFetch(`/api/spots/${id}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
