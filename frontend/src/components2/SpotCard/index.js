@@ -134,7 +134,7 @@ function SpotCard({ spot, user }) {
                         }}>
                             <img id={`starSpot${id}`} src={star} className='starspot' style={{
                                 maxHeight: '35%'
-                            }} />
+                            }} alt='star for card'/>
                             {avgRating !== 0 ? avgRating : '0.00'}
                         </div>
                         {user.id === ownerId && <EditSpotFormModal idx={id} />}

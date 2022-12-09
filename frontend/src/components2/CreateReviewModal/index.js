@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState  } from 'react';
 // import { useSelector, useDispatch } from 'react-redux';
 import { Modal } from '../../context/Modal';
 import CreateReviewForm from './CreateReviewForm';

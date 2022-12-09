@@ -18,7 +18,7 @@ const CurrentIndex = () => {
     let myReviews = useSelector(state => state.reviews.myreviews)
     let reviewspots = useSelector(state => state.spots)
 
-    function reviewSpotfunc(arr, obj) {
+    // function reviewSpotfunc(arr, obj) {
         // if (arr?.length && obj) {
         //     obj = obj
         //     arr = Object.values(arr)
@@ -27,14 +27,14 @@ const CurrentIndex = () => {
         //         dispatch(getOneSpot(rev.spotId))
         //     }
         // }
-        return true
-    }
+    //     return true
+    // }
 
 
     useEffect(() => {
         dispatch(getMySpots())
       let ans=  dispatch(getMyReviews())
-      console.log(ans)
+    //   console.log(ans)
     }, [])
 
     // useEffect(() => {
@@ -42,7 +42,7 @@ const CurrentIndex = () => {
     // dispatch(getMyReviews())
     // }, [myReviews])
 
-    return reviewspots && user && myReviews && reviewSpotfunc(myReviews, reviewspots) && (
+    return reviewspots && user && myReviews  && (
         <div id='currentcont'>
             <h1>Welcome {user.firstName} </h1>
             <div id='currentinnercont'>

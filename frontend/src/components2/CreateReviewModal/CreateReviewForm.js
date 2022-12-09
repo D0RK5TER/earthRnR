@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from 'react-router-dom';
-import { getAllReviews, createReview } from '../../store/reviews2';
-import { getOneSpot } from '../../store/spots2'
+import { useDispatch } from "react-redux";
+// import { useParams } from 'react-router-dom';
+import {  createReview } from '../../store/reviews2';
+// import { getOneSpot } from '../../store/spots2'
 import './CreateReviewForm.css'
 
 

@@ -6,7 +6,7 @@ import './PaginationForm.css'
 
 let setfunc
 
-function PaginationFormModal({ id, spotId }) {
+function PaginationFormModal() {
     const [showModal, setShowModal] = useState(false);
     setfunc = setShowModal
     // const user = useSelector(state => state.session.user.id)

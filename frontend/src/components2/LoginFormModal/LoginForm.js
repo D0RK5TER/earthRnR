@@ -8,7 +8,7 @@ import './LoginForm.css'
 // gone
 function LoginForm({ setShowModal }) {
     const dispatch = useDispatch();
-    const history = useHistory()
+    // const history = useHistory()
     const [credential, setCredential] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);

@@ -12,12 +12,12 @@ import outline from '../../../assets/outline.png';
 import './profile.css'
 //take away user so i can use store selector for easier rerender?
 
-function ProfileButton(/*{user}*/{ isLoaded }) {
+function ProfileButton(/*{user}*/) {
   // const sessionUser = getSessionUser(state);
 
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
-  const [switchbut, setSwitchbut] = useState(false)
+  // const [switchbut, setSwitchbut] = useState(false)
   // const []
   const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
@@ -70,7 +70,7 @@ function ProfileButton(/*{user}*/{ isLoaded }) {
       <button id='probutt' className='profilebutt'
 
         onClick={openMenu ? openMenu : closeMenu} >
-        <img src={outline} className='profileshape'
+        <img src={outline} className='profileshape' alt='profile icon'
           onClick={openMenu ? openMenu : closeMenu}
           style={showMenu ? { boxShadow: '2px 2px 4px #dddddd' } : null} />
       </button>

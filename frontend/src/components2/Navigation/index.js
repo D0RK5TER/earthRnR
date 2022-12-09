@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { NavLink, useParams, useHistory } from 'react-router-dom';
+import {  useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './Buttons/ProfileButton';
 import './Navigation.css';
@@ -53,7 +53,7 @@ function Navigation() {
             loc === '/' ? window.scrollTo(0, 0) || dispatch(getAllSpots()) :
               window.scrollTo(0, 0) || history.push('/')
           }}>
-          <img src={logo} style={{ paddingRight: '15px' }} />
+          <img src={logo} style={{ paddingRight: '15px' }} alt='logo'/>
           earthRnR
         </div>
       </div>
@@ -78,6 +78,7 @@ function Navigation() {
           <img
             onClick={() => setfunc(true)}
             src={spotglass}
+            alt='search icon'
           />
         </span>
       </div>

@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 // import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 // import { getAllSpots, loadSpots } from '../../store/session';
@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAllSpots } from '../../store/spots2';
 import SpotCard from '../SpotCard';
 // import OneSpotIndex from '../OneSpotIndex'
-import quest from '../../assets/quest.jpg';
+// import quest from '../../assets/quest.jpg';
 // import star from '../../assets/star.png';
 
 // import * as sessionActions from "../../store/session";

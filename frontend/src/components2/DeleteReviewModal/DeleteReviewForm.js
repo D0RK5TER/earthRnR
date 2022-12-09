@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 // import { useParams } from 'react-router-dom';
-import { getMyReviews, makeDeleteReview } from '../../store/reviews2';
+import {  makeDeleteReview } from '../../store/reviews2';
 import './DeleteReviewForm.css'
 
 
