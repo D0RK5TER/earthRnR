@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {  useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './Buttons/ProfileButton';
 import './Navigation.css';
@@ -35,8 +35,6 @@ function Navigation() {
 
 
 
-
-  console.log(loc)
   return (
     <div id='evanbar' className='topbar' style={{
       position: 'sticky', width: '100vw',
@@ -53,7 +51,7 @@ function Navigation() {
             loc === '/' ? window.scrollTo(0, 0) || dispatch(getAllSpots()) :
               window.scrollTo(0, 0) || history.push('/')
           }}>
-          <img src={logo} style={{ paddingRight: '15px' }} alt='logo'/>
+          <img src={logo} style={{ paddingRight: '15px' }} alt='logo' />
           earthRnR
         </div>
       </div>
