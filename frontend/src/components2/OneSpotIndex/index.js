@@ -171,7 +171,6 @@ const OneSpotIndex = () => {
     // if (!theSpot) {
     dispatch(getOneSpot(id)).then(() => dispatch(getAllReviews(id)))
     // .catch((e)=>console.log(e))
-    // dispatch(getAllReviews(id))
     // }
   }, [id, dispatch]) //took out id
 

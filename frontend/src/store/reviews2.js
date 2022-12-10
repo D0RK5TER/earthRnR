@@ -6,7 +6,6 @@ const LOAD_MY_REVIEWS = 'reviews2/loadMyReviews'
 
 const MAKE_REVIEW = 'reviews/makeReview'
 const CHANGE_REVIEW = 'reviews/changeReview'
-const DELETE_REVIEW = 'reviews/deleteReview'
 
 //////// ACTIONS /////////// ACTIONS ////////////
 export const loadAllReviews = (reviews) => {
@@ -39,6 +38,8 @@ export const makeReview = (review) => {
     };
 };
 
+// export const 
+
 export const changeReview = (review) => {
     //rather do LOAD MY REVIEWS here // by id
     return {
@@ -47,12 +48,6 @@ export const changeReview = (review) => {
     };
 };
 
-export const deleteReview = () => {
-    // console.log(review)
-    return {
-        type: DELETE_REVIEW,
-    }
-};
 
 //////////////////////////////////////////////////////////////////////
 export const getAllReviews = (id) => async (dispatch) => {
@@ -62,10 +57,8 @@ export const getAllReviews = (id) => async (dispatch) => {
     });
     if (response.ok) {
         const data = await response.json();
-        // console.log(data.Reviews)
-        dispatch(loadAllReviews(data.Reviews));
+        await dispatch(loadAllReviews(data.Reviews));
         return data;
-        // return response; changed to data for check
     }
 };
 export const getOneReview = (id) => async (dispatch) => {
@@ -87,9 +80,11 @@ export const getMyReviews = () => async (dispatch) => {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
+    // console.log(response, '!!!!!')
     if (response.ok) {
         const data = await response.json();
-        dispatch(loadMyReviews(data.Reviews))
+        // console.log(data, '!!!!!')
+        await dispatch(loadMyReviews(data.Reviews))
         return data.Reviews
     }
 }
@@ -97,8 +92,6 @@ export const getMyReviews = () => async (dispatch) => {
 
 export const createReview = (reviewz) => async (dispatch) => {
     const { review, stars, id } = reviewz;
-    let lat = 1
-    let lng = 1
     // console.log(review)
     const response = await csrfFetch(`/api/spots/${id}/reviews`, {
         method: "POST",
@@ -108,6 +101,8 @@ export const createReview = (reviewz) => async (dispatch) => {
         }),
     })
     if (response.ok) {
+        //  dispatch(getOneSpot(id))
+        //  dispatch(getAllReviews(id))
         let data = await response.json()
         await dispatch(getOneSpot(id))
         await dispatch(getAllReviews(id))
@@ -115,21 +110,18 @@ export const createReview = (reviewz) => async (dispatch) => {
     }
 }
 
-export const makeChangeReview = (review) => async (dispatch) => {
-    const { id, address, city, state, country, name, description, price } = review;
+export const makeChangeReview = (rev) => async (dispatch) => {
+    const { id, stars, review } = rev;
     const response = await csrfFetch(`/api/reviews/${id}`, {
         method: "PUT",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            address, city, state, country,
-            lat: 1,
-            lng: 1,
-            name, description, price
+            review, stars
         }),
     });
     if (response.ok) {
         const data = await response.json();
-        dispatch(changeReview(data))
+       await dispatch(getMyReviews())
         return data
     }
 };
@@ -157,8 +149,10 @@ export const makeDeleteReview = ({ id, spotId, place }) => async (dispatch) => {
 
 
 const arrConvert = (arr) => {
+    // console.log(arr)
+    // if (!arr) return
     let newallState = {}
-    for (let sp of arr) newallState[sp.id] = sp
+    for (let sp of arr) newallState[sp?.id] = sp
     return newallState
 }
 
@@ -174,16 +168,14 @@ const reviewsReducer = (state = initialState, action) => {
             newState.onereview = action.review
             return newState;
         case LOAD_MY_REVIEWS:
+            // console.log(a)
             newState.myreviews = arrConvert(action.myreviews);
             return newState;
         case CHANGE_REVIEW:
-            newState.onereview = action.review
+            let edited = action.review
+            // newState.allreviews[edited.id] = edited
+            newState.myreviews[edited.id] = edited
             return newState;
-
-        case DELETE_REVIEW:
-            // let del = action.review.id
-            // delete newState.reviews[del]
-            return newState
         default:
             return state;
     }

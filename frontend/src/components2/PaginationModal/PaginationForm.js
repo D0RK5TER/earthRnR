@@ -1,20 +1,22 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { pathURL } from "../../utilities/location";
 import { getAllSpots } from '../../store/spots2';
 import './PaginationForm.css'
+import { useModal } from '../../context/Modal';
 
 
 function PaginationForm({ setShowModal }) {
     const history = useHistory()
     const dispatch = useDispatch();
+    const { closeModal } = useModal();
     const [min, setMin] = useState(1)
     const [max, setMax] = useState(9999)
     const [errors, setErrors] = useState([]);
     let pagination = ''
     let loc = pathURL(history)
-   
+
 
 
     const handleSubmit = (e) => {
@@ -29,7 +31,7 @@ function PaginationForm({ setShowModal }) {
         if (errors.length) return errors
         if (loc !== '/' || loc !== '') history.push('/')
         return dispatch(getAllSpots(pagination))
-            .then(() => setShowModal(false))
+            .then(() => closeModal())
             .catch(async (res) => {
                 const data = await res.json()
                 if (data.message) setErrors([data.message]);
@@ -37,10 +39,6 @@ function PaginationForm({ setShowModal }) {
 
     }
 
-
-    // useEffect(() => {
-    //     console.log(history)
-    // }, [])
     return (
         <form onSubmit={handleSubmit} id='paginationform'>
             <h2>

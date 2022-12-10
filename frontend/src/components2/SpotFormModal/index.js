@@ -49,20 +49,20 @@ function SpotForm({ setShowModal }) {
             address, city, state, country,
             name, description, price, latt
         }))
-            .then(closeModal)
-            .catch(async (res) => {
-                // console.log(res)
+            .then(async (res) => {
                 if (!res[1].ok) {
                     const data = await res[1].json()
                     if (data.message) setErrors([data.message]);
                 }
                 else {
-                    history.push(`/${res[0]}`)
+                    closeModal() || history.push(`/${res[0]}`)
                 }
-            }
-            )
-            // .then(closeModal())
+            }).catch(async (res) => {
+                const data = await res.json()
+                if (data.message) setErrors([data.message]);
+            })
     }
+
     return user && (
         <form onSubmit={handleSubmit} id='createspotform' >
             <div id='createheader'>

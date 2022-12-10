@@ -4,12 +4,14 @@ import React, { useEffect } from 'react';
 // import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getMySpots } from '../../store/spots2';
-import { getMyReviews } from '../../store/reviews2';
+import { getMyReviews, makeChangeReview } from '../../store/reviews2';
 import SpotCard from '../SpotCard'
 import ReviewCard from './ReviewCard';
 import './currentindex.css'
 import SpotImageForm from '../CreateSpotImageModal';
 import OpenModalButton from '../OpenModalButton';
+
+
 const CurrentIndex = () => {
     const dispatch = useDispatch();
     // const { current } = useParams();
@@ -34,13 +36,7 @@ const CurrentIndex = () => {
     useEffect(() => {
         dispatch(getMySpots())
         dispatch(getMyReviews())
-        //   console.log(ans)
     }, [dispatch])
-
-    // useEffect(() => {
-    // // dispatch(getMySpots())
-    // dispatch(getMyReviews())
-    // }, [myReviews])
 
     return reviewspots && user && myReviews && (
         <div id='currentcont'>
@@ -54,11 +50,11 @@ const CurrentIndex = () => {
                     <div id='myspotscont'>
                         {mySpots && Object?.values(mySpots).map(spot =>
                             <div className='currentspotimage'>
-                               
+
                                 <OpenModalButton
                                     id='spotimagebut'
                                     buttonText="Add Photos!"
-                                    modalComponent={ <SpotImageForm idx={spot.id} spotname={spot.name} />}
+                                    modalComponent={<SpotImageForm idx={spot.id} spotname={spot.name} />}
                                 />
 
                                 <SpotCard spot={spot} user={user} key={`${spot.id}`} />

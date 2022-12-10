@@ -9,7 +9,7 @@ import spotglass from '../../assets/spotglass.png';
 // import { pathURL } from "../../utilities/location";
 import { getSessionUser } from '../../store/session2';
 // import { getAllSpots } from '../../store/spots2';
-import PaginationFormModel, { setfunc } from '../PaginationModal/index.js';
+import  PaginationForm  from '../PaginationModal/PaginationForm';
 // import { useHistory } from 'react-router-dom';
 // import { Modal } from '../../context/Modal';
 // import LoginForm from '../LoginFormModal/LoginForm';
@@ -69,11 +69,15 @@ function Navigation() {
             
           </div>
         </PaginationFormModel> */}
-
-          <PaginationFormModel />
+          <OpenModalButton
+            id='createspotbut'
+            buttonText="Start your search"
+            modalComponent={ <PaginationForm />}
+          />
+          {/* <PaginationForm /> */}
 
           <img
-            onClick={() => setfunc(true)}
+            // onClick={() => setfunc(true)}
             src={spotglass}
             alt='search icon'
           />

@@ -1,0 +1,8 @@
+#editreviewcont {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-between;
+    margin-left: 1.5em;
+    padding-bottom: 1em;
+}

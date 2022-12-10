@@ -1,20 +1,26 @@
 // import { useSelector } from 'react-redux';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 import DeleteReviewForm from '../DeleteReviewModal';
 import ReviewImagesIndex from '../ReviewImagesModal';
 import OpenModalButton from "../OpenModalButton";
-
+import EditReviewForm from '../EditReviewForm';
+// import { getMyReviews } from '../../store/reviews2';
 
 
 
 function ReviewCard({ rev }) {
     const history = useHistory()
+    const dispatch = useDispatch()
     let { id, stars, review, createdAt, ReviewImages, spotId } = rev
     // console.log(spotId)
     // console.log(ReviewImages)
-    console.log(rev)
-
+    // console.log(rev)
+    // useEffect(() => {
+    //     // dispatch(getMySpots())
+    //     dispatch(getMyReviews())
+    // }, [stars,review])
     return rev && spotId && (
         <div className='onereview single one'>
 
@@ -42,6 +48,11 @@ function ReviewCard({ rev }) {
                     id='deletereview'
                     buttonText="Delete"
                     modalComponent={<DeleteReviewForm id={id} spotId={spotId} key={id + review} />}
+                />}
+                {<OpenModalButton
+                    id='deletereview'
+                    buttonText="Edit"
+                    modalComponent={<EditReviewForm id={id} key={id + review} />}
                 />}
             </div>
 

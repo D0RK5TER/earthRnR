@@ -40,46 +40,12 @@ function SpotImageForm({ idx }) {
         setErrors([]);
         return dispatch(createSpotImage({ url, id }))
             .then(closeModal)
-            // .then(() => { history.push(`/spots`) })    
             .catch(async (res) => {
                 const data = await res?.json()
                 if (data.message) setErrors([data.message]);
             }
             )
     }
-
-    // return (
-    //     <div id='spotimageheader1'>
-    //             <div id='spotimageexitbutt1' onClick={() => closeModal()}>
-    //                 x
-    //             </div>
-    //             <div id='spotimageheader'>
-    //                 Add Photos to Your Home!
-    //             </div>
-    //             <div id='urltextheader'>
-
-    //                 URL of the photo
-    //             </div>
-    //         <form onSubmit={handleSubmit} id='spotimageform' >
-    //             <div id='spotimageformcont1'>
-    //                 <label className="signuplabel">
-    //                     <input
-    //                         type="url"
-    //                         value={url}
-    //                         onChange={(e) => setUrl(e.target.value)}
-    //                         placeholder='https://......'
-    //                         title='Must be a valid url'
-    //                         required
-    //                     />
-    //                 </label>
-    //                 <ul id='errorsimage'>
-    //                     {errors.map((error, idx) => <li className='errors' key={error + idx}>{error}</li>)}
-    //                 </ul>
-    //             </div>
-    //             <button type="submit" id='spotimagebut2'>Add Image</button>
-    //         </form>
-    //     </div>
-    // );
     return (
         <form onSubmit={handleSubmit} id='spotimageform' >
             <div id='spotimageheader1'>

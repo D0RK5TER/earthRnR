@@ -86,7 +86,7 @@ export const getMySpots = () => async (dispatch) => {
     }
 }
 export const createSpotImage = (spotimg) => async (dispatch) => {
-    console.log(spotimg)
+    // console.log(spotimg)
     const { url, preview, id } = spotimg
     const response = await csrfFetch(`/api/spots/${id}/images`, {
         method: "POST",
