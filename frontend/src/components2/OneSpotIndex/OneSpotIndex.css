@@ -34,36 +34,37 @@
     border: 1px black solid;
 }
 
-#hostpicture{
+#hostpicture {
     height: 4vw;
     width: 4vw;
     border: 1px solid black;
     border-radius: 50%;
 }
 
-#hostnameheader{
-display: inline-flex;
-justify-content: space-around;
-width: 100%;
-/* padding-right: 2em; */
-border-bottom: 1px solid#dddddd;
-margin-bottom: 1em;
+#hostnameheader {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    /* padding-right: 2em; */
+    border-bottom: 1px solid#f7f7f7;
+    margin-bottom: 1em;
 
 }
 
 
-#hostnameage>div{
+#hostnameage>div {
     font-family: 'Bold';
     font-size: 1.2em;
     margin-right: .25em;
     margin-left: .25em;
 }
-#hostnameage{
-display: flex;
-/* justify-content: space-around; */
-line-height: 3em;
-font-size: 1.2em;
-font-family: 'Li';
+
+#hostnameage {
+    display: flex;
+    /* justify-content: space-around; */
+    line-height: 3em;
+    font-size: 1.2em;
+    font-family: 'Li';
 
 }
 
@@ -271,11 +272,13 @@ font-family: 'Li';
     height: 100%;
     margin-right: .25em;
 }
+
 #onespotreviews {
     padding-bottom: .71em;
     border-bottom: .5px black solid;
     cursor: pointer;
 }
+
 #onespotstar {
     font-family: 'Thin';
 

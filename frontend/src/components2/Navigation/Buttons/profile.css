@@ -21,25 +21,27 @@
     src: local("popbold"),
         url("../../../assets/popbold.ttf") format("truetype");
 }
+
 #probutt {
     cursor: pointer;
 }
 
 #logindrop {
     width: 100%;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #f7f7f7;
 }
 
-.profile-dropdown.ddprofile> *  {
+.profile-dropdown.ddprofile>* {
     /* width: 200%; */
     width: 100%;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #f7f7f7;
     border: none;
 }
-.profile-dropdown.ddprofile> *:hover  {
+
+.profile-dropdown.ddprofile>*:hover {
     /* width: 200%; */
     width: 100%;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #f7f7f7;
     border: none;
     background-color: rgb(245, 245, 245);
 
@@ -144,7 +146,7 @@ justify-content: space-between;
     width: 100%;
     height: 1.5em;
     padding: 0;
-    
+
     /* padding-bottom: .5em; */
 }
 
@@ -181,7 +183,7 @@ justify-content: space-between;
 
 #logindrop {
     width: 100%;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #f7f7f7;
 }
 
 #signupdrop {
@@ -219,25 +221,12 @@ justify-content: space-between;
 
 
 
-.profileshape:hover {
-    box-shadow: 2px 2px 4px #dddddd;
-}
 
 #needmoney {
     margin-right: 0;
 }
 
 
-.profileshape {
-    height: 2.8em;
-    /* box-shadow: 2px 2px 4px #dddddd; */
-    box-sizing: border-box;
-    object-fit: contain;
-    border-bottom-left-radius: 2em;
-    border-bottom-right-radius: 2em;
-    border-top-right-radius: 2em;
-    border-top-left-radius: 2em;
-}
 
 .dropbarformat {
     display: flex;

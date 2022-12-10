@@ -23,32 +23,15 @@
 }
 
 .starspot {
-
   margin-bottom: 0;
 }
 
-#signupmodalbut {
-  margin-top: 0;
-  cursor: pointer;
-  justify-content: center;
-  font-family: 'Li';
-  background-color: #fdfbfb;
-  border-radius: .5em;
-  color: rgb(0, 0, 0);
-  width: 8vw;
-  height: 3.4em;
-  font-family: Bold;
-  font-size: .7em;
-  background-color: white;
-  border: none;
-  border-radius: 3em;
-
+#navlogo {
+  margin-right: .21em;
 }
 
 #signupmodalbut:hover {
   background-color: rgb(245, 245, 245);
-
-
 
 }
 
@@ -57,7 +40,9 @@
 }
 
 
-
+#topleft {
+  width: 23vw;
+}
 
 .homebutt {
   display: flex;
@@ -71,37 +56,17 @@
   /* position: static; */
 }
 
-
-
-
-/* 
-#paginationbut>* {
-  padding-left: 2em;
-  box-sizing: border-box;
-  object-fit: cover;
-} */
-
- /* #topmid> button {
-  background-color: white;
-  height: 2em;
-  width: fit-content;
-  height: 3vw;
-  border: 1px black solid;
-  vertical-align: middle;
-  border: none;
-  cursor: pointer;
-  padding-right: 200em;
-}  */
 #spotglassimg {
   display: flex;
   vertical-align: middle;
   background-color: white;
   height: 85%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   object-fit: fill;
   border-bottom-right-radius: 2em;
   border-top-right-radius: 2em;
 }
+
 #paginationbut {
   width: 82%;
   height: 100%;
@@ -116,7 +81,7 @@
 }
 
 #paginationbut2 {
-  width: 18%;
+  /* width: 18%; */
   height: 100%;
   background-color: white;
   border-bottom-right-radius: 2em;
@@ -126,32 +91,127 @@
   height: 100%;
   cursor: pointer;
 }
+
 #topmid {
-  height: 3vw;
-  width: 20vw;
+  height: 3.3vw;
+  width: 28.75vw;
+  /* margin-left:  */
+  padding-top: 2px;
+  padding-bottom: 2px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   border-top-left-radius: 2em;
   border-top-right-radius: 2em;
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
   cursor: pointer;
-  border: 1px solid #dddddd;
+  border: 1px solid #ececec;
   background-color: white;
   margin-top: 1em;
   margin-bottom: 1em;
-  box-shadow: 2px 2px 2px #dddddd;
+  /* box-shadow: 3px 3px 3px #f7f7f7; */
+  box-shadow: 0 1px 3px 0 rgba(171, 171, 171, 0.2), 0 1px 3px 0 rgba(183, 183, 183, 0.19);
+  
 }
 
 
 #topright {
-  padding-right: 5em;
-  min-width: 18vw;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  cursor: pointer;
+}
+
+
+
+#navbarprofile {
+  height: 4vw;
+  width: fit-content;
+  box-sizing: border-box;
+  object-fit: fill;
+}
+
+#profileshape {
+  height: 3.63vw;
+  /* width: 3; */
+  box-sizing: border-box;
+  object-fit: contain;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  border-top-right-radius: 2em;
+  border-top-left-radius: 2em;
+}
+ #profileshape:hover { 
+  box-shadow: 0 1px 3px 0 rgba(171, 171, 171, 0.2), 0 1px 3px 0 rgba(183, 183, 183, 0.19);
+} 
+
+#navbarprofile:hover {
+  box-sizing: border-box;
+  object-fit: fill;
+
+  /* background-color: #f7f7f7; */
+  /* box-shadow: 20px 20px 20px #f80505 inset; */
+
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+#globebut {
+  width: 3.4vw;
+  height: 3.4vw;
+  border-radius: 50%;
+  vertical-align: middle;
+  padding: .2em;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: white;
 
 }
+
+#globebut:hover {
+  background-color: #f7f7f7;
+
+}
+
+#navbarglobe {
+  height: 45%;
+
+}
+
+#navbarglobe:hover {
+  background-color: #f7f7f7;
+
+}
+
+#createswitching {
+  width: 13vw;
+  padding: .75em;
+  height: 3vw;
+  border: none;
+  background-color: white;
+  border-radius: 2em;
+  /* letter-spacing: .0425vw; */
+}
+
+#createswitching:hover {
+  background-color: #f7f7f7;
+}
+
+#signswitching {
+  width: 10vw;
+  height: 5vw;
+  padding: .75em;
+  border: none;
+  background-color: white;
+  border-radius: 2em;
+  letter-spacing: 5.5;
+
+}
+
 
 
 #topbar {
@@ -160,13 +220,11 @@
   position: sticky;
   justify-content: space-between;
   background-color: white;
-  border-bottom: 1px solid #dddddd;
+  background-color: #FFFFFF;
+  border-bottom: .25px solid;
+  border-bottom-style: ridge;
+  height: 6.427vw;
   align-items: center;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
 }
-
-
-
-
-/* alignItems: 'center', justifyContent: 'space-between', */

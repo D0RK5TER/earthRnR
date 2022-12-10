@@ -3,6 +3,7 @@
     src: local("earthrnrCerealLight"),
         url("../../assets/earthrnrCerealLight.ttf") format("truetype");
 }
+
 #deleteheader {
     display: flex;
     justify-content: space-between;
@@ -11,12 +12,14 @@
     margin-right: 2em;
     padding-top: 1em;
 }
+
 #deletespot {
     margin-bottom: 0;
     font-family: 'Bold';
     /* text-decoration: underline; */
     letter-spacing: .05em;
 }
+
 #delexitbutt {
     width: 2vw;
     height: 2vw;
@@ -24,28 +27,32 @@
     text-align: center;
     vertical-align: middle;
 }
-#delexitbutt:hover{
+
+#delexitbutt:hover {
     /* background-color: #ffbdbd; */
     border: .2px solid black;
     cursor: pointer;
 
 }
+
 #deletebuttsubmit:hover {
     background-color: rgb(255, 163, 163);
-    color: #000000; 
+    color: #000000;
     font-family: 'Bold';
     font-size: 1.1em;
 
-    
+
 }
+
 #deletebuttsubmit {
-    background-color: #ffffff; 
+    background-color: #ffffff;
     border-radius: 1em;
     color: rgb(0, 0, 0);
-    border: 1px solid ;
+    border: 1px solid;
     /* height: 2em; */
     margin-bottom: 1.5em;
 }
+
 #deletespot {
     display: flex;
     flex-direction: column;
@@ -54,6 +61,7 @@
     height: 10vw;
     width: 20vw
 }
+
 #deletespotform {
     display: flex;
     flex-direction: column;
@@ -61,17 +69,20 @@
     align-items: center;
     overflow: hidden;
     width: 100%;
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #f7f7f7;
     padding-bottom: 1em;
 
 }
+
 #deletereview:hover {
-font-family: 'Bold';
+    font-family: 'Bold';
 }
+
 #deleteerror {
     height: 2vw;
     margin: 0
 }
+
 /* 
 .deletebutt {
     width: 0%;

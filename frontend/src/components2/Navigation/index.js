@@ -6,6 +6,7 @@ import './Navigation.css';
 import '../SignUpForm/SignUpForm.css'
 import logo from '../../assets/logo.jpg';
 import spotglass from '../../assets/spotglass.png';
+import globe from '../../assets/globe.png'
 // import { pathURL } from "../../utilities/location";
 import { getSessionUser } from '../../store/session2';
 // import { getAllSpots } from '../../store/spots2';
@@ -36,19 +37,15 @@ function Navigation() {
 
   return (
     <div id='topbar'>
-      <div id='topleft' className='nav-left' style={{
-        'cursor': 'pointer', fontFamily: 'Bold',
-        marginLeft: '5em',
-      }} >
+      <div id='topleft' className='nav-left' >
         <div exact to="/"
           className={'homebutt'}
-          style={{ fontFamily: 'Bold' }}
           onClick={() => {
             location === '/' ?
               window.scrollTo(0, 0) || dispatch(getAllSpots())
               : window.scrollTo(0, 0) || history.push('/')
           }}>
-          <img src={logo} style={{ paddingRight: '15px' }} alt='logo' />
+          <img src={logo} alt='logo' id='navlogo' />
           earthRnR
         </div>
       </div>
@@ -71,20 +68,30 @@ function Navigation() {
 
       <div className='nav-right' id='topright'>
         {user ? <OpenModalButton
-          id='createspotbut'
-          buttonText="AirBnB your Home!"
+          id='createswitching'
+          buttonText="EarthBnB your home"
           modalComponent={<SpotForm />}
         /> :
           <OpenModalButton
-            id='signupmodalbut'
+            id='signswitching'
             buttonText="Sign Up to Host!"
             modalComponent={<SignUpForm place={'Sign Up'} />}
           />}
-
-        <ProfileButton
-          user={user}
-        // isLoaded={isLoaded}
+        <OpenModalButton
+          id='globebut'
+          modalComponent={<PaginationForm />}
+          buttonText={<img
+            id='navbarglobe'
+            src={globe}
+            alt='lang select' />}
         />
+        <div >
+
+          <ProfileButton
+            user={user}
+          // isLoaded={isLoaded}
+          />
+        </div>
 
       </div>
     </div>

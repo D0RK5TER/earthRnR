@@ -53,7 +53,7 @@
 #editspotform p {
     width: 100%;
     text-align: center;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #f7f7f7;
     padding-bottom: .7em;
     margin-bottom: 0;
 }
@@ -93,14 +93,14 @@
     flex-direction: column;
     justify-content: center;
     vertical-align: center; */
-    /* padding-top: .5em; */
-    /* text-align: center;
+/* padding-top: .5em; */
+/* text-align: center;
     font-family: 'Li';
 
     font-stretch: expanded;
-    border-bottom: .5px solid #dddddd;
+    border-bottom: .5px solid #f7f7f7;
 
-    border-top: .5px solid #dddddd
+    border-top: .5px solid #f7f7f7
 }
 
 .deletebutt {
@@ -128,7 +128,7 @@
 
 /* .theD button {
     /* border: none; */
-    /* background-color: #ff385c; */
+/* background-color: #ff385c; */
 /* }  */
 /* 
 .deletebutt button {
@@ -154,9 +154,9 @@
 #editspotbut {
     display: flex;
     /* width: fit-content; */
-    /* flex-direction: row; */
-    /* justify-content:  */
-    /* margin-left: 2em;
+/* flex-direction: row; */
+/* justify-content:  */
+/* margin-left: 2em;
     background-color: #FF385C;
     border: none;
     font-family: 'Li';
@@ -164,11 +164,12 @@
     border-radius: 3em;
     cursor: pointer;
     width: fit-content; */
-/* } */ 
+/* } */
 
 #editspotbut:hover {
     background-color: #f12b50;
-} 
+}
+
 /* 
 .editinputarea.slop.strg {
     border: none;
@@ -177,8 +178,8 @@
     text-emphasis: none;
     text-decoration-style: none;
     /* font-family: 'Bold'; */
-    /* color: #575757; */
-    /* outline: none; */
+/* color: #575757; */
+/* outline: none; */
 /* }  */
 /* 
 .deletebutt {

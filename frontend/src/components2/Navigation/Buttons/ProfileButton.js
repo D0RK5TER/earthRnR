@@ -51,12 +51,12 @@ function ProfileButton(/*{user}*/) {
   return (
     <div className='dropbar' id='dropdowncont' >
 
-      <button id='probutt' className='profilebutt'
+      <button id='navbarprofile' className='profilebutt'
 
         onClick={openMenu ? openMenu : setShowMenu(false)} >
-        <img src={outline} className='profileshape' alt='profile icon'
-          // onClick={openMenu ? openMenu : setShowMenu(false)}
-          style={showMenu ? { boxShadow: '2px 2px 4px #dddddd' } : null} />
+        <img src={outline} id='profileshape' alt='profile icon'
+        // onClick={openMenu ? openMenu : setShowMenu(false)}
+        />
       </button>
       <div className={`${ulClassName} dropbarformat`} ref={ulRef} id='dropbarcont'>
 
@@ -77,7 +77,7 @@ function ProfileButton(/*{user}*/) {
               </div>
               <div className='ddprofile' id='ddcurrentcont'>
                 <button className='ddprofile' id='ddcurrentbutt'
-                  onClick={() => window.scrollTo(0, 0)|| setShowMenu(false) || history.push('/current')
+                  onClick={() => window.scrollTo(0, 0) || setShowMenu(false) || history.push('/current')
                     // || closeMenu()
                   }>
                   Profile Page
