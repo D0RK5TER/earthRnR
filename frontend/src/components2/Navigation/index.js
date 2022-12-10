@@ -9,7 +9,7 @@ import spotglass from '../../assets/spotglass.png';
 // import { pathURL } from "../../utilities/location";
 import { getSessionUser } from '../../store/session2';
 // import { getAllSpots } from '../../store/spots2';
-import  PaginationForm  from '../PaginationModal/PaginationForm';
+import PaginationForm from '../PaginationModal/PaginationForm';
 // import { useHistory } from 'react-router-dom';
 // import { Modal } from '../../context/Modal';
 // import LoginForm from '../LoginFormModal/LoginForm';
@@ -35,10 +35,7 @@ function Navigation() {
 
 
   return (
-    <div id='evanbar' className='topbar' style={{
-      position: 'sticky', width: '100vw',
-    }}>
-      {/* <NavLink to='/'> */}
+    <div id='topbar'>
       <div id='topleft' className='nav-left' style={{
         'cursor': 'pointer', fontFamily: 'Bold',
         marginLeft: '5em',
@@ -47,44 +44,32 @@ function Navigation() {
           className={'homebutt'}
           style={{ fontFamily: 'Bold' }}
           onClick={() => {
-            location === '/' ? window.scrollTo(0, 0) || dispatch(getAllSpots()) :
-              window.scrollTo(0, 0) || history.push('/')
+            location === '/' ?
+              window.scrollTo(0, 0) || dispatch(getAllSpots())
+              : window.scrollTo(0, 0) || history.push('/')
           }}>
           <img src={logo} style={{ paddingRight: '15px' }} alt='logo' />
           earthRnR
         </div>
       </div>
-      {/* </NavLink> */}
-
 
       <div className='nav-center' id='topmid'>
-        <span className='nav-center' >
-          <button>
-            <div id='statesearch'>
-              Location
-            </div>
-          </button>
-          {/* <PaginationFormModel>
-          <div id='statesearch'>
-            
-          </div>
-        </PaginationFormModel> */}
-          <OpenModalButton
-            id='createspotbut'
-            buttonText="Start your search"
-            modalComponent={ <PaginationForm />}
-          />
-          {/* <PaginationForm /> */}
-
-          <img
-            // onClick={() => setfunc(true)}
+        <OpenModalButton
+          id='paginationbut'
+          buttonText="Start your search"
+          modalComponent={<PaginationForm />}
+        />
+        <OpenModalButton
+          id='paginationbut2'
+          buttonText={<img
+            id='spotglassimg'
             src={spotglass}
-            alt='search icon'
-          />
-        </span>
+            alt='search icon' />}
+          modalComponent={<PaginationForm />}
+        />
       </div>
+
       <div className='nav-right' id='topright'>
-        {/* <div> */}
         {user ? <OpenModalButton
           id='createspotbut'
           buttonText="AirBnB your Home!"
@@ -95,7 +80,6 @@ function Navigation() {
             buttonText="Sign Up to Host!"
             modalComponent={<SignUpForm place={'Sign Up'} />}
           />}
-        {/* </div> */}
 
         <ProfileButton
           user={user}

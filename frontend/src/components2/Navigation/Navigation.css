@@ -29,8 +29,6 @@
 
 #signupmodalbut {
   margin-top: 0;
-  /* align-items: center; */
-  /* display: inline-flex; */
   cursor: pointer;
   justify-content: center;
   font-family: 'Li';
@@ -70,78 +68,79 @@
   -webkit-text-fill-color: #ff385c;
 
   /* vertical-align: top; */
-  position: static;
-
-
+  /* position: static; */
 }
 
 
 
 
+/* 
+#paginationbut>* {
+  padding-left: 2em;
+  box-sizing: border-box;
+  object-fit: cover;
+} */
 
-
-#topmid span>* {
+ /* #topmid> button {
   background-color: white;
+  height: 2em;
   width: fit-content;
   height: 3vw;
   border: 1px black solid;
   vertical-align: middle;
   border: none;
   cursor: pointer;
-  /* padding-right: 200em; */
-}
-
-#statesearch {
-  height: 1.5vw;
-  border-right: 1px solid #dddddd;
+  padding-right: 200em;
+}  */
+#spotglassimg {
+  display: flex;
   vertical-align: middle;
-  padding-top: .3em;
+  background-color: white;
+  height: 85%;
+  box-sizing: border-box; 
+  object-fit: fill;
+  border-bottom-right-radius: 2em;
+  border-top-right-radius: 2em;
+}
+#paginationbut {
+  width: 82%;
+  height: 100%;
+  background-color: white;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  border: none;
+  text-align: start;
+  padding-left: 2em;
+  font-family: 'Li';
+  cursor: pointer;
 }
 
-#topmid span {
-  /* height: 2em; */
-  width: fit-content;
+#paginationbut2 {
+  width: 18%;
+  height: 100%;
+  background-color: white;
+  border-bottom-right-radius: 2em;
+  border-top-right-radius: 2em;
+  border: none;
+  background-color: white;
+  height: 100%;
+  cursor: pointer;
+}
+#topmid {
+  height: 3vw;
+  width: 20vw;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
   border-top-left-radius: 2em;
   border-top-right-radius: 2em;
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
-  /* border: 1px rgb(104, 104, 104) solid; */
-  /* padding-bottom: 1em; */
   cursor: pointer;
   border: 1px solid #dddddd;
   background-color: white;
   margin-top: 1em;
   margin-bottom: 1em;
-  align-items: center;
   box-shadow: 2px 2px 2px #dddddd;
-}
-
-#topmid span img {
-  /* height: 2.5vw; */
-  /* width: 2.5vw; */
-
-}
-
-.topbar {
-  font-family: "Light";
-  display: flex;
-  justify-self: center;
-  /* margin: 0, 20%, 0, 20%; */
-  position: sticky;
-  justify-content: space-between;
-  align-items: flex-start;
-  /* padding-left: 2em; */
-  /* padding-top: .5em; */
-  background-color: white;
-  border-bottom: 1px solid #dddddd;
-  /* width: 100vw; */
-  /* padding: 1em; */
-  /* padding-top: .5em; */
-  /* vertical-align: bottom; */
-  align-items: center;
 }
 
 
@@ -153,6 +152,21 @@
   cursor: pointer;
 
 }
+
+
+#topbar {
+  font-family: "Light";
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid #dddddd;
+  align-items: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+
 
 
 /* alignItems: 'center', justifyContent: 'space-between', */
