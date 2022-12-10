@@ -1,22 +1,149 @@
-import React, { useState } from 'react';
-import { Modal } from '../../context/Modal';
-import LoginForm from './LoginForm';
+// import React, { useState } from 'react';
+// import { Modal } from '../../context/Modal';
+// import LoginForm from './LoginForm';
 
 
-////is needed????
-function LoginFormModal(/*{ setShowMenu } */) {
-    const [showModal, setShowModal] = useState(false);
+// ////is needed????
+// function LoginFormModal(/*{ setShowMenu } */) {
+//     const [showModal, setShowModal] = useState(false);
 
+//     return (
+//         <>
+//             <button id='logindrop' onClick={() => setShowModal(true)}>Log In</button>
+//             {showModal && (
+//                 <Modal onClose={() => setShowModal(false)}>
+//                     <LoginForm setShowModal={setShowModal} />
+//                 </Modal>
+//             )}
+//         </>
+//     );
+// }
+
+// export default LoginFormModal;
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+// import { useHistory } from "react-router-dom"; ///gone 
+import * as sessionActions from "../../store/session2";
+import './LoginForm.css'
+import { useModal } from '../../context/Modal';
+
+// import { openMenu } from "../Navigation/ProfileButton";
+// gone
+function LoginForm() {
+    const dispatch = useDispatch();
+    // const history = useHistory()
+    const { closeModal } = useModal();
+
+    const [credential, setCredential] = useState("");
+    const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState([]);
+
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setErrors([]);
+        return dispatch(sessionActions.login({ credential, password }))
+            // .then(() => setShowModal(false))
+            .then(closeModal)
+            .catch(async (res) => {
+                const data = await res.json()
+                if (data.message) setErrors([data.message]);
+            }
+            )
+        /// check if this is needed
+        // .then(() => setShowModal(false))
+    }
     return (
-        <>
-            <button id='logindrop' onClick={() => setShowModal(true)}>Log In</button>
-            {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
-                    <LoginForm setShowModal={setShowModal} />
-                </Modal>
-            )}
-        </>
+        <form onSubmit={handleSubmit} id='loginform' >
+            <div id="loginheader">
+                <div id='loginexitbutt' onClick={() => closeModal()}>
+                    <div>x</div>
+                </div>
+                <div>
+                    Login
+                </div>
+            </div>
+            <ul style={{ margin: '0' }}>
+                {errors.map((error, idx) => (
+                    <li className='errors' key={error + idx}>
+                        {error}</li>
+                ))}
+            </ul>
+            <h3>Welcome to EarthRnR!</h3>
+            <label className="loginlabel">
+                <input
+                    type="text"
+                    value={credential}
+                    onChange={(e) => setCredential(e.target.value)}
+                    placeholder='Username or Email'
+                    required
+                />
+            </label>
+            <label className="loginlabel">
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    placeholder="Password"
+                />
+            </label>
+            <button type="submit" id='loginsubmitbutton'>Continue</button>
+            <span>
+                <div className="greylines"></div>
+                <p>
+                    or
+
+                </p>
+                <div className="greylines"></div>
+            </span>
+            <div id='fangcont'>
+
+                {/* <a onScroll={()}> */}
+                <div className="fangbutts" onClick={() => window.location = 'https://metabookclone.herokuapp.com/#/'}>
+                    <img src={`https://metabook-seed.s3.amazonaws.com/Frame_1-removebg-preview.png`}
+                        style={{ float: 'left' }}
+                        alt='fake fang buttons'
+                    />
+                    <p>
+                        Continue with Metabook
+                    </p>
+                </div>
+                {/* </a> */}
+                <div className="fangbutts" onClick={() => window.location = 'https://insta-flick.herokuapp.com/home/'}>
+                    {/* <button></button> */}
+                    <img src={`https://insta-flick.herokuapp.com/static/instaflick-updatedLogo.png`}
+                        style={{ float: 'left' }}
+                        alt='fake fang buttons'
+                    />
+                    <p>
+                        Continue with Instaflick
+                    </p>
+                </div>
+                <div className="fangbutts" onClick={() => window.location = 'https://niles-app-academy.herokuapp.com/#/'}>
+                    <img src={`https://niles-app-academy.herokuapp.com/assets/white_logo-6a776881c565fa200ed232b46298f804059b6542c6ec355b510273f8e1d4d023.png`}
+                        style={{ float: 'left', backgroundColor: 'darkgrey' }}
+                        alt='fake fang buttons'
+                    />
+                    <p>
+                        Continue with Niles
+                    </p>
+                </div>
+                <div className="fangbutts" onClick={() => window.location = 'https://slackluster.herokuapp.com/'}>
+                    {/*https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg*/}
+                    <img src={`https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg`}
+                        style={{ float: 'left', height: '3em' }}
+                        alt='fake fang buttons'
+                    />
+                    <p>
+                        Continue with Slackluster
+                    </p>
+                </div>
+            </div>
+
+
+        </form>
     );
 }
-
-export default LoginFormModal;
+export default LoginForm;

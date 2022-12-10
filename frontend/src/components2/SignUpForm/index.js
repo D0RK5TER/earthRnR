@@ -1,8 +1,17 @@
+
+// import React, { useState } from 'react';
+// import { Modal } from '../../context/Modal';
+// import SignUpForm from './SignUpForm';
+// import '../Navigation/Navigation.css'
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from '../../store/session2';
+import { useModal } from '../../context/Modal';
+
 import './SignUpForm.css'
-function SignUpForm({ setShowModal }) {
+function SignUpForm() {
+    const { closeModal } = useModal();
+
     const dispatch = useDispatch();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("")
@@ -17,13 +26,14 @@ function SignUpForm({ setShowModal }) {
         if (password === confirmPassword) {
             setErrors([]);
             return dispatch(sessionActions.signup({ firstName, lastName, email, username, password }))
+                .then(closeModal)
                 .catch(async (res) => {
                     const data = await res.json()
                     if (data.message) setErrors([data.message]);
                 }
                 )
-                //check for need
-                .then(() => setShowModal(false))
+            //check for need
+            // .then(() => setShowModal(false))
         }
         else return setErrors(['Confirm Password field must be the same as the Password field']);
     };
@@ -31,7 +41,7 @@ function SignUpForm({ setShowModal }) {
     return (
         <form onSubmit={handleSubmit} id='signupform' >
             <div id='signupheader'>
-                <div id='signupexitbutt' onClick={() => setShowModal(false)}>
+                <div id='signupexitbutt' onClick={() => closeModal()}>
                     x
                 </div>
                 <div id='signupheadertext'>

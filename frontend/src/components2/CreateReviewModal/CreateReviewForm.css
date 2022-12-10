@@ -4,8 +4,18 @@
         url("../../assets/earthrnrCerealLight.ttf") format("truetype");
 }
 
-
-
+#createheader3 {
+   width: 60%;
+   border-bottom: none;
+   /* margin-right: 5em; */
+    display: flex;
+    margin-left: 1em;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+#signupmainheader {
+    cursor: default;
+}
 /* 
 
 #createreviewform {
@@ -39,7 +49,10 @@
 }
 #ratingdesc {
     font-family: 'Li';
+    border-top: 1px solid #dddddd;
+    padding-top: 1em;
 }
+
 #createrevbutton:hover {
 background-color: #dddddd;
 border-radius: 2em;
@@ -113,6 +126,7 @@ border-radius: 2em;
     flex-direction: column;
     margin-bottom: .5em;
     width: 100%;
+   
 
 }
 
@@ -127,10 +141,10 @@ border-radius: 2em;
     margin-bottom: .5em;
 }
 
-#createreviewform>h1 {
+#createreviewform {
     margin-top: .5em;
     width: 100%;
-    border-bottom: 1px solid #dddddd;
+    /* border-bottom: 1px solid #dddddd; */
     margin-bottom: .5em;
 
 }
@@ -141,6 +155,7 @@ border-radius: 2em;
     justify-content: center;
     text-align: center;
     width: 35vw;
+    overflow: hidden;
 }
 
 #createreviewbutt:hover {

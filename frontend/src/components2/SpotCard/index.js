@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import star from '../../assets/star.png';
 import EditSpotFormModal from '../EditSpotFormModal';
 import quest from '../../assets/quest.jpg';
+import OpenModalButton from "../OpenModalButton";
 
 function getAge(birth) {
     let age = ''
@@ -134,10 +135,16 @@ function SpotCard({ spot, user }) {
                         }}>
                             <img id={`starSpot${id}`} src={star} className='starspot' style={{
                                 maxHeight: '35%'
-                            }} alt='star for card'/>
+                            }} alt='star for card' />
                             {avgRating !== 0 ? avgRating : '0.00'}
                         </div>
-                        {user.id === ownerId && <EditSpotFormModal idx={id} />}
+                        {user.id === ownerId &&
+                            <OpenModalButton
+                                id='editspotbut'
+                                buttonText="Edit Spot"
+                                modalComponent={<EditSpotFormModal idx={id} />}
+                            />
+                        }
                     </div>
                 </div>
             </div>

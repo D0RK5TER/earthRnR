@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
 import * as sessionActions from '../../../store/session2';
 // import { getSessionUser } from '../../../store/session2';
-
-import SignUpFormModal from '../../SignUpFormModal';
+import OpenModalButton from "../../OpenModalButton";
+import SignUpForm from '../../SignUpForm';
 import LoginFormModal from '../../LoginFormModal';
 import DemoButton from './DemoButton';
 import outline from '../../../assets/outline.png';
@@ -19,62 +19,46 @@ function ProfileButton(/*{user}*/) {
   const [showMenu, setShowMenu] = useState(false);
   // const [switchbut, setSwitchbut] = useState(false)
   // const []
+  const ulRef = useRef();
   const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
 
   const openMenu = () => {
     if (showMenu) return
-   return setShowMenu(true)
+    return setShowMenu(true)
   };
 
-  const closeMenu = () => {
-    if (!showMenu) return
-    return setShowMenu(false);
-  };
   useEffect(() => {
     if (!showMenu) return;
-    let underbar = document.getElementById('outter')
-    underbar.addEventListener('click', closeMenu)
-    const drop = document.getElementById('topmid')
-    drop.addEventListener('click', closeMenu)
-    // const keep = document.getElementById('dropdowncont')
-    // keep.removeEventListener('click', closeMenu)
-    // const keep1 = document.getElementById('dropbarcont')
-    // keep.removeEventListener('click', closeMenu)
-    // const keep2 = document.getElementById('loggedin')
-    // keep.removeEventListener('click', closeMenu)
-    // keep1.removeEventListener('click', closeMenu)
-    // keep2.removeEventListener('click', closeMenu)
 
+    const closeMenu = (e) => {
+      if (!ulRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
 
-    // drop.lastChild.removeEventListener('click', closeMenu)
-    // drop.forEach(x => x.removeEventListener('click', closeMenu))
-    return () => {
-      drop.removeEventListener("click", closeMenu)
-      underbar.removeEventListener("click", closeMenu)
-    }
-  }, [showMenu, closeMenu])
+    document.addEventListener('click', closeMenu);
 
-
-  // !showMenu ? console.log(navbar) : navbar.lastChild.removeEventListener('click', closeMenu)
+    return () => document.removeEventListener("click", closeMenu);
+  }, [showMenu]);
 
   const handleLogout = (e) => {
     e.preventDefault();
-    dispatch(sessionActions.logout());
-    history.push('/');
+    dispatch(sessionActions.logout()).then(() => history.push('/'))
   };
 
+  const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
   return (
     <div className='dropbar' id='dropdowncont' >
 
       <button id='probutt' className='profilebutt'
 
-        onClick={openMenu ? openMenu : closeMenu} >
+        onClick={openMenu ? openMenu : setShowMenu(false)} >
         <img src={outline} className='profileshape' alt='profile icon'
-          onClick={openMenu ? openMenu : closeMenu}
+          // onClick={openMenu ? openMenu : setShowMenu(false)}
           style={showMenu ? { boxShadow: '2px 2px 4px #dddddd' } : null} />
       </button>
-      <div id='dropbarcont' className='dropbarformat'>
+      <div className={`${ulClassName} dropbarformat`} ref={ulRef} id='dropbarcont'>
 
 
         {/* <div id="toprightmenu"> */}
@@ -93,7 +77,9 @@ function ProfileButton(/*{user}*/) {
               </div>
               <div className='ddprofile' id='ddcurrentcont'>
                 <button className='ddprofile' id='ddcurrentbutt'
-                  onClick={() => window.scrollTo(0, 0) || history.push('/current') || closeMenu()}>
+                  onClick={() => window.scrollTo(0, 0)|| setShowMenu(false) || history.push('/current')
+                    // || closeMenu()
+                  }>
                   Profile Page
                 </button>
               </div>
@@ -108,11 +94,19 @@ function ProfileButton(/*{user}*/) {
           : showMenu && (
             <div className="profile-dropdown ddprofile">
 
-              <SignUpFormModal place={'Sign Up'} />
-              <LoginFormModal />
+              {/* <SignUpFormModal place={'Sign Up'} /> */}
+              <OpenModalButton
+                id='signupdrop'
+                buttonText="Sign up"
+                modalComponent={<SignUpForm place={'Sign Up'} />}
+              />
+              <OpenModalButton
+                id='logindrop'
+                buttonText="Log In"
+                modalComponent={<LoginFormModal />}
+              />
               <DemoButton />
-
-
+              {/* <DemoButton /> */}
               *Terms*
               *Help*
 

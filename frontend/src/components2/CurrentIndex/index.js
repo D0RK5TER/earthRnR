@@ -8,8 +8,8 @@ import { getMyReviews } from '../../store/reviews2';
 import SpotCard from '../SpotCard'
 import ReviewCard from './ReviewCard';
 import './currentindex.css'
-import SpotImageFormModal from '../CreateSpotImageModal';
-
+import SpotImageForm from '../CreateSpotImageModal';
+import OpenModalButton from '../OpenModalButton';
 const CurrentIndex = () => {
     const dispatch = useDispatch();
     // const { current } = useParams();
@@ -54,7 +54,13 @@ const CurrentIndex = () => {
                     <div id='myspotscont'>
                         {mySpots && Object?.values(mySpots).map(spot =>
                             <div className='currentspotimage'>
-                                <SpotImageFormModal idx={spot.id} spotname={spot.name} />
+                               
+                                <OpenModalButton
+                                    id='spotimagebut'
+                                    buttonText="Add Photos!"
+                                    modalComponent={ <SpotImageForm idx={spot.id} spotname={spot.name} />}
+                                />
+
                                 <SpotCard spot={spot} user={user} key={`${spot.id}`} />
                             </div>
                         )}

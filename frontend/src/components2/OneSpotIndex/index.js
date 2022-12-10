@@ -10,7 +10,9 @@ import './OneSpotIndex.css'
 import star from '../../assets/star.png';
 import quest from '../../assets/quest.jpg';
 import CreateReviewFormModal from '../CreateReviewModal';
-import DeleteReviewFormModal from '../DeleteReviewModal';
+import DeleteReviewForm from '../DeleteReviewModal';
+import OpenModalButton from "../OpenModalButton";
+import '../CreateReviewModal/CreateReviewForm.css'
 // import background from '../../assets/background.png'
 // import background2 from '../../assets/background2.png'
 // import reaviewshead from '../../assets/reaviewshead.png'
@@ -35,7 +37,7 @@ function getAge(birth) {
 
 
 const OneSpotIndex = () => {
-
+  // const { closeModal } = useModal();
   const dispatch = useDispatch();
   const { id } = useParams();
   let user = useSelector(state => state.session.user)
@@ -91,10 +93,10 @@ const OneSpotIndex = () => {
           </div>
           <div id='smallcont2'>
             <div className='spotImage' id='spotimg3'>
-              <img src={`${c.url}`} className='gridpics' key={a} alt={`${c.url}`}  />
+              <img src={`${c.url}`} className='gridpics' key={a} alt={`${c.url}`} />
             </div>
             <div className='spotImage' id='spotimg4'>
-              <img src={`${d.url}`} className='gridpics' key={a} alt={`${b.url}`}   />
+              <img src={`${d.url}`} className='gridpics' key={a} alt={`${b.url}`} />
             </div>
           </div>
 
@@ -137,7 +139,13 @@ const OneSpotIndex = () => {
                     posted {new Date(createdAt).toDateString()}
                   </div>
                 </div>
-                {userId === user?.id && <DeleteReviewFormModal id={id} spotId={spotId} key={id + review} />}
+                {userId === user?.id &&
+                  <OpenModalButton
+                    id='deletereview'
+                    buttonText="Delete"
+                    modalComponent={<DeleteReviewForm id={id} spotId={spotId} key={id + review} />}
+                  />
+                }
               </div>
               <div className='bottomhalf reviewbottom'>
                 <div className='reviewscore starscore'>
@@ -161,7 +169,7 @@ const OneSpotIndex = () => {
 
   useEffect(() => {
     // if (!theSpot) {
-    dispatch(getOneSpot(id)).then(()=>dispatch(getAllReviews(id)))
+    dispatch(getOneSpot(id)).then(() => dispatch(getAllReviews(id)))
     // .catch((e)=>console.log(e))
     // dispatch(getAllReviews(id))
     // }
@@ -284,7 +292,14 @@ const OneSpotIndex = () => {
               </div>}
 
               <div id='reviewsright'>
-                {ratingsneak && user?.id !== theSpot?.ownerId && buttonVis && < CreateReviewFormModal id={id} key={theSpot.id + theSpot.name} />}
+                {ratingsneak && user?.id !== theSpot?.ownerId && buttonVis &&
+                  // <CreateReviewFormModal id={id} key={theSpot.id + theSpot.name} />
+                  <OpenModalButton
+                    id='createreviewbutt'
+                    buttonText="Create a Review"
+                    modalComponent={<CreateReviewFormModal id={id} key={theSpot.id + theSpot.name} />}
+                  />
+                }
               </div>
             </div>
 
@@ -295,7 +310,12 @@ const OneSpotIndex = () => {
                     {reviewsCont}
                   </div>
                   <div id='hugebutton'>
-                    {user?.id !== theSpot?.ownerId && user?.id && <CreateReviewFormModal id={id} key={theSpot.id + theSpot.description} />}
+                    {user?.id !== theSpot?.ownerId && user?.id &&
+                      <OpenModalButton
+                        id='createreviewbutt'
+                        buttonText="Create a Review"
+                        modalComponent={<CreateReviewFormModal id={id} key={theSpot.id + theSpot.name} />}
+                      />}
                   </div>
                 </div>
               )}

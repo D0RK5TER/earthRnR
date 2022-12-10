@@ -1,8 +1,9 @@
 // import { useSelector } from 'react-redux';
 // import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import DeleteReviewFormModal from '../DeleteReviewModal';
-import ReviewImagesModal from '../ReviewImagesModal';
+import DeleteReviewForm from '../DeleteReviewModal';
+import ReviewImagesIndex from '../ReviewImagesModal';
+import OpenModalButton from "../OpenModalButton";
 
 
 
@@ -12,6 +13,8 @@ function ReviewCard({ rev }) {
     let { id, stars, review, createdAt, ReviewImages, spotId } = rev
     // console.log(spotId)
     // console.log(ReviewImages)
+    console.log(rev)
+
     return rev && spotId && (
         <div className='onereview single one'>
 
@@ -21,7 +24,12 @@ function ReviewCard({ rev }) {
                 </div>
                 <div className='profilename profileage'>
                     <div className='reviewname'>
-                        <ReviewImagesModal idx={id} ReviewImages={ReviewImages} />
+                        {/* <ReviewImagesModal idx={id} ReviewImages={ReviewImages} /> */}
+                        {<OpenModalButton
+                            id='deletereview'
+                            buttonText="Photos"
+                            modalComponent={<ReviewImagesIndex idx={id} ReviewImages={ReviewImages} />}
+                        />}
                         <button onClick={() => history.push(`/${spotId}`)}>
                             See the Spot!
                         </button>
@@ -30,7 +38,11 @@ function ReviewCard({ rev }) {
                         posted {new Date(createdAt).toDateString()}
                     </div>
                 </div>
-                {<DeleteReviewFormModal id={id} spotId={spotId} />}
+                {<OpenModalButton
+                    id='deletereview'
+                    buttonText="Delete"
+                    modalComponent={<DeleteReviewForm id={id} spotId={spotId} key={id + review} />}
+                />}
             </div>
 
             <div className='bottomhalf reviewbottom'>

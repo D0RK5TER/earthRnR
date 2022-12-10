@@ -21,7 +21,29 @@
     src: local("popbold"),
         url("../../../assets/popbold.ttf") format("truetype");
 }
+#probutt {
+    cursor: pointer;
+}
 
+#logindrop {
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+}
+
+.profile-dropdown.ddprofile> *  {
+    /* width: 200%; */
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+    border: none;
+}
+.profile-dropdown.ddprofile> *:hover  {
+    /* width: 200%; */
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+    border: none;
+    background-color: rgb(245, 245, 245);
+
+}
 
 
 
@@ -67,6 +89,7 @@
 display: flex;
 justify-content: space-between;
 } */
+
 
 #topmid {
     /* padding-left: 9em; */

@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './Buttons/ProfileButton';
 import './Navigation.css';
-import '../SignUpFormModal/SignUpForm.css'
+import '../SignUpForm/SignUpForm.css'
 import logo from '../../assets/logo.jpg';
 import spotglass from '../../assets/spotglass.png';
-import { pathURL } from "../../utilities/location";
+// import { pathURL } from "../../utilities/location";
 import { getSessionUser } from '../../store/session2';
 // import { getAllSpots } from '../../store/spots2';
 import PaginationFormModel, { setfunc } from '../PaginationModal/index.js';
@@ -15,9 +15,10 @@ import PaginationFormModel, { setfunc } from '../PaginationModal/index.js';
 // import LoginForm from '../LoginFormModal/LoginForm';
 // import SignupFormPage from '../SignupFormPage';
 import { getAllSpots } from '../../store/spots2';
+import OpenModalButton from "../OpenModalButton";
 
-import SpotFormModal from '../SpotFormModal';
-import SignUpFormModal from '../SignUpFormModal';
+import SpotForm from '../SpotFormModal';
+import SignUpForm from '../SignUpForm';
 // import ComingSoon from '../ComingSoon/ComingSoon';
 
 
@@ -26,10 +27,8 @@ function Navigation() {
   const dispatch = useDispatch();
   const history = useHistory()
   const user = useSelector(state => getSessionUser(state));
-  let loc
-  useEffect(() => {
-    loc = pathURL(history)
-  }, [dispatch]);
+  const location = useLocation().pathname
+
 
 
 
@@ -48,7 +47,7 @@ function Navigation() {
           className={'homebutt'}
           style={{ fontFamily: 'Bold' }}
           onClick={() => {
-            loc === '/' ? window.scrollTo(0, 0) || dispatch(getAllSpots()) :
+            location === '/' ? window.scrollTo(0, 0) || dispatch(getAllSpots()) :
               window.scrollTo(0, 0) || history.push('/')
           }}>
           <img src={logo} style={{ paddingRight: '15px' }} alt='logo' />
@@ -82,7 +81,16 @@ function Navigation() {
       </div>
       <div className='nav-right' id='topright'>
         {/* <div> */}
-        {user ? <SpotFormModal /> : <SignUpFormModal place={'Sign Up to Host!'} />}
+        {user ? <OpenModalButton
+          id='createspotbut'
+          buttonText="AirBnB your Home!"
+          modalComponent={<SpotForm />}
+        /> :
+          <OpenModalButton
+            id='signupmodalbut'
+            buttonText="Sign Up to Host!"
+            modalComponent={<SignUpForm place={'Sign Up'} />}
+          />}
         {/* </div> */}
 
         <ProfileButton

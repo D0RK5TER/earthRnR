@@ -3,12 +3,32 @@
     src: local("earthrnrCerealLight"),
         url("../../assets/earthrnrCerealLight.ttf") format("truetype");
 }
-
-#deletespot p {
+#deleteheader {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    align-items: center;
+    margin-right: 2em;
+    padding-top: 1em;
+}
+#deletespot {
     margin-bottom: 0;
     font-family: 'Bold';
-    text-decoration: underline;
+    /* text-decoration: underline; */
     letter-spacing: .05em;
+}
+#delexitbutt {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+#delexitbutt:hover{
+    /* background-color: #ffbdbd; */
+    border: .2px solid black;
+    cursor: pointer;
+
 }
 #deletebuttsubmit:hover {
     background-color: rgb(255, 163, 163);
@@ -23,15 +43,16 @@
     border-radius: 1em;
     color: rgb(0, 0, 0);
     border: 1px solid ;
-    height: 2em
+    /* height: 2em; */
+    margin-bottom: 1.5em;
 }
 #deletespot {
     display: flex;
     flex-direction: column;
     /* justify-content: middle; */
     align-items: center;
-    width: 20vw;
-    height: 9vw;
+    height: 10vw;
+    width: 20vw
 }
 #deletespotform {
     display: flex;
@@ -39,6 +60,10 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    width: 100%;
+    border-top: 1px solid #dddddd;
+    padding-bottom: 1em;
+
 }
 #deletereview:hover {
 font-family: 'Bold';

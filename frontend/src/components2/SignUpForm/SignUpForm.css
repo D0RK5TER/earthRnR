@@ -198,7 +198,9 @@
     margin-right: 3em;
 
 }
-
+#signupexitbutt{
+    cursor: pointer;
+}
 #signupexitbutt1 {
     /* display: inline-flex; */
     background-color: white;
