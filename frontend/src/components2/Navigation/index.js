@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './Buttons/ProfileButton';
 import './Navigation.css';
 import '../SignUpForm/SignUpForm.css'
-import logo from '../../assets/logo.jpg';
+import logo from '../../assets/logo.png';
 import spotglass from '../../assets/spotglass.png';
 import globe from '../../assets/globe.png'
 // import { pathURL } from "../../utilities/location";
@@ -39,7 +39,7 @@ function Navigation() {
     <div id='topbar'>
       <div id='topleft' className='nav-left' >
         <div exact to="/"
-          className={'homebutt'}
+          id='homebutt'
           onClick={() => {
             location === '/' ?
               window.scrollTo(0, 0) || dispatch(getAllSpots())

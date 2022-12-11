@@ -22,25 +22,9 @@
         url("../../assets/popbold.ttf") format("truetype");
 }
 
-.spotcard {
-    font-family: 'Bold';
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap; */
-    /* min-width: 22%;
-    max-width: 22%; */
-    /* object-fit: cover;
-    box-sizing: border-box; */
-    /* margin-right: 300px; */
-    /* height: .2em; */
-    /* margin: 10px; */
-    /* padding: 200px; */
-    /* flex-grow: 1; */
-}
-
 .spotcard div {
     /* object-fit: cover;
     box-sizing: border-box; */
-    max-height: 100%;
+    /* max-height: 100%; */
 
 }

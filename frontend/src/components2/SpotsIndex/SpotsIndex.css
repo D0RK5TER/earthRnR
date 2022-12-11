@@ -1,0 +1,40 @@
+.piccontwrap.allimg.previmgwrap {
+    display: flex;
+    align-items: center;
+    /* object-fit: cover; */
+    border-radius: 1em;
+    cursor: pointer;
+
+    /* background-size: cover; */
+    /* height: fit-content; */
+}
+
+#maindisplay {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    justify-self: center;
+}
+
+
+.spotcard.wholething {
+    font-family: 'Bold';
+    display: flex;
+    flex-direction: column;
+    margin: 2.5vw;
+    max-width: 23vw;
+    height: fit-content;
+    width: fit-content;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: center
+}
+
+.imgprev.allimg.previmg {
+    width: 22vw;
+    height: 20vw;
+    border-radius: 7%;
+    cursor: pointer;
+}

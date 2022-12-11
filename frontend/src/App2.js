@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import * as sessionActions from "./store/session2";
 import Navigation from "./components2/Navigation";
@@ -24,13 +24,13 @@ function App() {
     }, [dispatch]);
     ///trying top 
     return (
-        <div id='outtermost' style={{ width: '100vw'}}>
-            <div id='navi' style={{ width: '100vw', position: 'sticky', top: '0px' }}>
-                <Navigation style={{ position: 'sticky' }}  />
-            </div>
-            <div id='outter' style={{
-                width: '100vw'
-            }}>
+
+        <>
+            <Navigation />
+
+            <div id='outter'>
+
+
                 {/* {isLoaded && ( */}
                 <Switch>
                     <Route exact path='/'>
@@ -49,9 +49,9 @@ function App() {
 
                 </Switch>
 
-                {/* // )} */}
             </div>
-        </div>
+
+        </>
     );
 }
 export default App;

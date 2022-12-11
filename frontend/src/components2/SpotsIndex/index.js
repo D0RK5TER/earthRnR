@@ -29,18 +29,11 @@ function SpotsIndex() {
     }, [dispatch]);
 
     // if (!spots) return null;
-    
+
     return spots && (
         // <div className="mainContent" >
 
-        <div id='maindisplay' style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            height: '100vw',
-            width: '100vw',
-            justifyContent: 'space-around',
-            justifySelf: 'center'
-        }}>
+        <div id='maindisplay' >
             {spots && Object.values(spots).map(spot =>
                 <SpotCard spot={spot} user={user} key={`${spot.id}`} />
             )}

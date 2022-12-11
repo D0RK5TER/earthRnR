@@ -26,8 +26,24 @@
   margin-bottom: 0;
 }
 
+#homebutt {
+  display: flex;
+  align-items: center;
+  color: #FF385c;
+}
+
+#topleft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
 #navlogo {
   margin-right: .21em;
+  height: 3vw;
 }
 
 #signupmodalbut:hover {
@@ -77,6 +93,7 @@
   text-align: start;
   padding-left: 2em;
   font-family: 'Li';
+  /* font-weight: 1; */
   cursor: pointer;
 }
 
@@ -93,7 +110,7 @@
 }
 
 #topmid {
-  height: 3.3vw;
+  height: 60%;
   width: 28.75vw;
   /* margin-left:  */
   padding-top: 2px;
@@ -112,7 +129,7 @@
   margin-bottom: 1em;
   /* box-shadow: 3px 3px 3px #f7f7f7; */
   box-shadow: 0 1px 3px 0 rgba(171, 171, 171, 0.2), 0 1px 3px 0 rgba(183, 183, 183, 0.19);
-  
+
 }
 
 
@@ -142,9 +159,10 @@
   border-top-right-radius: 2em;
   border-top-left-radius: 2em;
 }
- #profileshape:hover { 
+
+#profileshape:hover {
   box-shadow: 0 1px 3px 0 rgba(171, 171, 171, 0.2), 0 1px 3px 0 rgba(183, 183, 183, 0.19);
-} 
+}
 
 #navbarprofile:hover {
   box-sizing: border-box;
@@ -188,13 +206,18 @@
 }
 
 #createswitching {
-  width: 13vw;
+  width: 15vw;
   padding: .75em;
   height: 3vw;
   border: none;
   background-color: white;
   border-radius: 2em;
+  letter-spacing: 5.5;
   /* letter-spacing: .0425vw; */
+}
+
+#signswitching:hover {
+  background-color: #f7f7f7;
 }
 
 #createswitching:hover {
@@ -202,8 +225,8 @@
 }
 
 #signswitching {
-  width: 10vw;
-  height: 5vw;
+  width: 15vw;
+  height: 3vw;
   padding: .75em;
   border: none;
   background-color: white;
@@ -212,19 +235,18 @@
 
 }
 
-
-
 #topbar {
   font-family: "Light";
   display: flex;
-  position: sticky;
-  justify-content: space-between;
+  position: fixed;
+  justify-content: space-around;
   background-color: white;
-  background-color: #FFFFFF;
-  border-bottom: .25px solid;
+  justify-self: baseline;
+  border-bottom: .525px solid #d6d6d6;
+  width: 100vw;
+  height: 5.5vw;
   border-bottom-style: ridge;
-  height: 6.427vw;
+  margin-top: 0px;
   align-items: center;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  align-self: flex-start;
 }

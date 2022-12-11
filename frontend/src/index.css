@@ -1,47 +1,11 @@
-@font-face {
-    font-family: "Light";
-    src: local("earthrnrCerealLight"),
-        url("./assets/earthrnrCerealLight.ttf") format("truetype");
-}
-
 body {
     margin-top: 0;
-    width: 100vw;
-    overflow-x: hidden;
 }
 
-
-.photocontainer {
-    /* padding: 2em; */
-    justify-content: center;
-    justify-items: center;
-
-
+#outter {
+    /* width: 90%; */
+    padding-top: 6.5vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    
 }
-
-
-.namearea {
-    text-align: center;
-    margin-top: 0;
-    font-family: 'Light';
-}
-
-.photo {
-    /* flex-grow: inherit; */
-    /* min-width: 300px; */
-    /* max-width: 400px; */
-    /* min-height: 300px; */
-    /* max-height: 400px; */
-    /* max-width: 50%; */
-    /* max-height: 100%; */
-    /* max-width: 100%; */
-    /* justify-self: center;
-    box-sizing: border-box;
-    object-fit: cover; */
-}
-
-/* 
-#dangerzone {
-    margin-top: 4em;
-    min-height: 500px;
-} */

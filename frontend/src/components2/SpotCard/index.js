@@ -54,34 +54,14 @@ function SpotCard({ spot, user }) {
 
     return (
 
-        <div id={`SpotCard${id}`} className='spotcard wholething' style={{
-            display: 'flex',
-            flexDirection: 'column',
-            margin: '1em',
-            marginBottom: '1vw',
-            width: '20vw',
-            height: 'fit-content',
-        }}>
-            <div id={`SpotCardImgWrapper${id}`} className='piccontwrap allimg previmgwrap'
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    objectFit: 'contain',
-                    width: '20vw',
-                    height: 'fit-content',
-                    justifyContent: 'flex-start',
-                }}
-            >
-                <div id={`SpotCardImg${id}`} className='piccont allimg previmg' style={{
-                    display: 'flex',
-                    width: '20vw',
-                    height: '20vw',
-                    borderRadius: '7%',
-                    cursor: 'pointer',
-                    background: `url(${previewImage}) no-repeat `,
-                    justifySelf: 'flex-start',
-                    backgroundSize: 'cover',
-                }} onClick={() => history.push(`/${id}`) || window.scrollTo(0, 0)} />
+        <div id={`SpotCard${id}`} className='spotcard wholething'>
+            <div id={`SpotCardImgWrapper${id}`}
+                onClick={() => history.push(`/${id}`) || window.scrollTo(0, 0)}
+                className='piccontwrap allimg previmgwrap'>
+
+                <img key={`SpotCardImg${id}`} className='imgprev allimg previmg'
+                    src={`${previewImage}`} />
+
             </div>
 
             <div className='spotinfocont' id={`SpotCardInfo${id}`} style={{
