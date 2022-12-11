@@ -46,7 +46,7 @@ function Navigation() {
               : window.scrollTo(0, 0) || history.push('/')
           }}>
           <img src={logo} alt='logo' id='navlogo' />
-          earthRnR
+          EarthRnR
         </div>
       </div>
 

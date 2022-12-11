@@ -22,9 +22,9 @@
         url("../../assets/popbold.ttf") format("truetype");
 }
 
-.spotcard div {
+/* .spotcard div {
     /* object-fit: cover;
     box-sizing: border-box; */
     /* max-height: 100%; */
 
-}
+

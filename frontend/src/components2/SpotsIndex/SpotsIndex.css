@@ -1,23 +1,123 @@
+@font-face {
+    font-family: "Light";
+    src: local("earthrnrCerealLight"),
+        url("../../assets/earthrnrCerealLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Thin";
+    src: local("Poppins-Thin"),
+        url("../../assets/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Li";
+    src: local("Poppins-Light"),
+        url("../../assets/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: local("popbold"),
+        url("../../assets/popbold.ttf") format("truetype");
+}
+
+.editbuttspotcard {
+    margin-right: 1vw;
+}
+.inforightstar {
+    font-family: 'Li';
+    height: .9vw;
+    font-size: 1vw;
+    padding-right: .32vw;
+    /* vertical-align: middle; */
+    /* align-items: center; */
+}
+
+.infostarimage {
+    height: 90%;
+    padding-right: .21vw;
+
+}
+
+.spotinforight {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Light';
+    height: 80%;
+    justify-content: space-between;
+}
+
+
+.smallerinfotext {
+    font-size: .92vw;
+    font-family: 'Li';
+    margin: 0;
+    padding-left: .12vw;
+}
+
+.smallerinfotext:last-child {
+    margin-bottom: .25em;
+}
+
+.spotinfoleft span {
+    font-family: 'Bold';
+
+}
+
+.spotinfoleft p {
+    margin: 0;
+    /* padding-left: .51em; */
+
+}
+
+.spotinfoleft {
+    font-family: 'Thin';
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding-left: .21em;
+}
+
+.priceper.pricenight p {
+    display: flex;
+    font-family: 'Li';
+    margin: 0;
+    width: 4vw;
+    text-align: end;
+    padding-left: .7vw;
+}
+
+.priceper.pricenight {
+    display: flex;
+    font-family: 'Bold';
+    width: 70%;
+}
+
+.spotinfocont {
+    display: flex;
+    flex-direction: row;
+    line-height: 1.75vw;
+    height: 8vw;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: .3em;
+    font-size: 1.15vw;
+    margin-bottom: 1em;
+}
+
+
+
 .piccontwrap.allimg.previmgwrap {
     display: flex;
     align-items: center;
     /* object-fit: cover; */
     border-radius: 1em;
     cursor: pointer;
-
-    /* background-size: cover; */
+    width: 22vw;
+    height: 20vw;
     /* height: fit-content; */
 }
-
-#maindisplay {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-between;
-    justify-self: center;
-}
-
 
 .spotcard.wholething {
     font-family: 'Bold';
@@ -33,8 +133,17 @@
 }
 
 .imgprev.allimg.previmg {
-    width: 22vw;
-    height: 20vw;
+    width: 100%;
+    height: 100%;
     border-radius: 7%;
     cursor: pointer;
+}
+
+#maindisplay {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    justify-self: center;
 }

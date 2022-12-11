@@ -30,20 +30,24 @@
   display: flex;
   align-items: center;
   color: #FF385c;
+  width: fit-content;
 }
 
 #topleft {
   display: flex;
+  width: fit-content;
   flex-direction: row;
   align-items: center;
   height: 100%;
   object-fit: cover;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 #navlogo {
   margin-right: .21em;
   height: 3vw;
+  cursor: pointer;
 }
 
 #signupmodalbut:hover {
@@ -55,10 +59,6 @@
   justify-content: center;
 }
 
-
-#topleft {
-  width: 23vw;
-}
 
 .homebutt {
   display: flex;
@@ -110,8 +110,8 @@
 }
 
 #topmid {
-  height: 60%;
-  width: 28.75vw;
+  height: 50%;
+  width: 22.75vw;
   /* margin-left:  */
   padding-top: 2px;
   padding-bottom: 2px;
@@ -150,7 +150,7 @@
 }
 
 #profileshape {
-  height: 3.63vw;
+  height: 2.63vw;
   /* width: 3; */
   box-sizing: border-box;
   object-fit: contain;
@@ -164,19 +164,10 @@
   box-shadow: 0 1px 3px 0 rgba(171, 171, 171, 0.2), 0 1px 3px 0 rgba(183, 183, 183, 0.19);
 }
 
-#navbarprofile:hover {
-  box-sizing: border-box;
-  object-fit: fill;
-
-  /* background-color: #f7f7f7; */
-  /* box-shadow: 20px 20px 20px #f80505 inset; */
-
-  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-}
 
 #globebut {
-  width: 3.4vw;
-  height: 3.4vw;
+  width: 2.63vw;
+  height: 2.63vw;
   border-radius: 50%;
   vertical-align: middle;
   padding: .2em;
@@ -206,7 +197,7 @@
 }
 
 #createswitching {
-  width: 15vw;
+  width: 12vw;
   padding: .75em;
   height: 3vw;
   border: none;
@@ -225,7 +216,7 @@
 }
 
 #signswitching {
-  width: 15vw;
+  width: 12vw;
   height: 3vw;
   padding: .75em;
   border: none;

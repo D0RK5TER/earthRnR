@@ -59,74 +59,52 @@ function SpotCard({ spot, user }) {
                 onClick={() => history.push(`/${id}`) || window.scrollTo(0, 0)}
                 className='piccontwrap allimg previmgwrap'>
 
-                <img key={`SpotCardImg${id}`} className='imgprev allimg previmg'
-                    src={`${previewImage}`} />
+                <img key={`SpotCardImg${id}`}
+                    className='imgprev allimg previmg'
+                    src={`${previewImage}`}
+                    alt='previewimageforcard'
+                />
 
             </div>
 
-            <div className='spotinfocont' id={`SpotCardInfo${id}`} style={{
-                display: 'flex',
-                flexDirection: 'row',
-                // maxHeight: '30%',
-                // marginRight: '3em',
-                lineHeight: '1vw',
-                height: '20%',
-                width: '100%',
-                justifyContent: 'space-between',
-                marginTop: '.3em',
-                fontSize: '1vw'
+            <div className='spotinfocont' >
 
-            }}>
-
-                <div className='spotinforow' id={`SpotCardInfoRow1${id}`} style={{
-                    display: 'flex', flexDirection: 'column',
-                    lineHeight: '1.5vw',
-                    height: '35%'
-                }}>
-                    <span id={`SpotCardspan1${id}`} style={{
-                        fontFamily: 'Bold'
-                    }}>
-                        {city}     ,   {state}</span>
-                    <p id={`SpotCardtext1${id}`} style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw' }}>{getAge(createdAt.toString())}</p>
-                    <span id={`SpotCardspan2${id}`} style={{ height: '80%', fontFamily: 'Li', fontSize: '.7vw', }}>{description.slice(0, 20)}...</span>
-                    <div id={`SpotCarddiv3${id}`} style={{ display: 'inline-flex', fontFamily: 'Li', marginTop: '.3em' }}>$<p style={{ fontFamily: 'Bold', lineHeight: '1.5vw', width: 'fit-content', margin: '0 .5em 0 .15em' }}>{price}</p> night</div>
+                <div className='spotinfoleft' >
+                    <span id={`SpotCardp1${id}`} >
+                        {city}     ,   {state}
+                    </span>
+                    <p className='smallerinfotext'>
+                        {getAge(createdAt.toString())}
+                    </p>
+                    <p className='smallerinfotext'>
+                        {description.slice(0, 25)}...
+                    </p>
+                    <div className='priceper pricenight' >
+                        ${price}<p>night</p>
+                    </div>
                 </div>
-                <div className='spotstarrow' id={`SpotCardInfoRow2${id}`} style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    lineHeight: '1.5vw',
 
-                }}>
-                    <div className='spotstaravg' id={`SpotCardInfoRow2${id}`} style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        width: user.id === ownerId ? 'fit-content' : '80%',
-                        height: 'max-content',
-                        // verticalAlign: 'flex-end'
 
-                    }} >
-                        <div id={`editspot${id}`} style={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                            justifyContent: 'flex-end',
-                            fontFamily: 'Bold',
-                            height: '40%',
-                            width: '100%'
-                        }}>
-                            <img id={`starSpot${id}`} src={star} className='starspot' style={{
-                                maxHeight: '35%'
-                            }} alt='star for card' />
-                            {avgRating !== 0 ? avgRating : '0.00'}
-                        </div>
+
+                <div className='spotinforight' id={`SpotCardInfoRow2${id}`}>
+
+                    <div className='inforightstar'>
+                        <img id={`starSpot${id}`} src={star}
+                            className='infostarimage' alt='star for card' />
+                        {avgRating !== 0 ? avgRating : '0.00'}
+                    </div>
+                    <div className='editbuttspotcard'>
                         {user.id === ownerId &&
+                        
                             <OpenModalButton
                                 id='editspotbut'
-                                buttonText="Edit Spot"
+                                buttonText="Edit"
                                 modalComponent={<EditSpotFormModal idx={id} />}
                             />
                         }
                     </div>
                 </div>
+
             </div>
         </div >
 
