@@ -9,6 +9,7 @@ import { getAllReviews } from '../../store/reviews2';
 import './OneSpotIndex.css'
 import star from '../../assets/star.png';
 import quest from '../../assets/quest.jpg';
+import propic from '../../assets/propic.png'
 import CreateReviewFormModal from '../CreateReviewModal';
 import DeleteReviewForm from '../DeleteReviewModal';
 import OpenModalButton from "../OpenModalButton";
@@ -27,9 +28,10 @@ function getAge(birth) {
   const birthYear = birthDate.getFullYear();
   const birthMonth = birthDate.getMonth();
   const birthDay = birthDate.getDay();
-  let year = curYear - birthYear;
-  let month = curMonth - birthMonth;
-  let day = curDay - birthDay;
+  let year = birthYear - curYear;
+  let month = birthMonth - curMonth;
+  let day = birthDay - curDay;
+  console.log(year, month, day)
   age = (year * 364) + (month * 30) + day
 
   return age;
@@ -191,6 +193,7 @@ const OneSpotIndex = () => {
               hosted by {theSpot.User.firstName}
             </div>
           </div>
+
           <div id='onespotsubheader'>
             <div id='onespotstar'>
               <img src={star} className='starspot' id='starrr' alt='star img' />
@@ -231,26 +234,114 @@ const OneSpotIndex = () => {
 
               <div id='hostspotinfo'>
                 <div id='hostnameheader'>
-                  <div id='hostnameage'>
-                    <div id='hostnamemid'>
-                      {`${theSpot.User.firstName} `}
+                  <div>
+                    <div id='hostnameage'>
+                      <div id='hostnamemid'>
+                        {`${theSpot.User.firstName} `}
+                      </div>
+                      has been a host here for
+                      <div id='hostnamelast'>
+                        {` ${getAge(theSpot.createdAt)}`}
+                      </div>
+                      days
                     </div>
-                    has been a host here for
-                    <div id='hostnamelast'>
-                      {` ${getAge(theSpot.createdAt)}`}
+                    <div id='spotsizedesc'>
+                      Ipsum Lorem Till I Get SumMorum Columns
                     </div>
-                    days
                   </div>
                   <div id='hostpicture'>
-                    pic
+                    <img src={propic} />
                   </div>
                 </div>
 
-                <div id='spotdescription'>
-                  <div>
+
+
+
+                <div>
+                  <div id='spotfeatureslist'>
+                    Nemo enim ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+                    eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
+                    velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
+                    nulla pariatur?
+                  </div>
+                  <div id='spotsuperhost'>
+                    Nemo enim ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+                    eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
+                    velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
+                    nulla pariatur?
+
+                  </div>
+                  <div id='spotaircover'>
+                    Nemo enim ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+                    eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
+                    velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
+                    nulla pariatur?
+
+                  </div>
+                  <div id='spotdescription'>
                     {theSpot.description}
                   </div>
-                  Number of Beds: 2
+                  <div id='spotsleepdesc'>
+                    Nemo enim ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+                    eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
+                    velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
+                    nulla pariatur?
+                  </div>
+                  <div id='spotamends'>
+                    Nemo enim ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+                    eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
+                    velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
+                    nulla pariatur?
+                  </div>
+                  <div id='spotbookingcalendar'>
+                    Calendar
+                    Calendar
+                    <br />
+                    Calendar
+                    <br />
+                    Calendar
+                    <br />
+                    Calendar
+                    <br />
+                    <br />
+                    Calendar
+                    <br /><br />
+                    Calendar
+                    <br /><br />
+                    Calendar
+                    <br /><br />
+                    Calendar
+                    <br /><br />
+                    Calendar
+                    <br />
+                  </div >
+
+
                 </div>
               </div>
 
@@ -268,7 +359,6 @@ const OneSpotIndex = () => {
           <div id='reviewscont'>
 
             <div id='reviewsheader'>
-
               {ratingsneak && <div id='reviewsleft' >
                 <div id='reviewsleftleft'>
                   <img src={star} id='reviewsstar' alt='small star img' />

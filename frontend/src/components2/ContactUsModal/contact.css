@@ -1,0 +1,145 @@
+@font-face {
+    font-family: "Dex";
+    src: local("earthrnrCerealLight"),
+        url("../../assets/NyghtSerif-Dark.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Dexter";
+    src: local("earthrnrCerealLight"),
+        url("../../assets/pixhobo.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Dex";
+    src: local("earthrnrCerealLight"),
+        url("../../assets/earthrnrCerealLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Thin";
+    src: local("Poppins-Thin"),
+        url("../../assets/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Li";
+    src: local("Poppins-Light"),
+        url("../../assets/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: local("popbold"),
+        url("../../assets/popbold.ttf") format("truetype");
+}
+
+#dexter {
+    font-family: 'Dex';
+    color: rgb(90, 83, 10);
+}
+
+.gitcon {
+    cursor: pointer;
+}
+
+.linkcon {
+    cursor: pointer;
+}
+
+#myheadtop {
+    font-size: 2vw;
+    font-family: 'Bold';
+    cursor: default;
+    text-decoration: underline;
+
+}
+
+#myheadbot {
+    font-family: 'Dexter';
+    font-size: 1vw;
+    cursor: default;
+    margin-bottom: .51vw;
+
+}
+
+#loginexitbutt:hover {
+    background-color: rgb(224, 224, 224);
+}
+
+#loginexitbutt {
+    cursor: pointer;
+    display: flex;
+    width: min-content;
+    height: 1.3vw;
+    border-radius: 50%;
+    box-sizing: border-box;
+    object-fit: scale-down;
+    margin-left: 1.2vw;
+    margin-top: 1.2vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#myinfopage {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 9vw;
+    align-items: center;
+}
+
+#myinfosubheader>* {
+    width: fit-content;
+    padding: .2vw;
+}
+
+#myinfosubheader {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0em;
+    align-items: center;
+    width: 850%;
+}
+
+#myinfocont {
+    display: flex;
+    flex-direction: column;
+    width: 33vw;
+
+}
+
+#myinfoheader {
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+#theline {
+    display: flex;
+    flex-direction: row;
+    height: 4px;
+    width: 100%;
+    /* border: 2px solid #090909; */
+
+}
+
+.lined {
+    border-bottom: 2px solid #090909;
+    height: 100%;
+    width: 100%;
+    border-right:  2px solid #090909
+}
+.linex.E {
+    border-right:  none
+}
+.linex {
+    border-top: 2px solid #080808;
+    height: 100%;
+    width: 100%;
+    border-right:  2px solid #090909
+
+}

@@ -11,7 +11,8 @@ import DemoButton from './DemoButton';
 import outline from '../../../assets/outline.png';
 import './profile.css'
 //take away user so i can use store selector for easier rerender?
-
+import ContactUsModal from "../../ContactUsModal";
+import HelpModal from "../../HelpModal";
 function ProfileButton(/*{user}*/) {
   // const sessionUser = getSessionUser(state);
 
@@ -105,19 +106,26 @@ function ProfileButton(/*{user}*/) {
                 buttonText="Log In"
                 modalComponent={<LoginFormModal />}
               />
+              <div id="ddline">
+              </div>
               <DemoButton />
-              {/* <DemoButton /> */}
-              *Terms*
-              *Help*
-
+              <OpenModalButton
+                id='logindrop'
+                buttonText="Contact Us"
+                modalComponent={<ContactUsModal />}
+              />
+              {/* <div id='' className='bottomlogindrop'> */}
+                <OpenModalButton
+                  id='helpdrop'
+                  className='bottomlogindrop'
+                  buttonText="Help"
+                  modalComponent={<HelpModal />}
+                />
+              {/* </div> */}
             </div>
-          )
 
-        }
-        {/* </div> */}
+          )}
       </div>
-      <>
-      </>
     </div >
   );
 }

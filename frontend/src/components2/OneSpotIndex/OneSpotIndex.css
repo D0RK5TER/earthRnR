@@ -24,8 +24,10 @@
 
 
 
-
-
+/* 
+#hostnameheader {
+    border-bottom: 2px solid #797979;
+} */
 
 #bookingcont {
     width: 45%;
@@ -34,23 +36,38 @@
     border: 1px black solid;
 }
 
+#hostpicture> img {
+    height: 4vw;
+    width: 4vw;
+    border: 1px solid black;
+    border-radius: 50%;
+    box-sizing: content-box;
+    object-fit: cover;
+}
 #hostpicture {
     height: 4vw;
     width: 4vw;
     border: 1px solid black;
     border-radius: 50%;
+    box-sizing: content-box;
+    object-fit: cover;
 }
 
 #hostnameheader {
     display: inline-flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     /* padding-right: 2em; */
-    border-bottom: 1px solid#f7f7f7;
-    margin-bottom: 1em;
+    border-bottom: 1px solid#e6e6e6;
+    padding-bottom: 1vw;
+    margin-bottom: 1vw;
 
 }
-
+#spotsizedesc {
+    padding-left: 1.4vw;
+    font-family: 'Bold';
+    font-size: 1vw;
+}
 
 #hostnameage>div {
     font-family: 'Bold';
@@ -61,8 +78,7 @@
 
 #hostnameage {
     display: flex;
-    /* justify-content: space-around; */
-    line-height: 3em;
+    line-height: 2vw;
     font-size: 1.2em;
     font-family: 'Li';
 
@@ -72,7 +88,9 @@
 #hostinfocont {
     width: 55%;
 }
-
+#wholespotcard {
+    cursor: pointer;
+}
 #belowheader {
     display: flex;
     /* width: 75%; */
@@ -83,6 +101,7 @@
 
 #belowimg {
     margin-top: 2em;
+    
 }
 
 #norevhead {
@@ -311,8 +330,8 @@
     display: flex;
     /* flex-direction: column; */
     justify-content: space-around;
-    height: 100vw;
-    width: 100vw;
+    height: fit-content;
+    width: 100%;
     /* height: 70vw;
     width: 100vw; */
     /* display: block; */

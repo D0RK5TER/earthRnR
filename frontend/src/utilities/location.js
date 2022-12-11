@@ -6,7 +6,7 @@ export const pathURL = (history) => {
 }
 
 
-function getAge(birth) {
+export function getAge(birth) {
     let age = ''
     const curDate = new Date();
     const curYear = curDate.getFullYear();
@@ -16,10 +16,11 @@ function getAge(birth) {
     const birthYear = birthDate.getFullYear();
     const birthMonth = birthDate.getMonth();
     const birthDay = birthDate.getDay();
-    let year = curYear - birthYear;
-    let month = curMonth - birthMonth;
-    let day = curDay - birthDay;
+    let year = birthYear - curYear;
+    let month = birthMonth - curMonth;
+    let day = birthDay - curDay;
+    console.log(year, month, day)
     age = (year * 364) + (month * 30) + day
-
+  
     return age;
-}
+  }

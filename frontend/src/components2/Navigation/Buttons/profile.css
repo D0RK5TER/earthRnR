@@ -26,26 +26,26 @@
     cursor: pointer;
 }
 
-#logindrop {
+#ddline {
+    border-bottom: .2px solid rgb(211, 211, 211);
     width: 100%;
-    border-bottom: 1px solid #f7f7f7;
+    max-height: 1vw;
+    padding-top: 0px;
+    line-height: 1px;
+    display: flex;
+    margin-bottom: .5vw;
 }
 
-.profile-dropdown.ddprofile>* {
+#signupdrop {
+    margin-top: .5vw;
+}
+
+/* .profile-dropdown.ddprofile>*:hover {
     /* width: 200%; */
-    width: 100%;
-    border-bottom: 1px solid #f7f7f7;
-    border: none;
-}
-
-.profile-dropdown.ddprofile>*:hover {
-    /* width: 200%; */
-    width: 100%;
-    border-bottom: 1px solid #f7f7f7;
-    border: none;
-    background-color: rgb(245, 245, 245);
-
-}
+/* width: 100%; */
+/* border-bottom: 1px solid #f7f7f7; */
+/* border: none; */
+/*background-color: rgb(245, 245, 245);} */
 
 
 
@@ -77,7 +77,7 @@
     flex-direction: column;
     align-items: flex-start;
     overflow: hidden;
-    height: fit-content;
+    height: min-content;
 
 }
 
@@ -181,13 +181,31 @@ justify-content: space-between;
     width: 100%;
 }
 
-#logindrop {
-    width: 100%;
-    border-bottom: 1px solid #f7f7f7;
-}
-
 #signupdrop {
     width: 100%;
+}
+
+#helpdrop {
+    /* margin-bottom: .35vw; */
+    width: 100%;
+    height: 100%;
+    margin-bottom: .5vw;
+}
+
+
+#helpdrop:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#logindrop.bottomlogindrop {
+    margin-bottom: 10vw;
+    width: 100%;
+    /* height: ; */
+}
+
+#logindrop {
+    width: 100%;
+    margin: 0;
 }
 
 #logindrop:hover {

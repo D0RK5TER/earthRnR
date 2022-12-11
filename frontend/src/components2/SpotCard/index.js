@@ -7,30 +7,7 @@ import EditSpotFormModal from '../EditSpotFormModal';
 import quest from '../../assets/quest.jpg';
 import OpenModalButton from "../OpenModalButton";
 
-function getAge(birth) {
-    let age = ''
-    const curDate = new Date();
-    const curYear = curDate.getFullYear();
-    const curMonth = curDate.getMonth();
-    const curDay = curDate.getDay();
-
-    const birthDate = new Date(birth.toString());
-    const birthYear = birthDate.getFullYear();
-    const birthMonth = birthDate.getMonth();
-    const birthDay = birthDate.getDay();
-
-    let year = curYear - birthYear;
-    let month = curMonth - birthMonth;
-    let day = curDay - birthDay;
-
-    year > 0 ? age = `Over ${year} years old!` :
-        month > 1 ? age = `Over ${month} months old!` :
-            month === 1 ? age = `${day + 30} days old` :
-                day > 1 ? age = `${day} days old` : age = `${day} day old`
-
-    return age;
-}
-
+import { getAge } from '../../utilities/location';
 
 function SpotCard({ spot, user }) {
     const { previewImage, id, description,
@@ -54,9 +31,10 @@ function SpotCard({ spot, user }) {
 
     return (
 
-        <div id={`SpotCard${id}`} className='spotcard wholething'>
+        <div id='wholespotcard'
+        onClick={() => history.push(`/${id}`) || window.scrollTo(0, 0)}
+        className='spotcard wholething'>
             <div id={`SpotCardImgWrapper${id}`}
-                onClick={() => history.push(`/${id}`) || window.scrollTo(0, 0)}
                 className='piccontwrap allimg previmgwrap'>
 
                 <img key={`SpotCardImg${id}`}
@@ -74,10 +52,10 @@ function SpotCard({ spot, user }) {
                         {city}     ,   {state}
                     </span>
                     <p className='smallerinfotext'>
-                        {getAge(createdAt.toString())}
+                        {`${getAge(createdAt.toString())} days old`}
                     </p>
                     <p className='smallerinfotext'>
-                        {description.slice(0, 25)}...
+                        {description.slice(0, 30)}...
                     </p>
                     <div className='priceper pricenight' >
                         ${price}<p>night</p>

@@ -1,0 +1,181 @@
+
+
+
+
+
+
+
+
+
+#help4.boldhelp.helptext{
+          display: flex;
+    flex-direction: row;
+    
+}
+#help4.boldhelp.helptext> div {
+     font-family: 'Bold';
+      display: flex;
+    flex-direction: row;
+    
+    /* width: fit-content; */
+}#help5.boldhelp.helptext{
+          display: flex;
+    flex-direction: row;
+    
+}
+#help5.boldhelp.helptext> div {
+     font-family: 'Bold';
+      display: flex;
+    flex-direction: row;
+    
+    /* width: fit-content; */
+}
+
+#help1.boldhelp.helptext{
+          display: flex;
+    flex-direction: row;
+    
+}
+#help1.boldhelp.helptext> div {
+     font-family: 'Bold';
+      display: flex;
+    flex-direction: row;
+    
+    /* width: fit-content; */
+}#help2.boldhelp.helptext{
+          display: flex;
+    flex-direction: row;
+    
+}
+#help2.boldhelp.helptext> div {
+     font-family: 'Bold';
+      display: flex;
+    flex-direction: row;
+    
+    /* width: fit-content; */
+}#help3.boldhelp.helptext{
+          display: flex;
+    flex-direction: row;
+    
+}
+#help3.boldhelp.helptext> div {
+     font-family: 'Bold';
+      display: flex;
+    flex-direction: row;
+    
+    /* width: fit-content; */
+}
+
+#help1.boldhelp.helptext{
+          display: flex;
+    flex-direction: row;
+    
+}
+#help1.boldhelp.helptext> div {
+     font-family: 'Bold';
+      display: flex;
+    flex-direction: row;
+    
+    /* width: fit-content; */
+}
+.helptext {
+    margin-top: .35vw;
+}
+
+#secondhelp.firsthelp {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0vw;
+    font-family: 'Li';
+}
+#secondhelp.firsthelp> div {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    /* width: fit-content; */
+    font-family: 'Bold';
+}
+#firsttexth.firsthelp> div {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    /* width: fit-content; */
+    font-family: 'Bold';
+}
+#firsttexth.firsthelp {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0vw;
+    font-family: 'Li';
+}
+#smalltext.smallhelp {
+    margin-top: 0;
+    font-size: .65vw;
+    line-height: .75vw;
+    padding-left: 4vw;
+    font-family: 'Bold';
+}
+#helpbody> div {
+    margin-bottom: 0vw;
+    font-family: 'Li';
+    margin-bottom: .2vw;
+}
+#helpbody {
+    margin-top: .5vw;
+    margin-bottom: 1.5vw;
+    /* margin: 0; */
+}
+
+
+#helpheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 75%;
+    padding-right: 15vw;
+
+}
+
+#helpsubheader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#helpheadtop {
+    font-family: 'Thin';
+    font-size: 5vw;
+    text-decoration: underline .5px;
+}
+
+#helpheadbot {
+    font-family: 'Bold';
+    font-size: 2vw;
+}
+
+
+
+
+
+#helpbody {
+    width: 90%;
+}
+
+
+
+
+
+
+
+
+#helpcont {
+    height: fit-content;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

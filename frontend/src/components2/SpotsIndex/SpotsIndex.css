@@ -25,6 +25,7 @@
 .editbuttspotcard {
     margin-right: 1vw;
 }
+
 .inforightstar {
     font-family: 'Li';
     height: .9vw;
@@ -61,12 +62,17 @@
 }
 
 .spotinfoleft span {
-    font-family: 'Bold';
+    font-family: 'Light';
+    font-size: 1vw;
 
 }
 
 .spotinfoleft p {
     margin: 0;
+    line-height: 1.25vw;
+    /* text-align: center; */
+    vertical-align: middle;
+    /* font-size: 1vw; */
     /* padding-left: .51em; */
 
 }
@@ -84,14 +90,18 @@
     font-family: 'Li';
     margin: 0;
     width: 4vw;
-    text-align: end;
+    height: 1vw;
+    /* text-align: middle;
+    vertical-align: middle; */
     padding-left: .7vw;
 }
 
 .priceper.pricenight {
     display: flex;
+    flex-direction: row;
     font-family: 'Bold';
     width: 70%;
+    align-items: center;
 }
 
 .spotinfocont {

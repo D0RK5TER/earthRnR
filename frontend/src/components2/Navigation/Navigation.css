@@ -111,8 +111,7 @@
 
 #topmid {
   height: 50%;
-  width: 22.75vw;
-  /* margin-left:  */
+  width: 20.75vw;
   padding-top: 2px;
   padding-bottom: 2px;
   display: flex;
@@ -137,7 +136,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  width: 20vw;
 }
 
 
@@ -197,7 +197,7 @@
 }
 
 #createswitching {
-  width: 12vw;
+  width: fit-content;
   padding: .75em;
   height: 3vw;
   border: none;
@@ -216,7 +216,8 @@
 }
 
 #signswitching {
-  width: 12vw;
+  padding-left: 10vw;
+  width: fit-content;
   height: 3vw;
   padding: .75em;
   border: none;
@@ -231,6 +232,7 @@
   display: flex;
   position: fixed;
   justify-content: space-around;
+  
   background-color: white;
   justify-self: baseline;
   border-bottom: .525px solid #d6d6d6;
