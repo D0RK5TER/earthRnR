@@ -9,6 +9,7 @@ import { getAllReviews } from '../../store/reviews2';
 import { deciNum, overThou, strToNum, getAge } from '../../utilities/location';
 // import CreateReviewForm from '../CreateReviewModal';
 import './OneSpotIndex.css'
+import './calendar.css'
 import star from '../../assets/star.png';
 import quest from '../../assets/quest.jpg';
 import propic from '../../assets/propic.png'
