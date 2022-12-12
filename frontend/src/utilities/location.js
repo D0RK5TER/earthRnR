@@ -21,6 +21,19 @@ export function getAge(birth) {
     let day = birthDay - curDay;
     console.log(year, month, day)
     age = (year * 364) + (month * 30) + day
-  
+
     return age;
-  }
+}
+
+
+
+export const deciNum = (num) => {
+    let newarr = num.toString().split('.')
+    if (newarr.length < 2) return newarr[0] + '.00'
+    else {
+        let str = newarr[0] + '.'
+        let add = newarr[1].slice(0, 2)
+        return str + add
+    }
+
+}

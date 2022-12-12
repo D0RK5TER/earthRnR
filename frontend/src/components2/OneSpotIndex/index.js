@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getOneSpot } from '../../store/spots2';
 import { getAllReviews } from '../../store/reviews2';
+import { deciNum } from '../../utilities/location';
 // import CreateReviewForm from '../CreateReviewModal';
 import './OneSpotIndex.css'
 import star from '../../assets/star.png';
@@ -416,15 +417,23 @@ const OneSpotIndex = () => {
 
               </div>
               <div id='bookingbody'>
-                <div id='priceheader'>
 
+                <div id='priceheader'>
                   <p>${Math.round(theSpot.price)} <p>night</p></p>
 
-                  <>
-                    Stars Reviews
-                  </>
+                  <div id='rightside'>
+
+                    <img src={star} id='rightsidestar' alt='star img' />&nbsp;
+                    {theSpot.avgStarRating}
+
+                    &nbsp;·&nbsp;
+                    <div id='rightsidereviews'
+                      onClick={(e) => { e.preventDefault(); window.location.replace(`/${theSpot.id}#jumpmark`) }}>
+                      {`${theSpot.numReviews} reviews`}
+                    </div >
+                  </div>
                 </div>
-                
+
                 <div></div>
                 <div></div>
                 <div></div>

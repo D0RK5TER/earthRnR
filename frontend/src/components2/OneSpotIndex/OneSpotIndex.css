@@ -21,15 +21,48 @@
     src: local("popbold"),
         url("../../assets/popbold.ttf") format("truetype");
 }
-#priceheader> p> p{
-padding-left: .4vw;
+
+
+
+
+
+
+#rightsidereviews {
+    font-family: 'Li';
+    line-height: .75vw;
+    border-bottom: 1px solid #717171;
+    color: #717171;
+    cursor: pointer;
+
+}
+
+
+
+#rightside {
+    letter-spacing: .05vw;
+    display: flex;
+    flex-direction: row;
+    font-size: .8vw;
+    font-family: 'Bold';
+    width: fit-content;
+    align-items: center;
+
+}
+
+#rightsidestar {
+    height: .8vw;
+}
+
+#priceheader>p>p {
+    padding-left: .4vw;
     margin: 0;
     font-family: 'Thin';
     font-size: 1vw;
-   
-   
+
+
 }
-#priceheader> p{
+
+#priceheader>p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -38,12 +71,16 @@ padding-left: .4vw;
     margin: 0;
     font-family: 'Li';
 }
+
 #priceheader {
+    cursor: default;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     height: 3vw;
     padding-left: 1vw;
+    padding-right: 1vw;
     align-items: center;
 
 }
@@ -51,12 +88,11 @@ padding-left: .4vw;
 #bookingbody {
     display: flex;
     flex-direction: column;
-
-    margin-top: 5vw;
-    border: 1px black solid;
+    margin-top: 4vw;
+    box-shadow: 0px 2px 5px 2px #b9b9b9a5;
     height: 100%;
-    margin-left: 7.3vw;
-    width: 21.3vw;
+    margin-left: 4.8vw;
+    width: 23.3vw;
     padding: 1vw;
     border-radius: 1vw;
 
