@@ -21,10 +21,112 @@
     src: local("popbold"),
         url("../../assets/popbold.ttf") format("truetype");
 }
+#bookingcalctotal.bookingcalc>p {
+    font-family: 'Bold';
+}
+#bookingcalctotal {
+    margin-top: 2.5vw;
+    font-family: 'Bold';
+    border-top: .81px solid #717171;
+
+}
+.bookingcalc> p {
+    margin-bottom: 0;
+    font-family: 'Li';
+    font-size: 1vw;
+}
+.bookingcalc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 
 
+#warningcharge {
+    font-size: .75vw;
+    font-family: 'Bold';
+    margin-top: 1vw;
+    text-align: center;
+}
+#bookingsubmitbutton:hover {
+    background-color: #e2153b;
+}
+#bookingsubmitbutton {
+    cursor: pointer;
+    width: 90%;
+    padding: 1em;
+    border: none;
+    background-color: #ff385c;
+    border-radius: .7em;
+    box-sizing: border-box;
+    align-items: center;
+    align-self: center;
+    color: white;
+    margin-top: 1em;
+}
 
+#bookdatesbottom {
+    height: 50%;
+    border-left: .81px solid #717171;
+    border-right: .81px solid #717171;
+    border-bottom: .81px solid #717171;
+    border-radius: .31vw;
+    /* border-top:.81px solid #717171; */
+
+}
+
+#bookdatesbottom:hover {
+
+    border-radius: .31vw;
+    border: 1.5px solid black;
+}
+
+#bookdatestopleft {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+}
+
+#bookdatestopright {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-left: .81px solid #717171;
+}
+
+#bookdatestop {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    border-radius: .31vw;
+    border: .81px solid #717171;
+}
+
+#bookdatestopright:hover {
+
+    border-radius: .31vw;
+    border: 1.5px solid black;
+}
+
+#bookdatestopleft:hover {
+
+    border-radius: .31vw;
+    border: 1.5px solid black;
+}
+
+#bookdatescont {
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 8.3vw;
+    align-self: center;
+    cursor: pointer;
+    /* border:.81px solid #717171; */
+    /* border-radius: .91vw; */
+}
 
 
 #rightsidereviews {

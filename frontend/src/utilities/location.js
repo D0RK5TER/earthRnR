@@ -32,8 +32,21 @@ export const deciNum = (num) => {
     if (newarr.length < 2) return newarr[0] + '.00'
     else {
         let str = newarr[0] + '.'
-        let add = newarr[1].slice(0, 2)
-        return str + add
+        newarr[1].length > 1 ? str += newarr[1].slice(0, 2) : str += newarr[1] + '0'
+        return str
     }
 
+}
+
+export const overThou = (num) => {
+    let numstr = num.toString()
+    let ans = '$' + numstr.slice(0, numstr.length - 3) + ',' + numstr.slice(numstr.length - 3)
+    return ans
+}
+
+export const strToNum = (str) => {
+    if(str.includes('$')) str = str.slice(1)
+    if (str.includes('.')) str = str.split('.')[0]
+    if(str.includes(',')) str = str.split(',').join('')
+    return +str
 }

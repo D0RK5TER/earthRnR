@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getOneSpot } from '../../store/spots2';
 import { getAllReviews } from '../../store/reviews2';
-import { deciNum } from '../../utilities/location';
+import { deciNum, overThou, strToNum, getAge } from '../../utilities/location';
 // import CreateReviewForm from '../CreateReviewModal';
 import './OneSpotIndex.css'
 import star from '../../assets/star.png';
@@ -37,26 +37,6 @@ import '../CreateReviewModal/CreateReviewForm.css'
 // import background2 from '../../assets/background2.png'
 // import reaviewshead from '../../assets/reaviewshead.png'
 
-function getAge(birth) {
-  let age = ''
-  const curDate = new Date();
-  const curYear = curDate.getFullYear();
-  const curMonth = curDate.getMonth();
-  const curDay = curDate.getDay();
-  const birthDate = new Date(birth.toString());
-  const birthYear = birthDate.getFullYear();
-  const birthMonth = birthDate.getMonth();
-  const birthDay = birthDate.getDay();
-  let year = birthYear - curYear;
-  let month = birthMonth - curMonth;
-  let day = birthDay - curDay;
-  console.log(year, month, day)
-  age = (year * 364) + (month * 30) + day
-
-  return age;
-}
-
-
 const OneSpotIndex = () => {
   // const { closeModal } = useModal();
   const dispatch = useDispatch();
@@ -67,6 +47,10 @@ const OneSpotIndex = () => {
 
 
 
+  let bookingsixnight
+  let cleaningfee
+  let servicefee
+  let total
 
   let buttonVis = true
   let spotimgs
@@ -84,7 +68,14 @@ const OneSpotIndex = () => {
   // if (Object?.values(theSpot).length )
   if (theSpot !== undefined && theSpot[id]?.id === (+id) && thereviews && +id > 0) {
     theSpot = theSpot[+id]
-    // console.log(theSpot)
+    bookingsixnight = `${Math.floor(theSpot.price) * 6 > 1000 ?
+      overThou(Math.floor(theSpot.price * 6)) :
+      '$' + theSpot.price.toString()}`
+    cleaningfee = `$${deciNum(Math.random() * 200)}`
+    servicefee = `$${deciNum(Math.random() * 100)}`
+    strToNum(bookingsixnight)+strToNum(cleaningfee)+strToNum(servicefee)>1000?
+    total = overThou(strToNum(bookingsixnight)+strToNum(cleaningfee)+strToNum(servicefee)):
+    total = strToNum(bookingsixnight)+strToNum(cleaningfee)+strToNum(servicefee)
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
     // console.log(spotimgs)
@@ -434,11 +425,39 @@ const OneSpotIndex = () => {
                   </div>
                 </div>
 
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div id='bookdatescont'>
+                  <div id='bookdatestop'>
+                    <div id='bookdatestopleft'>
+                    </div>
+                    <div id='bookdatestopright'>
+                    </div>
+                  </div>
+                  <div id='bookdatesbottom'>
+                  </div>
+                </div>
+
+                <button id='bookingsubmitbutton' type="submit">Reserve</button>
+                <div id='warningcharge'>
+                  We "won't" charge you yet!
+                </div>
+                <div className='bookingcalc'>
+                  <p>{`$${Math.floor(theSpot.price)} x 6 nights`}</p>
+                  <p>{bookingsixnight}</p>
+                </div>
+                <div className='bookingcalc'>
+                  <p>Cleaning Fee:</p>
+                  <p>{cleaningfee}</p>
+                </div>
+                <div className='bookingcalc'>
+                  <p>Service Fee:</p>
+                  <p>{servicefee}</p>
+                </div>
+                <div className='bookingcalc' id='bookingcalctotal'>
+                  <p>Total before taxes</p>
+                  <p>
+                  {total}
+                  </p>
+                </div>
               </div>
             </div>
 
