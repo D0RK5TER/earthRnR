@@ -10,6 +10,7 @@
     "js-cookie": "^3.0.1",
     "normalize-object": "^2.0.4",
     "react": "^18.2.0",
+    "react-calendar": "^4.0.0",
     "react-dom": "^18.2.0",
     "react-redux": "^7.2.9",
     "react-router-dom": "^5.3.4",

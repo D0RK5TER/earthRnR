@@ -21,20 +21,35 @@
     src: local("popbold"),
         url("../../assets/popbold.ttf") format("truetype");
 }
+
+#spotbookingcalendar>div {
+    width: 48%;
+}
+
+#spotbookingcalendar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
 #bookingcalctotal.bookingcalc>p {
     font-family: 'Bold';
 }
+
 #bookingcalctotal {
     margin-top: 2.5vw;
     font-family: 'Bold';
     border-top: .81px solid #717171;
 
 }
-.bookingcalc> p {
+
+.bookingcalc>p {
     margin-bottom: 0;
     font-family: 'Li';
     font-size: 1vw;
 }
+
 .bookingcalc {
     display: flex;
     flex-direction: row;
@@ -49,9 +64,11 @@
     margin-top: 1vw;
     text-align: center;
 }
+
 #bookingsubmitbutton:hover {
     background-color: #e2153b;
 }
+
 #bookingsubmitbutton {
     cursor: pointer;
     width: 90%;

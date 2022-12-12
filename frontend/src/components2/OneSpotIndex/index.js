@@ -1,8 +1,9 @@
 
 
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import Calendar from 'react-calendar';
 import { getOneSpot } from '../../store/spots2';
 import { getAllReviews } from '../../store/reviews2';
 import { deciNum, overThou, strToNum, getAge } from '../../utilities/location';
@@ -41,6 +42,8 @@ const OneSpotIndex = () => {
   // const { closeModal } = useModal();
   const dispatch = useDispatch();
   const { id } = useParams();
+  const [value, onChange] = useState(new Date());
+
   let user = useSelector(state => state.session.user)
   let theSpot = useSelector(state => state.spots.onespot)
   let thereviews = useSelector(state => state.reviews.allreviews)
@@ -71,11 +74,11 @@ const OneSpotIndex = () => {
     bookingsixnight = `${Math.floor(theSpot.price) * 6 > 1000 ?
       overThou(Math.floor(theSpot.price * 6)) :
       '$' + theSpot.price.toString()}`
-    cleaningfee = `$${deciNum(Math.random() * 200)}`
-    servicefee = `$${deciNum(Math.random() * 100)}`
-    strToNum(bookingsixnight)+strToNum(cleaningfee)+strToNum(servicefee)>1000?
-    total = overThou(strToNum(bookingsixnight)+strToNum(cleaningfee)+strToNum(servicefee)):
-    total = strToNum(bookingsixnight)+strToNum(cleaningfee)+strToNum(servicefee)
+    cleaningfee = `$${deciNum(theSpot.price * .35)}`
+    servicefee = `$${deciNum(theSpot.price * .1)}`
+    strToNum(bookingsixnight) + strToNum(cleaningfee) + strToNum(servicefee) > 1000 ?
+      total = overThou(strToNum(bookingsixnight) + strToNum(cleaningfee) + strToNum(servicefee)) :
+      total = strToNum(bookingsixnight) + strToNum(cleaningfee) + strToNum(servicefee)
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
     // console.log(spotimgs)
@@ -371,29 +374,20 @@ const OneSpotIndex = () => {
                         </div>
                       </div>
                     </div>
+                    <>
+                      <h2>{ }6 nights at { }</h2>
+                      <div id='spotbookingcalendar'>
+                        <div id='thismonth'>
 
-                    <div id='spotbookingcalendar'>
-                      Calendar
-                      Calendar
-                      <br />
-                      Calendar
-                      <br />
-                      Calendar
-                      <br />
-                      Calendar
-                      <br />
-                      <br />
-                      Calendar
-                      <br /><br />
-                      Calendar
-                      <br /><br />
-                      Calendar
-                      <br /><br />
-                      Calendar
-                      <br /><br />
-                      Calendar
-                      <br />
-                    </div >
+                          <Calendar onChange={onChange} value={value} />
+                        </div>
+                        <div id='nextmonth'>
+
+                          <Calendar onChange={onChange} value={value} />
+                        </div>
+
+                      </div >
+                    </>
 
 
                   </div>
@@ -455,7 +449,7 @@ const OneSpotIndex = () => {
                 <div className='bookingcalc' id='bookingcalctotal'>
                   <p>Total before taxes</p>
                   <p>
-                  {total}
+                    {total}
                   </p>
                 </div>
               </div>
