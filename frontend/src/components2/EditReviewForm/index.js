@@ -14,7 +14,6 @@ import './editreview.css'
 
 
 function EditReviewForm(id) {
-    console.log(id.id)
 
     const { closeModal } = useModal();
     const rev = useSelector(state => state.reviews.myreviews[id.id])

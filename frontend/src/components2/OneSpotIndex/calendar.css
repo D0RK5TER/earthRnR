@@ -5,10 +5,11 @@
 .react-calendar__navigation__arrow{
     display: none;
 }
-/* .react-calendar__navigation__label { */
+.react-calendar__navigation__label { 
     /* display: block; */
     /* width: 50%; */
-/* width: 1vw; */
+/* /* width: 1vw;  */
+}
 .react-calendar__navigation>* {
     background-color: white;
     border: none;
@@ -19,6 +20,5 @@
 .react-calendar__navigation {
     display: flex;
     flex-direction: column;
-    /* width: 50%; */
-    align-items: center;
-}
+    width: 50%;
+   align-items: center;}

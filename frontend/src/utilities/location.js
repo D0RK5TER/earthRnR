@@ -19,7 +19,6 @@ export function getAge(birth) {
     let year = birthYear - curYear;
     let month = birthMonth - curMonth;
     let day = birthDay - curDay;
-    console.log(year, month, day)
     age = (year * 364) + (month * 30) + day
 
     return age;
@@ -45,8 +44,20 @@ export const overThou = (num) => {
 }
 
 export const strToNum = (str) => {
-    if(str.includes('$')) str = str.slice(1)
+    if (str.includes('$')) str = str.slice(1)
     if (str.includes('.')) str = str.split('.')[0]
-    if(str.includes(',')) str = str.split(',').join('')
+    if (str.includes(',')) str = str.split(',').join('')
     return +str
+}
+let m = {
+    1: 'January',
+    2: 'Feburary',
+    3: 'March',
+    4: 'April', 5: 'May', 6: 'June', 7: 'July',
+    8: 'August', 9: 'September', 10: 'October',
+    11: 'November', 12: 'December'
+}
+export const dateMonthYear = (date) => {
+    date = new Date(date)
+    return `${m[date.getMonth()]} ${date.getFullYear()}`
 }

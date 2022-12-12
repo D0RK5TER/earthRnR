@@ -6,7 +6,8 @@ import { useParams } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import { getOneSpot } from '../../store/spots2';
 import { getAllReviews } from '../../store/reviews2';
-import { deciNum, overThou, strToNum, getAge } from '../../utilities/location';
+import ReviewCard from '../ReviewCard';
+import { deciNum, overThou, strToNum, getAge, dateMonthYear } from '../../utilities/location';
 // import CreateReviewForm from '../CreateReviewModal';
 import './OneSpotIndex.css'
 import './calendar.css'
@@ -58,19 +59,14 @@ const OneSpotIndex = () => {
 
   let buttonVis = true
   let spotimgs
-  let reviewsCont
+  // let reviewsCont
   let previewImage
   let onespotImages
   let ratingsneak = true
-  // if (theSpot?.id === undefined || thereviews === undefined || id === undefined) {
-  //   onespotImages = (<div> hey</div>)
-  // } else if (theSpot && theSpot?.id !== +id) {
-  //   theSpot = null
-  // }
-  // console.log(theSpot)
-  // theSpot = theSpot.id
-  // if (Object?.values(theSpot).length )
+
+
   if (theSpot !== undefined && theSpot[id]?.id === (+id) && thereviews && +id > 0) {
+
     theSpot = theSpot[+id]
     bookingsixnight = `${Math.floor(theSpot.price) * 6 > 1000 ?
       overThou(Math.floor(theSpot.price * 6)) :
@@ -82,7 +78,7 @@ const OneSpotIndex = () => {
       total = strToNum(bookingsixnight) + strToNum(cleaningfee) + strToNum(servicefee)
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
-    // console.log(spotimgs)
+
     while (spotimgs.length < 4) spotimgs.push({ url: quest })
     let [a, b, c, d] = spotimgs
     // console.log(previewImage)
@@ -98,7 +94,6 @@ const OneSpotIndex = () => {
         </div>
 
         <div id='smallcont'>
-
           <div id='smallcont1'>
             <div className='spotImage' id='spotimg1'>
               <img src={`${a.url}`} className='gridpics' key={a} alt={`${a.url}`} />
@@ -121,60 +116,10 @@ const OneSpotIndex = () => {
       </div >
 
     )
-    thereviews = Object.values(thereviews)
-    if (!thereviews.length) {
-      ratingsneak = false
-      reviewsCont = (
-        <div id='firsttimereview' key={theSpot.description}>
-          <h2> Be the first to review!</h2>
-        </div>
-      )
-    }
-    else {
-      if (thereviews.length) {
-        for (let x of thereviews) {
-          // console.log(x)
-          if (x.userId === user?.id) buttonVis = false
-        }
+    if (Object.values(thereviews).length) {
+      for (let x of Object.values(thereviews)) {
+        if (x.userId === user?.id) buttonVis = false
       }
-      if (!user?.id) buttonVis = false
-      reviewsCont =
-        Object.values(thereviews)?.map(
-          ({ id, stars, review, userId, createdAt, User, spotId }) => (
-            <div className='onereview single one' key={id + spotId + review}>
-
-              <div className='profilepicture reviewheader'>
-                <div className='profilepic reviewpic'>
-                  pic
-                </div>
-                <div className='profilename profileage'>
-                  <div className='reviewname'>
-                    {User?.firstName}
-                  </div>
-                  <div className='reviewage'>
-                    posted {new Date(createdAt).toDateString()}
-                  </div>
-                </div>
-                {userId === user?.id &&
-                  <OpenModalButton
-                    id='deletereview'
-                    buttonText="Delete"
-                    modalComponent={<DeleteReviewForm id={id} spotId={spotId} key={id + review} />}
-                  />
-                }
-              </div>
-              <div className='bottomhalf reviewbottom'>
-                <div className='reviewscore starscore'>
-                  {stars}/5
-                </div>
-                <div className='reviewreview onereview'>
-                  {review}
-                </div>
-              </div>
-
-            </div>
-          )
-        )
     }
 
   }
@@ -184,10 +129,7 @@ const OneSpotIndex = () => {
 
 
   useEffect(() => {
-    // if (!theSpot) {
     dispatch(getOneSpot(id)).then(() => dispatch(getAllReviews(id)))
-    // .catch((e)=>console.log(e))
-    // }
   }, [id, dispatch]) //took out id
 
 
@@ -484,8 +426,7 @@ const OneSpotIndex = () => {
               </div>}
 
               <div id='reviewsright'>
-                {ratingsneak && user?.id !== theSpot?.ownerId && buttonVis &&
-                  // <CreateReviewFormModal id={id} key={theSpot.id + theSpot.name} />
+                {user?.id !== theSpot?.ownerId && buttonVis &&
                   <OpenModalButton
                     id='createreviewbutt'
                     buttonText="Create a Review"
@@ -496,22 +437,7 @@ const OneSpotIndex = () => {
             </div>
 
             <div id='reviewscontbot'>
-              {ratingsneak ? reviewsCont : (
-                <div id='noreviews'>
-                  <div id='norevhead'>
-                    {reviewsCont}
-                  </div>
-                  <div id='hugebutton'>
-                    {user?.id !== theSpot?.ownerId && user?.id &&
-                      <OpenModalButton
-                        id='createreviewbutt'
-                        buttonText="Create a Review"
-                        modalComponent={<CreateReviewFormModal id={id} key={theSpot.id + theSpot.name} />}
-                      />}
-                  </div>
-                </div>
-              )}
-
+              {Object.values(thereviews).map(rev => <ReviewCard reviewO={rev} user={user} />)}
             </div>
           </div>
 

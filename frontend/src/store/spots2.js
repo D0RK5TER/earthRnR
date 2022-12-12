@@ -181,8 +181,6 @@ const loggedReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_ALL_SPOTS:
             newState.allspots = arrConvert(action.spots);
-
-
             return newState;
         case LOAD_ONE_SPOT:
             let spot = action.spot
