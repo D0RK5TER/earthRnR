@@ -10,6 +10,24 @@ import './OneSpotIndex.css'
 import star from '../../assets/star.png';
 import quest from '../../assets/quest.jpg';
 import propic from '../../assets/propic.png'
+import tsuper from '../../assets/traitsuper.png'
+import nophone from '../../assets/traitnophone.png'
+import calen from '../../assets/traitcalen.png'
+
+
+import amendcamera from '../../assets/amendcamera.png';
+import amendcart from '../../assets/amendcart.png';
+import amendcolor from '../../assets/amendcolor.png'
+import amendgift from '../../assets/amendgift.png'
+import amendheadphone from '../../assets/amendheadphone.png'
+import amendtemp from '../../assets/amendtemp.png'
+import amendwifi from '../../assets/amendwifi.png'
+import amendbell from '../../assets/amendbell.png'
+
+
+
+
+
 import CreateReviewFormModal from '../CreateReviewModal';
 import DeleteReviewForm from '../DeleteReviewModal';
 import OpenModalButton from "../OpenModalButton";
@@ -230,7 +248,7 @@ const OneSpotIndex = () => {
         <div>
           <div id='belowimg'>
 
-            <div id='belowheader'>
+            <div id='belowheader' className='belowimgleft'>
 
               <div id='hostspotinfo'>
                 <div id='hostnameheader'>
@@ -257,104 +275,166 @@ const OneSpotIndex = () => {
 
 
 
-                <div>
+                <div id='belowimagetext'>
                   <div id='spotfeatureslist'>
-                    Nemo enim ipsam
-                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                    eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
-                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
-                    velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-                    nulla pariatur?
-                  </div>
-                  <div id='spotsuperhost'>
-                    Nemo enim ipsam
-                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                    eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
-                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
-                    velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-                    nulla pariatur?
 
-                  </div>
-                  <div id='spotaircover'>
-                    Nemo enim ipsam
-                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                    eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
-                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
-                    velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-                    nulla pariatur?
-
-                  </div>
-                  <div id='spotdescription'>
-                    {theSpot.description}
-                  </div>
-                  <div id='spotsleepdesc'>
-                    Nemo enim ipsam
-                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                    eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
-                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
-                    velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-                    nulla pariatur?
-                  </div>
-                  <div id='spotamends'>
-                    Nemo enim ipsam
-                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                    eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
-                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
-                    velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-                    nulla pariatur?
-                  </div>
-                  <div id='spotbookingcalendar'>
-                    Calendar
-                    Calendar
-                    <br />
-                    Calendar
-                    <br />
-                    Calendar
-                    <br />
-                    Calendar
-                    <br />
-                    <br />
-                    Calendar
-                    <br /><br />
-                    Calendar
-                    <br /><br />
-                    Calendar
-                    <br /><br />
-                    Calendar
-                    <br /><br />
-                    Calendar
-                    <br />
-                  </div >
+                    <div id='traitlist1'>
+                      <img src={tsuper} alt='superhoss' />
+                      <div id='traitscol1'>
+                        <div id='traitscoltop1'>
+                          {`${theSpot.User.firstName} is a super host`}                        </div>
+                        <div id='traitscolbot1'>
+                          voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                          magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                        </div>
+                      </div>
+                    </div>
+                    <div id='traitlist2'>
+                      <img src={nophone} alt='nophonehere' />
+                      <div id='traitscol2'>
+                        <div id='traitscoltop2'>
+                          {`${theSpot.name} has no phone`}
+                        </div>
+                        <div id='traitscolbot2'>
+                          This is actually a good thing nowadays. sed quia consequuntur
+                          magni dolores eos qui ratione voluptatem sequi nesciunt.
+                        </div>
+                      </div>
+                    </div>
 
 
+
+                    <div id='traitlist3'>
+                      <img src={calen} alt='checkyoself' />
+                      <div id='traitscol3'>
+                        <div id='traitscoltop3'>
+                          {`${theSpot.name} has self check-in!`}
+                        </div>
+                        <div id='traitscolbot3'>
+                          Cause who actually wants to meet the hose nowadays? sed quia consequuntur
+                          magni dolores eos qui ratione voluptatem sequi nesciunt.
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div id='spotaircover'>
+                      <img id='earthinsure'
+                        src='https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg'
+                        alt='airinsurance stuff' />
+                      <div id='earthinsuredesc'>
+                        Every booking includes free protection from Host crazy antics, straight up lies
+                        , and other issues like not leaving the key where they said it was.
+                      </div>
+                    </div>
+
+                    <div id='spotdescription'>
+                      <h4>What this spot has to offer!</h4>
+                      {theSpot.description} is the spot description but it is not long enough. Need more Columns for
+                      doing it with goood lengthy randomized desc. For now, Cause who actually wants to meet the host nowadays? sed quia consequuntur
+                      magni dolores eos qui ratione voluptatem sequi nesciunt.
+                    </div>
+
+                    <div id='spotamenities'>
+                      <h3>What is included in your stay!</h3>
+
+                      <div id='spotamendicons'>
+                        <div id='spotamend1'>
+                          <div className='leftcon'>
+                            <img src={amendwifi} alt='amenditiecon' />
+                            Wifi - FTL speeds
+                          </div>
+                          <div className='leftcon'>
+                            <img src={amendheadphone} alt='amenditiecon' />
+                            Headphones are provided for some reason!
+                          </div>
+                          <div className='leftcon'>
+                            <img src={amendtemp} alt='amenditiecon' />
+                            I don't like paying for heat
+                          </div>
+                          <div className='leftcon'>
+                            <img src={amendbell} alt='amenditiecon' />
+                            We will provide prompt wakeup service every morning
+                          </div>
+
+                        </div>
+                        <div id='spotamend2'>
+                          <div className='rightcon'>
+                            <img src={amendcolor} alt='amenditiecon' />
+                            Art supplies provided
+                          </div>
+                          <div className='rightcon'>
+                            <img src={amendcart} alt='amenditiecon' />
+                            Free Shopping Cart rides every visit to the store
+                          </div>
+                          <div className='rightcon'>
+                            <img src={amendcamera} alt='amenditiecon' />
+                            We Are Watching
+                          </div>
+                          <div className='rightcon'>
+                            <img src={amendgift} alt='amenditiecon' />
+                            <p>Presents are sent to you to ensure good reviews!</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id='spotbookingcalendar'>
+                      Calendar
+                      Calendar
+                      <br />
+                      Calendar
+                      <br />
+                      Calendar
+                      <br />
+                      Calendar
+                      <br />
+                      <br />
+                      Calendar
+                      <br /><br />
+                      Calendar
+                      <br /><br />
+                      Calendar
+                      <br /><br />
+                      Calendar
+                      <br /><br />
+                      Calendar
+                      <br />
+                    </div >
+
+
+                  </div>
                 </div>
-              </div>
-
-
-
-              <div id='bookingcont'>
-
-                Bookings
               </div>
             </div>
 
-            <div id='jumpmark' style={{ marginBottom: '4em' }}></div>
+
+
+            <div id='bookingcont'>
+              <div id='navbarblock'>
+
+              </div>
+              <div id='bookingbody'>
+                <div id='priceheader'>
+
+                  <p>${Math.round(theSpot.price)} <p>night</p></p>
+
+                  <>
+                    Stars Reviews
+                  </>
+                </div>
+                
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+
           </div>
+          <div id='jumpmark' style={{ marginBottom: '4em' }}></div>
 
           <div id='reviewscont'>
 
