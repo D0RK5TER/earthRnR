@@ -170,21 +170,29 @@
 }
 
 #createreviewbutt:hover {
-    background-color: #e8e8e8;
-    text-decoration: none;
-    font-family: 'Bold';
-    height: 2em;
-    width: fit-content;
+    background-color: #e2153b;
+    /* text-decoration: none; */
+    /* font-family: 'Bold'; */
+    /* height: 2em; */
+    /* width: fit-content; */
 }
 
-
+#createreviewbutt> * {
+    margin-top: none;
+}
 #createreviewbutt {
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    width: 15vw;
-    height: 2em;
-    border-radius: 1em;
-    text-decoration: underline;
+    /* margin-top: ; */
     width: fit-content;
+    border: none;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: flex-start;
+    padding: .5em;
+    background-color: #ffa9b9;
+    border-radius: .7em;
+    box-sizing: border-box;
+    align-items: flex-start;
+    color: white;
+    /* margin-top: 1em; */
+    cursor: pointer;
 }

@@ -432,7 +432,7 @@ const OneSpotIndex = () => {
                 {user?.id !== theSpot?.ownerId && buttonVis &&
                   <OpenModalButton
                     id='createreviewbutt'
-                    buttonText="Create a Review"
+                    buttonText="Create a Review!"
                     modalComponent={<CreateReviewFormModal id={id} key={theSpot.id + theSpot.name} />}
                   />
                 }
