@@ -160,7 +160,7 @@ const OneSpotIndex = () => {
                 {theSpot.avgStarRating}
               </div>
             </div>
-            <div id='onespotreviews' onClick={(e) => { e.preventDefault(); history.push(`/${theSpot.id}#jumpmark`) }}>
+            <div id='onespotreviews' onClick={(e) => window.location.replace(`/${theSpot.id}#jumpmark`)}>
               <div id='onespotnumber'>
                 {theSpot.numReviews}
               </div>
@@ -440,7 +440,7 @@ const OneSpotIndex = () => {
             </div>
 
             <div id='reviewscontbot'>
-              {Object.values(thereviews).map(rev => <ReviewCard review={rev} user={user} place={place} id={id}/>)}
+              {Object.values(thereviews).map(rev => <ReviewCard review={rev} user={user} place={place} id={id} />)}
             </div>
           </div>
 

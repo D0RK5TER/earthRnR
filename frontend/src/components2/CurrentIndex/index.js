@@ -47,9 +47,9 @@ const CurrentIndex = () => {
     return reviewspots && user && myReviews && (
 
         <div id='currentcont'>
-            {jumpmark ?
-                window.location.replace(`/current${jumpmark}`)||window.scrollBy(0,-100)
-                : window.scrollTo(0, 0)}
+            {/* {jumpmark ?
+                window.location.replace(`/current${jumpmark}`)
+                : window.scrollTo(0, 0)} */}
             <h1>Welcome {user.firstName} </h1>
             <div id='currentinnercont'>
 
@@ -73,7 +73,7 @@ const CurrentIndex = () => {
                 <div id='myreviewscont'>
                     <h3>{user.firstName}'s Reviews</h3>
                     {myReviews && Object?.values(myReviews).map(rev =>
-                        <ReviewCard reviewO={rev} user={user} place={place} />
+                        <ReviewCard review={rev} user={user} place={place} id={rev.spotId} />
                     )}
                 </div>
             </div>

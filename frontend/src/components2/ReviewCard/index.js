@@ -15,12 +15,12 @@ function ReviewCard({ review, user, place, id }) {
     // const { id, stars, review, userId, createdAt, User, spotId, ReviewImages } = reviewO
     const history = useHistory()
     // console.log(review)
-    if (!review?.ReviewImages) return (
+    if (!review?.id) return (
         <div id='firsttimereview' >
             <h2> Be the first to review!</h2>
         </div>
     )
-    return review?.id &&(
+    return review?.id && (
         <div id={`review${review.id}`} className='onereview single one' >
 
             <div id='onespotreviewheader' className='profilepicture reviewheader'>

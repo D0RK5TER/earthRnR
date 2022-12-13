@@ -92,7 +92,7 @@ export const getMyReviews = () => async (dispatch) => {
 
 export const createReview = (reviewz) => async (dispatch) => {
     const { review, stars, id } = reviewz;
-    console.log(review)
+    // console.log(review)
     const response = await csrfFetch(`/api/spots/${id}/reviews`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
@@ -208,7 +208,7 @@ export const makeDeleteReview = (rev) => async (dispatch) => {
 
 // const arrConvert = (arr, obj) => {
 const arrAdd = (arr, oldstate) => {
-    console.log(oldstate, arr)
+    // console.log(oldstate, arr)
     for (let r of arr) oldstate[r.id] = r
     return oldstate
 }
