@@ -47,7 +47,16 @@ h1 {
 /* width: 60% ; */
 
 /* } */
+#currentcardwrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+}
+#currentspotcard {
+    height: fit-content;
+}
 #currentbutt:hover {
+    font-family: 'Light';
     background-color:  #e93b5b;
 }
 #currentbutt   {
@@ -85,18 +94,19 @@ h1 {
 
     width: 50vw;
     justify-content: space-between;
+    align-items: flex-start;
+
 }
 #currentinnercont {
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-width: 80vw;
-text-align: center;
-
+align-items: flex-start;
+width: 100%;
 }
 #currentcont {
     display: flex;
     flex-direction: column;
-align-items: center;
-    width: 100%;
+align-items: flex-start;
+    width: 90vw;
 }

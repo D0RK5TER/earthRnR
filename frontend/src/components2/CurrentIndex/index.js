@@ -70,7 +70,9 @@ const CurrentIndex = () => {
                                         modalComponent={<EditSpotFormModal idx={spot.id} />}
                                     />
                                 </div>
+                                <div id='currentcardwrap'>
                                 <SpotCard spot={spot} user={user} key={`${spot.id}`} place={place} />
+                                </div >
                             </div>
                         )}
                 </div>
