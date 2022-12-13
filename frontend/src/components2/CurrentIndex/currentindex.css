@@ -51,6 +51,7 @@ h1 {
     display: flex;
     flex-direction: row;
     /* width: fit-content; */
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 #currentreviews>*{
@@ -60,6 +61,8 @@ h1 {
 #currentspots {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+
     width: 50vw;
     justify-content: space-between;
 }
