@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getMySpots } from '../../store/spots2';
 import { getMyReviews, makeChangeReview } from '../../store/reviews2';
 import SpotCard from '../SpotCard'
-import ReviewCard from './ReviewCard';
+import ReviewCard from '../ReviewCard';
 import './currentindex.css'
 import { pathURL } from '../../utilities/location'
 
@@ -24,6 +24,7 @@ const CurrentIndex = () => {
     let mySpots = useSelector(state => state.spots.myspots)
     let myReviews = useSelector(state => state.reviews.myreviews)
     let reviewspots = useSelector(state => state.spots)
+    let jumpmark = history.location.hash
 
     // function reviewSpotfunc(arr, obj) {
     // if (arr?.length && obj) {
@@ -42,9 +43,13 @@ const CurrentIndex = () => {
         dispatch(getMySpots())
         dispatch(getMyReviews())
     }, [dispatch])
-
+    // console.log(history.location.hash)
     return reviewspots && user && myReviews && (
+
         <div id='currentcont'>
+            {jumpmark ?
+                window.location.replace(`/current${jumpmark}`)||window.scrollBy(0,-100)
+                : window.scrollTo(0, 0)}
             <h1>Welcome {user.firstName} </h1>
             <div id='currentinnercont'>
 
@@ -68,7 +73,7 @@ const CurrentIndex = () => {
                 <div id='myreviewscont'>
                     <h3>{user.firstName}'s Reviews</h3>
                     {myReviews && Object?.values(myReviews).map(rev =>
-                        <ReviewCard rev={rev} key={`${rev.id}`} place={place} />
+                        <ReviewCard reviewO={rev} user={user} place={place} />
                     )}
                 </div>
             </div>

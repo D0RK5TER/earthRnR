@@ -1,12 +1,9 @@
-
-
-
 #headerright {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 
 }
 
@@ -14,10 +11,9 @@ width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between
-
 }
 
-#onespotreview {
+.onereview.single.one {
     display: flex;
     flex-direction: column;
     width: 30vw;
@@ -25,4 +21,3 @@ width: 100%;
     margin-left: 5em;
     padding: 1em;
 }
-

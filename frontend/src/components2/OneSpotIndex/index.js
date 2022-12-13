@@ -122,7 +122,7 @@ const OneSpotIndex = () => {
         if (x.spotId !== theSpot.id) continue
         if (x.userId === user?.id) buttonVis = false
       }
-      thereviews = Object.values(thereviews).filter(x=>x.spotId===theSpot.id)
+      thereviews = Object.values(thereviews).filter(x => x.spotId === theSpot.id)
     }
 
   }
@@ -160,7 +160,7 @@ const OneSpotIndex = () => {
                 {theSpot.avgStarRating}
               </div>
             </div>
-            <div id='onespotreviews' onClick={(e) => { e.preventDefault(); window.location.replace(`/${theSpot.id}#jumpmark`) }}>
+            <div id='onespotreviews' onClick={(e) => { e.preventDefault(); history.push(`/${theSpot.id}#jumpmark`) }}>
               <div id='onespotnumber'>
                 {theSpot.numReviews}
               </div>

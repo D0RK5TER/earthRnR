@@ -21,7 +21,7 @@ function ReviewCard({ reviewO, user, place }) {
     )
 
     return (
-        <div id='onespotreview' className='onereview single one' key={id + spotId + review}>
+        <div id={`review${id}`} className='onereview single one' key={id + spotId + review}>
 
             <div id='onespotreviewheader' className='profilepicture reviewheader'>
                 <div id='hostpicture'>
@@ -36,8 +36,8 @@ function ReviewCard({ reviewO, user, place }) {
                             {dateMonthYear(createdAt)}
                         </div>
                     </div>
-                    {userId === user?.id && place !== '/current' && (
-                        <button onClick={() => history.push('/current')}>Your Review</button>
+                    {userId === user?.id && !place.includes('/current') && (
+                        <button onClick={() => history.push(`/current#review${id}`)}>Your Review</button>
                     )
                     }
                     {userId === user?.id && place === '/current' &&
@@ -52,6 +52,10 @@ function ReviewCard({ reviewO, user, place }) {
                             buttonText="Delete"
                             modalComponent={<DeleteReviewForm id={id} />}
                         />
+                    }
+                    {userId === user?.id && place === '/current' &&
+                        <button onClick={() => history.push(`/${spotId}`)}>Spot</button>
+
                     }
                     <OpenModalButton
                         id='deletereview'

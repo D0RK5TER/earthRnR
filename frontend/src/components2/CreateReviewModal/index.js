@@ -25,7 +25,6 @@ function CreateReviewFormModal({ id }) {
         let reviewz = { id, review, stars }
         // console.log(reviewz)
         return dispatch(createReview(reviewz))
-            // .then(dispatch(getOneSpot(id))) trying to get rating to update 
             .then(closeModal)
             .catch(async (res) => {
                 if (res.ok) {
@@ -33,10 +32,9 @@ function CreateReviewFormModal({ id }) {
                     if (data.message) setErrors([data.message])
                     // dispatch(getAllReviews(id))
                 }
-                else setErrors(['something went wrong please try again!'])
+                // else setErrors(['something went wrong please try again!'])
                 // console.log(data, '!!!!!')
                 // else setErrors([res]);
-
             }
             )
         // .then(setShowModal(false))
@@ -85,6 +83,8 @@ function CreateReviewFormModal({ id }) {
                         value={review}
                         onChange={(e) => setReview(e.target.value)}
                         placeholder='100 Character Max'
+                        title="Review must be between 20 and 200"
+                        minLength={20}
                         maxLength={100}
                         required
                     />
