@@ -13,22 +13,25 @@ import './editreview.css'
 // import * as reviewsAction from '../../store/reviews';
 
 
-function EditReviewForm(id) {
+function EditReviewForm({id, review}) {
 
     const { closeModal } = useModal();
     // onespot ?   :
-    let rev = useSelector(state => state.reviews.allreviews[id.id])
+    // let rev = useSelector(state => state.reviews.allreviews[id.id])
     const dispatch = useDispatch();
-    const [review, setReview] = useState(rev.review)
-    const [stars, setStars] = useState(rev.stars);
+    const [reviewedit, setReviewedit] = useState(review.review)
+    const [stars, setStars] = useState(review.stars);
     const [errors, setErrors] = useState([]);
     // console.log(id)
-    id = id.id
+    // id = id.id
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setErrors([]);
-        let reviewz = { id, review, stars, spotId: rev.spotId, type: true }
+        let reviewz = { id,  review }
+        reviewz.review.stars = stars
+        reviewz.review.review = reviewedit
+        // let reviewz = { id, review, stars, spotId: rev.spotId, type: true }
         // console.log(reviewz)
         return dispatch(makeChangeReview(reviewz))
             .then(closeModal)
@@ -85,8 +88,8 @@ function EditReviewForm(id) {
                     Please tell us what changed
                     <textarea id='reviewtextinput'
                         type="text"
-                        value={review}
-                        onChange={(e) => setReview(e.target.value)}
+                        value={reviewedit}
+                        onChange={(e) => setReviewedit(e.target.value)}
                         placeholder='100 Character Max'
                         maxLength={100}
                         required

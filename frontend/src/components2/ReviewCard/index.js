@@ -40,7 +40,7 @@ function ReviewCard({ review, user, place, id }) {
                         <OpenModalButton
                             id='deletereview'
                             buttonText="Edit"
-                            modalComponent={<EditReviewForm id={id} />}
+                            modalComponent={<EditReviewForm id={id} review={review}  />}
                         />}
                     {review.userId === user?.id && place !== '/current' &&
                         <OpenModalButton

@@ -11,7 +11,7 @@ function DeleteReviewForm({ id, review }) {
     const { closeModal } = useModal();
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
-    const history = useHistory()
+    // const history = useHistory()
     // console.log(review)
     const handleSubmit = async (e) => {
         e.preventDefault()
