@@ -60,17 +60,19 @@ const CurrentIndex = () => {
                                 <div id='currentedit'>
 
                                     <OpenModalButton
-                                        className='currentbutt'
+                                        id='currentbutt'
                                         buttonText="Add Photos!"
                                         modalComponent={<SpotImageForm idx={spot.id} spotname={spot.name} />}
                                     />
                                     <OpenModalButton
-                                        className='currentbutt'
+                                        id='currentbutt'
                                         buttonText="Edit/Delete"
                                         modalComponent={<EditSpotFormModal idx={spot.id} />}
                                     />
                                 </div>
+                                <div id='currentcardwrap'>
                                 <SpotCard spot={spot} user={user} key={`${spot.id}`} place={place} />
+                                </div >
                             </div>
                         )}
                 </div>
