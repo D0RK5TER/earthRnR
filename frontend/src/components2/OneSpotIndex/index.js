@@ -440,7 +440,7 @@ const OneSpotIndex = () => {
             </div>
 
             <div id='reviewscontbot'>
-              {Object.values(thereviews).map(rev => <ReviewCard reviewO={rev} user={user} place={place} />)}
+              {Object.values(thereviews).map(rev => <ReviewCard review={rev} user={user} place={place} id={id}/>)}
             </div>
           </div>
 

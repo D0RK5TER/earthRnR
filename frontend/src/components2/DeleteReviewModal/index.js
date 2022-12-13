@@ -7,19 +7,19 @@ import { makeDeleteReview } from '../../store/reviews2';
 
 import './DeleteReviewForm.css'
 
-function DeleteReviewForm({ id, spotId }) {
+function DeleteReviewForm({ id, review }) {
     const { closeModal } = useModal();
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
     const history = useHistory()
-
-    const handleSubmit = (e) => {
-        let obj
+    // console.log(review)
+    const handleSubmit = async (e) => {
         e.preventDefault()
         setErrors([]);
-        history.location.pathname !== '/current' ?
-            obj = { id, spotId } : obj = { id, spotId, place: true }
-        return dispatch(makeDeleteReview(obj))
+            // console.log(review)
+
+        let reviewz = { id,  review }
+        return dispatch(makeDeleteReview(reviewz))
             .then(closeModal)
             .catch(async (res) => {
                 const data = await res.json()
@@ -27,25 +27,23 @@ function DeleteReviewForm({ id, spotId }) {
             })
     }
     return (
-        <div id='deletespot' >
-            <div id='deleteheader'>
+        <form onSubmit={handleSubmit} id='deletespot' >
 
+            <div id='deleteheader'>
                 <div id='delexitbutt' onClick={() => closeModal()}>
                     x
                 </div>
                 <div id="signupmainheader">Are you sure?</div>
-
             </div>
-            <form onSubmit={handleSubmit} id='deletespotform' >
-                <ul id='deleteerror'>
-                    {errors.map((error, idx) => (
-                        <li className='errors' key={error + idx}>{error}</li>))}
-                </ul>
-                <span>
-                    <button type="submit" id="deletebuttsubmit">Confirm</button>
-                </span>
-            </form>
-        </div>
+            <ul id='deleteerror'>
+                {errors.map((error, idx) => (
+                    <li className='errors' key={error + idx}>{error}</li>))}
+            </ul>
+            <div>
+                <button type="submit" id="deletebuttsubmit">Confirm</button>
+            </div>
+
+        </form>
     );
 }
 

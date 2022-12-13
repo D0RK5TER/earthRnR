@@ -179,19 +179,24 @@ export const makeChangeReview = (rev) => async (dispatch) => {
 // }
 
 
-export const makeDeleteReview = ({ id, spotId, place }) => async (dispatch) => {
-    const response = await csrfFetch(`/api/reviews/${id}`, {
+export const makeDeleteReview = (rev) => async (dispatch) => {
+    const { review,  id } = rev;
+    const response = await csrfFetch(`/api/reviews/${review.id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-        const data = await response.json();
-        if (place) await dispatch(getMyReviews())
-        else {
-            await dispatch(getOneSpot(spotId))
-            await dispatch(getAllReviews(spotId))
-        }
+        let data = await response.json()
+        await dispatch(getOneSpot(id))
+        await dispatch(getAllReviews(id))
         return data
+        // const data = await response.json();
+        // if (place) await dispatch(getMyReviews())
+        // else {
+        //     await dispatch(getOneSpot(spotId))
+        //     await dispatch(getAllReviews(spotId))
+        // }
+        // return data
     }
 }
 ////REDUCER
@@ -217,8 +222,6 @@ const reviewsReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_ALL_REVIEWS:
             let revs = action.reviews
-            let old = { ...newState?.allreviews }
-            old ? newState.allreviews = arrAdd(revs, old) :
                 newState.allreviews = arrConvert(revs)
             return newState;
         case ADD_ONE_REVIEW:

@@ -11,17 +11,17 @@ import propic from '../../assets/propic.png'
 import { dateMonthYear } from '../../utilities/location';
 import './reviewcard.css'
 
-function ReviewCard({ reviewO, user, place }) {
-    const { id, stars, review, userId, createdAt, User, spotId, ReviewImages } = reviewO
+function ReviewCard({ review, user, place, id }) {
+    // const { id, stars, review, userId, createdAt, User, spotId, ReviewImages } = reviewO
     const history = useHistory()
-    if (!id) return (
+    // console.log(review)
+    if (!review?.ReviewImages) return (
         <div id='firsttimereview' >
             <h2> Be the first to review!</h2>
         </div>
     )
-
-    return (
-        <div id={`review${id}`} className='onereview single one' key={id + spotId + review}>
+    return review?.id &&(
+        <div id={`review${review.id}`} className='onereview single one' >
 
             <div id='onespotreviewheader' className='profilepicture reviewheader'>
                 <div id='hostpicture'>
@@ -30,44 +30,40 @@ function ReviewCard({ reviewO, user, place }) {
                 <div id='headerright'>
                     <div className='profilename profileage'>
                         <div className='reviewname'>
-                            {User?.firstName}
+                            {review.User?.firstName}
                         </div>
                         <div className='reviewage'>
-                            {dateMonthYear(createdAt)}
+                            {dateMonthYear(review.createdAt)}
                         </div>
                     </div>
-                    {userId === user?.id && !place.includes('/current') && (
-                        <button onClick={() => history.push(`/current#review${id}`)}>Your Review</button>
-                    )
-                    }
-                    {userId === user?.id && place === '/current' &&
+                    {review.userId === user?.id && place !== '/current' &&
                         <OpenModalButton
                             id='deletereview'
                             buttonText="Edit"
                             modalComponent={<EditReviewForm id={id} />}
                         />}
-                    {userId === user?.id && place === '/current' &&
+                    {review.userId === user?.id && place !== '/current' &&
                         <OpenModalButton
                             id='deletereview'
                             buttonText="Delete"
-                            modalComponent={<DeleteReviewForm id={id} />}
+                            modalComponent={<DeleteReviewForm id={id} review={review} />}
                         />
                     }
-                    {userId === user?.id && place === '/current' &&
-                        <button onClick={() => history.push(`/${spotId}`)}>Spot</button>
+                    {review.userId === user?.id && place === '/current' &&
+                        <button onClick={() => history.push(`/${review.spotId}`)}>Spot</button>
 
                     }
                     <OpenModalButton
                         id='deletereview'
                         buttonText="Photos"
-                        modalComponent={<ReviewImagesIndex idx={id} ReviewImages={ReviewImages} />}
+                        modalComponent={<ReviewImagesIndex idx={id} ReviewImages={review.ReviewImages} />}
                     />
 
                 </div>
             </div>
             <div className='bottomhalf reviewbottom'>
                 <div className='reviewreview onereview'>
-                    {review}
+                    {review.review}
                 </div>
             </div>
 
