@@ -47,9 +47,29 @@ h1 {
 /* width: 60% ; */
 
 /* } */
+#currentbutt:hover {
+    background-color:  #e93b5b;
+}
+#currentbutt   {
+    width: 9vw;
+    height: 1.84vw;
+    background-color: #ff486a;
+    border-radius: .7em;
+    align-items: flex-start;
+    color: white;
+    font-family: 'Li';
+    border: none;
+    cursor: pointer;
+    border-radius: 3vw;
+    margin-bottom: 1vw;
+    
+
+}
 #currentedit {
     display: flex;
     flex-direction: row;
+    background-color: white;
+
     /* width: fit-content; */
     flex-wrap: wrap;
     justify-content: space-around;
