@@ -9,34 +9,24 @@ import OpenModalButton from "../OpenModalButton";
 
 import { getAge } from '../../utilities/location';
 
-function SpotCard({ spot, user }) {
+function SpotCard({ spot, user, place }) {
     const { previewImage, id, description,
         avgRating, createdAt, city, state,
         ownerId, price } = spot
     // console.log(user)
     const history = useHistory()
 
-    // console.log()
-
     if (!spot) return null;
     if (spot.previewImage === 'No preview') spot.previewImage = quest
-
-    // if (spa.previewImage === 'No preview') spa.previewImage = quest    
-    // else {
-    //     for (let spa in spots) {
-    //         if (spa.previewImage === 'No preview') spa.previewImage = quest
-    //     }
-    // }
-
 
     return (
 
         <div id='wholespotcard'
-        onClick={() => history.push(`/${id}`) || window.scrollTo(0, 0)}
-        className='spotcard wholething'>
+            className='spotcard wholething'>
             <div id={`SpotCardImgWrapper${id}`}
-                className='piccontwrap allimg previmgwrap'>
-
+                className='piccontwrap allimg previmgwrap'
+                onClick={() => history.push(`/${id}`) || window.scrollTo(0, 0)}
+            >
                 <img key={`SpotCardImg${id}`}
                     className='imgprev allimg previmg'
                     src={`${previewImage}`}
@@ -47,7 +37,9 @@ function SpotCard({ spot, user }) {
 
             <div className='spotinfocont' >
 
-                <div className='spotinfoleft' >
+                <div className='spotinfoleft'
+                    onClick={() => history.push(`/${id}`) || window.scrollTo(0, 0)}
+                >
                     <span id={`SpotCardp1${id}`} >
                         {city}     ,   {state}
                     </span>
@@ -72,11 +64,10 @@ function SpotCard({ spot, user }) {
                         {avgRating !== 0 ? avgRating : '0.00'}
                     </div>
                     <div className='editbuttspotcard'>
-                        {user.id === ownerId &&
-                        
+                        {user.id === ownerId && place === '/current' &&
                             <OpenModalButton
                                 id='editspotbut'
-                                buttonText="Edit"
+                                buttonText="Edit/Delete"
                                 modalComponent={<EditSpotFormModal idx={id} />}
                             />
                         }

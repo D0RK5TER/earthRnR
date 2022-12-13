@@ -144,7 +144,7 @@ export const makeChangeSpot = (obj) => async (dispatch) => {
         }),
     });
     if (response.ok) {
-        place ? dispatch(getMySpots()) : dispatch(getAllSpots())
+        place ? dispatch(getMySpots()) : dispatch(getAllSpots()) 
     }
 };
 

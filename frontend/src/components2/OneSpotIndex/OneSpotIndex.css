@@ -558,20 +558,11 @@
     cursor: pointer;
 }
 
-.profilepicture.reviewheader {
+/* .profilepicture.reviewheader {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-}
-
-.onereview.single.one {
-    display: flex;
-    flex-direction: column;
-    width: 30vw;
-    height: 10vw;
-    margin-left: 5em;
-    padding: 1em;
-}
+} */
 
 #reviewscontbot {
     display: flex;

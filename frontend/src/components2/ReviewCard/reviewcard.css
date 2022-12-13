@@ -1,0 +1,28 @@
+
+
+
+#headerright {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+
+}
+
+#onespotreviewheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+
+}
+
+#onespotreview {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 10vw;
+    margin-left: 5em;
+    padding: 1em;
+}
+

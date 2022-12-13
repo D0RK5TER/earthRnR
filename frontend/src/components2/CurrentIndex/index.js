@@ -2,19 +2,24 @@
 
 import React, { useEffect } from 'react';
 // import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { getMySpots } from '../../store/spots2';
 import { getMyReviews, makeChangeReview } from '../../store/reviews2';
 import SpotCard from '../SpotCard'
 import ReviewCard from './ReviewCard';
 import './currentindex.css'
+import { pathURL } from '../../utilities/location'
+
 import SpotImageForm from '../CreateSpotImageModal';
 import OpenModalButton from '../OpenModalButton';
 
 
 const CurrentIndex = () => {
     const dispatch = useDispatch();
-    // const { current } = useParams();
+    let history = useHistory()
+    let place = pathURL(history)
     let user = useSelector(state => state.session.user)
     let mySpots = useSelector(state => state.spots.myspots)
     let myReviews = useSelector(state => state.reviews.myreviews)
@@ -50,14 +55,12 @@ const CurrentIndex = () => {
                     <div id='myspotscont'>
                         {mySpots && Object?.values(mySpots).map(spot =>
                             <div className='currentspotimage'>
-
                                 <OpenModalButton
                                     id='spotimagebut'
                                     buttonText="Add Photos!"
                                     modalComponent={<SpotImageForm idx={spot.id} spotname={spot.name} />}
                                 />
-
-                                <SpotCard spot={spot} user={user} key={`${spot.id}`} />
+                                <SpotCard spot={spot} user={user} key={`${spot.id}`} place={place} />
                             </div>
                         )}
                     </div>
@@ -65,7 +68,7 @@ const CurrentIndex = () => {
                 <div id='myreviewscont'>
                     <h3>{user.firstName}'s Reviews</h3>
                     {myReviews && Object?.values(myReviews).map(rev =>
-                        <ReviewCard rev={rev} key={`${rev.id}`} />
+                        <ReviewCard rev={rev} key={`${rev.id}`} place={place} />
                     )}
                 </div>
             </div>

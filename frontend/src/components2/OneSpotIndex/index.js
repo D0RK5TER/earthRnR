@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import { getOneSpot } from '../../store/spots2';
 import { getAllReviews } from '../../store/reviews2';
 import ReviewCard from '../ReviewCard';
-import { deciNum, overThou, strToNum, getAge, dateMonthYear } from '../../utilities/location';
+import { deciNum, overThou, strToNum, getAge, pathURL } from '../../utilities/location';
 // import CreateReviewForm from '../CreateReviewModal';
 import './OneSpotIndex.css'
 import './calendar.css'
@@ -45,7 +45,8 @@ const OneSpotIndex = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [value, onChange] = useState(new Date());
-
+  let history = useHistory()
+  let place = pathURL(history)
   let user = useSelector(state => state.session.user)
   let theSpot = useSelector(state => state.spots.onespot)
   let thereviews = useSelector(state => state.reviews.allreviews)
@@ -118,8 +119,10 @@ const OneSpotIndex = () => {
     )
     if (Object.values(thereviews).length) {
       for (let x of Object.values(thereviews)) {
+        if (x.spotId !== theSpot.id) continue
         if (x.userId === user?.id) buttonVis = false
       }
+      thereviews = Object.values(thereviews).filter(x=>x.spotId===theSpot.id)
     }
 
   }
@@ -437,7 +440,7 @@ const OneSpotIndex = () => {
             </div>
 
             <div id='reviewscontbot'>
-              {Object.values(thereviews).map(rev => <ReviewCard reviewO={rev} user={user} />)}
+              {Object.values(thereviews).map(rev => <ReviewCard reviewO={rev} user={user} place={place} />)}
             </div>
           </div>
 

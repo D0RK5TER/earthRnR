@@ -16,7 +16,8 @@ import './editreview.css'
 function EditReviewForm(id) {
 
     const { closeModal } = useModal();
-    const rev = useSelector(state => state.reviews.myreviews[id.id])
+    // onespot ?   :
+    let rev = useSelector(state => state.reviews.allreviews[id.id])
     const dispatch = useDispatch();
     const [review, setReview] = useState(rev.review)
     const [stars, setStars] = useState(rev.stars);
@@ -27,7 +28,7 @@ function EditReviewForm(id) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setErrors([]);
-        let reviewz = { id, review, stars }
+        let reviewz = { id, review, stars, spotId: rev.spotId, type: true }
         // console.log(reviewz)
         return dispatch(makeChangeReview(reviewz))
             .then(closeModal)

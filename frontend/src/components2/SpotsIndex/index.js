@@ -1,11 +1,12 @@
 
 import { useEffect } from 'react';
-// import { NavLink, useHistory } from 'react-router-dom';
+import {  useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 // import { getAllSpots, loadSpots } from '../../store/session';
 // import EditSpotFormModal from '../EditSpotFormModal';
 import { getAllSpots } from '../../store/spots2';
 import SpotCard from '../SpotCard';
+import {pathURL} from '../../utilities/location'
 // import OneSpotIndex from '../OneSpotIndex'
 // import quest from '../../assets/quest.jpg';
 // import star from '../../assets/star.png';
@@ -22,6 +23,8 @@ function SpotsIndex() {
     const dispatch = useDispatch()
     let user = useSelector(state => state.session.user)
     let spots = useSelector(state => state.spots.allspots);
+    let history = useHistory()
+    let place = pathURL(history)
 
     user ? user = user : user = { id: 0 }
     useEffect(() => {
@@ -35,7 +38,7 @@ function SpotsIndex() {
 
         <div id='maindisplay' >
             {spots && Object.values(spots).map(spot =>
-                <SpotCard spot={spot} user={user} key={`${spot.id}`} />
+                <SpotCard spot={spot} user={user} place={place} />
             )}
         </div >
 

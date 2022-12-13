@@ -19,6 +19,9 @@ function ReviewImagesIndex({ ReviewImages, idx }) {
     const [errors, setErrors] = useState([]);
     // const history = useHistory()
     const imgs = ReviewImages
+    if(!imgs.length) return (
+        <h1>No Images</h1>
+    )
     const handleSubmit = (e) => {
         // let obj
         e.preventDefault()
@@ -27,10 +30,7 @@ function ReviewImagesIndex({ ReviewImages, idx }) {
         // console.log(idx)
         // console.log(imgs)
         // .then(setShowModal(false))
-
         //IMAGES COMING SOON!!
-
-
         // history.location.pathname !== '/current' ?
         //     obj = { id, spotId } : obj = { id, spotId, place: true }
         // return dispatch(makeReviewImages(obj))

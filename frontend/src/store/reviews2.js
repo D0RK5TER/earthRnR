@@ -1,10 +1,10 @@
-import { csrfFetch } from './csrf';
+import { csrfFetch, restoreCSRF } from './csrf';
 import { getMySpots, getOneSpot } from './spots2';
 const LOAD_ALL_REVIEWS = 'reviews2/loadAllReviews'
 const LOAD_ONE_REVIEW = 'reviews2/loadOneReview'
 const LOAD_MY_REVIEWS = 'reviews2/loadMyReviews'
 
-const MAKE_REVIEW = 'reviews/makeReview'
+const ADD_ONE_REVIEW = 'reviews/addOneReview'
 const CHANGE_REVIEW = 'reviews/changeReview'
 
 //////// ACTIONS /////////// ACTIONS ////////////
@@ -30,10 +30,10 @@ export const loadMyReviews = (myreviews) => {
     };
 };
 
-export const makeReview = (review) => {
+export const addOneReview = (review) => {
     //rather do LOAD MY REVIEWS here // by id
     return {
-        type: MAKE_REVIEW,
+        type: ADD_ONE_REVIEW,
         review
     };
 };
@@ -92,7 +92,7 @@ export const getMyReviews = () => async (dispatch) => {
 
 export const createReview = (reviewz) => async (dispatch) => {
     const { review, stars, id } = reviewz;
-    // console.log(review)
+    console.log(review)
     const response = await csrfFetch(`/api/spots/${id}/reviews`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
@@ -121,10 +121,62 @@ export const makeChangeReview = (rev) => async (dispatch) => {
     });
     if (response.ok) {
         const data = await response.json();
-       await dispatch(getMyReviews())
+        await dispatch(getMyReviews())
         return data
     }
+
+    // else {
+    //     const response = await csrfFetch(`/api/reviews/${id}`, {
+    //         method: 'DELETE',
+    //         headers: { 'Content-Type': 'application/json' },
+    //     });
+    //     if (response.ok) {
+    //         const data = await response.json();
+    //         dispatch(getOneSpot(spotId))
+    //         await dispatch(makeChangeReview([rev, 'delete']))
+    //         return response
+    //     }
+    // }
 };
+
+// export const makeDeleteSpot = (obj2) => async (dispatch) => {
+//     const { id, place } = obj2
+//     const response = await csrfFetch(`/api/reviews/${id}`, {
+//         method: 'DELETE',
+//         headers: { 'Content-Type': 'application/json' },
+//     });
+//     if (response.ok) {
+//         place ? dispatch(getAllReviews()) : dispatch(getAllSpots())
+//     }
+// }
+
+//////////
+// export const makeDeleteReview = (rev) => async (dispatch) => {
+//     const { id, spotId } = rev;
+
+//     const response = await csrfFetch(`/api/reviews/${id}`, {
+//         method: 'DELETE',
+//         headers: { 'Content-Type': 'application/json' },
+//     });
+//     if (response.ok) {
+//         // const data = await response.json();
+//         // const data = await response.json();
+//         let data = await response.json()
+//         // dispatch(getOneSpot(spotId))
+//         dispatch(getMyReviews()).then(getAllReviews(spotId))
+//         // return response
+//         // await getAllReviews(spotId)
+//         // dispatch(getAllReviews(spotId))
+//         // return await dispatch(getOneSpot(spotId))
+//         // await dispatch(getAllReviews(spotId))
+//         // .then(dispatch(getOneSpot(spotId)))
+
+//         // return await dispatch(getOneSpot(spotId))
+//         // await dispatch(makeChangeReview(['delete', id]))
+//         // await dispatch(makeChangeReview(['delete', id]))
+
+//     }
+// }
 
 
 export const makeDeleteReview = ({ id, spotId, place }) => async (dispatch) => {
@@ -142,40 +194,59 @@ export const makeDeleteReview = ({ id, spotId, place }) => async (dispatch) => {
         return data
     }
 }
-
 ////REDUCER
 
 
 
 
+// const arrConvert = (arr, obj) => {
+const arrAdd = (arr, oldstate) => {
+    console.log(oldstate, arr)
+    for (let r of arr) oldstate[r.id] = r
+    return oldstate
+}
 const arrConvert = (arr) => {
-    // console.log(arr)
-    // if (!arr) return
     let newallState = {}
-    for (let sp of arr) newallState[sp?.id] = sp
+    for (let sp of arr) newallState[sp.id] = sp
     return newallState
 }
-
 const initialState = {}
 const reviewsReducer = (state = initialState, action) => {
     let newState = { ...state };
+    // console.log(newState)
     switch (action.type) {
         case LOAD_ALL_REVIEWS:
-
-            newState.allreviews = arrConvert(action.reviews);
+            let revs = action.reviews
+            let old = { ...newState?.allreviews }
+            old ? newState.allreviews = arrAdd(revs, old) :
+                newState.allreviews = arrConvert(revs)
             return newState;
-        case LOAD_ONE_REVIEW:
-            newState.onereview = action.review
+        case ADD_ONE_REVIEW:
+            let review = action.review
+            newState.allreviews ? newState.allreviews[review.id] = review :
+                newState.allreviews = { [review.id]: review }
+            newState.myreviews ? newState.myreviews[review.id] = review :
+                newState.myreviews = { [review.id]: review }
             return newState;
         case LOAD_MY_REVIEWS:
-            // console.log(a)
-            newState.myreviews = arrConvert(action.myreviews);
+            let myrevs = action.myreviews
+            let allold = { ...newState?.allreviews }
+            newState.myreviews = arrConvert(myrevs);
+            newState.allreviews = arrAdd(myrevs, allold)
             return newState;
         case CHANGE_REVIEW:
             let edited = action.review
-            // newState.allreviews[edited.id] = edited
-            newState.myreviews[edited.id] = edited
-            return newState;
+            // console.log(edited, 'klsdfksdnfksjdnf')
+            if (edited[1] === 'edit') {
+                newState.allreviews[edited[0].id] = edited
+                newState.myreviews[edited[0].id] = edited
+                return newState;
+            } else {
+                newState.allreviews[edited[0].id] = {}
+                newState.myreviews[edited[0].id] = {}
+
+                return newState
+            }
         default:
             return state;
     }
