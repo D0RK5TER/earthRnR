@@ -61,8 +61,8 @@ function ReviewCard({ review, user, place, id }) {
 
                 </div>
             </div>
-            <div className='bottomhalf reviewbottom'>
-                <div className='reviewreview onereview'>
+            <div id='bottomhalf' className='bottomhalf reviewbottom'>
+                <div id='cardreviewbot'className='reviewreview onereview'>
                     {review.review}
                 </div>
             </div>

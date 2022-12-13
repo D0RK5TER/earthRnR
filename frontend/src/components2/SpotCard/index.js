@@ -3,9 +3,9 @@
 import { useHistory } from 'react-router-dom';
 // import { useSelector, useDispatch } from "react-redux";
 import star from '../../assets/star.png';
-import EditSpotFormModal from '../EditSpotFormModal';
+// import EditSpotFormModal from '../EditSpotFormModal';
 import quest from '../../assets/quest.jpg';
-import OpenModalButton from "../OpenModalButton";
+// import OpenModalButton from "../OpenModalButton";
 
 import { getAge } from '../../utilities/location';
 
@@ -64,13 +64,13 @@ function SpotCard({ spot, user, place }) {
                         {avgRating !== 0 ? avgRating : '0.00'}
                     </div>
                     <div className='editbuttspotcard'>
-                        {user.id === ownerId && place === '/current' &&
+                        {/* {user.id === ownerId && place === '/current' &&
                             <OpenModalButton
                                 id='editspotbut'
                                 buttonText="Edit/Delete"
                                 modalComponent={<EditSpotFormModal idx={id} />}
                             />
-                        }
+                        } */}
                     </div>
                 </div>
 

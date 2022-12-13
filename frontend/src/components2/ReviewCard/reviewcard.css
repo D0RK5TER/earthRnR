@@ -1,3 +1,27 @@
+#cardreviewbot {
+    font-family: 'Li';
+    font-size: 1.2vw;
+}
+
+#bottomhalf {
+    padding-top: 1vw;
+
+}
+#hostpicture>img {
+    height: 4vw;
+    width: 4vw;
+    border: 1px solid black;
+    border-radius: 50%;
+    box-sizing: content-box;
+    object-fit: cover;
+}
+#hostpicture {
+    height: 4vw;
+    width: 4vw;
+    border-radius: 50%;
+}
+
+
 #headerright {
     display: flex;
     flex-direction: row;

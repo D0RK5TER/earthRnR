@@ -22,7 +22,7 @@
         url("../../assets/popbold.ttf") format("truetype");
 }
 
-
+/* 
 
 #currentcont {
     display: flex;
@@ -41,22 +41,39 @@ h1 {
     flex-direction: row;
     -ms-flex-align: center;
     /* align-items: center; */
-}
+/* }
 #myspotsbigcont {
-text-align: center;
-width: 60% ;
+/* text-align: center; */
+/* width: 60% ; */
 
-}
-#myspotscont {
-    width: 100%;
+/* } */
+#currentedit {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: column;
+    flex-direction: row;
+    /* width: fit-content; */
+    justify-content: space-around;
+}
+#currentreviews>*{
+    margin-left: 0;
 
 }
-#currentuserspots h3 {
-    margin-bottom: 0;
+#currentspots {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    justify-content: space-between;
 }
-#myreviewscont {
-    width: 40%;
+#currentinnercont {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 80vw;
+text-align: center;
+
+}
+#currentcont {
+    display: flex;
+    flex-direction: column;
+align-items: center;
+    width: 100%;
 }

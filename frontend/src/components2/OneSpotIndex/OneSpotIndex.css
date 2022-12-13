@@ -412,23 +412,23 @@
     border-bottom: 2px solid #797979;
 } */
 
-#hostpicture>img {
+/* #hostpicture>img {
     height: 4vw;
     width: 4vw;
     border: 1px solid black;
     border-radius: 50%;
     box-sizing: content-box;
     object-fit: cover;
-}
+} */
 
-#hostpicture {
+/* #hostpicture {
     height: 4vw;
     width: 4vw;
     border: 1px solid black;
     border-radius: 50%;
     box-sizing: content-box;
     object-fit: cover;
-}
+} */
 
 #hostnameheader {
     display: inline-flex;

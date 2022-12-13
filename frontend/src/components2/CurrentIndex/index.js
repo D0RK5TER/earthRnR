@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 // import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import EditSpotFormModal from '../EditSpotFormModal';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { getMySpots } from '../../store/spots2';
@@ -53,25 +54,28 @@ const CurrentIndex = () => {
             <h1>Welcome {user.firstName} </h1>
             <div id='currentinnercont'>
 
-                <div id='myspotsbigcont'>
-                    <div id='currentuserspots'>
-                        <h3>{user.firstName}'s Spots</h3>
-                    </div>
-                    <div id='myspotscont'>
+                <div id='currentspots'>            
                         {mySpots && Object?.values(mySpots).map(spot =>
-                            <div className='currentspotimage'>
-                                <OpenModalButton
-                                    id='spotimagebut'
-                                    buttonText="Add Photos!"
-                                    modalComponent={<SpotImageForm idx={spot.id} spotname={spot.name} />}
-                                />
+                            <div id='currentspotcard'>
+                                <div id='currentedit'>
+
+                                    <OpenModalButton
+                                        className='currentbutt'
+                                        buttonText="Add Photos!"
+                                        modalComponent={<SpotImageForm idx={spot.id} spotname={spot.name} />}
+                                    />
+                                    <OpenModalButton
+                                        className='currentbutt'
+                                        buttonText="Edit/Delete"
+                                        modalComponent={<EditSpotFormModal idx={spot.id} />}
+                                    />
+                                </div>
                                 <SpotCard spot={spot} user={user} key={`${spot.id}`} place={place} />
                             </div>
                         )}
-                    </div>
                 </div>
-                <div id='myreviewscont'>
-                    <h3>{user.firstName}'s Reviews</h3>
+
+                <div id='currentreviews'>
                     {myReviews && Object?.values(myReviews).map(rev =>
                         <ReviewCard review={rev} user={user} place={place} id={rev.spotId} />
                     )}
