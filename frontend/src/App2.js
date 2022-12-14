@@ -40,12 +40,15 @@ function App() {
                     <Route exact path='/current'>
                         <CurrentIndex />
                     </Route>
-                    <Route exact path='/:id'>
+                    <Route exact path='/spot/:id'>
                         <OneSpotIndex />
                     </Route>
 
                     <Route>
-                        <h1 style={{ padding: '2em' }}>Sorry! Out Of Luck!</h1>
+                        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                        <h1 style={{ paddingTop: '5vw', fontFamily: 'Bold'}}>Sorry! Out Of Luck!</h1>
+                        <h3 style={{ paddingTop: '8vw'}}>Sorry, we could not find what you are looking for</h3>
+                        </div>
                     </Route>
 
                 </Switch>

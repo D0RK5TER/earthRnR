@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import EditSpotFormModal from '../EditSpotFormModal';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { getMySpots } from '../../store/spots2';
+import { getMySpots, getOneSpot } from '../../store/spots2';
 import { getMyReviews, makeChangeReview } from '../../store/reviews2';
 import SpotCard from '../SpotCard'
 import ReviewCard from '../ReviewCard';
@@ -25,7 +25,7 @@ const CurrentIndex = () => {
     let mySpots = useSelector(state => state.spots.myspots)
     let myReviews = useSelector(state => state.reviews.myreviews)
     let reviewspots = useSelector(state => state.spots)
-    let jumpmark = history.location.hash
+    // let imgs
 
     // function reviewSpotfunc(arr, obj) {
     // if (arr?.length && obj) {
@@ -54,27 +54,28 @@ const CurrentIndex = () => {
             <h1>Welcome {user.firstName} </h1>
             <div id='currentinnercont'>
 
-                <div id='currentspots'>            
-                        {mySpots && Object?.values(mySpots).map(spot =>
-                            <div id='currentspotcard'>
-                                <div id='currentedit'>
+                <div id='currentspots'>
+                    {mySpots && Object?.values(mySpots).map(spot =>
+                        <div id='currentspotcard'>
+                            <div id='currentedit'>
 
-                                    <OpenModalButton
-                                        id='currentbutt'
-                                        buttonText="Add Photos!"
-                                        modalComponent={<SpotImageForm idx={spot.id} spotname={spot.name} />}
-                                    />
-                                    <OpenModalButton
-                                        id='currentbutt'
-                                        buttonText="Edit/Delete"
-                                        modalComponent={<EditSpotFormModal idx={spot.id} />}
-                                    />
-                                </div>
-                                <div id='currentcardwrap'>
-                                <SpotCard spot={spot} user={user} key={`${spot.id}`} place={place} />
-                                </div >
+                                <OpenModalButton
+                                    id='currentbutt'
+                                    buttonText="Add Photos!"
+                                    onButtonClick={()=>dispatch(getOneSpot(spot.id))}
+                                    modalComponent={<SpotImageForm idx={spot.id} spot={spot.previewImage} />}
+                                />
+                                <OpenModalButton
+                                    id='currentbutt'
+                                    buttonText="Edit/Delete"
+                                    modalComponent={<EditSpotFormModal idx={spot.id} />}
+                                />
                             </div>
-                        )}
+                            <div id='currentcardwrap'>
+                                <SpotCard spot={spot} user={user} key={`${spot.id}`} place={place} />
+                            </div >
+                        </div>
+                    )}
                 </div>
 
                 <div id='currentreviews'>

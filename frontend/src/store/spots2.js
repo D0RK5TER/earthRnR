@@ -69,7 +69,7 @@ export const getOneSpot = (id) => async (dispatch) => {
     if (response.ok) {
         const data = await response.json();
         // console.log(data)
-        dispatch(loadOneSpot(data));
+        await dispatch(loadOneSpot(data));
         return data
 
     }
@@ -82,24 +82,51 @@ export const getMySpots = () => async (dispatch) => {
     });
     if (response.ok) {
         const data = await response.json();
-        return dispatch(loadMySpots(data));
+        await dispatch(loadMySpots(data));
+        return data
     }
 }
 export const createSpotImage = (spotimg) => async (dispatch) => {
     // console.log(spotimg)
-    const { url, preview, id } = spotimg
-    const response = await csrfFetch(`/api/spots/${id}/images`, {
-        method: "POST",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            url,
-            preview: false,
-        }),
-    });
+    const { url, preview, id, deleteId } = spotimg
+    if (preview) {
+        const response1 = await csrfFetch(`/api/spot-images/${deleteId}`, {
+            method: "DELETE",
+            headers: { 'Content-Type': 'application/json' },
 
-    if (response.ok) {
-        let data = await response.json()
-        return dispatch(getMySpots())
+        });
+        if (response1.ok) {
+            const response = await csrfFetch(`/api/spots/${id}/images`, {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    url,
+                    preview
+                }),
+            });
+
+            if (response.ok) {
+                let data = await response.json()
+                await dispatch(getMySpots())
+                return data
+            }
+        }
+    }
+    else {
+        const response = await csrfFetch(`/api/spots/${id}/images`, {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                url,
+                preview
+            }),
+        });
+
+        if (response.ok) {
+            let data = await response.json()
+            await dispatch(getMySpots())
+            return data
+        }
     }
 }
 
@@ -146,8 +173,8 @@ export const makeChangeSpot = (obj) => async (dispatch) => {
     if (response.ok) {
         // let data = await response.json()
 
-        place ? await dispatch(getMySpots()) : await dispatch(getAllSpots()) 
-        
+        place ? await dispatch(getMySpots()) : await dispatch(getAllSpots())
+
     }
 };
 

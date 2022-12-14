@@ -1,13 +1,14 @@
 
 // import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-// import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import star from '../../assets/star.png';
 // import EditSpotFormModal from '../EditSpotFormModal';
 import quest from '../../assets/quest.jpg';
 // import OpenModalButton from "../OpenModalButton";
 
 import { getAge } from '../../utilities/location';
+import { getOneSpot } from '../../store/spots2';
 
 function SpotCard({ spot, user, place }) {
     const { previewImage, id, description,
@@ -15,17 +16,16 @@ function SpotCard({ spot, user, place }) {
         ownerId, price } = spot
     // console.log(user)
     const history = useHistory()
-
     if (!spot) return null;
     if (spot.previewImage === 'No preview') spot.previewImage = quest
-
+    
     return (
 
         <div id='wholespotcard'
             className='spotcard wholething'>
             <div id={`SpotCardImgWrapper${id}`}
                 className='piccontwrap allimg previmgwrap'
-                onClick={() => history.push(`/${id}`) || window.scrollTo(0, 0)}
+                onClick={() => history.push(`/spot/${id}`) || window.scrollTo(0, 0)}
             >
                 <img key={`SpotCardImg${id}`}
                     className='imgprev allimg previmg'
@@ -38,7 +38,7 @@ function SpotCard({ spot, user, place }) {
             <div className='spotinfocont' >
 
                 <div className='spotinfoleft'
-                    onClick={() => history.push(`/${id}`) || window.scrollTo(0, 0)}
+                    onClick={() => history.push(`/spot/${id}`) || window.scrollTo(0, 0)}
                 >
                     <span id={`SpotCardp1${id}`} >
                         {city}     ,   {state}
