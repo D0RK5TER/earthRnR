@@ -35,10 +35,10 @@ function DeleteReviewForm({ id, review }) {
                 </div>
                 <div id="signupmainheader">Are you sure?</div>
             </div>
-            <ul id='deleteerror'>
+            {/* <ul id='deleteerror'>
                 {errors.map((error, idx) => (
                     <li className='errors' key={error + idx}>{error}</li>))}
-            </ul>
+            </ul> */}
             <div>
                 <button type="submit" id="deletebuttsubmit">Confirm</button>
             </div>

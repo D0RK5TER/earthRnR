@@ -17,7 +17,7 @@ function EditReviewForm({id, review}) {
 
     const { closeModal } = useModal();
     // onespot ?   :
-    // let rev = useSelector(state => state.reviews.allreviews[id.id])
+    let spot = useSelector(state => state.spots.onespot)
     const dispatch = useDispatch();
     const [reviewedit, setReviewedit] = useState(review.review)
     const [stars, setStars] = useState(review.stars);
@@ -53,11 +53,14 @@ function EditReviewForm({id, review}) {
     return (
 
         <form onSubmit={handleSubmit} id='createreviewform' >
-            <div id='editreviewcont'>
-                <div id='createexitbutt' onClick={() => closeModal()}>
-                    x
+           <div id='signupheader'>
+                <div id='loginexitbutt' onClick={() => closeModal()}>
+                    <div>x</div>
                 </div>
-                <div id="signupmainheader">Update your Review</div>
+                <div id='signupheadertext'>
+                    <div id="signupmainheader">{`Welcome to ${spot[id].name}!`}</div>
+                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? 'Rate Your Stay!' : errors.map((error, idx) => <>{error}<br/></>)}</div>
+                </div>
             </div>
 
             <div id='ratestay'>
@@ -96,11 +99,11 @@ function EditReviewForm({id, review}) {
                     />
                 </label>
             </div>
-            <ul id='errorscreaterev'>
+            {/* <ul id='errorscreaterev'>
                 {errors.map((error, idx) => (
                     <li className='errors' key={error + idx}>{error}</li>
                 ))}
-            </ul>
+            </ul> */}
             <div>
                 <button type="submit" id='createrevbutton'>Submit</button>
             </div>

@@ -37,6 +37,7 @@
     height: 6vw;
     border-bottom: 2px solid #e6e6e6;
     font-size: 1.6vw;
+    margin-top: 1vw;
 }
 #signupsubheader {
     display: flex;

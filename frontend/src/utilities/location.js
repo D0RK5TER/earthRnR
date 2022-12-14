@@ -17,9 +17,9 @@ export function getAge(birth) {
     const birthYear = birthDate.getFullYear();
     const birthMonth = birthDate.getMonth();
     const birthDay = birthDate.getDay();
-    let year = birthYear - curYear;
-    let month = birthMonth - curMonth;
-    let day = birthDay - curDay;
+    let year = curYear - birthYear;
+    let month = curMonth - birthMonth;
+    let day = curDay - birthDay;
     age = (year * 364) + (month * 30) + day
 
     return age;

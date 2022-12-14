@@ -52,20 +52,18 @@ function SpotForm({ setShowModal }) {
 
     return user && (
         <form onSubmit={handleSubmit} id='createspotform' >
-            <div id='createheader'>
-                <div id='createheadersub'>
-                    <div id='createexitbutt' onClick={() => closeModal()}>
-                        x
-                    </div>
-                    <div id='createheadertext'>
-                        <div id="createmainheader">Welcome {user.firstName}!</div>
-                        <div id='createsubheader'> EarthRnR your home</div>
-                    </div>
+            <div id='signupheader'>
+                <div id='loginexitbutt' onClick={() => closeModal()}>
+                    <div>x</div>
+                </div>
+                <div id='signupheadertext'>
+                    <div id="signupmainheader">Welcome {user.firstName}!</div>
+                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? 'EarthRnR your home!' : errors.map((error, idx) => <>{error}<br/></>)}</div>
                 </div>
             </div>
-            <ul>
+            {/* <ul>
                 {errors.map((error, idx) => <li className='errors' key={error + idx}>{error}</li>)}
-            </ul>
+            </ul> */}
             <div id='createformcont'>
                 <div id='nameblock'>
                     Name of Spot
