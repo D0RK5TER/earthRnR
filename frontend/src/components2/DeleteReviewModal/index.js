@@ -16,9 +16,9 @@ function DeleteReviewForm({ id, review }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setErrors([]);
-            // console.log(review)
+        // console.log(review)
 
-        let reviewz = { id,  review }
+        let reviewz = { id, review }
         return dispatch(makeDeleteReview(reviewz))
             .then(closeModal)
             .catch(async (res) => {
@@ -28,17 +28,15 @@ function DeleteReviewForm({ id, review }) {
     }
     return (
         <form onSubmit={handleSubmit} id='deletespot' >
-
-            <div id='deleteheader'>
-                <div id='delexitbutt' onClick={() => closeModal()}>
-                    x
+            <div id='signupheader'>
+                <div id='loginexitbutt' onClick={() => closeModal()}>
+                    <div>x</div>
                 </div>
-                <div id="signupmainheader">Are you sure?</div>
+                <div id='signupheadertext'>
+                    <div id="signupmainheader">Are You Sure?</div>
+                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? 'Rate Your Stay!' : errors.map((error, idx) => <>{error}<br /></>)}</div>
+                </div>
             </div>
-            {/* <ul id='deleteerror'>
-                {errors.map((error, idx) => (
-                    <li className='errors' key={error + idx}>{error}</li>))}
-            </ul> */}
             <div>
                 <button type="submit" id="deletebuttsubmit">Confirm</button>
             </div>

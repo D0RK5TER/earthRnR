@@ -2,12 +2,13 @@
 
 
 import { useHistory } from 'react-router-dom';
+
 import EditReviewForm from '../EditReviewForm';
 import OpenModalButton from "../OpenModalButton";
 import ReviewImagesIndex from '../ReviewImagesModal';
 import DeleteReviewForm from '../DeleteReviewModal';
+
 import propic from '../../assets/propic.png'
-// import EditReviewForm from '../EditReviewForm'
 import { dateMonthYear } from '../../utilities/location';
 import './reviewcard.css'
 

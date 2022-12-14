@@ -11,7 +11,7 @@ import { useModal } from '../../context/Modal';
 
 function CreateReviewFormModal({ id }) {
     const { closeModal } = useModal();
-    const spot = useSelector(state=>state.spots.onespot)
+    const spot = useSelector(state => state.spots.onespot)
     const dispatch = useDispatch();
     const [review, setReview] = useState('')
     const [stars, setStars] = useState(0);
@@ -23,24 +23,18 @@ function CreateReviewFormModal({ id }) {
         e.preventDefault()
         setErrors([]);
         let reviewz = { id, review, stars }
-        // console.log(reviewz)
+
         return dispatch(createReview(reviewz))
             .then(closeModal)
             .catch(async (res) => {
                 if (res.ok) {
                     const data = await res.json()
                     if (data.message) setErrors([data.message])
-                    // dispatch(getAllReviews(id))
                 }
-                // else setErrors(['something went wrong please try again!'])
-                // console.log(data, '!!!!!')
-                // else setErrors([res]);
             }
             )
-        // .then(setShowModal(false))
     }
 
-    // console.log({ idxx, review, stars })
     return (
         <form onSubmit={handleSubmit} id='createreviewform' >
             <div id='signupheader'>
@@ -49,7 +43,7 @@ function CreateReviewFormModal({ id }) {
                 </div>
                 <div id='signupheadertext'>
                     <div id="signupmainheader">{`Welcome to ${spot[id].name}!`}</div>
-                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? 'Rate Your Stay!' : errors.map((error, idx) => <>{error}<br/></>)}</div>
+                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? 'Rate Your Stay!' : errors.map((error, idx) => <>{error}<br /></>)}</div>
                 </div>
             </div>
             <div id='ratestay'>

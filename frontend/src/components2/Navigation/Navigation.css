@@ -242,14 +242,10 @@
   margin-bottom: 1vw;
   justify-content: space-around;
   background-color: white;
-  /* justify-self: flex-start; */
   border-bottom: .525px solid #d6d6d6;
   width: 100%;
   height: 5.5vw;
   border-bottom-style: ridge;
   margin-top: 0px;
-  /* margin-right: 10vw; */
-  /* align-items: center; */
-  /* align-self: flex-start; */
-  z-index: 1;
+
 }

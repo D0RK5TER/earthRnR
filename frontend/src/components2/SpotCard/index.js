@@ -1,14 +1,14 @@
 
 // import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 import star from '../../assets/star.png';
 // import EditSpotFormModal from '../EditSpotFormModal';
 import quest from '../../assets/quest.jpg';
 // import OpenModalButton from "../OpenModalButton";
 
 import { getAge } from '../../utilities/location';
-import { getOneSpot } from '../../store/spots2';
+// import { getOneSpot } from '../../store/spots2';
 
 function SpotCard({ spot, user, place }) {
     const { previewImage, id, description,

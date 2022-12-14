@@ -1,8 +1,4 @@
 
-// import React, { useState } from 'react';
-// import { Modal } from '../../context/Modal';
-// import SignUpForm from './SignUpForm';
-// import '../Navigation/Navigation.css'
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from '../../store/session2';
@@ -47,13 +43,11 @@ function SignUpForm() {
                 </div>
                 <div id='signupheadertext'>
                     <div id="signupmainheader">Welcome to EarthRnR!</div>
-                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? ' Sign Up Today!' : errors.map((error, idx) => <>{error}<br/></>)}</div>
-                    {/* {errors.map((error, idx) => <div className='errors' key={error + idx}>{error}</div>)} */}
+                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? ' Sign Up Today!' : errors.map((error, idx) => <>{error}<br /></>)}</div>
+
                 </div>
             </div>
-            {/* <ul>
-                {errors.map((error, idx) => <li className='errors' key={error + idx}>{error}</li>)}
-            </ul> */}
+
             <div id='signupformcont'>
                 <label className="signuplabel" id='signuptop'>
                     <input
@@ -133,7 +127,7 @@ function SignUpForm() {
                 </label>
             </div>
             <div id='submitbuttwrap'>
-            <button id='signupsubmitbutton' type="submit" style={{ marginTop: '1em' }} >Sign Up</button>
+                <button id='signupsubmitbutton' type="submit" style={{ marginTop: '1em' }} >Sign Up</button>
             </div>
         </form>
     );

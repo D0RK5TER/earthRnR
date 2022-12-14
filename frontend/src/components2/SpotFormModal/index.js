@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import { Modal } from '../../context/Modal';
-// import SpotForm from './SpotForm';
 import { useModal } from '../../context/Modal';
 // import { makeChangeSpot, makeDeleteSpot } from '../../store/spots2';
 import { createSpot } from '../../store/spots2';
@@ -61,9 +59,6 @@ function SpotForm({ setShowModal }) {
                     <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? 'EarthRnR your home!' : errors.map((error, idx) => <>{error}<br/></>)}</div>
                 </div>
             </div>
-            {/* <ul>
-                {errors.map((error, idx) => <li className='errors' key={error + idx}>{error}</li>)}
-            </ul> */}
             <div id='createformcont'>
                 <div id='nameblock'>
                     Name of Spot

@@ -1,30 +1,9 @@
 
-// import React, { useState } from 'react';
-// import { Modal } from '../../context/Modal';
-// import EditSpotForm from './EditSpotForm';
-// import './EditSpotForm.css'
-
-// function EditSpotFormModal(idx) {
-//     const [showModal, setShowModal] = useState(false);
-//     // const user = useSelector(state => state.session.user.id)
-//     return (
-//         <>
-//             <button id='editspotbut' onClick={() => setShowModal(true)}>Edit Spot!</button>
-//             {showModal && (
-//                 <Modal onClose={() => setShowModal(false)}>
-//                     <EditSpotForm idx={idx} setShowModal={setShowModal} />
-//                 </Modal>
-//             )}
-//         </>
-//     );
-// }
-
-// export default EditSpotFormModal;
-import { useModal } from '../../context/Modal';
-
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from 'react-router-dom';
+
+import { useModal } from '../../context/Modal';
 import { makeChangeSpot, makeDeleteSpot } from '../../store/spots2';
 // import { changeSpot } from '../../store/logged';
 import '../SignUpForm/SignUpForm.css'
@@ -44,9 +23,9 @@ function EditSpot({ idx, setShowModal }) {
     history.location.pathname !== '/current' ?
         spot = spots[id] : spot = myspots[id]
     let addmark = spot?.address?.split('#')
-    console.log(spot.address)
+    // console.log(spot.address)
     let v = addmark[1] ? addmark[1] : ''
-    console.log(v)
+    // console.log(v)
     const [address, setAddress] = useState(addmark[0])
     const [apt, setApt] = useState(addmark[1] ? addmark[1] : '')
     const [city, setCity] = useState(spot.city);
@@ -72,7 +51,6 @@ function EditSpot({ idx, setShowModal }) {
 
         if (act) {
             return dispatch(makeDeleteSpot(obj))
-                // .then(setShowModal(false))
                 .then(closeModal)
                 .catch(async (res) => {
                     const data = await res?.json()
@@ -82,7 +60,6 @@ function EditSpot({ idx, setShowModal }) {
         }
         else {
             return dispatch(makeChangeSpot(obj))
-                // .then(setShowModal(false))
                 .then(closeModal)
                 .catch(async (res) => {
                     const data = await res.json()

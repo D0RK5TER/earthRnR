@@ -10,7 +10,7 @@ import globe from '../../assets/globe.png'
 // import { pathURL } from "../../utilities/location";
 import { getSessionUser } from '../../store/session2';
 // import { getAllSpots } from '../../store/spots2';
-import PaginationForm from '../PaginationModal/PaginationForm';
+import PaginationForm from '../PaginationModal';
 // import { useHistory } from 'react-router-dom';
 // import { Modal } from '../../context/Modal';
 // import LoginForm from '../LoginFormModal/LoginForm';
