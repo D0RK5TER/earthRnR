@@ -56,20 +56,31 @@ function LoginForm() {
     }
     return (
         <form onSubmit={handleSubmit} id='loginform' >
-            <div id="loginheader">
+            {/* <div id="loginheader">
                 <div id='loginexitbutt' onClick={() => closeModal()}>
                     <div>x</div>
                 </div>
                 <div>
                     Login
                 </div>
+            </div> */}
+            
+            <div id='signupheader'>
+                <div id='loginexitbutt' onClick={() => closeModal()}>
+                    <div>x</div>
+                </div>
+                <div id='signupheadertext'>
+                    <div id="signupmainheader">Welcome to EarthRnR!</div>
+                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? ' Sign Up Today!' : errors.map((error, idx) => <>{error}</>)}</div>
+                    {/* {errors.map((error, idx) => <div className='errors' key={error + idx}>{error}</div>)} */}
+                </div>
             </div>
-            <ul style={{ margin: '0' }}>
+            {/* <ul style={{ margin: '0' }}>
                 {errors.map((error, idx) => (
                     <li className='errors' key={error + idx}>
                         {error}</li>
                 ))}
-            </ul>
+            </ul> */}
             <h3>Welcome to EarthRnR!</h3>
             <label className="loginlabel">
                 <input

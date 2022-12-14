@@ -37,7 +37,7 @@ function SignUpForm() {
             //check for need
             // .then(() => setShowModal(false))
         }
-        else return setErrors(['Confirm Password field must be the same as the Password field']);
+        else return setErrors(["Password field's must match!"]);
     };
 
     return (
@@ -48,7 +48,7 @@ function SignUpForm() {
                 </div>
                 <div id='signupheadertext'>
                     <div id="signupmainheader">Welcome to EarthRnR!</div>
-                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? ' Sign Up Today!' : errors.map((error, idx) => <>{error}</>)}</div>
+                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? ' Sign Up Today!' : errors.map((error, idx) => <>{error}<br/></>)}</div>
                     {/* {errors.map((error, idx) => <div className='errors' key={error + idx}>{error}</div>)} */}
                 </div>
             </div>
@@ -133,7 +133,9 @@ function SignUpForm() {
                     Sign Up for exclusive email offers!
                 </label>
             </div>
+            <div id='submitbuttwrap'>
             <button id='signupsubmitbutton' type="submit" style={{ marginTop: '1em' }} >Sign Up</button>
+            </div>
         </form>
     );
 }
