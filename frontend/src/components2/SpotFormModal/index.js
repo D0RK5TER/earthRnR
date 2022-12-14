@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useModal } from '../../context/Modal';
 // import { makeChangeSpot, makeDeleteSpot } from '../../store/spots2';
 import { createSpot } from '../../store/spots2';
+import quest from '../../assets/quest.jpg';
+
 // function SpotFormModal() {
 //     const [showModal, setShowModal] = useState(false);
 
@@ -30,7 +32,7 @@ function SpotForm({ setShowModal }) {
     const dispatch = useDispatch();
     const history = useHistory()
     const { closeModal } = useModal();
-
+    const [apt, setApt] = useState("")
     const [address, setAddress] = useState("")
     const [city, setCity] = useState("");
     const [state, setStats] = useState("");
@@ -45,6 +47,8 @@ function SpotForm({ setShowModal }) {
         e.preventDefault();
         setErrors([]);
 
+        if (apt.length > 0) address += apt
+        //for apt might not work
         return dispatch(createSpot({
             address, city, state, country,
             name, description, price, latt
@@ -66,104 +70,140 @@ function SpotForm({ setShowModal }) {
     return user && (
         <form onSubmit={handleSubmit} id='createspotform' >
             <div id='createheader'>
-                <div id='createexitbutt' onClick={() => closeModal()}>
-                    x
-                </div>
-                <div id='createheadertext'>
-                    <div id="createmainheader">Welcome {user.firstName}!</div>
-                    <span id='createsubheader'> EarthRnR your home</span>
+                <div id='createheadersub'>
+                    <div id='createexitbutt' onClick={() => closeModal()}>
+                        x
+                    </div>
+                    <div id='createheadertext'>
+                        <div id="createmainheader">Welcome {user.firstName}!</div>
+                        <div id='createsubheader'> EarthRnR your home</div>
+                    </div>
                 </div>
             </div>
             <ul>
                 {errors.map((error, idx) => <li className='errors' key={error + idx}>{error}</li>)}
             </ul>
             <div id='createformcont'>
-
-                <label className="createlabel">
+                <div id='nameblock'>
+                    A descriptive name for your spot!
                     <input
-                        type="text"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                        placeholder='Address'
-                        pattern='^[0-9]+\s{1}.+'
-                        title="Address must be in correct format e.g. '11 California St.'"
-                        required
-                    />
-                </label>
-                <label className="createlabel">
-                    <input
-                        type="text"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                        placeholder='City'
-                        required
-                    />
-                </label>
-                <label className="createlabel">
-                    <input
-                        type="text"
-                        value={state}
-                        onChange={(e) => setStats(e.target.value)}
-                        placeholder='State   e.g "CA"'
-                        minLength='2'
-                        maxLength='2'
-                        pattern='^[A-Z]{2}$'
-                        title="Two Capital Letters Please"
-                        required
-                    />
-                </label>
-                <label className="createlabel">
-                    <input
-                        type="text"
-                        value={country}
-                        onChange={(e) => setCountry(e.target.value)}
-                        placeholder='Country'
-                        required
-                    />
-                </label>
-                <label className="createlabel">
-                    <input
+                        id='nameblockinput'
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder='Name'
+                        placeholder='Name Your Spot!'
                         required
                     />
-                </label>
-                <label className="createlabel">
-                    <input
-                        type="text"
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
-                        placeholder='Description'
-                        maxLength='45'
-                        required
-                    />
-                </label>
-                <label className="createlabel">
-                    <input
-                        type="url"
-                        value={latt}
-                        onChange={(e) => setLatt(e.target.value)}
-                        placeholder='Image Url'
-                        required
-                    />
-                </label>
-                <label className="createlabel">
-                    <input
-                        type="number"
-                        value={price}
-                        onChange={(e) => setPrice(e.target.value)}
-                        placeholder='Price'
-                        max={10000}
-                        min={20}
-                        title='Must be between 20 and 10,000'
-                        required
-                    />
-                </label>
+                </div>
+                <p id='addressheader'>Please put a valid US address</p>
+                <div id='addressblock'>
+                    <div id='addressblocktop'>
+                        <input
+                            id='blockaddress'
+                            type="text"
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
+                            placeholder='Address'
+                            pattern='^[0-9]+\s{1}.+'
+                            title="Address must be in correct format e.g. '11 California St.'"
+                            required
+                        />
+                        <input
+                            id='blockapt'
+                            type="text"
+                            value={apt}
+                            onChange={(e) => setApt(e.target.value)}
+                            placeholder='Apt' />
+                    </div>
+                    <div id='addressblockbottom'>
+                        <input
+                            id='blockcity'
+
+                            type="text"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                            placeholder='City'
+                            required
+                        />
+
+                        <input
+                            id='blockstate'
+                            type="text"
+                            value={state}
+                            onChange={(e) => setStats(e.target.value)}
+                            placeholder='State'
+                            minLength='2'
+                            maxLength='2'
+                            pattern='^[A-Z]{2}$'
+                            title="Two Capital Letters Please"
+                            required
+                        />
+
+                        <input
+                            id='blockcountry'
+                            type="text"
+                            value={country}
+                            onChange={(e) => setCountry(e.target.value)}
+                            placeholder='Country'
+                            required
+                        />
+
+                    </div>
+                </div>
+                <div id='descriptionpriceblock'>
+                    <div id='descriptionblock'>
+
+                        <div id='despricecontleft'>
+                            Description
+                            <textarea
+                                id='descblock'
+                                type={"textarea"}
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
+                                placeholder='Description'
+                                maxLength={'255'}
+                                minLength={'30'}
+                                required
+                            />
+                        </div>
+                        <div className="creatediv">
+                            Add an Image to your Spot!
+                            <input
+                                id='urlblock'
+                                type="url"
+                                value={latt}
+                                onChange={(e) => setLatt(e.target.value)}
+                                placeholder='Image Url'
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div id='priceblock'>
+                        <div id='pricetop'>
+                            Price
+                            <input
+                                id='priceinputblock'
+                                type="integer"
+                                value={price}
+                                onChange={(e) => setPrice(e.target.value)}
+                                placeholder='$'
+                                max={10000}
+                                min={20}
+                                title='Must be between 20 and 10,000'
+                                required
+                            />
+                        </div>
+                        <div id='createspotimgcont'>
+                            Preview Image
+                            <img src={latt.length ? `${latt}` : quest} alt='sampimg' id='createspotimg' />
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div id='submitbuttcont'>
             <button type="submit" id='createsubmitbutton'>Create</button>
-        </form>
+            </div>
+        </form >
     );
 }
 
