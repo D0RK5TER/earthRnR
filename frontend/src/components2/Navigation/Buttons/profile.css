@@ -40,6 +40,10 @@
     margin-top: .5vw;
 }
 
+#ddcurrentcont {
+    margin-top: 1vw;
+}
+
 /* .profile-dropdown.ddprofile>*:hover {
     /* width: 200%; */
 /* width: 100%; */
@@ -49,16 +53,15 @@
 
 
 
-#ddloggedin button {
+/* #ddloggedin button {
     text-align: center;
     font-family: "Bold";
-}
+}*/
 
 #ddloggedin {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    padding-top: .5vw;
+    /* padding-left: .75vw; */
+
 }
 
 .profile-dropdown.ddprofile>* {
@@ -69,16 +72,17 @@
     /* box-shadow: 0px 2px 5px 2px #b9b9b9a5; */
     background-color: rgb(255, 255, 255);
     position: absolute;
-    margin-right: 7.5em;
+    /* margin-right: 7.5em; */
     box-shadow: 0px 2px 5px 2px #b9b9b9a5;
     border: none;
+    /* margin-top: 1vw; */
     border-radius: .7em;
     width: 16vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     overflow: hidden;
-    height: min-content;
+    height: fit-content;
 
 }
 
@@ -96,12 +100,13 @@ justify-content: space-between;
 
 
 
-#ddcurrentpage {
-    margin-top: 1em;
+#ddcurrentbutt {
+    margin-top: .71em;
     width: 100%;
     font-family: "Bold";
-    padding: 0;
-    font-size: .7em;
+    padding-left: .51vw;
+    /* padding: 0; */
+    /* font-size: .7em; */
 
 }
 
@@ -122,47 +127,53 @@ justify-content: space-between;
 }
 
 #ddname {
+    padding-bottom: .51vw;
     width: 100%;
+    height: 2.4vw;
     font-family: "Bold";
-    padding: 0;
     cursor: default;
-
+    border-bottom: .2px solid rgb(211, 211, 211);
 
 }
 
 #ddcurrentbutt.ddprofile:hover {
     background-color: rgb(245, 245, 245);
+    cursor: pointer;
 }
 
 #ddcurrentbutt.ddprofile {
-    width: 100%;
-    box-sizing: border-box;
-    object-fit: cover;
-    border: none;
     cursor: pointer;
-    text-decoration: underline;
+    height: 2.5vw;
 }
 
 #ddcurrentcont.ddprofile {
     width: 100%;
-    height: 1.5em;
+    height: 2.5vw;
+    margin-bottom: .51vw;
+    /* margin-top: .81vw; */
+    border-top: .2px solid rgb(211, 211, 211);
+    ;
+    /* height: 1.5em; */
     padding: 0;
-
     /* padding-bottom: .5em; */
 }
 
 #borderbegone.ddlogout:hover {
     background-color: rgb(245, 245, 245);
+    cursor: pointer;
 }
 
 #borderbegone.ddlogout {
     width: 100%;
     box-sizing: border-box;
-    object-fit: cover;
     border: none;
     cursor: pointer;
-    text-decoration: underline;
-    font-family: 'Thin';
+    height: 2.5vw;
+    font-family: 'Li';
+    padding-left: .651vw;
+
+    /* margin-bottom: 22vw; */
+    /* margin-bottom: 2vw; */
 }
 
 #hovercome.ddlogout {
@@ -171,11 +182,16 @@ justify-content: space-between;
     cursor: pointer;
     padding: 0;
     padding-bottom: .5em;
+    margin-bottom: .351vw;
+    /* padding-left: .51vw; */
+
+    /* padding-left: 1vw; */
 
 }
 
 #dddemo:hover {
     background-color: rgb(245, 245, 245);
+    cursor: pointer;
 }
 
 #dddemo {
@@ -196,6 +212,7 @@ justify-content: space-between;
 
 #helpdrop:hover {
     background-color: rgb(245, 245, 245);
+    cursor: pointer;
 }
 
 #logindrop.bottomlogindrop {
@@ -211,14 +228,17 @@ justify-content: space-between;
 
 #logindrop:hover {
     background-color: rgb(245, 245, 245);
+    cursor: pointer;
 }
 
 #signupdrop:hover {
     background-color: rgb(245, 245, 245);
+    cursor: pointer;
 }
 
 #needmoney:last-of-type button:hover {
     background-color: rgb(245, 245, 245);
+    cursor: pointer;
 
 }
 
@@ -246,7 +266,6 @@ justify-content: space-between;
 }
 
 
-
 .dropbarformat {
     display: flex;
     font-size: 1.2em;
@@ -269,6 +288,7 @@ justify-content: space-between;
 
 .profile-dropdown button:hover {
     border-color: #f3f3f3;
+    cursor: pointer;
 
 }
 

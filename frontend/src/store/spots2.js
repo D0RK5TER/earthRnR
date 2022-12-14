@@ -144,7 +144,10 @@ export const makeChangeSpot = (obj) => async (dispatch) => {
         }),
     });
     if (response.ok) {
-        place ? dispatch(getMySpots()) : dispatch(getAllSpots()) 
+        // let data = await response.json()
+
+        place ? await dispatch(getMySpots()) : await dispatch(getAllSpots()) 
+        
     }
 };
 

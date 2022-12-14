@@ -46,11 +46,11 @@ function SpotForm({ setShowModal }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
-
-        if (apt.length > 0) address += apt
+        let add = address
+        if (apt.length > 0) add += apt
         //for apt might not work
         return dispatch(createSpot({
-            address, city, state, country,
+            address: add, city, state, country,
             name, description, price, latt
         }))
             .then(async (res) => {
@@ -85,17 +85,17 @@ function SpotForm({ setShowModal }) {
             </ul>
             <div id='createformcont'>
                 <div id='nameblock'>
-                    A descriptive name for your spot!
+                    Spot Name
                     <input
                         id='nameblockinput'
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder='Name Your Spot!'
+                        placeholder='A descriptive name for your spot!'
                         required
                     />
                 </div>
-                <p id='addressheader'>Please put a valid US address</p>
+                <p id='addressheader'>Address</p>
                 <div id='addressblock'>
                     <div id='addressblocktop'>
                         <input
@@ -103,7 +103,7 @@ function SpotForm({ setShowModal }) {
                             type="text"
                             value={address}
                             onChange={(e) => setAddress(e.target.value)}
-                            placeholder='Address'
+                            placeholder='Street Address'
                             pattern='^[0-9]+\s{1}.+'
                             title="Address must be in correct format e.g. '11 California St.'"
                             required
@@ -160,20 +160,20 @@ function SpotForm({ setShowModal }) {
                                 type={"textarea"}
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
-                                placeholder='Description'
+                                placeholder='A description of your Spot'
                                 maxLength={'255'}
                                 minLength={'30'}
                                 required
                             />
                         </div>
                         <div className="creatediv">
-                            Add an Image to your Spot!
+                            Preview Image URL
                             <input
                                 id='urlblock'
                                 type="url"
                                 value={latt}
                                 onChange={(e) => setLatt(e.target.value)}
-                                placeholder='Image Url'
+                                placeholder='Add an Image to your Spot!'
                                 required
                             />
                         </div>
@@ -186,7 +186,7 @@ function SpotForm({ setShowModal }) {
                                 type="integer"
                                 value={price}
                                 onChange={(e) => setPrice(e.target.value)}
-                                placeholder='$'
+                                placeholder='$<10,000'
                                 max={10000}
                                 min={20}
                                 title='Must be between 20 and 10,000'
@@ -194,14 +194,14 @@ function SpotForm({ setShowModal }) {
                             />
                         </div>
                         <div id='createspotimgcont'>
-                            Preview Image
+                            Image
                             <img src={latt.length ? `${latt}` : quest} alt='sampimg' id='createspotimg' />
                         </div>
                     </div>
                 </div>
             </div>
             <div id='submitbuttcont'>
-            <button type="submit" id='createsubmitbutton'>Create</button>
+                <button type="submit" id='createsubmitbutton'>Create</button>
             </div>
         </form >
     );

@@ -85,7 +85,7 @@ function Navigation() {
             src={globe}
             alt='lang select' />}
         />
-        <div >
+        <div>
 
           <ProfileButton
             user={user}
