@@ -26,7 +26,7 @@ function App() {
     ///trying top 
     return (
 
-        <>
+        <div id='freeze'>
             <Navigation />
 
             <div id='outter'>
@@ -52,7 +52,7 @@ function App() {
 
             </div>
 
-        </>
+        </div>
     );
 }
 export default App;

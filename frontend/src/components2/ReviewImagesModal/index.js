@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import quest from '../../assets/quest.jpg';
 import { useModal } from '../../context/Modal';
 // import { useHistory } from "react-router-dom";
-
+import './reviewimages.css'
 
 // import './DeleteReviewForm.css'
 // import quest from '../../assets/quest.jpg';
@@ -13,14 +13,16 @@ import { useModal } from '../../context/Modal';
 function ReviewImagesIndex({ ReviewImages, idx }) {
     // const dispatch = useDispatch();
     // const { closeModal } = useModal()
-    const {closeModal} = useModal()
+    const { closeModal } = useModal()
     // console.log(ReviewImages)
     // console.log(idx)
     const [errors, setErrors] = useState([]);
     // const history = useHistory()
     const imgs = ReviewImages
-    if(!imgs.length) return (
-        <h1>No Images</h1>
+    if (!imgs.length) return (
+        <div id='reviewimagesindex' >
+            <h1>No Images</h1>
+        </div>
     )
     const handleSubmit = (e) => {
         // let obj
@@ -41,23 +43,24 @@ function ReviewImagesIndex({ ReviewImages, idx }) {
         //     })
     }
     // return
-    return imgs.map(img => (
-        <div id='reviewimagesindex' >
-            <form onSubmit={handleSubmit} id='deletespotform' >
-                <img src={img.url} className='revimgtag' alt={quest}/>
-                <ul id='deleteerror'>
-                    {errors.map((error, idx) => (
-                        <li className='errors' key={error + idx}>{error}</li>))}
-                </ul>
-                <span>
-                </span>
-                {/* <button type='submit'></button> */}
-            </form>
-                    <button type="button" id="deletereviewimgage"
-                    onClick={()=>closeModal()}
-                    >Return</button>
+    return (
+        <div id='reviewimgcont'>
+            <div id='reviewimagesindex' >
+                {imgs.map(img => (
+                    <div id='onereviewimage'>
+                        <img id='oneimg' src={img.url} norepeat className='revimgtag' alt={quest} />
+                    </div >
+
+                ))}
+            </div>
+
+            <button
+                id="exitreviewimages"
+                type="button"
+                onClick={() => closeModal()}
+            >Return</button>
         </div>
-    ))
+    )
 }
 
 export default ReviewImagesIndex;

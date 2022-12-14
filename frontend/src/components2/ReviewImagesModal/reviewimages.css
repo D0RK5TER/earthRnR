@@ -1,0 +1,39 @@
+#oneimg {
+    max-width: 40vw;
+}
+#exitreviewimages:hover {
+    background-color: #eb3455;
+}
+#exitreviewimages {
+    cursor: pointer;
+    align-self: center;
+    height: 3vw;
+    margin-bottom: 2vw;
+    width: 80%;
+    background-color: #ff385c;
+    border-radius: .7em;
+    box-sizing: border-box;
+    align-items: center;
+    color: white;
+    font-family: 'Bold';
+    border: none;
+    font-size: 1.4vw;
+   letter-spacing: .37vw;
+}
+
+#reviewimagesindex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: fit-content;
+    max-width: 50vw;
+    padding: 3vw;
+    padding-top: 5vw;
+}
+
+#reviewimgcont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

@@ -152,7 +152,7 @@
     height: 18vw;
     /* border: .5px solid #ababab; */
     font-family: 'Bold';
-    font-size: .75vw;
+    font-size: 1vw;
     box-sizing: border-box;
 
 }
@@ -166,7 +166,7 @@
     width: 18vw;
     height: 20vw;
     font-family: 'Bold';
-    font-size: .75vw;
+    font-size: 1vw;
     box-sizing: border-box;
 
 }
@@ -187,7 +187,7 @@
     margin-top: .5vw;
     margin-bottom: 0px;
     font-family: 'Bold';
-    font-size: .751vw;
+    font-size: 1vw;
 
 }
 
@@ -375,7 +375,7 @@
     align-items: center;
     width: 100%;
     font-family: 'Bold';
-    font-size: .751vw;
+    font-size: 1vw;
 }
 
 #createformcont {
@@ -390,7 +390,7 @@
 
 #createmainheader {
     font-family: 'Bold';
-    font-size: 1.2vw;
+    font-size: 1vw;
 
 }
 
@@ -433,7 +433,7 @@
 
 #createspotform {
     width: 46vw;
-    height: 40vw;
+    height: 41vw;
     /* margin-bottom: 15vw; */
     overflow: hidden;
     display: flex;
