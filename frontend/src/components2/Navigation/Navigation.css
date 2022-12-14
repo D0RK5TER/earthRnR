@@ -93,6 +93,7 @@
   text-align: start;
   padding-left: 2em;
   font-family: 'Li';
+  
   /* font-weight: 1; */
   cursor: pointer;
 }
@@ -161,11 +162,16 @@
 }
 
 #profileshape:hover {
+ 
+    cursor: pointer;
+  
+  
   box-shadow: 0 1px 3px 0 rgba(171, 171, 171, 0.2), 0 1px 3px 0 rgba(183, 183, 183, 0.19);
 }
 
 
 #globebut {
+  cursor: pointer;
   width: 2.63vw;
   height: 2.63vw;
   border-radius: 50%;
@@ -197,6 +203,7 @@
 }
 
 #createswitching {
+  cursor: pointer;
   width: fit-content;
   padding: .75em;
   height: 3vw;
@@ -216,6 +223,7 @@
 }
 
 #signswitching {
+  cursor: pointer;
   padding-left: 10vw;
   width: fit-content;
   height: 3vw;

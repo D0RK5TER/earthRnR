@@ -46,11 +46,11 @@ function SpotForm({ setShowModal }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
-
-        if (apt.length > 0) address += apt
+        let add = address
+        if (apt.length > 0) add += apt
         //for apt might not work
         return dispatch(createSpot({
-            address, city, state, country,
+            address: add, city, state, country,
             name, description, price, latt
         }))
             .then(async (res) => {
@@ -201,7 +201,7 @@ function SpotForm({ setShowModal }) {
                 </div>
             </div>
             <div id='submitbuttcont'>
-            <button type="submit" id='createsubmitbutton'>Create</button>
+                <button type="submit" id='createsubmitbutton'>Create</button>
             </div>
         </form >
     );
