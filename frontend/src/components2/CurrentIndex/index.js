@@ -25,20 +25,6 @@ const CurrentIndex = () => {
     let mySpots = useSelector(state => state.spots.myspots)
     let myReviews = useSelector(state => state.reviews.myreviews)
     let reviewspots = useSelector(state => state.spots)
-    // let imgs
-
-    // function reviewSpotfunc(arr, obj) {
-    // if (arr?.length && obj) {
-    //     obj = obj
-    //     arr = Object.values(arr)
-    //     for (let rev of arr) {
-    //         if (obj?.onespot[rev.spotId]) continue
-    //         dispatch(getOneSpot(rev.spotId))
-    //     }
-    // }
-    //     return true
-    // }
-
 
     useEffect(() => {
         dispatch(getMySpots())

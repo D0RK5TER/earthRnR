@@ -1,27 +1,83 @@
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { pathURL } from "../../utilities/location";
+import { getAllSpots } from '../../store/spots2';
+import './PaginationForm.css'
+import { useModal } from '../../context/Modal';
 
-// import React, { useState } from 'react';
-// import { Modal } from '../../context/Modal';
-// import PaginationForm from './PaginationForm';
-// import './PaginationForm.css'
 
-// let setfunc
+function PaginationForm({ setShowModal }) {
+    const history = useHistory()
+    const dispatch = useDispatch();
+    const { closeModal } = useModal();
+    const [min, setMin] = useState(1)
+    const [max, setMax] = useState(9999)
+    const [errors, setErrors] = useState([]);
+    let pagination = ''
+    let loc = pathURL(history)
 
-// function PaginationFormModal() {
-//     const [showModal, setShowModal] = useState(false);
-//     setfunc = setShowModal
-//     // const user = useSelector(state => state.session.user.id)
-//     // console.log(id)
+    const pagidis = (e) => dispatch(getAllSpots(e))
+        .then(closeModal)
+        .catch(async (res) => {
+            const data = await res.json()
+            if (data.message) setErrors([data.message]);
+        })
 
-//     return (
-//         <>
-//             <button className='topbarbut' onClick={() => setShowModal(true)}>Search Filters</button>
-//             {showModal && (
-//                 <Modal onClose={() => setShowModal(false)}>
-//                     <PaginationForm setShowModal={setShowModal} />
-//                 </Modal>
-//             )}
-//         </>
-//     );
-// }
-// export { setfunc }
-// export default PaginationFormModal;
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setErrors([]);
+
+        // max < min ? setErrors(['maximum must be larger than minimum']) :
+        //     max > 9999 || min > 9999 ? setErrors(['prices must be smaller than 99999']) :
+        //         min === max ? setErrors(['maximum and minimum must not be equal']) :
+        //             max < 1 || min < 1 ? setErrors(['prices must be 1 or larger']) :
+                        pagination = `?minPrice=${min}&maxPrice=${max}`
+        if (loc !== '/') pagidis(pagination) && history.push('/')
+        pagidis(pagination)
+    }
+    return (
+        <form onSubmit={handleSubmit} id='paginationform'>
+            <h2>
+                Price Range
+            </h2>
+            <div id='mincont'>
+                Minimum
+                <label>
+                    <input
+                        className="pagiinput"
+                        type="number"
+                        placeholder="1"
+                        value={+min}
+                        min={1}
+                        max={9999}
+                        onChange={(e) => setMin(+e.target.value)}
+                    />
+
+
+                </label>
+            </div>
+            <div id='maxcont'>
+                Maximum
+                <label>
+                    <input
+                        className="pagiinput"
+                        type="number"
+                        placeholder='99999'
+                        value={max}
+                        min={+min + 1}
+                        max={9999}
+                        onChange={(e) => setMax(+e.target.value)}
+                    />
+
+                </label>
+                {/* <button type="submit" >Search</button> */}
+            </div>
+            <button type="submit">Search</button>
+            {/* <button type='reset'>Reset</button> */}
+
+        </form>
+    );
+}
+
+export default PaginationForm;

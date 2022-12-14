@@ -10,12 +10,13 @@ import LoginFormModal from '../../LoginFormModal';
 import DemoButton from './DemoButton';
 import outline from '../../../assets/outline.png';
 import './profile.css'
-//take away user so i can use store selector for easier rerender?
 import ContactUsModal from "../../ContactUsModal";
 import HelpModal from "../../HelpModal";
-function ProfileButton(/*{user}*/) {
-  // const sessionUser = getSessionUser(state);
 
+
+
+
+function ProfileButton(/*{user}*/) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   // const [switchbut, setSwitchbut] = useState(false)

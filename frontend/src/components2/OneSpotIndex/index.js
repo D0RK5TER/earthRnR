@@ -17,8 +17,8 @@ import propic from '../../assets/propic.png'
 import tsuper from '../../assets/traitsuper.png'
 import nophone from '../../assets/traitnophone.png'
 import calen from '../../assets/traitcalen.png'
-
-
+import bookingtemp from '../../assets/bookingtemp2.png'
+import caltemp from '../../assets/caltemp.png'
 import amendcamera from '../../assets/amendcamera.png';
 import amendcart from '../../assets/amendcart.png';
 import amendcolor from '../../assets/amendcolor.png'
@@ -323,14 +323,16 @@ const OneSpotIndex = () => {
                     <>
                       <h2>{ }6 nights at { }</h2>
                       <div id='spotbookingcalendar'>
-                        <div id='thismonth'>
+                      <img src={caltemp} alt='temponly'  style={{height: '17vw'}}  />
+
+                        {/* <div id='thismonth'>
 
                           <Calendar onChange={onChange} value={value} />
                         </div>
                         <div id='nextmonth'>
 
                           <Calendar onChange={onChange} value={value} />
-                        </div>
+                        </div> */}
 
                       </div >
                     </>
@@ -347,7 +349,8 @@ const OneSpotIndex = () => {
               <div id='navbarblock'>
 
               </div>
-              <div id='bookingbody'>
+              <img src={bookingtemp} alt='temponly' style={{marginTop: '5vw'}} />
+              {/* <div id='bookingbody'>
 
                 <div id='priceheader'>
                   <p>${Math.round(theSpot.price)} <p>night</p></p>
@@ -398,10 +401,11 @@ const OneSpotIndex = () => {
                     {total}
                   </p>
                 </div>
-              </div>
-            </div>
+              </div> */}
 
+            </div>
           </div>
+
           <div id='jumpmark' style={{ marginBottom: '4em' }}></div>
 
           <div id='reviewscont'>
