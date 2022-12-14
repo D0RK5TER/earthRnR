@@ -38,8 +38,16 @@ function SpotImageForm({ idx, spot }) {
     return onespots && (
         <form onSubmit={handleSubmit} id='spotimageform' >
 
-
-            <div id='createheadersub' className='spotimagehead'>
+            <div id='signupheader'>
+                <div id='loginexitbutt' onClick={() => closeModal()}>
+                    <div>x</div>
+                </div>
+                <div id='signupheadertext'>
+                    <div id="signupmainheader">Add Photos to your Spot!</div>
+                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? `Welcome ${onespots[id]?.User?.firstName}!` : errors.map((error, idx) => <>{error}<br /></>)}</div>
+                </div>
+            </div>
+            {/* <div id='createheadersub' className='spotimagehead'>
                 <div id='createexitbutt' onClick={() => closeModal()}>
                     x
                 </div>
@@ -47,11 +55,11 @@ function SpotImageForm({ idx, spot }) {
                     <div id="createmainheader">Welcome</div>
                     <div id='createsubheader'>Add Photos to your Spot!</div>
                 </div>
-            </div>
+            </div> */}
 
-            <ul id='errorsimage'>
+            {/* <ul id='errorsimage'>
                 {errors.map((error, idx) => <li className='errors' key={error + idx}>{error}</li>)}
-            </ul>
+            </ul> */}
             <div id='createpreviewcont'>
                 <div id='previmgwrap1'>
                     Current Preview Image

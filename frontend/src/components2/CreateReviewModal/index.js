@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { useParams } from 'react-router-dom';
 import { createReview } from '../../store/reviews2';
 // import { getOneSpot } from '../../store/spots2'
@@ -11,7 +11,7 @@ import { useModal } from '../../context/Modal';
 
 function CreateReviewFormModal({ id }) {
     const { closeModal } = useModal();
-
+    const spot = useSelector(state=>state.spots.onespot)
     const dispatch = useDispatch();
     const [review, setReview] = useState('')
     const [stars, setStars] = useState(0);
@@ -43,13 +43,14 @@ function CreateReviewFormModal({ id }) {
     // console.log({ idxx, review, stars })
     return (
         <form onSubmit={handleSubmit} id='createreviewform' >
-            <div id='createheader3'>
-
-                <div id='createexitbutt' onClick={() => closeModal()}>
-                    x
+            <div id='signupheader'>
+                <div id='loginexitbutt' onClick={() => closeModal()}>
+                    <div>x</div>
                 </div>
-                <div id="signupmainheader">Rate Your Stay!</div>
-
+                <div id='signupheadertext'>
+                    <div id="signupmainheader">{`Welcome to ${spot[id].name}!`}</div>
+                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? 'Rate Your Stay!' : errors.map((error, idx) => <>{error}<br/></>)}</div>
+                </div>
             </div>
             <div id='ratestay'>
                 <label>
@@ -90,11 +91,11 @@ function CreateReviewFormModal({ id }) {
                     />
                 </label>
             </div>
-            <ul id='errorscreaterev'>
+            {/* <ul id='errorscreaterev'>
                 {errors.map((error, idx) => (
                     <li className='errors' key={error + idx}>{error}</li>
                 ))}
-            </ul>
+            </ul> */}
             <div>
                 <button type="submit" id='createrevbutton'>Submit</button>
             </div>

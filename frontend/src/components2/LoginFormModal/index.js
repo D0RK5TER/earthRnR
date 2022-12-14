@@ -56,20 +56,31 @@ function LoginForm() {
     }
     return (
         <form onSubmit={handleSubmit} id='loginform' >
-            <div id="loginheader">
+            {/* <div id="loginheader">
                 <div id='loginexitbutt' onClick={() => closeModal()}>
                     <div>x</div>
                 </div>
                 <div>
                     Login
                 </div>
+            </div> */}
+            
+            <div id='signupheader'>
+                <div id='loginexitbutt' onClick={() => closeModal()}>
+                    <div>x</div>
+                </div>
+                <div id='signupheadertext'>
+                    <div id="signupmainheader">Welcome to EarthRnR!</div>
+                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? ' Sign Up Today!' : errors.map((error, idx) => <>{error}</>)}</div>
+                    {/* {errors.map((error, idx) => <div className='errors' key={error + idx}>{error}</div>)} */}
+                </div>
             </div>
-            <ul style={{ margin: '0' }}>
+            {/* <ul style={{ margin: '0' }}>
                 {errors.map((error, idx) => (
                     <li className='errors' key={error + idx}>
                         {error}</li>
                 ))}
-            </ul>
+            </ul> */}
             <h3>Welcome to EarthRnR!</h3>
             <label className="loginlabel">
                 <input
@@ -101,7 +112,7 @@ function LoginForm() {
             <div id='fangcont'>
 
                 {/* <a onScroll={()}> */}
-                <div className="fangbutts" onClick={() => window.location = 'https://metabookclone.herokuapp.com/#/'}>
+                <div className="fangbutts" onClick={() => window.location = 'https://myspace.com'}>
                     <img src={`https://metabook-seed.s3.amazonaws.com/Frame_1-removebg-preview.png`}
                         style={{ float: 'left' }}
                         alt='fake fang buttons'
@@ -111,7 +122,7 @@ function LoginForm() {
                     </p>
                 </div>
                 {/* </a> */}
-                <div className="fangbutts" onClick={() => window.location = 'https://insta-flick.herokuapp.com/home/'}>
+                <div className="fangbutts" onClick={() => window.location = 'https://instagram.com'}>
                     {/* <button></button> */}
                     <img src={`https://insta-flick.herokuapp.com/static/instaflick-updatedLogo.png`}
                         style={{ float: 'left' }}
@@ -121,7 +132,7 @@ function LoginForm() {
                         Continue with Instaflick
                     </p>
                 </div>
-                <div className="fangbutts" onClick={() => window.location = 'https://niles-app-academy.herokuapp.com/#/'}>
+                <div className="fangbutts" onClick={() => window.location = 'https://amazon.com'}>
                     <img src={`https://niles-app-academy.herokuapp.com/assets/white_logo-6a776881c565fa200ed232b46298f804059b6542c6ec355b510273f8e1d4d023.png`}
                         style={{ float: 'left', backgroundColor: 'darkgrey' }}
                         alt='fake fang buttons'
@@ -130,7 +141,7 @@ function LoginForm() {
                         Continue with Niles
                     </p>
                 </div>
-                <div className="fangbutts" onClick={() => window.location = 'https://slackluster.herokuapp.com/'}>
+                <div className="fangbutts" onClick={() => window.location = 'https://slack.com/'}>
                     {/*https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg*/}
                     <img src={`https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg`}
                         style={{ float: 'left', height: '3em' }}

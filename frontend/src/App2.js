@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import * as sessionActions from "./store/session2";
 import Navigation from "./components2/Navigation";
@@ -15,10 +15,10 @@ import './index.css';
 function App() {
     const dispatch = useDispatch();
     // const [isLoaded, setIsLoaded] = useState(false);
-    // let user = useSelector(state => state.session.user)
+    let user = useSelector(state => state.session.user)
     useEffect(() => {
         // if(!user)
-        dispatch(sessionActions.restoreUser())
+        if(!user)dispatch(sessionActions.restoreUser())
         // .then(() => dispatch(setIsLoaded(true)))
         // setIsLoaded(true)
         // .then(() => dispatch(setIsLoaded(true)))  ///took out again
@@ -26,7 +26,7 @@ function App() {
     ///trying top 
     return (
 
-        <div id='freeze'>
+        <>
             <Navigation />
 
             <div id='outter'>
@@ -55,7 +55,7 @@ function App() {
 
             </div>
 
-        </div>
+        </>
     );
 }
 export default App;

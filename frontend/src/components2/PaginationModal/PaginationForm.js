@@ -17,28 +17,25 @@ function PaginationForm({ setShowModal }) {
     let pagination = ''
     let loc = pathURL(history)
 
-
+    const pagidis = (e) => dispatch(getAllSpots(e))
+        .then(closeModal)
+        .catch(async (res) => {
+            const data = await res.json()
+            if (data.message) setErrors([data.message]);
+        })
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setErrors([]);
 
-        max < min ? setErrors(['maximum must be larger than minimum']) :
-            max > 9999 || min > 9999 ? setErrors(['prices must be smaller than 99999']) :
-                min === max ? setErrors(['maximum and minimum must not be equal']) :
-                    max < 1 || min < 1 ? setErrors(['prices must be 1 or larger']) :
+        // max < min ? setErrors(['maximum must be larger than minimum']) :
+        //     max > 9999 || min > 9999 ? setErrors(['prices must be smaller than 99999']) :
+        //         min === max ? setErrors(['maximum and minimum must not be equal']) :
+        //             max < 1 || min < 1 ? setErrors(['prices must be 1 or larger']) :
                         pagination = `?minPrice=${min}&maxPrice=${max}`
-        if (errors.length) return errors
-        if (loc !== '/' || loc !== '') history.push('/')
-        return dispatch(getAllSpots(pagination))
-            .then(() => closeModal())
-            .catch(async (res) => {
-                const data = await res.json()
-                if (data.message) setErrors([data.message]);
-            }).then(() => history.push('/') || dispatch(getAllSpots(pagination)))
-
+        if (loc !== '/') pagidis(pagination) && history.push('/')
+        pagidis(pagination)
     }
-
     return (
         <form onSubmit={handleSubmit} id='paginationform'>
             <h2>
@@ -51,9 +48,10 @@ function PaginationForm({ setShowModal }) {
                         className="pagiinput"
                         type="number"
                         placeholder="1"
+                        value={+min}
                         min={1}
                         max={9999}
-                        onChange={(e) => setMin(e.target.value)}
+                        onChange={(e) => setMin(+e.target.value)}
                     />
 
 
@@ -66,19 +64,15 @@ function PaginationForm({ setShowModal }) {
                         className="pagiinput"
                         type="number"
                         placeholder='99999'
-                        min={1}
+                        value={max}
+                        min={+min + 1}
                         max={9999}
-                        onChange={(e) => setMax(e.target.value)}
+                        onChange={(e) => setMax(+e.target.value)}
                     />
 
                 </label>
                 {/* <button type="submit" >Search</button> */}
             </div>
-            <ul>
-                {errors.map((error, idx) => (
-                    <li className='errors' key={idx + error.statusCode}>{error}</li>))}
-            </ul>
-
             <button type="submit">Search</button>
             {/* <button type='reset'>Reset</button> */}
 

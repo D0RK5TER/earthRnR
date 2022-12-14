@@ -53,7 +53,7 @@ export const getAllSpots = (e) => async (dispatch) => {
     if (response.ok) {
         const data = await response.json();
         // console.log(data)
-        dispatch(loadAllSpots(data));
+        await dispatch(loadAllSpots(data));
         return data
         // return data;
     }
