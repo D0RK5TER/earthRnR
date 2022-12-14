@@ -160,7 +160,7 @@ const OneSpotIndex = () => {
                 {theSpot.avgStarRating}
               </div>
             </div>
-            <div id='onespotreviews' onClick={(e) => window.location.replace(`/${theSpot.id}#jumpmark`)}>
+            <div id='onespotreviews' onClick={(e) => window.location.replace(`/spot/${theSpot.id}#jumpmark`)}>
               <div id='onespotnumber'>
                 {theSpot.numReviews}
               </div>
@@ -359,7 +359,7 @@ const OneSpotIndex = () => {
 
                     &nbsp;·&nbsp;
                     <div id='rightsidereviews'
-                      onClick={(e) => { e.preventDefault(); window.location.replace(`/${theSpot.id}#jumpmark`) }}>
+                      onClick={(e) => { e.preventDefault(); window.location.replace(`/spot/${theSpot.id}#jumpmark`) }}>
                       {`${theSpot.numReviews} reviews`}
                     </div >
                   </div>

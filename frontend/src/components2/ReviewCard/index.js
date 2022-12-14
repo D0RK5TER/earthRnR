@@ -40,7 +40,7 @@ function ReviewCard({ review, user, place, id }) {
                         <OpenModalButton
                             id='deletereview'
                             buttonText="Edit"
-                            modalComponent={<EditReviewForm id={id} review={review}  />}
+                            modalComponent={<EditReviewForm id={id} review={review} />}
                         />}
                     {review.userId === user?.id && place !== '/current' &&
                         <OpenModalButton
@@ -50,7 +50,7 @@ function ReviewCard({ review, user, place, id }) {
                         />
                     }
                     {review.userId === user?.id && place === '/current' &&
-                        <button onClick={() => history.push(`/${review.spotId}`)}>Spot</button>
+                        <button onClick={() => history.push(`/spot/${review.spotId}`)}>Spot</button>
 
                     }
                     <OpenModalButton
@@ -62,7 +62,7 @@ function ReviewCard({ review, user, place, id }) {
                 </div>
             </div>
             <div id='bottomhalf' className='bottomhalf reviewbottom'>
-                <div id='cardreviewbot'className='reviewreview onereview'>
+                <div id='cardreviewbot' className='reviewreview onereview'>
                     {review.review}
                 </div>
             </div>

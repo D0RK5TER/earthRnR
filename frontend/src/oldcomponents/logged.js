@@ -109,7 +109,7 @@
 // }
 // // export const deleteReview = (id) => async (dispatch) => {
 
-// //     const response = await csrfFetch(`/api/reviews/${id}/`, {
+// //     const response = await csrfFetch(`/api/reviews/`, {
 // //         method: 'DELETE',
 // //     });
 // //     //console.log(response)

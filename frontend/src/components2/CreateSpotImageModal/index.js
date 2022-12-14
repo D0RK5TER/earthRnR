@@ -1,44 +1,32 @@
 
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { useModal } from '../../context/Modal';
 import { createSpotImage } from '../../store/spots2';
+import quest from '../../assets/quest.jpg';
 
 // import SpotImageForm from './SpotImageForm';
 import './SpotImage.css'
 
-// function SpotImageFormModal({idx, spotname}) {
-//     const [showModal, setShowModal] = useState(false);
-//     // const user = useSelector(state => state.session.user.id)
-//     return (
-//         <>
-//             <button id='spotimagebut' onClick={() => setShowModal(true)}>Add an Image to<br/> {spotname}!</button>
-//             {showModal && (
-//                 <Modal onClose={() => setShowModal(false)}>
-//                     <SpotImageForm idx={idx} setShowModal={setShowModal} />
-//                 </Modal>
-//             )}
-//         </>
-//     );
-// }
 
 export default SpotImageForm;
 
-function SpotImageForm({ idx }) {
+function SpotImageForm({ idx, spot }) {
     const dispatch = useDispatch();
     const { closeModal } = useModal()
-    // const spot = useSelector(state => state.logged.spots).filter(x => x.id === props.idx)
-    // console.log(spot, '!kjdsfkjsndfdsfs')
     let id = idx
-
+    const onespots = useSelector(state => state.spots.onespot)
+    const [preview, setPreview] = useState(false)
     const [url, setUrl] = useState('');
     const [errors, setErrors] = useState([]);
 
     const handleSubmit = (e) => {
+        let deleteId = onespots[id].SpotImages.filter(x => x.preview === true)[0].id
         e.preventDefault()
         setErrors([]);
-        return dispatch(createSpotImage({ url, id }))
+
+        return dispatch(createSpotImage({ url, id, preview, deleteId }))
             .then(closeModal)
             .catch(async (res) => {
                 const data = await res?.json()
@@ -46,38 +34,61 @@ function SpotImageForm({ idx }) {
             }
             )
     }
-    return (
+
+    return onespots && (
         <form onSubmit={handleSubmit} id='spotimageform' >
-            <div id='spotimageheader1'>
-                <div id='spotimageexitbutt1' onClick={() => closeModal()}>
+
+
+            <div id='createheadersub' className='spotimagehead'>
+                <div id='createexitbutt' onClick={() => closeModal()}>
                     x
                 </div>
-                <div id='spotimageheader'>
-                    Add Photos to Your Home!
+                <div id='createheadertext' className='spotimagesubhead'>
+                    <div id="createmainheader">Welcome</div>
+                    <div id='createsubheader'>Add Photos to your Spot!</div>
                 </div>
             </div>
-            <div id='urltextheader1'>
 
-                URL of the photo
+            <ul id='errorsimage'>
+                {errors.map((error, idx) => <li className='errors' key={error + idx}>{error}</li>)}
+            </ul>
+            <div id='createpreviewcont'>
+                <div id='previmgwrap1'>
+                    Current Preview Image
+                    <img src={spot} alt='previmgimg' id='currprev' />
+                </div>
+                <div id='previmgwrap2'>
+                    <div id='setprevheader'>
+                        Set as your Preview:  <p className={preview.toString() + '1'}> {preview ? '  Yes!' : '  No!'}</p>
+                    </div>
+                    <img src={url.length ? `${url}` : quest} alt='sampimg' id='currnew' />
+                </div>
             </div>
-            <div id='spotimageformcont1'>
-                <label className="signuplabel">
-                    <input
-                        type="url"
-                        value={url}
-                        onChange={(e) => setUrl(e.target.value)}
-                        placeholder='https://......'
-                        title='Must be a valid url'
-                        required
-                    />
-                </label>
-                <ul id='errorsimage'>
-                    {errors.map((error, idx) => <li className='errors' key={error + idx}>{error}</li>)}
-                </ul>
+
+            <div id='createimagebutts'>
+                <input
+                    id='seturlbutt'
+                    type="url"
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
+                    placeholder='https://......'
+                    title='Must be a valid url'
+                    required
+                />
+                <button id='setprevbut' type='button'
+                    className={preview.toString() + '2'}
+                    onClick={() => !preview ? setPreview(!preview)
+                        || alert('Creating a new Preview Image will delete your old one!')
+                        : setPreview(!preview)}>
+                    Set to Preview?
+                </button>
             </div>
-            <button type="submit" id='spotimagebut2'>Add Image</button>
+            <div id='spotimagesub'>
+                <button type="submit" id='spotimagebut2'>Add as {preview ? 'Preview Image' : 'Spot Image'}</button>
+            </div>
         </form>
-    );
+    )
+        ;
 }
 
 // export default SpotImageForm;

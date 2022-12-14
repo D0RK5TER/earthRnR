@@ -9,23 +9,6 @@ import { useModal } from '../../context/Modal';
 import { createSpot } from '../../store/spots2';
 import quest from '../../assets/quest.jpg';
 
-// function SpotFormModal() {
-//     const [showModal, setShowModal] = useState(false);
-
-//     return (
-//         <>
-//             {/* Create a Spot! */}
-//             <button id='createspotbut'
-//                 // style={{ maxWidth: '40vw' }}
-//                 onClick={() => setShowModal(true)} >EarthRnR your home</button>
-//             {showModal && (
-//                 <Modal onClose={() => setShowModal(false)}>
-//                     <SpotForm setShowModal={setShowModal} />
-//                 </Modal>
-//             )}
-//         </>
-//     );
-// }
 import './SpotForm.css'
 function SpotForm({ setShowModal }) {
     const user = useSelector(state => state.session.user)
@@ -59,7 +42,7 @@ function SpotForm({ setShowModal }) {
                     if (data.message) setErrors([data.message]);
                 }
                 else {
-                    closeModal() || history.push(`/${res[0]}`)
+                    closeModal() || history.push(`/spot/${res[0]}`)
                 }
             }).catch(async (res) => {
                 const data = await res.json()
@@ -85,13 +68,13 @@ function SpotForm({ setShowModal }) {
             </ul>
             <div id='createformcont'>
                 <div id='nameblock'>
-                    Spot Name
+                    Name of Spot
                     <input
                         id='nameblockinput'
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder='A descriptive name for your spot!'
+                        placeholder='A Unique Name'
                         required
                     />
                 </div>
@@ -160,20 +143,20 @@ function SpotForm({ setShowModal }) {
                                 type={"textarea"}
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
-                                placeholder='A description of your Spot'
+                                placeholder='please be accurate'
                                 maxLength={'255'}
                                 minLength={'30'}
                                 required
                             />
                         </div>
                         <div className="creatediv">
-                            Preview Image URL
+                            Image URL
                             <input
                                 id='urlblock'
                                 type="url"
                                 value={latt}
                                 onChange={(e) => setLatt(e.target.value)}
-                                placeholder='Add an Image to your Spot!'
+                                placeholder='Spot Main Image'
                                 required
                             />
                         </div>
@@ -186,7 +169,7 @@ function SpotForm({ setShowModal }) {
                                 type="integer"
                                 value={price}
                                 onChange={(e) => setPrice(e.target.value)}
-                                placeholder='$<10,000'
+                                placeholder='$'
                                 max={10000}
                                 min={20}
                                 title='Must be between 20 and 10,000'
