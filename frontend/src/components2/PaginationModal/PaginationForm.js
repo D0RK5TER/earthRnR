@@ -35,8 +35,9 @@ function PaginationForm({ setShowModal }) {
             .catch(async (res) => {
                 const data = await res.json()
                 if (data.message) setErrors([data.message]);
-            }).then(() => history.push('/') || dispatch(getAllSpots(pagination)))
-
+            })
+            // .then(() => history.push('/') || dispatch(getAllSpots(pagination)))
+        //check for pagi error from ^, 1-1 should do it
     }
 
     return (

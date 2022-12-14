@@ -25,11 +25,13 @@ function SignUpForm() {
         e.preventDefault();
         if (password === confirmPassword) {
             setErrors([]);
-            return dispatch(sessionActions.signup({ firstName, lastName, email, username, password }))
+            return await dispatch(sessionActions.signup({ firstName, lastName, email, username, password }))
                 .then(closeModal)
                 .catch(async (res) => {
                     const data = await res.json()
-                    if (data.message) setErrors([data.message]);
+                    console.log(data)
+                    data.message === 'Validation error' ? setErrors([data.errors])
+                        : setErrors(Object.values(data.errors))
                 }
                 )
             //check for need
@@ -41,17 +43,18 @@ function SignUpForm() {
     return (
         <form onSubmit={handleSubmit} id='signupform' >
             <div id='signupheader'>
-                <div id='signupexitbutt' onClick={() => closeModal()}>
-                    x
+                <div id='loginexitbutt' onClick={() => closeModal()}>
+                    <div>x</div>
                 </div>
                 <div id='signupheadertext'>
                     <div id="signupmainheader">Welcome to EarthRnR!</div>
-                    <span id='signupsubheader'> Sign Up Today!</span>
+                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? ' Sign Up Today!' : errors.map((error, idx) => <>{error}</>)}</div>
+                    {/* {errors.map((error, idx) => <div className='errors' key={error + idx}>{error}</div>)} */}
                 </div>
             </div>
-            <ul>
+            {/* <ul>
                 {errors.map((error, idx) => <li className='errors' key={error + idx}>{error}</li>)}
-            </ul>
+            </ul> */}
             <div id='signupformcont'>
                 <label className="signuplabel" id='signuptop'>
                     <input
