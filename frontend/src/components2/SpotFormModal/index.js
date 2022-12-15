@@ -60,28 +60,23 @@ function SpotForm({ setShowModal }) {
                 </div>
             </div>
             <div className='reuseform reuseformbody'>
-                {/* Name of Spot
-                Price */}
-                <div className='inputblockrow inputblockrowtitle'>
-                    <div className='inputblockrowtitle inputrowtitlecont inputrowtitlecontwords  two'>
-                        <div className='inputblockrowtitle inputrowtitlecont'>
-                            Name of Spot
-                        </div>
-                        <div className='inputblockrowtitle inputrowtitlecont'>
-                            Price
-                        </div>
-                    </div>
-                    <div className='inputblockrow'>
+                <div className='inputblockrowcont'>
+                    <div className='inputblockcol1'>
+                        Name of Spot
                         <input
-                            className='inputblockrow inputblockrowleft'
+                            className='inputblockrow'
+                            // className='inputblockrow inputblockrowleft'
                             type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder='A Unique Name'
                             required />
 
+                    </div>
+                    <div className='inputblockcol1'>
+                        Price
                         <input
-                            className='inputblockrow inputblockrowright'
+                            className='inputblockrowsmall'
                             type="integer"
                             value={price}
                             onChange={(e) => setPrice(e.target.value)}
@@ -93,9 +88,7 @@ function SpotForm({ setShowModal }) {
                     </div>
                 </div>
                 <div className='inputblockrowtitle inputrowtitlecont one '>
-                    <div className='inputblockrowtitle inputrowtitlecont inputrowtitlecontwords  one'>
-                        Full Address
-                    </div>
+                    Full Address
                     <div className='inputblockcol'>
                         <div className='inputblockcol inputblockcoltop'>
                             <input
@@ -149,54 +142,50 @@ function SpotForm({ setShowModal }) {
                         </div>
                     </div>
                 </div>
-                <div className='inputsubmitsquare large' >
+                <div className='picturerow' >
 
-                    <div className='blockrow'>
-
-                        <div className='blockrow blockcol'>
-                            <div className='blockcol blockcoltop'>
-                                <textarea
-                                    className='inputtextarea large'
-                                    type={"textarea"}
-                                    value={description}
-                                    onChange={(e) => setDescription(e.target.value)}
-                                    placeholder='...'
-                                    maxLength={'255'}
-                                    minLength={'30'}
-                                    required
-                                />
-                            </div>
-                            <div className='blockcol blockcolbottom'>
-                                <input
-                                    id='urlblock'
-                                    type="url"
-                                    value={latt}
-                                    onChange={(e) => setLatt(e.target.value)}
-                                    placeholder='Image URL'
-                                    required
-                                />
-                            </div>
-                        </div>
+                    <div className='picturecol'>
+                        <p className='picturetitle'>
+                            Description
+                        </p>
+                        <textarea
+                            id='piccoldesc'
+                            type={"textarea"}
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            placeholder='...'
+                            maxLength={'255'}
+                            minLength={'30'}
+                            required
+                        />
 
 
-                        <div className='blockrow blockcol'>
-                            <img
+                    </div>
 
-                                src={latt.length ? `${latt}` : quest}
-                                alt='sampimg'
-                                className='inputblockcol pic large'
-                                style={{
-
-                                    boxSizing: 'border-box',
-                                    objectFit: 'fill'
-                                }}
-                            />
-                        </div>
+                    <div className='picturecol'>
+                        <p className='picturetitle'>
+                            Image
+                        </p>
+                        <img
+                            id='piccolimg'
+                            src={latt.length ? `${latt}` : quest}
+                            alt='sampimg'
+                        />
                     </div>
                 </div>
+
+
             </div>
             <div className='reuseformsubmitbutt'>
-                <button type="submit" id='createsubmitbutton'>Create</button>
+                <input
+                    id='urlblock'
+                    type="url"
+                    value={latt}
+                    onChange={(e) => setLatt(e.target.value)}
+                    placeholder='Image URL'
+                    required
+                />
+                <button type="submit" id='createblock'>Create</button>
             </div>
         </form >
     );

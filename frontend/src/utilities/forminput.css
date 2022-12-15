@@ -14,6 +14,7 @@ Making a key for framework here
     width: 40vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-bottom: 1vw;
     cursor: default;
 }
@@ -21,8 +22,38 @@ Making a key for framework here
 .reuseformsubmitbutt {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    font-size: .98vw;
 
+}
+
+.inputblockcol.small {
+
+    font-family: 'Bold';
+    font-size: .98vw;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 30vw;
+}
+
+.inputblockcol.smallest {
+
+    font-family: 'Bold';
+    font-size: .98vw;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: flex-start;
+    text-align: center;
+    box-sizing: border-box;
+    width: 5vw;
+    padding-bottom: 2vw;
+    /* width: 35vw; */
 }
 
 .inputblockcol {
@@ -32,7 +63,19 @@ Making a key for framework here
     display: flex;
     flex-direction: column;
     height: 8.4vw;
-    justify-content: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 35vw;
+}
+
+.inputblockcol1 {
+
+    font-family: 'Bold';
+    font-size: .98vw;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: flex-start;
     text-align: center;
     box-sizing: border-box;
 
@@ -52,15 +95,50 @@ Making a key for framework here
     height: 4.2vw;
     justify-content: center;
     box-sizing: border-box;
-
-    width: 35vw;
-    margin-bottom: 1.5vw;
+    width: 29vw;
+    margin-bottom: 1vw;
+    font-family: 'Thin';
+    padding-left: 1vw;
+    border-left: 1.5px solid #ababab;
+    border-top: 1.5px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: .75px solid #ababab;
+    border-top-left-radius: .87vw;
+    border-bottom-left-radius: .87vw;
 }
 
+.inputblockrowsmall {
+    display: flex;
+    flex-direction: row;
+    height: 4.2vw;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 6vw;
+
+    margin-bottom: 1vw;
+    font-family: 'Thin';
+    padding-left: 2.5vw;
+    border-left: .75px solid #ababab;
+    border-top: 1.5px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: 1.5px solid #ababab;
+    border-top-right-radius: .87vw;
+    border-bottom-right-radius: .87vw;
+
+}
 
 .inputsubmitsquare {
     height: 30vw;
     width: 100%;
+}
+
+.inputblockrowcont {
+    width: 30vw;
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .inputsubmitsquare {
@@ -72,7 +150,6 @@ Making a key for framework here
 
 .inputblockcol.inputblockcolbottom {
     outline: none;
-
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -94,58 +171,24 @@ Making a key for framework here
 .reuseform.reuseformbody {
     display: flex;
     flex-direction: column;
-
+    justify-content: flex-start;
     height: fit-content;
+    align-items: center;
     width: 100%;
-    margin-top: 1vw;
-    align-items: center;
-
-
-}
-
-
-.inputblockrow.inputblockrowright {
     height: 100%;
-    width: 6vw;
-    box-sizing: border-box;
-    border-left: .75px solid #ababab;
-    border-top: 1.5px solid #ababab;
-    border-bottom: 1.5px solid #ababab;
-    border-right: 1.5px solid #ababab;
-    border-top-right-radius: .87vw;
-    border-bottom-right-radius: .87vw;
+    /* margin-top: 1vw; */
     align-items: center;
-    padding-left: 1vw;
+}
 
+.inputblockrowtitle.inputrowtitlecont.inputrowtitlecontwords.two {
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
     display: flex;
-    font-family: 'Thin';
+    flex-direction: row;
+    align-self: center;
+
 }
-
-.inputblockrow.inputblockrowleft {
-    font-family: 'Thin';
-    height: 100%;
-    width: 29vw;
-    box-sizing: border-box;
-    border-left: 1.5px solid #ababab;
-    border-top: 1.5px solid #ababab;
-    border-bottom: 1.5px solid #ababab;
-    border-right: .75px solid #ababab;
-    border-top-left-radius: .87vw;
-    border-bottom-left-radius: .87vw;
-
-    padding-left: 1vw;
-    text-align: start;
-}
-
-.inputblockrow.inputblockrowtitle {
-    display: flex;
-    flex-direction: column;
-    /* height: 100%; */
-    font-family: 'Bold';
-    font-size: .8vw;
-}
-
-
 
 .inputblockcol.inputblockcolbottom.inputcity {
     width: 27vw;
@@ -156,7 +199,7 @@ Making a key for framework here
     border-top: .75px solid #ababab;
     border-bottom: 1.5px solid #ababab;
     border-right: .75px solid #ababab;
-
+    padding-left: 1vw;
     border-bottom-left-radius: .87vw;
     height: 100%;
     font-family: 'Thin';
@@ -172,7 +215,7 @@ Making a key for framework here
     border-bottom: 1.5px solid #ababab;
     border-right: .75px solid #ababab;
     align-items: center;
-
+    padding-left: .5vw;
     height: 100%;
     font-family: 'Thin';
 }
@@ -181,14 +224,14 @@ Making a key for framework here
     outline: none;
     width: 4vw;
     height: 100%;
-
+    /* padding-left: 1vw; */
     box-sizing: border-box;
     border-left: .75px solid #ababab;
     border-top: .75px solid #ababab;
     border-bottom: 1.5px solid #ababab;
     border-right: 1.5px solid #ababab;
     align-items: center;
-
+    padding-left: .5vw;
     border-bottom-right-radius: .87vw;
     height: 100%;
     font-family: 'Thin';
@@ -203,7 +246,7 @@ Making a key for framework here
     border-top: 1.5px solid #ababab;
     border-bottom: .75px solid #ababab;
     border-right: 1.5px solid #ababab;
-
+    padding-left: 1vw;
     border-top-right-radius: .87vw;
     height: 100%;
     font-family: 'Thin';
@@ -218,7 +261,7 @@ Making a key for framework here
     border-top: 1.5px solid #ababab;
     border-bottom: .75px solid #ababab;
     border-right: .75px solid #ababab;
-
+    padding-left: 1vw;
     border-top-left-radius: .87vw;
     height: 100%;
     font-family: 'Thin';
@@ -227,33 +270,29 @@ Making a key for framework here
 .inputblockrowtitle.inputrowtitlecont.one {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: 'Bold';
     font-size: .98vw;
+    width: 100%;
 }
 
 .inputblockrowtitle.inputrowtitlecont.two {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+    /* justify-content: space-between; */
+    /* align-items: flex-end; */
     font-family: 'Bold';
     font-size: .98vw;
+    align-items: center;
 }
-
-
-
-
 
 .inputblockrowtitle.inputrowtitlecont.inputrowtitlecontwords.one {
     width: 100%;
-    text-align: center;
+    text-align: flex-start;
 
 }
 
-.inputblockrowtitle.inputrowtitlecont.inputrowtitlecontwords.two {
-    width: 70%;
-    margin-left: 7.6vw;
-}
 
 .inputblockcol.inputblockcoltop.inputapt:focus {
     outline: none;
@@ -333,15 +372,13 @@ Making a key for framework here
 }
 
 
-.reuseformsubmitbutt>button:hover {
-    background-color: #e42246;
-}
-
-.reuseformsubmitbutt>button {
+/* .reuseformsubmitbutt>button {
     width: 20vw;
     border: none;
     cursor: pointer;
     background-color: #ff385c;
+    border: 1.5px solid #ff385c;
+    outline: none;
     border-radius: .5vw;
     box-sizing: border-box;
     align-items: center;
@@ -349,4 +386,4 @@ Making a key for framework here
     letter-spacing: .182vw;
     font-size: 1.4vw;
     font-family: 'Bold';
-}
+} */
