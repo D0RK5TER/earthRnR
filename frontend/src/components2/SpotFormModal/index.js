@@ -49,32 +49,34 @@ function SpotForm({ setShowModal }) {
     }
 
     return user && (
-        <form onSubmit={handleSubmit} id='createspotform' >
-            <div id='reuseheader'>
-                <div id="reusemain">Welcome to EarthRnR!</div>
-                <div id='reuseexitbutt' onClick={() => closeModal()}>
+        <form onSubmit={handleSubmit} className='reuseform' >
+            <div className='reuseheader'>
+                <div className="reusemain">Welcome to EarthRnR!</div>
+                <div className='reuseexitbutt' onClick={() => closeModal()}>
                     x
                 </div>
-                <div id='reusesub'>
+                <div className='reusesub'>
                     <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? 'EarthRnR your Home!' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
                 </div>
             </div>
-            <div id='createformcont'>
-                <div id='addressblocktop'>
-                    <div className='createspotsmall'>
+            <div className='reuseform reuseformbody'>
+                <div className='inputblockrowcont'>
+                    <div className='inputblockcol1'>
                         Name of Spot
                         <input
-                            id='nameblockinput'
+                            className='inputblockrow'
+                            // className='inputblockrow inputblockrowleft'
                             type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder='A Unique Name'
                             required />
+
                     </div>
-                    <div className='createspotsmall'>
+                    <div className='inputblockcol1'>
                         Price
                         <input
-                            id='priceinputblock'
+                            className='inputblockrowsmall'
                             type="integer"
                             value={price}
                             onChange={(e) => setPrice(e.target.value)}
@@ -85,111 +87,105 @@ function SpotForm({ setShowModal }) {
                             required />
                     </div>
                 </div>
-                Address
-                <div id='addressblock' className='createspotsmall'>
-                    <div id='addressblocktop'>
-                        <input
-                            id='blockaddress'
-                            type="text"
-                            value={address}
-                            onChange={(e) => setAddress(e.target.value)}
-                            placeholder='Street Address'
-                            pattern='^[0-9]+\s{1}.+'
-                            title="Address must be in correct format e.g. '11 California St.'"
-                            required
-                        />
-                        <input
-                            id='blockapt'
-                            type="text"
-                            value={apt}
-                            onChange={(e) => setApt(e.target.value)}
-                            placeholder='Apt' />
-                    </div>
-                    <div id='addressblockbottom'>
-                        <input
-                            id='blockcity'
-
-                            type="text"
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
-                            placeholder='City'
-                            required
-                        />
-
-                        <input
-                            id='blockstate'
-                            type="text"
-                            value={state}
-                            onChange={(e) => setStats(e.target.value)}
-                            placeholder='State'
-                            minLength='2'
-                            maxLength='2'
-                            pattern='^[A-Z]{2}$'
-                            title="Two Capital Letters Please"
-                            required
-                        />
-
-                        <input
-                            id='blockcountry'
-                            type="text"
-                            value={country}
-                            onChange={(e) => setCountry(e.target.value)}
-                            placeholder='Country'
-                            required
-                        />
-
-                    </div>
-                </div>
-
-
-
-                <div className='createspotbig' >
-                    <div id='desccont'>
-                        <div id='deslck'>
-                            Description
-                            <textarea
-                                id='descblock'
-                                type={"textarea"}
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                                placeholder='...'
-                                maxLength={'255'}
-                                minLength={'30'}
+                <div className='inputblockrowtitle inputrowtitlecont one '>
+                    Full Address
+                    <div className='inputblockcol'>
+                        <div className='inputblockcol inputblockcoltop'>
+                            <input
+                                className='inputblockcol inputblockcoltop inputaddress'
+                                type="text"
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                                placeholder='Street Address'
+                                pattern='^[0-9]+\s{1}.+'
+                                title="Address must be in correct format e.g. '11 California St.'"
                                 required
                             />
+                            <input
+                                className='inputblockcol inputblockcoltop inputapt'
+                                type="text"
+                                value={apt}
+                                onChange={(e) => setApt(e.target.value)}
+                                placeholder='Apt' />
                         </div>
-                        <div id='urllock'>
-                            Image
-                            <img src={latt.length ? `${latt}` : quest} alt='sampimg' id='createspotimg' />
-
-
-                            {/* <input
-                                id='urlblock'
-                                type="url"
-                                value={latt}
-                                onChange={(e) => setLatt(e.target.value)}
-                                placeholder='Image URL'
+                        <div className='inputblockcol inputblockcolbottom'>
+                            <input
+                                className='inputblockcol inputblockcolbottom inputcity'
+                                type="text"
+                                value={city}
+                                onChange={(e) => setCity(e.target.value)}
+                                placeholder='City'
                                 required
-                            /> */}
+                            />
+                            <input
+                                className='inputblockcol inputblockcolbottom inputstate'
+                                type="text"
+                                value={state}
+                                onChange={(e) => setStats(e.target.value)}
+                                placeholder='State'
+                                minLength='2'
+                                maxLength='2'
+                                pattern='^[A-Z]{2}$'
+                                title="Two Capital Letters Please"
+                                required
+                            />
+
+                            <input
+                                className='inputblockcol inputblockcolbottom inputcountry'
+                                type="text"
+                                value={country}
+                                onChange={(e) => setCountry(e.target.value)}
+                                placeholder='Cntry'
+                                required
+                            />
 
                         </div>
                     </div>
-
                 </div>
-                <div>
+                <div className='picturerow' >
 
-                    <input
-                        id='urlblock'
-                        type="url"
-                        value={latt}
-                        onChange={(e) => setLatt(e.target.value)}
-                        placeholder='Image URL'
-                        required
-                    />
+                    <div className='picturecol'>
+                        <p className='picturetitle'>
+                            Description
+                        </p>
+                        <textarea
+                            id='piccoldesc'
+                            type={"textarea"}
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            placeholder='...'
+                            maxLength={'255'}
+                            minLength={'30'}
+                            required
+                        />
+
+
+                    </div>
+
+                    <div className='picturecol'>
+                        <p className='picturetitle'>
+                            Image
+                        </p>
+                        <img
+                            id='piccolimg'
+                            src={latt.length ? `${latt}` : quest}
+                            alt='sampimg'
+                        />
+                    </div>
                 </div>
+
+
             </div>
-            <div id='submitbuttcont'>
-                <button type="submit" id='createsubmitbutton'>Create</button>
+            <div className='reuseformsubmitbutt'>
+                <input
+                    id='urlblock'
+                    type="url"
+                    value={latt}
+                    onChange={(e) => setLatt(e.target.value)}
+                    placeholder='Image URL'
+                    required
+                />
+                <button type="submit" id='createblock'>Create</button>
             </div>
         </form >
     );

@@ -13,27 +13,36 @@
 #loginsubmitbutton {
     cursor: pointer;
 }
-
-#fangcont>* {
-    width: 28em;
-    height: 3em;
-    margin-top: 0;
-    align-items: center;
-    display: inline-flex;
-    cursor: pointer;
+.fangbutts.fangbutt.fang {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    padding-right: 25%;
-    font-family: 'Li';
-    /* height: 2em; */
-    /* border: 1px solid black; */
-    /* padding: 1em; */
-    background-color: #fdfbfb;
-    border-radius: .5em;
-    /* box-sizing: border-box; */
+    margin-top: 1vw;
+    width: 35vw;
+    height: 5vw;
+    align-items: center;
+    cursor: pointer;
+}
+#fangcont> div {
+    /* width: 35vw; */
+    /* height: 5vw; */
+    /* margin-top: 1vw; */
     /* align-items: center; */
-    color: rgb(0, 0, 0);
-    /* margin: .7em; */
-
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* cursor: pointer;/ */
+    /* justify-content: space-between; */
+    /* padding-right: 25%; */
+    /* font-family: 'Li'; */
+    border: 1px solid black;
+    /* padding: 1em; */
+    padding-left: 5vw;
+    padding-right: 5vw;
+     background-color: #fdfbfb;
+    border-radius: .5em; 
+    /* box-sizing: border-box; */
+    /* color: rgb(0, 0, 0); */
 }
 #fangcont>*:hover { 
     background-color: rgb(245, 245, 245);
@@ -67,21 +76,33 @@
     margin-right: 47%;
     font-family: 'Li';
 }
-
+.greylines {
+    width: 20vw;
+    height: 1px;
+    line-height: .1;
+    border-bottom: 2px solid #e6e6e6;
+    margin: 1vw;
+}
+#loginmiddle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
 #loginform .loginlabel:first-of-type input {
     box-sizing: border-box;
     align-items: center;
-    padding: 1em;
-    border-top-left-radius: .7em;
-    border-top-right-radius: .7em;
+    padding: 1vw;
+    border-top-left-radius: .87vw;
+    border-top-right-radius: .87vw;
     margin-top: 1.2em;
-    width: 32em;
+    width: 35vw;
     border: 1.5px solid #ababab;
 
 }
 
 #loginform .loginlabel:last-of-type input {
-    width: 32em;
+    width: 35vw;
     border: 1.5px solid #ababab;
     border-bottom-right-radius: .7em;
     border-bottom-left-radius: .7em;
@@ -93,7 +114,7 @@
 }
 
 #loginsubmitbutton {
-    width: 32em;
+    width: 35vw;
     border: none;
     padding: 1em;
     background-color: #ff385c;
@@ -116,19 +137,6 @@
     justify-content: space-between;
 }
 
-#loginform:first-of-type span>div {
-    border-top: 1px solid rgb(220, 220, 220);
-    width: 20vh;
-    margin: 1.9em;
-    /* height: 30% */
-}
-
-#loginform:first-of-type span>p {
-    margin-left: 3em;
-    margin-right: 3em;
-
-}
-
 .loginform input {
     /* align-self: center; */
     box-sizing: border-box;
@@ -140,32 +148,25 @@
 
 }
 
-.fangbutts img {
-    height: 1.5em;
+.fangbutts:first-of-type img {
+    height: 4vw;
+    width: 4vw;
+    padding-left: 1vw;
     /* margin-bottom: 10em; */
     /* padding-bottom: 10em; */
     /* margin-bottom: em; */
     vertical-align: middle;
 }
-
+.fangbutts img {
+    height: 3vw;
+    width: 6vw;
+}
 /* .fangbutts img { */
 /* justify-content: center; */
 
 /* } */
 
-.fangbutts {
-    width: 27em;
-    height: 2em;
-    border: 1px solid black;
-    padding: 1em;
-    background-color: #fdfbfb;
-    border-radius: .7em;
-    box-sizing: border-box;
-    align-items: center;
-    color: white;
-    margin: .7em;
 
-}
 
 /* .modalheader */
 
@@ -199,9 +200,11 @@
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-    border-color: black;
-    width: 30em;
-    overflow: hidden;
-    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    /* border-color: black; */
+    width: 50vw;
+    /* overflow: hidden; */
+    /* height: fit-content; */
     margin-bottom: 1em;
 }

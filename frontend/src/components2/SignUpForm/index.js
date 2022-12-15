@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import * as sessionActions from '../../store/session2';
 import { useModal } from '../../context/Modal';
 
-import './SignUpForm.css'
+import '../../utilities/forminput.css'
 function SignUpForm() {
     const { closeModal } = useModal();
 
@@ -36,18 +36,18 @@ function SignUpForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} id='signupform' >
+        <form onSubmit={handleSubmit} className='reuseform' id='signup' >
             <div id='reuseheader'>
-                    <div id="reusemain">Welcome to EarthRnR!</div>
+                <div id="reusemain">Welcome to EarthRnR!</div>
                 <div id='reuseexitbutt' onClick={() => closeModal()}>
                     x
                 </div>
                 <div id='reusesub'>
-                    <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? ' Sign Up Today!' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
+                    <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? 'Create a Review!' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
                 </div>
             </div>
 
-            <div id='signupformcontain'>
+            <div id='signupformcontain' className="reuseform reuseformbody">
                 First Name
                 <input
                     id='signupfname'

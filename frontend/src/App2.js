@@ -7,7 +7,7 @@ import SpotsIndex from './components2/SpotsIndex'
 import OneSpotIndex from './components2/OneSpotIndex'
 import CurrentIndex from "./components2/CurrentIndex";
 import './index.css';
-
+import './utilities/forminput.css'
 
 function App() {
     const dispatch = useDispatch();

@@ -1,0 +1,389 @@
+/* 
+Making a key for framework here
+
+
+
+
+
+
+
+*/
+
+.reuseform {
+    height: fit-content;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1vw;
+    cursor: default;
+}
+
+.reuseformsubmitbutt {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: .98vw;
+
+}
+
+.inputblockcol.small {
+
+    font-family: 'Bold';
+    font-size: .98vw;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 30vw;
+}
+
+.inputblockcol.smallest {
+
+    font-family: 'Bold';
+    font-size: .98vw;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: flex-start;
+    text-align: center;
+    box-sizing: border-box;
+    width: 5vw;
+    padding-bottom: 2vw;
+    /* width: 35vw; */
+}
+
+.inputblockcol {
+
+    font-family: 'Bold';
+    font-size: .98vw;
+    display: flex;
+    flex-direction: column;
+    height: 8.4vw;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 35vw;
+}
+
+.inputblockcol1 {
+
+    font-family: 'Bold';
+    font-size: .98vw;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: flex-start;
+    text-align: center;
+    box-sizing: border-box;
+
+    width: 35vw;
+}
+
+.reuseheader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.inputblockrow {
+    display: flex;
+    flex-direction: row;
+    height: 4.2vw;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 29vw;
+    margin-bottom: 1vw;
+    font-family: 'Thin';
+    padding-left: 1vw;
+    border-left: 1.5px solid #ababab;
+    border-top: 1.5px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: .75px solid #ababab;
+    border-top-left-radius: .87vw;
+    border-bottom-left-radius: .87vw;
+}
+
+.inputblockrowsmall {
+    display: flex;
+    flex-direction: row;
+    height: 4.2vw;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 6vw;
+
+    margin-bottom: 1vw;
+    font-family: 'Thin';
+    padding-left: 2.5vw;
+    border-left: .75px solid #ababab;
+    border-top: 1.5px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: 1.5px solid #ababab;
+    border-top-right-radius: .87vw;
+    border-bottom-right-radius: .87vw;
+
+}
+
+.inputsubmitsquare {
+    height: 30vw;
+    width: 100%;
+}
+
+.inputblockrowcont {
+    width: 30vw;
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.inputsubmitsquare {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.inputblockcol.inputblockcolbottom {
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+
+}
+
+.inputblockcol.inputblockcoltop {
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+
+}
+
+.reuseform.reuseformbody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: fit-content;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* margin-top: 1vw; */
+    align-items: center;
+}
+
+.inputblockrowtitle.inputrowtitlecont.inputrowtitlecontwords.two {
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+
+}
+
+.inputblockcol.inputblockcolbottom.inputcity {
+    width: 27vw;
+    height: 100%;
+    outline: none;
+    box-sizing: border-box;
+    border-left: 1.5px solid #ababab;
+    border-top: .75px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: .75px solid #ababab;
+    padding-left: 1vw;
+    border-bottom-left-radius: .87vw;
+    height: 100%;
+    font-family: 'Thin';
+}
+
+.inputblockcol.inputblockcolbottom.inputstate {
+    outline: none;
+    width: 4vw;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: .75px solid #ababab;
+    border-top: .75px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: .75px solid #ababab;
+    align-items: center;
+    padding-left: .5vw;
+    height: 100%;
+    font-family: 'Thin';
+}
+
+.inputblockcol.inputblockcolbottom.inputcountry {
+    outline: none;
+    width: 4vw;
+    height: 100%;
+    /* padding-left: 1vw; */
+    box-sizing: border-box;
+    border-left: .75px solid #ababab;
+    border-top: .75px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: 1.5px solid #ababab;
+    align-items: center;
+    padding-left: .5vw;
+    border-bottom-right-radius: .87vw;
+    height: 100%;
+    font-family: 'Thin';
+}
+
+.inputblockcol.inputblockcoltop.inputapt {
+    width: 6vw;
+    outline: none;
+
+    box-sizing: border-box;
+    border-left: .75px solid #ababab;
+    border-top: 1.5px solid #ababab;
+    border-bottom: .75px solid #ababab;
+    border-right: 1.5px solid #ababab;
+    padding-left: 1vw;
+    border-top-right-radius: .87vw;
+    height: 100%;
+    font-family: 'Thin';
+}
+
+.inputblockcol.inputblockcoltop.inputaddress {
+    outline: none;
+    width: 29vw;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: 1.5px solid #ababab;
+    border-top: 1.5px solid #ababab;
+    border-bottom: .75px solid #ababab;
+    border-right: .75px solid #ababab;
+    padding-left: 1vw;
+    border-top-left-radius: .87vw;
+    height: 100%;
+    font-family: 'Thin';
+}
+
+.inputblockrowtitle.inputrowtitlecont.one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bold';
+    font-size: .98vw;
+    width: 100%;
+}
+
+.inputblockrowtitle.inputrowtitlecont.two {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* align-items: flex-end; */
+    font-family: 'Bold';
+    font-size: .98vw;
+    align-items: center;
+}
+
+.inputblockrowtitle.inputrowtitlecont.inputrowtitlecontwords.one {
+    width: 100%;
+    text-align: flex-start;
+
+}
+
+
+.inputblockcol.inputblockcoltop.inputapt:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcoltop.inputapt:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcoltop.inputaddress:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcoltop.inputaddress:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputcountry:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputcountry:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputstate:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputstate:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputcity:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputcity:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockrow.inputblockrowleft:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockrow.inputblockrowleft:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockrow.inputblockrowright:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockrow.inputblockrowright:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+
+/* .reuseformsubmitbutt>button {
+    width: 20vw;
+    border: none;
+    cursor: pointer;
+    background-color: #ff385c;
+    border: 1.5px solid #ff385c;
+    outline: none;
+    border-radius: .5vw;
+    box-sizing: border-box;
+    align-items: center;
+    color: white;
+    letter-spacing: .182vw;
+    font-size: 1.4vw;
+    font-family: 'Bold';
+} */

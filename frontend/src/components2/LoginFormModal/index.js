@@ -54,7 +54,9 @@ function LoginForm() {
         // .then(() => setShowModal(false))
     }
     return (
-        <form onSubmit={handleSubmit} id='loginform' >
+        <form onSubmit={handleSubmit}
+         id='loginform' 
+       >
 
             <div id='reuseheader'>
                 <div id="reusemain">Welcome to EarthRnR!</div>
@@ -84,20 +86,19 @@ function LoginForm() {
                 />
             </label>
             <button type="submit" id='loginsubmitbutton'>Continue</button>
-            <span>
+            <div id='loginmiddle'>
                 <div className="greylines"></div>
                 <p>
                     or
 
                 </p>
                 <div className="greylines"></div>
-            </span>
+            </div>
             <div id='fangcont'>
 
                 {/* <a onScroll={()}> */}
-                <div className="fangbutts" onClick={() => window.location = 'https://myspace.com'}>
+                <div className="fangbutts fangbutt fang" onClick={() => window.location = 'https://myspace.com'}>
                     <img src={`https://metabook-seed.s3.amazonaws.com/Frame_1-removebg-preview.png`}
-                        style={{ float: 'left' }}
                         alt='fake fang buttons'
                     />
                     <p>
@@ -105,7 +106,7 @@ function LoginForm() {
                     </p>
                 </div>
                 {/* </a> */}
-                <div className="fangbutts" onClick={() => window.location = 'https://instagram.com'}>
+                <div className="fangbutts fangbutt fang" onClick={() => window.location = 'https://instagram.com'}>
                     {/* <button></button> */}
                     <img src={`https://insta-flick.herokuapp.com/static/instaflick-updatedLogo.png`}
                         style={{ float: 'left' }}
@@ -115,7 +116,7 @@ function LoginForm() {
                         Continue with Instaflick
                     </p>
                 </div>
-                <div className="fangbutts" onClick={() => window.location = 'https://amazon.com'}>
+                <div className="fangbutts fangbutt fang" onClick={() => window.location = 'https://amazon.com'}>
                     <img src={`https://niles-app-academy.herokuapp.com/assets/white_logo-6a776881c565fa200ed232b46298f804059b6542c6ec355b510273f8e1d4d023.png`}
                         style={{ float: 'left', backgroundColor: 'darkgrey' }}
                         alt='fake fang buttons'
@@ -124,7 +125,7 @@ function LoginForm() {
                         Continue with Niles
                     </p>
                 </div>
-                <div className="fangbutts" onClick={() => window.location = 'https://slack.com/'}>
+                <div className="fangbutts fangbutt fang" onClick={() => window.location = 'https://slack.com/'}>
                     {/*https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg*/}
                     <img src={`https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg`}
                         style={{ float: 'left', height: '3em' }}
