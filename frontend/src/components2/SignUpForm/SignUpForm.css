@@ -24,16 +24,20 @@
 
 
 
-
+#reuseheader {
+    width: 100%;
+}
 #reusetitle {
     padding-top: .51vw;
     font-family: 'Li';
     height: 100%;
+    
 }
 #reusesub {
     height: 3.3vw;
     border-bottom: 2px solid #e6e6e6;
     margin-bottom: 1vw;
+    text-align: center;
 
 }
 
@@ -51,9 +55,10 @@
     margin-top: 1vw;
     font-family: 'Bold';
     height: fit-content;
+    text-align: center;
 }
 
-#reuseheader {
+.reuseheader {
     width: 100%;
 }
 
@@ -119,7 +124,12 @@
     width: 10%;
     margin-top: 0;
 }
-
+.reuseheader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
 .signuplabel.checkbox {
     display: flex;
     flex-direction: row;
@@ -128,6 +138,7 @@
     width: 40%;
     padding: 1em;
     margin-top: 10em;
+    /* margin-top: 1em; */
     justify-content: space-evenly;
 }
 
