@@ -56,17 +56,15 @@ function LoginForm() {
     return (
         <form onSubmit={handleSubmit} id='loginform' >
 
-            <div id='signupheader'>
-                <div id='loginexitbutt' onClick={() => closeModal()}>
-                    <div>x</div>
+            <div id='reuseheader'>
+                <div id="reusemain">Welcome to EarthRnR!</div>
+                <div id='reuseexitbutt' onClick={() => closeModal()}>
+                    x
                 </div>
-                <div id='signupheadertext'>
-                    <div id="signupmainheader">Welcome to EarthRnR!</div>
-                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? ' Sign Up Today!' : errors.map((error, idx) => <>{error}</>)}</div>
+                <div id='reusesub'>
+                    <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? 'Login' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
                 </div>
             </div>
-
-            <h3>Welcome to EarthRnR!</h3>
             <label className="loginlabel">
                 <input
                     type="text"

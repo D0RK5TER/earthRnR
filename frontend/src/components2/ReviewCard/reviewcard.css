@@ -1,3 +1,29 @@
+
+
+#reviewname {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#revratingimg {
+    display: flex;
+    flex-direction: column;
+height: 1.5vw;
+justify-self: flex-start;
+}
+
+#revratingcard {
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    font-family: 'Bold';
+    align-items: center;
+    text-align: center;
+}
+
+
 #cardreviewbot {
     font-family: 'Li';
     font-size: 1.2vw;

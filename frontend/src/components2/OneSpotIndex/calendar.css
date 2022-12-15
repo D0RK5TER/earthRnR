@@ -1,6 +1,8 @@
 
 
-
+#bookingcont {
+    z-index: -1;
+}
 
 .react-calendar__navigation__arrow{
     display: none;

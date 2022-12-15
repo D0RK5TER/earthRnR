@@ -35,27 +35,10 @@ h2 {
   font-family: 'Bold';
 }
 
-#paginationform button:hover {
-  border: none;
-  background-color: rgb(255, 136, 136);
-  font-size: 1em;
-  padding: 0;
-}
-
-#paginationform button {
-  margin-bottom: 1em;
-  font-family: 'Bold';
-  background-color: white;
-  border: none;
-  border-radius: 1em;
-  width: 40%;
-  line-height: 2em;
-  padding: .3em;
-}
 
 #paginationform {
-  height: fit-content;
-  width: 20vw;
+  height: 25vw;
+  width:30vw;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -96,4 +79,7 @@ ul {
   flex-direction: column;
   text-align: center;
   margin: 1em;
+  width: 100%;
+  border-bottom: 1.5px solid #e6e6e6;
+  padding-bottom: 1vw;
 }

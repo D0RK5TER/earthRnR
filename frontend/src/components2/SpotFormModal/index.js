@@ -50,29 +50,43 @@ function SpotForm({ setShowModal }) {
 
     return user && (
         <form onSubmit={handleSubmit} id='createspotform' >
-            <div id='signupheader'>
-                <div id='loginexitbutt' onClick={() => closeModal()}>
-                    <div>x</div>
+            <div id='reuseheader'>
+                <div id="reusemain">Welcome to EarthRnR!</div>
+                <div id='reuseexitbutt' onClick={() => closeModal()}>
+                    x
                 </div>
-                <div id='signupheadertext'>
-                    <div id="signupmainheader">Welcome {user.firstName}!</div>
-                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? 'EarthRnR your home!' : errors.map((error, idx) => <>{error}<br/></>)}</div>
+                <div id='reusesub'>
+                    <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? 'EarthRnR your Home!' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
                 </div>
             </div>
             <div id='createformcont'>
-                <div id='nameblock'>
-                    Name of Spot
-                    <input
-                        id='nameblockinput'
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder='A Unique Name'
-                        required
-                    />
+                <div id='addressblocktop'>
+                    <div className='createspotsmall'>
+                        Name of Spot
+                        <input
+                            id='nameblockinput'
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder='A Unique Name'
+                            required />
+                    </div>
+                    <div className='createspotsmall'>
+                        Price
+                        <input
+                            id='priceinputblock'
+                            type="integer"
+                            value={price}
+                            onChange={(e) => setPrice(e.target.value)}
+                            placeholder='$'
+                            max={10000}
+                            min={20}
+                            title='Must be between 20 and 10,000'
+                            required />
+                    </div>
                 </div>
-                <p id='addressheader'>Address</p>
-                <div id='addressblock'>
+                Address
+                <div id='addressblock' className='createspotsmall'>
                     <div id='addressblocktop'>
                         <input
                             id='blockaddress'
@@ -126,54 +140,52 @@ function SpotForm({ setShowModal }) {
 
                     </div>
                 </div>
-                <div id='descriptionpriceblock'>
-                    <div id='descriptionblock'>
 
-                        <div id='despricecontleft'>
+
+
+                <div className='createspotbig' >
+                    <div id='desccont'>
+                        <div id='deslck'>
                             Description
                             <textarea
                                 id='descblock'
                                 type={"textarea"}
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
-                                placeholder='please be accurate'
+                                placeholder='...'
                                 maxLength={'255'}
                                 minLength={'30'}
                                 required
                             />
                         </div>
-                        <div className="creatediv">
-                            Image URL
-                            <input
+                        <div id='urllock'>
+                            Image
+                            <img src={latt.length ? `${latt}` : quest} alt='sampimg' id='createspotimg' />
+
+
+                            {/* <input
                                 id='urlblock'
                                 type="url"
                                 value={latt}
                                 onChange={(e) => setLatt(e.target.value)}
-                                placeholder='Spot Main Image'
+                                placeholder='Image URL'
                                 required
-                            />
+                            /> */}
+
                         </div>
                     </div>
-                    <div id='priceblock'>
-                        <div id='pricetop'>
-                            Price
-                            <input
-                                id='priceinputblock'
-                                type="integer"
-                                value={price}
-                                onChange={(e) => setPrice(e.target.value)}
-                                placeholder='$'
-                                max={10000}
-                                min={20}
-                                title='Must be between 20 and 10,000'
-                                required
-                            />
-                        </div>
-                        <div id='createspotimgcont'>
-                            Image
-                            <img src={latt.length ? `${latt}` : quest} alt='sampimg' id='createspotimg' />
-                        </div>
-                    </div>
+
+                </div>
+                <div>
+
+                    <input
+                        id='urlblock'
+                        type="url"
+                        value={latt}
+                        onChange={(e) => setLatt(e.target.value)}
+                        placeholder='Image URL'
+                        required
+                    />
                 </div>
             </div>
             <div id='submitbuttcont'>

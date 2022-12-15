@@ -25,7 +25,7 @@ function SignUpForm() {
                 .then(closeModal)
                 .catch(async (res) => {
                     const data = await res.json()
-                    data.message === 'Validation error' ? setErrors([data.errors])
+                    data.message === 'Validation error' ? setErrors(data.errors)
                         : setErrors(Object.values(data.errors))
                 }
                 )
@@ -37,97 +37,84 @@ function SignUpForm() {
 
     return (
         <form onSubmit={handleSubmit} id='signupform' >
-            <div id='signupheader'>
-                <div id='loginexitbutt' onClick={() => closeModal()}>
-                    <div>x</div>
+            <div id='reuseheader'>
+                    <div id="reusemain">Welcome to EarthRnR!</div>
+                <div id='reuseexitbutt' onClick={() => closeModal()}>
+                    x
                 </div>
-                <div id='signupheadertext'>
-                    <div id="signupmainheader">Welcome to EarthRnR!</div>
-                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? ' Sign Up Today!' : errors.map((error, idx) => <>{error}<br /></>)}</div>
-
+                <div id='reusesub'>
+                    <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? ' Sign Up Today!' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
                 </div>
             </div>
 
-            <div id='signupformcont'>
-                <label className="signuplabel" id='signuptop'>
-                    <input
-                        type="text"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        placeholder='
-                    First Name
-                    '
-                        required
-                    />
-                </label>
-                <label className="signuplabel">
-                    <input
-                        type="text"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        placeholder='
-                    Last Name
-                    
-                    '
-                        required
-                    />
-                </label>
-                <label className="signuplabel">
-                    <input
-                        type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder='
-                    Email
-                    
-                    '
-                        required
-                    />
-                </label>
-                <label className="signuplabel">
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        placeholder='
-                    Username
-                    
-                    '
-                        required
-                    />
-                </label>
-                <label className="signuplabel">
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder='
-                    Password
-                    
-                    '
-                        required
-                    />
-                </label>
-                <label className="signuplabel">
-                    <input
-                        type="password"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        Confirm Password
-                        placeholder='Confirm Password'
-                        required
-                    />
-                </label>
-                <label className="signuplabel checkbox">
+            <div id='signupformcontain'>
+                First Name
+                <input
+                    id='signupfname'
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder='John'
+                    required
+                /> Last Name
+                <input
+                    id='signuplname'
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder='Doe'
+                    required
+                />
+
+        Email
+                <input
+                    id='signupemail'
+                    type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder='ishedead@gmail.com'
+                    required
+                />
+Username
+                <input
+                    id='signupuser'
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder='JohnnyDoh'
+                    required
+                />
+
+        Password
+                <input
+                    id='signuppass'
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    // placeholder='Strong Password'
+                    required
+                />
+            Confirm Password
+                <input
+                    id='signuppass2'
+                    type="password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    Confirm Password
+                    // placeholder='Exact Match'
+                    required
+                />
+                <div id='checkboxsign'>
                     <input
                         type='checkbox'
                         defaultChecked='true'
                     />
                     Sign Up for exclusive email offers!
-                </label>
+                </div>
+
             </div>
             <div id='submitbuttwrap'>
-                <button id='signupsubmitbutton' type="submit" style={{ marginTop: '1em' }} >Sign Up</button>
+                <button id='signupbutton' type="submit" >Sign Up</button>
             </div>
         </form>
     );

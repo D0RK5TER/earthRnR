@@ -19,6 +19,8 @@ export const loadAllSpots = (spots) => {
 };
 
 export const loadOneSpot = (spot) => {
+
+    
     return {
         type: LOAD_ONE_SPOT,
         spot
@@ -131,6 +133,9 @@ export const createSpotImage = (spotimg) => async (dispatch) => {
 }
 
 export const createSpot = (spot) => async (dispatch) => {
+
+
+
     const { address, city, state, country,
         name, description, price, latt } = spot;
     const response = await csrfFetch("/api/spots", {
@@ -143,6 +148,11 @@ export const createSpot = (spot) => async (dispatch) => {
             name, description, price
         }),
     })
+
+
+
+
+
     if (response.ok) {
         let data = await response.json()
         let nextresponse = await csrfFetch(`/api/spots/${data.id}/images`, {
