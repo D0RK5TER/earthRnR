@@ -69,13 +69,13 @@ function EditSpot({ idx, setShowModal }) {
     }
     return (
         <form onSubmit={handleSubmit} id='createspotform' >
-            <div id='signupheader'>
-                <div id='loginexitbutt' onClick={() => closeModal()}>
-                    <div>x</div>
+            <div id='reuseheader'>
+                <div id="reusemain">Welcome to EarthRnR!</div>
+                <div id='reuseexitbutt' onClick={() => closeModal()}>
+                    x
                 </div>
-                <div id='signupheadertext'>
-                    <div id="signupmainheader">Welcome {user.firstName}!</div>
-                    <div id={!errors.length ? 'signupsubheader' : 'errorswap'}>{!errors.length ? 'Edit your home!' : errors.map((error, idx) => <>{error}<br/></>)}</div>
+                <div id='reusesub'>
+                    <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? 'Edit Your Spot!' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
                 </div>
             </div>
             <div id='createformcont'>

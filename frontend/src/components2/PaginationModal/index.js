@@ -38,9 +38,15 @@ function PaginationForm({ setShowModal }) {
     }
     return (
         <form onSubmit={handleSubmit} id='paginationform'>
-            <h2>
-                Price Range
-            </h2>
+            <div id='reuseheader'>
+                <div id="reusemain">Welcome to EarthRnR!</div>
+                <div id='reuseexitbutt' onClick={() => closeModal()}>
+                    x
+                </div>
+                <div id='reusesub'>
+                    <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? 'Select a Price Range' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
+                </div>
+            </div>
             <div id='mincont'>
                 Minimum
                 <label>
@@ -73,7 +79,7 @@ function PaginationForm({ setShowModal }) {
                 </label>
                 {/* <button type="submit" >Search</button> */}
             </div>
-            <button type="submit">Search</button>
+            <button type="submit" id="signupbutton">Search</button>
             {/* <button type='reset'>Reset</button> */}
 
         </form>

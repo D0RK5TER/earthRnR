@@ -7,6 +7,7 @@ import EditReviewForm from '../EditReviewForm';
 import OpenModalButton from "../OpenModalButton";
 import ReviewImagesIndex from '../ReviewImagesModal';
 import DeleteReviewForm from '../DeleteReviewModal';
+import star from '../../assets/star.png';
 
 import propic from '../../assets/propic.png'
 import { dateMonthYear } from '../../utilities/location';
@@ -30,13 +31,20 @@ function ReviewCard({ review, user, place, id }) {
                 </div>
                 <div id='headerright'>
                     <div className='profilename profileage'>
-                        <div className='reviewname'>
+                        <div id='reviewname'>
                             {review.User?.firstName}
+                            <div id='revratingcard'>
+                                <div id='revratingimg'>
+                                    <img src={star} id='reviewsstar' alt='small star img' />
+                                </div>
+                                {review.stars}
+                            </div>
                         </div>
                         <div className='reviewage'>
                             {dateMonthYear(review.createdAt)}
                         </div>
                     </div>
+
                     {review.userId === user?.id && place !== '/current' &&
                         <OpenModalButton
                             id='deletereview'

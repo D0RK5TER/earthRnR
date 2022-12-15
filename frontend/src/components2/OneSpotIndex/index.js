@@ -134,10 +134,11 @@ const OneSpotIndex = () => {
   useEffect(() => {
     dispatch(getOneSpot(id)).then(() => dispatch(getAllReviews(id)))
   }, [id, dispatch]) //took out id
-
+  //theSpot?.id && 
 
   // theSpot !== undefined && +id === theSpot?.id && thereviews && 
-
+  // console.log(theSpot, 'THE SPOT')
+  // console.log(thereviews, '!!!!! revs')
   return theSpot?.id && thereviews && (
 
     <div id='onespotcont'>
@@ -147,7 +148,7 @@ const OneSpotIndex = () => {
         <div className='titlearea' >
 
           <div id='onespotheader' className='nameandbutt namez'>
-            {theSpot?.name}
+            {theSpot.name}
             <div id='onespotdetails'>
               hosted by {theSpot.User.firstName}
             </div>
@@ -272,9 +273,7 @@ const OneSpotIndex = () => {
 
                     <div id='spotdescription'>
                       <h4>What this spot has to offer!</h4>
-                      {theSpot.description} is the spot description but it is not long enough. Need more Columns for
-                      doing it with goood lengthy randomized desc. For now, Cause who actually wants to meet the host nowadays? sed quia consequuntur
-                      magni dolores eos qui ratione voluptatem sequi nesciunt.
+                      {theSpot.description}
                     </div>
 
                     <div id='spotamenities'>
@@ -323,7 +322,7 @@ const OneSpotIndex = () => {
                     <>
                       <h2>{ }6 nights at { }</h2>
                       <div id='spotbookingcalendar'>
-                      <img src={caltemp} alt='temponly'  style={{height: '17vw'}}  />
+                        <img src={caltemp} alt='temponly' style={{ height: '17vw' }} />
 
                         {/* <div id='thismonth'>
 
@@ -349,8 +348,8 @@ const OneSpotIndex = () => {
               <div id='navbarblock'>
 
               </div>
-              <img src={bookingtemp} alt='temponly' style={{marginTop: '5vw'}} />
-              {/* <div id='bookingbody'>
+              {/* <img src={bookingtemp} alt='temponly' style={{ marginTop: '5vw' }} /> */}
+              <div id='bookingbody'>
 
                 <div id='priceheader'>
                   <p>${Math.round(theSpot.price)} <p>night</p></p>
@@ -367,8 +366,8 @@ const OneSpotIndex = () => {
                     </div >
                   </div>
                 </div>
-
-                <div id='bookdatescont'>
+                <img src={bookingtemp} alt='temponly' />
+                {/* <div id='bookdatescont'>
                   <div id='bookdatestop'>
                     <div id='bookdatestopleft'>
                     </div>
@@ -377,9 +376,9 @@ const OneSpotIndex = () => {
                   </div>
                   <div id='bookdatesbottom'>
                   </div>
-                </div>
+                </div> */}
 
-                <button id='bookingsubmitbutton' type="submit">Reserve</button>
+                {/* <button id='bookingsubmitbutton' type="submit">Reserve</button> */}
                 <div id='warningcharge'>
                   We "won't" charge you yet!
                 </div>
@@ -401,7 +400,7 @@ const OneSpotIndex = () => {
                     {total}
                   </p>
                 </div>
-              </div> */}
+              </div>
 
             </div>
           </div>
@@ -433,8 +432,8 @@ const OneSpotIndex = () => {
               </div>}
 
               <div id='reviewsright'>
-                {user?.id !== theSpot?.ownerId && buttonVis &&
-                  <OpenModalButton
+                {user?.id !== theSpot?.ownerId && buttonVis && user?.id &&
+                  < OpenModalButton
                     id='createreviewbutt'
                     buttonText="Create a Review!"
                     modalComponent={<CreateReviewFormModal id={id} key={theSpot.id + theSpot.name} />}

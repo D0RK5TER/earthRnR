@@ -21,71 +21,97 @@
     src: local("popbold"),
         url("../../assets/popbold.ttf") format("truetype");
 }
-#submitbuttwrap {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 1vw;
-}
-#signupheader {
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 6vw;
-    border-bottom: 2px solid #e6e6e6;
-    font-size: 1.6vw;
-    margin-top: 1vw;
+
+
+
+#reusetitle {
+    padding-top: .51vw;
+    font-family: 'Li';
+    height: 100%;
 }
-#signupsubheader {
+#reusesub {
+    height: 3.3vw;
+    border-bottom: 2px solid #e6e6e6;
+    margin-bottom: 1vw;
+
+}
+
+#reuseexitbutt {
+    width: 100%;
+    padding-left: 2vw;
+    text-align: start;
+    line-height: 0vw;
+    font-family: 'Bold';
+    cursor: pointer;
+
+}
+
+#reusemain {
+    margin-top: 1vw;
+    font-family: 'Bold';
+    height: fit-content;
+}
+
+#reuseheader {
+    width: 100%;
+}
+
+#signupformcontain> input {
+    height: 3vw;
+    width: 26vw;
+    border-radius: .61vw;
+    border: 1px solid #ababab;
+}
+#signupformcontain {
+    cursor: default;
     display: flex;
     flex-direction: column;
-    justify-self: center;
-    justify-content: center;
-    font-size: 1.2975vw;
-    font-family: 'Li';
+    justify-content: space-around;
+    align-items: center;
+    height: 30vw;
+    font-size: 1vw;
+    font-family: 'Bold';
 
-}
+} 
+
 #errorswap {
     font-family: 'Li';
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    font-size: 1.2975vw;
-    width: fit-content;
+    font-size: .92975vw;
+    width: 100%;
     color: #FF0000;
     text-shadow: .31px .31px 0px #000000;
+    line-height: 1vw;
 }
-#signupheadertext {
-    width: 90%;
+
+#reuseheader {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-right: 2vw;
 }
 
 
-
-
-
-#signupform {
-    font-family: "Light";
+#submitbuttwrap {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* align-items: center; */
-    width: 40vw;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    border-top:  2px solid #e6e6e6;;
+    
 }
 
+#signupform  {
+    height: 44vw;
+    width: 38vw;
+}
 
-
-
-/* #signupform  {
-    height: 40vw;
-} */
 .signuplabel:first-of-type input {
     margin-top: 0;
 }
@@ -126,20 +152,6 @@
 
 
 
-
-
-
-#signupmainheader {
-    /* padding-right: 4em; */
-    cursor: pointer;
-    font-family: 'Bold';
-    width: fit-content;
-
-    /* justify-content: center;
-    align-items: center; */
-}
-
-
 /* .signuplabel>label {
     box-sizing: border-box;
     align-items: center;
@@ -157,10 +169,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 2px solid #e6e6e6;
+    /* border-bottom: 2px solid #e6e6e6; */
     width: 100%;
     margin-top: 0;
     vertical-align: top;
+    border-top: 2px solid #e6e6e6;
+
     /* padding: 3em; */
     /* padding-bottom: 2em; */
     /* justify-self: center; */
@@ -192,16 +206,16 @@
     /* margin-top: 1.7em; */
 }
 
-#signupsubmitbutton {
-    width: 30em;
+#signupbutton {
+    width: 17vw;
     border: none;
-    padding: 1em;
+    padding: 1vw;
     background-color: #ff385c;
     border-radius: .7em;
     box-sizing: border-box;
     align-items: center;
     color: white;
-    margin-top: 1em;
+    margin-top: 0;
 }
 
 #signupsubmitbutton:hover {
@@ -288,11 +302,11 @@
     margin-bottom: 1em;
 }
 
-    /* width: 60%; */
-    
-    /* width: 50%; */
-    /* text-align: start; */
-    /* justify-content: center; */
+/* width: 60%; */
+
+/* width: 50%; */
+/* text-align: start; */
+/* justify-content: center; */
 
 
 
@@ -324,7 +338,7 @@
 
 }
 
-#signupmainheader1 {
+#signupmainheader {
     /* padding-right: 4em; */
     cursor: pointer;
     font-family: 'Bold';
@@ -362,5 +376,5 @@
     border-radius: 3em;
     cursor: pointer;
     width: 100%;
-    
-}
+
+} 

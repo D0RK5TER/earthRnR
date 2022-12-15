@@ -4,6 +4,14 @@
         url("../../assets/earthrnrCerealLight.ttf") format("truetype");
 }
 
+#delrevwrap {
+    width: 100%;
+    padding: 1vw;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
 #deleteheader {
     display: flex;
     justify-content: space-between;
@@ -16,6 +24,12 @@
 #deletespot {
     margin-bottom: 0;
     font-family: 'Bold';
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: middle; */
+    align-items: center;
+    height: 13vw;
     /* text-decoration: underline; */
     letter-spacing: .05em;
 }
@@ -51,15 +65,6 @@
     border: 1px solid;
     /* height: 2em; */
     margin-bottom: 1.5em;
-}
-
-#deletespot {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: middle; */
-    align-items: center;
-    height: 10vw;
-    width: 20vw
 }
 
 #deletespotform {
