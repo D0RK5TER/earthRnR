@@ -71,17 +71,17 @@
 #loginform .loginlabel:first-of-type input {
     box-sizing: border-box;
     align-items: center;
-    padding: 1em;
-    border-top-left-radius: .7em;
-    border-top-right-radius: .7em;
+    padding: 1vw;
+    border-top-left-radius: .87vw;
+    border-top-right-radius: .87vw;
     margin-top: 1.2em;
-    width: 32em;
+    width: 35vw;
     border: 1.5px solid #ababab;
 
 }
 
 #loginform .loginlabel:last-of-type input {
-    width: 32em;
+    width: 35vw;
     border: 1.5px solid #ababab;
     border-bottom-right-radius: .7em;
     border-bottom-left-radius: .7em;
@@ -93,7 +93,7 @@
 }
 
 #loginsubmitbutton {
-    width: 32em;
+    width: 35vw;
     border: none;
     padding: 1em;
     background-color: #ff385c;

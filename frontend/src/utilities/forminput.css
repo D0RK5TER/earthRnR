@@ -1,0 +1,352 @@
+/* 
+Making a key for framework here
+
+
+
+
+
+
+
+
+*/
+.reuseform {
+    height: fit-content;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1vw;
+    cursor: default;
+}
+
+.reuseformsubmitbutt {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.inputblockcol {
+
+    font-family: 'Bold';
+    font-size: .98vw;
+    display: flex;
+    flex-direction: column;
+    height: 8.4vw;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+
+    width: 35vw;
+}
+
+.reuseheader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.inputblockrow {
+    display: flex;
+    flex-direction: row;
+    height: 4.2vw;
+    justify-content: center;
+    box-sizing: border-box;
+
+    width: 35vw;
+    margin-bottom: 1.5vw;
+}
+
+
+.inputsubmitsquare {
+    height: 30vw;
+    width: 100%;
+}
+
+.inputsubmitsquare {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.inputblockcol.inputblockcolbottom {
+    outline: none;
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+
+}
+
+.inputblockcol.inputblockcoltop {
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+
+}
+
+.reuseform.reuseformbody {
+    display: flex;
+    flex-direction: column;
+
+    height: fit-content;
+    width: 100%;
+    margin-top: 1vw;
+    align-items: center;
+
+
+}
+
+
+.inputblockrow.inputblockrowright {
+    height: 100%;
+    width: 6vw;
+    box-sizing: border-box;
+    border-left: .75px solid #ababab;
+    border-top: 1.5px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: 1.5px solid #ababab;
+    border-top-right-radius: .87vw;
+    border-bottom-right-radius: .87vw;
+    align-items: center;
+    padding-left: 1vw;
+
+    display: flex;
+    font-family: 'Thin';
+}
+
+.inputblockrow.inputblockrowleft {
+    font-family: 'Thin';
+    height: 100%;
+    width: 29vw;
+    box-sizing: border-box;
+    border-left: 1.5px solid #ababab;
+    border-top: 1.5px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: .75px solid #ababab;
+    border-top-left-radius: .87vw;
+    border-bottom-left-radius: .87vw;
+
+    padding-left: 1vw;
+    text-align: start;
+}
+
+.inputblockrow.inputblockrowtitle {
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    font-family: 'Bold';
+    font-size: .8vw;
+}
+
+
+
+.inputblockcol.inputblockcolbottom.inputcity {
+    width: 27vw;
+    height: 100%;
+    outline: none;
+    box-sizing: border-box;
+    border-left: 1.5px solid #ababab;
+    border-top: .75px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: .75px solid #ababab;
+
+    border-bottom-left-radius: .87vw;
+    height: 100%;
+    font-family: 'Thin';
+}
+
+.inputblockcol.inputblockcolbottom.inputstate {
+    outline: none;
+    width: 4vw;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: .75px solid #ababab;
+    border-top: .75px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: .75px solid #ababab;
+    align-items: center;
+
+    height: 100%;
+    font-family: 'Thin';
+}
+
+.inputblockcol.inputblockcolbottom.inputcountry {
+    outline: none;
+    width: 4vw;
+    height: 100%;
+
+    box-sizing: border-box;
+    border-left: .75px solid #ababab;
+    border-top: .75px solid #ababab;
+    border-bottom: 1.5px solid #ababab;
+    border-right: 1.5px solid #ababab;
+    align-items: center;
+
+    border-bottom-right-radius: .87vw;
+    height: 100%;
+    font-family: 'Thin';
+}
+
+.inputblockcol.inputblockcoltop.inputapt {
+    width: 6vw;
+    outline: none;
+
+    box-sizing: border-box;
+    border-left: .75px solid #ababab;
+    border-top: 1.5px solid #ababab;
+    border-bottom: .75px solid #ababab;
+    border-right: 1.5px solid #ababab;
+
+    border-top-right-radius: .87vw;
+    height: 100%;
+    font-family: 'Thin';
+}
+
+.inputblockcol.inputblockcoltop.inputaddress {
+    outline: none;
+    width: 29vw;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: 1.5px solid #ababab;
+    border-top: 1.5px solid #ababab;
+    border-bottom: .75px solid #ababab;
+    border-right: .75px solid #ababab;
+
+    border-top-left-radius: .87vw;
+    height: 100%;
+    font-family: 'Thin';
+}
+
+.inputblockrowtitle.inputrowtitlecont.one {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Bold';
+    font-size: .98vw;
+}
+
+.inputblockrowtitle.inputrowtitlecont.two {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: 'Bold';
+    font-size: .98vw;
+}
+
+
+
+
+
+.inputblockrowtitle.inputrowtitlecont.inputrowtitlecontwords.one {
+    width: 100%;
+    text-align: center;
+
+}
+
+.inputblockrowtitle.inputrowtitlecont.inputrowtitlecontwords.two {
+    width: 70%;
+    margin-left: 7.6vw;
+}
+
+.inputblockcol.inputblockcoltop.inputapt:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcoltop.inputapt:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcoltop.inputaddress:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcoltop.inputaddress:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputcountry:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputcountry:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputstate:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputstate:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputcity:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockcol.inputblockcolbottom.inputcity:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockrow.inputblockrowleft:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockrow.inputblockrowleft:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockrow.inputblockrowright:focus {
+    outline: none;
+    border: 1.75px solid #FF385C;
+    border-radius: .5vw;
+}
+
+.inputblockrow.inputblockrowright:hover {
+    border: 1.5px solid #FF385C;
+    border-radius: .5vw;
+}
+
+
+.reuseformsubmitbutt>button:hover {
+    background-color: #e42246;
+}
+
+.reuseformsubmitbutt>button {
+    width: 20vw;
+    border: none;
+    cursor: pointer;
+    background-color: #ff385c;
+    border-radius: .5vw;
+    box-sizing: border-box;
+    align-items: center;
+    color: white;
+    letter-spacing: .182vw;
+    font-size: 1.4vw;
+    font-family: 'Bold';
+}

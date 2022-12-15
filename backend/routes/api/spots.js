@@ -148,8 +148,8 @@ router.get('/', async (req, res) => {
         ],
         // raw: true,
         // group: [ 'id', 'SpotImages', 'Review.stars']
-        limit: size,
-        offset: size * page
+        // limit: size,
+        // offset: size * page
     })
     spots = JSON.parse(JSON.stringify(spots))
     for (let spa of spots) {
