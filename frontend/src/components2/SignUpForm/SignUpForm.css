@@ -23,16 +23,23 @@
 }
 
 
+#submitbuttwrap.login {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: .5vw;
+}
 
 #reuseheader {
     width: 100%;
 }
+
 #reusetitle {
     padding-top: .51vw;
     font-family: 'Li';
     height: 100%;
-    
+
 }
+
 #reusesub {
     height: 3.3vw;
     border-bottom: 2px solid #e6e6e6;
@@ -62,12 +69,13 @@
     width: 100%;
 }
 
-#signupformcontain> input {
+#signupformcontain>input {
     height: 3vw;
     width: 26vw;
     border-radius: .61vw;
     border: 1px solid #ababab;
 }
+
 #signupformcontain {
     cursor: default;
     display: flex;
@@ -78,7 +86,7 @@
     font-size: 1vw;
     font-family: 'Bold';
 
-} 
+}
 
 #errorswap {
     font-family: 'Li';
@@ -103,11 +111,12 @@
     height: 5vw;
     margin-top: 1vw;
     margin-bottom: 1vw;
-    border-top:  2px solid #e6e6e6;;
-    
+    border-top: 2px solid #e6e6e6;
+    ;
+
 }
 
-#signupform  {
+#signupform {
     height: 44vw;
     width: 38vw;
 }
@@ -120,24 +129,27 @@
     margin-bottom: 1em;
 }
 
-.signuplabel.checkbox input {
-    width: 10%;
-    margin-top: 0;
-}
+
 .reuseheader {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
-.signuplabel.checkbox {
-    display: flex;
+
+#checkboxsign {
+    display: inline-flex;
     flex-direction: row;
     font-family: 'li';
-    font-size: .1em;
-    width: 40%;
-    padding: 1em;
-    margin-top: 10em;
+    font-size: 1vw;
+    height: fit-content;
+    margin-top: 0px;
+    width: fit-content;
+    margin-top: 1vw;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0px;
+    /* margin-top: 10em; */
     /* margin-top: 1em; */
     justify-content: space-evenly;
 }
@@ -170,7 +182,7 @@
 
 /* }  */
 
-#signupformcont {
+#signupformcont.reuseform {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,7 +191,7 @@
     margin-top: 0;
     vertical-align: top;
     border-top: 2px solid #e6e6e6;
-
+    margin-bottom: 0px;
     /* padding: 3em; */
     /* padding-bottom: 2em; */
     /* justify-self: center; */
@@ -382,4 +394,4 @@
     cursor: pointer;
     width: 100%;
 
-} 
+}

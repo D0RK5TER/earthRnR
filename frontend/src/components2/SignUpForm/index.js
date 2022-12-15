@@ -113,8 +113,8 @@ Username
                 </div>
 
             </div>
-            <div id='submitbuttwrap'>
-                <button id='signupbutton' type="submit" >Sign Up</button>
+            <div id='submitbuttwrap'  className="login">
+                <button id='signupbutton' className="login" type="submit" >Sign Up</button>
             </div>
         </form>
     );
