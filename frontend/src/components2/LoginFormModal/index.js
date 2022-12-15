@@ -55,7 +55,7 @@ function LoginForm() {
     }
     return (
         <form onSubmit={handleSubmit}
-         id='loginform' 
+         id='loginform' className="signup sign"
        >
 
             <div id='reuseheader'>

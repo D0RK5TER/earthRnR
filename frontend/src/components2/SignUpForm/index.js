@@ -43,7 +43,7 @@ function SignUpForm() {
                     x
                 </div>
                 <div id='reusesub'>
-                    <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? 'Create a Review!' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
+                    <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? 'Sign up Today!' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
                 </div>
             </div>
 

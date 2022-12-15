@@ -50,13 +50,13 @@ function SpotForm({ setShowModal }) {
 
     return user && (
         <form onSubmit={handleSubmit} className='reuseform' >
-            <div className='reuseheader'>
-                <div className="reusemain">Welcome to EarthRnR!</div>
-                <div className='reuseexitbutt' onClick={() => closeModal()}>
+            <div id='reuseheader'>
+                <div id="reusemain">Welcome to EarthRnR!</div>
+                <div id='reuseexitbutt' onClick={() => closeModal()}>
                     x
                 </div>
-                <div className='reusesub'>
-                    <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? 'EarthRnR your Home!' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
+                <div id='reusesub'>
+                    <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? 'Create a Spot!' : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div>
                 </div>
             </div>
             <div className='reuseform reuseformbody'>
