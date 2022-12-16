@@ -1,10 +1,10 @@
 @keyframes marquee {
     from {
-        top: -30%;
+        top: -200%;
     }
 
     to {
-        top: 30%;
+        top: 10%;
     }
 }
 
@@ -22,28 +22,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* transition: opacity 2.2s ease; */
-    /* transition: transform 10.6s cubic-bezier(0.5, 0, 0.75, 0); */
 }
 
 #modal-background {
-    /* transition: transform 0.6s easeInQuart; */
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    /* transition: width 2s, height 2s, background-color 2s, transform 2s; */
+    background-color: rgba(0, 0, 0, 0.744);
 
 }
 
 #modal-content {
-    transform: perspective(130px);
+    /* transform: perspective(130px); */
+    animation: marquee 400ms linear;
 
     position: absolute;
     background-color: white;
     border-radius: 1em;
-    animation: marquee 400ms linear
 
 }
