@@ -23,8 +23,13 @@
 }
 
 .onereview.single.one {
+    border: .51px solid #b4b4b4 ;
     margin-left: 0px;
     cursor: default;
+    margin: 1vw;
+    height: fit-content;
+    width: 35vw;
+    border-radius: .75vw;
 }
 
 .smallheader.current.smallcurrent {

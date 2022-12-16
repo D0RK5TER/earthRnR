@@ -12,7 +12,7 @@ import App from './App';
 import * as spotsActions from './store/spots';
 import * as sessionActions from './store/session';
 import * as reviewsActions from './store/reviews'
-
+import * as bookingsActions from './store/bookings'
 const store = configureStore();
 
 if (process.env.NODE_ENV !== "production") {
@@ -20,8 +20,9 @@ if (process.env.NODE_ENV !== "production") {
   window.csrfFetch = csrfFetch;
   window.store = store;
   window.sessionActions = sessionActions;
-  window.spotsActions = spotsActions
-  window.reviewsActions = reviewsActions
+  window.spotsActions = spotsActions;
+  window.reviewsActions = reviewsActions;
+  window.bookingsActions = bookingsActions;
 }
 
 function Root() {
