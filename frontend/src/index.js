@@ -8,10 +8,10 @@ import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
 
 // import App from './App';
-import App from './App2';
-import * as spotsActions from './store/spots2';
-import * as sessionActions from './store/session2';
-import * as reviewsActions from './store/reviews2'
+import App from './App';
+import * as spotsActions from './store/spots';
+import * as sessionActions from './store/session';
+import * as reviewsActions from './store/reviews'
 
 const store = configureStore();
 
@@ -23,11 +23,6 @@ if (process.env.NODE_ENV !== "production") {
   window.spotsActions = spotsActions
   window.reviewsActions = reviewsActions
 }
-
-
-//instructions have import modal up top
-
-//and pass in <Modal /> in bottom
 
 function Root() {
   return (
