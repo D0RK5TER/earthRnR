@@ -63,12 +63,13 @@ justify-content: flex-start;
 .react-calendar__navigation {
     display: flex;
     height: 44px;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
 }
 
 .react-calendar__navigation button {
     min-width: 44px;
     background: none;
+    /* -moz-outline-radius-bottomright: 6px sol; */
 }
 
 .react-calendar__navigation button:disabled {

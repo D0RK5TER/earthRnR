@@ -322,16 +322,16 @@ const OneSpotIndex = () => {
                     <>
                       <h2>{ }6 nights at { }</h2>
                       <div id='spotbookingcalendar'>
-                        <img src={caltemp} alt='temponly' style={{ height: '17vw' }} />
+                        <img src={caltemp} alt='temponly' style={{ height: '23vw' }} />
 
-                        {/* <div id='thismonth'> */}
-                        {/* <CalendarMonth onChange={onChange} value={value}/> */}
+                        {/* <div id='thismonth'>
+                        <CalendarMonth onChange={onChange} value={value}/>
 
-                        {/* </div> */}
-                        {/* <div id='nextmonth'> */}
-                        {/* <Calendar onChange={onChange} value={value} /> */}
+                        </div>
+                        <div id='nextmonth'>
+                        <Calendar onChange={onChange} value={value} />
 
-                        {/* </div> */}
+                        </div> */}
 
                       </div >
                     </>
