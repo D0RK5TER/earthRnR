@@ -1,43 +1,32 @@
 
-// import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useModal } from '../../context/Modal';
 
-// import { useModal } from '../../context/Modal';
-// import gitcon from '../../assets/gitcon.png';
-// import linkcon from '../../assets/linkcon.png';
 
-// export default NoFeatureModal;
+// import './DeleteReviewForm.css'
+// import quest from '../../assets/quest.jpg';
 
-// function NoFeatureModal({ idx }) {
-//     const {closeModal} = useModal()
+function NoFeatureIndex() {
+    const { closeModal } = useModal();
 
-//     return (
+    return (
+        <div id='deletespot' style={{cursor:'default'}} >
+            <div id='reuseheader'>
+                <div id="reusemain">Welcome to EarthRnR!</div>
+                <div id='reuseexitbutt' onClick={() => closeModal()}>
+                    x
+                </div>
+                <div id='reusesub'>
+                    {/* <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? `Are you sure?` : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div> */}
+                    This feature will be coming soon!
+                </div>
+            </div>
+            <div id='delrevwrap'>
+                <button style={{cursor:'pointer'}} type="button" id='createblock' onClick={() => closeModal()}>Close</button>
+            </div>
 
-//         <div id='myinfocont'>
-//             <div id="myinfoheader">
-//                 <div id='loginexitbutt' onClick={() => closeModal()}>
-//                     <div>x</div>
-//                 </div>
-//                 <h3>Welcome to EarthRnR!</h3>
-//                 <h5>No Us, Just Me</h5>
-//             </div>
-//             <div id='myinfopage'>
-//                 <div id="gitcon" onClick={() => window.location = 'https://github.com/D0RK5TER/earthRnR'}>
-//                     <img src={gitcon}
-//                         style={{ float: 'left' }}
-//                         alt='my buttons'
-//                     />
-//                 </div>
-//                 <div className="linkcon" onClick={() => window.location = 'https://www.linkedin.com/in/p-dexter-assaf-63a7a3252/'}>
-//                     {/* <button></button> */}
-//                     <img src={linkcon}
-//                         alt='my buttons'
-//                     />
-//                 </div>
-//             </div>
-//         </div>
+        </div>
+    )
+}
 
-//     );
-// }
-
-// // export default SpotImageForm;
+export default NoFeatureIndex;
