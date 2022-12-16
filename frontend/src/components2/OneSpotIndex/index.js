@@ -343,31 +343,30 @@ const OneSpotIndex = () => {
             </div>
 
 
+            <>
+            <div id='navbarblock' style={{ marginTop: '8vw', height: '1px' }} />
+              <div id='bookingcont'>
+                {/* <img src={bookingtemp} alt='temponly' style={{ marginTop: '5vw' }} /> */}
+                <div id='bookingbody'>
+                  {/*  */}
+                  <div id='priceheader'>
+                    <p>${Math.round(theSpot.price)} <p>night</p></p>
 
-            <div id='bookingcont'>
-              <div id='navbarblock'>
+                    <div id='rightside'>
 
-              </div>
-              {/* <img src={bookingtemp} alt='temponly' style={{ marginTop: '5vw' }} /> */}
-              <div id='bookingbody'>
+                      <img src={star} id='rightsidestar' alt='star img' />&nbsp;
+                      {theSpot.avgStarRating}
 
-                <div id='priceheader'>
-                  <p>${Math.round(theSpot.price)} <p>night</p></p>
-
-                  <div id='rightside'>
-
-                    <img src={star} id='rightsidestar' alt='star img' />&nbsp;
-                    {theSpot.avgStarRating}
-
-                    &nbsp;·&nbsp;
-                    <div id='rightsidereviews'
-                      onClick={(e) => { e.preventDefault(); window.location.replace(`/spot/${theSpot.id}#jumpmark`) }}>
-                      {`${theSpot.numReviews} reviews`}
-                    </div >
+                      &nbsp;·&nbsp;
+                      <div id='rightsidereviews'
+                        onClick={(e) => { e.preventDefault(); window.location.replace(`/spot/${theSpot.id}#jumpmark`) }}>
+                        {`${theSpot.numReviews} reviews`}
+                      </div >
+                    </div>
                   </div>
-                </div>
-                <img src={bookingtemp} alt='temponly' />
-                {/* <div id='bookdatescont'>
+                  <img src={bookingtemp} alt='temponly' />
+
+                  {/* <div id='bookdatescont'>
                   <div id='bookdatestop'>
                     <div id='bookdatestopleft'>
                     </div>
@@ -378,33 +377,33 @@ const OneSpotIndex = () => {
                   </div>
                 </div> */}
 
-                {/* <button id='bookingsubmitbutton' type="submit">Reserve</button> */}
-                <div id='warningcharge'>
-                  We "won't" charge you yet!
+                  {/* <button id='bookingsubmitbutton' type="submit">Reserve</button> */}
+                  <div id='warningcharge'>
+                    We "won't" charge you yet!
+                  </div>
+                  <div className='bookingcalc'>
+                    <p>{`$${Math.floor(theSpot.price)} x 6 nights`}</p>
+                    <p>{bookingsixnight}</p>
+                  </div>
+                  <div className='bookingcalc'>
+                    <p>Cleaning Fee:</p>
+                    <p>{cleaningfee}</p>
+                  </div>
+                  <div className='bookingcalc'>
+                    <p>Service Fee:</p>
+                    <p>{servicefee}</p>
+                  </div>
+                  <div className='bookingcalc' id='bookingcalctotal'>
+                    <p>Total before taxes</p>
+                    <p>
+                      {total}
+                    </p>
+                  </div>
                 </div>
-                <div className='bookingcalc'>
-                  <p>{`$${Math.floor(theSpot.price)} x 6 nights`}</p>
-                  <p>{bookingsixnight}</p>
-                </div>
-                <div className='bookingcalc'>
-                  <p>Cleaning Fee:</p>
-                  <p>{cleaningfee}</p>
-                </div>
-                <div className='bookingcalc'>
-                  <p>Service Fee:</p>
-                  <p>{servicefee}</p>
-                </div>
-                <div className='bookingcalc' id='bookingcalctotal'>
-                  <p>Total before taxes</p>
-                  <p>
-                    {total}
-                  </p>
-                </div>
+
               </div>
-
-            </div>
+            </>
           </div>
-
           <div id='jumpmark' style={{ marginBottom: '4em' }}></div>
 
           <div id='reviewscont'>
