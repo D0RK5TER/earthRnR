@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import SpotsIndex from './components/SpotsIndex'
 import OneSpotIndex from './components/OneSpotIndex'
 import CurrentIndex from "./components/CurrentIndex";
+
 import './index.css';
 import './utilities/forminput.css'
 

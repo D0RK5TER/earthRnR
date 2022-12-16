@@ -7,7 +7,8 @@ import EditSpotFormModal from '../EditSpotFormModal';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { getMySpots, getOneSpot } from '../../store/spots';
-import { getMyReviews, makeChangeReview } from '../../store/reviews';
+import { getMyReviews} from '../../store/reviews';
+import { getMyBooks } from '../../store/bookings';
 import SpotCard from '../SpotCard'
 import ReviewCard from '../ReviewCard';
 import './currentindex.css'
@@ -27,6 +28,7 @@ const CurrentIndex = () => {
     let reviewspots = useSelector(state => state.spots)
 
     useEffect(() => {
+        dispatch(getMyBooks())
         dispatch(getMySpots())
         dispatch(getMyReviews())
     }, [dispatch])

@@ -39,7 +39,7 @@ import '../CreateReviewModal/CreateReviewForm.css'
 // import background from '../../assets/background.png'
 // import background2 from '../../assets/background2.png'
 // import reaviewshead from '../../assets/reaviewshead.png'
-
+import CalendarMonth from '../CalendarCard';
 const OneSpotIndex = () => {
   // const { closeModal } = useModal();
   const dispatch = useDispatch();
@@ -57,7 +57,7 @@ const OneSpotIndex = () => {
   let cleaningfee
   let servicefee
   let total
-
+  let today = new Date()
   let buttonVis = true
   let spotimgs
   // let reviewsCont
@@ -324,14 +324,14 @@ const OneSpotIndex = () => {
                       <div id='spotbookingcalendar'>
                         <img src={caltemp} alt='temponly' style={{ height: '17vw' }} />
 
-                        {/* <div id='thismonth'>
+                        {/* <div id='thismonth'> */}
+                        {/* <CalendarMonth onChange={onChange} value={value}/> */}
 
-                          <Calendar onChange={onChange} value={value} />
-                        </div>
-                        <div id='nextmonth'>
+                        {/* </div> */}
+                        {/* <div id='nextmonth'> */}
+                        {/* <Calendar onChange={onChange} value={value} /> */}
 
-                          <Calendar onChange={onChange} value={value} />
-                        </div> */}
+                        {/* </div> */}
 
                       </div >
                     </>

@@ -1,5 +1,10 @@
 // import { useHistory } from "react-router-dom"
 
+export const arrConvert = (arr) => {
+    let newallState = {}
+    for (let sp of arr) newallState[sp.id] = sp
+    return newallState
+}
 
 export const pathURL = (history) => {
     // console.log(history.location.pathname)
