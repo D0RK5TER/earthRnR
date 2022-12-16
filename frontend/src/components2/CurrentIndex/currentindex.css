@@ -22,6 +22,62 @@
         url("../../assets/popbold.ttf") format("truetype");
 }
 
+.onereview.single.one {
+    margin-left: 0px;
+    cursor: default;
+}
+
+.smallheader.current.smallcurrent {
+    font-family: 'Li';
+    font-size: 2vw;
+    text-decoration: none;
+}
+
+.current.currentuser {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#yourreviews {
+    text-decoration: 1.5px underline rgb(47, 47, 47);
+}
+
+#yourspots {
+    text-decoration: 1.5px underline rgb(47, 47, 47);
+}
+
+
+#welcome.midheader {
+    font-family: 'Thin';
+}
+
+#smallheadcurrent {
+    width: 100%;
+    font-size: 1.9vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    font-family: 'Li';
+    padding-bottom: 1vw;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.currenthead.currentuserheader {
+    cursor: default;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3vw;
+    font-family: 'Bold';
+    /* text-decoration: underline; */
+}
+
 /* 
 
 #currentcont {
@@ -50,16 +106,19 @@ h1 {
 #currentcardwrap {
     display: flex;
     flex-direction: row;
-    justify-content: space-between ;
+    justify-content: space-between;
 }
+
 #currentspotcard {
     height: fit-content;
 }
+
 #currentbutt:hover {
     font-family: 'Light';
-    background-color:  #e93b5b;
+    background-color: #e93b5b;
 }
-#currentbutt   {
+
+#currentbutt {
     width: 9vw;
     height: 1.84vw;
     background-color: #ff486a;
@@ -71,9 +130,8 @@ h1 {
     cursor: pointer;
     border-radius: 3vw;
     margin-bottom: 1vw;
-    
-
 }
+
 #currentedit {
     display: flex;
     flex-direction: row;
@@ -83,30 +141,41 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-around;
 }
-#currentreviews>*{
-    margin-left: 0;
 
+#currentreviews {
+    /* margin-left: 2vw; */
+    padding-top: 1.5vw;
+    height: 100%;
+    width: 37vw;
+    border-left: 2px solid #e6e6e6
 }
+
 #currentspots {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
-    width: 50vw;
+    width: 51vw;
+    padding-left: 3vw;
+    padding-right: 1.5vw;
+    padding-top: 1.5vw;
     justify-content: space-between;
     align-items: flex-start;
 
 }
+
 #currentinnercont {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: flex-start;
-width: 100%;
+    /* margin-top: 2vw; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
 }
+
 #currentcont {
     display: flex;
     flex-direction: column;
-align-items: flex-start;
+    justify-content: center;
+    /* align-items: flex-start; */
     width: 90vw;
 }

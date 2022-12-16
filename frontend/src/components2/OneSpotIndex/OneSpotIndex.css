@@ -217,11 +217,14 @@
 }
 
 #bookingbody {
+    /* margin-top: 2vw; */
+    /* padding-top: 5vw; */
     display: flex;
     flex-direction: column;
-    margin-top: 4vw;
+    justify-content: flex-start;
+    /* margin-top: 1vw; */
     box-shadow: 0px 2px 5px 2px #b9b9b9a5;
-    height: 100%;
+    height: fit-content;
     margin-left: 4.8vw;
     width: 23.3vw;
     padding: 1vw;
@@ -238,15 +241,16 @@
     width: 40%;
     display: flex;
     flex-direction: column;
-    height: 43vw;
+    height: fit-content;
+    padding-top: 3vw;
 }
 
 #bookingcont {
-    margin-top: 4vw;
+    /* margin-top:  */
     position: -webkit-sticky;
     /* Safari */
     position: sticky;
-    top: 0;
+    top: 10vw;
 }
 
 .rightcon {
@@ -474,6 +478,7 @@
 #belowheader {
     display: flex;
     width: 60%;
+    margin-top: 2vw;
     /* margin-left: 5vw; */
     height: fit-content;
     flex-direction: column;
@@ -481,10 +486,11 @@
 }
 
 #belowimg {
-    margin-top: 2em;
+    /* margin-top: 2em; */
     display: flex;
     height: fit-content;
     flex-direction: row;
+    align-items: flex-start;
 }
 
 #norevhead {

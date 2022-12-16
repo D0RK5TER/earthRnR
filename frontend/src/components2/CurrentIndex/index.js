@@ -33,44 +33,67 @@ const CurrentIndex = () => {
     // console.log(history.location.hash)
     return reviewspots && user && myReviews && (
 
-        <div id='currentcont'>
-            {/* {jumpmark ?
-                window.location.replace(`/current${jumpmark}`)
-                : window.scrollTo(0, 0)} */}
-            <h1>Welcome {user.firstName} </h1>
-            <div id='currentinnercont'>
+        <div className='current currentuser'>
+            <div className='currenthead currentuserheader'>
+                Welcome {user.firstName}
+                <div id='smallheadcurrent'>
+                    <div id='yourspots'>
+                        Your Spots!
+                    </div>
+                    <div id='welcome' className='midheader'
+                        // style={{'te'}}
+                    >
+                        Welcome to Your Page!
+                    </div>
+                    <div id='yourreviews'>
+                        Your Reviews
+                    </div>
 
-                <div id='currentspots'>
-                    {mySpots && Object?.values(mySpots).map(spot =>
-                        <div id='currentspotcard'>
-                            <div id='currentedit'>
-
-                                <OpenModalButton
-                                    id='currentbutt'
-                                    buttonText="Add Photos!"
-                                    onButtonClick={()=>dispatch(getOneSpot(spot.id))}
-                                    modalComponent={<SpotImageForm idx={spot.id} spot={spot.previewImage} />}
-                                />
-                                <OpenModalButton
-                                    id='currentbutt'
-                                    buttonText="Edit/Delete"
-                                    modalComponent={<EditSpotFormModal idx={spot.id} />}
-                                />
-                            </div>
-                            <div id='currentcardwrap'>
-                                <SpotCard spot={spot} user={user} key={`${spot.id}`} place={place} />
-                            </div >
-                        </div>
-                    )}
-                </div>
-
-                <div id='currentreviews'>
-                    {myReviews && Object?.values(myReviews).map(rev =>
-                        <ReviewCard review={rev} user={user} place={place} id={rev.spotId} />
-                    )}
                 </div>
             </div>
+            <div id='currentcont'>
+                {/* {jumpmark ?
+                window.location.replace(`/current${jumpmark}`)
+                : window.scrollTo(0, 0)} */}
 
+
+
+
+
+                <div id='currentinnercont'>
+
+                    <div id='currentspots'>
+                        {mySpots && Object?.values(mySpots).map(spot =>
+                            <div id='currentspotcard'>
+                                <div id='currentedit'>
+
+                                    <OpenModalButton
+                                        id='currentbutt'
+                                        buttonText="Add Photos!"
+                                        onButtonClick={() => dispatch(getOneSpot(spot.id))}
+                                        modalComponent={<SpotImageForm idx={spot.id} spot={spot.previewImage} />}
+                                    />
+                                    <OpenModalButton
+                                        id='currentbutt'
+                                        buttonText="Edit/Delete"
+                                        modalComponent={<EditSpotFormModal idx={spot.id} />}
+                                    />
+                                </div>
+                                <div id='currentcardwrap'>
+                                    <SpotCard spot={spot} user={user} key={`${spot.id}`} place={place} />
+                                </div >
+                            </div>
+                        )}
+                    </div>
+
+                    <div id='currentreviews'>
+                        {myReviews && Object?.values(myReviews).map(rev =>
+                            <ReviewCard review={rev} user={user} place={place} id={rev.spotId} />
+                        )}
+                    </div>
+                </div>
+
+            </div >
         </div>
     )
 }

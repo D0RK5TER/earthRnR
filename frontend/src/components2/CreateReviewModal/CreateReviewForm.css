@@ -18,27 +18,6 @@
     cursor: default;
 }
 
-/* 
-
-#createreviewform {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 30vw;
-    
-} */
-
-
-
-
-/* #ratestay input{
-    display: flex;
-    justify-content: center;
-} */
-/* #ratestay div label div{
-
-} */
 #reviewtextlabel {
     font-family: 'Li';
     font-weight: 1em;
