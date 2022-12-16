@@ -10,7 +10,7 @@ import { useModal } from '../../context/Modal';
 function PaginationForm({ setShowModal }) {
     const history = useHistory()
     const dispatch = useDispatch();
-    const { closeModal } = useModal();
+    const { closeModal, onModalClose } = useModal();
     const [min, setMin] = useState(1)
     const [max, setMax] = useState(9999)
     const [errors, setErrors] = useState([]);
@@ -32,7 +32,7 @@ function PaginationForm({ setShowModal }) {
         //     max > 9999 || min > 9999 ? setErrors(['prices must be smaller than 99999']) :
         //         min === max ? setErrors(['maximum and minimum must not be equal']) :
         //             max < 1 || min < 1 ? setErrors(['prices must be 1 or larger']) :
-                        pagination = `?minPrice=${min}&maxPrice=${max}`
+        pagination = `?minPrice=${min}&maxPrice=${max}`
         if (loc !== '/') pagidis(pagination) && history.push('/')
         pagidis(pagination)
     }

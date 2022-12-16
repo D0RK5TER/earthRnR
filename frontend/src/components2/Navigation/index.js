@@ -7,17 +7,11 @@ import '../SignUpForm/SignUpForm.css'
 import logo from '../../assets/logo.png';
 import spotglass from '../../assets/spotglass.png';
 import globe from '../../assets/globe.png'
-// import { pathURL } from "../../utilities/location";
 import { getSessionUser } from '../../store/session2';
-// import { getAllSpots } from '../../store/spots2';
 import PaginationForm from '../PaginationModal';
-// import { useHistory } from 'react-router-dom';
-// import { Modal } from '../../context/Modal';
-// import LoginForm from '../LoginFormModal/LoginForm';
-// import SignupFormPage from '../SignupFormPage';
 import { getAllSpots } from '../../store/spots2';
 import OpenModalButton from "../OpenModalButton";
-
+import NoFeatureIndex from '../NoFeatureModal';
 import SpotForm from '../SpotFormModal';
 import SignUpForm from '../SignUpForm';
 // import ComingSoon from '../ComingSoon/ComingSoon';
@@ -79,7 +73,7 @@ function Navigation() {
           />}
         <OpenModalButton
           id='globebut'
-          modalComponent={<PaginationForm />}
+          modalComponent={<NoFeatureIndex />}
           buttonText={<img
             id='navbarglobe'
             src={globe}

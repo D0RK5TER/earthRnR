@@ -16,11 +16,11 @@
 ## Come vist at the link below or to read more see my wiki page!
 ##
 ## Live Deployment link:
-### [https://authmedeploy.herokuapp.com/]
+### [https://earthrnr.onrender.com/]
 #
 #
 ## Live Wiki Link:
-### [https://github.com/D0RK5TER/authenticate-me]
+### [https://github.com/D0RK5TER/earthRnR/wiki]
 #
 #
 ## For more information about the database schema and routes
@@ -30,7 +30,7 @@
 #
 #
 # earthRnR Home Page
-![homepage](/assets/homepage.png 'Homepage')
+<!-- ![homepage](/assets/homepage.png 'Homepage') -->
 #
 #
 #
@@ -39,7 +39,7 @@
 #
 #
 #
-![modalandspot](/assets/modalandspot.png 'MODAL IMAGE')
+<!-- ![modalandspot](/assets/modalandspot.png 'MODAL IMAGE') -->
 #
 #
 #
@@ -57,7 +57,7 @@
 #
 #
 #
-![buttons](/assets/buttons.png 'button')
+<!-- ![buttons](/assets/buttons.png 'button') -->
 #
 #
 #
@@ -75,7 +75,7 @@
 #
 #
 #
-![modalandspot](/assets/modalandspot.png)
+<!-- ![modalandspot](/assets/modalandspot.png) -->
 #
 #
 #
@@ -88,7 +88,7 @@
 #
 #
 #
-![reviews](/assets/reviews.png 'Reviews')
+
 #
 ##
 #
@@ -100,7 +100,6 @@
 #
 # 
 #
-![dropdown](/assets/dropdown.png 'Dropdown')
 ######
 #
 #
