@@ -1,8 +1,8 @@
 'use strict';
 
-/**  @type {import('sequelize-cli').Migration} */
+// /**  @type {import('sequelize-cli').Migration} */
 const bcrypt = require('bcryptjs');
-const { User, Spot, Review } = require('../db/models')
+const { User, Spot, Review } = require('../../db/models')
 const {
     addressSample, nameSample, priceSample,
     cityStateSample, descriptSample, descriptVsample,
@@ -14,7 +14,7 @@ const {
     reviewimageSkeleton, spotSkeleton,
 
 
-} = require('../utils/seeddata');
+} = require('../seeddata');
 let options = {};
 if (process.env.NODE_ENV === 'production') {
     options.schema = process.env.SCHEMA;  // define your schema in options object
