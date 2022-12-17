@@ -30,6 +30,8 @@
     height: fit-content;
     width: 35vw;
     border-radius: .75vw;
+    box-shadow: 0 1px 3px 0 rgba(171, 171, 171, 0.2), 0 1px 3px 0 rgba(183, 183, 183, 0.19);
+
 }
 
 .smallheader.current.smallcurrent {
