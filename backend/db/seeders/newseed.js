@@ -199,6 +199,8 @@ module.exports = {
 
         let ownerSample = await User.findAll();
         ownerSample = JSON.parse(JSON.stringify(ownerSample))
+        
+      
         // console.log('18912u39128u3912u3912u39123u9123u1', cityStateSample, randomSpots, descriptSample )
         while (randomSpots.length < 12) {
             let newRandom = { ...spotSkeleton }
@@ -230,6 +232,7 @@ module.exports = {
 
         let userSample = await User.findAll();
         userSample = JSON.parse(JSON.stringify(userSample))
+       
         let spotSample = await Spot.findAll();
         spotSample = JSON.parse(JSON.stringify(spotSample))
 
@@ -307,7 +310,6 @@ module.exports = {
                     newsmallimg.preview = false
                     // newsmallimg.url = cheapsmall[getRandom(cheapsmall.length - 1)]
                     newsmallimg.url = ndirtsmall.splice(getRandom(ndirtsmall.length - 1), 1)[0]
-                    console.log(newsmallimg)
                     imgs.push(newsmallimg)
                     i++
                 }
