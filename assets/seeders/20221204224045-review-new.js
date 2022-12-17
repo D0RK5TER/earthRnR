@@ -1,7 +1,7 @@
 'use strict';
 
-/** @type {import('sequelize-cli').Migration} */
-const { User, Spot } = require('../models')
+// /** @type {import('sequelize-cli').Migration} */
+const { User, Spot } = require('../../backend/db/models')
 let options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
