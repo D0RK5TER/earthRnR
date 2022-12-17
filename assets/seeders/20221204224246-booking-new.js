@@ -1,8 +1,8 @@
 'use strict';
 
-/** @type {import('sequelize-cli').Migration} */
+// /** @type {import('sequelize-cli').Migration} */
 const { Op } = require('sequelize')
-const { User, Spot } = require('../models')
+const { User, Spot } = require('../../backend/db/models')
 let options = {};
 
 
