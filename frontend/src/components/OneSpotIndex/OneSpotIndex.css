@@ -814,13 +814,13 @@
 
 #onespotdetails {
     margin-left: 2em;
-    font-family: 'Li';
-    font-size: .5em;
+    font-family: 'Light';
+    font-size: .1vw;
 }
 
 #onespotheader {
     font-family: 'Bold';
-    font-size: 2em;
+    font-size: 2vw;
     justify-content: flex-start;
     align-items: baseline;
     display: flex;

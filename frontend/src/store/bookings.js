@@ -36,14 +36,13 @@ export const getTheBooks = (id) => async (dispatch) => {
 };
 
 export const getMyBooks = () => async (dispatch) => {
-    console.log('wtf')
     const response = await csrfFetch('/api/bookings/current', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
         const data = await response.json();
-        console.log(data)
+        // console.log(data)
         dispatch(loadMyBookings(data));
         return data
     }
@@ -67,7 +66,7 @@ const bookingsReducer = (state = initialState, action) => {
         //     return newState;
         case LOAD_MYBOOK:
             let t = action.bookings
-            console.log(t)
+            // console.log(t)
             newState.mybooks = arrConvert(action.bookings.bookings);
             return newState;
         // case MAKE_SPOT:
