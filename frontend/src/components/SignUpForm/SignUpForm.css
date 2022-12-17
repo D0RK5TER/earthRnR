@@ -160,7 +160,7 @@
     width: 23vw;
     height: 3.8em;
     font-family: Bold;
-    font-size: .7em;
+    font-size: .7vw;
     padding-left: 1.5em;
     background-color: white;
     border: none;
@@ -322,7 +322,7 @@
 
 #signupsubheader1 {
     width: 100%;
-    font-size: .8em;
+    font-size: .8vw;
 }
 
 #signupheader1 {

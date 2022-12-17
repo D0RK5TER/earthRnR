@@ -1,16 +1,19 @@
-
-
 #reviewname {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-family: 'Bold';
+    padding-left: 1vw;
+    font-size: 1.2vw;
 }
 
 #revratingimg {
     display: flex;
     flex-direction: column;
-height: 1.5vw;
-justify-self: flex-start;
+    height: 1.75vw;
+   align-items: center;
+   justify-content: center;
+   width: fit-content;
 }
 
 #revratingcard {
@@ -33,6 +36,7 @@ justify-self: flex-start;
     padding-top: 1vw;
 
 }
+
 #hostpicture>img {
     height: 4vw;
     width: 4vw;
@@ -41,6 +45,7 @@ justify-self: flex-start;
     box-sizing: content-box;
     object-fit: cover;
 }
+
 #hostpicture {
     height: 4vw;
     width: 4vw;

@@ -31,6 +31,7 @@
   align-items: center;
   color: #FF385c;
   width: fit-content;
+  font-size: 1.4vw;;
 }
 
 #topleft {
@@ -62,7 +63,7 @@
 
 .homebutt {
   display: flex;
-  font-size: 1.2em;
+  font-size: 1.2vw;
   text-decoration: none;
   align-items: center;
   font-stretch: extra-condensed;
@@ -76,7 +77,7 @@
   display: flex;
   vertical-align: middle;
   background-color: white;
-  height: 85%;
+  height: 2vw;
   box-sizing: border-box;
   object-fit: fill;
   border-bottom-right-radius: 2em;
@@ -84,16 +85,21 @@
 }
 
 #paginationbut {
-  width: 82%;
-  height: 100%;
+  width: fit-content;
+  height: 2vw;
+  font-size: .98vw;
+  vertical-align: bottom;
+  padding: 0px;
   background-color: white;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
   border: none;
-  text-align: start;
-  padding-left: 2em;
+  text-align: bottom;
+
+  padding-left: 2.5vw;
+  padding-right: 1.5vw;
   font-family: 'Li';
-  
+
   /* font-weight: 1; */
   cursor: pointer;
 }
@@ -111,8 +117,9 @@
 }
 
 #topmid {
-  height: 50%;
-  width: 20.75vw;
+  height: fit-content;
+  /* width: 20.75vw; */
+  width: fit-content;
   padding-top: 2px;
   padding-bottom: 2px;
   display: flex;
@@ -123,10 +130,11 @@
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
   cursor: pointer;
+  text-align: end;
   border: 1px solid #ececec;
   background-color: white;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 1.3vw;
+  margin-bottom: 1vw;
   /* box-shadow: 3px 3px 3px #f7f7f7; */
   box-shadow: 0 1px 3px 0 rgba(171, 171, 171, 0.2), 0 1px 3px 0 rgba(183, 183, 183, 0.19);
 
@@ -138,7 +146,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  width: 20vw;
+  width: fit-content;
 }
 
 
@@ -162,10 +170,10 @@
 }
 
 #profileshape:hover {
- 
-    cursor: pointer;
-  
-  
+
+  cursor: pointer;
+
+
   box-shadow: 0 1px 3px 0 rgba(171, 171, 171, 0.2), 0 1px 3px 0 rgba(183, 183, 183, 0.19);
 }
 
@@ -205,12 +213,13 @@
 #createswitching {
   cursor: pointer;
   width: fit-content;
-  padding: .75em;
+  padding: .75vw;
   height: 3vw;
   border: none;
   background-color: white;
-  border-radius: 2em;
-  letter-spacing: 5.5;
+  border-radius: 2vw;
+  font-size: 1vw;
+  /* letter-spacing: 5.5; */
   /* letter-spacing: .0425vw; */
 }
 
@@ -228,6 +237,7 @@
   width: fit-content;
   height: 3vw;
   padding: .75em;
+  font-size: 1.1vw;
   border: none;
   background-color: white;
   border-radius: 2em;

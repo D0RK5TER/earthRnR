@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 // import { useDispatch } from "react-redux";
 // import { useParams } from 'react-router-dom';
-import quest from '../../assets/quest.jpg';
+import quest from '../../assets/quest.png';
 import { useModal } from '../../context/Modal';
 // import { useHistory } from "react-router-dom";
 import './reviewimages.css'
 
 // import './DeleteReviewForm.css'
-// import quest from '../../assets/quest.jpg';
+// import quest from '../../assets/quest.png';
 
 function ReviewImagesIndex({ ReviewImages, idx }) {
     // const dispatch = useDispatch();

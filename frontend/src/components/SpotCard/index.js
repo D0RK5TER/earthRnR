@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 // import { useSelector, useDispatch } from "react-redux";
 import star from '../../assets/star.png';
 // import EditSpotFormModal from '../EditSpotFormModal';
-import quest from '../../assets/quest.jpg';
+import quest from '../../assets/quest.png';
 // import OpenModalButton from "../OpenModalButton";
 
 import { getAge } from '../../utilities/location';
