@@ -200,7 +200,7 @@ module.exports = {
         let ownerSample = await User.findAll();
         ownerSample = JSON.parse(JSON.stringify(ownerSample))
         // console.log('18912u39128u3912u3912u39123u9123u1', cityStateSample, randomSpots, descriptSample )
-        while (randomSpots.length < 6) {
+        while (randomSpots.length < 12) {
             let newRandom = { ...spotSkeleton }
             let owner = ownerSample[getRandom(ownerSample.length - 1)]
             let stateCity = cityStateSample[getRandom(cityStateSample.length - 1)]
@@ -373,7 +373,7 @@ module.exports = {
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
-                    let newsmallimg = { ...newimg}
+                    let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
                     newsmallimg.url = nmansionsmall.splice(getRandom(nmansionsmall.length - 1), 1)
                     imgs.push(newsmallimg)
