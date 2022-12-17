@@ -76,10 +76,12 @@ const OneSpotIndex = () => {
     servicefee = `$${deciNum(theSpot.price * .1)}`
     strToNum(bookingsixnight) + strToNum(cleaningfee) + strToNum(servicefee) > 1000 ?
       total = overThou(strToNum(bookingsixnight) + strToNum(cleaningfee) + strToNum(servicefee)) :
-      total = strToNum(bookingsixnight) + strToNum(cleaningfee) + strToNum(servicefee)
+      total = `$${strToNum(bookingsixnight) + strToNum(cleaningfee) + strToNum(servicefee)}`
+
+
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
-
+    console.log(spotimgs)
     while (spotimgs.length < 4) spotimgs.push({ url: quest })
     let [a, b, c, d] = spotimgs
     // console.log(previewImage)
@@ -108,7 +110,7 @@ const OneSpotIndex = () => {
               <img src={`${c.url}`} className='gridpics' key={a} alt={`${c.url}`} />
             </div>
             <div className='spotImage' id='spotimg4'>
-              <img src={`${d.url}`} className='gridpics' key={a} alt={`${b.url}`} />
+              <img src={`${d.url}`} className='gridpics' key={a} alt={`${d.url}`} />
             </div>
           </div>
 

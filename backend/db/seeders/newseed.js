@@ -200,7 +200,7 @@ module.exports = {
         let ownerSample = await User.findAll();
         ownerSample = JSON.parse(JSON.stringify(ownerSample))
         // console.log('18912u39128u3912u3912u39123u9123u1', cityStateSample, randomSpots, descriptSample )
-        while (randomSpots.length < 6) {
+        while (randomSpots.length < 12) {
             let newRandom = { ...spotSkeleton }
             let owner = ownerSample[getRandom(ownerSample.length - 1)]
             let stateCity = cityStateSample[getRandom(cityStateSample.length - 1)]
@@ -299,27 +299,28 @@ module.exports = {
                 newimg.spotId = s.id
                 newimg.preview = true
 
-                newimg.url = dirt.splice(getRandom(dirt.length - 1), 1)
+                newimg.url = dirt.splice(getRandom(dirt.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
                     let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
                     // newsmallimg.url = cheapsmall[getRandom(cheapsmall.length - 1)]
-                    newsmallimg.url = ndirtsmall.splice(getRandom(ndirtsmall.length - 1), 1)
+                    newsmallimg.url = ndirtsmall.splice(getRandom(ndirtsmall.length - 1), 1)[0]
+                    console.log(newsmallimg)
                     imgs.push(newsmallimg)
                     i++
                 }
             } else if (s.price < 200) {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = rv.splice(getRandom(rv.length - 1), 1)
+                newimg.url = rv.splice(getRandom(rv.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
                     let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
-                    newsmallimg.url = nrvsmall.splice(getRandom(nrvsmall.length - 1), 1)
+                    newsmallimg.url = nrvsmall.splice(getRandom(nrvsmall.length - 1), 1)[0]
                     imgs.push(newsmallimg)
                     i++
                 }
@@ -327,13 +328,13 @@ module.exports = {
             else if (s.price < 600) {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = topWorld.splice(getRandom(topWorld.length - 1), 1)
+                newimg.url = topWorld.splice(getRandom(topWorld.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
                     let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
-                    newsmallimg.url = ntopWorldsmall.splice(getRandom(ntopWorldsmall.length - 1), 1)
+                    newsmallimg.url = ntopWorldsmall.splice(getRandom(ntopWorldsmall.length - 1), 1)[0]
                     imgs.push(newsmallimg)
                     i++
                 }
@@ -341,13 +342,13 @@ module.exports = {
             } else if (s.price < 1000) {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = treeh.splice(getRandom(treeh.length - 1), 1)
+                newimg.url = treeh.splice(getRandom(treeh.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
                     let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
-                    newsmallimg.url = ntreehsmall.splice(getRandom(ntreehsmall.length - 1), 1)
+                    newsmallimg.url = ntreehsmall.splice(getRandom(ntreehsmall.length - 1), 1)[0]
                     imgs.push(newsmallimg)
                     i++
                 }
@@ -355,13 +356,13 @@ module.exports = {
             } else if (s.price < 2000) {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = lake.splice(getRandom(lake.length - 1), 1)
+                newimg.url = lake.splice(getRandom(lake.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
                     let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
-                    newsmallimg.url = nlakesmall.splice(getRandom(nlakesmall.length - 1), 1)
+                    newsmallimg.url = nlakesmall.splice(getRandom(nlakesmall.length - 1), 1)[0]
                     imgs.push(newsmallimg)
                     i++
                 }
@@ -369,13 +370,13 @@ module.exports = {
             } else {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = mansion.splice(getRandom(mansion.length - 1), 1)
+                newimg.url = mansion.splice(getRandom(mansion.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
-                    let newsmallimg = { ...newimg}
+                    let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
-                    newsmallimg.url = nmansionsmall.splice(getRandom(nmansionsmall.length - 1), 1)
+                    newsmallimg.url = nmansionsmall.splice(getRandom(nmansionsmall.length - 1), 1)[0]
                     imgs.push(newsmallimg)
                     i++
                 }
