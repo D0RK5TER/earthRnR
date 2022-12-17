@@ -2,13 +2,8 @@
 
 /**  @type {import('sequelize-cli').Migration} */
 const bcrypt = require('bcryptjs');
-const { User } = require('../models')
-
-let options = {};
-if (process.env.NODE_ENV === 'production') {
-    options.schema = process.env.SCHEMA;  // define your schema in options object
-}
-import {
+const { User, Spot, Review } = require('../models')
+const {
     addressSample, nameSample, priceSample,
     cityStateSample, descriptSample, descriptVsample,
     reviews,
@@ -17,19 +12,21 @@ import {
     dates,
     bookingSkeleton, spotimageSkeleton, reviewSkeleton,
     reviewimageSkeleton, spotSkeleton,
-    getRandom
 
-} from '../../utils/seeddata';
 
-const randomSpots = []
-const randomReviews = []
-const randomReviewImage = []
-const imgs = []
-const randomBookings = []
+} = require('../../utils/seeddata');
+const getRandom = (max) => Math.floor(Math.random() * max);
+let options = {};
+if (process.env.NODE_ENV === 'production') {
+    options.schema = process.env.SCHEMA;  // define your schema in options object
+}
+
+
 
 module.exports = {
     async up(queryInterface, Sequelize) {
         options.tableName = 'Users'
+        
         await queryInterface.bulkInsert(options, [
             {
                 firstName: 'Dexter',
@@ -59,48 +56,48 @@ module.exports = {
                 username: 'RKOman',
                 hashedPassword: bcrypt.hashSync('password')
             },
-            //   {
-            //     firstName: 'Prap',
-            //     lastName: 'Tinnabavorn',
-            //     email: 'user4@user.co',
-            //     username: 'pRapper',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Matt',
-            //     lastName: 'Kleinsmith',
-            //     email: 'user5@user.co',
-            //     username: 'Ketmasta',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Trevor',
-            //     lastName: 'Moore',
-            //     email: 'user6@user.co',
-            //     username: 'MoreT',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Tyler',
-            //     lastName: 'Short',
-            //     email: 'user7@user.co',
-            //     username: 'ShortTee',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Tohm',
-            //     lastName: 'Lev',
-            //     email: 'user8@user.co',
-            //     username: 'TohmsDiner',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Chris',
-            //     lastName: 'Cohen',
-            //     email: 'user9@user.co',
-            //     username: 'CCplease',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
+            {
+                firstName: 'Hiro',
+                lastName: 'Protaganist',
+                email: 'user4@user.co',
+                username: 'pRapper',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'Harry',
+                lastName: 'Dresden',
+                email: 'user5@user.co',
+                username: 'Ketmasta',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'Akira',
+                lastName: 'Akiraaaa',
+                email: 'user6@user.co',
+                username: 'MoreT',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'Kest',
+                lastName: 'Greatcoat',
+                email: 'user7@user.co',
+                username: 'ShortTee',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'Kellen',
+                lastName: 'Argosi',
+                email: 'user8@user.co',
+                username: 'TohmsDiner',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'Mia',
+                lastName: 'Corvere',
+                email: 'user9@user.co',
+                username: 'CCplease',
+                hashedPassword: bcrypt.hashSync('password')
+            },
             //   {
             //     firstName: 'Mauro',
             //     lastName: 'Alvarez',
@@ -190,15 +187,18 @@ module.exports = {
             ,
             {})
 
-
+        const randomSpots = []
+        const randomReviews = []
+        const randomReviewImage = []
+        const imgs = []
+        const randomBookings = []
 
         ////////////////////USER END///////////////////////////////////////////////////
-        options.tableName = 'Spots'
 
         let ownerSample = await User.findAll();
         ownerSample = JSON.parse(JSON.stringify(ownerSample))
-
-        while (randomSpots.length < 3) {
+        // console.log('18912u39128u3912u3912u39123u9123u1', cityStateSample, randomSpots, descriptSample )
+        while (randomSpots.length < 5) {
             let newRandom = { ...spotSkeleton }
             let owner = ownerSample[getRandom(ownerSample.length - 1)]
             let stateCity = cityStateSample[getRandom(cityStateSample.length - 1)]
@@ -221,30 +221,29 @@ module.exports = {
             newRandom.description = `${newRandom.name} ${descriptIntro} ${description1} ${description2} ${description3}`
             randomSpots.push(newRandom)
         }
-
+        options.tableName = 'Spots'
         await queryInterface.bulkInsert(options, randomSpots, {})
 
         ////////////////////SPOTS END///////////////////////////////////////////////////
-        options.tableName = 'Reviews'
+
         let userSample = await User.findAll();
         userSample = JSON.parse(JSON.stringify(userSample))
-        spotSample = await Spot.findAll();
+        let spotSample = await Spot.findAll();
         spotSample = JSON.parse(JSON.stringify(spotSample))
+
         for (let spot of spotSample) {
-            // let newRandom = { ...reviewSkeleton }
             let notowner = userSample.filter(x => spot.ownerId !== x.id)
             notowner = notowner.map(x => x = x.id)
-            let numRevs = getRandom(5)
+            let numRevs = getRandom(7)
             if (numRevs === 0) continue
-            // let randomizer = []
-            // console.log(notowner, 'notowner')
             let userids = []
+            if (!notowner.length) continue
             while (numRevs > 0) {
                 let ran = getRandom(notowner.length - 1)
                 notowner[ran][0] ? userids.push(notowner.splice(ran, 1)) : userids.push(notowner.splice(ran, 1))[0]
                 --numRevs
             }
-            // console.log('userids>', userids)
+
             userids.forEach(x => {
                 let newRandom = { ...reviewSkeleton }
                 x = x[0]
@@ -253,16 +252,14 @@ module.exports = {
                 let review = reviews[getRandom(reviews.length - 1)]
                 let star = review.slice(-1)
                 star = +star
-                // review = review.slice(-1)
-                // console.log(review, '11')
                 newRandom.review = review.slice(0, -1)
                 newRandom.stars = star
-                // console.log(newRandom)
                 randomReviews.push(newRandom)
             })
         }
+        // console.log()
         options.tableName = 'Reviews'
-        await queryInterface.bulkInsert(options, randomSpots, {})
+        await queryInterface.bulkInsert(options, randomReviews, {})
         // console.log(randomReviews)
         // console.log(randomReviews)
         ////////////////////Reviews END///////////////////////////////////////////////////
@@ -281,7 +278,7 @@ module.exports = {
         await queryInterface.bulkInsert(options, randomReviewImage, {})
 
         ////////////////////REVIMG END///////////////////////////////////////////////////
-        let spotSample = await Spot.findAll();
+        spotSample = await Spot.findAll();
         spotSample = JSON.parse(JSON.stringify(spotSample))
 
         for (let s of spotSample) {
@@ -336,20 +333,27 @@ module.exports = {
         spotSample = JSON.parse(JSON.stringify(spotSample))
         userSample = await User.findAll();
         userSample = JSON.parse(JSON.stringify(userSample))
-        spotSample.forEach(x => {
-            let notowner = userSample.filter(ux => x.ownerId !== ux.id)
-            notowner = notowner.map(lux => lux = lux.id)
-            let numBoo = getRandom(dates.length - 1)
-            while (numBoo > -1) {
+        spotSample.forEach(spot => {
+            let notowner = userSample.filter(x => spot.ownerId !== x.id)
+            notowner = notowner.map(x => x = x.id)
+            let numBoo = getRandom(notowner.length - 1)
+            let newdates = [...dates]
+            // console.log(notowner, numBoo)
+            while (numBoo > 1) {
                 let newRandom = { ...bookingSkeleton }
-                newRandom.startDate += dates[numBoo][0]
-                newRandom.endDate += dates[numBoo][1]
-                newRandom.spotId = x.id
+                newRandom.startDate += newdates[numBoo][0]
+                // newRandom.startDate = new Date(newRandom.startDate)
+                newRandom.endDate += newdates[numBoo][1]
+                newdates.splice(numBoo, 1)
+                // newRandom.endDate = new Date(newRandom.endDate)
+                newRandom.spotId = spot.id
                 newRandom.userId = notowner[numBoo]
                 randomBookings.push(newRandom)
                 --numBoo
             }
+            // console.log(randomBookings)
         })
+        // console.log(randomBookings)
         options.tableName = 'Bookings'
         await queryInterface.bulkInsert(options, randomBookings, {})
 

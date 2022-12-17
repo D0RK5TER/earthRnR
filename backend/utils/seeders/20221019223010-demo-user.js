@@ -2,7 +2,7 @@
 
 /**  @type {import('sequelize-cli').Migration} */
 const bcrypt = require('bcryptjs');
-const { User } = require('../models')
+const { User } = require('../../db/models')
 let options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object

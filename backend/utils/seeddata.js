@@ -1,10 +1,10 @@
 
+// module.exports = (
 
-
-export const addressSample = ['1070 Second St', '200 3rd Ave', '401 Main Blvd', '50 Civic Ct', '808 Fith Rd', '3 Parkland Blvd', '1307 Garland St',
+const addressSample = ['1070 Second St', '200 3rd Ave', '401 Main Blvd', '50 Civic Ct', '808 Fith Rd', '3 Parkland Blvd', '1307 Garland St',
     '6095 Goldfish St', '777 Seventh Ct', '1910 Downtown Rd', '432 Gerber St', '111 Pavement Way'
 ]
-export const nameSample = ["Lover's Lounge", 'Ancient Area', "Devil's Den", "Great Grotto", "Makers Mark",
+const nameSample = ["Lover's Lounge", 'Ancient Area', "Devil's Den", "Great Grotto", "Makers Mark",
     "Garish Garden", "Yellow Yard", "Wishful Wonderland", "Dangerous Desert", "Lonely Lake", "Rich River",
     "Mourning Mountain", "Scary Stairs", "Debaucherous Den", "Oval Office", "Murder Mansion",
     "Deaths Door", "At the End", "Final Fracas", "Lepers Lake", "Nasty Nook",
@@ -13,14 +13,14 @@ export const nameSample = ["Lover's Lounge", 'Ancient Area', "Devil's Den", "Gre
     "Quivering Quarry", "Rundown Ranch", "Steller Stockhouse", "Tidy Tidalpools", "Unseen University", "Voracious Virtue",
     "Wavey Windows", "The X", "Yellow Yard", "Zillion Zebras"
 ]
-export const priceSample = [40.02, 377.66, 110.37, 329.52, 9280.13, 300.55, 499.08, 2202.02,
+const priceSample = [40.02, 377.66, 110.37, 329.52, 9280.13, 300.55, 499.08, 2202.02,
     50.11, 80.75, 164.99, 177.55, 204.99, 1265.51, 309.18, 406.94, 209.56, 100.55, 6190.01,
     69.09, 108.06, 66.66, 37.54, 95.34, 76.08, 499.03, 500.01, 303.65, 310.34, 162.44, 139.99,
     5420.99, 1135.55, 340.89, 250.04, 393.93, 440.46, 320.13, 288.88, 204.86, 600.72, 4999.99, 194.55, 300.24,
     708.42, 985.08, 2745.08, 614.08, 4938.08, 109.08, 702.08, 4783.08, 943.08
 ]
 
-export const cityStateSample = [{ city: 'San Francisco', state: 'CA' }, { city: 'Los Angeles', state: 'CA' }, { city: 'Portland', state: 'OR' },
+const cityStateSample = [{ city: 'San Francisco', state: 'CA' }, { city: 'Los Angeles', state: 'CA' }, { city: 'Portland', state: 'OR' },
 { city: 'New York City', state: 'NY' }, { city: 'Miami', state: 'FL' }, { city: 'Austin', state: 'TX' }, { city: 'Chicago', state: 'IL' },
 { city: 'Little Rock', state: 'AR' }, { city: 'Topeka', state: 'KS' }, { city: 'Jackson', state: 'MS' }, { city: 'Salt Lake City', state: 'UT' },
 { city: 'Las Vegas', state: 'NV' }, { city: 'Boston', state: 'MA' }, { city: 'Atlanta', state: 'GA' }, { city: 'Olympia', state: 'WA' },
@@ -28,11 +28,11 @@ export const cityStateSample = [{ city: 'San Francisco', state: 'CA' }, { city: 
 { city: 'San Bernadino', state: 'CA' }, { city: 'San Juan', state: 'CA' }, { city: 'San Leandro', state: 'CA' }, { city: 'Palo Alto', state: 'CA' }
 ]
 
-export const descriptSample = ['is a great place with', 'is a cozy place with', 'is better than everything and includes',
+const descriptSample = ['is a great place with', 'is a cozy place with', 'is better than everything and includes',
     'the best in town!! Comes with', 'is a quiet restful place offering many things such as', ': amenities included are ', 'a blast from the past! It includes',
     'the place they everyone forgets to talk about, includes'
 ]
-export const descriptVsample = ['onsite laundry,', 'cleaning services,', 'strong wifi,', 'clean toilets,',
+const descriptVsample = ['onsite laundry,', 'cleaning services,', 'strong wifi,', 'clean toilets,',
     'lots of plants,', 'cats to play wtih,', 'noisy neighbors,', 'open-bar,',
     'live music,', 'local art,', 'clean sheets,', 'crying babies,', 'no blood stains,',
     'serial-killer free,', 'foot rub,', 'hot showers,', 'cold food,', 'free parking,',
@@ -42,18 +42,18 @@ export const descriptVsample = ['onsite laundry,', 'cleaning services,', 'strong
     'backrub from my pet hamster,', 'giant bowl of macadameia nuts,', 'breakfast-in-thebackyard', 'a stern warning,'
 ]
 
-export const reviews = [
-    'what a beautiful baby that lives here!5', 'i hated the way they look at me, but still would come back',
-    'I think they may have forgotten to change the sheets, and dust the shelves, or clean behind the picture frames', ' Did you know that babies cry at night?!?1',
-    'neighbors were always letting themselves inside, didnt enjoy that. I asked them to live and they said "what is home ownership anys?1"', 'Appreciated the freshly cooked breakfast! Sorry about eating yours...5',
-    'Why did i ever choose to come here, ugh. I knew thay I should have just stayed in bed', 'smells like the inside of an old shoe. My old shoe, maybe it was my shoes now that I think about it', 'dishes were left everywhere! Some were not even mine!3',
-    'Loved the smell of the rain in the morning, i think they pump it in fresh, proably so they can track you with the pidgeons', 'why wouldnt my window close3', '10/10 best time ever5',
-    'OMG ikr u da bomb! Out fr', 'Sick terrace bro. I tots would pull a gnar 360 if my ankle wasnt hurting the other night', 'Best host I ever met!', "that one lady wouldn't stop screaming? I asked her whats wrong and I think she might be possessed",
-    "I thought I might die when I found that dead body, but i was reborn! Have you found Jesus Christ yet?", "no one has mentioned all the skulls..."
+const reviews = [
+    'what a beautiful baby that lives here!5', 'i hated the way they look at me, but still would come back2',
+    'I think they may have forgotten to change the sheets, and dust the shelves, or clean behind the picture frames2', ' Did you know that babies cry at night?!?1',
+    'neighbors were always letting themselves inside, didnt enjoy that. I asked them to live and they said "what is home ownership anys?5', 'Appreciated the freshly cooked breakfast! Sorry about eating yours...4',
+    'Why did i ever choose to come here, ugh. I knew thay I should have just stayed in bed1', 'smells like the inside of an old shoe. My old shoe, maybe it was my shoes now that I think about it3', 'dishes were left everywhere! Some were not even mine!3',
+    'Loved the smell of the rain in the morning, i think they pump it in fresh, proably so they can track you with the pidgeons2', 'why wouldnt my window close3', '10/10 best time ever5',
+    'OMG ikr u da bomb! Out fr5', 'Sick terrace bro. I tots would pull a gnar 360 if my ankle wasnt hurting the other night3', 'Best host I ever met!4', "that one lady wouldn't stop screaming? I asked her whats wrong and I think she might be possessed1",
+    "I thought I might die when I found that dead body, but i was reborn! Have you found Jesus Christ yet?4", "no one has mentioned all the skulls...2"
 ]
 
 
-export const images = ['https://thumbs.dreamstime.com/b/interior-old-dirty-garage-interior-old-dirty-garage-full-stuff-108307302.jpg',
+const images = ['https://thumbs.dreamstime.com/b/interior-old-dirty-garage-interior-old-dirty-garage-full-stuff-108307302.jpg',
     "https://thumbs.dreamstime.com/b/interior-old-dirty-garage-interior-old-dirty-garage-full-stuff-108307302.jpg",
     "https://thumbs.dreamstime.com/b/interior-messy-home-room-scattered-stuff-mess-disorder-concept-view-living-134666124.jpg",
     "https://thumbs.dreamstime.com/b/modern-kitchen-cleaning-washing-up-dirty-dishes-clean-cluttered-breakfast-bar-205360665.jpg",
@@ -66,7 +66,7 @@ export const images = ['https://thumbs.dreamstime.com/b/interior-old-dirty-garag
 ]
 
 
-export const cheap = [
+const cheap = [
     "https://a0.muscache.com/im/pictures/dd9cf0f0-57e0-42a5-aef6-b15e95ab0d40.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/6f661499-126e-4228-b9a6-4e023c2933a4.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/a3fd4325-e4dc-4d5d-bf49-9a48b6ba4724.jpg?im_w=720",
@@ -81,7 +81,7 @@ export const cheap = [
     "https://a0.muscache.com/im/pictures/7099edfe-fe1d-454c-a144-fa0f13bf6dac.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/09e63a49-5324-49fa-8c44-795ad0774fbb.jpg?im_w=720",
 ]
-export const cheapsmall = [
+const cheapsmall = [
     "https://a0.muscache.com/im/pictures/bdde3943-aaea-4270-834c-191f9cac5d36.jpg?im_w=480",
     "https://a0.muscache.com/im/pictures/d7ece09a-928e-4a21-84a2-c52aae90fac9.jpg?im_w=480",
     "https://a0.muscache.com/im/pictures/f58918f8-8aec-4874-bd9f-6cfed4e9cd51.jpg?im_w=480",
@@ -93,7 +93,7 @@ export const cheapsmall = [
     "https://a0.muscache.com/im/pictures/084b6c0c-9a4e-4d9e-9202-09e1d1f24785.jpg?im_w=480",
 ]
 
-export const mid = [
+const mid = [
     "https://a0.muscache.com/im/pictures/f906fe29-49de-4375-a485-a8148c5e0de0.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/50477634-42c5-4b7f-85ae-dc3f683e8a40.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/38ee1534-7f33-4f6f-a52a-7e1683971344.jpg?im_w=720",
@@ -106,7 +106,7 @@ export const mid = [
     "https://a0.muscache.com/im/pictures/d78aa6a4-163e-4308-82e0-8e2c10d1e7a2.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/7f58bb20-e68a-4ae9-9e5a-64949975ffc9.jpg?im_w=720",
 ]
-export const midsmall = [
+const midsmall = [
     "https://a0.muscache.com/im/pictures/e1e61ce2-882c-4ef0-95d7-91b65edf90c0.jpg?im_w=480",
     "https://a0.muscache.com/im/pictures/92ea610f-b313-4baa-a326-73c8477bd3ab.jpg?im_w=480",
     "https://a0.muscache.com/im/pictures/55b9bf32-6fba-4a26-81b6-70b89d3ccf5f.jpg?im_w=480",
@@ -119,7 +119,7 @@ export const midsmall = [
     "https://a0.muscache.com/im/pictures/b68de971-6b0c-482a-9f9e-c160ad64fb63.jpg?im_w=480",
     "https://a0.muscache.com/im/pictures/79f4933f-4a7f-4f46-b82b-9c1f3f08c2d3.jpg?im_w=480",
 ]
-export const big = [
+const big = [
     "https://a0.muscache.com/im/pictures/de8e6fd5-3966-4c90-bd03-36ebb00d97c4.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/2bfa9fd4-08cc-4014-b7ec-898f80a24525.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/1776527e-598d-48b1-a3a2-c6c5671b40a3.jpg?im_w=720",
@@ -145,7 +145,7 @@ export const big = [
     "https://a0.muscache.com/im/pictures/559d9a97-1a14-41b5-8121-73f1ae66a326.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/710ed78b-2707-44d3-9ce3-8c396879c541.jpg?im_w=720",
 ]
-export const bigsmall = [
+const bigsmall = [
     "https://a0.muscache.com/im/pictures/c0542080-1c36-414b-b5e8-12c17a50494f.jpg?im_w=480",
     "https://a0.muscache.com/im/pictures/fa047f67-6550-4429-8888-ad317513e2ba.jpg?im_w=480",
     "https://a0.muscache.com/im/pictures/a221214c-0bca-4b9a-a670-d28a9d5ceab9.jpg?im_w=480",
@@ -157,7 +157,7 @@ export const bigsmall = [
     "https://a0.muscache.com/im/pictures/286f363c-ee82-4aaa-aab6-073bc68734fc.jpg?im_w=480",
 ]
 
-export const dates = [
+const dates = [
     ['01-01', '01-06'], ['02-01', '02-06'], ['03-01', '03-06'], ['04-01', '04-06'],
     ['01-22', '01-24'],
     ['05-01', '05-06'], ['07-01', '07-06'], ['08-01', '08-06'],
@@ -168,7 +168,7 @@ export const dates = [
 
 
 
-export const spotSkeleton = {
+const spotSkeleton = {
     city: null,
     state: null,
     country: 'USA',
@@ -179,30 +179,41 @@ export const spotSkeleton = {
     description: null, price: null
 }
 
-export const bookingSkeleton = {
+const bookingSkeleton = {
     spotId: 0,
     userId: 0,
     startDate: '2023-',
     endDate: '2023-'
 }
 
-export const spotimageSkeleton = {
+const spotimageSkeleton = {
     spotId: 0,
     url: '',
     preview: null
 }
 
 
-export const reviewimageSkeleton = {
+const reviewimageSkeleton = {
     reviewId: 0,
     url: ''
 }
 
-export const reviewSkeleton = {
+const reviewSkeleton = {
     spotId: 0,
     userId: 0,
     review: '',
     stars: 0
 }
 
-export const getRandom = (max) => Math.floor(Math.random() * max);
+//  const getRandom = (max) => Math.floor(Math.random() * max);
+
+module.exports = {
+    addressSample, nameSample, priceSample,
+    cityStateSample, descriptSample, descriptVsample,
+    reviews,
+    images,
+    cheap, cheapsmall, mid, midsmall, big, bigsmall,
+    dates,
+    bookingSkeleton, spotimageSkeleton, reviewSkeleton,
+    reviewimageSkeleton, spotSkeleton,
+}
