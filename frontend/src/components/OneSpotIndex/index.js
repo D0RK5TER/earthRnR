@@ -81,7 +81,7 @@ const OneSpotIndex = () => {
 
     previewImage = theSpot.SpotImages?.find((x) => x.preview === true).url
     spotimgs = theSpot.SpotImages?.filter((x) => x.preview !== true)
-    // console.log(spotimgs)
+    console.log(spotimgs)
     while (spotimgs.length < 4) spotimgs.push({ url: quest })
     let [a, b, c, d] = spotimgs
     // console.log(previewImage)
