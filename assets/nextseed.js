@@ -1,6 +1,3 @@
-'use strict';
-
-/**  @type {import('sequelize-cli').Migration} */
 const bcrypt = require('bcryptjs');
 const { User, Spot, Review } = require('../models')
 const {
@@ -27,132 +24,21 @@ const getRandom = (max) => Math.floor(Math.random() * max);
 
 module.exports = {
     async up(queryInterface, Sequelize) {
-        options.tableName = 'Users'
 
-        await queryInterface.bulkInsert(options, [
-            {
-                firstName: 'Dexter',
-                lastName: 'Asssf',
-                email: 'user0@user.net',
-                username: 'D0rk5ter',
-                hashedPassword: bcrypt.hashSync('password')
-            },
-            {
-                firstName: 'Faye',
-                lastName: 'Assaf',
-                email: 'user1@user.co',
-                username: 'Jauxman',
-                hashedPassword: bcrypt.hashSync('password')
-            },
-            {
-                firstName: 'John',
-                lastName: 'Doe',
-                email: 'user2@user.co',
-                username: 'MMMCMM',
-                hashedPassword: bcrypt.hashSync('password')
-            },
-            {
-                firstName: 'Linda',
-                lastName: 'Belcher',
-                email: 'user3@user.co',
-                username: 'RKOman',
-                hashedPassword: bcrypt.hashSync('password')
-            },
-            {
-                firstName: 'Hiro',
-                lastName: 'Protaganist',
-                email: 'user4@user.co',
-                username: 'pRapper',
-                hashedPassword: bcrypt.hashSync('password')
-            },
-            {
-                firstName: 'Harry',
-                lastName: 'Dresden',
-                email: 'user5@user.co',
-                username: 'Ketmasta',
-                hashedPassword: bcrypt.hashSync('password')
-            },
-            {
-                firstName: 'Akira',
-                lastName: 'Akiraaaa',
-                email: 'user6@user.co',
-                username: 'MoreT',
-                hashedPassword: bcrypt.hashSync('password')
-            },
-            {
-                firstName: 'Kest',
-                lastName: 'Greatcoat',
-                email: 'user7@user.co',
-                username: 'ShortTee',
-                hashedPassword: bcrypt.hashSync('password')
-            },
-            {
-                firstName: 'Kellen',
-                lastName: 'Argosi',
-                email: 'user8@user.co',
-                username: 'TohmsDiner',
-                hashedPassword: bcrypt.hashSync('password')
-            },
-            {
-                firstName: 'Mia',
-                lastName: 'Corvere',
-                email: 'user9@user.co',
-                username: 'CCplease',
-                hashedPassword: bcrypt.hashSync('password')
-            },
-            //   {
-            //     firstName: 'Grey',
-            //     lastName: 'Nance',
-            //     email: 'user15@user.co',
-            //     username: 'Grance',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Roy',
-            //     lastName: 'Lee',
-            //     email: 'user16@user.co',
-            //     username: 'Leeroy',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Jade',
-            //     lastName: 'Tran',
-            //     email: 'user17@user.co',
-            //     username: 'JadoTran',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Efrain',
-            //     lastName: 'Niafe',
-            //     email: 'user18@user.co',
-            //     username: 'effinRain',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Sarah',
-            //     lastName: 'Dunlop',
-            //     email: 'user19@user.co',
-            //     username: 'SunLop',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Xena',
-            //     lastName: 'Kitty',
-            //     email: 'user20@user.co',
-            //     username: 'CatFish',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Alex',
-            //     lastName: 'Kim',
-            //     email: 'user21@user.co',
-            //     username: 'Kilex',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
+        let existingUsers = await User.findAll();
+        existingUsers = JSON.parse(JSON.stringify(existingUsers))
+        let exUsers = []
+        for (let u of existingUsers) exUsers.push(u.id)
 
-        ]
-            ,
-            {})
+        let existingReviews = await Review.findAll();
+        existingReviews = JSON.parse(JSON.stringify(existingReviews))
+        let exRev = []
+        for (let r of existingReviews) exRev.push(r.id)
+
+        let existingSpots = await Spot.findAll();
+        existingSpots = JSON.parse(JSON.stringify(existingSpots))
+        let exSpots = []
+        for (let s of existingSpots) exSpots.push(s.id)
 
         const randomSpots = []
         const randomReviews = []
@@ -160,14 +46,41 @@ module.exports = {
         const imgs = []
         const randomBookings = []
 
-        ////////////////////USER END///////////////////////////////////////////////////
 
-        let ownerSample = await User.findAll();
-        ownerSample = JSON.parse(JSON.stringify(ownerSample))
-        
-      
-        // console.log('18912u39128u3912u3912u39123u9123u1', cityStateSample, randomSpots, descriptSample )
-        while (randomSpots.length < 12) {
+        options.tableName = 'Users'
+        await queryInterface.bulkInsert(options, [
+            {
+                firstName: 'Inigo',
+                lastName: 'Montoya',
+                email: 'user15@user.co',
+                username: 'Grance',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'Ripley',
+                lastName: 'Kat',
+                email: 'user16@user.co',
+                username: 'Leeroy',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'Rincewind',
+                lastName: 'Churm',
+                email: 'user17@user.co',
+                username: 'JadoTran',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+        ]
+            ,
+            {})
+        //>>>>><><><<<<>><><><><<><><><><><><>><<><><>
+        let ownerSample2 = await User.findAll();
+        ownerSample2 = JSON.parse(JSON.stringify(ownerSample2))
+        let ownerSample = []
+        for (let own of ownerSample2) {
+            if (!exUsers.includes(own.id)) ownerSample.push(own)
+        }
+        while (randomSpots.length < 5) {
             let newRandom = { ...spotSkeleton }
             let owner = ownerSample[getRandom(ownerSample.length - 1)]
             let stateCity = cityStateSample[getRandom(cityStateSample.length - 1)]
@@ -192,12 +105,13 @@ module.exports = {
         }
         options.tableName = 'Spots'
         await queryInterface.bulkInsert(options, randomSpots, {})
-
-        ////////////////////SPOTS END///////////////////////////////////////////////////
-
+        //>>>>><><><<<<>><><><><<><><><><><><>><<><><>
         let userSample = await User.findAll();
         userSample = JSON.parse(JSON.stringify(userSample))
-       
+        // let userSample = []
+        // for (let use of userSample2) {
+        //   if (!exUsers.includes(use.id)) userSample.push(use)
+        // }
         let spotSample = await Spot.findAll();
         spotSample = JSON.parse(JSON.stringify(spotSample))
 
@@ -230,11 +144,13 @@ module.exports = {
         // console.log()
         options.tableName = 'Reviews'
         await queryInterface.bulkInsert(options, randomReviews, {})
-        // console.log(randomReviews)
-        // console.log(randomReviews)
-        ////////////////////Reviews END///////////////////////////////////////////////////
+
+        //>>>>><><><<<<>><><><><<><><><><><><>><<><><>
+
         let reviewSample = await Review.findAll();
         reviewSample = JSON.parse(JSON.stringify(reviewSample))
+
+
         let revids = reviewSample.map(x => x = x.id)
         revids.forEach(x => {
             let z = { ...reviewimageSkeleton }
@@ -247,12 +163,11 @@ module.exports = {
         options.tableName = 'ReviewImages'
         await queryInterface.bulkInsert(options, randomReviewImage, {})
 
-        ////////////////////REVIMG END///////////////////////////////////////////////////
+
+        // />>>>><><><<<<>><><><><<><><><><><><>><<><><>
         spotSample = await Spot.findAll();
         spotSample = JSON.parse(JSON.stringify(spotSample))
-
-
-
+        spotSample = spotSample.slice(existingSpots.length, spotSample.length)
 
         for (let s of spotSample) {
             let newimg = { ...spotimageSkeleton }
@@ -263,11 +178,25 @@ module.exports = {
             let nlakesmall = [...lakeSmall]
             let nmansionsmall = [...mansionSmall]
 
+
+            let nrv = [...rv]
+            let ndirt = [...dirt]
+            let ntopWorld = [...topWorld]
+            let ntreeh = [...treeh]
+            let nlake = [...lake]
+            let nmansion = [...mansion]
+
+
+
+
+
+
             if (s.price < 100) {
                 newimg.spotId = s.id
                 newimg.preview = true
+                // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
 
-                newimg.url = dirt.splice(getRandom(dirt.length - 1), 1)[0]
+                newimg.url = ndirt.splice(getRandom(dirt.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -281,7 +210,8 @@ module.exports = {
             } else if (s.price < 200) {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = rv.splice(getRandom(rv.length - 1), 1)[0]
+                // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
+                newimg.url = nrv.splice(getRandom(rv.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -295,7 +225,8 @@ module.exports = {
             else if (s.price < 600) {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = topWorld.splice(getRandom(topWorld.length - 1), 1)[0]
+                // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
+                newimg.url = ntopWorld.splice(getRandom(topWorld.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -309,7 +240,8 @@ module.exports = {
             } else if (s.price < 1000) {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = treeh.splice(getRandom(treeh.length - 1), 1)[0]
+                // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
+                newimg.url = ntreeh.splice(getRandom(treeh.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -323,7 +255,8 @@ module.exports = {
             } else if (s.price < 2000) {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = lake.splice(getRandom(lake.length - 1), 1)[0]
+                // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
+                newimg.url = nlake.splice(getRandom(lake.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -337,7 +270,8 @@ module.exports = {
             } else {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = mansion.splice(getRandom(mansion.length - 1), 1)[0]
+                // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
+                newimg.url = nmansion.splice(getRandom(mansion.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -352,7 +286,6 @@ module.exports = {
         options.tableName = 'SpotImages'
         await queryInterface.bulkInsert(options, imgs, {})
 
-        ////////////////////spotIMG END///////////////////////////////////////////////////
 
         spotSample = await Spot.findAll();
         spotSample = JSON.parse(JSON.stringify(spotSample))
@@ -378,19 +311,14 @@ module.exports = {
             }
             // console.log(randomBookings)
         })
-        // console.log(randomBookings)
         options.tableName = 'Bookings'
         await queryInterface.bulkInsert(options, randomBookings, {})
-
-
 
 
 
     },
 
     async down(queryInterface, Sequelize) {
-
-
         options.tableName = 'Bookings'
         await queryInterface.bulkDelete(options, {})
         options.tableName = 'SpotImages'
@@ -403,5 +331,5 @@ module.exports = {
         await queryInterface.bulkDelete(options, {})
         options.tableName = 'Users'
         await queryInterface.bulkDelete(options, {});
-    },
+    }
 };
