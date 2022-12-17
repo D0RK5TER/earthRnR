@@ -26,7 +26,6 @@ export function getAge(birth) {
     let month = curMonth - birthMonth;
     let day = curDay - birthDay;
     age = (year * 364) + (month * 30) + day
-
     return age;
 }
 
