@@ -12,8 +12,7 @@ const reviewimageSkeleton = {
   url: ''
 }
 let images = ['https://thumbs.dreamstime.com/b/interior-old-dirty-garage-interior-old-dirty-garage-full-stuff-108307302.jpg',
-  "https://thumbs.dreamstime.com/b/interior-old-dirty-garage-interior-old-dirty-garage-full-stuff-108307302.jpg"
-  ,
+  "https://thumbs.dreamstime.com/b/interior-old-dirty-garage-interior-old-dirty-garage-full-stuff-108307302.jpg",
   "https://thumbs.dreamstime.com/b/interior-messy-home-room-scattered-stuff-mess-disorder-concept-view-living-134666124.jpg",
   "https://thumbs.dreamstime.com/b/modern-kitchen-cleaning-washing-up-dirty-dishes-clean-cluttered-breakfast-bar-205360665.jpg",
   "https://thumbs.dreamstime.com/b/messy-room-living-clothes-other-stuff-40962956.jpg",
