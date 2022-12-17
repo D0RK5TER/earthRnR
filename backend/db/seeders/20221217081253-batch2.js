@@ -39,7 +39,7 @@ module.exports = {
     let exRev = []
     for (let r of existingReviews) exRev.push(r.id)
 
-    let existingSpots = await Review.findAll();
+    let existingSpots = await Spot.findAll();
     existingSpots = JSON.parse(JSON.stringify(existingSpots))
     let exSpots = []
     for (let s of existingSpots) exSpots.push(s.id)
@@ -185,7 +185,8 @@ module.exports = {
     // />>>>><><><<<<>><><><><<><><><><><><>><<><><>
     spotSample = await Spot.findAll();
     spotSample = JSON.parse(JSON.stringify(spotSample))
-
+    spotSample = spotSample.slice(existingSpots.length, spotSample.length)
+    console.log(spotSample)
 
 
 
@@ -213,7 +214,8 @@ module.exports = {
 
       if (s.price < 100) {
         newimg.spotId = s.id
-        !exSpots.includes(s.id) ? newimg.preview = true : newimg.preview = false
+        newimg.preview = true
+        // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
 
         newimg.url = ndirt.splice(getRandom(dirt.length - 1), 1)[0]
         imgs.push(newimg)
@@ -228,7 +230,8 @@ module.exports = {
         }
       } else if (s.price < 200) {
         newimg.spotId = s.id
-        !exSpots.includes(s.id) ? newimg.preview = true : newimg.preview = false
+        newimg.preview = true
+        // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
         newimg.url = nrv.splice(getRandom(rv.length - 1), 1)[0]
         imgs.push(newimg)
         let i = 0
@@ -242,7 +245,8 @@ module.exports = {
       }
       else if (s.price < 600) {
         newimg.spotId = s.id
-        !exSpots.includes(s.id) ? newimg.preview = true : newimg.preview = false
+        newimg.preview = true
+        // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
         newimg.url = ntopWorld.splice(getRandom(topWorld.length - 1), 1)[0]
         imgs.push(newimg)
         let i = 0
@@ -256,7 +260,8 @@ module.exports = {
 
       } else if (s.price < 1000) {
         newimg.spotId = s.id
-        !exSpots.includes(s.id) ? newimg.preview = true : newimg.preview = false
+        newimg.preview = true
+        // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
         newimg.url = ntreeh.splice(getRandom(treeh.length - 1), 1)[0]
         imgs.push(newimg)
         let i = 0
@@ -270,7 +275,8 @@ module.exports = {
 
       } else if (s.price < 2000) {
         newimg.spotId = s.id
-        !exSpots.includes(s.id) ? newimg.preview = true : newimg.preview = false
+        newimg.preview = true
+        // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
         newimg.url = nlake.splice(getRandom(lake.length - 1), 1)[0]
         imgs.push(newimg)
         let i = 0
@@ -284,7 +290,8 @@ module.exports = {
 
       } else {
         newimg.spotId = s.id
-        !exSpots.includes(s.id) ? newimg.preview = true : newimg.preview = false
+        newimg.preview = true
+        // !exSpots.includes(s.ownerId) ? newimg.preview = true : newimg.preview = false
         newimg.url = nmansion.splice(getRandom(mansion.length - 1), 1)[0]
         imgs.push(newimg)
         let i = 0
