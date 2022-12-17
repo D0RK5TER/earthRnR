@@ -2,7 +2,7 @@
 
 /** @type {import('sequelize-cli').Migration} */
 const { Op } = require('sequelize')
-const { User, Spot } = require('../db/models')
+const { User, Spot } = require('../models')
 let options = {};
 
 
