@@ -2,7 +2,7 @@
 
 /**  @type {import('sequelize-cli').Migration} */
 const bcrypt = require('bcryptjs');
-const { User, Spot, Review } = require('../models')
+const { User, Spot, Review } = require('../db/models')
 const {
     addressSample, nameSample, priceSample,
     cityStateSample, descriptSample, descriptVsample,
@@ -14,19 +14,19 @@ const {
     reviewimageSkeleton, spotSkeleton,
 
 
-} = require('../../utils/seeddata');
-const getRandom = (max) => Math.floor(Math.random() * max);
+} = require('../utils/seeddata');
 let options = {};
 if (process.env.NODE_ENV === 'production') {
     options.schema = process.env.SCHEMA;  // define your schema in options object
 }
 
 
+const getRandom = (max) => Math.floor(Math.random() * max);
 
 module.exports = {
     async up(queryInterface, Sequelize) {
         options.tableName = 'Users'
-        
+
         await queryInterface.bulkInsert(options, [
             {
                 firstName: 'Dexter',

@@ -4,6 +4,8 @@
 const { Op } = require('sequelize')
 const { User, Spot } = require('../db/models')
 let options = {};
+
+
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
 }
