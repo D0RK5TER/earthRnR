@@ -17,15 +17,16 @@ export function getAge(birth) {
     const curDate = new Date();
     const curYear = curDate.getFullYear();
     const curMonth = curDate.getMonth();
-    const curDay = curDate.getDay();
     const birthDate = new Date(birth.toString());
     const birthYear = birthDate.getFullYear();
     const birthMonth = birthDate.getMonth();
     const birthDay = birthDate.getDay();
-    let year = curYear - birthYear;
-    let month = curMonth - birthMonth;
-    let day = curDay - birthDay;
-    age = (year * 364) + (month * 30) + day
+
+    console.log( birthDay)
+    let year = birthYear - curYear
+    let month =  birthMonth - curMonth;
+    let day =  birthDay ;
+    age = (year * 364) + (month * 30) + (day?(day-7)*-1:0)
     return age;
 }
 
