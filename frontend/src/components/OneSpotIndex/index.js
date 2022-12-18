@@ -156,7 +156,7 @@ const OneSpotIndex = () => {
             </div>
 
             <div id='onespotdetails'>
-              hosted by {theSpot.User.firstName}
+              hosted by {`${theSpot.User.firstName} ${theSpot.User.lastName}`}
             </div>
           </div>
 

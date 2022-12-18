@@ -707,14 +707,19 @@ font-size: .91vw;
 #onespotstate {
     font-family: 'Li';
 }
-
+#onespotlocation {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    
+}
 #onespotcity {
     font-family: 'Li';
-    margin-right: .2em;
-    word-spacing: .2em;
     display: flex;
     justify-content: space-between;
-
+    width: fit-content;
+    flex-direction: row;
+    margin-right: 1vw;
 }
 
 #onespotinnercont {
@@ -834,7 +839,7 @@ font-size: .91vw;
 
 
 #onespotdetails {
-    margin-left: 1.5vw;
+    margin-left: 1vw;
     font-family: 'Light';
     font-size: 1.3vw;
 }
@@ -854,7 +859,7 @@ font-size: .91vw;
 }
 
 #onespotsubheader {
-    width: 18vw;
+    width: fit-content;
     font-size: .8vw;
     display: flex;
     height: .7vw;
@@ -865,6 +870,7 @@ font-size: .91vw;
     align-items: center;
     justify-content: space-between;
     padding-left: 1vw;
+    
     
 
 
@@ -887,4 +893,5 @@ font-size: .91vw;
     display: flex;
     font-family: 'Bold';
     font-size: 1vw;
+    margin-right: 1vw;
 }
