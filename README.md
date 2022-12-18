@@ -1,9 +1,14 @@
-# earthRnR
-###
-
+#  Welcome to  EarthRnR
+EarthRnR is a clone of the popular home rental web application AirBnB and is design to match the same appearance and qualities
 #
-## Welcome
-![logo]
+
+
+![modalandspot](/assets/logo.png 'MODAL IMAGE')
+
+
+<br>
+
+
 
 [logo]: frontend/public/logo.jpg
 [readme]: backend/README.md
@@ -11,101 +16,96 @@
 
 ## earthRnR : API Documentation
 #
-### Features and Tid-bits!  
-##
-## Come vist at the link below or to read more see my wiki page!
-##
-## Live Deployment link:
-### [https://earthrnr.onrender.com/]
+
+ Live Deployment link: [https://earthrnr.onrender.com/]
+ <br>
+
+ Live Wiki Link: [https://github.com/D0RK5TER/earthRnR/wiki]
+<br>
+<br>
+<br>
+
+## Frameworks Platforms and Libraries
 #
+
+>- React
+>- Redux
+>- Javascript
+>- Express
+>- Sequelize
+>- HTML
+>- CSS
+
+<br>
+
+## Database Languages
 #
-## Live Wiki Link:
-### [https://github.com/D0RK5TER/earthRnR/wiki]
+
+> Production:
+>- Postgres 
+
+> Development:
+>- Sqlite3
+
+<br>
+<br>
+
+## Available Features (CRUD)
 #
-#
-## For more information about the database schema and routes
-## please refer to below:
-#
-#
-#
-#
+>Create
+>- Create a review
+>- Create a spot
+>- Create a spot image
+
+>Read
+>- Read a spot and its images
+>- Read the reviews
+>- Read the session user's spots and reviews
+>- Read spots with search parameters (pagination)
+
+>Update
+>- Update a review
+>- Update a spot
+
+>Delete
+>- Delete a review
+>- Delete a spot
+
+<br>
+<br>
+<br>
+
+
 # earthRnR Home Page
-<!-- ![homepage](/assets/homepage.png 'Homepage') -->
-#
-#
-#
-# Sample of the many modal buttons
-#
-#
-#
-#
-<!-- ![modalandspot](/assets/modalandspot.png 'MODAL IMAGE') -->
-#
-#
-#
+![homepage](/assets/homepage.png 'Homepage')
+<br>
+<br>
+<br>
+<br>
 
-#
-#
-# Sample of one of the many hiding buttons
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-<!-- ![buttons](/assets/buttons.png 'button') -->
-#
-#
-#
-#
-#
-#
-#
-# Sample of the Login Page
-#
-#
-#
-#
-#
-#
-#
-#
-#
-<!-- ![modalandspot](/assets/modalandspot.png) -->
-#
-#
-#
-#
-#
-#
-# Sample Reviews
-#
-#
-#
-#
-#
+# Sample of a Modal
+![modalandspot](/assets/modalandspot.png 'MODAL IMAGE')
+<br>
+<br>
+<br>
+<br>
 
-#
-##
-#
-#
-#
-##
-# Sample DropDown Menu
-#
-#
-# 
-#
-######
-#
-#
-#
-#
-#
+
+ 
+# Sample of a Button (dynamic visibility)
+![buttons](/assets/buttons.png 'button')
+<br>
+<br>
+<br>
+<br>
+
+# Sample of the Create Spot -Preview Image
+![modalandspot](/assets/create.png 'CREATE')
+<br>
+<br>
+<br>
+<br>
+
 # Sample State
-####
 ![StateSlice](/assets/StateSlice.png  'StateSlice')
+
