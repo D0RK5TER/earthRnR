@@ -1,9 +1,9 @@
 'use strict';
 
-// /** @type {import('sequelize-cli').Migration} */
+/** @type {import('sequelize-cli').Migration} */
 
 const bcrypt = require('bcryptjs');
-const { User, Spot, Review } = require('../backend/db/models')
+const { User, Spot, Review } = require('../models')
 const {
   addressSample, nameSample, priceSample,
   cityStateSample, descriptSample, descriptVsample,
@@ -17,7 +17,7 @@ const {
   reviewimageSkeleton, spotSkeleton,
 
 
-} = require('../backend/utils/seeddata');
+} = require('../../utils/seeddata');
 let options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
@@ -57,37 +57,37 @@ module.exports = {
         firstName: 'Richard',
         lastName: 'Kahl',
         email: 'user10@user.co',
-        username: 'MoMar',
-        hashedPassword: bcrypt.hashSync('2password2')
+        username: 'Richard10',
+        hashedPassword: bcrypt.hashSync('password')
       },
       {
         firstName: 'Logan',
         lastName: 'Ninefingers',
         email: 'user11@user.co',
-        username: 'JozinYou',
-        hashedPassword: bcrypt.hashSync('2password2')
+        username: 'Logan11',
+        hashedPassword: bcrypt.hashSync('password')
       },
       {
         firstName: 'James',
         lastName: 'Stark',
         email: 'user12@user.co',
-        username: 'sandman',
-        hashedPassword: bcrypt.hashSync('2password2')
+        username: 'James12',
+        hashedPassword: bcrypt.hashSync('password')
       },
-      {
-        firstName: 'Thomas',
-        lastName: 'Odd',
-        email: 'user13@user.co',
-        username: 'Snokes',
-        hashedPassword: bcrypt.hashSync('2password2')
-      },
-      {
-        firstName: 'Jorg',
-        lastName: 'Ancrath',
-        email: 'user14@user.co',
-        username: 'SextonD',
-        hashedPassword: bcrypt.hashSync('2password2')
-      },
+      // {
+      //   firstName: 'Thomas',
+      //   lastName: 'Odd',
+      //   email: 'user13@user.co',
+      //   username: 'Snokes',
+      //   hashedPassword: bcrypt.hashSync('2password2')
+      // },
+      // {
+      //   firstName: 'Jorg',
+      //   lastName: 'Ancrath',
+      //   email: 'user14@user.co',
+      //   username: 'SextonD',
+      //   hashedPassword: bcrypt.hashSync('2password2')
+      // },
     ]
       ,
       {})
