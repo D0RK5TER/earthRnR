@@ -207,7 +207,7 @@ const OneSpotIndex = () => {
                       </div>
                       has been a host here for
                       <div id='hostnamelast'>
-                        {` ${getAge(theSpot.createdAt)}`}
+                        {` ${getAge(theSpot?.createdAt)}`}
                       </div>
                       days
                     </div>
