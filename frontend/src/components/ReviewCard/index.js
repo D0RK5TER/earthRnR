@@ -59,7 +59,9 @@ function ReviewCard({ review, user, place, id }) {
                         />
                     }
                     {review.userId === user?.id && place === '/current' &&
-                        <button onClick={() => history.push(`/spot/${review.spotId}`)}>Spot</button>
+                        <button onClick={() => history.push(`/spot/${review.spotId}`)}
+                        style={{marginTop: '0px'}}
+                        >Spot</button>
 
                     }
                     <OpenModalButton
