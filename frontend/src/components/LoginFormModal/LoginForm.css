@@ -130,8 +130,8 @@
 }
 
 #loginform:first-of-type span {
-    font-size: .5em;
-    padding-top: 3em;
+    font-size: .5vw;
+    padding-top: 2.5vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

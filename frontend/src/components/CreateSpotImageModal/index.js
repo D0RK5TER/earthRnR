@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useModal } from '../../context/Modal';
 import { createSpotImage } from '../../store/spots';
-import quest from '../../assets/quest.jpg';
+import quest from '../../assets/quest.png';
 
 // import SpotImageForm from './SpotImageForm';
 import './SpotImage.css'

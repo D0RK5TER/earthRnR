@@ -12,7 +12,7 @@ import { deciNum, overThou, strToNum, getAge, pathURL } from '../../utilities/lo
 import './OneSpotIndex.css'
 import './calendar.css'
 import star from '../../assets/star.png';
-import quest from '../../assets/quest.jpg';
+import quest from '../../assets/quest.png';
 import propic from '../../assets/propic.png'
 import tsuper from '../../assets/traitsuper.png'
 import nophone from '../../assets/traitnophone.png'
@@ -152,6 +152,10 @@ const OneSpotIndex = () => {
           <div id='onespotheader' className='nameandbutt namez'>
             {theSpot.name}
             <div id='onespotdetails'>
+              ·
+            </div>
+
+            <div id='onespotdetails'>
               hosted by {theSpot.User.firstName}
             </div>
           </div>
@@ -227,9 +231,9 @@ const OneSpotIndex = () => {
                       <div id='traitscol1'>
                         <div id='traitscoltop1'>
                           {`${theSpot.User.firstName} is a super host`}                        </div>
-                        <div id='traitscolbot1'>
+                        <div id='traitscolbot1' className='bottomtrait smallertext'>
                           voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                          magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                          magni dolores eos qui ratione voluptatem sequi nesciunt.
                         </div>
                       </div>
                     </div>
@@ -239,7 +243,7 @@ const OneSpotIndex = () => {
                         <div id='traitscoltop2'>
                           {`${theSpot.name} has no phone`}
                         </div>
-                        <div id='traitscolbot2'>
+                        <div id='traitscolbot2' className='bottomtrait smallertext'>
                           This is actually a good thing nowadays. sed quia consequuntur
                           magni dolores eos qui ratione voluptatem sequi nesciunt.
                         </div>
@@ -254,7 +258,7 @@ const OneSpotIndex = () => {
                         <div id='traitscoltop3'>
                           {`${theSpot.name} has self check-in!`}
                         </div>
-                        <div id='traitscolbot3'>
+                        <div id='traitscolbot3' className='bottomtrait smallertext'>
                           Cause who actually wants to meet the hose nowadays? sed quia consequuntur
                           magni dolores eos qui ratione voluptatem sequi nesciunt.
                         </div>
@@ -322,7 +326,7 @@ const OneSpotIndex = () => {
                       </div>
                     </div>
                     <>
-                      <h2>{ }6 nights at { }</h2>
+                      <h2>{ }6 nights at {theSpot.name}</h2>
                       <div id='spotbookingcalendar'>
                         <img src={caltemp} alt='temponly' style={{ height: '23vw' }} />
 
@@ -355,13 +359,13 @@ const OneSpotIndex = () => {
                     <p>${Math.round(theSpot.price)} <p>night</p></p>
 
                     <div id='rightside'>
+                      <img src={star} id='rightsidestar' alt='star img'
 
-                      <img src={star} id='rightsidestar' alt='star img' />&nbsp;
+                      />&nbsp;
                       {theSpot.avgStarRating}
 
                       &nbsp;·&nbsp;
-                      <div id='rightsidereviews'
-                        onClick={(e) => { e.preventDefault(); window.location.replace(`/spot/${theSpot.id}#jumpmark`) }}>
+                      <div id='rightsidereviews'>
                         {`${theSpot.numReviews} reviews`}
                       </div >
                     </div>
@@ -426,8 +430,9 @@ const OneSpotIndex = () => {
                   <div id='onespotnumber'>
                     {theSpot.numReviews}
                   </div>
+                  reviews
                   <div id='reviewsright'>
-                    reviews
+                    {/* reviews */}
                   </div>
                 </div >
               </div>}

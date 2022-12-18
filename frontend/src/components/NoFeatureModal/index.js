@@ -4,13 +4,13 @@ import { useModal } from '../../context/Modal';
 
 
 // import './DeleteReviewForm.css'
-// import quest from '../../assets/quest.jpg';
+// import quest from '../../assets/quest.png';
 
 function NoFeatureIndex() {
     const { closeModal } = useModal();
 
     return (
-        <div id='deletespot' style={{cursor:'default'}} >
+        <div id='deletespot' style={{ cursor: 'default' }} >
             <div id='reuseheader'>
                 <div id="reusemain">Welcome to EarthRnR!</div>
                 <div id='reuseexitbutt' onClick={() => closeModal()}>
@@ -22,7 +22,7 @@ function NoFeatureIndex() {
                 </div>
             </div>
             <div id='delrevwrap'>
-                <button style={{cursor:'pointer'}} type="button" id='createblock' onClick={() => closeModal()}>Close</button>
+                <button style={{ cursor: 'pointer' }} type="button" id='createblock' onClick={() => closeModal()}>Close</button>
             </div>
 
         </div>

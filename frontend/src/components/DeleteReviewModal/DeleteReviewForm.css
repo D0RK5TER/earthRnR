@@ -41,23 +41,6 @@
     text-align: center;
     vertical-align: middle;
 }
-
-#delexitbutt:hover {
-    /* background-color: #ffbdbd; */
-    border: .2px solid black;
-    cursor: pointer;
-
-}
-
-#deletebuttsubmit:hover {
-    background-color: rgb(255, 163, 163);
-    color: #000000;
-    font-family: 'Bold';
-    font-size: 1.1em;
-
-
-}
-
 #deletebuttsubmit {
     background-color: #ffffff;
     border-radius: 1em;
@@ -78,7 +61,11 @@
     padding-bottom: 1em;
 
 }
-
+#deletereview {
+    width: fit-content;
+    margin: 0px;
+    font-size: 1vw;
+}
 #deletereview:hover {
     font-family: 'Bold';
 }

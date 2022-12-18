@@ -11,8 +11,7 @@
     "sequelize": "npm run --prefix backend sequelize",
     "sequelize-cli": "npm run --prefix backend sequelize-cli",
     "start": "npm start --prefix backend",
-    "build": "npm run build --prefix backend",
-    "delete": "npm run --prefix backend sequelize-cli db:seed:undo --seed 20221217081253-batch2.js"
+    "build": "npm run build --prefix backend"
   },
   "repository": {
     "type": "git",

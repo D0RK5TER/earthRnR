@@ -279,20 +279,31 @@
     height: 2vw;
     margin-right: 1.3vw;
 }
-
+#spotfeatureslist h2 {
+    font-family: 'Light';
+    font-size: 1.75vw;
+}
 
 #spotamendicons {
     display: flex;
     flex-direction: row;
 
 }
-
+#spotamenities h3 {
+    font-family: 'Bold';
+    font-size: 1.2vw;
+}
 #spotamenities {
     border-bottom: 1px solid#e6e6e6;
+    font-size: 1vw;
+    font-family: 'Li';
+    padding-right: .52vw;
+
 }
 
 #spotdescription h4 {
     font-family: 'Bold';
+    font-size: 1.22vw;
 }
 
 #spotdescription {
@@ -301,12 +312,13 @@
     margin-bottom: 2vw;
     border-bottom: 1px solid#e6e6e6;
     font-family: 'Li';
+    font-size: 1vw;
 }
 
 #earthinsuredesc {
     width: fit-content;
     margin-top: 2vw;
-
+    font-size: 1.2vw;
     margin-bottom: 3vw;
 }
 
@@ -329,12 +341,14 @@
 
 #traitscolbot3 {
     font-family: 'Li';
+font-size: .91vw;
 }
 
 #traitscoltop3 {
     display: flex;
     flex-direction: column;
     font-family: 'Bold';
+    font-size: 1.2vw;
     /* font-family: 'Bold'; */
 }
 
@@ -356,12 +370,14 @@
 
 #traitscolbot2 {
     font-family: 'Li';
+    font-size: .91vw;
 }
 
 #traitscoltop2 {
     display: flex;
     flex-direction: column;
     font-family: 'Bold';
+    font-size: 1.2vw;
     /* font-family: 'Bold'; */
 }
 
@@ -383,11 +399,13 @@
     display: flex;
     flex-direction: column;
     font-family: 'Bold';
+    font-size: 1.2vw;
     /* font-family: 'Bold'; */
 }
 
 #traitscolbot1 {
     font-family: 'Li';
+    font-size: .91vw;
 }
 
 #traitlist1 img {
@@ -453,15 +471,15 @@
 
 #hostnameage>div {
     font-family: 'Bold';
-    font-size: 1.2em;
-    margin-right: .25em;
-    margin-left: .25em;
+    font-size: 1.2vw;
+    margin-right: .25vw;
+    margin-left: .25vw;
 }
 
 #hostnameage {
     display: flex;
     line-height: 2vw;
-    font-size: 1.2em;
+    font-size: 1.2vw;
     font-family: 'Li';
 
 }
@@ -517,7 +535,7 @@
 
 .reviewreview {
     font-family: 'Li';
-    font-size: .8em;
+    font-size: .8vw;
 }
 
 .bottomhalf {
@@ -529,14 +547,14 @@
 
 .reviewage {
     font-family: 'Thin';
-    font-size: .7em;
-    margin-bottom: 1em;
-    padding-left: 1em;
+    font-size: .7vw;
+    margin-bottom: 1vw;
+    padding-left: 1vw;
 }
 
 .reviewname {
     font-family: 'Bold';
-    padding-left: 1em;
+    padding-left: 1vw;
 }
 
 .profilepic.reviewpic {
@@ -582,46 +600,49 @@
 }
 
 #reviewsrating {
-    font-size: 1.25em;
+    font-size: 1.6vw;
 }
 
 #reviewdot.dot {
-    font-size: .75em;
-    padding-top: .5em;
+    font-size: .75vw
+    /* padding-top: .5em; */
 }
 
 #reviewsstar {
     height: 60%;
-    margin-right: .25em;
-    margin-top: .24em;
+    margin-right: .61vw;
 }
 
-#reviewsleftright .dot {
+#reviewsleftright> * {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     /* margin-bottom: 3em; */
-    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 2vw;
     text-align: center;
 }
 
 #reviewsleftright div {
     font-family: 'Bold';
-    font-size: 1.22em;
+    font-size: 1.6vw;
     display: flex;
     flex-direction: row;
     align-items: middle;
-
-    margin-left: .5em;
+    margin-left: 1vw;
 }
-
-#reviewsleftleft>img {
-    padding-top: .1em;
+#reviewsleftright {
+    font-size: 1.5vw;
 }
-
 #reviewsleft div {
     height: 80%;
     width: 35%;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     width: min-content;
     /* vertical-align: middle; */
@@ -633,8 +654,6 @@
     /* justify-content: flex-start; */
     width: 30%;
     height: 100%;
-    /* padding-right: 2em; */
-    margin-left: 5em;
     vertical-align: middle;
 
 }
@@ -654,14 +673,17 @@
     height: 3vw;
     font-family: 'Bold';
     border-top: 2px solid #e6e6e6;
-    padding-top: 1em;
-    margin-left: 2em;
-    align-self: flex-start;
+    padding-top: 1vw;
+    margin-left: 2vw;
+    /* align-self: flex-start; */
 }
 
 
 #ratingnum {
     font-family: 'Li';
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #starrr {
@@ -670,7 +692,6 @@
 }
 
 #onespotreviews {
-    padding-bottom: .71em;
     border-bottom: .5px black solid;
     cursor: pointer;
 }
@@ -813,34 +834,38 @@
 
 
 #onespotdetails {
-    margin-left: 2em;
+    margin-left: 1.5vw;
     font-family: 'Light';
-    font-size: .1vw;
+    font-size: 1.3vw;
 }
 
 #onespotheader {
     font-family: 'Bold';
-    font-size: 2vw;
-    justify-content: flex-start;
-    align-items: baseline;
+    font-size: 1.75vw;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     width: 70%;
     word-spacing: .1em;
-    padding-left: 5vw;
+    /* padding-left: 5vw; */
+    margin-bottom: .5vw;
+    /* margin-right: 2vw; */
 }
 
 #onespotsubheader {
-    width: 40%;
-    padding-left: 5vw;
-    /* justify-content: space-evenly; */
-    font-size: .8em;
+    width: 18vw;
+    font-size: .8vw;
     display: flex;
-    height: .7em;
-    line-height: .7em;
-    padding-left: 5vw;
-    margin-bottom: 1em;
+    height: .7vw;
+    line-height: .7vw;
+    margin-bottom: 1vw;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1vw;
+    
 
 
 }
@@ -861,4 +886,5 @@
 #onespotsubheader>* {
     display: flex;
     font-family: 'Bold';
+    font-size: 1vw;
 }

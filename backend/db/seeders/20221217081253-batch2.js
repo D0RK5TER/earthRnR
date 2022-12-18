@@ -186,9 +186,6 @@ module.exports = {
     spotSample = await Spot.findAll();
     spotSample = JSON.parse(JSON.stringify(spotSample))
     spotSample = spotSample.slice(existingSpots.length, spotSample.length)
-    console.log(spotSample)
-
-
 
     for (let s of spotSample) {
       let newimg = { ...spotimageSkeleton }
