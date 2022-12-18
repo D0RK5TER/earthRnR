@@ -34,70 +34,70 @@ module.exports = {
                 firstName: 'Dexter',
                 lastName: 'Asssf',
                 email: 'user0@user.net',
-                username: 'D0rk5ter',
+                username: 'D0RK5TER',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
                 firstName: 'Faye',
                 lastName: 'Assaf',
                 email: 'user1@user.co',
-                username: 'Jauxman',
+                username: 'Faye1',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
                 firstName: 'John',
                 lastName: 'Doe',
                 email: 'user2@user.co',
-                username: 'MMMCMM',
+                username: 'John2',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
                 firstName: 'Linda',
                 lastName: 'Belcher',
                 email: 'user3@user.co',
-                username: 'RKOman',
+                username: 'Linda3',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
                 firstName: 'Hiro',
                 lastName: 'Protaganist',
                 email: 'user4@user.co',
-                username: 'pRapper',
+                username: 'Hiro4',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
                 firstName: 'Harry',
                 lastName: 'Dresden',
                 email: 'user5@user.co',
-                username: 'Ketmasta',
+                username: 'Harry5',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
                 firstName: 'Akira',
                 lastName: 'Akiraaaa',
                 email: 'user6@user.co',
-                username: 'MoreT',
+                username: 'Akira6',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
                 firstName: 'Kest',
                 lastName: 'Greatcoat',
                 email: 'user7@user.co',
-                username: 'ShortTee',
+                username: 'Kest7',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
                 firstName: 'Kellen',
                 lastName: 'Argosi',
                 email: 'user8@user.co',
-                username: 'TohmsDiner',
+                username: 'Kellen8',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
                 firstName: 'Mia',
                 lastName: 'Corvere',
                 email: 'user9@user.co',
-                username: 'CCplease',
+                username: 'Mia99',
                 hashedPassword: bcrypt.hashSync('password')
             },
             //   {
