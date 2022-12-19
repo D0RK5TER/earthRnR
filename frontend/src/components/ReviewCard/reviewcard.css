@@ -52,7 +52,9 @@
     border-radius: 50%;
 }
 
-
+#spotgotobutt {
+   font-size: 1vw; 
+}
 #headerright {
     display: flex;
     flex-direction: row;

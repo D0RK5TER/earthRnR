@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { useParams } from 'react-router-dom';
 import { createReview } from '../../store/reviews';
-// import { getOneSpot } from '../../store/spots'
 import './CreateReviewForm.css'
 import { useModal } from '../../context/Modal';
-
-// import * as reviewsAction from '../../store/reviews';
 
 
 function CreateReviewFormModal({ id }) {
@@ -16,7 +12,6 @@ function CreateReviewFormModal({ id }) {
     const [review, setReview] = useState('')
     const [stars, setStars] = useState(0);
     const [errors, setErrors] = useState([]);
-    // console.log(id)
     id = +id
 
     const handleSubmit = async (e) => {

@@ -22,6 +22,7 @@
     height: 4vw;
     align-items: center;
     cursor: pointer;
+    font-size: 1.2vw;
 }
 #fangcont> div {
     /* width: 35vw; */
@@ -98,6 +99,8 @@
     margin-top: 1.2em;
     width: 35vw;
     border: 1.5px solid #ababab;
+    font-family: 'Li';
+    font-size: 1vw;
 
 }
 
@@ -111,6 +114,8 @@
     padding: 1em;
     border-top: none;
     margin-bottom: 2em;
+    font-family: 'Li';
+    font-size: 1vw;
 }
 
 #loginsubmitbutton {
@@ -122,6 +127,8 @@
     box-sizing: border-box;
     align-items: center;
     color: white;
+    font-family: 'Light';
+    font-size: 1vw;
 }
 #loginsubmitbutton:hover {
     /* border: black .5px solid; */

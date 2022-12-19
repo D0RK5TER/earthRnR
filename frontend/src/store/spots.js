@@ -5,8 +5,6 @@ const LOAD_ONE_SPOT = 'spots/loadOneSpot'
 const LOAD_MY_SPOTS = 'spots/loadMySpots'
 
 const MAKE_SPOT = 'spots/makeSpot'
-// const CHANGE_SPOT = 'spots/changeSpot'
-// const DELETE_SPOT = 'spots/deleteSpot'
 
 //////// ACTIONS /////////// ACTIONS ////////////
 export const loadAllSpots = (spots) => {
@@ -46,7 +44,6 @@ export const makeSpot = (spot) => {
 
 export const getAllSpots = (e) => async (dispatch) => {
     let pagi
-    // console.log(e)
     e ? pagi = e : pagi = ''
     const response = await csrfFetch(`/api/spots${pagi}`, {
         method: 'GET',
@@ -54,23 +51,17 @@ export const getAllSpots = (e) => async (dispatch) => {
     });
     if (response.ok) {
         const data = await response.json();
-        // console.log(data)
         await dispatch(loadAllSpots(data));
         return data
-        // return data;
     }
 };
 export const getOneSpot = (id) => async (dispatch) => {
-    // console.log(id)
-
     const response = await csrfFetch(`/api/spots/${id}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
-    // console.log(response, id)
     if (response.ok) {
         const data = await response.json();
-        // console.log(data)
         await dispatch(loadOneSpot(data));
         return data
 
@@ -89,7 +80,6 @@ export const getMySpots = () => async (dispatch) => {
     }
 }
 export const createSpotImage = (spotimg) => async (dispatch) => {
-    // console.log(spotimg)
     const { url, preview, id, deleteId } = spotimg
     if (preview) {
         const response1 = await csrfFetch(`/api/spot-images/${deleteId}`, {
@@ -181,10 +171,7 @@ export const makeChangeSpot = (obj) => async (dispatch) => {
         }),
     });
     if (response.ok) {
-        // let data = await response.json()
-
         place ? await dispatch(getMySpots()) : await dispatch(getAllSpots())
-
     }
 };
 

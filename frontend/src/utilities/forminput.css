@@ -97,7 +97,8 @@ Making a key for framework here
     box-sizing: border-box;
     width: 29vw;
     margin-bottom: 1vw;
-    font-family: 'Thin';
+    font-family: 'Li';
+    font-size: 1vw;
     padding-left: 1vw;
     border-left: 1.5px solid #ababab;
     border-top: 1.5px solid #ababab;
@@ -114,9 +115,9 @@ Making a key for framework here
     justify-content: center;
     box-sizing: border-box;
     width: 6vw;
-
+    font-family: 'Li';
+    font-size: 1vw;
     margin-bottom: 1vw;
-    font-family: 'Thin';
     padding-left: .5vw;
     border-left: .75px solid #ababab;
     border-top: 1.5px solid #ababab;
@@ -139,6 +140,8 @@ Making a key for framework here
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
+    font-family: 'Li';
+    font-size: 1vw;
 }
 
 .inputsubmitsquare {
@@ -181,6 +184,8 @@ Making a key for framework here
 }
 
 .inputblockrowtitle.inputrowtitlecont.inputrowtitlecontwords.two {
+    font-family: 'Li';
+    font-size: 1vw;
     width: 75%;
     justify-content: space-between;
     align-items: center;
@@ -202,7 +207,8 @@ Making a key for framework here
     padding-left: 1vw;
     border-bottom-left-radius: .87vw;
     height: 100%;
-    font-family: 'Thin';
+    font-family: 'Li';
+    font-size: 1vw;
 }
 
 .inputblockcol.inputblockcolbottom.inputstate {
@@ -217,7 +223,8 @@ Making a key for framework here
     align-items: center;
     padding-left: .5vw;
     height: 100%;
-    font-family: 'Thin';
+    font-family: 'Li';
+    font-size: 1vw;
 }
 
 .inputblockcol.inputblockcolbottom.inputcountry {
@@ -234,7 +241,8 @@ Making a key for framework here
     padding-left: .5vw;
     border-bottom-right-radius: .87vw;
     height: 100%;
-    font-family: 'Thin';
+    font-family: 'Li';
+    font-size: 1vw;
 }
 
 .inputblockcol.inputblockcoltop.inputapt {
@@ -249,7 +257,8 @@ Making a key for framework here
     padding-left: 1vw;
     border-top-right-radius: .87vw;
     height: 100%;
-    font-family: 'Thin';
+    font-family: 'Li';
+    font-size: 1vw;
 }
 
 .inputblockcol.inputblockcoltop.inputaddress {
@@ -264,7 +273,8 @@ Making a key for framework here
     padding-left: 1vw;
     border-top-left-radius: .87vw;
     height: 100%;
-    font-family: 'Thin';
+    font-family: 'Li';
+    font-size: 1vw;
 }
 
 .inputblockrowtitle.inputrowtitlecont.one {

@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
-// import { useHistory } from "react-router-dom";
 import { useModal } from '../../context/Modal';
 import { makeDeleteReview } from '../../store/reviews';
 
@@ -11,12 +10,10 @@ function DeleteReviewForm({ id, review }) {
     const { closeModal } = useModal();
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
-    // const history = useHistory()
-    // console.log(review)
     const handleSubmit = async (e) => {
         e.preventDefault()
         setErrors([]);
-        // console.log(review)
+
 
         let reviewz = { id, review }
         return dispatch(makeDeleteReview(reviewz))

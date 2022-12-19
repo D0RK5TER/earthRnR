@@ -159,9 +159,9 @@
 
 
 #rightsidereviews {
-    font-family: 'Li';
+    font-family: 'Light';
     line-height: .75vw;
-    border-bottom: 1px solid #717171;
+    /* border-bottom: 1px solid #717171;  */
     color: #717171;
     cursor: pointer;
 
