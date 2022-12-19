@@ -37,12 +37,13 @@ h2 {
 
 
 #paginationform {
-  height: 22vw;
+  height: fit-content;
   width:30vw;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   cursor: default;
+  padding-bottom: 1vw;
   align-items: center;
   font-family: 'Li';
 

@@ -21,16 +21,12 @@ export function getAge(birth) {
     const birthYear = birthDate.getFullYear();
     const birthMonth = birthDate.getMonth();
     const birthDay = birthDate.getDay();
-
-    console.log( birthDay)
     let year = birthYear - curYear
     let month =  birthMonth - curMonth;
     let day =  birthDay ;
     age = (year * 364) + (month * 30) + (day?(day-7)*-1:0)
     return age;
 }
-
-
 
 export const deciNum = (num) => {
     let newarr = num.toString().split('.')
