@@ -1,37 +1,12 @@
-// import React, { useState } from 'react';
-// import { Modal } from '../../context/Modal';
-// import LoginForm from './LoginForm';
-
-
-// ////is needed????
-// function LoginFormModal(/*{ setShowMenu } */) {
-//     const [showModal, setShowModal] = useState(false);
-
-//     return (
-//         <>
-//             <button id='logindrop' onClick={() => setShowModal(true)}>Log In</button>
-//             {showModal && (
-//                 <Modal onClose={() => setShowModal(false)}>
-//                     <LoginForm setShowModal={setShowModal} />
-//                 </Modal>
-//             )}
-//         </>
-//     );
-// }
-
-// export default LoginFormModal;
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-// import { useHistory } from "react-router-dom"; ///gone 
+import { useModal } from '../../context/Modal';
 import * as sessionActions from "../../store/session";
 import './LoginForm.css'
-import { useModal } from '../../context/Modal';
 
-// import { openMenu } from "../Navigation/ProfileButton";
-// gone
+
 function LoginForm() {
     const dispatch = useDispatch();
-    // const history = useHistory()
     const { closeModal } = useModal();
 
     const [credential, setCredential] = useState("");
@@ -50,8 +25,6 @@ function LoginForm() {
                 if (data.message) setErrors([data.message]);
             }
             )
-        /// check if this is needed
-        // .then(() => setShowModal(false))
     }
     return (
         <form onSubmit={handleSubmit}
@@ -96,7 +69,6 @@ function LoginForm() {
             </div>
             <div id='fangcont'>
 
-                {/* <a onScroll={()}> */}
                 <div className="fangbutts fangbutt fang" onClick={() => window.location = 'https://myspace.com'}>
                     <img src={`https://metabook-seed.s3.amazonaws.com/Frame_1-removebg-preview.png`}
                         alt='fake fang buttons'
@@ -105,9 +77,7 @@ function LoginForm() {
                         Continue with Metabook
                     </p>
                 </div>
-                {/* </a> */}
                 <div className="fangbutts fangbutt fang" onClick={() => window.location = 'https://instagram.com'}>
-                    {/* <button></button> */}
                     <img src={`https://insta-flick.herokuapp.com/static/instaflick-updatedLogo.png`}
                         style={{ float: 'left' }}
                         alt='fake fang buttons'
@@ -126,7 +96,6 @@ function LoginForm() {
                     </p>
                 </div>
                 <div className="fangbutts fangbutt fang" onClick={() => window.location = 'https://slack.com/'}>
-                    {/*https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg*/}
                     <img src={`https://slackluster.herokuapp.com/static/media/Slack_Mark.3474c14d58fbbab9cfa2208b01a4ac3a.svg`}
                         style={{ float: 'left', height: '3em' }}
                         alt='fake fang buttons'

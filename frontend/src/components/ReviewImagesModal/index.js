@@ -1,33 +1,24 @@
 
 import React, { useState } from 'react';
-// import { useDispatch } from "react-redux";
-// import { useParams } from 'react-router-dom';
 import quest from '../../assets/quest.png';
 import { useModal } from '../../context/Modal';
-// import { useHistory } from "react-router-dom";
 import './reviewimages.css'
-
-// import './DeleteReviewForm.css'
-// import quest from '../../assets/quest.png';
 
 function ReviewImagesIndex({ ReviewImages, idx }) {
     // const dispatch = useDispatch();
     // const { closeModal } = useModal()
     const { closeModal } = useModal()
-    // console.log(ReviewImages)
-    // console.log(idx)
-    const [errors, setErrors] = useState([]);
-    // const history = useHistory()
+    // const [errors, setErrors] = useState([]);
     const imgs = ReviewImages
     if (!imgs.length) return (
         <div id='reviewimagesindex' >
             <h1>No Images</h1>
         </div>
     )
-    const handleSubmit = (e) => {
+    // const handleSubmit = (e) => {
         // let obj
-        e.preventDefault()
-        setErrors([]);
+        // e.preventDefault()
+        // setErrors([]);
         // closeModal()
         // console.log(idx)
         // console.log(imgs)
@@ -41,7 +32,7 @@ function ReviewImagesIndex({ ReviewImages, idx }) {
         //         const data = await res.json()
         //         if (data.message) setErrors([data.message]);
         //     })
-    }
+    // }
     // return
     return (
         <div id='reviewimgcont'>

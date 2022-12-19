@@ -1,5 +1,5 @@
-import { csrfFetch, restoreCSRF } from './csrf';
-import { getMySpots, getOneSpot } from './spots';
+import { csrfFetch } from './csrf';
+import {  getOneSpot } from './spots';
 const LOAD_ALL_REVIEWS = 'reviews/loadAllReviews'
 const LOAD_ONE_REVIEW = 'reviews/loadOneReview'
 const LOAD_MY_REVIEWS = 'reviews/loadMyReviews'
@@ -9,7 +9,6 @@ const CHANGE_REVIEW = 'reviews/changeReview'
 
 //////// ACTIONS /////////// ACTIONS ////////////
 export const loadAllReviews = (reviews) => {
-    // console.log('!!!1', reviews)
     return {
         type: LOAD_ALL_REVIEWS,
         reviews
@@ -101,8 +100,6 @@ export const createReview = (reviewz) => async (dispatch) => {
         }),
     })
     if (response.ok) {
-        //  dispatch(getOneSpot(id))
-        //  dispatch(getAllReviews(id))
         let data = await response.json()
         await dispatch(getOneSpot(id))
         await dispatch(getAllReviews(id))
@@ -126,59 +123,7 @@ export const makeChangeReview = (rev) => async (dispatch) => {
         await dispatch(getAllReviews(id))
         return data
     }
-
-    // else {
-    //     const response = await csrfFetch(`/api/reviews/${id}`, {
-    //         method: 'DELETE',
-    //         headers: { 'Content-Type': 'application/json' },
-    //     });
-    //     if (response.ok) {
-    //         const data = await response.json();
-    //         dispatch(getOneSpot(spotId))
-    //         await dispatch(makeChangeReview([rev, 'delete']))
-    //         return response
-    //     }
-    // }
 };
-
-// export const makeDeleteSpot = (obj2) => async (dispatch) => {
-//     const { id, place } = obj2
-//     const response = await csrfFetch(`/api/reviews/${id}`, {
-//         method: 'DELETE',
-//         headers: { 'Content-Type': 'application/json' },
-//     });
-//     if (response.ok) {
-//         place ? dispatch(getAllReviews()) : dispatch(getAllSpots())
-//     }
-// }
-
-//////////
-// export const makeDeleteReview = (rev) => async (dispatch) => {
-//     const { id, spotId } = rev;
-
-//     const response = await csrfFetch(`/api/reviews/${id}`, {
-//         method: 'DELETE',
-//         headers: { 'Content-Type': 'application/json' },
-//     });
-//     if (response.ok) {
-//         // const data = await response.json();
-//         // const data = await response.json();
-//         let data = await response.json()
-//         // dispatch(getOneSpot(spotId))
-//         dispatch(getMyReviews()).then(getAllReviews(spotId))
-//         // return response
-//         // await getAllReviews(spotId)
-//         // dispatch(getAllReviews(spotId))
-//         // return await dispatch(getOneSpot(spotId))
-//         // await dispatch(getAllReviews(spotId))
-//         // .then(dispatch(getOneSpot(spotId)))
-
-//         // return await dispatch(getOneSpot(spotId))
-//         // await dispatch(makeChangeReview(['delete', id]))
-//         // await dispatch(makeChangeReview(['delete', id]))
-
-//     }
-// }
 
 
 export const makeDeleteReview = (rev) => async (dispatch) => {
@@ -192,13 +137,7 @@ export const makeDeleteReview = (rev) => async (dispatch) => {
         await dispatch(getOneSpot(id))
         await dispatch(getAllReviews(id))
         return data
-        // const data = await response.json();
-        // if (place) await dispatch(getMyReviews())
-        // else {
-        //     await dispatch(getOneSpot(spotId))
-        //     await dispatch(getAllReviews(spotId))
-        // }
-        // return data
+      
     }
 }
 ////REDUCER
@@ -206,9 +145,7 @@ export const makeDeleteReview = (rev) => async (dispatch) => {
 
 
 
-// const arrConvert = (arr, obj) => {
 const arrAdd = (arr, oldstate) => {
-    // console.log(oldstate, arr)
     for (let r of arr) oldstate[r.id] = r
     return oldstate
 }
@@ -220,7 +157,6 @@ const arrConvert = (arr) => {
 const initialState = {}
 const reviewsReducer = (state = initialState, action) => {
     let newState = { ...state };
-    // console.log(newState)
     switch (action.type) {
         case LOAD_ALL_REVIEWS:
             let revs = action.reviews
@@ -241,7 +177,6 @@ const reviewsReducer = (state = initialState, action) => {
             return newState;
         case CHANGE_REVIEW:
             let edited = action.review
-            // console.log(edited, 'klsdfksdnfksjdnf')
             if (edited[1] === 'edit') {
                 newState.allreviews[edited[0].id] = edited
                 newState.myreviews[edited[0].id] = edited

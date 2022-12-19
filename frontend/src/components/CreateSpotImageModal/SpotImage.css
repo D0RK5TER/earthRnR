@@ -26,6 +26,7 @@
     width: 20vw;
     height: 3vw;
     font-family: 'Bold';
+    font-size: 1.4vw;
     color: white;
     background-color: #FF385C;
     border-radius: 2vw;
@@ -53,17 +54,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    font-size: 1.4vw;
 }
 #previmgwrap1{
     font-family: 'Bold';
-
+    font-size: 1.4vw;
     margin-top: 2vw;
     width: 45%;
     text-align: center;
 }
 
 #previmgwrap2{
-    
+    font-size: 1.4vw;
     font-family: 'Bold';
     margin-top: 2vw;
     width: 45%;
@@ -82,6 +84,7 @@
     text-align: center;
 }
 #setprevbut {
+    font-size: 1vw;
     border: none;
     width: 10vw;
     cursor: pointer; 
@@ -89,6 +92,7 @@
     height: 2vw;
     border-radius: .5vw;
     margin-right: 4vw;
+
 }
 
 #seturlbutt {
@@ -97,6 +101,7 @@
     height: 2vw;
     padding-left: 1vw;
     border-radius: .5vw;
+    font-size: 1.2vw;
 }
 
 #createimagebutts {
@@ -123,6 +128,8 @@
     box-sizing: border-box;
     padding-left: 3vw;
     padding-right: 3vw;
+    height: 35vw;
+    width: 50vw;
 }
 
 

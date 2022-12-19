@@ -2,10 +2,6 @@
 import React from 'react';
 import { useModal } from '../../context/Modal';
 
-
-// import './DeleteReviewForm.css'
-// import quest from '../../assets/quest.png';
-
 function NoFeatureIndex() {
     const { closeModal } = useModal();
 
@@ -17,7 +13,6 @@ function NoFeatureIndex() {
                     x
                 </div>
                 <div id='reusesub'>
-                    {/* <div id={!errors.length ? 'reusetitle' : 'errorswap'}>{!errors.length ? `Are you sure?` : errors.map((error, idx) => <div className="errmsg">{error}</div>)}</div> */}
                     This feature will be coming soon!
                 </div>
             </div>

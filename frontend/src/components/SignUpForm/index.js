@@ -29,8 +29,6 @@ function SignUpForm() {
                         : setErrors(Object.values(data.errors))
                 }
                 )
-            //check for need
-            // .then(() => setShowModal(false))
         }
         else return setErrors(["Password field's must match!"]);
     };

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { makeChangeReview } from '../../store/reviews';
 import { useModal } from '../../context/Modal';
 import './editreview.css'
@@ -8,14 +8,11 @@ import './editreview.css'
 function EditReviewForm({ id, review }) {
 
     const { closeModal } = useModal();
-    // onespot ?   :
-    let spot = useSelector(state => state.spots.onespot)
+
     const dispatch = useDispatch();
     const [reviewedit, setReviewedit] = useState(review.review)
     const [stars, setStars] = useState(review.stars);
     const [errors, setErrors] = useState([]);
-    // console.log(id)
-    // id = id.id
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -32,9 +29,7 @@ function EditReviewForm({ id, review }) {
 
                 }
             })
-        // .then(setShowModal(false))
     }
-    // console.log({ idxx, review, stars })
     return (
 
         <form onSubmit={handleSubmit} id='createreviewform' >

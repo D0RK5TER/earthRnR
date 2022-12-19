@@ -1,20 +1,14 @@
 
-// import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-// import { useSelector, useDispatch } from "react-redux";
 import star from '../../assets/star.png';
-// import EditSpotFormModal from '../EditSpotFormModal';
 import quest from '../../assets/quest.png';
-// import OpenModalButton from "../OpenModalButton";
-
 import { getAge } from '../../utilities/location';
-// import { getOneSpot } from '../../store/spots';
 
 function SpotCard({ spot, user, place }) {
     const { previewImage, id, description,
         avgRating, createdAt, city, state,
         ownerId, price } = spot
-    // console.log(user)
+
     const history = useHistory()
     if (!spot) return null;
     if (spot.previewImage === 'No preview') spot.previewImage = quest
@@ -44,7 +38,8 @@ function SpotCard({ spot, user, place }) {
                         {city}     ,   {state}
                     </span>
                     <p className='smallerinfotext'>
-                        {`${getAge(createdAt.toString())} days old`}
+                        {/* {`${getAge(createdAt.toString())} days old`} */}
+                        {getAge(createdAt)===1? `${getAge(createdAt.toString())} day old`:`${getAge(createdAt.toString())} days old`}
                     </p>
                     <p className='smallerinfotext'>
                         {description.slice(0, 30)}...

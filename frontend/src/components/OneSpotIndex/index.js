@@ -3,9 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
-import Calendar from 'react-calendar';
+// import Calendar from 'react-calendar';
 import { getOneSpot } from '../../store/spots';
 import { getAllReviews } from '../../store/reviews';
+import { getTheBooks } from '../../store/bookings';
 import ReviewCard from '../ReviewCard';
 import { deciNum, overThou, strToNum, getAge, pathURL } from '../../utilities/location';
 // import CreateReviewForm from '../CreateReviewModal';
@@ -57,7 +58,7 @@ const OneSpotIndex = () => {
   let cleaningfee
   let servicefee
   let total
-  let today = new Date()
+  // let today = new Date()
   let buttonVis = true
   let spotimgs
   // let reviewsCont
@@ -93,24 +94,24 @@ const OneSpotIndex = () => {
       <div id='onespotpics'>
 
         <div id='previewcont'>
-          <img id='onespotpreview' src={`${previewImage}`} key={a} alt={`${a.url}`} />
+          <img id='onespotpreview' src={`${previewImage}`} key={a} alt={'Preview Image Unavailable at this time'} />
         </div>
 
         <div id='smallcont'>
           <div id='smallcont1'>
             <div className='spotImage' id='spotimg1'>
-              <img src={`${a.url}`} className='gridpics' key={a} alt={`${a.url}`} />
+              <img src={`${a.url}`} className='gridpics' key={a} alt={'Image Unavailable at this time'} />
             </div>
             <div className='spotImage' id='spotimg2'>
-              <img src={`${b.url}`} className='gridpics' key={a} alt={`${b.url}`} />
+              <img src={`${b.url}`} className='gridpics' key={a} alt={'Image Unavailable at this time'} />
             </div>
           </div>
           <div id='smallcont2'>
             <div className='spotImage' id='spotimg3'>
-              <img src={`${c.url}`} className='gridpics' key={a} alt={`${c.url}`} />
+              <img src={`${c.url}`} className='gridpics' key={a} alt={'Image Unavailable at this time'} />
             </div>
             <div className='spotImage' id='spotimg4'>
-              <img src={`${d.url}`} className='gridpics' key={a} alt={`${d.url}`} />
+              <img src={`${d.url}`} className='gridpics' key={a} alt={'Image Unavailable at this time'} />
             </div>
           </div>
 
@@ -135,6 +136,7 @@ const OneSpotIndex = () => {
 
   useEffect(() => {
     dispatch(getOneSpot(id)).then(() => dispatch(getAllReviews(id)))
+    .then(()=> dispatch(getTheBooks(id)))
   }, [id, dispatch]) //took out id
   //theSpot?.id && 
 

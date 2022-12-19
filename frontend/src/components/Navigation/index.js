@@ -14,7 +14,6 @@ import OpenModalButton from "../OpenModalButton";
 import NoFeatureIndex from '../NoFeatureModal';
 import SpotForm from '../SpotFormModal';
 import SignUpForm from '../SignUpForm';
-// import ComingSoon from '../ComingSoon/ComingSoon';
 
 
 
@@ -83,7 +82,6 @@ function Navigation() {
 
           <ProfileButton
             user={user}
-          // isLoaded={isLoaded}
           />
         </div>
 

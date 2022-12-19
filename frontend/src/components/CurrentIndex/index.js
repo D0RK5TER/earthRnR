@@ -1,11 +1,10 @@
 
 
 import React, { useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-import EditSpotFormModal from '../EditSpotFormModal';
-
 import { useSelector, useDispatch } from 'react-redux';
+
+import EditSpotFormModal from '../EditSpotFormModal';
 import { getMySpots, getOneSpot } from '../../store/spots';
 import { getMyReviews} from '../../store/reviews';
 import { getMyBooks } from '../../store/bookings';
@@ -32,7 +31,7 @@ const CurrentIndex = () => {
         dispatch(getMySpots())
         dispatch(getMyReviews())
     }, [dispatch])
-    // console.log(history.location.hash)
+
     return reviewspots && user && myReviews && (
 
         <div className='current currentuser'>
@@ -43,7 +42,6 @@ const CurrentIndex = () => {
                         Your Spots!
                     </div>
                     <div id='welcome' className='midheader'
-                    // style={{'te'}}
                     >
                         Welcome to Your Page!
                     </div>
@@ -54,13 +52,6 @@ const CurrentIndex = () => {
                 </div>
             </div>
             <div id='currentcont'>
-                {/* {jumpmark ?
-                window.location.replace(`/current${jumpmark}`)
-                : window.scrollTo(0, 0)} */}
-
-
-
-
 
                 <div id='currentinnercont'>
 

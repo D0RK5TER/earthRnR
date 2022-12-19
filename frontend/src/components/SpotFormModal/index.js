@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useModal } from '../../context/Modal';
-// import { makeChangeSpot, makeDeleteSpot } from '../../store/spots';
 import { createSpot } from '../../store/spots';
 import quest from '../../assets/quest.png';
 
@@ -29,7 +28,7 @@ function SpotForm({ setShowModal }) {
         setErrors([]);
         let add = address
         if (apt.length > 0) add += apt
-        //for apt might not work
+        //for apt *works*
         return dispatch(createSpot({
             address: add, city, state, country,
             name, description, price, latt
@@ -65,7 +64,6 @@ function SpotForm({ setShowModal }) {
                         Name of Spot
                         <input
                             className='inputblockrow'
-                            // className='inputblockrow inputblockrowleft'
                             type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
@@ -192,4 +190,3 @@ function SpotForm({ setShowModal }) {
 }
 
 export default SpotForm;
-// export default SpotFormModal;

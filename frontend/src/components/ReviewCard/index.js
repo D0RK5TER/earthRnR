@@ -59,7 +59,7 @@ function ReviewCard({ review, user, place, id }) {
                         />
                     }
                     {review.userId === user?.id && place === '/current' &&
-                        <button onClick={() => history.push(`/spot/${review.spotId}`)}
+                        <button id='spotgotobutt' onClick={() => history.push(`/spot/${review.spotId}`)}
                         style={{marginTop: '0px'}}
                         >Spot</button>
 

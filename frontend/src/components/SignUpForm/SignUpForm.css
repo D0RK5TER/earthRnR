@@ -37,6 +37,7 @@
     padding-top: .51vw;
     font-family: 'Li';
     height: 100%;
+    font-size: 1.3vw;
 
 }
 
@@ -45,6 +46,7 @@
     border-bottom: 2px solid #e6e6e6;
     margin-bottom: 1vw;
     text-align: center;
+    font-size: 1vw;
 
 }
 
@@ -53,12 +55,14 @@
     padding-left: 2vw;
     text-align: start;
     line-height: 0vw;
-    font-family: 'Bold';
+    font-family: 'Light';
     cursor: pointer;
+    font-size: 1.5vw;
 
 }
 
 #reusemain {
+    font-size: 1.7vw;
     margin-top: 1vw;
     font-family: 'Bold';
     height: fit-content;
@@ -74,6 +78,9 @@
     width: 26vw;
     border-radius: .61vw;
     border: 1px solid #ababab;
+    font-family: 'Li';
+    font-size: 1vw;
+    padding-left: 1vw;
 }
 
 #signupformcontain {
@@ -136,7 +143,10 @@
     justify-content: center;
     text-align: center;
 }
-
+#checkbox {
+    height: 1vw;
+    width: 1vw;
+}
 #checkboxsign {
     display: inline-flex;
     flex-direction: row;
@@ -233,6 +243,8 @@
     align-items: center;
     color: white;
     margin-top: 0;
+    font-family: 'Bold';
+    font-size: 1.2vw;
 }
 
 #signupsubmitbutton:hover {
