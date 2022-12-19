@@ -83,7 +83,7 @@ module.exports = {
         for (let own of ownerSample2) {
             if (!exUsers.includes(own.id)) ownerSample.push(own)
         }
-        while (randomSpots.length < 5) {
+        while (randomSpots.length < 10) {
             let newRandom = { ...spotSkeleton }
             let owner = ownerSample[getRandom(ownerSample.length - 1)]
             let stateCity = cityStateSample[getRandom(cityStateSample.length - 1)]
