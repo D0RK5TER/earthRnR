@@ -58,6 +58,7 @@ module.exports = {
         lastName: 'Kahl',
         email: 'user10@user.co',
         username: 'Richard10',
+        profilepic: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/06f3d940-9485-4108-9c6f-496e988e8262/d35fbrp-956da90c-bfd1-4a67-8464-c7e70beb47ca.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA2ZjNkOTQwLTk0ODUtNDEwOC05YzZmLTQ5NmU5ODhlODI2MlwvZDM1ZmJycC05NTZkYTkwYy1iZmQxLTRhNjctODQ2NC1jN2U3MGJlYjQ3Y2EuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.cNYOX9FpKjkRkYluTEKuXiMBOmnHUi5mLqOxJTimq3M',
         hashedPassword: bcrypt.hashSync('password')
       },
       {
@@ -65,6 +66,7 @@ module.exports = {
         lastName: 'Ninefingers',
         email: 'user11@user.co',
         username: 'Logan11',
+        profilepic: 'https://i.ytimg.com/vi/ewGYJyLr6RU/maxresdefault.jpg',
         hashedPassword: bcrypt.hashSync('password')
       },
       {
@@ -72,6 +74,7 @@ module.exports = {
         lastName: 'Stark',
         email: 'user12@user.co',
         username: 'James12',
+        profilepic: 'https://images.squarespace-cdn.com/content/v1/5c01db6e7c9327aa94d92ad8/1543630746530-378K7XU749QO7DBZ3M1P/tarot-stark.jpg',
         hashedPassword: bcrypt.hashSync('password')
       },
       // {
@@ -98,7 +101,7 @@ module.exports = {
     for (let own of ownerSample2) {
       if (!exUsers.includes(own.id)) ownerSample.push(own)
     }
-    while (randomSpots.length < 5) {
+    while (randomSpots.length < 10) {
       let newRandom = { ...spotSkeleton }
       let owner = ownerSample[getRandom(ownerSample.length - 1)]
       let stateCity = cityStateSample[getRandom(cityStateSample.length - 1)]
@@ -130,9 +133,8 @@ module.exports = {
     // for (let use of userSample2) {
     //   if (!exUsers.includes(use.id)) userSample.push(use)
     // }
-    let spotSample = await Spot.findAll();
+    let spotSample = await Spot.findAll({ where: { id: { [Sequelize.Op.gt]: 20 } } });
     spotSample = JSON.parse(JSON.stringify(spotSample))
-
     for (let spot of spotSample) {
       let notowner = userSample.filter(x => spot.ownerId !== x.id)
       notowner = notowner.map(x => x = x.id)
@@ -140,12 +142,17 @@ module.exports = {
       if (numRevs === 0) continue
       let userids = []
       if (!notowner.length) continue
+      // while (numRevs > 0 && notowner.length) {
+      //   // let ran = getRandom(notowner.length - 1)
+      //   userids.push(notowner.pop())
+      //   // notowner[ran][0] ? userids.push(notowner.splice(ran, 1)) : userids.push(notowner.splice(ran, 1))[0]
+      //   --numRevs
+      // }
       while (numRevs > 0) {
         let ran = getRandom(notowner.length - 1)
         notowner[ran][0] ? userids.push(notowner.splice(ran, 1)) : userids.push(notowner.splice(ran, 1))[0]
         --numRevs
       }
-
       userids.forEach(x => {
         let newRandom = { ...reviewSkeleton }
         x = x[0]

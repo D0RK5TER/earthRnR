@@ -6,6 +6,53 @@ const { Op } = require("sequelize");
 
 const router = express.Router();
 
+///added type search
+// router.get('/type/:type', async (req, res) => {
+//     const { type } = req.params
+
+//     let spots = await Spot.findAll({
+//         where: {
+//             type: type,
+//         },
+//         include: [
+//             { model: Review, required: false, raw: true, },
+//             { model: SpotImage, required: false, raw: true }
+//         ],
+//     })
+//     spots = JSON.parse(JSON.stringify(spots))
+//     for (let spa of spots) {
+//         spa.Reviews.length ? spa.avgRating = Review.getRating(spa.Reviews) : spa.avgRating = 0
+//         spa.SpotImages.length ? spa.previewImage = spa.SpotImages.find(x => x.preview === true).url : spa.previewImage = 'No preview'
+//         delete spa.Reviews
+//         delete spa.SpotImages
+//     }
+
+//     res.status(201).json(spots)
+// })
+// ///added size search
+// router.get('/size/:size', async (req, res) => {
+//     const { type } = req.params
+//     let spots = await Spot.findAll({
+//         where: {
+//             type: type,
+//         },
+//         include: [
+//             { model: Review, required: false, raw: true, },
+//             { model: SpotImage, required: false, raw: true }
+//         ],
+//     })
+//     spots = JSON.parse(JSON.stringify(spots))
+//     for (let spa of spots) {
+//         spa.Reviews.length ? spa.avgRating = Review.getRating(spa.Reviews) : spa.avgRating = 0
+//         spa.SpotImages.length ? spa.previewImage = spa.SpotImages.find(x => x.preview === true).url : spa.previewImage = 'No preview'
+//         delete spa.Reviews
+//         delete spa.SpotImages
+//     }
+
+//     res.status(201).json(spots)
+// })
+
+
 router.get('/:spotId/reviews', async (req, res) => {
     const { spotId } = req.params
     const Reviews = await Spot.findAll({
@@ -19,7 +66,7 @@ router.get('/:spotId/reviews', async (req, res) => {
                 },
                 {
                     model: User,
-                    attributes: ['id', 'firstName', 'lastName']
+                    attributes: ['id', 'firstName', 'lastName', 'profilepic']
                 }],
             },],
         attributes: []
@@ -103,26 +150,20 @@ router.get('/current',
 
 
 
-
-
-
-
 router.get('/', async (req, res) => {
-    let { page, size, minLat, maxLat, minLng, maxLng, minPrice, maxPrice } = req.query;
+    let { minLat, maxLat, minLng, maxLng, size, type, minPrice, maxPrice } = req.query;
 
-    if (size) {
-        size = +size
-        size > 20 ? size = 20 :
-            isNaN(+size) ? size = 1 :
-                size
-    } else size = 20
-
-    if (page) {
-        page = +page
-        page > 10 ? page = 9 :
-            page > 0 ? page = (page - 1) :
-                page
-    } else page = 0
+    // if (size) {
+    //     size = +size
+    //     size > 20 ? size = 20 :
+    //         isNaN(+size) ? size = 1 :
+    //             size
+    // } else size = 20
+    let alltypes = ['lake', 'tree', 'rv', 'earth', 'mansion', 'country']
+    if (type) {
+        type = alltypes.filter(x => type.includes(x))
+        // type = alltypes.filter(x => type.includes(x)).join('')
+    } else type = alltypes
 
     if (maxPrice) {
         maxPrice = +maxPrice
@@ -137,10 +178,10 @@ router.get('/', async (req, res) => {
             isNaN(+minPrice) ? minPrice = 0 :
                 minPrice
     } else minPrice = 0
-
     let spots = await Spot.findAll({
         where: {
             price: { [Op.and]: { [Op.lt]: maxPrice, [Op.gt]: minPrice } },
+            type: { [Op.in]: type }
         },
         include: [
             { model: Review, required: false, raw: true, },
@@ -174,7 +215,7 @@ router.get('/:spotId', async (req, res) => {
         include: [
             { model: Review, raw: true, },
             { model: SpotImage, required: true, raw: true, attributes: ['id', 'url', 'preview'] },
-            { model: User, raw: true, attributes: ['id', 'firstName', 'lastName'] }
+            { model: User, raw: true, attributes: ['id', 'firstName', 'lastName', 'profilepic'] }
         ],
         // raw: true,
         // group: [ 'id', 'SpotImages', 'Review.stars']

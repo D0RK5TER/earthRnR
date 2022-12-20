@@ -80,7 +80,7 @@ const CurrentIndex = () => {
                     </div>
 
                     <div id='currentreviews'>
-                        {myReviews && Object?.values(myReviews).map(rev =>
+                        {myReviews && Object?.values(myReviews).map(rev => 
                             <ReviewCard review={rev} user={user} place={place} id={rev.spotId} />
                         )}
                     </div>

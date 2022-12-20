@@ -11,7 +11,7 @@ router.get('/current',
         let Reviews = await Review.findAll({
             where: { userId: user },
             include: [
-                { model: User, attributes: ['id', 'firstName', 'lastName'] },
+                { model: User, attributes: ['id', 'firstName', 'lastName', 'profilepic'] },
                 {
                     model: Spot,
                     include: { model: SpotImage, where: { preview: true }, limit: 1 }

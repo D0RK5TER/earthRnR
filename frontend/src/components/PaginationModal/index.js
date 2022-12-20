@@ -13,6 +13,15 @@ function PaginationForm({ setShowModal }) {
     const { closeModal, onModalClose } = useModal();
     const [min, setMin] = useState(1)
     const [max, setMax] = useState(9999)
+    const [lake, setLake] = useState(false)
+    const [rv, setRv] = useState(false)
+    const [tree, setTree] = useState(false)
+    const [earth, setEarth] = useState(false)
+    const [mansion, setMansion] = useState(false)
+    const [country, setCountry] = useState(false)
+
+
+
     const [errors, setErrors] = useState([]);
     let pagination = ''
     let loc = pathURL(history)
@@ -27,12 +36,17 @@ function PaginationForm({ setShowModal }) {
     const handleSubmit = (e) => {
         e.preventDefault()
         setErrors([]);
+        let type = '&type='
 
-        // max < min ? setErrors(['maximum must be larger than minimum']) :
-        //     max > 9999 || min > 9999 ? setErrors(['prices must be smaller than 99999']) :
-        //         min === max ? setErrors(['maximum and minimum must not be equal']) :
-        //             max < 1 || min < 1 ? setErrors(['prices must be 1 or larger']) :
         pagination = `?minPrice=${min}&maxPrice=${max}`
+        if (lake) type += `lake`
+        if (rv) type += 'rv'
+        if (tree) type += `tree`
+        if (earth) type += 'earth'
+        if (mansion) type += `mansion`
+        if (country) type += 'country'
+
+        if (type.length > 6) pagination += type
         if (loc !== '/') pagidis(pagination) && history.push('/')
         pagidis(pagination)
     }
@@ -77,6 +91,48 @@ function PaginationForm({ setShowModal }) {
                     />
 
                 </label>
+                lake
+                <input
+                    className="pagiinput"
+                    type="checkbox"
+                    value={lake}
+                    onChange={(e) => setLake(!lake)}
+                />
+                rv
+                <input
+                    className="pagiinput"
+                    type="checkbox"
+                    value={rv}
+                    onChange={(e) => setRv(!rv)}
+                />
+                tree
+                <input
+                    className="pagiinput"
+                    type="checkbox"
+                    value={tree}
+                    onChange={(e) => setTree(!tree)}
+                />
+                earth
+                <input
+                    className="pagiinput"
+                    type="checkbox"
+                    value={earth}
+                    onChange={(e) => setEarth(!earth)}
+                />
+                mansion
+                <input
+                    className="pagiinput"
+                    type="checkbox"
+                    value={mansion}
+                    onChange={(e) => setMansion(!mansion)}
+                />
+                country
+                <input
+                    className="pagiinput"
+                    type="checkbox"
+                    value={country}
+                    onChange={(e) => setCountry(!country)}
+                />
                 {/* <button type="submit" >Search</button> */}
             </div>
             <button type="submit" id="signupbutton">Search</button>

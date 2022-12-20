@@ -98,6 +98,14 @@ module.exports = (sequelize, DataTypes) => {
           len: [60, 60]
         }
       },
+      profilepic: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      superhost: {
+        type: DataTypes.BOOLEAN,
+        allowNull: true,
+      },
     },
     {
       sequelize,
