@@ -29,24 +29,53 @@ function SpotsIndex() {
     return spots && (
         <div id='maindisplay'>
             <div id='homepagesticky'>
-                <img src={tree}
+                <div
                     onClick={() => dispatch(getAllSpots('?type=tree'))}
-                />
-                <img src={rv}
+
+                >
+                    <img src={tree}
+                    />
+                    Treehouses
+                </div>
+                <div
+
                     onClick={() => dispatch(getAllSpots('?type=rv'))}
-                />
-                <img src={lake}
+                >
+
+                    <img src={rv}
+                    />
+                    Mobile Homes
+                </div>
+                <div
                     onClick={() => dispatch(getAllSpots('?type=lake'))}
-                />
-                <img src={dirt}
-                    onClick={() => dispatch(getAllSpots('?type=earth'))}
-                />
-                <img src={mansion}
+                >
+                    <img src={lake}
+                    />
+                    Lakehouses
+                </div>
+                <div
+
+                    onClick={() => window.location.replace('earth') && dispatch(getAllSpots('?type=earth'))}
+                >
+
+                    <img src={dirt}
+                    />
+                    Earth-homes
+                </div>
+                <div
                     onClick={() => dispatch(getAllSpots('?type=mansion'))}
-                />
-                <img src={country}
+                >
+                    <img src={mansion}
+                    />
+                    Mansions
+                </div>
+                <div
                     onClick={() => dispatch(getAllSpots('?type=country'))}
-                />
+                >
+                    <img src={country}
+                    />
+                    Country
+                </div>
                 {/* <div>
                     Rv
                 </div>

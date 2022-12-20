@@ -152,6 +152,14 @@ module.exports = {
                 star = +star
                 newRandom.review = review.slice(0, -1)
                 newRandom.stars = star
+
+                newRandom.cleanliness = star
+                newRandom.communication = star
+                newRandom.location = star
+                newRandom.checkin = star
+                newRandom.value = star
+                newRandom.accuracy = star
+
                 randomReviews.push(newRandom)
             })
         }

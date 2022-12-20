@@ -249,6 +249,7 @@
   font-family: "Light";
   display: flex;
   position: fixed;
+  z-index: 2;
   /* margin-bottom: 1vw; */
   justify-content: space-around;
   background-color: white;
