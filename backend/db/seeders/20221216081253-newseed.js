@@ -35,6 +35,7 @@ module.exports = {
                 lastName: 'Asssf',
                 email: 'user0@user.net',
                 username: 'D0RK5TER',
+                profilepic: "https://pyxis.nymag.com/v1/imgs/375/6e1/eb93dbbaa3b846ed924ca831d8009d280b-10-muppets.2x.rhorizontal.w700.jpg",
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
@@ -42,6 +43,7 @@ module.exports = {
                 lastName: 'Assaf',
                 email: 'user1@user.co',
                 username: 'Faye1',
+                profilepic: 'https://cdn2.momjunction.com/wp-content/uploads/2021/01/Baby-Body-Language-Cues-And-Their-Meaning1-624x702.jpg.webp',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
@@ -49,6 +51,7 @@ module.exports = {
                 lastName: 'Doe',
                 email: 'user2@user.co',
                 username: 'John2',
+                profilepic: 'http://images.pexels.com/photos/13915795/pexels-photo-13915795.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
@@ -56,6 +59,7 @@ module.exports = {
                 lastName: 'Belcher',
                 email: 'user3@user.co',
                 username: 'Linda3',
+                profilepic: 'https://img.buzzfeed.com/buzzfeed-static/static/2018-10/16/16/asset/buzzfeed-prod-web-06/sub-buzz-6918-1539720734-2.jpg?downsize=600:*&output-format=auto&output-quality=auto',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
@@ -63,6 +67,7 @@ module.exports = {
                 lastName: 'Protaganist',
                 email: 'user4@user.co',
                 username: 'Hiro4',
+                profilepic: 'http://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/344e214c-acbd-41c6-81fa-52865e617e71/d89kjor-4bcf7ea4-ae32-4822-aae6-e2399e452bb8.png/v1/fit/w_300,h_409,q_70,strp/hiro_protagonist_fanart_by_bobweaver_d89kjor-300w.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDA5IiwicGF0aCI6IlwvZlwvMzQ0ZTIxNGMtYWNiZC00MWM2LTgxZmEtNTI4NjVlNjE3ZTcxXC9kODlram9yLTRiY2Y3ZWE0LWFlMzItNDgyMi1hYWU2LWUyMzk5ZTQ1MmJiOC5wbmciLCJ3aWR0aCI6Ijw9NDAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.meuB9ANJ3U9D4odB6e5bvltOcGbPgo77ClRgKOXKAsA',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
@@ -70,6 +75,7 @@ module.exports = {
                 lastName: 'Dresden',
                 email: 'user5@user.co',
                 username: 'Harry5',
+                profilepic: 'http://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8e05cb53-208a-4c6a-aac5-0ff903d5638d/d9ivlbc-485ce355-5ffa-4bb7-a3aa-5c9d776b13d7.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhlMDVjYjUzLTIwOGEtNGM2YS1hYWM1LTBmZjkwM2Q1NjM4ZFwvZDlpdmxiYy00ODVjZTM1NS01ZmZhLTRiYjctYTNhYS01YzlkNzc2YjEzZDcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.lH5hQvSJHiK2LeS70tcXrhibnbi64fH-IIEj0VJ33LQ',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
@@ -77,6 +83,7 @@ module.exports = {
                 lastName: 'Akiraaaa',
                 email: 'user6@user.co',
                 username: 'Akira6',
+                profilepic: 'http://resizing.flixster.com/rSB5S1ij4s96it1R650D6btKLGI=/740x380/v2/https://statcdn.fandango.com/MPX/image/NBCU_Fandango/394/39/thumb_228AAEE5-F448-49D1-847F-2EA36E31601E.jpg',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
@@ -84,6 +91,7 @@ module.exports = {
                 lastName: 'Greatcoat',
                 email: 'user7@user.co',
                 username: 'Kest7',
+                profilepic: 'http://i.gr-assets.com/images/S/compressed.photo.goodreads.com/hostedimages/1474908838i/20655463.png',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
@@ -91,6 +99,8 @@ module.exports = {
                 lastName: 'Argosi',
                 email: 'user8@user.co',
                 username: 'Kellen8',
+                profilepic: 'https://64.media.tumblr.com/46a834f0d71ed568e234f18761b742f3/c2289f445ec8feb8-93/s1280x1920/2a5f3aaff63ed686ee103f6aa274e2dce63a6b9b.jpg',
+
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
@@ -98,6 +108,8 @@ module.exports = {
                 lastName: 'Corvere',
                 email: 'user9@user.co',
                 username: 'Mia99',
+                profilepic: 'http://images.pexels.com/photos/7705119/pexels-photo-7705119.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
+
                 hashedPassword: bcrypt.hashSync('password')
             },
             //   {
@@ -164,10 +176,10 @@ module.exports = {
 
         let ownerSample = await User.findAll();
         ownerSample = JSON.parse(JSON.stringify(ownerSample))
-        
-      
+
+
         // console.log('18912u39128u3912u3912u39123u9123u1', cityStateSample, randomSpots, descriptSample )
-        while (randomSpots.length < 12) {
+        while (randomSpots.length < 20) {
             let newRandom = { ...spotSkeleton }
             let owner = ownerSample[getRandom(ownerSample.length - 1)]
             let stateCity = cityStateSample[getRandom(cityStateSample.length - 1)]
@@ -188,6 +200,15 @@ module.exports = {
             newRandom.address = address
             newRandom.price = price
             newRandom.description = `${newRandom.name} ${descriptIntro} ${description1} ${description2} ${description3}`
+
+            price < 100 ? newRandom.type = 'earth' :
+                price < 200 ? newRandom.type = 'rv' :
+                    price < 600 ? newRandom.type = 'country' :
+                        price < 1000 ? newRandom.type = 'tree' :
+                            price < 2000 ? newRandom.type = 'lake' :
+                                newRandom.type = 'mansion'
+
+
             randomSpots.push(newRandom)
         }
         options.tableName = 'Spots'
@@ -197,7 +218,7 @@ module.exports = {
 
         let userSample = await User.findAll();
         userSample = JSON.parse(JSON.stringify(userSample))
-       
+
         let spotSample = await Spot.findAll();
         spotSample = JSON.parse(JSON.stringify(spotSample))
 
@@ -207,6 +228,16 @@ module.exports = {
             let numRevs = getRandom(7)
             if (numRevs === 0) continue
             let userids = []
+            if (!notowner.length) continue
+            let i = 0
+            // while (numRevs > 0 && notowner.length) {
+            //     --numRevs
+            //     let id = notowner[i]
+            //     // let ran = getRandom(notowner.length - 1)
+            //     userids.push(id)
+            //     i++
+            //     // typeof id === 'number' ? userids.push(id) : userids.push(id)[0]
+            // }
             if (!notowner.length) continue
             while (numRevs > 0) {
                 let ran = getRandom(notowner.length - 1)

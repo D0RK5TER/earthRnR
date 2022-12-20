@@ -9,8 +9,11 @@ import ReviewImagesIndex from '../ReviewImagesModal';
 import DeleteReviewForm from '../DeleteReviewModal';
 import star from '../../assets/star.png';
 
-import propic from '../../assets/propic.png'
 import { dateMonthYear } from '../../utilities/location';
+
+
+
+
 import './reviewcard.css'
 
 function ReviewCard({ review, user, place, id }) {
@@ -22,12 +25,16 @@ function ReviewCard({ review, user, place, id }) {
             <h2> Be the first to review!</h2>
         </div>
     )
-    return review?.id && (
+
+    return review?.id && user && (
         <div id={`review${review.id}`} className='onereview single one' >
 
             <div id='onespotreviewheader' className='profilepicture reviewheader'>
                 <div id='hostpicture'>
-                    <img src={propic} />
+                    <img
+                        // href={`${user.profilepic}`}
+                        src={`${review.User?.profilepic}`}
+                    />
                 </div>
                 <div id='headerright'>
                     <div className='profilename profileage'>
@@ -60,7 +67,7 @@ function ReviewCard({ review, user, place, id }) {
                     }
                     {review.userId === user?.id && place === '/current' &&
                         <button id='spotgotobutt' onClick={() => history.push(`/spot/${review.spotId}`)}
-                        style={{marginTop: '0px'}}
+                            style={{ marginTop: '0px' }}
                         >Spot</button>
 
                     }

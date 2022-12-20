@@ -52,7 +52,59 @@ module.exports = (sequelize, DataTypes) => {
     },
     stars: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
+      validate: {
+          min: 0,
+          max: 5
+        }
+    },
+    cleanliness: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+          min: 0,
+          max: 5
+        }
+    },
+    communication: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+          min: 0,
+          max: 5
+        }
+    },
+    location: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+          min: 0,
+          max: 5
+        }
+    },
+    checkin: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+          min: 0,
+          max: 5
+        }
+    },
+    value: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+          min: 0,
+          max: 5
+        }
+    },
+    accuracy: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+          min: 0,
+          max: 5
+        }
     }
   }, {
     sequelize,

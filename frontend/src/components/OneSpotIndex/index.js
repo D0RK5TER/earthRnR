@@ -218,7 +218,7 @@ const OneSpotIndex = () => {
                     </div>
                   </div>
                   <div id='hostpicture'>
-                    <img src={propic} />
+                    <img src={theSpot.User.profilepic} />
                   </div>
                 </div>
 

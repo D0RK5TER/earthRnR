@@ -57,6 +57,7 @@ module.exports = {
                 lastName: 'Takestolong',
                 email: 'user18@user.co',
                 username: 'Grancey',
+                profilepic: 'https://cdna.artstation.com/p/assets/images/images/026/202/042/large/rocio-sogas-kvothe.jpg?1588166051',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
@@ -64,6 +65,7 @@ module.exports = {
                 lastName: 'Chilvary',
                 email: 'user19@user.co',
                 username: 'Leeroyed',
+                profilepic: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4ab8e2fa-0d95-4433-bcc2-9a40208773e6/d8bwaah-0c1f3111-8858-4706-bde9-ccc252b90e58.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRhYjhlMmZhLTBkOTUtNDQzMy1iY2MyLTlhNDAyMDg3NzNlNlwvZDhid2FhaC0wYzFmMzExMS04ODU4LTQ3MDYtYmRlOS1jY2MyNTJiOTBlNTgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.jsyFup3OPgw0CTCphompqVfxNmbE04skqpyucdoVelg',
                 hashedPassword: bcrypt.hashSync('password')
             },
             {
@@ -71,6 +73,7 @@ module.exports = {
                 lastName: 'Churm',
                 email: 'user20@user.co',
                 username: 'CTrain',
+                profilepic: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8bad0c71-ad9f-4436-89a3-efa67aeab5cf/d7k57sq-08ab7cc6-1ee9-4239-be26-830e248c607b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhiYWQwYzcxLWFkOWYtNDQzNi04OWEzLWVmYTY3YWVhYjVjZlwvZDdrNTdzcS0wOGFiN2NjNi0xZWU5LTQyMzktYmUyNi04MzBlMjQ4YzYwN2IuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.-PlxRpHcZ4Xpxj1ZbTPkmGgbS7jYGbou2lnbwK1s_BY',
                 hashedPassword: bcrypt.hashSync('password')
             },
         ]
@@ -115,7 +118,7 @@ module.exports = {
         // for (let use of userSample2) {
         //   if (!exUsers.includes(use.id)) userSample.push(use)
         // }
-        let spotSample = await Spot.findAll();
+        let spotSample = await Spot.findAll({ where: { id: { [Sequelize.Op.gt]: 30 } } });
         spotSample = JSON.parse(JSON.stringify(spotSample))
 
         for (let spot of spotSample) {
@@ -123,14 +126,22 @@ module.exports = {
             notowner = notowner.map(x => x = x.id)
             let numRevs = getRandom(7)
             if (numRevs === 0) continue
+            let i = 0
             let userids = []
+            // while (numRevs > 0 && notowner.length) {
+            //     --numRevs
+            //     let id = notowner[i]
+            //     // let ran = getRandom(notowner.length - 1)
+            //     userids.push(id)
+            //     i++
+            //     // typeof id === 'number' ? userids.push(id) : userids.push(id)[0]
+            // }
             if (!notowner.length) continue
             while (numRevs > 0) {
                 let ran = getRandom(notowner.length - 1)
                 notowner[ran][0] ? userids.push(notowner.splice(ran, 1)) : userids.push(notowner.splice(ran, 1))[0]
                 --numRevs
             }
-
             userids.forEach(x => {
                 let newRandom = { ...reviewSkeleton }
                 x = x[0]
