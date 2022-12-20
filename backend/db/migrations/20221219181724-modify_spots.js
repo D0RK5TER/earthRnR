@@ -10,15 +10,15 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
   async up(queryInterface, Sequelize) {
 
-    await queryInterface.addColumn('Users',
-      'profilepic', {
-      type: Sequelize.STRING,
-      allowNull: true,
-    },
-    ),
+    // await queryInterface.addColumn('Users',
+    //   "profilepic", {
+    //   type: Sequelize.STRING,
+    //   allowNull: true,
+    // },
+    // ),
 
       await queryInterface.addColumn('Users',
-        'superhost', {
+        "superhost", {
         type: Sequelize.BOOLEAN,
         allowNull: true,
       },
@@ -26,12 +26,12 @@ module.exports = {
 
 
 
-      await queryInterface.addColumn('Spots',
-        "type", {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      ),
+      // await queryInterface.addColumn('Spots',
+      //   "type", {
+      //   type: Sequelize.STRING,
+      //   allowNull: true,
+      // },
+      // ),
       await queryInterface.addColumn('Spots',
         'attributes', {
         type: Sequelize.STRING,
