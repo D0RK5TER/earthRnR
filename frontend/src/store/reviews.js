@@ -1,5 +1,5 @@
 import { csrfFetch } from './csrf';
-import {  getOneSpot } from './spots';
+import { getOneSpot } from './spots';
 const LOAD_ALL_REVIEWS = 'reviews/loadAllReviews'
 const LOAD_ONE_REVIEW = 'reviews/loadOneReview'
 const LOAD_MY_REVIEWS = 'reviews/loadMyReviews'
@@ -90,13 +90,17 @@ export const getMyReviews = () => async (dispatch) => {
 
 
 export const createReview = (reviewz) => async (dispatch) => {
-    const { review, stars, id } = reviewz;
+    const { id, review, stars, cleanliness, communication,
+        location, checkin, value, accuracy } = reviewz;
     // console.log(review)
     const response = await csrfFetch(`/api/spots/${id}/reviews`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            review, stars
+            review, stars,
+            cleanliness, communication,
+            location, checkin,
+            value, accuracy
         }),
     })
     if (response.ok) {
@@ -137,7 +141,7 @@ export const makeDeleteReview = (rev) => async (dispatch) => {
         await dispatch(getOneSpot(id))
         await dispatch(getAllReviews(id))
         return data
-      
+
     }
 }
 ////REDUCER

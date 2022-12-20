@@ -279,7 +279,8 @@ router.post('/:spotId/images',
 router.post('/:spotId/reviews',
     requireAuth,
     async (req, res) => {
-        const { review, stars } = req.body
+        const { review, stars, cleanliness, communication,
+            location, checkin, value, accuracy } = req.body
         const { spotId } = req.params
         const userId = req.user.id
 
@@ -322,7 +323,9 @@ router.post('/:spotId/reviews',
                 spotId: +spotId,
                 userId, userId,
                 review: review,
-                stars: stars
+                stars: stars,
+                cleanliness, communication,
+                location, checkin, value, accuracy
             })
             res.status(201)
             res.json(newReview)

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
-// import Calendar from 'react-calendar';
+import Calendar from 'react-calendar';
 import { getOneSpot } from '../../store/spots';
 import { getAllReviews } from '../../store/reviews';
 import { getTheBooks } from '../../store/bookings';
@@ -58,7 +58,7 @@ const OneSpotIndex = () => {
   let cleaningfee
   let servicefee
   let total
-  // let today = new Date()
+  let today = new Date()     
   let buttonVis = true
   let spotimgs
   // let reviewsCont
@@ -329,16 +329,16 @@ const OneSpotIndex = () => {
                     <>
                       <h2>{ }6 nights at {theSpot.name}</h2>
                       <div id='spotbookingcalendar'>
-                        <img src={caltemp} alt='temponly' style={{ height: '23vw' }} />
+                        {/* <img src={caltemp} alt='temponly' style={{ height: '23vw' }} /> */}
 
-                        {/* <div id='thismonth'>
-                        <CalendarMonth onChange={onChange} value={value}/>
+                        <div id='thismonth'>
+                        <CalendarMonth month={today}/>
 
                         </div>
                         <div id='nextmonth'>
-                        <Calendar onChange={onChange} value={value} />
+                        {/* <Calendar onChange={onChange} value={value} /> */}
 
-                        </div> */}
+                        </div>
 
                       </div >
                     </>
@@ -371,9 +371,9 @@ const OneSpotIndex = () => {
                       </div >
                     </div>
                   </div>
-                  <img src={bookingtemp} alt='temponly' />
+                  {/* <img src={bookingtemp} alt='temponly' /> */}
 
-                  {/* <div id='bookdatescont'>
+                  <div id='bookdatescont'>
                   <div id='bookdatestop'>
                     <div id='bookdatestopleft'>
                     </div>
@@ -382,9 +382,9 @@ const OneSpotIndex = () => {
                   </div>
                   <div id='bookdatesbottom'>
                   </div>
-                </div> */}
+                </div>
 
-                  {/* <button id='bookingsubmitbutton' type="submit">Reserve</button> */}
+                  <button id='bookingsubmitbutton' type="submit">Reserve</button>
                   <div id='warningcharge'>
                     We "won't" charge you yet!
                   </div>
