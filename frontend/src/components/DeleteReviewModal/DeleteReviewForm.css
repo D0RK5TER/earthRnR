@@ -30,8 +30,8 @@
     /* justify-content: middle; */
     align-items: center;
     height: 13vw;
-    /* text-decoration: underline; */
     letter-spacing: .05em;
+    padding-bottom: 1vw
 }
 
 #delexitbutt {

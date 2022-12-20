@@ -9,7 +9,6 @@ import { getAllReviews } from '../../store/reviews';
 import { getTheBooks } from '../../store/bookings';
 import ReviewCard from '../ReviewCard';
 import { deciNum, overThou, strToNum, getAge, pathURL } from '../../utilities/location';
-// import CreateReviewForm from '../CreateReviewModal';
 import './OneSpotIndex.css'
 import './calendar.css'
 import star from '../../assets/star.png';
@@ -18,8 +17,6 @@ import propic from '../../assets/propic.png'
 import tsuper from '../../assets/traitsuper.png'
 import nophone from '../../assets/traitnophone.png'
 import calen from '../../assets/traitcalen.png'
-import bookingtemp from '../../assets/bookingtemp2.png'
-import caltemp from '../../assets/caltemp.png'
 import amendcamera from '../../assets/amendcamera.png';
 import amendcart from '../../assets/amendcart.png';
 import amendcolor from '../../assets/amendcolor.png'
@@ -58,7 +55,7 @@ const OneSpotIndex = () => {
   let cleaningfee
   let servicefee
   let total
-  let today = new Date()     
+  let today = new Date()
   let buttonVis = true
   let spotimgs
   // let reviewsCont
@@ -136,7 +133,7 @@ const OneSpotIndex = () => {
 
   useEffect(() => {
     dispatch(getOneSpot(id)).then(() => dispatch(getAllReviews(id)))
-    .then(()=> dispatch(getTheBooks(id)))
+      .then(() => dispatch(getTheBooks(id)))
   }, [id, dispatch]) //took out id
   //theSpot?.id && 
 
@@ -332,11 +329,11 @@ const OneSpotIndex = () => {
                         {/* <img src={caltemp} alt='temponly' style={{ height: '23vw' }} /> */}
 
                         <div id='thismonth'>
-                        <CalendarMonth month={today}/>
+                          <CalendarMonth month={today} />
 
                         </div>
                         <div id='nextmonth'>
-                        {/* <Calendar onChange={onChange} value={value} /> */}
+                          {/* <Calendar onChange={onChange} value={value} /> */}
 
                         </div>
 
@@ -374,15 +371,15 @@ const OneSpotIndex = () => {
                   {/* <img src={bookingtemp} alt='temponly' /> */}
 
                   <div id='bookdatescont'>
-                  <div id='bookdatestop'>
-                    <div id='bookdatestopleft'>
+                    <div id='bookdatestop'>
+                      <div id='bookdatestopleft'>
+                      </div>
+                      <div id='bookdatestopright'>
+                      </div>
                     </div>
-                    <div id='bookdatestopright'>
+                    <div id='bookdatesbottom'>
                     </div>
                   </div>
-                  <div id='bookdatesbottom'>
-                  </div>
-                </div>
 
                   <button id='bookingsubmitbutton' type="submit">Reserve</button>
                   <div id='warningcharge'>

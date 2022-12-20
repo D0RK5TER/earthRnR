@@ -112,19 +112,27 @@ export const createReview = (reviewz) => async (dispatch) => {
 }
 
 export const makeChangeReview = (rev) => async (dispatch) => {
-    const { id, review } = rev;
-    const response = await csrfFetch(`/api/reviews/${review.id}`, {
+    const { id,
+        review, stars,
+        cleanliness, communication,
+        location, checkin,
+        value, accuracy, spotId
+    } = rev;
+    const response = await csrfFetch(`/api/reviews/${id}`, {
         method: "PUT",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            review: review.review,
-            stars: review.stars
+            review, stars,
+            cleanliness, communication,
+            location, checkin,
+            value, accuracy
         }),
     });
+    console.log(response)
     if (response.ok) {
         let data = await response.json()
-        await dispatch(getOneSpot(id))
-        await dispatch(getAllReviews(id))
+        await dispatch(getOneSpot(spotId))
+        await dispatch(getAllReviews(spotId))
         return data
     }
 };

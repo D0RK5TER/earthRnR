@@ -29,7 +29,7 @@ function CreateReviewFormModal({ id }) {
             id, review, stars, cleanliness, communication,
             location, checkin, value, accuracy
         }
-
+        
         return dispatch(createReview(reviewz))
             .then(closeModal)
             .catch(async (res) => {
@@ -169,11 +169,6 @@ function CreateReviewFormModal({ id }) {
                     </div>
                 </label>
             </div>
-            {/* <ul id='errorscreaterev'>
-                {errors.map((error, idx) => (
-                    <li className='errors' key={error + idx}>{error}</li>
-                ))}
-            </ul> */}
             
                 <button type="submit" id='createblock'>Submit</button>
             
