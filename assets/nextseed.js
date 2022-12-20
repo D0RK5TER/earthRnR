@@ -13,27 +13,27 @@ const {
     reviewimageSkeleton, spotSkeleton,
 
 /* await queryInterface.addColumn('Spots',
-        'attributes', {
+        attributes: {
         type: Sequelize.STRING,
         allowNull: true,
       },
       ),
       await queryInterface.addColumn('Spots',
-        'features', {
+        features: {
         type: Sequelize.STRING,
         allowNull: true,
       },
       ),
 
       await queryInterface.addColumn('Spots',
-        'size', {
+        size: {
         type: Sequelize.STRING,
         allowNull: true,
       },
       ),
       
          await queryInterface.addColumn('Users',
-        "superhost", {
+    superhost: {
         type: Sequelize.BOOLEAN,
         allowNull: true,
       },
