@@ -211,7 +211,6 @@ const OneSpotIndex = () => {
                       <div id='hostnamelast'>
                         {` ${getAge(theSpot?.createdAt)}`}
                       </div>
-                      days
                     </div>
                     <div id='spotsizedesc'>
                       Ipsum Lorem Till I Get SumMorum Columns

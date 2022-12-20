@@ -11,34 +11,9 @@ const {
     dates,
     bookingSkeleton, spotimageSkeleton, reviewSkeleton,
     reviewimageSkeleton, spotSkeleton,
-
-/* await queryInterface.addColumn('Spots',
-        attributes: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      ),
-      await queryInterface.addColumn('Spots',
-        features: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      ),
-
-      await queryInterface.addColumn('Spots',
-        size: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      ),
-      
-         await queryInterface.addColumn('Users',
-    superhost: {
-        type: Sequelize.BOOLEAN,
-        allowNull: true,
-      },
-      ),*/
 } = require('../../utils/seeddata');
+
+
 let options = {};
 if (process.env.NODE_ENV === 'production') {
     options.schema = process.env.SCHEMA;  // define your schema in options object
