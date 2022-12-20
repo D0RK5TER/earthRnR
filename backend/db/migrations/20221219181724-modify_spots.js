@@ -141,9 +141,9 @@ module.exports = {
     await queryInterface.removeColumn('Spots', 'size')
     await queryInterface.removeColumn('Spots', 'features')
     await queryInterface.removeColumn('Spots', 'attributes')
-    await queryInterface.removeColumn('Spots', 'type')
+    // await queryInterface.removeColumn('Spots', 'type')
 
     await queryInterface.removeColumn('Users', 'superhost')
-    await queryInterface.removeColumn('Users', 'profilepic')
+    // await queryInterface.removeColumn('Users', 'profilepic')
   }
 };
