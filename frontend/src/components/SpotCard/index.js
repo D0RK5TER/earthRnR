@@ -38,8 +38,7 @@ function SpotCard({ spot, user, place }) {
                         {city}     ,   {state}
                     </span>
                     <p className='smallerinfotext'>
-                        {/* {`${getAge(createdAt.toString())} days old`} */}
-                        {getAge(createdAt)===1? `${getAge(createdAt.toString())} day old`:`${getAge(createdAt.toString())} days old`}
+                        {`${getAge(createdAt)} old`}
                     </p>
                     <p className='smallerinfotext'>
                         {description.slice(0, 30)}...

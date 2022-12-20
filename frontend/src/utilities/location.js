@@ -13,19 +13,13 @@ export const pathURL = (history) => {
 
 
 export function getAge(birth) {
-    let age = ''
-    const curDate = new Date();
-    const curYear = curDate.getFullYear();
-    const curMonth = curDate.getMonth();
-    const birthDate = new Date(birth.toString());
-    const birthYear = birthDate.getFullYear();
-    const birthMonth = birthDate.getMonth();
-    const birthDay = birthDate.getDay();
-    let year = birthYear - curYear
-    let month =  birthMonth - curMonth;
-    let day =  birthDay ;
-    age = (year * 364) + (month * 30) + (day?(day-7)*-1:0)
-    return age;
+    const curDate = new Date()
+    const birthDate = new Date(birth.toString())
+    let age = (curDate.getTime() - birthDate.getTime()) / (1000 * 3600 * 24)
+
+    return age === 1 ? `1 day` :
+        age < 1 ? 'Hours' :
+            `${Math.round(age)} days`
 }
 
 export const deciNum = (num) => {
