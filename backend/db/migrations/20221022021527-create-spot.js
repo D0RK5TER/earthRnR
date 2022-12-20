@@ -70,7 +70,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      spotsize: {
+      size: {
         type: Sequelize.STRING,
         allowNull: true,
       },
