@@ -338,7 +338,7 @@ const dirtSmall = [
     "https://a0.muscache.com/im/pictures/miso/Hosting-48246773/original/286bb767-ea7f-4c9f-9162-4b0dee4740f0.jpeg?im_w=720",
 ]
 
-const treeh = [
+const tree = [
     "https://a0.muscache.com/im/pictures/prohost-api/Hosting-53256465/original/a3a6d577-5c0f-4648-a458-68d7fa18ed98.jpeg?im_w=720",
     "https://a0.muscache.com/im/pictures/99c9f356-dccd-433b-9f22-720b593fcf02.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/miso/Hosting-50923781/original/17f57e70-5eca-43cd-87d5-d1d0d002b9cc.jpeg?im_w=720",
@@ -465,7 +465,7 @@ const game = [
     "https://a0.muscache.com/im/pictures/miso/Hosting-9926853/original/738a3f68-4ac0-4adc-8e46-27658e64a18a.jpeg?im_w=720",
 ]   
 
-const island = [
+const  island = [
 "https://a0.muscache.com/im/pictures/miso/Hosting-11818704/original/d7279902-a71b-4fbc-a711-3172286ab458.jpeg?im_w=320",
 "https://a0.muscache.com/im/pictures/4a69b12c-db5b-4ca9-83f5-2c3ad0433a7a.jpg?im_w=720",
 "https://a0.muscache.com/im/pictures/8bfff805-930f-4e55-92ec-f74927d3e8e7.jpg?im_w=720",
@@ -665,6 +665,8 @@ const amenities = [
 ]
 
 
+
+
 module.exports = {
     addressSample, nameSample, priceSample,
     cityStateSample, descriptSample, descriptVsample,
@@ -672,8 +674,11 @@ module.exports = {
     images,
     cheap, cheapsmall, mid, midsmall, big, bigsmall,
     topWorld, topWorldSmall, lake, lakeSmall, rv, rvSmall,
-    dirt, dirtSmall, treeh, treehSmall, mansion, mansionSmall,
+    dirt, dirtSmall, tree, treehSmall, mansion, mansionSmall,
+    snow, snowSmall, pool, game,  island, iconic, creative, desert, beach, japan, contain, piano, windmill,
     dates,
+    amenities,
+    genericSmall,
     bookingSkeleton, spotimageSkeleton, reviewSkeleton,
     reviewimageSkeleton, spotSkeleton,
 }
