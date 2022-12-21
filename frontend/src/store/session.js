@@ -70,7 +70,6 @@ export const getSessionUser = (state) => state.session.user;
 const initialState = {}
 const sessionReducer = (state = initialState, action) => {
     let newState = { ...state };
-    // console.log(state, newState)
     switch (action.type) {
         case SET_USER:
             newState.user = action.user

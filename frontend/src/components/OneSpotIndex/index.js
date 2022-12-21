@@ -64,7 +64,7 @@ const OneSpotIndex = () => {
   let ratingsneak = true
 
 
-  if (theSpot !== undefined && theSpot[id]?.id === (+id) && thereviews && +id > 0) {
+  if (theSpot !== undefined && theSpot[id]?.id === (+id) && thereviews !== undefined && +id > 0) {
 
     theSpot = theSpot[+id]
     bookingsixnight = `${Math.floor(theSpot.price) * 6 > 1000 ?

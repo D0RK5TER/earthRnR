@@ -6,12 +6,21 @@ import { getAllSpots } from '../../store/spots';
 import SpotCard from '../SpotCard';
 import { pathURL } from '../../utilities/location'
 import './SpotsIndex.css'
-import tree from '../../assets/Ttree.png'
-import rv from '../../assets/Trv.png'
-import dirt from '../../assets/Tdirt.png'
-import country from '../../assets/Tcountry.png'
-import lake from '../../assets/Tlake.png'
-import mansion from '../../assets/Tmansion.png'
+import tree from '../../assets/Ttree.jpg'
+import rv from '../../assets/Trv.jpg'
+import dirt from '../../assets/Tdirt.jpg'
+import country from '../../assets/Tcountry.jpg'
+import lake from '../../assets/Tlake.jpg'
+import mansion from '../../assets/Tmansion.jpg'
+import island from '../../assets/Tisland.jpg'
+import pools from '../../assets/Tpools.jpg'
+import contain from '../../assets/Tcontain.jpg'
+import beach from '../../assets/Tbeach.jpg'
+import games from '../../assets/Tgames.jpg'
+import desert from '../../assets/Tdesert.jpg'
+import piano from '../../assets/Tpiano.jpg'
+import snow from '../../assets/Tsnow.jpg'
+
 function SpotsIndex() {
     const dispatch = useDispatch()
     let user = useSelector(state => state.session.user)
@@ -29,52 +38,61 @@ function SpotsIndex() {
     return spots && (
         <div id='maindisplay'>
             <div id='homepagesticky'>
-                <div
-                    onClick={() => dispatch(getAllSpots('?type=tree'))}
-
-                >
-                    <img src={tree}
-                    />
-                    Treehouses
+                <div onClick={() => dispatch(getAllSpots('?type=tree'))}>
+                    <img src={tree} />
+                    Treehouse
                 </div>
-                <div
-
-                    onClick={() => dispatch(getAllSpots('?type=rv'))}
-                >
-
-                    <img src={rv}
-                    />
-                    Mobile Homes
+                <div onClick={() => dispatch(getAllSpots('?type=rv'))}>
+                    <img src={rv} />
+                    RV's
                 </div>
-                <div
-                    onClick={() => dispatch(getAllSpots('?type=lake'))}
-                >
-                    <img src={lake}
-                    />
-                    Lakehouses
+                <div onClick={() => dispatch(getAllSpots('?type=lake'))}>
+                    <img src={lake} />
+                    Lakehouse
                 </div>
-                <div
-
-                    onClick={() => window.location.replace('earth') && dispatch(getAllSpots('?type=earth'))}
-                >
-
-                    <img src={dirt}
-                    />
+                <div onClick={() => dispatch(getAllSpots('?type=earth'))}>
+                    <img src={dirt} />
                     Earth-homes
                 </div>
-                <div
-                    onClick={() => dispatch(getAllSpots('?type=mansion'))}
-                >
-                    <img src={mansion}
-                    />
+                <div onClick={() => dispatch(getAllSpots('?type=mansion'))}>
+                    <img src={mansion} />
                     Mansions
                 </div>
-                <div
-                    onClick={() => dispatch(getAllSpots('?type=country'))}
-                >
-                    <img src={country}
-                    />
+                <div onClick={() => dispatch(getAllSpots('?type=country'))}>
+                    <img src={country} />
                     Country
+                </div>
+                <div onClick={() => dispatch(getAllSpots('?type=rv'))}>
+                    <img src={piano} />
+                    Pianos
+                </div>
+                <div onClick={() => dispatch(getAllSpots('?type=island'))}>
+                    <img src={island} />
+                    Islands
+                </div>
+                <div onClick={() => dispatch(getAllSpots('?type=beach'))}>
+                    <img src={beach} />
+                    Surfing
+                </div>
+                <div onClick={() => dispatch(getAllSpots('?type=pool'))}>
+                    <img src={pools} />
+                    Big Pool
+                </div>
+                <div onClick={() => dispatch(getAllSpots('?type=contain'))}>
+                    <img src={contain} />
+                    Cargo
+                </div>
+                <div onClick={() => dispatch(getAllSpots('?type=games'))}>
+                    <img src={games} />
+                    Play
+                </div>
+                <div onClick={() => dispatch(getAllSpots('?type=desert'))}>
+                    <img src={desert} />
+                    Nothing
+                </div>
+                <div onClick={() => dispatch(getAllSpots('?type=snow'))}>
+                    <img src={snow} />
+                    Ski/Snow
                 </div>
                 {/* <div>
                     Rv

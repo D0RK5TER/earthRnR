@@ -94,7 +94,6 @@ function SignUpForm() {
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    // placeholder='Strong Password'
                     required
                 />
 
