@@ -46,7 +46,7 @@ function Navigation() {
       <div className='nav-center' id='topmid'>
         <OpenModalButton
           id='paginationbut'
-          buttonText="Start your search"
+          buttonText="Refine your search"
           modalComponent={<PaginationForm />}
         />
         <OpenModalButton

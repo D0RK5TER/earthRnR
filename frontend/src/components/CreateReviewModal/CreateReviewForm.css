@@ -20,8 +20,7 @@
 
 #reviewtextlabel {
     font-family: 'Li';
-    font-weight: 1em;
-    /* text-decoration: ; */
+    font-size: 1.2vw;
 
 }
 
@@ -31,9 +30,10 @@
 }
 
 #ratingdesc {
+    height: 3vw;
     font-family: 'Li';
-    border-top: 1px solid #f7f7f7;
-    padding-top: 1em;
+    font-size: 1.3vw;
+    /* margin-bottom: hevw; */
 }
 
 #createrevbutton:hover {
@@ -41,16 +41,7 @@
     border-radius: 2em;
 }
 
-#createrevbutton {
-    margin-bottom: 1em;
-    border: none;
-    width: 30%;
-    line-height: 2em;
-    font-family: 'Bold';
-    background-color: white;
-    cursor: pointer;
-    font-size: 1vw;
-}
+
 
 #reviewtextinput {
     height: 5vw;
@@ -60,10 +51,14 @@
     /* display: flex; */
     /* flex-wrap: wrap; */
 }
-
+#reviewtextinput {
+    font-size: 1vw;
+    padding-left: 1vw;
+}
 #reviewtextlabel {
     width: 100%;
     height: 100vw;
+
 }
 
 #reviewtext {
@@ -77,6 +72,30 @@
     margin-left: 1em;
 }
 
+#spreadreview>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: flex-start;
+    align-items: center;
+    height: 5vw;
+    font-family: 'Bold';
+    font-size: .97vw;
+}
+
+#reviewtotal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 4vw;
+    margin-bottom: 2.5vw;
+    margin-top: 1vw;
+}
+
+/* #reviewtopc {
+    margin-top: 1.5vw;
+} */
 #spreadreview input::-webkit-slider-thumb {
     width: 2vw;
     -webkit-appearance: none;
@@ -100,15 +119,17 @@
     border: 1px solid #ff385c;
     height: .1px;
     justify-self: center;
+    width: 80%;
 }
 
 #spreadreview {
-    width: 20vw;
+    width: 30vw;
     display: flex;
     height: 3vw;
     justify-content: center;
-    padding-top: 1em;
+    /* padding-top: 1em; */
     align-items: safe center;
+    margin-top: 1vw;
 }
 
 #ratestay {
@@ -116,6 +137,8 @@
     flex-direction: column;
     margin-bottom: .5em;
     width: 100%;
+    justify-content: center;
+    align-items: center;
 
 
 }
@@ -131,20 +154,15 @@
     margin-bottom: .5em;
 }
 
-#createreviewform {
-    margin-top: .5em;
-    width: 100%;
-    /* border-bottom: 1px solid #f7f7f7; */
-    margin-bottom: .5em;
-
-}
 
 #createreviewform {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 35vw;
+    align-items: center;
+    width: 45vw;
+    /* height: vw; */
     overflow: hidden;
 }
 
@@ -156,9 +174,10 @@
     /* width: fit-content; */
 }
 
-#createreviewbutt> * {
+#createreviewbutt>* {
     margin-top: none;
 }
+
 #createreviewbutt {
     /* margin-top: ; */
     width: fit-content;

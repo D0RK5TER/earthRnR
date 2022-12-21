@@ -159,7 +159,12 @@ router.get('/', async (req, res) => {
     //         isNaN(+size) ? size = 1 :
     //             size
     // } else size = 20
-    let alltypes = ['lake', 'tree', 'rv', 'earth', 'mansion', 'country']
+
+    // let alltypes = ['lake', 'tree', 'rv', 'earth', 'mansion', 'country',]
+    let alltypes = ['snow', 'pool', 'game', 'island',
+        'iconic', 'creative', 'desert', 'beach',
+        'japan', 'contain', 'piano', 'windmill',
+        'lake', 'rv', 'dirt', 'tree', 'mansion', 'country']
     if (type) {
         type = alltypes.filter(x => type.includes(x))
         // type = alltypes.filter(x => type.includes(x)).join('')
@@ -279,7 +284,8 @@ router.post('/:spotId/images',
 router.post('/:spotId/reviews',
     requireAuth,
     async (req, res) => {
-        const { review, stars } = req.body
+        const { review, stars, cleanliness, communication,
+            location, checkin, value, accuracy } = req.body
         const { spotId } = req.params
         const userId = req.user.id
 
@@ -322,7 +328,9 @@ router.post('/:spotId/reviews',
                 spotId: +spotId,
                 userId, userId,
                 review: review,
-                stars: stars
+                stars: stars,
+                cleanliness, communication,
+                location, checkin, value, accuracy
             })
             res.status(201)
             res.json(newReview)

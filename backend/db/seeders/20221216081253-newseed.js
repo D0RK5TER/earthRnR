@@ -8,20 +8,29 @@ const {
     cityStateSample, descriptSample, descriptVsample,
     reviews,
     images,
-    cheap, cheapsmall, mid, midsmall, big, bigsmall,
+
     topWorld, topWorldSmall, lake, lakeSmall, rv, rvSmall,
-    dirt, dirtSmall, treeh, treehSmall, mansion, mansionSmall,
+    dirt, dirtSmall, tree, treehSmall, mansion, mansionSmall,
     dates,
     bookingSkeleton, spotimageSkeleton, reviewSkeleton,
     reviewimageSkeleton, spotSkeleton,
 
-
+    cheapsmall, midsmall, bigsmall, genericSmall,
+    snow, pool, game, island, iconic, creative, desert, beach, japan, contain, piano, windmill,
+    snowSmall,
+    amenities,
 } = require('../../utils/seeddata');
 let options = {};
 if (process.env.NODE_ENV === 'production') {
     options.schema = process.env.SCHEMA;  // define your schema in options object
 }
 
+const typelist = {
+    1: 'snow', 2: 'pool', 3: 'game', 4: 'island',
+    15: 'iconic', 6: 'creative', 7: 'desert', 8: 'beach',
+    9: 'japan', 10: 'contain', 11: 'piano', 12: 'windmill',
+    13: 'lake', 14: 'rv', 15: 'dirt', 16: 'tree', 17: 'mansion', 18: 'country'
+}
 
 const getRandom = (max) => Math.floor(Math.random() * max);
 
@@ -112,56 +121,54 @@ module.exports = {
 
                 hashedPassword: bcrypt.hashSync('password')
             },
-            //   {
-            //     firstName: 'Grey',
-            //     lastName: 'Nance',
-            //     email: 'user15@user.co',
-            //     username: 'Grance',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Roy',
-            //     lastName: 'Lee',
-            //     email: 'user16@user.co',
-            //     username: 'Leeroy',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Jade',
-            //     lastName: 'Tran',
-            //     email: 'user17@user.co',
-            //     username: 'JadoTran',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Efrain',
-            //     lastName: 'Niafe',
-            //     email: 'user18@user.co',
-            //     username: 'effinRain',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Sarah',
-            //     lastName: 'Dunlop',
-            //     email: 'user19@user.co',
-            //     username: 'SunLop',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Xena',
-            //     lastName: 'Kitty',
-            //     email: 'user20@user.co',
-            //     username: 'CatFish',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-            //   {
-            //     firstName: 'Alex',
-            //     lastName: 'Kim',
-            //     email: 'user21@user.co',
-            //     username: 'Kilex',
-            //     hashedPassword: bcrypt.hashSync('password')
-            //   },
-
+            {
+                firstName: 'Kvothe',
+                lastName: 'Takestolong',
+                email: 'user18@user.co',
+                username: 'Grancey',
+                profilepic: 'https://cdna.artstation.com/p/assets/images/images/026/202/042/large/rocio-sogas-kvothe.jpg?1588166051',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'Fitz',
+                lastName: 'Chilvary',
+                email: 'user19@user.co',
+                username: 'Leeroyed',
+                profilepic: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4ab8e2fa-0d95-4433-bcc2-9a40208773e6/d8bwaah-0c1f3111-8858-4706-bde9-ccc252b90e58.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRhYjhlMmZhLTBkOTUtNDQzMy1iY2MyLTlhNDAyMDg3NzNlNlwvZDhid2FhaC0wYzFmMzExMS04ODU4LTQ3MDYtYmRlOS1jY2MyNTJiOTBlNTgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.jsyFup3OPgw0CTCphompqVfxNmbE04skqpyucdoVelg',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'Rincewind',
+                lastName: 'Churm',
+                email: 'user20@user.co',
+                username: 'CTrain',
+                profilepic: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8bad0c71-ad9f-4436-89a3-efa67aeab5cf/d7k57sq-08ab7cc6-1ee9-4239-be26-830e248c607b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhiYWQwYzcxLWFkOWYtNDQzNi04OWEzLWVmYTY3YWVhYjVjZlwvZDdrNTdzcS0wOGFiN2NjNi0xZWU5LTQyMzktYmUyNi04MzBlMjQ4YzYwN2IuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.-PlxRpHcZ4Xpxj1ZbTPkmGgbS7jYGbou2lnbwK1s_BY',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'Richard',
+                lastName: 'Kahl',
+                email: 'user10@user.co',
+                username: 'Richard10',
+                profilepic: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/06f3d940-9485-4108-9c6f-496e988e8262/d35fbrp-956da90c-bfd1-4a67-8464-c7e70beb47ca.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA2ZjNkOTQwLTk0ODUtNDEwOC05YzZmLTQ5NmU5ODhlODI2MlwvZDM1ZmJycC05NTZkYTkwYy1iZmQxLTRhNjctODQ2NC1jN2U3MGJlYjQ3Y2EuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.cNYOX9FpKjkRkYluTEKuXiMBOmnHUi5mLqOxJTimq3M',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'Logan',
+                lastName: 'Ninefingers',
+                email: 'user11@user.co',
+                username: 'Logan11',
+                profilepic: 'https://i.ytimg.com/vi/ewGYJyLr6RU/maxresdefault.jpg',
+                hashedPassword: bcrypt.hashSync('password')
+            },
+            {
+                firstName: 'James',
+                lastName: 'Stark',
+                email: 'user12@user.co',
+                username: 'James12',
+                profilepic: 'https://images.squarespace-cdn.com/content/v1/5c01db6e7c9327aa94d92ad8/1543630746530-378K7XU749QO7DBZ3M1P/tarot-stark.jpg',
+                hashedPassword: bcrypt.hashSync('password')
+            },
         ]
             ,
             {})
@@ -179,7 +186,7 @@ module.exports = {
 
 
         // console.log('18912u39128u3912u3912u39123u9123u1', cityStateSample, randomSpots, descriptSample )
-        while (randomSpots.length < 20) {
+        while (randomSpots.length < 99) {
             let newRandom = { ...spotSkeleton }
             let owner = ownerSample[getRandom(ownerSample.length - 1)]
             let stateCity = cityStateSample[getRandom(cityStateSample.length - 1)]
@@ -201,12 +208,31 @@ module.exports = {
             newRandom.price = price
             newRandom.description = `${newRandom.name} ${descriptIntro} ${description1} ${description2} ${description3}`
 
-            price < 100 ? newRandom.type = 'earth' :
-                price < 200 ? newRandom.type = 'rv' :
-                    price < 600 ? newRandom.type = 'country' :
-                        price < 1000 ? newRandom.type = 'tree' :
-                            price < 2000 ? newRandom.type = 'lake' :
-                                newRandom.type = 'mansion'
+            newRandom.attributes = ''
+            let a = 0
+            while (a < 3) {
+                let amend = amenities[getRandom(amenities.length - 1)]
+                if (newRandom.attributes.includes(amend)) continue
+                else {
+                    newRandom.attributes += amend
+                    a++
+                }
+            }
+
+
+            let ran = getRandom(18)
+            while (ran < 1) ran = getRandom(18)
+
+            newRandom.type = typelist[ran]
+
+
+
+            // price < 100 ? newRandom.type = 'earth' :
+            //     price < 200 ? newRandom.type = 'rv' :
+            //         price < 600 ? newRandom.type = 'country' :
+            //             price < 1000 ? newRandom.type = 'tree' :
+            //                 price < 2000 ? newRandom.type = 'lake' :
+            //                     newRandom.type = 'mansion'
 
 
             randomSpots.push(newRandom)
@@ -225,11 +251,11 @@ module.exports = {
         for (let spot of spotSample) {
             let notowner = userSample.filter(x => spot.ownerId !== x.id)
             notowner = notowner.map(x => x = x.id)
-            let numRevs = getRandom(7)
+            let numRevs = getRandom(10)
             if (numRevs === 0) continue
             let userids = []
             if (!notowner.length) continue
-            let i = 0
+            // let i = 0
             // while (numRevs > 0 && notowner.length) {
             //     --numRevs
             //     let id = notowner[i]
@@ -255,6 +281,14 @@ module.exports = {
                 star = +star
                 newRandom.review = review.slice(0, -1)
                 newRandom.stars = star
+
+                newRandom.cleanliness = star
+                newRandom.communication = star
+                newRandom.location = star
+                newRandom.checkin = star
+                newRandom.value = star
+                newRandom.accuracy = star
+
                 randomReviews.push(newRandom)
             })
         }
@@ -293,74 +327,240 @@ module.exports = {
             let ntreehsmall = [...treehSmall]
             let nlakesmall = [...lakeSmall]
             let nmansionsmall = [...mansionSmall]
-
-            if (s.price < 100) {
+            // console.log(s)
+            if (s.type === 'dirt') {
                 newimg.spotId = s.id
                 newimg.preview = true
-
-                newimg.url = dirt.splice(getRandom(dirt.length - 1), 1)[0]
+                newimg.url = dirt[getRandom(dirt.length - 1)]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
                     let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
-                    // newsmallimg.url = cheapsmall[getRandom(cheapsmall.length - 1)]
-                    newsmallimg.url = ndirtsmall.splice(getRandom(ndirtsmall.length - 1), 1)[0]
+                    newsmallimg.url = dirtSmall[getRandom(dirtSmall.length - 1)]
                     imgs.push(newsmallimg)
                     i++
                 }
-            } else if (s.price < 200) {
+            } else if (s.type === 'rv') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = rv.splice(getRandom(rv.length - 1), 1)[0]
+                newimg.url = rv[getRandom(rv.length - 1)]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
                     let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
-                    newsmallimg.url = nrvsmall.splice(getRandom(nrvsmall.length - 1), 1)[0]
+                    newsmallimg.url = nrvsmall[getRandom(nrvsmall.length - 1)]
                     imgs.push(newsmallimg)
                     i++
                 }
             }
-            else if (s.price < 600) {
+            else if (s.type === 'country') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = topWorld.splice(getRandom(topWorld.length - 1), 1)[0]
+                newimg.url = topWorld[getRandom(topWorld.length - 1)]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
                     let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
-                    newsmallimg.url = ntopWorldsmall.splice(getRandom(ntopWorldsmall.length - 1), 1)[0]
+                    newsmallimg.url = ntopWorldsmall[getRandom(ntopWorldsmall.length - 1)]
                     imgs.push(newsmallimg)
                     i++
                 }
 
-            } else if (s.price < 1000) {
+            } else if (s.type === 'tree') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = treeh.splice(getRandom(treeh.length - 1), 1)[0]
+                newimg.url = tree[getRandom(tree.length - 1)]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
                     let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
-                    newsmallimg.url = ntreehsmall.splice(getRandom(ntreehsmall.length - 1), 1)[0]
+                    newsmallimg.url = ntreehsmall[getRandom(ntreehsmall.length - 1)]
                     imgs.push(newsmallimg)
                     i++
                 }
 
-            } else if (s.price < 2000) {
+            } else if (s.type === 'lake') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = lake.splice(getRandom(lake.length - 1), 1)[0]
+                newimg.url = lake[getRandom(lake.length - 1)]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
                     let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
-                    newsmallimg.url = nlakesmall.splice(getRandom(nlakesmall.length - 1), 1)[0]
+                    newsmallimg.url = nlakesmall[getRandom(nlakesmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+
+            } else if (s.type === 'mansion') {
+                newimg.spotId = s.id
+                newimg.preview = true
+                newimg.url = mansion[getRandom(mansion.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = nmansionsmall[getRandom(nmansionsmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+            } else if (s.type === 'snow') {
+                newimg.spotId = s.id
+                newimg.preview = true
+                newimg.url = snow[getRandom(snow.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = snowSmall[getRandom(snowSmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+
+            } else if (s.type === 'pool') {
+                newimg.spotId = s.id
+                newimg.preview = true
+                newimg.url = pool[getRandom(pool.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = genericSmall[getRandom(genericSmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+
+            } else if (s.type === 'island') {
+                newimg.spotId = s.id
+                newimg.preview = true
+                newimg.url = island[getRandom(island.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = bigsmall[getRandom(bigsmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+
+            } else if (s.type === 'piano') {
+                newimg.spotId = s.id
+                newimg.preview = true
+                newimg.url = piano[getRandom(piano.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = genericSmall[getRandom(genericSmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+
+            } else if (s.type === 'iconic') {
+                newimg.spotId = s.id
+                newimg.preview = true
+                newimg.url = iconic[getRandom(iconic.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = genericSmall[getRandom(genericSmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+
+            } else if (s.type === 'game') {
+                newimg.spotId = s.id
+                newimg.preview = true
+                newimg.url = game[getRandom(game.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = midsmall[getRandom(midsmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+
+            } else if (s.type === 'windmill') {
+                newimg.spotId = s.id
+                newimg.preview = true
+                newimg.url = windmill[getRandom(windmill.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = cheapsmall[getRandom(cheapsmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+
+            } else if (s.type === 'creative') {
+                newimg.spotId = s.id
+                newimg.preview = true
+                newimg.url = creative[getRandom(creative.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = genericSmall[getRandom(genericSmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+
+            } else if (s.type === 'contain') {
+                newimg.spotId = s.id
+                newimg.preview = true
+
+                newimg.url = contain[getRandom(contain.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = genericSmall[getRandom(genericSmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+
+            } else if (s.type === 'desert') {
+                newimg.spotId = s.id
+                newimg.preview = true
+                newimg.url = desert[getRandom(desert.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = cheapsmall[getRandom(cheapsmall.length - 1)]
+                    imgs.push(newsmallimg)
+                    i++
+                }
+
+            } else if (s.type === 'beach') {
+                newimg.spotId = s.id
+                newimg.preview = true
+                newimg.url = beach[getRandom(beach.length - 1)]
+                imgs.push(newimg)
+                let i = 0
+                while (i < 4) {
+                    let newsmallimg = { ...newimg }
+                    newsmallimg.preview = false
+                    newsmallimg.url = lakeSmall[getRandom(lakeSmall.length - 1)]
                     imgs.push(newsmallimg)
                     i++
                 }
@@ -368,17 +568,19 @@ module.exports = {
             } else {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = mansion.splice(getRandom(mansion.length - 1), 1)[0]
+                newimg.url = japan[getRandom(japan.length - 1)]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
                     let newsmallimg = { ...newimg }
                     newsmallimg.preview = false
-                    newsmallimg.url = nmansionsmall.splice(getRandom(nmansionsmall.length - 1), 1)[0]
+                    newsmallimg.url = genericSmall[getRandom(genericSmall.length - 1)]
                     imgs.push(newsmallimg)
                     i++
                 }
+
             }
+
         }
         options.tableName = 'SpotImages'
         await queryInterface.bulkInsert(options, imgs, {})

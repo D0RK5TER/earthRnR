@@ -32,8 +32,9 @@ router.post(
     '/',
     validateSignup,
     async (req, res) => {
-        const { firstName, lastName, email, password, username } = req.body;
-        const user = await User.signup({ firstName, lastName, email, username, password });
+        const { firstName, lastName, email, password, username, profilepic } = req.body;
+        console.log(profilepic, '!sdjknfksjdnfksdnf')
+        const user = await User.signup({ firstName, lastName, email, username, password, profilepic });
         await setTokenCookie(res, user);
         return res.json({
             'user': user

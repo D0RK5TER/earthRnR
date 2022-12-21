@@ -86,7 +86,7 @@ function ProfileButton(/*{user}*/) {
             </div>
           )
           : showMenu && (
-            <div className="profile-dropdown ddprofile">
+            <div className="profile-dropdown ddprofile" id='ddloggedin'>
 
               <OpenModalButton
                 id='signupdrop'

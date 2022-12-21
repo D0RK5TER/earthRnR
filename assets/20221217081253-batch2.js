@@ -1,9 +1,9 @@
 'use strict';
 
-/** @type {import('sequelize-cli').Migration} */
+// /** @type {import('sequelize-cli').Migration} */
 
 const bcrypt = require('bcryptjs');
-const { User, Spot, Review } = require('../models')
+const { User, Spot, Review } = require('../backend/db/models')
 const {
   addressSample, nameSample, priceSample,
   cityStateSample, descriptSample, descriptVsample,
@@ -17,7 +17,7 @@ const {
   reviewimageSkeleton, spotSkeleton,
 
 
-} = require('../../utils/seeddata');
+} = require('../backend/utils/seeddata');
 let options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
@@ -163,6 +163,14 @@ module.exports = {
         star = +star
         newRandom.review = review.slice(0, -1)
         newRandom.stars = star
+
+        newRandom.cleanliness =  star
+        newRandom.communication = star
+        newRandom.location = star
+        newRandom.checkin = star
+        newRandom.value = star
+        newRandom.accuracy = star
+        
         randomReviews.push(newRandom)
       })
     }

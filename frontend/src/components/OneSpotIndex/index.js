@@ -3,13 +3,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
-// import Calendar from 'react-calendar';
+import Calendar from 'react-calendar';
 import { getOneSpot } from '../../store/spots';
 import { getAllReviews } from '../../store/reviews';
 import { getTheBooks } from '../../store/bookings';
 import ReviewCard from '../ReviewCard';
 import { deciNum, overThou, strToNum, getAge, pathURL } from '../../utilities/location';
-// import CreateReviewForm from '../CreateReviewModal';
 import './OneSpotIndex.css'
 import './calendar.css'
 import star from '../../assets/star.png';
@@ -18,8 +17,6 @@ import propic from '../../assets/propic.png'
 import tsuper from '../../assets/traitsuper.png'
 import nophone from '../../assets/traitnophone.png'
 import calen from '../../assets/traitcalen.png'
-import bookingtemp from '../../assets/bookingtemp2.png'
-import caltemp from '../../assets/caltemp.png'
 import amendcamera from '../../assets/amendcamera.png';
 import amendcart from '../../assets/amendcart.png';
 import amendcolor from '../../assets/amendcolor.png'
@@ -58,7 +55,7 @@ const OneSpotIndex = () => {
   let cleaningfee
   let servicefee
   let total
-  // let today = new Date()
+  let today = new Date()
   let buttonVis = true
   let spotimgs
   // let reviewsCont
@@ -67,7 +64,7 @@ const OneSpotIndex = () => {
   let ratingsneak = true
 
 
-  if (theSpot !== undefined && theSpot[id]?.id === (+id) && thereviews && +id > 0) {
+  if (theSpot !== undefined && theSpot[id]?.id === (+id) && thereviews !== undefined && +id > 0) {
 
     theSpot = theSpot[+id]
     bookingsixnight = `${Math.floor(theSpot.price) * 6 > 1000 ?
@@ -136,7 +133,7 @@ const OneSpotIndex = () => {
 
   useEffect(() => {
     dispatch(getOneSpot(id)).then(() => dispatch(getAllReviews(id)))
-    .then(()=> dispatch(getTheBooks(id)))
+      .then(() => dispatch(getTheBooks(id)))
   }, [id, dispatch]) //took out id
   //theSpot?.id && 
 
@@ -329,16 +326,16 @@ const OneSpotIndex = () => {
                     <>
                       <h2>{ }6 nights at {theSpot.name}</h2>
                       <div id='spotbookingcalendar'>
-                        <img src={caltemp} alt='temponly' style={{ height: '23vw' }} />
+                        {/* <img src={caltemp} alt='temponly' style={{ height: '23vw' }} /> */}
 
-                        {/* <div id='thismonth'>
-                        <CalendarMonth onChange={onChange} value={value}/>
+                        <div id='thismonth'>
+                          <CalendarMonth month={today} />
 
                         </div>
                         <div id='nextmonth'>
-                        <Calendar onChange={onChange} value={value} />
+                          {/* <Calendar onChange={onChange} value={value} /> */}
 
-                        </div> */}
+                        </div>
 
                       </div >
                     </>
@@ -371,20 +368,20 @@ const OneSpotIndex = () => {
                       </div >
                     </div>
                   </div>
-                  <img src={bookingtemp} alt='temponly' />
+                  {/* <img src={bookingtemp} alt='temponly' /> */}
 
-                  {/* <div id='bookdatescont'>
-                  <div id='bookdatestop'>
-                    <div id='bookdatestopleft'>
+                  <div id='bookdatescont'>
+                    <div id='bookdatestop'>
+                      <div id='bookdatestopleft'>
+                      </div>
+                      <div id='bookdatestopright'>
+                      </div>
                     </div>
-                    <div id='bookdatestopright'>
+                    <div id='bookdatesbottom'>
                     </div>
                   </div>
-                  <div id='bookdatesbottom'>
-                  </div>
-                </div> */}
 
-                  {/* <button id='bookingsubmitbutton' type="submit">Reserve</button> */}
+                  <button id='bookingsubmitbutton' type="submit">Reserve</button>
                   <div id='warningcharge'>
                     We "won't" charge you yet!
                   </div>

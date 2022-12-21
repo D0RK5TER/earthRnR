@@ -14,6 +14,7 @@ function SignUpForm() {
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [profilepic, setProfilepic] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([]);
 
@@ -21,7 +22,7 @@ function SignUpForm() {
         e.preventDefault();
         if (password === confirmPassword) {
             setErrors([]);
-            return await dispatch(sessionActions.signup({ firstName, lastName, email, username, password }))
+            return await dispatch(sessionActions.signup({ firstName, lastName, email, username, password, profilepic }))
                 .then(closeModal)
                 .catch(async (res) => {
                     const data = await res.json()
@@ -46,62 +47,66 @@ function SignUpForm() {
             </div>
 
             <div id='signupformcontain' className="reuseform reuseformbody">
-                First Name
                 <input
                     id='signupfname'
                     type="text"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    placeholder='John'
+                    placeholder='First Name'
                     required
-                /> Last Name
+                /> 
+
                 <input
                     id='signuplname'
                     type="text"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    placeholder='Doe'
+                    placeholder='Last Name'
                     required
                 />
-
-                Email
                 <input
                     id='signupemail'
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder='ishedead@gmail.com'
+                    placeholder='Email Address'
                     required
                 />
-                Username
                 <input
                     id='signupuser'
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    placeholder='JohnnyDoh'
+                    placeholder='Username'
                     required
                 />
-
-                Password
+                 <input
+                    id='signupuser'
+                    type="url"
+                    value={profilepic}
+                    onChange={(e) => setProfilepic(e.target.value)}
+                    placeholder='Profile Picture URL'
+                    required
+                />
                 <input
                     id='signuppass'
                     type="password"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    // placeholder='Strong Password'
                     required
                 />
-                Confirm Password
+
                 <input
                     id='signuppass2'
                     type="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    Confirm Password
+                    placeholder='Confirm Password'
                     // placeholder='Exact Match'
                     required
                 />
+
                 <div id='checkboxsign'>
                     <input
                         type='checkbox'

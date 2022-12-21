@@ -31,7 +31,8 @@
   align-items: center;
   color: #FF385c;
   width: fit-content;
-  font-size: 1.4vw;;
+  font-size: 1.4vw;
+  ;
 }
 
 #topleft {
@@ -146,7 +147,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  width: fit-content;
+  width: 20vw;
 }
 
 
@@ -249,13 +250,16 @@
   font-family: "Light";
   display: flex;
   position: fixed;
-  margin-bottom: 1vw;
-  justify-content: space-around;
+  z-index: 2;
+  /* margin-bottom: 1vw; */
+  justify-content: space-between;
   background-color: white;
-  border-bottom: .525px solid #d6d6d6;
-  width: 100%;
+  border-bottom: .8525px solid #d6d6d6;
+  width: 90%;
   height: 5.5vw;
   border-bottom-style: ridge;
   margin-top: 0px;
+  padding-left: 5vw;
+  padding-right: 10vw;
 
 }
