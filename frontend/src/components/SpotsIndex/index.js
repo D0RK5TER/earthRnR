@@ -62,7 +62,7 @@ function SpotsIndex() {
                     <img src={country} />
                     Country
                 </div>
-                <div onClick={() => dispatch(getAllSpots('?type=rv'))}>
+                <div onClick={() => dispatch(getAllSpots('?type=piano'))}>
                     <img src={piano} />
                     Pianos
                 </div>
