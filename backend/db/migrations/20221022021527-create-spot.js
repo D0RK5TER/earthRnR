@@ -70,8 +70,12 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      size: {
-        type: Sequelize.STRING,
+      bed: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+      },
+      bath: {
+        type: Sequelize.INTEGER,
         allowNull: true,
       },
       

@@ -27,9 +27,10 @@ if (process.env.NODE_ENV === 'production') {
 
 const typelist = {
     1: 'snow', 2: 'pool', 3: 'game', 4: 'island',
-    15: 'iconic', 6: 'creative', 7: 'desert', 8: 'beach',
-    9: 'japan', 10: 'contain', 11: 'piano', 12: 'windmill',
-    13: 'lake', 14: 'rv', 15: 'dirt', 16: 'tree', 17: 'mansion', 18: 'country'
+    5: 'iconic', 6: 'creative', 7: 'desert', 8: 'beach',
+    18: 'japan', 10: 'contain', 11: 'piano', 12: 'windmill',
+    13: 'lake', 14: 'rv', 15: 'dirt', 16: 'tree',
+    17: 'mansion', 9: 'country'
 }
 
 const getRandom = (max) => Math.floor(Math.random() * max);
@@ -186,7 +187,7 @@ module.exports = {
 
 
         // console.log('18912u39128u3912u3912u39123u9123u1', cityStateSample, randomSpots, descriptSample )
-        while (randomSpots.length < 99) {
+        while (randomSpots.length < 250) {
             let newRandom = { ...spotSkeleton }
             let owner = ownerSample[getRandom(ownerSample.length - 1)]
             let stateCity = cityStateSample[getRandom(cityStateSample.length - 1)]
@@ -225,8 +226,14 @@ module.exports = {
 
             newRandom.type = typelist[ran]
 
+            let bed = getRandom(5)
+            while (bed < 1) bed = getRandom(5)
 
+            let bath = getRandom(3)
+            while (bath < 1) bath = getRandom(3)
 
+            newRandom.bed = bed
+            newRandom.bath = bath
             // price < 100 ? newRandom.type = 'earth' :
             //     price < 200 ? newRandom.type = 'rv' :
             //         price < 600 ? newRandom.type = 'country' :
@@ -331,7 +338,8 @@ module.exports = {
             if (s.type === 'dirt') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = dirt[getRandom(dirt.length - 1)]
+                // newimg.url = dirt[getRandom(dirt.length - 1)]
+                newimg.url = dirt.splice(getRandom(dirt.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -344,7 +352,9 @@ module.exports = {
             } else if (s.type === 'rv') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = rv[getRandom(rv.length - 1)]
+                // newimg.url = rv[getRandom(rv.length - 1)]
+                newimg.url = rv.splice(getRandom(rv.length - 1), 1)[0]
+
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -358,7 +368,8 @@ module.exports = {
             else if (s.type === 'country') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = topWorld[getRandom(topWorld.length - 1)]
+                // newimg.url = topWorld[getRandom(topWorld.length - 1)]
+                newimg.url = topWorld.splice(getRandom(topWorld.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -372,7 +383,8 @@ module.exports = {
             } else if (s.type === 'tree') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = tree[getRandom(tree.length - 1)]
+                // newimg.url = tree[getRandom(tree.length - 1)]
+                newimg.url = tree.splice(getRandom(tree.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -386,7 +398,8 @@ module.exports = {
             } else if (s.type === 'lake') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = lake[getRandom(lake.length - 1)]
+                // newimg.url = lake[getRandom(lake.length - 1)]
+                newimg.url = lake.splice(getRandom(lake.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -400,7 +413,8 @@ module.exports = {
             } else if (s.type === 'mansion') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = mansion[getRandom(mansion.length - 1)]
+                // newimg.url = mansion[getRandom(mansion.length - 1)]
+                newimg.url = mansion.splice(getRandom(mansion.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -413,7 +427,8 @@ module.exports = {
             } else if (s.type === 'snow') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = snow[getRandom(snow.length - 1)]
+                // newimg.url = snow[getRandom(snow.length - 1)]
+                newimg.url = snow.splice(getRandom(snow.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -427,7 +442,8 @@ module.exports = {
             } else if (s.type === 'pool') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = pool[getRandom(pool.length - 1)]
+                // newimg.url = pool[getRandom(pool.length - 1)]
+                newimg.url = pool.splice(getRandom(pool.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -441,7 +457,8 @@ module.exports = {
             } else if (s.type === 'island') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = island[getRandom(island.length - 1)]
+                // newimg.url = island[getRandom(island.length - 1)]
+                newimg.url = island.splice(getRandom(island.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -455,7 +472,8 @@ module.exports = {
             } else if (s.type === 'piano') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = piano[getRandom(piano.length - 1)]
+                // newimg.url = piano[getRandom(piano.length - 1)]
+                newimg.url = piano.splice(getRandom(piano.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -469,7 +487,9 @@ module.exports = {
             } else if (s.type === 'iconic') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = iconic[getRandom(iconic.length - 1)]
+                // newimg.url = iconic[getRandom(iconic.length - 1)]
+                newimg.url = iconic.splice(getRandom(iconic.length - 1), 1)[0]
+
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -483,7 +503,8 @@ module.exports = {
             } else if (s.type === 'game') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = game[getRandom(game.length - 1)]
+                // newimg.url = game[getRandom(game.length - 1)]
+                newimg.url = game.splice(getRandom(game.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -497,7 +518,8 @@ module.exports = {
             } else if (s.type === 'windmill') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = windmill[getRandom(windmill.length - 1)]
+                // newimg.url = windmill[getRandom(windmill.length - 1)]
+                newimg.url = windmill.splice(getRandom(windmill.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -511,7 +533,8 @@ module.exports = {
             } else if (s.type === 'creative') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = creative[getRandom(creative.length - 1)]
+                // newimg.url = creative[getRandom(creative.length - 1)]
+                newimg.url = creative.splice(getRandom(creative.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -525,8 +548,8 @@ module.exports = {
             } else if (s.type === 'contain') {
                 newimg.spotId = s.id
                 newimg.preview = true
-
-                newimg.url = contain[getRandom(contain.length - 1)]
+                // newimg.url = contain[getRandom(contain.length - 1)]
+                newimg.url = contain.splice(getRandom(contain.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -540,7 +563,8 @@ module.exports = {
             } else if (s.type === 'desert') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = desert[getRandom(desert.length - 1)]
+                // newimg.url = desert[getRandom(desert.length - 1)]
+                newimg.url = desert.splice(getRandom(desert.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -554,7 +578,8 @@ module.exports = {
             } else if (s.type === 'beach') {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = beach[getRandom(beach.length - 1)]
+                // newimg.url = beach[getRandom(beach.length - 1)]
+                newimg.url = beach.splice(getRandom(beach.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
@@ -568,7 +593,8 @@ module.exports = {
             } else {
                 newimg.spotId = s.id
                 newimg.preview = true
-                newimg.url = japan[getRandom(japan.length - 1)]
+                // newimg.url = japan[getRandom(japan.length - 1)]
+                newimg.url = japan.splice(getRandom(japan.length - 1), 1)[0]
                 imgs.push(newimg)
                 let i = 0
                 while (i < 4) {
