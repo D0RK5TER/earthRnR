@@ -221,27 +221,19 @@ module.exports = {
             }
 
 
-            let ran = getRandom(18)
-            while (ran < 1) ran = getRandom(18)
+            let ran = getRandom(19)
+            while (ran < 1) ran = getRandom(19)
 
             newRandom.type = typelist[ran]
 
-            let bed = getRandom(5)
-            while (bed < 1) bed = getRandom(5)
+            let bed = getRandom(6)
+            while (bed < 1) bed = getRandom(6)
 
-            let bath = getRandom(3)
-            while (bath < 1) bath = getRandom(3)
+            let bath = getRandom(5)
+            while (bath < 1) bath = getRandom(4)
 
             newRandom.bed = bed
             newRandom.bath = bath
-            // price < 100 ? newRandom.type = 'earth' :
-            //     price < 200 ? newRandom.type = 'rv' :
-            //         price < 600 ? newRandom.type = 'country' :
-            //             price < 1000 ? newRandom.type = 'tree' :
-            //                 price < 2000 ? newRandom.type = 'lake' :
-            //                     newRandom.type = 'mansion'
-
-
             randomSpots.push(newRandom)
         }
         options.tableName = 'Spots'

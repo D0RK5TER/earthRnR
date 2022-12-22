@@ -151,23 +151,21 @@ router.get('/current',
 
 
 router.get('/', async (req, res) => {
-    let { minLat, maxLat, minLng, maxLng, size, type, minPrice, maxPrice } = req.query;
+    let { bed, bath, type, minPrice, maxPrice } = req.query;
 
-    // if (size) {
-    //     size = +size
-    //     size > 20 ? size = 20 :
-    //         isNaN(+size) ? size = 1 :
-    //             size
-    // } else size = 20
+    if (bed) {
+        bed = +bed - 1
+    } else bed = 0
+    if (bath) {
+        bath = +bath - 1
+    } else bath = 0
 
-    // let alltypes = ['lake', 'tree', 'rv', 'earth', 'mansion', 'country',]
     let alltypes = ['snow', 'pool', 'game', 'island',
         'iconic', 'creative', 'desert', 'beach',
         'japan', 'contain', 'piano', 'windmill',
         'lake', 'rv', 'dirt', 'tree', 'mansion', 'country']
     if (type) {
         type = alltypes.filter(x => type.includes(x))
-        // type = alltypes.filter(x => type.includes(x)).join('')
     } else type = alltypes
 
     if (maxPrice) {
@@ -186,7 +184,9 @@ router.get('/', async (req, res) => {
     let spots = await Spot.findAll({
         where: {
             price: { [Op.and]: { [Op.lt]: maxPrice, [Op.gt]: minPrice } },
-            type: { [Op.in]: type }
+            type: { [Op.in]: type },
+            bed: { [Op.gt]: bed },
+            bath: { [Op.gt]: bath }
         },
         include: [
             { model: Review, required: false, raw: true, },

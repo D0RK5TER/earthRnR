@@ -311,7 +311,7 @@ const lake = [
     "https://a0.muscache.com/im/pictures/577cd26c-df1d-4fa7-a130-afab5f2a5d9c.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/40714b26-8154-4d46-a2d9-50779a24b5f1.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/prohost-api/Hosting-711484339751204823/original/1244d3c8-7c5b-414b-9022-062e4d5100fa.jpeg?im_w=720",
-    
+
 ]
 
 const lakeSmall = [
@@ -365,7 +365,7 @@ const rv = [
     "https://a0.muscache.com/im/pictures/miso/Hosting-30353892/original/afafbecb-3a33-4d3e-a5e8-96dc09e2ea9a.jpeg?im_w=720",
     "https://a0.muscache.com/im/pictures/7fde1672-2160-4593-90cd-00bd75da732a.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/5c9b8c1e-a83d-4f89-b4f5-5a255bacb50b.jpg?im_w=720",
-    
+
 
 ]
 const rvSmall = [
@@ -487,7 +487,7 @@ const tree = [
     "https://a0.muscache.com/im/pictures/c79965b5-9b22-4504-af7b-3131f5c25dfa.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/7fbc841e-df6e-440e-b8d6-2c80eab71502.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/a081354b-b061-4cac-a8bf-f7bc9be0b68a.jpg?im_w=720",
-    
+
 ]
 
 const treehSmall = [
@@ -671,7 +671,6 @@ const game = [
     "https://a0.muscache.com/im/pictures/miso/Hosting-722487450215750580/original/96fd5882-c6b8-41ac-bd89-fce6bc3c88b0.jpeg?im_w=720",
     "https://a0.muscache.com/im/pictures/59ae18f3-8465-4da2-980c-90599823a122.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/fe66b4d3-703c-4a56-986c-63ab933d8876.jpg?im_w=720",
-    "https://a0.muscache.com/im/pictures/miso/Hosting-41227359/original/7008de1b-06ef-486b-8dd1-316e7732d7e5.png?im_w=720",
     "https://a0.muscache.com/im/pictures/98b2308e-305b-41ca-a947-69864dbb7a01.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/miso/Hosting-45517433/original/c4242779-25ce-4301-8bd9-7f007e6ca215.jpeg?im_w=720",
     "https://a0.muscache.com/im/pictures/miso/Hosting-43589316/original/3a4d4a96-fa5e-41c0-b148-fc870d9547f2.jpeg?im_w=720",
@@ -752,7 +751,7 @@ const iconic = [
     "https://a0.muscache.com/im/pictures/781afd01-40ad-4b37-8a35-f6b056cc7dfc.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/monet/Select-24000632/original/7ea688f6-ed70-4223-ac02-b337d72805f1?im_w=720",
     "https://a0.muscache.com/im/pictures/3bd9f668-2be3-48e9-8f4c-509f1162691a.jpg?im_w=720",
-    
+
 ]
 
 const creative = [
@@ -837,7 +836,6 @@ const desert = [
 
 const beach = [
     "https://a0.muscache.com/im/pictures/c58e1102-e92e-409e-a444-9ec247fc0104.jpg?im_w=720",
-    "https://a0.muscache.com/im/pictures/fe29c438-d5d0-4c44-a2ce-fe6befde7812.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/5d8fecdd-492c-4837-91b5-ac6a3f36d8b8.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/miso/Hosting-600082528420105160/original/0d482573-63ac-45e9-b144-ff238f537dea.jpeg?im_w=720",
     "https://a0.muscache.com/im/pictures/fa11d88a-170d-428b-a586-c89c30739b92.jpg?im_w=720",
@@ -941,12 +939,10 @@ const piano = [
     "https://a0.muscache.com/im/pictures/monet/Select-15008661/original/0dfe0ae9-9a9f-4ee7-b656-84cf234e31fc?im_w=720",
     "https://a0.muscache.com/im/pictures/miso/Hosting-568922506253611033/original/923e5f70-235c-4c5f-b0b1-7bc3d65c0791.jpeg?im_w=720",
     "https://a0.muscache.com/im/pictures/b44da01b-5af6-4b4a-ae13-abb158603f69.jpg?im_w=720",
-    "https://a0.muscache.com/im/pictures/miso/Hosting-53569651/original/ee287fd3-d356-4733-81ec-d2c1d739eda9.jpeg?im_w=720",
     "https://a0.muscache.com/im/pictures/89067af0-db33-436e-8086-32203cae3552.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/e642fe7c-e0b8-46c2-b1ce-6085db4aacea.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/b57469ac-e413-4201-9947-29a612d21bc3.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/b590a6c8-3f86-4e1b-9086-88d9af25bd34.jpg?im_w=720",
-    "https://a0.muscache.com/im/pictures/miso/Hosting-568922506253611033/original/923e5f70-235c-4c5f-b0b1-7bc3d65c0791.jpeg?im_w=720",
     "https://a0.muscache.com/im/pictures/eb662ddd-9d83-4561-8dcc-548e29719644.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/b44da01b-5af6-4b4a-ae13-abb158603f69.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/miso/Hosting-43999009/original/2e9b603e-2b41-4ce3-b7ef-d7017fef0845.jpeg?im_w=720",
@@ -999,7 +995,7 @@ const windmill = [
     "https://a0.muscache.com/im/pictures/1273ab4d-00c2-4fba-90ed-292be9c560d2.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/prohost-api/Hosting-48112531/original/65ae8a56-f6a8-4f47-b457-8521284c9d69.jpeg?im_w=720",
     "https://a0.muscache.com/im/pictures/a6a2f1a6-3170-4bee-81d5-0f66e940182a.jpg?im_w=720",
-    
+
 
 
 ]
@@ -1036,7 +1032,6 @@ const genericSmall = [
     "https://a0.muscache.com/im/pictures/174a23e5-1b57-4dd8-b6d3-02d133cd4bb9.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/ceca2fe5-b007-4dc8-90fb-4dadaf3df573.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/e1e61ce2-882c-4ef0-95d7-91b65edf90c0.jpg?im_w=480",
-    "https://a0.muscache.com/im/pictures/92ea610f-b313-4baa-a326-73c8477bd3ab.jpg?im_w=480",
     "https://a0.muscache.com/im/pictures/55b9bf32-6fba-4a26-81b6-70b89d3ccf5f.jpg?im_w=480",
     "https://a0.muscache.com/im/pictures/86e8cb85-a766-41a4-b0f0-e6c3aeb177b6.jpg?im_w=480",
     "https://a0.muscache.com/im/pictures/16634524-0dfd-428c-8b17-d2e817032430.jpg?im_w=480",
