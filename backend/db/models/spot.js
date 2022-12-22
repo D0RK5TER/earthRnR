@@ -82,8 +82,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    size: {
-      type: DataTypes.STRING,
+    bed: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    bath: {
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     price: {

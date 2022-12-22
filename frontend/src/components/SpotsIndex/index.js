@@ -50,7 +50,7 @@ function SpotsIndex() {
                     <img src={lake} />
                     Lakehouse
                 </div>
-                <div onClick={() => dispatch(getAllSpots('?type=earth'))}>
+                <div onClick={() => dispatch(getAllSpots('?type=dirt'))}>
                     <img src={dirt} />
                     Earth-homes
                 </div>

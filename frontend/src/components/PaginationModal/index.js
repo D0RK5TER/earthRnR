@@ -64,7 +64,7 @@ function PaginationForm() {
         if (beach) type += 'beach'
         if (windmill) type += 'windmill'
         if (snow) type += 'snow'
-        if (art) type += 'art'
+        if (art) type += 'creative'
         if (iconic) type += 'iconic'
         if (japan) type += 'japan'
 
