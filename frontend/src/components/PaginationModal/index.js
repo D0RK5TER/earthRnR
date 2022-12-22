@@ -31,6 +31,9 @@ function PaginationForm() {
     const [iconic, setIconic] = useState(false)
     const [japan, setJapan] = useState(false)
 
+    const [bed, setBed] = useState(0)
+    const [bath, setBath] = useState(0)
+
 
     const [errors, setErrors] = useState([]);
     let pagination = ''
@@ -48,7 +51,7 @@ function PaginationForm() {
         setErrors([]);
         let type = '&type='
 
-        pagination = `?minPrice=${min}&maxPrice=${max}`
+        pagination = `?minPrice=${min}&maxPrice=${max}&bed=${bed}&bath=${bath}`
         if (lake) type += `lake`
         if (rv) type += 'rv'
         if (tree) type += `tree`
@@ -111,17 +114,25 @@ function PaginationForm() {
                     </div>
                     <div id='pricecol'>
                         Bedrooms
-                        <select id="cars" name="cars">
-                            <option value="volvo">1 Bed</option>
-                            <option value="saab">2 Beds</option>
-                            <option value="fiat">3 Beds</option>
-                            <option value="audi">4 Beds</option>
+                        <select id="cars" name="cars"
+                            onChange={(e) => setBed(e.target.value)}
+                        >
+                            <option value="1">1 Bed</option>
+                            <option value="2">2 Beds</option>
+                            <option value="3">3 Beds</option>
+                            <option value="4">4 Beds</option>
+                            <option value="5">5 Beds</option>
+
                         </select>
                         Bathrooms
-                        <select id="cars" name="cars">
-                            <option value="volvo">1 Bath</option>
-                            <option value="saab">2 Baths</option>
-                            <option value="fiat">3 Baths</option>
+                        <select id="cars" name="cars"
+                            onChange={(e) => setBath(e.target.value)}
+                        >
+                            <option value="1">1 Bath</option>
+                            <option value="2">2 Baths</option>
+                            <option value="3">3 Baths</option>
+                            <option value="4">4 Baths</option>
+
                         </select>
                     </div>
                 </div>

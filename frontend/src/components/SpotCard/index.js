@@ -6,7 +6,7 @@ import { getAge } from '../../utilities/location';
 
 function SpotCard({ spot, user, place }) {
     const { previewImage, id, description,
-        avgRating, createdAt, city, state,
+        avgRating, createdAt, city, state, bed, bath,
         ownerId, price } = spot
 
     const history = useHistory()
@@ -41,15 +41,12 @@ function SpotCard({ spot, user, place }) {
                         {`${getAge(createdAt)} old`}
                     </p>
                     <p className='smallerinfotext'>
-                        {description.slice(0, 30)}...
+                        {`Beds & Baths: ${bed}bd/${bath}ba`}
                     </p>
                     <div className='priceper pricenight' >
                         ${price}<p>night</p>
                     </div>
                 </div>
-
-
-
                 <div className='spotinforight' id={`SpotCardInfoRow2${id}`}>
 
                     <div className='inforightstar'>
@@ -58,13 +55,6 @@ function SpotCard({ spot, user, place }) {
                         {avgRating !== 0 ? avgRating : '0.00'}
                     </div>
                     <div className='editbuttspotcard'>
-                        {/* {user.id === ownerId && place === '/current' &&
-                            <OpenModalButton
-                                id='editspotbut'
-                                buttonText="Edit/Delete"
-                                modalComponent={<EditSpotFormModal idx={id} />}
-                            />
-                        } */}
                     </div>
                 </div>
 
