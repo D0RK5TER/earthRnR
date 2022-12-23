@@ -22,6 +22,9 @@ function SpotForm({ setShowModal }) {
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [errors, setErrors] = useState([]);
+    const [type, setType] = useState("")
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
