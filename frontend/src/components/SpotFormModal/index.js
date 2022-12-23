@@ -162,31 +162,34 @@ function SpotForm({ setShowModal }) {
                             required
                         />
                         <div id='bednbath'>
-                            Beds
-                            <select className='ddinputs' name="cars"
-                                onChange={(e) => setBed(e.target.value)}
-                            >
-                                <option value="1">1 Bed</option>
-                                <option value="2">2 Beds</option>
-                                <option value="3">3 Beds</option>
-                                <option value="4">4 Beds</option>
-                                <option value="5">5 Beds</option>
-                            </select>
-                            Bath
-                            <select className='ddinputs' name="cars"
-                                onChange={(e) => setBath(e.target.value)}
-                            >
-                                <option value="1">1 Bath</option>
-                                <option value="2">2 Baths</option>
-                                <option value="3">3 Baths</option>
-                                <option value="4">4 Baths</option>
+                            <div>
+                                Beds
+                                <select className='ddinputs' name="cars"
+                                    onChange={(e) => setBed(e.target.value)}>
+                                    <option value="1">1 Bed</option>
+                                    <option value="2">2 Beds</option>
+                                    <option value="3">3 Beds</option>
+                                    <option value="4">4 Beds</option>
+                                    <option value="5">5 Beds</option>
+                                </select>
+                            </div>
+                            <div>
+                                Bath
+                                <select className='ddinputs' name="cars"
+                                    onChange={(e) => setBath(e.target.value)}
+                                    >
+                                    <option value="1">1 Bath</option>
+                                    <option value="2">2 Baths</option>
+                                    <option value="3">3 Baths</option>
+                                    <option value="4">4 Baths</option>
 
-                            </select>
+                                </select>
+                            </div>
                         </div>
                         <p>
                             Type Catagory
                         </p>
-                        <select className='ddinputs' name="cars"
+                        <select id='catagory' className='ddinputs' name="cars"
                             required
                             onChange={(e) => setType(e.target.value)}
                         >
