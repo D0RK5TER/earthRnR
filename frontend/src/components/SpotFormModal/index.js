@@ -34,7 +34,7 @@ function SpotForm({ setShowModal }) {
         //for apt *works*
         return dispatch(createSpot({
             address: add, city, state, country,
-            name, description, price, latt
+            name, description, price, latt, type
         }))
             .then(async (res) => {
                 if (!res[1].ok) {
@@ -159,6 +159,122 @@ function SpotForm({ setShowModal }) {
                             minLength={'30'}
                             required
                         />
+                        <p>
+                            Type Catagory
+                        </p>
+                        <select id="cars" name="cars"
+                            required
+                            onChange={(e) => setType(e.target.value)}
+                        >
+                            <option value="lake">
+
+                                Lake
+
+
+                            </option>
+                            <option value="rv">
+                                RV
+
+
+
+                            </option>
+                            <option value="tree">
+                                Tree
+
+
+
+                            </option>
+                            <option value="dirt">
+                                EartHome
+
+
+                            </option>
+                            <option value="mansion">
+
+
+                                Mansion
+
+
+
+                            </option>
+                            <option value="country">
+                                country
+
+
+
+                            </option>
+                            <option value="island">
+                                island
+
+
+
+                            </option>
+                            <option value="piano">
+                                piano
+
+
+
+                            </option>
+                            <option value="pools">
+                                pools
+
+
+
+                            </option>
+                            <option value="games">
+                                games
+
+
+
+                            </option>
+                            <option value="desert">
+                                desert
+
+
+
+                            </option>
+                            <option value="contain">
+                                contain
+
+
+
+                            </option>
+                            <option value="beach">
+                                beach
+
+
+
+                            </option>
+                            <option value="windmill">
+                                windmill
+
+
+
+                            </option>
+                            <option value="snow">
+                                snow
+
+
+
+                            </option>
+                            <option value="creative">
+                                art
+
+
+
+                            </option>
+                            <option value="iconic">
+                                iconic
+
+
+
+                            </option>
+                            <option value="japan">
+                                japan
+
+                            </option>
+
+                        </select>
 
 
                     </div>
