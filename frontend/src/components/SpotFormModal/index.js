@@ -23,6 +23,8 @@ function SpotForm({ setShowModal }) {
     const [price, setPrice] = useState("");
     const [errors, setErrors] = useState([]);
     const [type, setType] = useState("")
+    const [bed, setBed] = useState(0)
+    const [bath, setBath] = useState(0)
 
 
 
@@ -159,119 +161,86 @@ function SpotForm({ setShowModal }) {
                             minLength={'30'}
                             required
                         />
+                        <div id='bednbath'>
+                            Beds
+                            <select className='ddinputs' name="cars"
+                                onChange={(e) => setBed(e.target.value)}
+                            >
+                                <option value="1">1 Bed</option>
+                                <option value="2">2 Beds</option>
+                                <option value="3">3 Beds</option>
+                                <option value="4">4 Beds</option>
+                                <option value="5">5 Beds</option>
+                            </select>
+                            Bath
+                            <select className='ddinputs' name="cars"
+                                onChange={(e) => setBath(e.target.value)}
+                            >
+                                <option value="1">1 Bath</option>
+                                <option value="2">2 Baths</option>
+                                <option value="3">3 Baths</option>
+                                <option value="4">4 Baths</option>
+
+                            </select>
+                        </div>
                         <p>
                             Type Catagory
                         </p>
-                        <select id="cars" name="cars"
+                        <select className='ddinputs' name="cars"
                             required
                             onChange={(e) => setType(e.target.value)}
                         >
                             <option value="lake">
-
-                                Lake
-
-
-                            </option>
+                                Lake</option>
                             <option value="rv">
                                 RV
-
-
-
                             </option>
                             <option value="tree">
                                 Tree
-
-
-
                             </option>
                             <option value="dirt">
-                                EartHome
-
-
-                            </option>
+                                EartHome</option>
                             <option value="mansion">
-
-
                                 Mansion
-
-
-
                             </option>
                             <option value="country">
                                 country
-
-
-
                             </option>
                             <option value="island">
                                 island
-
-
-
                             </option>
                             <option value="piano">
                                 piano
-
-
-
                             </option>
                             <option value="pools">
                                 pools
-
-
-
                             </option>
                             <option value="games">
                                 games
-
-
-
                             </option>
                             <option value="desert">
                                 desert
-
-
-
                             </option>
                             <option value="contain">
                                 contain
-
-
-
                             </option>
                             <option value="beach">
                                 beach
-
-
-
                             </option>
                             <option value="windmill">
                                 windmill
-
-
-
                             </option>
                             <option value="snow">
                                 snow
-
-
-
                             </option>
                             <option value="creative">
                                 art
-
-
-
                             </option>
                             <option value="iconic">
                                 iconic
-
-
-
                             </option>
                             <option value="japan">
                                 japan
-
                             </option>
 
                         </select>

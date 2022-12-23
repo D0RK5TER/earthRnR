@@ -24,6 +24,27 @@
     font-size: .98vw;
 }
 
+
+.ddinputs:hover,
+.ddinputs:focus {
+    border: 1.75px solid #f12b50;
+    outline: none;
+}
+
+.ddinputs {
+    border: 1.5px solid #ababab;
+    height: 1.72vw;
+    line-height: 1.72vw;
+    border-radius: .41vw;
+}
+
+#bednbath {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
 #piccoldesc {
     padding-top: 1vw;
     padding-left: 1vw;
@@ -34,8 +55,7 @@
     border-radius: .5vw;
     resize: none;
     border: 1.5px solid #ababab;
-    font-size: 1vw
-    ;
+    font-size: 1vw;
 
 }
 
@@ -48,9 +68,11 @@
     border: 1.5px solid #ababab;
     ;
 }
+
 #createblock:hover {
     background-color: #e42246;
 }
+
 #createblock {
     margin-bottom: 1vw;
     width: 20.5vw;
@@ -66,6 +88,7 @@
     font-size: 1.4vw;
     font-family: 'Bold';
 }
+
 #urlblock {
     margin-bottom: 1vw;
     width: 19vw;
