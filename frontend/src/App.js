@@ -34,6 +34,7 @@ function App() {
                     </Route>
 
 
+
                     <Route>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             <h1 style={{ paddingTop: '5vw', fontFamily: 'Bold' }}>Sorry! Out Of Luck!</h1>
