@@ -39,7 +39,6 @@ export const getMyBooks = () => async (dispatch) => {
     });
     if (response.ok) {
         const data = await response.json();
-        // console.log(data)
         dispatch(loadMyBookings(data));
         return data
     }
