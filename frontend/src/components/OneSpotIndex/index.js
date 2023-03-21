@@ -138,8 +138,7 @@ const OneSpotIndex = () => {
   //theSpot?.id && 
 
   // theSpot !== undefined && +id === theSpot?.id && thereviews && 
-  // console.log(theSpot, 'THE SPOT')
-  // console.log(thereviews, '!!!!! revs')
+
   return theSpot?.id && thereviews && (
 
     <div id='onespotcont'>

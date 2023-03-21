@@ -16,7 +16,6 @@ export default function CalendarMonth(month) {
 
     const [value, onChange] = useState(thismonth)
     const [value2, onChange2] = useState(nextmonth);
-    // console.log(thismonth, nextmonth);
     return (
         <div id='calcont'>
             <Calendar

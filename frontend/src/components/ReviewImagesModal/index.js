@@ -20,8 +20,6 @@ function ReviewImagesIndex({ ReviewImages, idx }) {
         // e.preventDefault()
         // setErrors([]);
         // closeModal()
-        // console.log(idx)
-        // console.log(imgs)
         // .then(setShowModal(false))
         //IMAGES COMING SOON!!
         // history.location.pathname !== '/current' ?

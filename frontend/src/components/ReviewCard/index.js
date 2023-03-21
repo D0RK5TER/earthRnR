@@ -19,7 +19,6 @@ import './reviewcard.css'
 function ReviewCard({ review, user, place, id }) {
     // const { id, stars, review, userId, createdAt, User, spotId, ReviewImages } = reviewO
     const history = useHistory()
-    // console.log(review)
     if (!review?.id) return (
         <div id='firsttimereview' >
             <h2> Be the first to review!</h2>
