@@ -128,7 +128,6 @@ export const makeChangeReview = (rev) => async (dispatch) => {
             value, accuracy
         }),
     });
-    console.log(response)
     if (response.ok) {
         let data = await response.json()
         await dispatch(getOneSpot(spotId))
