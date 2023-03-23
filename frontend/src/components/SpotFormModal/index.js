@@ -22,6 +22,11 @@ function SpotForm({ setShowModal }) {
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [errors, setErrors] = useState([]);
+    const [type, setType] = useState("")
+    const [bed, setBed] = useState(0)
+    const [bath, setBath] = useState(0)
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,7 +36,7 @@ function SpotForm({ setShowModal }) {
         //for apt *works*
         return dispatch(createSpot({
             address: add, city, state, country,
-            name, description, price, latt
+            name, description, price, latt, type
         }))
             .then(async (res) => {
                 if (!res[1].ok) {
@@ -156,6 +161,92 @@ function SpotForm({ setShowModal }) {
                             minLength={'30'}
                             required
                         />
+                        <div id='bednbath'>
+                            <div>
+                                Beds
+                                <select className='ddinputs' name="cars"
+                                    onChange={(e) => setBed(e.target.value)}>
+                                    <option value="1">1 Bed</option>
+                                    <option value="2">2 Beds</option>
+                                    <option value="3">3 Beds</option>
+                                    <option value="4">4 Beds</option>
+                                    <option value="5">5 Beds</option>
+                                </select>
+                            </div>
+                            <div>
+                                Bath
+                                <select className='ddinputs' name="cars"
+                                    onChange={(e) => setBath(e.target.value)}
+                                    >
+                                    <option value="1">1 Bath</option>
+                                    <option value="2">2 Baths</option>
+                                    <option value="3">3 Baths</option>
+                                    <option value="4">4 Baths</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <p>
+                            Type Catagory
+                        </p>
+                        <select id='catagory' className='ddinputs' name="cars"
+                            required
+                            onChange={(e) => setType(e.target.value)}
+                        >
+                            <option value="lake">
+                                Lake</option>
+                            <option value="rv">
+                                RV
+                            </option>
+                            <option value="tree">
+                                Tree
+                            </option>
+                            <option value="dirt">
+                                EartHome</option>
+                            <option value="mansion">
+                                Mansion
+                            </option>
+                            <option value="country">
+                                country
+                            </option>
+                            <option value="island">
+                                island
+                            </option>
+                            <option value="piano">
+                                piano
+                            </option>
+                            <option value="pools">
+                                pools
+                            </option>
+                            <option value="games">
+                                games
+                            </option>
+                            <option value="desert">
+                                desert
+                            </option>
+                            <option value="contain">
+                                contain
+                            </option>
+                            <option value="beach">
+                                beach
+                            </option>
+                            <option value="windmill">
+                                windmill
+                            </option>
+                            <option value="snow">
+                                snow
+                            </option>
+                            <option value="creative">
+                                art
+                            </option>
+                            <option value="iconic">
+                                iconic
+                            </option>
+                            <option value="japan">
+                                japan
+                            </option>
+
+                        </select>
 
 
                     </div>

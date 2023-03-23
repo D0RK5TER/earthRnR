@@ -7,7 +7,6 @@ export const arrConvert = (arr) => {
 }
 
 export const pathURL = (history) => {
-    // console.log(history.location.pathname)
     return history.location.pathname
 }
 

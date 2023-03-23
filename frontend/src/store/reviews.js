@@ -79,10 +79,8 @@ export const getMyReviews = () => async (dispatch) => {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
-    // console.log(response, '!!!!!')
     if (response.ok) {
         const data = await response.json();
-        // console.log(data, '!!!!!')
         await dispatch(loadMyReviews(data.Reviews))
         return data.Reviews
     }
@@ -92,7 +90,6 @@ export const getMyReviews = () => async (dispatch) => {
 export const createReview = (reviewz) => async (dispatch) => {
     const { id, review, stars, cleanliness, communication,
         location, checkin, value, accuracy } = reviewz;
-    // console.log(review)
     const response = await csrfFetch(`/api/spots/${id}/reviews`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
@@ -128,7 +125,6 @@ export const makeChangeReview = (rev) => async (dispatch) => {
             value, accuracy
         }),
     });
-    console.log(response)
     if (response.ok) {
         let data = await response.json()
         await dispatch(getOneSpot(spotId))

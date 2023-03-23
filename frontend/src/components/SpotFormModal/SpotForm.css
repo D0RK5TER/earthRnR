@@ -17,11 +17,43 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     text-align: center;
     box-sizing: border-box;
     object-fit: cover;
     font-family: 'Bold';
     font-size: .98vw;
+}
+
+#bednbath> div {
+    display: flex;
+    flex-direction: column;
+
+}
+#catagory {
+    width: 10vw;
+    height: 3vw;
+}
+
+.ddinputs:hover,
+.ddinputs:focus {
+    border: 1.75px solid #f12b50;
+    outline: none;
+}
+
+.ddinputs {
+    border: 1.5px solid #ababab;
+    height: 1.69vw;
+    line-height: 1.72vw;
+    border-radius: .41vw;
+    font-size: 1vw;
+}
+
+#bednbath {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .51vw;
+    margin-bottom: 1vw;
 }
 
 #piccoldesc {
@@ -34,9 +66,7 @@
     border-radius: .5vw;
     resize: none;
     border: 1.5px solid #ababab;
-    font-size: 1vw
-    ;
-
+    font-size: 1vw;
 }
 
 #piccolimg {
@@ -46,11 +76,12 @@
     height: 90%;
     border-radius: .5vw;
     border: 1.5px solid #ababab;
-    ;
 }
+
 #createblock:hover {
     background-color: #e42246;
 }
+
 #createblock {
     margin-bottom: 1vw;
     width: 20.5vw;
@@ -66,6 +97,7 @@
     font-size: 1.4vw;
     font-family: 'Bold';
 }
+
 #urlblock {
     margin-bottom: 1vw;
     width: 19vw;

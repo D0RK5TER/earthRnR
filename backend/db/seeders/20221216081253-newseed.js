@@ -186,7 +186,6 @@ module.exports = {
         ownerSample = JSON.parse(JSON.stringify(ownerSample))
 
 
-        // console.log('18912u39128u3912u3912u39123u9123u1', cityStateSample, randomSpots, descriptSample )
         while (randomSpots.length < 250) {
             let newRandom = { ...spotSkeleton }
             let owner = ownerSample[getRandom(ownerSample.length - 1)]
@@ -291,11 +290,8 @@ module.exports = {
                 randomReviews.push(newRandom)
             })
         }
-        // console.log()
         options.tableName = 'Reviews'
         await queryInterface.bulkInsert(options, randomReviews, {})
-        // console.log(randomReviews)
-        // console.log(randomReviews)
         ////////////////////Reviews END///////////////////////////////////////////////////
         let reviewSample = await Review.findAll();
         reviewSample = JSON.parse(JSON.stringify(reviewSample))
