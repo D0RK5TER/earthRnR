@@ -326,10 +326,10 @@ const OneSpotIndex = () => {
                     <>
                       <h2>{ }6 nights at {theSpot.name}</h2>
                       <div id='spotbookingcalendar'>
-                        <img src={caltemp} alt='temponly' style={{ height: '23vw' }} />
 
                         <div id='thismonth'>
                           {/* <CalendarMonth month={today} /> */}
+                          <img src={caltemp} alt='temponly' style={{ height: '23vw' }} />
 
                         </div>
                         <div id='nextmonth'>
@@ -350,7 +350,7 @@ const OneSpotIndex = () => {
             <>
               <div id='navbarblock' style={{ marginTop: '8vw', height: '1px' }} />
               <div id='bookingcont'>
-                <img src={bookingtemp} alt='temponly' style={{ marginTop: '5vw' }} />
+                {/* <img src={bookingtemp} alt='temponly' style={{ marginTop: '5vw' }} /> */}
                 <div id='bookingbody'>
                   {/*  */}
                   <div id='priceheader'>
@@ -368,7 +368,7 @@ const OneSpotIndex = () => {
                       </div >
                     </div>
                   </div>
-                  {/* <img src={bookingtemp} alt='temponly' /> */}
+                  <img src={bookingtemp} alt='temponly' />
 
                   <div id='bookdatescont'>
                     <div id='bookdatestop'>
