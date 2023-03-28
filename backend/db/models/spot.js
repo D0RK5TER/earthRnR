@@ -72,11 +72,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     type: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     attributes: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     features: {
       type: DataTypes.STRING,
