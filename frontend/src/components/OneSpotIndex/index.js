@@ -26,7 +26,8 @@ import amendtemp from '../../assets/amendtemp.png'
 import amendwifi from '../../assets/amendwifi.png'
 import amendbell from '../../assets/amendbell.png'
 
-
+import bookingtemp from '../../assets/bookingtemp.png'
+import caltemp from '../../assets/caltemp.png'
 
 
 
@@ -325,10 +326,10 @@ const OneSpotIndex = () => {
                     <>
                       <h2>{ }6 nights at {theSpot.name}</h2>
                       <div id='spotbookingcalendar'>
-                        {/* <img src={caltemp} alt='temponly' style={{ height: '23vw' }} /> */}
+                        <img src={caltemp} alt='temponly' style={{ height: '23vw' }} />
 
                         <div id='thismonth'>
-                          <CalendarMonth month={today} />
+                          {/* <CalendarMonth month={today} /> */}
 
                         </div>
                         <div id='nextmonth'>
@@ -349,7 +350,7 @@ const OneSpotIndex = () => {
             <>
               <div id='navbarblock' style={{ marginTop: '8vw', height: '1px' }} />
               <div id='bookingcont'>
-                {/* <img src={bookingtemp} alt='temponly' style={{ marginTop: '5vw' }} /> */}
+                <img src={bookingtemp} alt='temponly' style={{ marginTop: '5vw' }} />
                 <div id='bookingbody'>
                   {/*  */}
                   <div id='priceheader'>
