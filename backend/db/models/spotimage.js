@@ -15,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
       let imgURL = await SpotImage.findOne({
         where: { spotId: thisId },
       })
-      // //console.log(imgURL)
       if (!imgURL) return 'none'
       else return imgURL.url
     }

@@ -141,7 +141,6 @@ module.exports = {
                 randomReviews.push(newRandom)
             })
         }
-        // console.log()
         options.tableName = 'Reviews'
         await queryInterface.bulkInsert(options, randomReviews, {})
 

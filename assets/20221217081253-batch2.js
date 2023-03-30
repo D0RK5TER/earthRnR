@@ -174,7 +174,6 @@ module.exports = {
         randomReviews.push(newRandom)
       })
     }
-    // console.log()
     options.tableName = 'Reviews'
     await queryInterface.bulkInsert(options, randomReviews, {})
 
@@ -192,7 +191,6 @@ module.exports = {
       z.url = ran
       randomReviewImage.push(z)
     })
-    // console.log(revids)
     options.tableName = 'ReviewImages'
     await queryInterface.bulkInsert(options, randomReviewImage, {})
 
@@ -329,7 +327,6 @@ module.exports = {
       notowner = notowner.map(x => x = x.id)
       let numBoo = getRandom(notowner.length - 1)
       let newdates = [...dates]
-      // console.log(notowner, numBoo)
       while (numBoo > 1) {
         let newRandom = { ...bookingSkeleton }
         newRandom.startDate += newdates[numBoo][0]
@@ -342,7 +339,6 @@ module.exports = {
         randomBookings.push(newRandom)
         --numBoo
       }
-      // console.log(randomBookings)
     })
     options.tableName = 'Bookings'
     await queryInterface.bulkInsert(options, randomBookings, {})
