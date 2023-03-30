@@ -370,7 +370,7 @@ const OneSpotIndex = () => {
                   </div>
                   <img src={bookingtemp} alt='temponly' />
 
-                  <div id='bookdatescont'>
+                  {/* <div id='bookdatescont'>
                     <div id='bookdatestop'>
                       <div id='bookdatestopleft'>
                       </div>
@@ -379,12 +379,12 @@ const OneSpotIndex = () => {
                     </div>
                     <div id='bookdatesbottom'>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <button id='bookingsubmitbutton' type="submit">Reserve</button>
+                  {/* <button id='bookingsubmitbutton' type="submit">Reserve</button>
                   <div id='warningcharge'>
                     We "won't" charge you yet!
-                  </div>
+                  </div> */}
                   <div className='bookingcalc'>
                     <p>{`$${Math.floor(theSpot.price)} x 6 nights`}</p>
                     <p>{bookingsixnight}</p>
