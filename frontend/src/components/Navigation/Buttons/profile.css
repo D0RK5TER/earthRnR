@@ -105,6 +105,7 @@ justify-content: space-between;
     width: 100%;
     font-family: "Bold";
     padding-left: .51vw;
+    height: 2.5vw;
 
 
 }
@@ -113,8 +114,12 @@ justify-content: space-between;
     width: 100%;
     font-size: .6vw;
     font-family: "Li";
-    line-height: .5em;
+    height: fit-content;
+    height: .51vw;
     cursor: default;
+    padding-left: .92vw;
+
+
 }
 
 #ddusername {
@@ -122,16 +127,20 @@ justify-content: space-between;
     font-size: .7vw;
     font-family: "Li";
     cursor: default;
+    height: .51vw;
+    padding-left: .92vw;
+    
+
+    
 
 }
 
 #ddname {
     padding-bottom: .51vw;
     width: 100%;
-    height: 2.4vw;
+    height: .5124vw;
     font-family: "Bold";
     cursor: default;
-    border-bottom: .2px solid rgb(211, 211, 211);
 
 }
 
